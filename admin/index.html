@@ -179,7 +179,53 @@
       color: #54d0ff;
       font-size: 13px;
     }
+.admin-separator {
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin: 40px 0;
+}
 
+.teams-admin {
+  margin-top: 10px;
+}
+
+.teams-list {
+  margin-top: 28px;
+  display: grid;
+  gap: 12px;
+}
+
+.team-admin-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+  border: 1px solid rgba(70,205,255,.18);
+  background: rgba(3,18,29,.7);
+  border-radius: 7px;
+}
+
+.team-admin-item img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+}
+
+.team-admin-item strong {
+  display: block;
+}
+
+.team-admin-item span {
+  color: #8098a8;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+#team-message {
+  margin-top: 18px;
+  font-size: 14px;
+}
     @media(max-width: 650px) {
       .grid {
         grid-template-columns: 1fr;
@@ -308,7 +354,64 @@
     </div>
 
     <div id="message"></div>
+<hr class="admin-separator">
 
+<section class="teams-admin">
+
+  <h2>Команды</h2>
+
+  <p class="muted">
+    Добавление команд и их официальных логотипов.
+  </p>
+
+  <div class="grid">
+
+    <div class="field">
+      <label>Название команды</label>
+      <input
+        type="text"
+        id="team-name"
+        placeholder="Например: Байтерек"
+      >
+    </div>
+
+    <div class="field">
+      <label>Город</label>
+      <input
+        type="text"
+        id="team-city"
+        placeholder="Например: Орал"
+      >
+    </div>
+
+  </div>
+
+  <div class="field">
+    <label>Логотип команды</label>
+
+    <input
+      type="file"
+      id="team-logo-file"
+      accept="image/png,image/jpeg,image/webp,image/svg+xml"
+    >
+  </div>
+
+  <div class="buttons">
+    <button
+      class="primary"
+      id="add-team-btn"
+      type="button"
+    >
+      Добавить команду
+    </button>
+  </div>
+
+  <div id="team-message"></div>
+
+  <div class="teams-list" id="teams-list">
+  </div>
+
+</section>
   </div>
 
 </div>
