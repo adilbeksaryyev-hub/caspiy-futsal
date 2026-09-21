@@ -258,42 +258,42 @@
     }
 
 h1.hero-title {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Anton', sans-serif;
 
   margin: 0;
 
-  font-size: clamp(115px, 13.5vw, 220px);
+  font-size: clamp(120px, 14vw, 225px);
   line-height: 0.82;
 
-  font-weight: 700;
-  letter-spacing: -0.045em;
+  font-weight: 400;
+  letter-spacing: -0.025em;
 
   text-transform: uppercase;
 
-  /* Текстура внутри букв */
   color: transparent;
 
-  background:
+  background-image:
     linear-gradient(
-      180deg,
-      rgba(236, 250, 255, 1) 0%,
-      rgba(128, 211, 243, 1) 24%,
-      rgba(218, 244, 255, 1) 48%,
-      rgba(72, 163, 205, 1) 75%,
-      rgba(183, 230, 247, 1) 100%
-    );
+      rgba(225, 247, 255, 0.10),
+      rgba(0, 70, 115, 0.08)
+    ),
+    url("title-texture.png");
+
+  background-size: 115% auto;
+  background-position: center;
 
   -webkit-background-clip: text;
   background-clip: text;
 
-  /* Объём и холодное свечение */
+  -webkit-text-fill-color: transparent;
+
   -webkit-text-stroke:
-    1px rgba(210, 242, 255, 0.32);
+    1px rgba(214, 244, 255, 0.22);
 
   filter:
-    drop-shadow(0 3px 0 rgba(0, 30, 50, .35))
-    drop-shadow(0 8px 15px rgba(0, 0, 0, .30))
-    drop-shadow(0 0 12px rgba(73, 203, 255, .16));
+    drop-shadow(0 4px 2px rgba(0, 18, 30, .55))
+    drop-shadow(0 10px 18px rgba(0, 0, 0, .40))
+    drop-shadow(0 0 8px rgba(70, 200, 255, .15));
 }
 
 .hero-subtitle {
