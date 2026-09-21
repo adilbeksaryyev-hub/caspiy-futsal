@@ -257,57 +257,63 @@
       text-transform: uppercase;
     }
 
-    h1.hero-title {
-      font-family:
-        'Oswald',
-        sans-serif;
+h1.hero-title {
+  font-family: 'Oswald', sans-serif;
 
-      margin: 0;
+  margin: 0;
 
-      font-size:
-        clamp(
-          112px,
-          13vw,
-          215px
-        );
+  font-size: clamp(115px, 13.5vw, 220px);
+  line-height: 0.82;
 
-      line-height: .82;
+  font-weight: 700;
+  letter-spacing: -0.045em;
 
-      font-weight: 700;
+  text-transform: uppercase;
 
-      letter-spacing: -.035em;
+  /* Текстура внутри букв */
+  color: transparent;
 
-      text-transform: uppercase;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(236, 250, 255, 1) 0%,
+      rgba(128, 211, 243, 1) 24%,
+      rgba(218, 244, 255, 1) 48%,
+      rgba(72, 163, 205, 1) 75%,
+      rgba(183, 230, 247, 1) 100%
+    );
 
-      color: #effbff;
+  -webkit-background-clip: text;
+  background-clip: text;
 
-      text-shadow:
-        0 0 15px rgba(83, 208, 255, .10),
-        0 10px 35px rgba(0,0,0,.20);
-    }
+  /* Объём и холодное свечение */
+  -webkit-text-stroke:
+    1px rgba(210, 242, 255, 0.32);
 
-    .hero-subtitle {
-      margin-top: 30px;
+  filter:
+    drop-shadow(0 3px 0 rgba(0, 30, 50, .35))
+    drop-shadow(0 8px 15px rgba(0, 0, 0, .30))
+    drop-shadow(0 0 12px rgba(73, 203, 255, .16));
+}
 
-      font-family:
-        'Montserrat',
-        sans-serif;
+.hero-subtitle {
+  margin-top: 28px;
 
-      font-size:
-        clamp(
-          24px,
-          2.5vw,
-          43px
-        );
+  font-family: 'Montserrat', sans-serif;
 
-      font-weight: 500;
+  font-size: clamp(23px, 2.4vw, 42px);
 
-      letter-spacing: .36em;
+  font-weight: 500;
 
-      color: #ccefff;
+  letter-spacing: 0.42em;
 
-      text-transform: uppercase;
-    }
+  color: #bcecff;
+
+  text-transform: uppercase;
+
+  text-shadow:
+    0 0 12px rgba(77, 204, 255, .18);
+}
 
     .slogan {
       margin-top: 34px;
