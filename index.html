@@ -379,22 +379,88 @@
         </div>
 
         <div class="versus">VS</div>
-
-        <div class="team">
-          <div class="team-logo">?</div>
-          <strong>СОПЕРНИК</strong>
-        </div>
+<div class="team">
+  <div class="team-logo" id="opponent-logo">?</div>
+  <strong id="opponent-name">СОПЕРНИК</strong>
+</div>
       </div>
 
-      <div class="match-info">
-        ДАТА И ВРЕМЯ БУДУТ ДОБАВЛЕНЫ<br>
-        АКТАУ
-      </div>
+<div class="match-info">
+  <span id="match-datetime">ДАТА И ВРЕМЯ БУДУТ ДОБАВЛЕНЫ</span><br>
+  <span id="match-competition"></span><br>
+  <span id="match-venue">АКТАУ</span>
+</div>
     </div>
 
   </div>
 
 </section>
+<script type="module">
+  import { createClient } from
+    'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
+  const supabase = createClient(
+    'https://socqbqyhkyvxnsukgcqm.supabase.co',
+    'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK'
+  );
+
+  async function loadNextMatch() {
+
+    const { data, error } = await supabase
+      .from('matches')
+      .select('*')
+      .eq('is_featured', true)
+      .eq('status', 'upcoming')
+      .order('match_date', { ascending: true })
+      .limit(1)
+      .maybeSingle();
+
+    if (error) {
+      console.error('Ошибка загрузки матча:', error);
+      return;
+    }
+
+    if (!data) return;
+
+    document.getElementById('opponent-name').textContent =
+      data.opponent || 'СОПЕРНИК';
+
+    document.getElementById('match-competition').textContent =
+      data.competition || '';
+
+    document.getElementById('match-venue').textContent =
+      data.venue || '';
+
+    if (data.match_date) {
+      const date = new Date(data.match_date);
+
+      const formatted = new Intl.DateTimeFormat('ru-RU', {
+        timeZone: 'Asia/Aqtau',
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      }).format(date);
+
+      document.getElementById('match-datetime').textContent =
+        formatted;
+    }
+
+    const logoBox =
+      document.getElementById('opponent-logo');
+
+    if (data.opponent_logo_url) {
+      logoBox.innerHTML =
+        `<img src="${data.opponent_logo_url}"
+              alt="${data.opponent}"
+              style="width:100%;height:100%;object-fit:contain;">`;
+    } else {
+      logoBox.textContent = '?';
+    }
+  }
+
+  loadNextMatch();
+</script>
 </body>
 </html>
