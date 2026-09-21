@@ -51,9 +51,9 @@
       background:
         linear-gradient(
           90deg,
-          rgba(1, 9, 16, 0.91) 0%,
-          rgba(2, 16, 27, 0.69) 43%,
-          rgba(1, 10, 18, 0.35) 100%
+          rgba(1, 9, 16, .91) 0%,
+          rgba(2, 16, 27, .69) 43%,
+          rgba(1, 10, 18, .35) 100%
         ),
         url("hero-bg.png");
 
@@ -97,7 +97,7 @@
       justify-content: space-between;
 
       border-bottom:
-        1px solid rgba(115, 209, 255, 0.17);
+        1px solid rgba(115,209,255,.17);
     }
 
     .logo {
@@ -142,7 +142,6 @@
       bottom: 0;
 
       height: 2px;
-
       background: #44ccff;
 
       transition: .25s;
@@ -207,9 +206,7 @@
       z-index: 5;
 
       width: min(1440px,92%);
-
-      min-height:
-        calc(100vh - 105px);
+      min-height: calc(100vh - 105px);
 
       margin: auto;
     }
@@ -235,11 +232,12 @@
 
 
     /* ======================================================
-       КАСПИЙ
+       КАСПИЙ — ПОЛНАЯ ТЕКСТУРА ВОЛНЫ
        ====================================================== */
 
     .hero-title {
       display: inline-block;
+
       margin: 0;
 
       font-family:
@@ -271,15 +269,31 @@
 
       color: transparent;
 
-      background:
+      /*
+        ВАЖНО:
+        100% 100% растягивает ВСЮ текстуру
+        от первой буквы до последней.
+        Теперь волна не обрезается.
+      */
+
+      background-image:
         linear-gradient(
           to bottom,
-          rgba(255,255,255,.24) 0%,
-          rgba(255,255,255,.05) 25%,
-          rgba(255,255,255,0) 40%
+          rgba(230,248,255,.15) 0%,
+          rgba(255,255,255,0) 32%
         ),
-        url("./title-texture.png")
-        center / cover
+        url("./title-texture.png");
+
+      background-size:
+        100% 100%,
+        100% 100%;
+
+      background-position:
+        center center,
+        center center;
+
+      background-repeat:
+        no-repeat,
         no-repeat;
 
       -webkit-background-clip: text;
@@ -288,17 +302,20 @@
       -webkit-text-fill-color: transparent;
 
       -webkit-text-stroke:
-        1.5px rgba(205,235,255,.35);
+        1.2px rgba(205,235,255,.40);
 
       filter:
-        brightness(1.08)
-        contrast(1.08)
-        saturate(1.04)
+        brightness(1.18)
+        contrast(1.12)
+        saturate(1.15)
         drop-shadow(
           0 7px 15px
-          rgba(0,0,0,.35)
+          rgba(0,0,0,.38)
         );
     }
+
+
+    /* FUTSAL CLUB */
 
     .hero-subtitle {
       margin-top: 18px;
@@ -319,8 +336,7 @@
       color: #d6effc;
 
       text-shadow:
-        0 0 10px
-        rgba(120,210,255,.16);
+        0 0 10px rgba(120,210,255,.16);
     }
 
     .slogan {
@@ -340,7 +356,7 @@
 
 
     /* ======================================================
-       HERO RIGHT TEXT
+       HERO RIGHT
        ====================================================== */
 
     .location {
@@ -401,7 +417,7 @@
 
 
     /* ======================================================
-       WIDE MATCH CARD
+       MATCH CARD
        ====================================================== */
 
     .next-match-card {
@@ -451,8 +467,6 @@
     }
 
 
-    /* MATCH HEADER */
-
     .next-match-header {
       position: relative;
       z-index: 2;
@@ -472,9 +486,7 @@
     .next-match-header h3 {
       margin: 0;
 
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald', sans-serif;
 
       color: #8ddfff;
 
@@ -495,16 +507,8 @@
       letter-spacing: .17em;
 
       text-transform: uppercase;
-
-      transition: .2s;
     }
 
-    .all-matches-link:hover {
-      color: #76dcff;
-    }
-
-
-    /* MATCH BODY */
 
     .next-match-body {
       position: relative;
@@ -555,7 +559,7 @@
     }
 
 
-    /* TEAMS */
+    /* TEAM */
 
     .next-team-logo {
       width: 92px;
@@ -688,7 +692,7 @@
       display: grid;
 
       grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3,1fr);
 
       align-items: center;
 
@@ -754,9 +758,7 @@
        ====================================================== */
 
     .results-section {
-      padding:
-        90px 0
-        100px;
+      padding: 90px 0 100px;
 
       background:
         radial-gradient(
@@ -802,9 +804,7 @@
     .results-heading h2 {
       margin: 0;
 
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald', sans-serif;
 
       font-size:
         clamp(
@@ -833,10 +833,7 @@
       display: grid;
 
       grid-template-columns:
-        repeat(
-          2,
-          minmax(0,1fr)
-        );
+        repeat(2,minmax(0,1fr));
 
       gap: 16px;
     }
@@ -857,21 +854,13 @@
 
       border:
         1px solid rgba(76,205,255,.17);
-
-      transition: .25s;
-    }
-
-    .result-card:hover {
-      transform:
-        translateY(-3px);
-
-      border-color:
-        rgba(76,205,255,.48);
     }
 
     .result-top {
       display: flex;
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
 
       gap: 20px;
 
@@ -893,17 +882,13 @@
       color: #708b9c;
 
       font-size: 10px;
-
-      letter-spacing: .1em;
     }
 
     .result-teams {
       display: grid;
 
       grid-template-columns:
-        1fr
-        auto
-        1fr;
+        1fr auto 1fr;
 
       align-items: center;
 
@@ -927,8 +912,7 @@
       width: 58px;
       height: 58px;
 
-      flex:
-        0 0 58px;
+      flex: 0 0 58px;
     }
 
     .result-logo img {
@@ -941,10 +925,6 @@
     .result-team-name {
       font-size: 13px;
       font-weight: 800;
-
-      line-height: 1.4;
-
-      letter-spacing: .04em;
 
       text-transform: uppercase;
     }
@@ -1067,40 +1047,6 @@
 
 
     /* ======================================================
-       TABLET
-       ====================================================== */
-
-    @media (max-width: 1150px) {
-
-      nav {
-        gap: 17px;
-      }
-
-      nav a {
-        font-size: 9px;
-      }
-
-      .next-match-body {
-        grid-template-columns:
-          1fr
-          1px
-          1fr;
-
-        row-gap: 26px;
-      }
-
-      .next-match-body .match-divider:nth-of-type(2) {
-        display: none;
-      }
-
-      .countdown-column {
-        grid-column: 1 / -1;
-      }
-
-    }
-
-
-    /* ======================================================
        MOBILE
        ====================================================== */
 
@@ -1160,30 +1106,8 @@
         display: none;
       }
 
-      .next-match-section {
-        padding:
-          22px 0
-          42px;
-      }
-
-      .next-match-container {
-        width: 94%;
-      }
-
-      .next-match-header {
-        padding: 0 18px;
-      }
-
-      .next-match-header h3 {
-        font-size: 13px;
-      }
-
       .next-match-body {
         display: block;
-
-        padding:
-          25px
-          18px;
       }
 
       .match-divider {
@@ -1202,25 +1126,8 @@
           );
       }
 
-      .next-match-column {
-        padding: 5px 0;
-      }
-
-      .countdown-column {
-        margin-top: 4px;
-      }
-
       .results-grid {
         grid-template-columns: 1fr;
-      }
-
-      .results-heading {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .results-line {
-        width: 100%;
       }
 
       .footer-inner {
@@ -1232,62 +1139,6 @@
 
     }
 
-
-    @media (max-width: 520px) {
-
-      .hero-title {
-        font-size:
-          clamp(
-            70px,
-            24vw,
-            120px
-          );
-      }
-
-      .hero-subtitle {
-        font-size: 17px;
-        letter-spacing: .15em;
-      }
-
-      .all-matches-link {
-        display: none;
-      }
-
-      .next-team-logo {
-        width: 76px;
-        height: 76px;
-      }
-
-      .match-time {
-        font-size: 40px;
-      }
-
-      .countdown {
-        max-width: 260px;
-      }
-
-      .countdown-number {
-        font-size: 32px;
-      }
-
-      .result-teams {
-        gap: 6px;
-      }
-
-      .result-logo {
-        width: 38px;
-        height: 38px;
-
-        flex-basis: 38px;
-      }
-
-      .result-score {
-        min-width: 55px;
-        font-size: 25px;
-      }
-
-    }
-
   </style>
 </head>
 
@@ -1295,21 +1146,13 @@
 <body>
 
 
-<!-- ======================================================
-     HERO
-     ====================================================== -->
-
 <section class="hero">
+
 
   <header>
 
     <a href="#" class="logo">
-
-      <img
-        src="logo.png"
-        alt="Caspiy Futsal Club"
-      >
-
+      <img src="logo.png" alt="Caspiy Futsal Club">
     </a>
 
 
@@ -1361,6 +1204,7 @@
   </header>
 
 
+
   <div class="hero-content">
 
 
@@ -1383,22 +1227,19 @@
 
 
       <div class="slogan">
-
         Наша стихия — движение<br>
         Наш дом — Каспий
-
       </div>
 
     </div>
 
 
+
     <div class="location">
 
       <div class="side-slogan">
-
         Один регион<br>
         Одна команда
-
       </div>
 
       AQTAU<br>
@@ -1409,13 +1250,10 @@
 
   </div>
 
+
 </section>
 
 
-
-<!-- ======================================================
-     NEXT MATCH
-     ====================================================== -->
 
 <section
   class="next-match-section"
@@ -1447,8 +1285,6 @@
 
       <div class="next-match-body">
 
-
-        <!-- LEFT TEAM -->
 
         <div class="next-match-column">
 
@@ -1484,8 +1320,6 @@
 
 
 
-        <!-- DATE / TIME -->
-
         <div class="next-match-column">
 
           <div
@@ -1505,14 +1339,12 @@
           <div
             class="match-competition"
             id="next-match-competition"
-          >
-          </div>
+          ></div>
 
           <div
             class="match-venue"
             id="next-match-venue"
-          >
-          </div>
+          ></div>
 
         </div>
 
@@ -1521,8 +1353,6 @@
         <div class="match-divider"></div>
 
 
-
-        <!-- RIGHT TEAM -->
 
         <div class="next-match-column">
 
@@ -1546,8 +1376,7 @@
           <div
             class="next-team-city"
             id="right-team-city"
-          >
-          </div>
+          ></div>
 
         </div>
 
@@ -1557,14 +1386,7 @@
 
 
 
-        <!-- COUNTDOWN -->
-
-        <div
-          class="
-            next-match-column
-            countdown-column
-          "
-        >
+        <div class="next-match-column">
 
           <div
             class="countdown-title"
@@ -1634,7 +1456,6 @@
 
       </div>
 
-
     </div>
 
 
@@ -1643,10 +1464,6 @@
 </section>
 
 
-
-<!-- ======================================================
-     RESULTS
-     ====================================================== -->
 
 <section
   class="results-section"
@@ -1657,7 +1474,6 @@
 
 
     <div class="results-heading">
-
 
       <div>
 
@@ -1671,12 +1487,9 @@
 
       </div>
 
-
       <div class="results-line"></div>
 
-
     </div>
-
 
 
     <div
@@ -1697,14 +1510,9 @@
 
 
 
-<!-- ======================================================
-     FOOTER
-     ====================================================== -->
-
 <footer>
 
   <div class="footer-inner">
-
 
     <div class="footer-logo">
 
@@ -1719,21 +1527,15 @@
 
     </div>
 
-
     <div class="footer-text">
       AQTAU · KAZAKHSTAN
     </div>
-
 
   </div>
 
 </footer>
 
 
-
-<!-- ======================================================
-     SUPABASE + MATCH LOGIC
-     ====================================================== -->
 
 <script type="module">
 
@@ -1751,26 +1553,8 @@
   let countdownTimer = null;
 
 
-  /* ======================================================
-     HELPERS
-     ====================================================== */
-
-  function escapeHtml(value) {
-
-    return String(value ?? '')
-      .replaceAll('&', '&amp;')
-      .replaceAll('<', '&lt;')
-      .replaceAll('>', '&gt;')
-      .replaceAll('"', '&quot;')
-      .replaceAll("'", '&#039;');
-
-  }
-
-
   function pad(value) {
-
-    return String(value).padStart(2, '0');
-
+    return String(value).padStart(2,'0');
   }
 
 
@@ -1778,26 +1562,19 @@
 
     if (!value) return '';
 
-
-    const formatted =
-      new Intl.DateTimeFormat(
-        'ru-RU',
-        {
-          timeZone: 'Asia/Aqtau',
-
-          day: 'numeric',
-          month: 'long',
-          year: 'numeric'
-        }
-      )
-      .format(
-        new Date(value)
-      )
-      .replace(' г.', '')
-      .replace(' г', '');
-
-
-    return formatted.toUpperCase();
+    return new Intl.DateTimeFormat(
+      'ru-RU',
+      {
+        timeZone: 'Asia/Aqtau',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }
+    )
+    .format(new Date(value))
+    .replace(' г.','')
+    .replace(' г','')
+    .toUpperCase();
 
   }
 
@@ -1806,20 +1583,15 @@
 
     if (!value) return '--:--';
 
-
     return new Intl.DateTimeFormat(
       'ru-RU',
       {
         timeZone: 'Asia/Aqtau',
-
         hour: '2-digit',
         minute: '2-digit',
-
         hour12: false
       }
-    ).format(
-      new Date(value)
-    );
+    ).format(new Date(value));
 
   }
 
@@ -1828,83 +1600,73 @@
 
     if (!value) return '';
 
-
     return new Intl.DateTimeFormat(
       'ru-RU',
       {
         timeZone: 'Asia/Aqtau',
-
         day: '2-digit',
         month: '2-digit',
         year: 'numeric'
       }
-    ).format(
-      new Date(value)
-    );
+    ).format(new Date(value));
 
   }
 
 
-  function findOpponentTeam(
-    opponent,
-    teams
-  ) {
+  function findOpponentTeam(opponent,teams) {
 
-    if (
-      !opponent ||
-      !teams
-    ) {
+    if (!opponent || !teams) {
       return null;
     }
 
-
-    const name =
+    const value =
       opponent
+      .toLowerCase()
+      .trim();
+
+    return teams.find(team => {
+
+      const name =
+        String(team.name || '')
         .toLowerCase()
         .trim();
 
+      return (
+        name &&
+        (
+          value.includes(name) ||
+          name.includes(value)
+        )
+      );
 
-    return teams.find(
-      team => {
-
-        const teamName =
-          String(
-            team.name || ''
-          )
-          .toLowerCase()
-          .trim();
-
-
-        if (!teamName) {
-          return false;
-        }
-
-
-        return (
-          name.includes(teamName) ||
-          teamName.includes(name)
-        );
-
-      }
-    ) || null;
+    }) || null;
 
   }
 
 
-  /* ======================================================
-     COUNTDOWN
-     ====================================================== */
+  function renderTeam(side,team) {
 
-  function startCountdown(
-    matchDate
-  ) {
+    document.getElementById(
+      `${side}-team-logo`
+    ).src = team.logo;
+
+
+    document.getElementById(
+      `${side}-team-name`
+    ).textContent = team.name;
+
+
+    document.getElementById(
+      `${side}-team-city`
+    ).textContent = team.city || '';
+
+  }
+
+
+  function startCountdown(matchDate) {
 
     if (countdownTimer) {
-
-      clearInterval(
-        countdownTimer
-      );
-
+      clearInterval(countdownTimer);
     }
 
 
@@ -1913,18 +1675,15 @@
         'countdown-days'
       );
 
-
     const hoursElement =
       document.getElementById(
         'countdown-hours'
       );
 
-
     const minutesElement =
       document.getElementById(
         'countdown-minutes'
       );
-
 
     const titleElement =
       document.getElementById(
@@ -1934,33 +1693,18 @@
 
     function update() {
 
-      const now =
-        Date.now();
-
-
       const target =
-        new Date(
-          matchDate
-        ).getTime();
-
+        new Date(matchDate).getTime();
 
       let difference =
-        target - now;
+        target - Date.now();
 
 
-      if (
-        !Number.isFinite(target) ||
-        difference <= 0
-      ) {
+      if (difference <= 0) {
 
-        daysElement.textContent =
-          '00';
-
-        hoursElement.textContent =
-          '00';
-
-        minutesElement.textContent =
-          '00';
+        daysElement.textContent = '00';
+        hoursElement.textContent = '00';
+        minutesElement.textContent = '00';
 
         titleElement.textContent =
           'МАТЧ НАЧАЛСЯ';
@@ -1973,10 +1717,8 @@
       const day =
         1000 * 60 * 60 * 24;
 
-
       const hour =
         1000 * 60 * 60;
-
 
       const minute =
         1000 * 60;
@@ -1987,9 +1729,7 @@
           difference / day
         );
 
-
-      difference %=
-        day;
+      difference %= day;
 
 
       const hours =
@@ -1997,9 +1737,7 @@
           difference / hour
         );
 
-
-      difference %=
-        hour;
+      difference %= hour;
 
 
       const minutes =
@@ -2011,23 +1749,16 @@
       daysElement.textContent =
         pad(days);
 
-
       hoursElement.textContent =
         pad(hours);
 
-
       minutesElement.textContent =
         pad(minutes);
-
-
-      titleElement.textContent =
-        'ДО МАТЧА';
 
     }
 
 
     update();
-
 
     countdownTimer =
       setInterval(
@@ -2038,55 +1769,6 @@
   }
 
 
-  /* ======================================================
-     RENDER TEAM
-     ====================================================== */
-
-  function renderTeam(
-    side,
-    team
-  ) {
-
-    const logoElement =
-      document.getElementById(
-        `${side}-team-logo`
-      );
-
-
-    const nameElement =
-      document.getElementById(
-        `${side}-team-name`
-      );
-
-
-    const cityElement =
-      document.getElementById(
-        `${side}-team-city`
-      );
-
-
-    logoElement.src =
-      team.logo;
-
-
-    logoElement.alt =
-      team.name;
-
-
-    nameElement.textContent =
-      team.name;
-
-
-    cityElement.textContent =
-      team.city || '';
-
-  }
-
-
-  /* ======================================================
-     NEXT MATCH
-     ====================================================== */
-
   async function loadNextMatch() {
 
 
@@ -2096,38 +1778,29 @@
     ] =
       await Promise.all([
 
-
         supabase
           .from('matches')
           .select('*')
-          .eq(
-            'is_featured',
-            true
-          )
-          .eq(
-            'status',
-            'upcoming'
-          )
+          .eq('is_featured',true)
+          .eq('status','upcoming')
           .order(
             'match_date',
             {
-              ascending: true
+              ascending:true
             }
           )
           .limit(1)
           .maybeSingle(),
 
-
         supabase
           .from('teams')
           .select(
-            'name, city, logo_url'
+            'name,city,logo_url'
           )
           .eq(
             'is_active',
             true
           )
-
 
       ]);
 
@@ -2136,42 +1809,8 @@
       matchResponse.data;
 
 
-    if (
-      matchResponse.error
-    ) {
-
-      console.error(
-        'Ошибка следующего матча:',
-        matchResponse.error
-      );
-
-      return;
-
-    }
-
-
     if (!match) {
-
-      document.getElementById(
-        'next-match-date'
-      ).textContent =
-        'МАТЧ НЕ НАЗНАЧЕН';
-
-
-      document.getElementById(
-        'next-match-time'
-      ).textContent =
-        '--:--';
-
-
-      document.getElementById(
-        'countdown-title'
-      ).textContent =
-        'ОЖИДАЕМ СЛЕДУЮЩИЙ МАТЧ';
-
-
       return;
-
     }
 
 
@@ -2187,16 +1826,9 @@
 
 
     const caspiy = {
-
-      name:
-        'КАСПИЙ',
-
-      city:
-        'АКТАУ',
-
-      logo:
-        'logo.png'
-
+      name:'КАСПИЙ',
+      city:'АКТАУ',
+      logo:'logo.png'
     };
 
 
@@ -2223,15 +1855,12 @@
     };
 
 
-    if (
-      match.is_home
-    ) {
+    if (match.is_home) {
 
       renderTeam(
         'left',
         caspiy
       );
-
 
       renderTeam(
         'right',
@@ -2244,7 +1873,6 @@
         'left',
         opponent
       );
-
 
       renderTeam(
         'right',
@@ -2289,14 +1917,11 @@
   }
 
 
-  /* ======================================================
-     RESULTS
-     ====================================================== */
 
   async function loadResults() {
 
 
-    const resultsList =
+    const list =
       document.getElementById(
         'results-list'
       );
@@ -2307,320 +1932,220 @@
       error
     } =
       await supabase
-        .from('matches')
-        .select('*')
-        .eq(
-          'status',
-          'finished'
-        )
-        .order(
-          'match_date',
-          {
-            ascending: false
-          }
-        )
-        .limit(4);
-
-
-    if (error) {
-
-      console.error(
-        'Ошибка результатов:',
-        error
-      );
-
-
-      resultsList.innerHTML = `
-
-        <div class="results-empty">
-
-          НЕ УДАЛОСЬ ЗАГРУЗИТЬ РЕЗУЛЬТАТЫ
-
-        </div>
-
-      `;
-
-
-      return;
-
-    }
+      .from('matches')
+      .select('*')
+      .eq(
+        'status',
+        'finished'
+      )
+      .order(
+        'match_date',
+        {
+          ascending:false
+        }
+      )
+      .limit(4);
 
 
     if (
+      error ||
       !data ||
       data.length === 0
     ) {
 
-      resultsList.innerHTML = `
+      list.innerHTML = `
 
         <div class="results-empty">
 
-          ЗАВЕРШЁННЫХ МАТЧЕЙ ПОКА НЕТ
+          ЗАВЕРШЁННЫХ МАТЧЕЙ
+          ПОКА НЕТ
 
         </div>
 
       `;
-
 
       return;
 
     }
 
 
-    resultsList.innerHTML =
-      data.map(
-        match => {
+    list.innerHTML =
+      data.map(match => {
 
 
-          const opponentName =
-            escapeHtml(
-              match.opponent ||
-              'СОПЕРНИК'
-            );
+        const opponentLogo =
+          match.opponent_logo_url
+
+            ? `
+              <img
+                src="${match.opponent_logo_url}"
+                alt=""
+              >
+            `
+
+            : '';
 
 
-          const opponentLogo =
-            match.opponent_logo_url
+        const caspiyLogo = `
 
-              ? `
+          <img
+            src="logo.png"
+            alt="Каспий"
+          >
 
-                <img
-                  src="${escapeHtml(
-                    match.opponent_logo_url
-                  )}"
-                  alt="${opponentName}"
-                >
-
-              `
-
-              : '';
+        `;
 
 
-          const caspiyLogo = `
+        const cs =
+          match.caspiy_score ?? '-';
 
-            <img
-              src="logo.png"
-              alt="Каспий"
-            >
+        const os =
+          match.opponent_score ?? '-';
+
+
+        let left;
+        let right;
+        let ls;
+        let rs;
+
+
+        if (match.is_home) {
+
+          left = `
+
+            <div class="result-team">
+
+              <div class="result-logo">
+                ${caspiyLogo}
+              </div>
+
+              <div>
+
+                <div class="result-team-name">
+                  КАСПИЙ
+                </div>
+
+                <div class="result-city">
+                  АКТАУ
+                </div>
+
+              </div>
+
+            </div>
 
           `;
 
 
-          const caspiyScore =
-            match.caspiy_score
-            ?? '-';
+          right = `
 
+            <div class="result-team away">
 
-          const opponentScore =
-            match.opponent_score
-            ?? '-';
-
-
-          let leftTeam;
-          let rightTeam;
-
-          let leftScore;
-          let rightScore;
-
-
-          if (
-            match.is_home
-          ) {
-
-
-            leftTeam = `
-
-              <div class="result-team">
-
-                <div class="result-logo">
-                  ${caspiyLogo}
-                </div>
-
-                <div>
-
-                  <div class="result-team-name">
-                    КАСПИЙ
-                  </div>
-
-                  <div class="result-city">
-                    АКТАУ
-                  </div>
-
-                </div>
-
+              <div class="result-logo">
+                ${opponentLogo}
               </div>
 
-            `;
-
-
-            rightTeam = `
-
-              <div class="result-team away">
-
-                <div class="result-logo">
-                  ${opponentLogo}
-                </div>
-
-                <div>
-
-                  <div class="result-team-name">
-                    ${opponentName}
-                  </div>
-
-                </div>
-
+              <div class="result-team-name">
+                ${match.opponent}
               </div>
 
-            `;
-
-
-            leftScore =
-              caspiyScore;
-
-
-            rightScore =
-              opponentScore;
-
-
-          } else {
-
-
-            leftTeam = `
-
-              <div class="result-team">
-
-                <div class="result-logo">
-                  ${opponentLogo}
-                </div>
-
-                <div>
-
-                  <div class="result-team-name">
-                    ${opponentName}
-                  </div>
-
-                </div>
-
-              </div>
-
-            `;
-
-
-            rightTeam = `
-
-              <div class="result-team away">
-
-                <div class="result-logo">
-                  ${caspiyLogo}
-                </div>
-
-                <div>
-
-                  <div class="result-team-name">
-                    КАСПИЙ
-                  </div>
-
-                  <div class="result-city">
-                    АКТАУ
-                  </div>
-
-                </div>
-
-              </div>
-
-            `;
-
-
-            leftScore =
-              opponentScore;
-
-
-            rightScore =
-              caspiyScore;
-
-          }
-
-
-          return `
-
-            <article class="result-card">
-
-
-              <div class="result-top">
-
-
-                <div class="result-competition">
-
-                  ${
-                    escapeHtml(
-                      match.competition ||
-                      'МАТЧ'
-                    )
-                  }
-
-                </div>
-
-
-                <div class="result-date">
-
-                  ${
-                    formatShortDate(
-                      match.match_date
-                    )
-                  }
-
-                </div>
-
-
-              </div>
-
-
-
-              <div class="result-teams">
-
-
-                ${leftTeam}
-
-
-                <div class="result-score">
-
-                  ${leftScore}:${rightScore}
-
-                </div>
-
-
-                ${rightTeam}
-
-
-              </div>
-
-
-
-              <div class="result-venue">
-
-                ${
-                  escapeHtml(
-                    match.venue || ''
-                  )
-                }
-
-              </div>
-
-
-            </article>
+            </div>
 
           `;
+
+          ls = cs;
+          rs = os;
+
+        } else {
+
+          left = `
+
+            <div class="result-team">
+
+              <div class="result-logo">
+                ${opponentLogo}
+              </div>
+
+              <div class="result-team-name">
+                ${match.opponent}
+              </div>
+
+            </div>
+
+          `;
+
+
+          right = `
+
+            <div class="result-team away">
+
+              <div class="result-logo">
+                ${caspiyLogo}
+              </div>
+
+              <div>
+
+                <div class="result-team-name">
+                  КАСПИЙ
+                </div>
+
+                <div class="result-city">
+                  АКТАУ
+                </div>
+
+              </div>
+
+            </div>
+
+          `;
+
+          ls = os;
+          rs = cs;
 
         }
-      )
-      .join('');
+
+
+        return `
+
+          <article class="result-card">
+
+            <div class="result-top">
+
+              <div class="result-competition">
+                ${match.competition || 'МАТЧ'}
+              </div>
+
+              <div class="result-date">
+                ${formatShortDate(match.match_date)}
+              </div>
+
+            </div>
+
+
+            <div class="result-teams">
+
+              ${left}
+
+              <div class="result-score">
+                ${ls}:${rs}
+              </div>
+
+              ${right}
+
+            </div>
+
+
+            <div class="result-venue">
+              ${match.venue || ''}
+            </div>
+
+          </article>
+
+        `;
+
+      }).join('');
 
   }
 
-
-  /* ======================================================
-     LOAD
-     ====================================================== */
 
   await Promise.all([
     loadNextMatch(),
