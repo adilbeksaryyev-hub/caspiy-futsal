@@ -15,7 +15,6 @@
   >
 
   <style>
-
     * {
       margin: 0;
       padding: 0;
@@ -38,10 +37,7 @@
       text-decoration: none;
     }
 
-
-    /* ======================================================
-       HERO
-       ====================================================== */
+    /* HERO */
 
     .hero {
       position: relative;
@@ -78,10 +74,7 @@
       pointer-events: none;
     }
 
-
-    /* ======================================================
-       HEADER
-       ====================================================== */
+    /* HEADER */
 
     header {
       position: relative;
@@ -89,15 +82,13 @@
 
       width: min(1440px,92%);
       height: 105px;
-
       margin: auto;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      border-bottom:
-        1px solid rgba(115,209,255,.17);
+      border-bottom: 1px solid rgba(115,209,255,.17);
     }
 
     .logo img {
@@ -114,7 +105,6 @@
 
     nav a {
       position: relative;
-
       padding: 13px 0;
 
       color: #c2d3dd;
@@ -128,7 +118,6 @@
 
     nav a::after {
       content: "";
-
       position: absolute;
 
       left: 0;
@@ -136,7 +125,6 @@
       bottom: 0;
 
       height: 2px;
-
       background: #44ccff;
 
       transition: .25s;
@@ -170,9 +158,7 @@
     .ticket {
       padding: 14px 25px;
 
-      border:
-        1px solid rgba(70,207,255,.78);
-
+      border: 1px solid rgba(70,207,255,.78);
       border-radius: 6px;
 
       font-size: 11px;
@@ -182,19 +168,14 @@
       text-transform: uppercase;
     }
 
-
-    /* ======================================================
-       HERO CONTENT
-       ====================================================== */
+    /* HERO CONTENT */
 
     .hero-content {
       position: relative;
       z-index: 5;
 
       width: min(1440px,92%);
-
-      min-height:
-        calc(100vh - 105px);
+      min-height: calc(100vh - 105px);
 
       margin: auto;
     }
@@ -213,15 +194,14 @@
       font-weight: 500;
 
       line-height: 1.8;
-
       letter-spacing: .48em;
+
       text-transform: uppercase;
     }
 
-
-    /* ======================================================
+    /* ======================================
        КАСПИЙ
-       ====================================================== */
+       ====================================== */
 
     .hero-title {
       display: inline-block;
@@ -248,87 +228,67 @@
 
       text-transform: uppercase;
 
-      /*
-         Буквы чуть выше
-         и чуть уже
-      */
-
+      /* выше и уже */
       transform:
         scaleX(.91)
         scaleY(1.08);
 
-      transform-origin:
-        left center;
+      transform-origin: left center;
 
       color: transparent;
 
-
       /*
-         ОДНА ТЕКСТУРА.
-         Без двойного слоя и без screen.
-         Сверху тёмный прозрачный слой,
-         чтобы вода не была слишком яркой.
+        ВАЖНО:
+        картинка занимает примерно 62%
+        высоты и повторяется,
+        поэтому волна проходит по всей букве,
+        а не только одной полосой.
       */
 
       background-image:
-
         linear-gradient(
           to bottom,
-          rgba(0,20,38,.12) 0%,
-          rgba(0,15,30,.22) 48%,
-          rgba(0,9,20,.35) 100%
+          rgba(170,225,245,.08) 0%,
+          rgba(0,50,85,.05) 50%,
+          rgba(0,25,50,.12) 100%
         ),
-
         url("./title-texture.png");
-
-
-      /*
-         По ширине вся картинка.
-         По высоте 135% —
-         волна становится крупнее
-         и лучше заполняет буквы.
-      */
 
       background-size:
         100% 100%,
-        100% 135%;
-
+        100% 62%;
 
       background-position:
         center center,
-        center 48%;
-
+        center top;
 
       background-repeat:
         no-repeat,
-        no-repeat;
-
+        repeat-y;
 
       -webkit-background-clip: text;
       background-clip: text;
 
       -webkit-text-fill-color: transparent;
 
-
       -webkit-text-stroke:
-        .9px rgba(185,225,242,.35);
-
+        1px rgba(195,232,248,.38);
 
       /*
-         Здесь специально сделали
-         текст темнее предыдущего.
+        Теперь почти без затемнения.
+        Цвет должен быть средним:
+        не белый и не слишком тёмный.
       */
 
       filter:
-        brightness(.87)
-        contrast(1.08)
-        saturate(.92)
+        brightness(1.02)
+        contrast(1.10)
+        saturate(1.05)
         drop-shadow(
           0 7px 15px
-          rgba(0,0,0,.42)
+          rgba(0,0,0,.38)
         );
     }
-
 
     .hero-subtitle {
       margin-top: 18px;
@@ -364,10 +324,7 @@
       text-transform: uppercase;
     }
 
-
-    /* ======================================================
-       RIGHT
-       ====================================================== */
+    /* RIGHT HERO */
 
     .location {
       position: absolute;
@@ -402,10 +359,7 @@
       letter-spacing: .28em;
     }
 
-
-    /* ======================================================
-       NEXT MATCH
-       ====================================================== */
+    /* NEXT MATCH SECTION */
 
     .next-match-section {
       padding: 32px 0 58px;
@@ -472,11 +426,6 @@
       pointer-events: none;
     }
 
-
-    /* ======================================================
-       MATCH HEADER
-       ====================================================== */
-
     .next-match-header {
       position: relative;
       z-index: 2;
@@ -494,9 +443,7 @@
     }
 
     .next-match-header h3 {
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald',sans-serif;
 
       color: #8ddfff;
 
@@ -519,11 +466,6 @@
       text-transform: uppercase;
     }
 
-
-    /* ======================================================
-       MATCH BODY
-       ====================================================== */
-
     .next-match-body {
       position: relative;
       z-index: 2;
@@ -543,10 +485,7 @@
 
       min-height: 235px;
 
-      padding:
-        19px
-        25px
-        22px;
+      padding: 19px 25px 22px;
     }
 
     .match-divider {
@@ -566,22 +505,14 @@
 
     .next-match-column {
       text-align: center;
-
-      padding:
-        10px
-        24px;
+      padding: 10px 24px;
     }
-
-
-    /* TEAM */
 
     .next-team-logo {
       width: 92px;
       height: 92px;
 
-      margin:
-        0 auto
-        13px;
+      margin: 0 auto 13px;
 
       display: flex;
       align-items: center;
@@ -627,9 +558,6 @@
       text-transform: uppercase;
     }
 
-
-    /* DATE */
-
     .match-date {
       color: #b4cbd7;
 
@@ -642,15 +570,11 @@
     }
 
     .match-time {
-      margin:
-        8px 0
-        12px;
+      margin: 8px 0 12px;
 
       color: #f5fbff;
 
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald',sans-serif;
 
       font-size: 47px;
       font-weight: 500;
@@ -683,10 +607,7 @@
       text-transform: uppercase;
     }
 
-
-    /* ======================================================
-       COUNTDOWN
-       ====================================================== */
+    /* COUNTDOWN */
 
     .countdown-title {
       margin-bottom: 20px;
@@ -740,9 +661,7 @@
     .countdown-number {
       color: #f8fcff;
 
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald',sans-serif;
 
       font-size: 38px;
       font-weight: 500;
@@ -763,15 +682,10 @@
       text-transform: uppercase;
     }
 
-
-    /* ======================================================
-       RESULTS
-       ====================================================== */
+    /* RESULTS */
 
     .results-section {
-      padding:
-        90px 0
-        100px;
+      padding: 90px 0 100px;
 
       background:
         radial-gradient(
@@ -815,9 +729,7 @@
     }
 
     .results-heading h2 {
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald',sans-serif;
 
       font-size:
         clamp(
@@ -857,9 +769,7 @@
     .result-card {
       min-height: 190px;
 
-      padding:
-        25px
-        28px;
+      padding: 25px 28px;
 
       background:
         linear-gradient(
@@ -929,8 +839,7 @@
       width: 58px;
       height: 58px;
 
-      flex:
-        0 0 58px;
+      flex: 0 0 58px;
     }
 
     .result-logo img {
@@ -960,9 +869,7 @@
 
       text-align: center;
 
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald',sans-serif;
 
       font-size: 38px;
     }
@@ -983,8 +890,7 @@
 
     .results-empty,
     .results-loading {
-      grid-column:
-        1 / -1;
+      grid-column: 1 / -1;
 
       padding: 45px;
 
@@ -1002,10 +908,7 @@
       text-transform: uppercase;
     }
 
-
-    /* ======================================================
-       FOOTER
-       ====================================================== */
+    /* FOOTER */
 
     footer {
       background: #02080d;
@@ -1058,10 +961,7 @@
       text-transform: uppercase;
     }
 
-
-    /* ======================================================
-       MOBILE
-       ====================================================== */
+    /* MOBILE */
 
     @media (max-width: 900px) {
 
@@ -1088,7 +988,6 @@
 
       .hero-text {
         width: 100%;
-
         padding-top: 100px;
       }
 
@@ -1128,8 +1027,7 @@
         width: 70%;
         height: 1px;
 
-        margin:
-          22px auto;
+        margin: 22px auto;
 
         background:
           linear-gradient(
@@ -1143,29 +1041,21 @@
       .results-grid {
         grid-template-columns: 1fr;
       }
-
     }
 
   </style>
 </head>
 
-
 <body>
 
-
-<!-- HERO -->
 
 <section class="hero">
 
   <header>
 
     <a href="#" class="logo">
-      <img
-        src="logo.png"
-        alt="Caspiy Futsal Club"
-      >
+      <img src="logo.png" alt="Caspiy Futsal Club">
     </a>
-
 
     <nav>
 
@@ -1199,17 +1089,13 @@
 
     </nav>
 
-
     <div class="top-actions">
 
       <span class="lang">
         RU⌄
       </span>
 
-      <a
-        class="ticket"
-        href="#"
-      >
+      <a class="ticket" href="#">
         Билеты →
       </a>
 
@@ -1218,9 +1104,7 @@
   </header>
 
 
-
   <div class="hero-content">
-
 
     <div class="hero-text">
 
@@ -1229,16 +1113,13 @@
         чем игра
       </div>
 
-
       <h1 class="hero-title">
         КАСПИЙ
       </h1>
 
-
       <div class="hero-subtitle">
         FUTSAL CLUB
       </div>
-
 
       <div class="slogan">
         Наша стихия — движение<br>
@@ -1246,7 +1127,6 @@
       </div>
 
     </div>
-
 
 
     <div class="location">
@@ -1261,14 +1141,11 @@
 
     </div>
 
-
   </div>
 
 </section>
 
 
-
-<!-- NEXT MATCH -->
 
 <section
   class="next-match-section"
@@ -1276,7 +1153,6 @@
 >
 
   <div class="next-match-container">
-
 
     <div class="next-match-card">
 
@@ -1297,11 +1173,8 @@
       </div>
 
 
-
       <div class="next-match-body">
 
-
-        <!-- LEFT TEAM -->
 
         <div class="next-match-column">
 
@@ -1335,8 +1208,6 @@
         <div class="match-divider"></div>
 
 
-        <!-- DATE -->
-
         <div class="next-match-column">
 
           <div
@@ -1369,8 +1240,6 @@
         <div class="match-divider"></div>
 
 
-        <!-- RIGHT TEAM -->
-
         <div class="next-match-column">
 
           <div class="next-team-logo">
@@ -1401,8 +1270,6 @@
         <div class="match-divider"></div>
 
 
-        <!-- COUNTDOWN -->
-
         <div class="next-match-column">
 
           <div
@@ -1412,9 +1279,7 @@
             ДО МАТЧА
           </div>
 
-
           <div class="countdown">
-
 
             <div class="countdown-part">
 
@@ -1431,7 +1296,6 @@
 
             </div>
 
-
             <div class="countdown-part">
 
               <div
@@ -1446,7 +1310,6 @@
               </div>
 
             </div>
-
 
             <div class="countdown-part">
 
@@ -1463,7 +1326,6 @@
 
             </div>
 
-
           </div>
 
         </div>
@@ -1479,15 +1341,12 @@
 
 
 
-<!-- RESULTS -->
-
 <section
   class="results-section"
   id="results"
 >
 
   <div class="results-container">
-
 
     <div class="results-heading">
 
@@ -1519,26 +1378,19 @@
 
     </div>
 
-
   </div>
 
 </section>
 
 
 
-<!-- FOOTER -->
-
 <footer>
 
   <div class="footer-inner">
 
-
     <div class="footer-logo">
 
-      <img
-        src="logo.png"
-        alt="Каспий"
-      >
+      <img src="logo.png" alt="Каспий">
 
       <strong>
         CASPIY FUTSAL CLUB
@@ -1546,11 +1398,9 @@
 
     </div>
 
-
     <div class="footer-text">
       AQTAU · KAZAKHSTAN
     </div>
-
 
   </div>
 
@@ -1596,7 +1446,6 @@
     .replace(' г.','')
     .replace(' г','')
     .toUpperCase();
-
   }
 
 
@@ -1612,10 +1461,7 @@
         minute: '2-digit',
         hour12: false
       }
-    ).format(
-      new Date(value)
-    );
-
+    ).format(new Date(value));
   }
 
 
@@ -1631,219 +1477,143 @@
         month: '2-digit',
         year: 'numeric'
       }
-    ).format(
-      new Date(value)
-    );
-
+    ).format(new Date(value));
   }
 
 
-  function findOpponentTeam(
-    opponent,
-    teams
-  ) {
+  function findOpponentTeam(opponent, teams) {
 
     if (!opponent || !teams) {
       return null;
     }
 
-
     const value =
-      opponent
+      opponent.toLowerCase().trim();
+
+    return teams.find(team => {
+
+      const name =
+        String(team.name || '')
         .toLowerCase()
         .trim();
 
+      return (
+        name &&
+        (
+          value.includes(name) ||
+          name.includes(value)
+        )
+      );
 
-    return teams.find(
-      team => {
-
-        const name =
-          String(
-            team.name || ''
-          )
-          .toLowerCase()
-          .trim();
-
-
-        return (
-          name &&
-          (
-            value.includes(name) ||
-            name.includes(value)
-          )
-        );
-
-      }
-    ) || null;
-
+    }) || null;
   }
 
 
-  function renderTeam(
-    side,
-    team
-  ) {
+  function renderTeam(side, team) {
 
     document.getElementById(
       `${side}-team-logo`
-    ).src =
-      team.logo;
-
+    ).src = team.logo;
 
     document.getElementById(
       `${side}-team-name`
-    ).textContent =
-      team.name;
-
+    ).textContent = team.name;
 
     document.getElementById(
       `${side}-team-city`
-    ).textContent =
-      team.city || '';
-
+    ).textContent = team.city || '';
   }
 
 
-  function startCountdown(
-    matchDate
-  ) {
+  function startCountdown(matchDate) {
 
     if (countdownTimer) {
-      clearInterval(
-        countdownTimer
-      );
+      clearInterval(countdownTimer);
     }
 
-
     const daysElement =
-      document.getElementById(
-        'countdown-days'
-      );
+      document.getElementById('countdown-days');
 
     const hoursElement =
-      document.getElementById(
-        'countdown-hours'
-      );
+      document.getElementById('countdown-hours');
 
     const minutesElement =
-      document.getElementById(
-        'countdown-minutes'
-      );
+      document.getElementById('countdown-minutes');
 
     const titleElement =
-      document.getElementById(
-        'countdown-title'
-      );
+      document.getElementById('countdown-title');
 
 
     function update() {
 
-
       const target =
-        new Date(
-          matchDate
-        ).getTime();
-
+        new Date(matchDate).getTime();
 
       let difference =
-        target -
-        Date.now();
+        target - Date.now();
 
 
-      if (
-        difference <= 0
-      ) {
+      if (difference <= 0) {
 
-        daysElement.textContent =
-          '00';
-
-        hoursElement.textContent =
-          '00';
-
-        minutesElement.textContent =
-          '00';
+        daysElement.textContent = '00';
+        hoursElement.textContent = '00';
+        minutesElement.textContent = '00';
 
         titleElement.textContent =
           'МАТЧ НАЧАЛСЯ';
 
         return;
-
       }
 
 
       const day =
-        1000 *
-        60 *
-        60 *
-        24;
-
+        1000 * 60 * 60 * 24;
 
       const hour =
-        1000 *
-        60 *
-        60;
-
+        1000 * 60 * 60;
 
       const minute =
-        1000 *
-        60;
+        1000 * 60;
 
 
       const days =
-        Math.floor(
-          difference / day
-        );
+        Math.floor(difference / day);
 
-
-      difference %=
-        day;
+      difference %= day;
 
 
       const hours =
-        Math.floor(
-          difference / hour
-        );
+        Math.floor(difference / hour);
 
-
-      difference %=
-        hour;
+      difference %= hour;
 
 
       const minutes =
-        Math.floor(
-          difference / minute
-        );
+        Math.floor(difference / minute);
 
 
       daysElement.textContent =
         pad(days);
 
-
       hoursElement.textContent =
         pad(hours);
 
-
       minutesElement.textContent =
         pad(minutes);
-
     }
 
 
     update();
-
 
     countdownTimer =
       setInterval(
         update,
         30000
       );
-
   }
 
 
-
   async function loadNextMatch() {
-
 
     const [
       matchResponse,
@@ -1851,27 +1621,19 @@
     ] =
       await Promise.all([
 
-
         supabase
           .from('matches')
           .select('*')
-          .eq(
-            'is_featured',
-            true
-          )
-          .eq(
-            'status',
-            'upcoming'
-          )
+          .eq('is_featured', true)
+          .eq('status', 'upcoming')
           .order(
             'match_date',
             {
-              ascending:true
+              ascending: true
             }
           )
           .limit(1)
           .maybeSingle(),
-
 
         supabase
           .from('teams')
@@ -1882,7 +1644,6 @@
             'is_active',
             true
           )
-
 
       ]);
 
@@ -1908,16 +1669,9 @@
 
 
     const caspiy = {
-
-      name:
-        'КАСПИЙ',
-
-      city:
-        'АКТАУ',
-
-      logo:
-        'logo.png'
-
+      name: 'КАСПИЙ',
+      city: 'АКТАУ',
+      logo: 'logo.png'
     };
 
 
@@ -1928,27 +1682,22 @@
           match.opponent ||
           opponentTeam?.name ||
           'СОПЕРНИК'
-        )
-        .toUpperCase(),
+        ).toUpperCase(),
 
       city:
         (
           opponentTeam?.city ||
           ''
-        )
-        .toUpperCase(),
+        ).toUpperCase(),
 
       logo:
         opponentTeam?.logo_url ||
         match.opponent_logo_url ||
         'logo.png'
-
     };
 
 
-    if (
-      match.is_home
-    ) {
+    if (match.is_home) {
 
       renderTeam(
         'left',
@@ -1971,7 +1720,6 @@
         'right',
         caspiy
       );
-
     }
 
 
@@ -1994,27 +1742,22 @@
     document.getElementById(
       'next-match-competition'
     ).textContent =
-      match.competition ||
-      '';
+      match.competition || '';
 
 
     document.getElementById(
       'next-match-venue'
     ).textContent =
-      match.venue ||
-      '';
+      match.venue || '';
 
 
     startCountdown(
       match.match_date
     );
-
   }
 
 
-
   async function loadResults() {
-
 
     const list =
       document.getElementById(
@@ -2051,230 +1794,192 @@
       list.innerHTML = `
 
         <div class="results-empty">
-
-          ЗАВЕРШЁННЫХ МАТЧЕЙ
-          ПОКА НЕТ
-
+          ЗАВЕРШЁННЫХ МАТЧЕЙ ПОКА НЕТ
         </div>
 
       `;
 
       return;
-
     }
 
 
     list.innerHTML =
-      data.map(
-        match => {
+      data.map(match => {
 
 
-          const opponentLogo =
-            match.opponent_logo_url
+        const opponentLogo =
+          match.opponent_logo_url
 
-              ? `
+            ? `
+              <img
+                src="${match.opponent_logo_url}"
+                alt=""
+              >
+            `
 
-                <img
-                  src="${match.opponent_logo_url}"
-                  alt=""
-                >
-
-              `
-
-              : '';
+            : '';
 
 
-          const caspiyLogo = `
+        const caspiyLogo = `
 
-            <img
-              src="logo.png"
-              alt="Каспий"
-            >
+          <img
+            src="logo.png"
+            alt="Каспий"
+          >
+
+        `;
+
+
+        const cs =
+          match.caspiy_score ?? '-';
+
+        const os =
+          match.opponent_score ?? '-';
+
+
+        let left;
+        let right;
+
+        let ls;
+        let rs;
+
+
+        if (match.is_home) {
+
+          left = `
+
+            <div class="result-team">
+
+              <div class="result-logo">
+                ${caspiyLogo}
+              </div>
+
+              <div>
+
+                <div class="result-team-name">
+                  КАСПИЙ
+                </div>
+
+                <div class="result-city">
+                  АКТАУ
+                </div>
+
+              </div>
+
+            </div>
 
           `;
 
 
-          const cs =
-            match.caspiy_score
-            ?? '-';
+          right = `
 
+            <div class="result-team away">
 
-          const os =
-            match.opponent_score
-            ?? '-';
-
-
-          let left;
-          let right;
-
-          let ls;
-          let rs;
-
-
-          if (
-            match.is_home
-          ) {
-
-
-            left = `
-
-              <div class="result-team">
-
-                <div class="result-logo">
-                  ${caspiyLogo}
-                </div>
-
-                <div>
-
-                  <div class="result-team-name">
-                    КАСПИЙ
-                  </div>
-
-                  <div class="result-city">
-                    АКТАУ
-                  </div>
-
-                </div>
-
+              <div class="result-logo">
+                ${opponentLogo}
               </div>
 
-            `;
-
-
-            right = `
-
-              <div class="result-team away">
-
-                <div class="result-logo">
-                  ${opponentLogo}
-                </div>
-
-                <div class="result-team-name">
-                  ${match.opponent}
-                </div>
-
+              <div class="result-team-name">
+                ${match.opponent}
               </div>
 
-            `;
-
-
-            ls =
-              cs;
-
-
-            rs =
-              os;
-
-
-          } else {
-
-
-            left = `
-
-              <div class="result-team">
-
-                <div class="result-logo">
-                  ${opponentLogo}
-                </div>
-
-                <div class="result-team-name">
-                  ${match.opponent}
-                </div>
-
-              </div>
-
-            `;
-
-
-            right = `
-
-              <div class="result-team away">
-
-                <div class="result-logo">
-                  ${caspiyLogo}
-                </div>
-
-                <div>
-
-                  <div class="result-team-name">
-                    КАСПИЙ
-                  </div>
-
-                  <div class="result-city">
-                    АКТАУ
-                  </div>
-
-                </div>
-
-              </div>
-
-            `;
-
-
-            ls =
-              os;
-
-
-            rs =
-              cs;
-
-          }
-
-
-          return `
-
-            <article class="result-card">
-
-
-              <div class="result-top">
-
-                <div class="result-competition">
-
-                  ${match.competition || 'МАТЧ'}
-
-                </div>
-
-                <div class="result-date">
-
-                  ${formatShortDate(
-                    match.match_date
-                  )}
-
-                </div>
-
-              </div>
-
-
-              <div class="result-teams">
-
-                ${left}
-
-                <div class="result-score">
-                  ${ls}:${rs}
-                </div>
-
-                ${right}
-
-              </div>
-
-
-              <div class="result-venue">
-
-                ${match.venue || ''}
-
-              </div>
-
-
-            </article>
+            </div>
 
           `;
 
+
+          ls = cs;
+          rs = os;
+
+        } else {
+
+          left = `
+
+            <div class="result-team">
+
+              <div class="result-logo">
+                ${opponentLogo}
+              </div>
+
+              <div class="result-team-name">
+                ${match.opponent}
+              </div>
+
+            </div>
+
+          `;
+
+
+          right = `
+
+            <div class="result-team away">
+
+              <div class="result-logo">
+                ${caspiyLogo}
+              </div>
+
+              <div>
+
+                <div class="result-team-name">
+                  КАСПИЙ
+                </div>
+
+                <div class="result-city">
+                  АКТАУ
+                </div>
+
+              </div>
+
+            </div>
+
+          `;
+
+
+          ls = os;
+          rs = cs;
         }
-      )
-      .join('');
 
+
+        return `
+
+          <article class="result-card">
+
+            <div class="result-top">
+
+              <div class="result-competition">
+                ${match.competition || 'МАТЧ'}
+              </div>
+
+              <div class="result-date">
+                ${formatShortDate(match.match_date)}
+              </div>
+
+            </div>
+
+
+            <div class="result-teams">
+
+              ${left}
+
+              <div class="result-score">
+                ${ls}:${rs}
+              </div>
+
+              ${right}
+
+            </div>
+
+
+            <div class="result-venue">
+              ${match.venue || ''}
+            </div>
+
+          </article>
+
+        `;
+
+      }).join('');
   }
-
 
 
   await Promise.all([
