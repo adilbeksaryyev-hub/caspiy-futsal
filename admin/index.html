@@ -14,7 +14,7 @@
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at 70% 10%, rgba(20, 132, 190, .16), transparent 30%),
+        radial-gradient(circle at 70% 10%, rgba(20,132,190,.16), transparent 30%),
         #020b12;
       color: #fff;
       min-height: 100vh;
@@ -54,8 +54,8 @@
     }
 
     .card {
-      background: rgba(5, 22, 34, .94);
-      border: 1px solid rgba(70, 205, 255, .28);
+      background: rgba(5,22,34,.94);
+      border: 1px solid rgba(70,205,255,.28);
       padding: 32px;
       border-radius: 10px;
       box-shadow: 0 20px 60px rgba(0,0,0,.35);
@@ -127,11 +127,6 @@
       color: #d4edf7;
     }
 
-    .danger {
-      background: #391b22;
-      color: #ffbdc7;
-    }
-
     .buttons {
       display: flex;
       gap: 12px;
@@ -143,7 +138,9 @@
       display: none;
     }
 
-    #message {
+    #message,
+    #login-message,
+    #team-message {
       margin-top: 18px;
       padding: 13px;
       border-radius: 6px;
@@ -153,15 +150,15 @@
 
     .success {
       display: block !important;
-      background: rgba(28, 153, 92, .14);
-      border: 1px solid rgba(58, 214, 132, .4);
+      background: rgba(28,153,92,.14);
+      border: 1px solid rgba(58,214,132,.4);
       color: #82efb5;
     }
 
     .error {
       display: block !important;
-      background: rgba(190, 49, 70, .14);
-      border: 1px solid rgba(255, 94, 117, .4);
+      background: rgba(190,49,70,.14);
+      border: 1px solid rgba(255,94,117,.4);
       color: #ff9dab;
     }
 
@@ -179,53 +176,46 @@
       color: #54d0ff;
       font-size: 13px;
     }
-.admin-separator {
-  border: 0;
-  border-top: 1px solid rgba(255,255,255,.08);
-  margin: 40px 0;
-}
 
-.teams-admin {
-  margin-top: 10px;
-}
+    .admin-separator {
+      border: 0;
+      border-top: 1px solid rgba(255,255,255,.08);
+      margin: 40px 0;
+    }
 
-.teams-list {
-  margin-top: 28px;
-  display: grid;
-  gap: 12px;
-}
+    .teams-list {
+      margin-top: 28px;
+      display: grid;
+      gap: 12px;
+    }
 
-.team-admin-item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 14px;
-  border: 1px solid rgba(70,205,255,.18);
-  background: rgba(3,18,29,.7);
-  border-radius: 7px;
-}
+    .team-admin-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px;
+      border: 1px solid rgba(70,205,255,.18);
+      background: rgba(3,18,29,.7);
+      border-radius: 7px;
+    }
 
-.team-admin-item img {
-  width: 58px;
-  height: 58px;
-  object-fit: contain;
-}
+    .team-admin-item img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+    }
 
-.team-admin-item strong {
-  display: block;
-}
+    .team-admin-item strong {
+      display: block;
+    }
 
-.team-admin-item span {
-  color: #8098a8;
-  font-size: 12px;
-  margin-top: 4px;
-  display: block;
-}
+    .team-admin-item span {
+      color: #8098a8;
+      font-size: 12px;
+      margin-top: 4px;
+      display: block;
+    }
 
-#team-message {
-  margin-top: 18px;
-  font-size: 14px;
-}
     @media(max-width: 650px) {
       .grid {
         grid-template-columns: 1fr;
@@ -254,491 +244,1002 @@
     </div>
   </div>
 
+
+  <!-- ВХОД -->
+
   <div class="card" id="login-panel">
+
     <h2>Вход администратора</h2>
+
     <p class="muted">
       Войдите с аккаунтом администратора клуба.
     </p>
 
     <div class="field">
       <label>E-mail</label>
-      <input type="email" id="email" placeholder="admin@example.com">
+      <input
+        type="email"
+        id="email"
+        placeholder="admin@example.com"
+      >
     </div>
 
     <div class="field">
       <label>Пароль</label>
-      <input type="password" id="password" placeholder="••••••••">
+      <input
+        type="password"
+        id="password"
+        placeholder="••••••••"
+      >
     </div>
 
-    <button class="primary" id="login-btn">Войти</button>
+    <button class="primary" id="login-btn">
+      Войти
+    </button>
 
     <div id="login-message"></div>
+
   </div>
 
+
+  <!-- АДМИНКА -->
 
   <div class="card" id="admin-panel">
 
     <div class="statusbar">
+
       <div>
         <div class="muted">Вы вошли как</div>
         <div class="email" id="admin-email"></div>
       </div>
 
-      <button class="secondary" id="logout-btn">
+      <button
+        class="secondary"
+        id="logout-btn"
+        type="button"
+      >
         Выйти
       </button>
+
     </div>
+
+
+    <!-- СЛЕДУЮЩИЙ МАТЧ -->
 
     <h2>Следующий матч</h2>
 
     <div class="field">
+
       <label>Соперник</label>
-      <input type="text" id="opponent" placeholder="Например: Аят">
+
+      <select id="opponent">
+        <option value="">
+          Выберите команду
+        </option>
+      </select>
+
     </div>
+
 
     <div class="grid">
 
       <div class="field">
         <label>Дата и время</label>
-        <input type="datetime-local" id="match_date">
+        <input
+          type="datetime-local"
+          id="match_date"
+        >
       </div>
 
       <div class="field">
         <label>Турнир</label>
-        <input type="text" id="competition" placeholder="Чемпионат Казахстана">
+        <input
+          type="text"
+          id="competition"
+          placeholder="Чемпионат Казахстана"
+        >
       </div>
 
     </div>
 
-    <div class="field">
-      <label>Арена</label>
-      <input type="text" id="venue" placeholder="СК Мангистау">
-    </div>
 
     <div class="field">
-      <label>URL логотипа соперника</label>
-      <input type="url" id="opponent_logo_url" placeholder="https://...">
+
+      <label>Арена</label>
+
+      <input
+        type="text"
+        id="venue"
+        placeholder="BS Arena"
+      >
+
     </div>
+
 
     <div class="grid">
 
       <div class="field">
+
         <label>Где играет Каспий</label>
+
         <select id="is_home">
           <option value="true">Дома</option>
           <option value="false">В гостях</option>
         </select>
+
       </div>
 
+
       <div class="field">
+
         <label>Статус</label>
+
         <select id="status">
           <option value="upcoming">Предстоящий</option>
           <option value="finished">Завершён</option>
           <option value="postponed">Перенесён</option>
         </select>
+
       </div>
 
     </div>
 
+
     <div class="buttons">
-      <button class="primary" id="save-btn">
+
+      <button
+        class="primary"
+        id="save-btn"
+        type="button"
+      >
         Сохранить матч
       </button>
 
-      <a href="../" style="text-decoration:none;">
-        <button class="secondary" type="button">
-          Открыть сайт
-        </button>
-      </a>
+      <button
+        class="secondary"
+        id="open-site-btn"
+        type="button"
+      >
+        Открыть сайт
+      </button>
+
     </div>
 
     <div id="message"></div>
-<hr class="admin-separator">
 
-<section class="teams-admin">
 
-  <h2>Команды</h2>
+    <!-- КОМАНДЫ -->
 
-  <p class="muted">
-    Добавление команд и их официальных логотипов.
-  </p>
+    <hr class="admin-separator">
 
-  <div class="grid">
+    <section>
 
-    <div class="field">
-      <label>Название команды</label>
-      <input
-        type="text"
-        id="team-name"
-        placeholder="Например: Байтерек"
-      >
-    </div>
+      <h2>Команды</h2>
 
-    <div class="field">
-      <label>Город</label>
-      <input
-        type="text"
-        id="team-city"
-        placeholder="Например: Орал"
-      >
-    </div>
+      <p class="muted">
+        Добавление команд и их официальных логотипов.
+      </p>
 
-  </div>
 
-  <div class="field">
-    <label>Логотип команды</label>
+      <div class="grid">
 
-    <input
-      type="file"
-      id="team-logo-file"
-      accept="image/png,image/jpeg,image/webp,image/svg+xml"
-    >
-  </div>
+        <div class="field">
 
-  <div class="buttons">
-    <button
-      class="primary"
-      id="add-team-btn"
-      type="button"
-    >
-      Добавить команду
-    </button>
-  </div>
+          <label>Название команды</label>
 
-  <div id="team-message"></div>
+          <input
+            type="text"
+            id="team-name"
+            placeholder="Например: Байтерек"
+          >
 
-  <div class="teams-list" id="teams-list">
-  </div>
+        </div>
 
-</section>
+
+        <div class="field">
+
+          <label>Город</label>
+
+          <input
+            type="text"
+            id="team-city"
+            placeholder="Например: Орал"
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Логотип команды</label>
+
+        <input
+          type="file"
+          id="team-logo-file"
+          accept="image/png,image/jpeg,image/webp,image/svg+xml"
+        >
+
+      </div>
+
+
+      <div class="buttons">
+
+        <button
+          class="primary"
+          id="add-team-btn"
+          type="button"
+        >
+          Добавить команду
+        </button>
+
+      </div>
+
+
+      <div id="team-message"></div>
+
+      <div
+        class="teams-list"
+        id="teams-list"
+      ></div>
+
+    </section>
+
   </div>
 
 </div>
 
 
 <script type="module">
+
   import { createClient } from
     'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
 
   const supabase = createClient(
     'https://socqbqyhkyvxnsukgcqm.supabase.co',
     'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK'
   );
 
-  const loginPanel = document.getElementById('login-panel');
-  const adminPanel = document.getElementById('admin-panel');
-  const loginMessage = document.getElementById('login-message');
-  const message = document.getElementById('message');
+
+  const loginPanel =
+    document.getElementById('login-panel');
+
+  const adminPanel =
+    document.getElementById('admin-panel');
+
+  const loginMessage =
+    document.getElementById('login-message');
+
+  const message =
+    document.getElementById('message');
+
+  const teamMessage =
+    document.getElementById('team-message');
+
 
   let currentMatchId = null;
 
+  let teamsCache = [];
+
+
   function showMessage(text, type = 'success') {
+
     message.textContent = text;
     message.className = type;
+
   }
+
 
   function showLoginMessage(text, type = 'error') {
+
     loginMessage.textContent = text;
     loginMessage.className = type;
+
   }
+
+
+  function showTeamMessage(text, type = 'success') {
+
+    teamMessage.textContent = text;
+    teamMessage.className = type;
+
+  }
+
 
   function toLocalDateTime(value) {
+
     if (!value) return '';
 
-    const d = new Date(value);
+    const date = new Date(value);
 
-    const pad = n => String(n).padStart(2, '0');
-
-    return (
-      d.getFullYear() + '-' +
-      pad(d.getMonth() + 1) + '-' +
-      pad(d.getDate()) + 'T' +
-      pad(d.getHours()) + ':' +
-      pad(d.getMinutes())
-    );
-  }
-
-  async function loadMatch() {
-    const { data, error } = await supabase
-      .from('matches')
-      .select('*')
-      .eq('is_featured', true)
-      .order('match_date', { ascending: true })
-      .limit(1)
-      .maybeSingle();
-
-    if (error) {
-      showMessage(
-        'Ошибка загрузки матча: ' + error.message,
-        'error'
+    const formatter =
+      new Intl.DateTimeFormat(
+        'sv-SE',
+        {
+          timeZone: 'Asia/Aqtau',
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false
+        }
       );
-      return;
-    }
 
-    if (!data) {
-      currentMatchId = null;
-      return;
-    }
+    return formatter
+      .format(date)
+      .replace(' ', 'T');
 
-    currentMatchId = data.id;
-
-    document.getElementById('opponent').value =
-      data.opponent || '';
-
-    document.getElementById('match_date').value =
-      toLocalDateTime(data.match_date);
-
-    document.getElementById('venue').value =
-      data.venue || '';
-
-    document.getElementById('competition').value =
-      data.competition || '';
-
-    document.getElementById('opponent_logo_url').value =
-      data.opponent_logo_url || '';
-
-    document.getElementById('is_home').value =
-      String(data.is_home);
-
-    document.getElementById('status').value =
-      data.status || 'upcoming';
   }
+
+
+  function getTeamFullName(team) {
+
+    if (!team) return '';
+
+    return team.city
+      ? `${team.name} ${team.city}`
+      : team.name;
+
+  }
+
+
+  /* =============================
+     ЗАГРУЗКА КОМАНД
+     ============================= */
 
   async function loadTeams() {
-    const list = document.getElementById('teams-list');
 
-    const { data, error } = await supabase
-      .from('teams')
-      .select('*')
-      .eq('is_active', true)
-      .order('name');
+    const list =
+      document.getElementById('teams-list');
+
+    const opponentSelect =
+      document.getElementById('opponent');
+
+
+    const previousSelected =
+      opponentSelect.value;
+
+
+    const { data, error } =
+      await supabase
+        .from('teams')
+        .select('*')
+        .eq('is_active', true)
+        .order('name');
+
 
     if (error) {
+
       list.innerHTML =
-        '<div class="error">Ошибка загрузки команд: ' +
+        '<div class="error">' +
+        'Ошибка загрузки команд: ' +
         error.message +
         '</div>';
+
       return;
+
     }
 
-    if (!data || data.length === 0) {
+
+    teamsCache = data || [];
+
+
+    opponentSelect.innerHTML =
+      '<option value="">Выберите команду</option>';
+
+
+    teamsCache.forEach(team => {
+
+      const option =
+        document.createElement('option');
+
+      option.value =
+        String(team.id);
+
+      option.textContent =
+        team.city
+          ? `${team.name} — ${team.city}`
+          : team.name;
+
+      opponentSelect.appendChild(option);
+
+    });
+
+
+    if (previousSelected) {
+
+      opponentSelect.value =
+        previousSelected;
+
+    }
+
+
+    if (teamsCache.length === 0) {
+
       list.innerHTML =
-        '<div class="muted">Команды пока не добавлены.</div>';
+        '<div class="muted">' +
+        'Команды пока не добавлены.' +
+        '</div>';
+
       return;
+
     }
 
-    list.innerHTML = data.map(team => `
-      <div class="team-admin-item">
-        ${
-          team.logo_url
-            ? `<img src="${team.logo_url}" alt="${team.name}">`
-            : `<div style="
-                width:58px;
-                height:58px;
-                border:1px solid #27546c;
-                border-radius:50%;
-                display:grid;
-                place-items:center;
-                color:#58d6ff;
-              ">?</div>`
-        }
 
-        <div>
-          <strong>${team.name}</strong>
-          <span>${team.city || ''}</span>
+    list.innerHTML =
+      teamsCache.map(team => `
+
+        <div class="team-admin-item">
+
+          ${
+            team.logo_url
+
+              ? `
+                <img
+                  src="${team.logo_url}"
+                  alt="${team.name}"
+                >
+              `
+
+              : `
+                <div style="
+                  width:58px;
+                  height:58px;
+                  border:1px solid #27546c;
+                  border-radius:50%;
+                  display:grid;
+                  place-items:center;
+                  color:#58d6ff;
+                ">
+                  ?
+                </div>
+              `
+          }
+
+          <div>
+
+            <strong>
+              ${team.name}
+            </strong>
+
+            <span>
+              ${team.city || ''}
+            </span>
+
+          </div>
+
         </div>
-      </div>
-    `).join('');
+
+      `).join('');
+
   }
+
+
+  /* =============================
+     ЗАГРУЗКА МАТЧА
+     ============================= */
+
+  async function loadMatch() {
+
+    const { data, error } =
+      await supabase
+        .from('matches')
+        .select('*')
+        .eq('is_featured', true)
+        .order('match_date', {
+          ascending: true
+        })
+        .limit(1)
+        .maybeSingle();
+
+
+    if (error) {
+
+      showMessage(
+        'Ошибка загрузки матча: ' +
+        error.message,
+        'error'
+      );
+
+      return;
+
+    }
+
+
+    if (!data) {
+
+      currentMatchId = null;
+
+      return;
+
+    }
+
+
+    currentMatchId =
+      data.id;
+
+
+    document.getElementById(
+      'match_date'
+    ).value =
+      toLocalDateTime(data.match_date);
+
+
+    document.getElementById(
+      'venue'
+    ).value =
+      data.venue || '';
+
+
+    document.getElementById(
+      'competition'
+    ).value =
+      data.competition || '';
+
+
+    document.getElementById(
+      'is_home'
+    ).value =
+      String(data.is_home);
+
+
+    document.getElementById(
+      'status'
+    ).value =
+      data.status || 'upcoming';
+
+
+    const savedTeam =
+      teamsCache.find(team => {
+
+        const fullName =
+          getTeamFullName(team);
+
+        return (
+          data.opponent === team.name ||
+          data.opponent === fullName
+        );
+
+      });
+
+
+    if (savedTeam) {
+
+      document.getElementById(
+        'opponent'
+      ).value =
+        String(savedTeam.id);
+
+    }
+
+  }
+
+
+  /* =============================
+     ПОКАЗ АДМИНКИ
+     ============================= */
 
   async function showAdmin(session) {
-    loginPanel.style.display = 'none';
-    adminPanel.style.display = 'block';
 
-    document.getElementById('admin-email').textContent =
+    loginPanel.style.display =
+      'none';
+
+    adminPanel.style.display =
+      'block';
+
+
+    document.getElementById(
+      'admin-email'
+    ).textContent =
       session.user.email;
 
-    await loadMatch();
+
     await loadTeams();
+
+    await loadMatch();
+
   }
 
-  document.getElementById('login-btn')
-    .addEventListener('click', async () => {
 
-      loginMessage.style.display = 'none';
+  /* =============================
+     ВХОД
+     ============================= */
+
+  document.getElementById(
+    'login-btn'
+  ).addEventListener(
+    'click',
+    async () => {
+
+      loginMessage.className = '';
+
+      loginMessage.textContent = '';
+
 
       const email =
-        document.getElementById('email').value.trim();
+        document
+          .getElementById('email')
+          .value
+          .trim();
+
 
       const password =
-        document.getElementById('password').value;
+        document
+          .getElementById('password')
+          .value;
+
 
       const { data, error } =
-        await supabase.auth.signInWithPassword({
-          email,
-          password
-        });
+        await supabase.auth
+          .signInWithPassword({
+            email,
+            password
+          });
+
 
       if (error) {
+
         showLoginMessage(
-          'Ошибка входа: ' + error.message
+          'Ошибка входа: ' +
+          error.message
         );
+
         return;
+
       }
 
-      await showAdmin(data.session);
-    });
 
-  document.getElementById('logout-btn')
-    .addEventListener('click', async () => {
+      await showAdmin(
+        data.session
+      );
 
-      await supabase.auth.signOut();
+    }
+  );
 
-      adminPanel.style.display = 'none';
-      loginPanel.style.display = 'block';
-    });
 
-  document.getElementById('save-btn')
-    .addEventListener('click', async () => {
+  /* =============================
+     ВЫХОД
+     ============================= */
 
-      const opponent =
-        document.getElementById('opponent').value.trim();
+  document.getElementById(
+    'logout-btn'
+  ).addEventListener(
+    'click',
+    async () => {
 
-      const matchDate =
-        document.getElementById('match_date').value;
+      await supabase.auth
+        .signOut();
 
-      const venue =
-        document.getElementById('venue').value.trim();
 
-      const competition =
-        document.getElementById('competition').value.trim();
+      adminPanel.style.display =
+        'none';
 
-      const logo =
-        document.getElementById('opponent_logo_url').value.trim();
 
-      const isHome =
-        document.getElementById('is_home').value === 'true';
+      loginPanel.style.display =
+        'block';
 
-      const status =
-        document.getElementById('status').value;
+    }
+  );
 
-      if (!opponent || !matchDate) {
+
+  /* =============================
+     ОТКРЫТЬ САЙТ
+     ============================= */
+
+  document.getElementById(
+    'open-site-btn'
+  ).addEventListener(
+    'click',
+    () => {
+
+      window.open(
+        '../',
+        '_blank'
+      );
+
+    }
+  );
+
+
+  /* =============================
+     СОХРАНЕНИЕ МАТЧА
+     ============================= */
+
+  document.getElementById(
+    'save-btn'
+  ).addEventListener(
+    'click',
+    async () => {
+
+      message.className = '';
+
+      message.textContent = '';
+
+
+      const teamId =
+        Number(
+          document
+            .getElementById('opponent')
+            .value
+        );
+
+
+      const selectedTeam =
+        teamsCache.find(
+          team =>
+            Number(team.id) === teamId
+        );
+
+
+      if (!selectedTeam) {
+
         showMessage(
-          'Укажите соперника, дату и время.',
+          'Выберите соперника.',
           'error'
         );
+
         return;
+
       }
 
+
+      const matchDate =
+        document
+          .getElementById('match_date')
+          .value;
+
+
+      if (!matchDate) {
+
+        showMessage(
+          'Укажите дату и время матча.',
+          'error'
+        );
+
+        return;
+
+      }
+
+
+      const venue =
+        document
+          .getElementById('venue')
+          .value
+          .trim();
+
+
+      const competition =
+        document
+          .getElementById('competition')
+          .value
+          .trim();
+
+
+      const isHome =
+        document
+          .getElementById('is_home')
+          .value === 'true';
+
+
+      const status =
+        document
+          .getElementById('status')
+          .value;
+
+
+      const opponent =
+        getTeamFullName(
+          selectedTeam
+        );
+
+
+      const logo =
+        selectedTeam.logo_url;
+
+
       const matchData = {
+
         opponent,
-        match_date: new Date(matchDate).toISOString(),
+
+        match_date:
+          new Date(matchDate)
+            .toISOString(),
+
         venue,
+
         competition,
-        opponent_logo_url: logo || null,
-        is_home: isHome,
+
+        opponent_logo_url:
+          logo || null,
+
+        is_home:
+          isHome,
+
         status,
-        is_featured: true
+
+        is_featured:
+          true
+
       };
+
 
       let result;
 
+
       if (currentMatchId) {
-        result = await supabase
-          .from('matches')
-          .update(matchData)
-          .eq('id', currentMatchId)
-          .select()
-          .single();
+
+        result =
+          await supabase
+            .from('matches')
+            .update(matchData)
+            .eq(
+              'id',
+              currentMatchId
+            )
+            .select()
+            .single();
+
       } else {
-        result = await supabase
-          .from('matches')
-          .insert(matchData)
-          .select()
-          .single();
+
+        result =
+          await supabase
+            .from('matches')
+            .insert(matchData)
+            .select()
+            .single();
+
       }
 
+
       if (result.error) {
+
         showMessage(
           'Ошибка сохранения: ' +
           result.error.message,
           'error'
         );
+
         return;
+
       }
 
-      currentMatchId = result.data.id;
 
-      showMessage('Матч успешно сохранён.');
-    });
+      currentMatchId =
+        result.data.id;
 
-  document.getElementById('add-team-btn')
-    .addEventListener('click', async () => {
 
-      const teamMessage =
-        document.getElementById('team-message');
+      showMessage(
+        'Матч успешно сохранён.'
+      );
+
+  });
+
+
+  /* =============================
+     ДОБАВЛЕНИЕ КОМАНДЫ
+     ============================= */
+
+  document.getElementById(
+    'add-team-btn'
+  ).addEventListener(
+    'click',
+    async () => {
 
       teamMessage.className = '';
+
       teamMessage.textContent = '';
 
+
       const name =
-        document.getElementById('team-name').value.trim();
+        document
+          .getElementById('team-name')
+          .value
+          .trim();
+
 
       const city =
-        document.getElementById('team-city').value.trim();
+        document
+          .getElementById('team-city')
+          .value
+          .trim();
+
 
       const file =
-        document.getElementById('team-logo-file').files[0];
+        document
+          .getElementById('team-logo-file')
+          .files[0];
+
 
       if (!name) {
-        teamMessage.textContent =
-          'Укажите название команды.';
-        teamMessage.className = 'error';
+
+        showTeamMessage(
+          'Укажите название команды.',
+          'error'
+        );
+
         return;
+
       }
+
 
       if (!file) {
-        teamMessage.textContent =
-          'Выберите логотип команды.';
-        teamMessage.className = 'error';
+
+        showTeamMessage(
+          'Выберите логотип команды.',
+          'error'
+        );
+
         return;
+
       }
 
+
+      showTeamMessage(
+        'Загрузка логотипа...',
+        'success'
+      );
+
+
       const extension =
-        file.name.split('.').pop().toLowerCase();
+        file.name
+          .split('.')
+          .pop()
+          .toLowerCase();
+
 
       const fileName =
-        crypto.randomUUID() + '.' + extension;
+        crypto.randomUUID() +
+        '.' +
+        extension;
 
-      teamMessage.textContent =
-        'Загрузка логотипа...';
 
       const { error: uploadError } =
         await supabase.storage
           .from('team-logos')
-          .upload(fileName, file, {
-            cacheControl: '3600',
-            upsert: false,
-            contentType: file.type
-          });
+          .upload(
+            fileName,
+            file,
+            {
+              cacheControl: '3600',
+              upsert: false,
+              contentType:
+                file.type
+            }
+          );
+
 
       if (uploadError) {
-        teamMessage.textContent =
+
+        showTeamMessage(
           'Ошибка загрузки логотипа: ' +
-          uploadError.message;
-        teamMessage.className = 'error';
+          uploadError.message,
+          'error'
+        );
+
         return;
+
       }
+
 
       const { data: urlData } =
         supabase.storage
           .from('team-logos')
-          .getPublicUrl(fileName);
+          .getPublicUrl(
+            fileName
+          );
 
-      const logoUrl = urlData.publicUrl;
 
-      const { error: insertError } =
+      const logoUrl =
+        urlData.publicUrl;
+
+
+      const {
+        data: insertedTeam,
+        error: insertError
+      } =
         await supabase
           .from('teams')
           .insert({
@@ -746,34 +1247,81 @@
             city: city || null,
             logo_url: logoUrl,
             is_active: true
-          });
+          })
+          .select()
+          .single();
+
 
       if (insertError) {
-        teamMessage.textContent =
+
+        showTeamMessage(
           'Ошибка сохранения команды: ' +
-          insertError.message;
-        teamMessage.className = 'error';
+          insertError.message,
+          'error'
+        );
+
         return;
+
       }
 
-      teamMessage.textContent =
-        'Команда успешно добавлена.';
-      teamMessage.className = 'success';
 
-      document.getElementById('team-name').value = '';
-      document.getElementById('team-city').value = '';
-      document.getElementById('team-logo-file').value = '';
+      document.getElementById(
+        'team-name'
+      ).value = '';
+
+
+      document.getElementById(
+        'team-city'
+      ).value = '';
+
+
+      document.getElementById(
+        'team-logo-file'
+      ).value = '';
+
 
       await loadTeams();
-    });
+
+
+      if (insertedTeam) {
+
+        document.getElementById(
+          'opponent'
+        ).value =
+          String(
+            insertedTeam.id
+          );
+
+      }
+
+
+      showTeamMessage(
+        'Команда успешно добавлена.'
+      );
+
+    }
+  );
+
+
+  /* =============================
+     ПРОВЕРКА СЕССИИ
+     ============================= */
 
   const {
     data: { session }
-  } = await supabase.auth.getSession();
+  } =
+    await supabase.auth
+      .getSession();
+
 
   if (session) {
-    await showAdmin(session);
+
+    await showAdmin(
+      session
+    );
+
   }
+
 </script>
 
 </body>
