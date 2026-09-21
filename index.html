@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>КАСПИЙ — Futsal Club</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #020b12;
+      color: #ffffff;
+    }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 70% 30%, rgba(0, 174, 255, 0.23), transparent 32%),
+        linear-gradient(135deg, #03111c 0%, #061d2c 55%, #02080e 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(0,0,0,.55), transparent 45%),
+        repeating-linear-gradient(
+          115deg,
+          transparent 0,
+          transparent 80px,
+          rgba(0,170,255,.025) 81px
+        );
+      pointer-events: none;
+    }
+
+    header {
+      width: min(1440px, 92%);
+      height: 90px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 10;
+      border-bottom: 1px solid rgba(126, 217, 255, 0.16);
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: 4px;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 8px;
+      letter-spacing: 5px;
+      color: #48caff;
+      margin-top: 5px;
+    }
+
+    nav {
+      display: flex;
+      gap: 34px;
+    }
+
+    nav a {
+      color: #c6d5df;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: .25s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #59d4ff;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .lang {
+      font-size: 12px;
+      color: #b4c6d1;
+    }
+
+    .ticket {
+      border: 1px solid #41caff;
+      color: #ffffff;
+      padding: 13px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 1px;
+      box-shadow: 0 0 22px rgba(0, 190, 255, 0.15);
+    }
+
+    .hero-content {
+      width: min(1440px, 92%);
+      margin: auto;
+      min-height: calc(100vh - 90px);
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text {
+      width: 65%;
+      padding: 70px 0;
+    }
+
+    .small-title {
+      color: #92aebe;
+      letter-spacing: 7px;
+      font-size: 12px;
+      margin-bottom: 25px;
+      line-height: 1.7;
+    }
+
+    h1 {
+      font-size: clamp(90px, 13vw, 200px);
+      line-height: .78;
+      letter-spacing: -8px;
+      font-weight: 900;
+      color: #eafaff;
+      text-shadow:
+        0 0 20px rgba(50, 190, 255, .15),
+        0 0 70px rgba(0, 120, 190, .18);
+    }
+
+    .club {
+      margin-top: 32px;
+      font-size: clamp(22px, 3vw, 44px);
+      letter-spacing: 18px;
+      color: #bcecff;
+      font-weight: 400;
+    }
+
+    .slogan {
+      margin-top: 34px;
+      color: #7f9aaa;
+      letter-spacing: 5px;
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .location {
+      position: absolute;
+      right: 0;
+      top: 125px;
+      text-align: right;
+      color: #60cfff;
+      font-size: 11px;
+      line-height: 2;
+      letter-spacing: 3px;
+    }
+
+    .side-slogan {
+      color: #c1eefe;
+      font-size: 18px;
+      letter-spacing: 7px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .match-box {
+      position: absolute;
+      right: 0;
+      bottom: 75px;
+      width: 440px;
+      padding: 28px 32px;
+      border: 1px solid rgba(64, 204, 255, .5);
+      background: rgba(3, 20, 31, .82);
+      backdrop-filter: blur(12px);
+      box-shadow:
+        0 0 30px rgba(0, 175, 255, .08),
+        inset 0 0 40px rgba(0, 125, 190, .05);
+    }
+
+    .match-box h3 {
+      color: #54d1ff;
+      letter-spacing: 3px;
+      font-size: 13px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .teams {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .team {
+      text-align: center;
+      width: 120px;
+    }
+
+    .team-logo {
+      width: 72px;
+      height: 72px;
+      margin: auto auto 12px;
+      border: 2px solid #48caff;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 24px;
+      color: #61d7ff;
+    }
+
+    .team strong {
+      font-size: 15px;
+      letter-spacing: 2px;
+    }
+
+    .versus {
+      font-size: 13px;
+      color: #738c9d;
+      letter-spacing: 3px;
+    }
+
+    .match-info {
+      text-align: center;
+      margin-top: 22px;
+      color: #829aa9;
+      font-size: 11px;
+      letter-spacing: 2px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+
+      header {
+        height: 75px;
+      }
+
+      .ticket {
+        display: none;
+      }
+
+      .hero-content {
+        align-items: flex-start;
+      }
+
+      .hero-text {
+        width: 100%;
+        padding-top: 100px;
+      }
+
+      h1 {
+        font-size: 25vw;
+        letter-spacing: -4px;
+      }
+
+      .club {
+        font-size: 18px;
+        letter-spacing: 8px;
+      }
+
+      .location {
+        display: none;
+      }
+
+      .match-box {
+        position: relative;
+        width: 100%;
+        bottom: auto;
+        right: auto;
+        margin-top: 70px;
+        margin-bottom: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="hero">
+
+  <header>
+    <div class="logo">
+      КАСПИЙ
+      <span>FUTSAL CLUB</span>
+    </div>
+
+    <nav>
+      <a href="#" class="active">Главная</a>
+      <a href="#">Команда</a>
+      <a href="#">Матчи</a>
+      <a href="#">Новости</a>
+      <a href="#">Клуб</a>
+      <a href="#">Фан-зона</a>
+      <a href="#">Контакты</a>
+    </nav>
+
+    <div class="top-actions">
+      <span class="lang">RU⌄</span>
+      <a class="ticket" href="#">БИЛЕТЫ →</a>
+    </div>
+  </header>
+
+  <div class="hero-content">
+
+    <div class="hero-text">
+      <div class="small-title">
+        БОЛЬШЕ<br>
+        ЧЕМ ИГРА
+      </div>
+
+      <h1>КАСПИЙ</h1>
+
+      <div class="club">
+        FUTSAL CLUB
+      </div>
+
+      <div class="slogan">
+        НАША СТИХИЯ — ДВИЖЕНИЕ<br>
+        НАШ ДОМ — КАСПИЙ
+      </div>
+    </div>
+
+    <div class="location">
+      <div class="side-slogan">
+        ОДИН РЕГИОН<br>
+        ОДНА КОМАНДА
+      </div>
+
+      AQTAU<br>
+      KAZAKHSTAN
+    </div>
+
+    <div class="match-box">
+      <h3>Следующий матч</h3>
+
+      <div class="teams">
+        <div class="team">
+          <div class="team-logo">К</div>
+          <strong>КАСПИЙ</strong>
+        </div>
+
+        <div class="versus">VS</div>
+
+        <div class="team">
+          <div class="team-logo">?</div>
+          <strong>СОПЕРНИК</strong>
+        </div>
+      </div>
+
+      <div class="match-info">
+        ДАТА И ВРЕМЯ БУДУТ ДОБАВЛЕНЫ<br>
+        АКТАУ
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>
