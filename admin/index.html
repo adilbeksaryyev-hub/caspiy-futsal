@@ -418,59 +418,37 @@
 
 
 <script type="module">
-
   import { createClient } from
     'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
-  const SUPABASE_URL =
-    'https://socqbqyhkyvxnsukgcqm.supabase.co';
+  const supabase = createClient(
+    'https://socqbqyhkyvxnsukgcqm.supabase.co',
+    'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK'
+  );
 
-  const SUPABASE_KEY =
-    'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK';
-
-  const supabase =
-    createClient(SUPABASE_URL, SUPABASE_KEY);
-
-
-  const loginPanel =
-    document.getElementById('login-panel');
-
-  const adminPanel =
-    document.getElementById('admin-panel');
-
-  const loginMessage =
-    document.getElementById('login-message');
-
-  const message =
-    document.getElementById('message');
+  const loginPanel = document.getElementById('login-panel');
+  const adminPanel = document.getElementById('admin-panel');
+  const loginMessage = document.getElementById('login-message');
+  const message = document.getElementById('message');
 
   let currentMatchId = null;
 
-
   function showMessage(text, type = 'success') {
-
     message.textContent = text;
     message.className = type;
-
   }
-
 
   function showLoginMessage(text, type = 'error') {
-
     loginMessage.textContent = text;
     loginMessage.className = type;
-
   }
 
-
   function toLocalDateTime(value) {
-
     if (!value) return '';
 
     const d = new Date(value);
 
-    const pad = n =>
-      String(n).padStart(2, '0');
+    const pad = n => String(n).padStart(2, '0');
 
     return (
       d.getFullYear() + '-' +
@@ -479,20 +457,16 @@
       pad(d.getHours()) + ':' +
       pad(d.getMinutes())
     );
-
   }
 
-
   async function loadMatch() {
-
-    const { data, error } =
-      await supabase
-        .from('matches')
-        .select('*')
-        .eq('is_featured', true)
-        .order('match_date', { ascending: true })
-        .limit(1)
-        .maybeSingle();
+    const { data, error } = await supabase
+      .from('matches')
+      .select('*')
+      .eq('is_featured', true)
+      .order('match_date', { ascending: true })
+      .limit(1)
+      .maybeSingle();
 
     if (error) {
       showMessage(
@@ -529,12 +503,56 @@
 
     document.getElementById('status').value =
       data.status || 'upcoming';
-
   }
 
+  async function loadTeams() {
+    const list = document.getElementById('teams-list');
+
+    const { data, error } = await supabase
+      .from('teams')
+      .select('*')
+      .eq('is_active', true)
+      .order('name');
+
+    if (error) {
+      list.innerHTML =
+        '<div class="error">Ошибка загрузки команд: ' +
+        error.message +
+        '</div>';
+      return;
+    }
+
+    if (!data || data.length === 0) {
+      list.innerHTML =
+        '<div class="muted">Команды пока не добавлены.</div>';
+      return;
+    }
+
+    list.innerHTML = data.map(team => `
+      <div class="team-admin-item">
+        ${
+          team.logo_url
+            ? `<img src="${team.logo_url}" alt="${team.name}">`
+            : `<div style="
+                width:58px;
+                height:58px;
+                border:1px solid #27546c;
+                border-radius:50%;
+                display:grid;
+                place-items:center;
+                color:#58d6ff;
+              ">?</div>`
+        }
+
+        <div>
+          <strong>${team.name}</strong>
+          <span>${team.city || ''}</span>
+        </div>
+      </div>
+    `).join('');
+  }
 
   async function showAdmin(session) {
-
     loginPanel.style.display = 'none';
     adminPanel.style.display = 'block';
 
@@ -543,9 +561,7 @@
 
     await loadMatch();
     await loadTeams();
-
   }
-
 
   document.getElementById('login-btn')
     .addEventListener('click', async () => {
@@ -565,19 +581,14 @@
         });
 
       if (error) {
-
         showLoginMessage(
           'Ошибка входа: ' + error.message
         );
-
         return;
-
       }
 
       await showAdmin(data.session);
-
     });
-
 
   document.getElementById('logout-btn')
     .addEventListener('click', async () => {
@@ -586,14 +597,10 @@
 
       adminPanel.style.display = 'none';
       loginPanel.style.display = 'block';
-
     });
-
 
   document.getElementById('save-btn')
     .addEventListener('click', async () => {
-
-      message.style.display = 'none';
 
       const opponent =
         document.getElementById('opponent').value.trim();
@@ -616,248 +623,157 @@
       const status =
         document.getElementById('status').value;
 
-
       if (!opponent || !matchDate) {
-
         showMessage(
           'Укажите соперника, дату и время.',
           'error'
         );
-
         return;
-
       }
 
-
       const matchData = {
-
-        opponent: opponent,
-
-        match_date:
-          new Date(matchDate).toISOString(),
-
-        venue: venue,
-
-        competition: competition,
-
-        opponent_logo_url:
-          logo || null,
-
+        opponent,
+        match_date: new Date(matchDate).toISOString(),
+        venue,
+        competition,
+        opponent_logo_url: logo || null,
         is_home: isHome,
-
-        status: status,
-
+        status,
         is_featured: true
-
       };
-
 
       let result;
 
-
       if (currentMatchId) {
-
-        result =
-          await supabase
-            .from('matches')
-            .update(matchData)
-            .eq('id', currentMatchId)
-            .select()
-            .single();
-
+        result = await supabase
+          .from('matches')
+          .update(matchData)
+          .eq('id', currentMatchId)
+          .select()
+          .single();
       } else {
-
-        result =
-          await supabase
-            .from('matches')
-            .insert(matchData)
-            .select()
-            .single();
-
+        result = await supabase
+          .from('matches')
+          .insert(matchData)
+          .select()
+          .single();
       }
 
-
       if (result.error) {
-
         showMessage(
           'Ошибка сохранения: ' +
           result.error.message,
           'error'
         );
-
         return;
-
       }
 
+      currentMatchId = result.data.id;
 
-      currentMatchId =
-        result.data.id;
+      showMessage('Матч успешно сохранён.');
+    });
 
-      showMessage(
-        'Матч успешно сохранён.'
-      );
+  document.getElementById('add-team-btn')
+    .addEventListener('click', async () => {
 
-  });
+      const teamMessage =
+        document.getElementById('team-message');
 
-async function loadTeams() {
+      teamMessage.className = '';
+      teamMessage.textContent = '';
 
-  const list = document.getElementById('teams-list');
+      const name =
+        document.getElementById('team-name').value.trim();
 
-  const { data, error } = await supabase
-    .from('teams')
-    .select('*')
-    .eq('is_active', true)
-    .order('name');
+      const city =
+        document.getElementById('team-city').value.trim();
 
-  if (error) {
-    console.error('Ошибка загрузки команд:', error);
-    return;
-  }
+      const file =
+        document.getElementById('team-logo-file').files[0];
 
-  if (!data || data.length === 0) {
-    list.innerHTML =
-      '<div class="muted">Команды пока не добавлены.</div>';
-    return;
-  }
-
-  list.innerHTML = data.map(team => `
-    <div class="team-admin-item">
-      ${
-        team.logo_url
-          ? `<img src="${team.logo_url}" alt="${team.name}">`
-          : `<div style="
-              width:58px;
-              height:58px;
-              border:1px solid #27546c;
-              border-radius:50%;
-              display:grid;
-              place-items:center;
-              color:#58d6ff;
-            ">?</div>`
+      if (!name) {
+        teamMessage.textContent =
+          'Укажите название команды.';
+        teamMessage.className = 'error';
+        return;
       }
 
-      <div>
-        <strong>${team.name}</strong>
-        <span>${team.city || ''}</span>
-      </div>
-    </div>
-  `).join('');
-}
+      if (!file) {
+        teamMessage.textContent =
+          'Выберите логотип команды.';
+        teamMessage.className = 'error';
+        return;
+      }
 
+      const extension =
+        file.name.split('.').pop().toLowerCase();
 
-document.getElementById('add-team-btn')
-  .addEventListener('click', async () => {
+      const fileName =
+        crypto.randomUUID() + '.' + extension;
 
-    const teamMessage =
-      document.getElementById('team-message');
-
-    teamMessage.className = '';
-    teamMessage.textContent = '';
-
-    const name =
-      document.getElementById('team-name').value.trim();
-
-    const city =
-      document.getElementById('team-city').value.trim();
-
-    const file =
-      document.getElementById('team-logo-file').files[0];
-
-    if (!name) {
       teamMessage.textContent =
-        'Укажите название команды.';
-      teamMessage.className = 'error';
-      return;
-    }
+        'Загрузка логотипа...';
 
-    if (!file) {
+      const { error: uploadError } =
+        await supabase.storage
+          .from('team-logos')
+          .upload(fileName, file, {
+            cacheControl: '3600',
+            upsert: false,
+            contentType: file.type
+          });
+
+      if (uploadError) {
+        teamMessage.textContent =
+          'Ошибка загрузки логотипа: ' +
+          uploadError.message;
+        teamMessage.className = 'error';
+        return;
+      }
+
+      const { data: urlData } =
+        supabase.storage
+          .from('team-logos')
+          .getPublicUrl(fileName);
+
+      const logoUrl = urlData.publicUrl;
+
+      const { error: insertError } =
+        await supabase
+          .from('teams')
+          .insert({
+            name,
+            city: city || null,
+            logo_url: logoUrl,
+            is_active: true
+          });
+
+      if (insertError) {
+        teamMessage.textContent =
+          'Ошибка сохранения команды: ' +
+          insertError.message;
+        teamMessage.className = 'error';
+        return;
+      }
+
       teamMessage.textContent =
-        'Выберите логотип команды.';
-      teamMessage.className = 'error';
-      return;
-    }
+        'Команда успешно добавлена.';
+      teamMessage.className = 'success';
 
+      document.getElementById('team-name').value = '';
+      document.getElementById('team-city').value = '';
+      document.getElementById('team-logo-file').value = '';
 
-    const extension =
-      file.name.split('.').pop().toLowerCase();
+      await loadTeams();
+    });
 
-    const fileName =
-      `${crypto.randomUUID()}.${extension}`;
-
-
-    // Загружаем картинку в Storage
-    const { error: uploadError } =
-      await supabase.storage
-        .from('team-logos')
-        .upload(fileName, file, {
-          cacheControl: '3600',
-          upsert: false,
-          contentType: file.type
-        });
-
-    if (uploadError) {
-      teamMessage.textContent =
-        'Ошибка загрузки логотипа: ' +
-        uploadError.message;
-      teamMessage.className = 'error';
-      return;
-    }
-
-
-    // Получаем публичный URL
-    const { data: urlData } =
-      supabase.storage
-        .from('team-logos')
-        .getPublicUrl(fileName);
-
-    const logoUrl =
-      urlData.publicUrl;
-
-
-    // Сохраняем команду
-    const { error: insertError } =
-      await supabase
-        .from('teams')
-        .insert({
-          name: name,
-          city: city || null,
-          logo_url: logoUrl,
-          is_active: true
-        });
-
-    if (insertError) {
-      teamMessage.textContent =
-        'Ошибка сохранения команды: ' +
-        insertError.message;
-      teamMessage.className = 'error';
-      return;
-    }
-
-
-    teamMessage.textContent =
-      'Команда успешно добавлена.';
-    teamMessage.className = 'success';
-
-
-    document.getElementById('team-name').value = '';
-    document.getElementById('team-city').value = '';
-    document.getElementById('team-logo-file').value = '';
-
-    await loadTeams();
-
-  });
   const {
     data: { session }
-  } =
-    await supabase.auth.getSession();
-
+  } = await supabase.auth.getSession();
 
   if (session) {
-
     await showAdmin(session);
-
   }
-
 </script>
 
 </body>
