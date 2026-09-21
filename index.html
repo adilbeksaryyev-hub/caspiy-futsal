@@ -2,11 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>КАСПИЙ — Futsal Club</title>
 
@@ -14,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -43,15 +39,13 @@
     }
 
 
-    /* ==========================================
+    /* ======================================================
        HERO
-       ========================================== */
+       ====================================================== */
 
     .hero {
       position: relative;
-
       min-height: 100vh;
-
       overflow: hidden;
 
       background:
@@ -70,7 +64,6 @@
 
     .hero::before {
       content: "";
-
       position: absolute;
       inset: 0;
 
@@ -78,17 +71,17 @@
         linear-gradient(
           to bottom,
           rgba(0,0,0,.02) 0%,
-          rgba(0,0,0,.04) 62%,
-          rgba(2,10,17,.52) 100%
+          rgba(0,0,0,.04) 60%,
+          rgba(2,10,17,.55) 100%
         );
 
       pointer-events: none;
     }
 
 
-    /* ==========================================
+    /* ======================================================
        HEADER
-       ========================================== */
+       ====================================================== */
 
     header {
       position: relative;
@@ -110,7 +103,6 @@
     .logo {
       display: flex;
       align-items: center;
-      flex: 0 0 auto;
     }
 
     .logo img {
@@ -138,14 +130,13 @@
       letter-spacing: .13em;
       text-transform: uppercase;
 
-      transition: color .25s ease;
+      transition: .25s;
     }
 
     nav a::after {
       content: "";
 
       position: absolute;
-
       left: 0;
       right: 100%;
       bottom: 0;
@@ -154,7 +145,7 @@
 
       background: #44ccff;
 
-      transition: right .25s ease;
+      transition: .25s;
     }
 
     nav a:hover,
@@ -200,23 +191,22 @@
     }
 
     .ticket:hover {
-      background:
-        rgba(38,188,245,.12);
+      background: rgba(38,188,245,.12);
 
       box-shadow:
         0 0 25px rgba(39,190,245,.16);
     }
 
 
-    /* ==========================================
+    /* ======================================================
        HERO CONTENT
-       ========================================== */
+       ====================================================== */
 
     .hero-content {
       position: relative;
       z-index: 5;
 
-      width: min(1440px, 92%);
+      width: min(1440px,92%);
 
       min-height:
         calc(100vh - 105px);
@@ -226,7 +216,6 @@
 
     .hero-text {
       width: 72%;
-
       padding-top: 130px;
     }
 
@@ -241,22 +230,20 @@
       line-height: 1.8;
 
       letter-spacing: .48em;
-
       text-transform: uppercase;
     }
 
 
-    /* ==========================================
+    /* ======================================================
        КАСПИЙ
-       ========================================== */
+       ====================================================== */
 
     .hero-title {
       display: inline-block;
-
       margin: 0;
 
       font-family:
-        'Anton',
+        'Oswald',
         'Arial Black',
         sans-serif;
 
@@ -267,13 +254,20 @@
           215px
         );
 
-      line-height: .84;
+      line-height: .80;
 
-      font-weight: 400;
+      font-weight: 700;
 
-      letter-spacing: -.035em;
+      letter-spacing: -.045em;
 
       text-transform: uppercase;
+
+      transform:
+        scaleX(.91)
+        scaleY(1.08);
+
+      transform-origin:
+        left center;
 
       color: transparent;
 
@@ -307,7 +301,7 @@
     }
 
     .hero-subtitle {
-      margin-top: 12px;
+      margin-top: 18px;
 
       font-size:
         clamp(
@@ -345,9 +339,9 @@
     }
 
 
-    /* ==========================================
+    /* ======================================================
        HERO RIGHT TEXT
-       ========================================== */
+       ====================================================== */
 
     .location {
       position: absolute;
@@ -365,7 +359,6 @@
       line-height: 2;
 
       letter-spacing: .3em;
-
       text-transform: uppercase;
     }
 
@@ -383,219 +376,382 @@
     }
 
 
-    /* ==========================================
-       NEXT MATCH — ОТДЕЛЬНАЯ СЕКЦИЯ
-       ========================================== */
+    /* ======================================================
+       NEXT MATCH SECTION
+       ====================================================== */
 
     .next-match-section {
-      padding:
-        42px 0
-        62px;
+      padding: 32px 0 58px;
 
       background:
         linear-gradient(
           180deg,
           #020a10 0%,
-          #03111b 100%
+          #020c14 100%
         );
 
       border-top:
-        1px solid rgba(70,205,255,.10);
-
-      border-bottom:
-        1px solid rgba(70,205,255,.08);
+        1px solid rgba(74,207,255,.08);
     }
 
     .next-match-container {
-      width: min(1440px, 92%);
+      width: min(1500px, 96%);
       margin: auto;
     }
 
-    .match-box {
-      width: 100%;
 
-      padding:
-        26px
-        42px
-        34px;
+    /* ======================================================
+       WIDE MATCH CARD
+       ====================================================== */
+
+    .next-match-card {
+      position: relative;
+
+      overflow: hidden;
+
+      border:
+        1px solid rgba(71,205,255,.48);
+
+      border-radius: 7px;
 
       background:
         linear-gradient(
-          135deg,
-          rgba(5,25,38,.97),
-          rgba(2,14,23,.99)
+          105deg,
+          rgba(3,21,34,.97),
+          rgba(4,25,40,.94),
+          rgba(2,14,24,.98)
         );
 
-      border:
-        1px solid rgba(65,202,255,.36);
-
       box-shadow:
-        0 10px 40px
-        rgba(0,0,0,.20),
-        0 0 35px
-        rgba(0,174,255,.05);
+        0 0 34px rgba(0,174,255,.06),
+        inset 0 0 40px rgba(77,203,255,.03);
     }
 
-    .match-header {
+    .next-match-card::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(1,13,22,.80),
+          rgba(2,18,29,.55),
+          rgba(1,12,21,.80)
+        ),
+        url("hero-bg.png");
+
+      background-size: cover;
+      background-position: center 72%;
+
+      opacity: .16;
+
+      pointer-events: none;
+    }
+
+
+    /* MATCH HEADER */
+
+    .next-match-header {
+      position: relative;
+      z-index: 2;
+
+      min-height: 54px;
+
+      padding: 0 28px;
+
       display: flex;
-
-      justify-content: space-between;
       align-items: center;
-
-      padding-bottom: 18px;
-      margin-bottom: 26px;
+      justify-content: space-between;
 
       border-bottom:
-        1px solid rgba(91,206,255,.16);
+        1px solid rgba(97,207,249,.17);
     }
 
-    .match-header h3 {
+    .next-match-header h3 {
       margin: 0;
 
-      color: #59d4ff;
+      font-family:
+        'Oswald',
+        sans-serif;
 
-      font-size: 11px;
-      font-weight: 700;
+      color: #8ddfff;
 
-      letter-spacing: .30em;
+      font-size: 16px;
+      font-weight: 500;
 
-      text-transform: uppercase;
-    }
-
-    .match-header-link {
-      color: #718c9b;
-
-      font-size: 9px;
-      font-weight: 600;
-
-      letter-spacing: .16em;
+      letter-spacing: .17em;
 
       text-transform: uppercase;
     }
 
-    .teams {
+    .all-matches-link {
+      color: #92adba;
+
+      font-size: 10px;
+      font-weight: 500;
+
+      letter-spacing: .17em;
+
+      text-transform: uppercase;
+
+      transition: .2s;
+    }
+
+    .all-matches-link:hover {
+      color: #76dcff;
+    }
+
+
+    /* MATCH BODY */
+
+    .next-match-body {
+      position: relative;
+      z-index: 2;
+
       display: grid;
 
       grid-template-columns:
-        1fr
-        110px
-        1fr;
+        1.05fr
+        1px
+        1.05fr
+        1px
+        1.05fr
+        1px
+        1.25fr;
 
       align-items: center;
 
-      max-width: 790px;
+      min-height: 235px;
 
-      margin: auto;
-
-      gap: 38px;
+      padding:
+        19px
+        25px
+        22px;
     }
 
-    .team {
+    .match-divider {
+      width: 1px;
+      height: 135px;
+
+      justify-self: center;
+
+      background:
+        linear-gradient(
+          to bottom,
+          transparent,
+          rgba(98,203,243,.32),
+          transparent
+        );
+    }
+
+    .next-match-column {
       text-align: center;
+
+      padding:
+        10px
+        24px;
     }
 
-    .team-logo {
-      width: 96px;
-      height: 96px;
+
+    /* TEAMS */
+
+    .next-team-logo {
+      width: 92px;
+      height: 92px;
 
       margin:
         0 auto
-        14px;
+        13px;
 
-      display: grid;
-      place-items: center;
-
-      color: #55d0ff;
-
-      font-family:
-        'Anton',
-        sans-serif;
-
-      font-size: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .team-logo img {
+    .next-team-logo img {
       width: 100%;
       height: 100%;
 
       object-fit: contain;
+
+      filter:
+        drop-shadow(
+          0 4px 12px
+          rgba(0,0,0,.40)
+        );
     }
 
-    .team strong {
-      display: block;
+    .next-team-name {
+      color: #f5fbff;
 
-      font-size: 14px;
+      font-size: 17px;
       font-weight: 800;
-
-      line-height: 1.35;
 
       letter-spacing: .07em;
 
-      text-transform: uppercase;
-    }
-
-    .team-city {
-      display: block;
-
-      margin-top: 6px;
-
-      color: #668292;
-
-      font-size: 9px;
-      font-weight: 500;
-
-      letter-spacing: .16em;
+      line-height: 1.3;
 
       text-transform: uppercase;
     }
 
-    .versus {
-      text-align: center;
+    .next-team-city {
+      min-height: 17px;
 
-      color: #678493;
+      margin-top: 7px;
 
-      font-family:
-        'Anton',
-        sans-serif;
+      color: #88aebe;
 
-      font-size: 23px;
-      font-weight: 400;
-
-      letter-spacing: .15em;
-    }
-
-    .match-info {
-      margin-top: 25px;
-
-      text-align: center;
-
-      color: #809aaa;
-
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 500;
-
-      line-height: 2;
 
       letter-spacing: .18em;
 
       text-transform: uppercase;
     }
 
-    #match-datetime {
-      color: #bfd6e2;
+
+    /* DATE + TIME */
+
+    .match-date {
+      color: #b4cbd7;
 
       font-size: 11px;
       font-weight: 600;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
     }
 
-    #match-competition {
-      color: #70bcd9;
+    .match-time {
+      margin:
+        8px 0
+        12px;
+
+      color: #f5fbff;
+
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size: 47px;
+      font-weight: 500;
+
+      line-height: 1;
+    }
+
+    .match-competition {
+      color: #75a6bb;
+
+      font-size: 9px;
+      font-weight: 600;
+
+      line-height: 1.7;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+    }
+
+    .match-venue {
+      margin-top: 4px;
+
+      color: #91b5c5;
+
+      font-size: 9px;
+      font-weight: 500;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
     }
 
 
-    /* ==========================================
+    /* COUNTDOWN */
+
+    .countdown-title {
+      margin-bottom: 20px;
+
+      color: #89a8b7;
+
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+    }
+
+    .countdown {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      align-items: center;
+
+      max-width: 310px;
+
+      margin: auto;
+    }
+
+    .countdown-part {
+      position: relative;
+
+      text-align: center;
+    }
+
+    .countdown-part:not(:last-child)::after {
+      content: "";
+
+      position: absolute;
+
+      top: 8px;
+      right: 0;
+
+      width: 1px;
+      height: 58px;
+
+      background:
+        linear-gradient(
+          transparent,
+          rgba(96,203,245,.35),
+          transparent
+        );
+    }
+
+    .countdown-number {
+      color: #f8fcff;
+
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size: 38px;
+      font-weight: 500;
+
+      line-height: 1;
+    }
+
+    .countdown-label {
+      margin-top: 9px;
+
+      color: #8ba9b8;
+
+      font-size: 9px;
+      font-weight: 600;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* ======================================================
        RESULTS
-       ========================================== */
+       ====================================================== */
 
     .results-section {
       padding:
@@ -609,10 +765,13 @@
           transparent 30%
         ),
         #030c14;
+
+      border-top:
+        1px solid rgba(70,205,255,.08);
     }
 
     .results-container {
-      width: min(1440px, 92%);
+      width: min(1440px,92%);
       margin: auto;
     }
 
@@ -644,7 +803,7 @@
       margin: 0;
 
       font-family:
-        'Anton',
+        'Oswald',
         sans-serif;
 
       font-size:
@@ -654,7 +813,7 @@
           66px
         );
 
-      font-weight: 400;
+      font-weight: 600;
 
       text-transform: uppercase;
     }
@@ -712,9 +871,7 @@
 
     .result-top {
       display: flex;
-
-      justify-content:
-        space-between;
+      justify-content: space-between;
 
       gap: 20px;
 
@@ -762,9 +919,7 @@
     }
 
     .result-team.away {
-      flex-direction:
-        row-reverse;
-
+      flex-direction: row-reverse;
       text-align: right;
     }
 
@@ -808,7 +963,7 @@
       text-align: center;
 
       font-family:
-        'Anton',
+        'Oswald',
         sans-serif;
 
       font-size: 38px;
@@ -852,9 +1007,9 @@
     }
 
 
-    /* ==========================================
+    /* ======================================================
        FOOTER
-       ========================================== */
+       ====================================================== */
 
     footer {
       background: #02080d;
@@ -880,7 +1035,6 @@
 
     .footer-logo {
       display: flex;
-
       align-items: center;
 
       gap: 14px;
@@ -912,26 +1066,43 @@
     }
 
 
-    /* ==========================================
+    /* ======================================================
        TABLET
-       ========================================== */
+       ====================================================== */
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1150px) {
 
       nav {
-        gap: 18px;
+        gap: 17px;
       }
 
       nav a {
         font-size: 9px;
       }
 
+      .next-match-body {
+        grid-template-columns:
+          1fr
+          1px
+          1fr;
+
+        row-gap: 26px;
+      }
+
+      .next-match-body .match-divider:nth-of-type(2) {
+        display: none;
+      }
+
+      .countdown-column {
+        grid-column: 1 / -1;
+      }
+
     }
 
 
-    /* ==========================================
+    /* ======================================================
        MOBILE
-       ========================================== */
+       ====================================================== */
 
     @media (max-width: 900px) {
 
@@ -958,7 +1129,6 @@
 
       .hero-text {
         width: 100%;
-
         padding-top: 100px;
       }
 
@@ -969,6 +1139,10 @@
             25vw,
             155px
           );
+
+        transform:
+          scaleX(.92)
+          scaleY(1.04);
       }
 
       .hero-subtitle {
@@ -988,37 +1162,52 @@
 
       .next-match-section {
         padding:
-          28px 0
-          40px;
+          22px 0
+          42px;
       }
 
-      .match-box {
+      .next-match-container {
+        width: 94%;
+      }
+
+      .next-match-header {
+        padding: 0 18px;
+      }
+
+      .next-match-header h3 {
+        font-size: 13px;
+      }
+
+      .next-match-body {
+        display: block;
+
         padding:
-          22px
-          18px
-          26px;
+          25px
+          18px;
       }
 
-      .teams {
-        grid-template-columns:
-          1fr
-          60px
-          1fr;
+      .match-divider {
+        width: 70%;
+        height: 1px;
 
-        gap: 8px;
+        margin:
+          22px auto;
+
+        background:
+          linear-gradient(
+            90deg,
+            transparent,
+            rgba(98,203,243,.30),
+            transparent
+          );
       }
 
-      .team-logo {
-        width: 70px;
-        height: 70px;
+      .next-match-column {
+        padding: 5px 0;
       }
 
-      .team strong {
-        font-size: 11px;
-      }
-
-      .versus {
-        font-size: 18px;
+      .countdown-column {
+        margin-top: 4px;
       }
 
       .results-grid {
@@ -1027,7 +1216,6 @@
 
       .results-heading {
         flex-direction: column;
-
         align-items: flex-start;
       }
 
@@ -1037,7 +1225,6 @@
 
       .footer-inner {
         flex-direction: column;
-
         align-items: flex-start;
 
         padding: 30px 0;
@@ -1059,12 +1246,28 @@
 
       .hero-subtitle {
         font-size: 17px;
-
         letter-spacing: .15em;
       }
 
-      .match-header-link {
+      .all-matches-link {
         display: none;
+      }
+
+      .next-team-logo {
+        width: 76px;
+        height: 76px;
+      }
+
+      .match-time {
+        font-size: 40px;
+      }
+
+      .countdown {
+        max-width: 260px;
+      }
+
+      .countdown-number {
+        font-size: 32px;
       }
 
       .result-teams {
@@ -1080,17 +1283,11 @@
 
       .result-score {
         min-width: 55px;
-
         font-size: 25px;
       }
 
     }
-@media (min-width: 901px) {
-  .hero-title {
-    transform: scaleX(.91) scaleY(1.08);
-    transform-origin: left center;
-  }
-}
+
   </style>
 </head>
 
@@ -1098,31 +1295,27 @@
 <body>
 
 
-<!-- ==========================================
+<!-- ======================================================
      HERO
-     ========================================== -->
+     ====================================================== -->
 
 <section class="hero">
 
   <header>
 
-    <a
-      href="#"
-      class="logo"
-    >
+    <a href="#" class="logo">
+
       <img
         src="logo.png"
         alt="Caspiy Futsal Club"
       >
+
     </a>
 
 
     <nav>
 
-      <a
-        href="#"
-        class="active"
-      >
+      <a href="#" class="active">
         Главная
       </a>
 
@@ -1159,17 +1352,13 @@
         RU⌄
       </span>
 
-      <a
-        class="ticket"
-        href="#"
-      >
+      <a class="ticket" href="#">
         Билеты →
       </a>
 
     </div>
 
   </header>
-
 
 
   <div class="hero-content">
@@ -1194,19 +1383,22 @@
 
 
       <div class="slogan">
+
         Наша стихия — движение<br>
         Наш дом — Каспий
+
       </div>
 
     </div>
 
 
-
     <div class="location">
 
       <div class="side-slogan">
+
         Один регион<br>
         Одна команда
+
       </div>
 
       AQTAU<br>
@@ -1221,9 +1413,9 @@
 
 
 
-<!-- ==========================================
-     СЛЕДУЮЩИЙ МАТЧ
-     ========================================== -->
+<!-- ======================================================
+     NEXT MATCH
+     ====================================================== -->
 
 <section
   class="next-match-section"
@@ -1233,91 +1425,212 @@
   <div class="next-match-container">
 
 
-    <div class="match-box">
+    <div class="next-match-card">
 
 
-      <div class="match-header">
+      <div class="next-match-header">
 
         <h3>
           СЛЕДУЮЩИЙ МАТЧ
         </h3>
 
-        <span class="match-header-link">
+        <a
+          href="#results"
+          class="all-matches-link"
+        >
           ВСЕ МАТЧИ →
-        </span>
+        </a>
 
       </div>
 
 
-      <div class="teams">
+
+      <div class="next-match-body">
 
 
-        <div class="team">
+        <!-- LEFT TEAM -->
 
-          <div class="team-logo">
+        <div class="next-match-column">
+
+          <div class="next-team-logo">
 
             <img
+              id="left-team-logo"
               src="logo.png"
-              alt="Каспий"
+              alt=""
             >
 
           </div>
 
-          <strong>
-            КАСПИЙ
-          </strong>
-
-          <span class="team-city">
-            АКТАУ
-          </span>
-
-        </div>
-
-
-
-        <div class="versus">
-          VS
-        </div>
-
-
-
-        <div class="team">
-
           <div
-            class="team-logo"
-            id="opponent-logo"
+            class="next-team-name"
+            id="left-team-name"
           >
-            ?
+            КАСПИЙ
           </div>
 
-          <strong
-            id="opponent-name"
+          <div
+            class="next-team-city"
+            id="left-team-city"
           >
-            СОПЕРНИК
-          </strong>
+            АКТАУ
+          </div>
 
         </div>
 
 
-      </div>
+
+        <div class="match-divider"></div>
 
 
 
-      <div class="match-info">
+        <!-- DATE / TIME -->
 
-        <span id="match-datetime">
-          ДАТА И ВРЕМЯ
-        </span>
+        <div class="next-match-column">
 
-        <br>
+          <div
+            class="match-date"
+            id="next-match-date"
+          >
+            ДАТА МАТЧА
+          </div>
 
-        <span id="match-competition"></span>
+          <div
+            class="match-time"
+            id="next-match-time"
+          >
+            --:--
+          </div>
 
-        <br>
+          <div
+            class="match-competition"
+            id="next-match-competition"
+          >
+          </div>
 
-        <span id="match-venue">
-          АКТАУ
-        </span>
+          <div
+            class="match-venue"
+            id="next-match-venue"
+          >
+          </div>
+
+        </div>
+
+
+
+        <div class="match-divider"></div>
+
+
+
+        <!-- RIGHT TEAM -->
+
+        <div class="next-match-column">
+
+          <div class="next-team-logo">
+
+            <img
+              id="right-team-logo"
+              src="logo.png"
+              alt=""
+            >
+
+          </div>
+
+          <div
+            class="next-team-name"
+            id="right-team-name"
+          >
+            СОПЕРНИК
+          </div>
+
+          <div
+            class="next-team-city"
+            id="right-team-city"
+          >
+          </div>
+
+        </div>
+
+
+
+        <div class="match-divider"></div>
+
+
+
+        <!-- COUNTDOWN -->
+
+        <div
+          class="
+            next-match-column
+            countdown-column
+          "
+        >
+
+          <div
+            class="countdown-title"
+            id="countdown-title"
+          >
+            ДО МАТЧА
+          </div>
+
+
+          <div class="countdown">
+
+
+            <div class="countdown-part">
+
+              <div
+                class="countdown-number"
+                id="countdown-days"
+              >
+                00
+              </div>
+
+              <div class="countdown-label">
+                ДНИ
+              </div>
+
+            </div>
+
+
+
+            <div class="countdown-part">
+
+              <div
+                class="countdown-number"
+                id="countdown-hours"
+              >
+                00
+              </div>
+
+              <div class="countdown-label">
+                ЧАСОВ
+              </div>
+
+            </div>
+
+
+
+            <div class="countdown-part">
+
+              <div
+                class="countdown-number"
+                id="countdown-minutes"
+              >
+                00
+              </div>
+
+              <div class="countdown-label">
+                МИНУТ
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
 
       </div>
 
@@ -1331,9 +1644,9 @@
 
 
 
-<!-- ==========================================
+<!-- ======================================================
      RESULTS
-     ========================================== -->
+     ====================================================== -->
 
 <section
   class="results-section"
@@ -1384,9 +1697,9 @@
 
 
 
-<!-- ==========================================
+<!-- ======================================================
      FOOTER
-     ========================================== -->
+     ====================================================== -->
 
 <footer>
 
@@ -1418,9 +1731,9 @@
 
 
 
-<!-- ==========================================
-     SUPABASE
-     ========================================== -->
+<!-- ======================================================
+     SUPABASE + MATCH LOGIC
+     ====================================================== -->
 
 <script type="module">
 
@@ -1435,21 +1748,74 @@
     );
 
 
-  function formatDateTime(value) {
+  let countdownTimer = null;
+
+
+  /* ======================================================
+     HELPERS
+     ====================================================== */
+
+  function escapeHtml(value) {
+
+    return String(value ?? '')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+
+  }
+
+
+  function pad(value) {
+
+    return String(value).padStart(2, '0');
+
+  }
+
+
+  function formatMatchDate(value) {
 
     if (!value) return '';
+
+
+    const formatted =
+      new Intl.DateTimeFormat(
+        'ru-RU',
+        {
+          timeZone: 'Asia/Aqtau',
+
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+        }
+      )
+      .format(
+        new Date(value)
+      )
+      .replace(' г.', '')
+      .replace(' г', '');
+
+
+    return formatted.toUpperCase();
+
+  }
+
+
+  function formatMatchTime(value) {
+
+    if (!value) return '--:--';
+
 
     return new Intl.DateTimeFormat(
       'ru-RU',
       {
         timeZone: 'Asia/Aqtau',
 
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-
         hour: '2-digit',
-        minute: '2-digit'
+        minute: '2-digit',
+
+        hour12: false
       }
     ).format(
       new Date(value)
@@ -1458,9 +1824,10 @@
   }
 
 
-  function formatDate(value) {
+  function formatShortDate(value) {
 
     if (!value) return '';
+
 
     return new Intl.DateTimeFormat(
       'ru-RU',
@@ -1478,43 +1845,304 @@
   }
 
 
+  function findOpponentTeam(
+    opponent,
+    teams
+  ) {
 
-  /* ==========================================
-     СЛЕДУЮЩИЙ МАТЧ
-     ========================================== */
+    if (
+      !opponent ||
+      !teams
+    ) {
+      return null;
+    }
+
+
+    const name =
+      opponent
+        .toLowerCase()
+        .trim();
+
+
+    return teams.find(
+      team => {
+
+        const teamName =
+          String(
+            team.name || ''
+          )
+          .toLowerCase()
+          .trim();
+
+
+        if (!teamName) {
+          return false;
+        }
+
+
+        return (
+          name.includes(teamName) ||
+          teamName.includes(name)
+        );
+
+      }
+    ) || null;
+
+  }
+
+
+  /* ======================================================
+     COUNTDOWN
+     ====================================================== */
+
+  function startCountdown(
+    matchDate
+  ) {
+
+    if (countdownTimer) {
+
+      clearInterval(
+        countdownTimer
+      );
+
+    }
+
+
+    const daysElement =
+      document.getElementById(
+        'countdown-days'
+      );
+
+
+    const hoursElement =
+      document.getElementById(
+        'countdown-hours'
+      );
+
+
+    const minutesElement =
+      document.getElementById(
+        'countdown-minutes'
+      );
+
+
+    const titleElement =
+      document.getElementById(
+        'countdown-title'
+      );
+
+
+    function update() {
+
+      const now =
+        Date.now();
+
+
+      const target =
+        new Date(
+          matchDate
+        ).getTime();
+
+
+      let difference =
+        target - now;
+
+
+      if (
+        !Number.isFinite(target) ||
+        difference <= 0
+      ) {
+
+        daysElement.textContent =
+          '00';
+
+        hoursElement.textContent =
+          '00';
+
+        minutesElement.textContent =
+          '00';
+
+        titleElement.textContent =
+          'МАТЧ НАЧАЛСЯ';
+
+        return;
+
+      }
+
+
+      const day =
+        1000 * 60 * 60 * 24;
+
+
+      const hour =
+        1000 * 60 * 60;
+
+
+      const minute =
+        1000 * 60;
+
+
+      const days =
+        Math.floor(
+          difference / day
+        );
+
+
+      difference %=
+        day;
+
+
+      const hours =
+        Math.floor(
+          difference / hour
+        );
+
+
+      difference %=
+        hour;
+
+
+      const minutes =
+        Math.floor(
+          difference / minute
+        );
+
+
+      daysElement.textContent =
+        pad(days);
+
+
+      hoursElement.textContent =
+        pad(hours);
+
+
+      minutesElement.textContent =
+        pad(minutes);
+
+
+      titleElement.textContent =
+        'ДО МАТЧА';
+
+    }
+
+
+    update();
+
+
+    countdownTimer =
+      setInterval(
+        update,
+        30000
+      );
+
+  }
+
+
+  /* ======================================================
+     RENDER TEAM
+     ====================================================== */
+
+  function renderTeam(
+    side,
+    team
+  ) {
+
+    const logoElement =
+      document.getElementById(
+        `${side}-team-logo`
+      );
+
+
+    const nameElement =
+      document.getElementById(
+        `${side}-team-name`
+      );
+
+
+    const cityElement =
+      document.getElementById(
+        `${side}-team-city`
+      );
+
+
+    logoElement.src =
+      team.logo;
+
+
+    logoElement.alt =
+      team.name;
+
+
+    nameElement.textContent =
+      team.name;
+
+
+    cityElement.textContent =
+      team.city || '';
+
+  }
+
+
+  /* ======================================================
+     NEXT MATCH
+     ====================================================== */
 
   async function loadNextMatch() {
 
-    const {
-      data,
-      error
-    } =
-      await supabase
-        .from('matches')
-        .select('*')
-        .eq(
-          'is_featured',
-          true
-        )
-        .eq(
-          'status',
-          'upcoming'
-        )
-        .order(
-          'match_date',
-          {
-            ascending: true
-          }
-        )
-        .limit(1)
-        .maybeSingle();
+
+    const [
+      matchResponse,
+      teamsResponse
+    ] =
+      await Promise.all([
 
 
-    if (error) {
+        supabase
+          .from('matches')
+          .select('*')
+          .eq(
+            'is_featured',
+            true
+          )
+          .eq(
+            'status',
+            'upcoming'
+          )
+          .order(
+            'match_date',
+            {
+              ascending: true
+            }
+          )
+          .limit(1)
+          .maybeSingle(),
+
+
+        supabase
+          .from('teams')
+          .select(
+            'name, city, logo_url'
+          )
+          .eq(
+            'is_active',
+            true
+          )
+
+
+      ]);
+
+
+    const match =
+      matchResponse.data;
+
+
+    if (
+      matchResponse.error
+    ) {
 
       console.error(
-        'Ошибка загрузки матча:',
-        error
+        'Ошибка следующего матча:',
+        matchResponse.error
       );
 
       return;
@@ -1522,30 +2150,24 @@
     }
 
 
-    if (!data) {
+    if (!match) {
 
       document.getElementById(
-        'opponent-name'
-      ).textContent =
-        'СОПЕРНИК';
-
-
-      document.getElementById(
-        'match-datetime'
+        'next-match-date'
       ).textContent =
         'МАТЧ НЕ НАЗНАЧЕН';
 
 
       document.getElementById(
-        'match-competition'
+        'next-match-time'
       ).textContent =
-        '';
+        '--:--';
 
 
       document.getElementById(
-        'match-venue'
+        'countdown-title'
       ).textContent =
-        '';
+        'ОЖИДАЕМ СЛЕДУЮЩИЙ МАТЧ';
 
 
       return;
@@ -1553,70 +2175,126 @@
     }
 
 
-    document.getElementById(
-      'opponent-name'
-    ).textContent =
-      data.opponent ||
-      'СОПЕРНИК';
+    const teams =
+      teamsResponse.data || [];
 
 
-    document.getElementById(
-      'match-competition'
-    ).textContent =
-      data.competition ||
-      '';
-
-
-    document.getElementById(
-      'match-venue'
-    ).textContent =
-      data.venue ||
-      '';
-
-
-    document.getElementById(
-      'match-datetime'
-    ).textContent =
-      formatDateTime(
-        data.match_date
+    const opponentTeam =
+      findOpponentTeam(
+        match.opponent,
+        teams
       );
 
 
-    const logoBox =
-      document.getElementById(
-        'opponent-logo'
-      );
+    const caspiy = {
+
+      name:
+        'КАСПИЙ',
+
+      city:
+        'АКТАУ',
+
+      logo:
+        'logo.png'
+
+    };
+
+
+    const opponent = {
+
+      name:
+        (
+          match.opponent ||
+          opponentTeam?.name ||
+          'СОПЕРНИК'
+        ).toUpperCase(),
+
+      city:
+        (
+          opponentTeam?.city ||
+          ''
+        ).toUpperCase(),
+
+      logo:
+        opponentTeam?.logo_url ||
+        match.opponent_logo_url ||
+        'logo.png'
+
+    };
 
 
     if (
-      data.opponent_logo_url
+      match.is_home
     ) {
 
-      logoBox.innerHTML = `
+      renderTeam(
+        'left',
+        caspiy
+      );
 
-        <img
-          src="${data.opponent_logo_url}"
-          alt="${data.opponent}"
-        >
 
-      `;
+      renderTeam(
+        'right',
+        opponent
+      );
 
     } else {
 
-      logoBox.textContent =
-        '?';
+      renderTeam(
+        'left',
+        opponent
+      );
+
+
+      renderTeam(
+        'right',
+        caspiy
+      );
 
     }
+
+
+    document.getElementById(
+      'next-match-date'
+    ).textContent =
+      formatMatchDate(
+        match.match_date
+      );
+
+
+    document.getElementById(
+      'next-match-time'
+    ).textContent =
+      formatMatchTime(
+        match.match_date
+      );
+
+
+    document.getElementById(
+      'next-match-competition'
+    ).textContent =
+      match.competition || '';
+
+
+    document.getElementById(
+      'next-match-venue'
+    ).textContent =
+      match.venue || '';
+
+
+    startCountdown(
+      match.match_date
+    );
 
   }
 
 
-
-  /* ==========================================
-     ПОСЛЕДНИЕ РЕЗУЛЬТАТЫ
-     ========================================== */
+  /* ======================================================
+     RESULTS
+     ====================================================== */
 
   async function loadResults() {
+
 
     const resultsList =
       document.getElementById(
@@ -1655,7 +2333,9 @@
       resultsList.innerHTML = `
 
         <div class="results-empty">
+
           НЕ УДАЛОСЬ ЗАГРУЗИТЬ РЕЗУЛЬТАТЫ
+
         </div>
 
       `;
@@ -1674,7 +2354,9 @@
       resultsList.innerHTML = `
 
         <div class="results-empty">
+
           ЗАВЕРШЁННЫХ МАТЧЕЙ ПОКА НЕТ
+
         </div>
 
       `;
@@ -1690,17 +2372,28 @@
         match => {
 
 
+          const opponentName =
+            escapeHtml(
+              match.opponent ||
+              'СОПЕРНИК'
+            );
+
+
           const opponentLogo =
             match.opponent_logo_url
 
               ? `
+
                 <img
-                  src="${match.opponent_logo_url}"
-                  alt="${match.opponent}"
+                  src="${escapeHtml(
+                    match.opponent_logo_url
+                  )}"
+                  alt="${opponentName}"
                 >
+
               `
 
-              : '?';
+              : '';
 
 
           const caspiyLogo = `
@@ -1771,7 +2464,7 @@
                 <div>
 
                   <div class="result-team-name">
-                    ${match.opponent}
+                    ${opponentName}
                   </div>
 
                 </div>
@@ -1803,7 +2496,7 @@
                 <div>
 
                   <div class="result-team-name">
-                    ${match.opponent}
+                    ${opponentName}
                   </div>
 
                 </div>
@@ -1859,8 +2552,10 @@
                 <div class="result-competition">
 
                   ${
-                    match.competition ||
-                    'МАТЧ'
+                    escapeHtml(
+                      match.competition ||
+                      'МАТЧ'
+                    )
                   }
 
                 </div>
@@ -1869,7 +2564,7 @@
                 <div class="result-date">
 
                   ${
-                    formatDate(
+                    formatShortDate(
                       match.match_date
                     )
                   }
@@ -1888,7 +2583,9 @@
 
 
                 <div class="result-score">
+
                   ${leftScore}:${rightScore}
+
                 </div>
 
 
@@ -1901,7 +2598,11 @@
 
               <div class="result-venue">
 
-                ${match.venue || ''}
+                ${
+                  escapeHtml(
+                    match.venue || ''
+                  )
+                }
 
               </div>
 
@@ -1917,6 +2618,9 @@
   }
 
 
+  /* ======================================================
+     LOAD
+     ====================================================== */
 
   await Promise.all([
     loadNextMatch(),
