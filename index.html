@@ -9,10 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
 
@@ -39,9 +36,9 @@
     }
 
 
-    /* ======================================================
+    /* =========================
        HERO
-       ====================================================== */
+    ========================= */
 
     .hero {
       position: relative;
@@ -51,9 +48,9 @@
       background:
         linear-gradient(
           90deg,
-          rgba(1, 9, 16, .91) 0%,
-          rgba(2, 16, 27, .69) 43%,
-          rgba(1, 10, 18, .35) 100%
+          rgba(1,9,16,.91) 0%,
+          rgba(2,16,27,.69) 43%,
+          rgba(1,10,18,.35) 100%
         ),
         url("hero-bg.png");
 
@@ -79,30 +76,23 @@
     }
 
 
-    /* ======================================================
+    /* =========================
        HEADER
-       ====================================================== */
+    ========================= */
 
     header {
       position: relative;
       z-index: 20;
 
-      width: min(1440px, 92%);
+      width: min(1440px,92%);
       height: 105px;
-
       margin: auto;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      border-bottom:
-        1px solid rgba(115,209,255,.17);
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
+      border-bottom: 1px solid rgba(115,209,255,.17);
     }
 
     .logo img {
@@ -119,18 +109,14 @@
 
     nav a {
       position: relative;
-
       padding: 13px 0;
 
       color: #c2d3dd;
 
       font-size: 11px;
       font-weight: 600;
-
       letter-spacing: .13em;
       text-transform: uppercase;
-
-      transition: .25s;
     }
 
     nav a::after {
@@ -142,6 +128,7 @@
       bottom: 0;
 
       height: 2px;
+
       background: #44ccff;
 
       transition: .25s;
@@ -168,38 +155,25 @@
 
       font-size: 11px;
       font-weight: 500;
-
       letter-spacing: .12em;
     }
 
     .ticket {
       padding: 14px 25px;
 
-      border:
-        1px solid rgba(70,207,255,.78);
-
+      border: 1px solid rgba(70,207,255,.78);
       border-radius: 6px;
 
       font-size: 11px;
       font-weight: 700;
-
       letter-spacing: .13em;
       text-transform: uppercase;
-
-      transition: .25s;
-    }
-
-    .ticket:hover {
-      background: rgba(38,188,245,.12);
-
-      box-shadow:
-        0 0 25px rgba(39,190,245,.16);
     }
 
 
-    /* ======================================================
+    /* =========================
        HERO CONTENT
-       ====================================================== */
+    ========================= */
 
     .hero-content {
       position: relative;
@@ -225,15 +199,15 @@
       font-weight: 500;
 
       line-height: 1.8;
-
       letter-spacing: .48em;
       text-transform: uppercase;
     }
 
 
-    /* ======================================================
-       КАСПИЙ — ПОЛНАЯ ТЕКСТУРА ВОЛНЫ
-       ====================================================== */
+    /* ===========================================
+       КАСПИЙ
+       ВОЛНА ТЕПЕРЬ ЗАПОЛНЯЕТ БОЛЬШЕ БУКВ
+    =========================================== */
 
     .hero-title {
       display: inline-block;
@@ -245,12 +219,7 @@
         'Arial Black',
         sans-serif;
 
-      font-size:
-        clamp(
-          118px,
-          12.8vw,
-          215px
-        );
+      font-size: clamp(118px,12.8vw,215px);
 
       line-height: .80;
 
@@ -264,50 +233,85 @@
         scaleX(.91)
         scaleY(1.08);
 
-      transform-origin:
-        left center;
+      transform-origin: left center;
 
       color: transparent;
 
+
       /*
-        ВАЖНО:
-        100% 100% растягивает ВСЮ текстуру
-        от первой буквы до последней.
-        Теперь волна не обрезается.
+        ПЕРВАЯ КОПИЯ ВОЛНЫ — ВЕРХ/ЦЕНТР
+        ВТОРАЯ КОПИЯ — НИЖЕ.
+
+        Поэтому текстура теперь проходит
+        почти по всей высоте букв.
       */
 
       background-image:
+
         linear-gradient(
           to bottom,
-          rgba(230,248,255,.15) 0%,
-          rgba(255,255,255,0) 32%
+          rgba(230,248,255,.20) 0%,
+          rgba(255,255,255,.04) 35%,
+          rgba(0,40,70,.04) 100%
         ),
+
+        url("./title-texture.png"),
+
         url("./title-texture.png");
 
+
       background-size:
+
         100% 100%,
-        100% 100%;
+
+        100% auto,
+
+        100% auto;
+
 
       background-position:
+
         center center,
-        center center;
+
+        center 35%,
+
+        center 72%;
+
 
       background-repeat:
+
         no-repeat,
+
+        no-repeat,
+
         no-repeat;
+
+
+      background-blend-mode:
+
+        screen,
+
+        screen,
+
+        normal;
+
 
       -webkit-background-clip: text;
       background-clip: text;
 
       -webkit-text-fill-color: transparent;
 
+
       -webkit-text-stroke:
-        1.2px rgba(205,235,255,.40);
+        1.2px rgba(210,240,255,.43);
+
 
       filter:
-        brightness(1.18)
-        contrast(1.12)
-        saturate(1.15)
+
+        brightness(1.20)
+        contrast(1.14)
+        saturate(1.18)
+
         drop-shadow(
           0 7px 15px
           rgba(0,0,0,.38)
@@ -315,17 +319,10 @@
     }
 
 
-    /* FUTSAL CLUB */
-
     .hero-subtitle {
       margin-top: 18px;
 
-      font-size:
-        clamp(
-          24px,
-          2.2vw,
-          38px
-        );
+      font-size: clamp(24px,2.2vw,38px);
 
       font-weight: 300;
 
@@ -334,9 +331,6 @@
       text-transform: uppercase;
 
       color: #d6effc;
-
-      text-shadow:
-        0 0 10px rgba(120,210,255,.16);
     }
 
     .slogan {
@@ -355,9 +349,9 @@
     }
 
 
-    /* ======================================================
-       HERO RIGHT
-       ====================================================== */
+    /* =========================
+       RIGHT
+    ========================= */
 
     .location {
       position: absolute;
@@ -375,6 +369,7 @@
       line-height: 2;
 
       letter-spacing: .3em;
+
       text-transform: uppercase;
     }
 
@@ -392,9 +387,9 @@
     }
 
 
-    /* ======================================================
-       NEXT MATCH SECTION
-       ====================================================== */
+    /* =========================
+       NEXT MATCH
+    ========================= */
 
     .next-match-section {
       padding: 32px 0 58px;
@@ -411,14 +406,9 @@
     }
 
     .next-match-container {
-      width: min(1500px, 96%);
+      width: min(1500px,96%);
       margin: auto;
     }
-
-
-    /* ======================================================
-       MATCH CARD
-       ====================================================== */
 
     .next-match-card {
       position: relative;
@@ -462,16 +452,13 @@
       background-position: center 72%;
 
       opacity: .16;
-
-      pointer-events: none;
     }
-
 
     .next-match-header {
       position: relative;
       z-index: 2;
 
-      min-height: 54px;
+      height: 54px;
 
       padding: 0 28px;
 
@@ -484,9 +471,7 @@
     }
 
     .next-match-header h3 {
-      margin: 0;
-
-      font-family: 'Oswald', sans-serif;
+      font-family: 'Oswald',sans-serif;
 
       color: #8ddfff;
 
@@ -529,10 +514,7 @@
 
       min-height: 235px;
 
-      padding:
-        19px
-        25px
-        22px;
+      padding: 19px 25px 22px;
     }
 
     .match-divider {
@@ -553,21 +535,15 @@
     .next-match-column {
       text-align: center;
 
-      padding:
-        10px
-        24px;
+      padding: 10px 24px;
     }
 
-
-    /* TEAM */
 
     .next-team-logo {
       width: 92px;
       height: 92px;
 
-      margin:
-        0 auto
-        13px;
+      margin: 0 auto 13px;
 
       display: flex;
       align-items: center;
@@ -595,8 +571,6 @@
 
       letter-spacing: .07em;
 
-      line-height: 1.3;
-
       text-transform: uppercase;
     }
 
@@ -616,8 +590,6 @@
     }
 
 
-    /* DATE + TIME */
-
     .match-date {
       color: #b4cbd7;
 
@@ -630,15 +602,11 @@
     }
 
     .match-time {
-      margin:
-        8px 0
-        12px;
+      margin: 8px 0 12px;
 
       color: #f5fbff;
 
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald',sans-serif;
 
       font-size: 47px;
       font-weight: 500;
@@ -665,7 +633,6 @@
       color: #91b5c5;
 
       font-size: 9px;
-      font-weight: 500;
 
       letter-spacing: .18em;
 
@@ -693,8 +660,6 @@
 
       grid-template-columns:
         repeat(3,1fr);
-
-      align-items: center;
 
       max-width: 310px;
 
@@ -729,9 +694,7 @@
     .countdown-number {
       color: #f8fcff;
 
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald',sans-serif;
 
       font-size: 38px;
       font-weight: 500;
@@ -753,9 +716,9 @@
     }
 
 
-    /* ======================================================
+    /* =========================
        RESULTS
-       ====================================================== */
+    ========================= */
 
     .results-section {
       padding: 90px 0 100px;
@@ -767,9 +730,6 @@
           transparent 30%
         ),
         #030c14;
-
-      border-top:
-        1px solid rgba(70,205,255,.08);
     }
 
     .results-container {
@@ -802,16 +762,9 @@
     }
 
     .results-heading h2 {
-      margin: 0;
+      font-family: 'Oswald',sans-serif;
 
-      font-family: 'Oswald', sans-serif;
-
-      font-size:
-        clamp(
-          36px,
-          4.6vw,
-          66px
-        );
+      font-size: clamp(36px,4.6vw,66px);
 
       font-weight: 600;
 
@@ -841,9 +794,7 @@
     .result-card {
       min-height: 190px;
 
-      padding:
-        25px
-        28px;
+      padding: 25px 28px;
 
       background:
         linear-gradient(
@@ -905,6 +856,7 @@
 
     .result-team.away {
       flex-direction: row-reverse;
+
       text-align: right;
     }
 
@@ -942,13 +894,9 @@
 
       text-align: center;
 
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald',sans-serif;
 
       font-size: 38px;
-
-      color: #effbff;
     }
 
     .result-venue {
@@ -967,8 +915,7 @@
 
     .results-empty,
     .results-loading {
-      grid-column:
-        1 / -1;
+      grid-column: 1 / -1;
 
       padding: 45px;
 
@@ -987,9 +934,9 @@
     }
 
 
-    /* ======================================================
+    /* =========================
        FOOTER
-       ====================================================== */
+    ========================= */
 
     footer {
       background: #02080d;
@@ -1006,11 +953,8 @@
       margin: auto;
 
       display: flex;
-
       align-items: center;
       justify-content: space-between;
-
-      gap: 30px;
     }
 
     .footer-logo {
@@ -1046,9 +990,9 @@
     }
 
 
-    /* ======================================================
+    /* =========================
        MOBILE
-       ====================================================== */
+    ========================= */
 
     @media (max-width: 900px) {
 
@@ -1114,8 +1058,7 @@
         width: 70%;
         height: 1px;
 
-        margin:
-          22px auto;
+        margin: 22px auto;
 
         background:
           linear-gradient(
@@ -1130,24 +1073,15 @@
         grid-template-columns: 1fr;
       }
 
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-
-        padding: 30px 0;
-      }
-
     }
 
   </style>
 </head>
 
-
 <body>
 
 
 <section class="hero">
-
 
   <header>
 
@@ -1250,7 +1184,6 @@
 
   </div>
 
-
 </section>
 
 
@@ -1261,7 +1194,6 @@
 >
 
   <div class="next-match-container">
-
 
     <div class="next-match-card">
 
@@ -1280,7 +1212,6 @@
         </a>
 
       </div>
-
 
 
       <div class="next-match-body">
@@ -1315,9 +1246,7 @@
         </div>
 
 
-
         <div class="match-divider"></div>
-
 
 
         <div class="next-match-column">
@@ -1349,9 +1278,7 @@
         </div>
 
 
-
         <div class="match-divider"></div>
-
 
 
         <div class="next-match-column">
@@ -1381,9 +1308,7 @@
         </div>
 
 
-
         <div class="match-divider"></div>
-
 
 
         <div class="next-match-column">
@@ -1415,7 +1340,6 @@
             </div>
 
 
-
             <div class="countdown-part">
 
               <div
@@ -1430,7 +1354,6 @@
               </div>
 
             </div>
-
 
 
             <div class="countdown-part">
@@ -1457,7 +1380,6 @@
       </div>
 
     </div>
-
 
   </div>
 
@@ -1516,16 +1438,14 @@
 
     <div class="footer-logo">
 
-      <img
-        src="logo.png"
-        alt="Каспий"
-      >
+      <img src="logo.png" alt="Каспий">
 
       <strong>
         CASPIY FUTSAL CLUB
       </strong>
 
     </div>
+
 
     <div class="footer-text">
       AQTAU · KAZAKHSTAN
@@ -1934,10 +1854,7 @@
       await supabase
       .from('matches')
       .select('*')
-      .eq(
-        'status',
-        'finished'
-      )
+      .eq('status','finished')
       .order(
         'match_date',
         {
@@ -1956,10 +1873,7 @@
       list.innerHTML = `
 
         <div class="results-empty">
-
-          ЗАВЕРШЁННЫХ МАТЧЕЙ
-          ПОКА НЕТ
-
+          ЗАВЕРШЁННЫХ МАТЧЕЙ ПОКА НЕТ
         </div>
 
       `;
