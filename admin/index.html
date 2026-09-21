@@ -542,6 +542,7 @@
       session.user.email;
 
     await loadMatch();
+    await loadTeams();
 
   }
 
@@ -698,7 +699,153 @@
 
   });
 
+async function loadTeams() {
 
+  const list = document.getElementById('teams-list');
+
+  const { data, error } = await supabase
+    .from('teams')
+    .select('*')
+    .eq('is_active', true)
+    .order('name');
+
+  if (error) {
+    console.error('Ошибка загрузки команд:', error);
+    return;
+  }
+
+  if (!data || data.length === 0) {
+    list.innerHTML =
+      '<div class="muted">Команды пока не добавлены.</div>';
+    return;
+  }
+
+  list.innerHTML = data.map(team => `
+    <div class="team-admin-item">
+      ${
+        team.logo_url
+          ? `<img src="${team.logo_url}" alt="${team.name}">`
+          : `<div style="
+              width:58px;
+              height:58px;
+              border:1px solid #27546c;
+              border-radius:50%;
+              display:grid;
+              place-items:center;
+              color:#58d6ff;
+            ">?</div>`
+      }
+
+      <div>
+        <strong>${team.name}</strong>
+        <span>${team.city || ''}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+
+document.getElementById('add-team-btn')
+  .addEventListener('click', async () => {
+
+    const teamMessage =
+      document.getElementById('team-message');
+
+    teamMessage.className = '';
+    teamMessage.textContent = '';
+
+    const name =
+      document.getElementById('team-name').value.trim();
+
+    const city =
+      document.getElementById('team-city').value.trim();
+
+    const file =
+      document.getElementById('team-logo-file').files[0];
+
+    if (!name) {
+      teamMessage.textContent =
+        'Укажите название команды.';
+      teamMessage.className = 'error';
+      return;
+    }
+
+    if (!file) {
+      teamMessage.textContent =
+        'Выберите логотип команды.';
+      teamMessage.className = 'error';
+      return;
+    }
+
+
+    const extension =
+      file.name.split('.').pop().toLowerCase();
+
+    const fileName =
+      `${crypto.randomUUID()}.${extension}`;
+
+
+    // Загружаем картинку в Storage
+    const { error: uploadError } =
+      await supabase.storage
+        .from('team-logos')
+        .upload(fileName, file, {
+          cacheControl: '3600',
+          upsert: false,
+          contentType: file.type
+        });
+
+    if (uploadError) {
+      teamMessage.textContent =
+        'Ошибка загрузки логотипа: ' +
+        uploadError.message;
+      teamMessage.className = 'error';
+      return;
+    }
+
+
+    // Получаем публичный URL
+    const { data: urlData } =
+      supabase.storage
+        .from('team-logos')
+        .getPublicUrl(fileName);
+
+    const logoUrl =
+      urlData.publicUrl;
+
+
+    // Сохраняем команду
+    const { error: insertError } =
+      await supabase
+        .from('teams')
+        .insert({
+          name: name,
+          city: city || null,
+          logo_url: logoUrl,
+          is_active: true
+        });
+
+    if (insertError) {
+      teamMessage.textContent =
+        'Ошибка сохранения команды: ' +
+        insertError.message;
+      teamMessage.className = 'error';
+      return;
+    }
+
+
+    teamMessage.textContent =
+      'Команда успешно добавлена.';
+    teamMessage.className = 'success';
+
+
+    document.getElementById('team-name').value = '';
+    document.getElementById('team-city').value = '';
+    document.getElementById('team-logo-file').value = '';
+
+    await loadTeams();
+
+  });
   const {
     data: { session }
   } =
