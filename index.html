@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
 
   <meta
@@ -13,20 +10,15 @@
 
   <title>КАСПИЙ — Futsal Club</title>
 
-  <!-- ШРИФТЫ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
   <style>
-
-    /* ==============================
-       БАЗОВЫЕ НАСТРОЙКИ
-       ============================== */
 
     * {
       margin: 0;
@@ -46,29 +38,27 @@
     }
 
     a {
-      color: inherit;
       text-decoration: none;
-    }
-
-    button {
-      font-family: inherit;
+      color: inherit;
     }
 
 
-    /* ==============================
+    /* =========================
        HERO
-       ============================== */
+       ========================= */
 
     .hero {
-      min-height: 100vh;
       position: relative;
+
+      min-height: 100vh;
+
       overflow: hidden;
 
       background:
         linear-gradient(
           90deg,
-          rgba(1, 9, 16, 0.92) 0%,
-          rgba(2, 16, 27, 0.71) 43%,
+          rgba(1, 9, 16, 0.91) 0%,
+          rgba(2, 16, 27, 0.70) 43%,
           rgba(1, 10, 18, 0.42) 100%
         ),
         url("hero-bg.png");
@@ -80,50 +70,51 @@
 
     .hero::before {
       content: "";
+
       position: absolute;
       inset: 0;
 
       background:
         linear-gradient(
           to bottom,
-          rgba(0,0,0,.05) 0%,
-          rgba(0,0,0,.05) 60%,
-          rgba(1,8,14,.65) 100%
+          rgba(0,0,0,.03) 0%,
+          rgba(0,0,0,.05) 65%,
+          rgba(1,8,14,.58) 100%
         );
 
       pointer-events: none;
     }
 
 
-    /* ==============================
+    /* =========================
        HEADER
-       ============================== */
+       ========================= */
 
     header {
+      position: relative;
+      z-index: 20;
+
       width: min(1440px, 92%);
       height: 105px;
+
       margin: auto;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      position: relative;
-      z-index: 20;
-
       border-bottom:
-        1px solid rgba(115, 209, 255, 0.17);
+        1px solid rgba(115,209,255,.17);
     }
 
     .logo {
       display: flex;
       align-items: center;
-      flex: 0 0 auto;
     }
 
     .logo img {
-      height: 82px;
       width: auto;
+      height: 82px;
       display: block;
     }
 
@@ -136,6 +127,8 @@
     nav a {
       position: relative;
 
+      padding: 13px 0;
+
       font-size: 11px;
       font-weight: 600;
 
@@ -144,14 +137,12 @@
 
       color: #c2d3dd;
 
-      padding: 13px 0;
-
-      transition:
-        color .25s ease;
+      transition: .25s;
     }
 
     nav a::after {
       content: "";
+
       position: absolute;
 
       left: 0;
@@ -162,8 +153,7 @@
 
       background: #44ccff;
 
-      transition:
-        right .25s ease;
+      transition: .25s;
     }
 
     nav a:hover,
@@ -183,19 +173,19 @@
     }
 
     .lang {
+      color: #c7d7e0;
+
       font-size: 11px;
       font-weight: 500;
 
       letter-spacing: .12em;
-
-      color: #c7d7e0;
     }
 
     .ticket {
       padding: 14px 25px;
 
       border:
-        1px solid rgba(70, 207, 255, .78);
+        1px solid rgba(70,207,255,.78);
 
       border-radius: 6px;
 
@@ -203,50 +193,42 @@
       font-weight: 700;
 
       letter-spacing: .13em;
-
       text-transform: uppercase;
 
-      transition:
-        background .25s ease,
-        box-shadow .25s ease;
+      transition: .25s;
     }
 
     .ticket:hover {
       background:
-        rgba(38, 188, 245, .12);
+        rgba(38,188,245,.12);
 
       box-shadow:
-        0 0 25px rgba(39, 190, 245, .16);
+        0 0 25px rgba(39,190,245,.16);
     }
 
 
-    /* ==============================
+    /* =========================
        HERO CONTENT
-       ============================== */
+       ========================= */
 
     .hero-content {
+      position: relative;
+      z-index: 5;
+
       width: min(1440px, 92%);
       min-height: calc(100vh - 105px);
 
       margin: auto;
-
-      position: relative;
-      z-index: 5;
-
-      display: flex;
-      align-items: center;
     }
 
     .hero-text {
-      width: 67%;
+      width: 68%;
 
-      padding:
-        70px 0
-        170px;
+      padding-top: 130px;
     }
 
     .small-title {
-      margin-bottom: 24px;
+      margin-bottom: 25px;
 
       color: #86a9bb;
 
@@ -260,60 +242,96 @@
       text-transform: uppercase;
     }
 
-.hero-title {
-  position: relative;
-  display: inline-block;
-  margin: 0;
 
-  font-family: 'Anton', 'Arial Black', sans-serif;
-  font-size: clamp(118px, 12.8vw, 215px);
-  line-height: 0.86;
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
+    /* =========================
+       ГЛАВНЫЙ ЗАГОЛОВОК
+       ========================= */
 
-  color: transparent;
-  background:
-    linear-gradient(to bottom,
-      rgba(255,255,255,0.35) 0%,
-      rgba(255,255,255,0.12) 18%,
-      rgba(255,255,255,0.00) 32%
-    ),
-    url("./title-texture.png") center / cover no-repeat;
+    .hero-title {
+      display: inline-block;
 
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+      margin: 0;
 
-  -webkit-text-stroke: 2px rgba(205, 235, 255, 0.40);
-letter-spacing: -0.04em;
+      font-family:
+        'Anton',
+        'Arial Black',
+        sans-serif;
 
-  text-shadow:
-    0 1px 0 rgba(255,255,255,0.08),
-    0 8px 20px rgba(0,0,0,0.35),
-    0 0 18px rgba(95, 210, 255, 0.18);
+      font-size:
+        clamp(
+          118px,
+          12.8vw,
+          215px
+        );
 
-  filter: brightness(1.08) contrast(1.08) saturate(1.08);
-}
+      line-height: .84;
 
-.hero-subtitle {
-  margin-top: 10px;
+      font-weight: 400;
 
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(24px, 2.2vw, 38px);
+      letter-spacing: -.035em;
 
-  font-weight: 300;
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-  color: #d8f1ff;
+      text-transform: uppercase;
 
-  text-shadow:
-    0 0 10px rgba(120, 210, 255, 0.18),
-    0 2px 8px rgba(0,0,0,0.35);
-}
+      color: transparent;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(255,255,255,.22) 0%,
+          rgba(255,255,255,.05) 24%,
+          rgba(255,255,255,0) 38%
+        ),
+        url("./title-texture.png")
+        center / cover
+        no-repeat;
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      -webkit-text-fill-color: transparent;
+
+      -webkit-text-stroke:
+        1.5px rgba(205,235,255,.35);
+
+      filter:
+        brightness(1.08)
+        contrast(1.08)
+        saturate(1.04)
+        drop-shadow(
+          0 7px 15px
+          rgba(0,0,0,.35)
+        );
+    }
+
+    .hero-subtitle {
+      margin-top: 12px;
+
+      font-family:
+        'Montserrat',
+        sans-serif;
+
+      font-size:
+        clamp(
+          24px,
+          2.2vw,
+          38px
+        );
+
+      font-weight: 300;
+
+      letter-spacing: .34em;
+
+      text-transform: uppercase;
+
+      color: #d6effc;
+
+      text-shadow:
+        0 0 10px
+        rgba(120,210,255,.16);
+    }
 
     .slogan {
-      margin-top: 34px;
+      margin-top: 35px;
 
       color: #7f9dac;
 
@@ -328,14 +346,14 @@ letter-spacing: -0.04em;
     }
 
 
-    /* ==============================
+    /* =========================
        RIGHT INFO
-       ============================== */
+       ========================= */
 
     .location {
       position: absolute;
 
-      top: 118px;
+      top: 110px;
       right: 0;
 
       text-align: right;
@@ -366,15 +384,21 @@ letter-spacing: -0.04em;
     }
 
 
-    /* ==============================
-       NEXT MATCH
-       ============================== */
+    /* =========================
+       СЛЕДУЮЩИЙ МАТЧ
+       ========================= */
 
     .match-box {
       position: absolute;
 
       right: 0;
-      bottom: 55px;
+
+      /*
+        БЛОК ОПУЩЕН НИЖЕ.
+        Если захотите ещё ниже:
+        bottom: 0px;
+      */
+      bottom: 8px;
 
       width: 650px;
 
@@ -384,33 +408,18 @@ letter-spacing: -0.04em;
         27px;
 
       background:
-        rgba(
-          2,
-          16,
-          26,
-          .91
-        );
+        rgba(2,16,26,.92);
 
       border:
         1px solid
-        rgba(
-          65,
-          202,
-          255,
-          .53
-        );
+        rgba(65,202,255,.53);
 
       backdrop-filter:
         blur(15px);
 
       box-shadow:
         0 0 35px
-        rgba(
-          0,
-          174,
-          255,
-          .08
-        );
+        rgba(0,174,255,.08);
 
       border-radius: 3px;
     }
@@ -422,18 +431,9 @@ letter-spacing: -0.04em;
 
       border-bottom:
         1px solid
-        rgba(
-          91,
-          206,
-          255,
-          .18
-        );
+        rgba(91,206,255,.18);
 
       color: #59d4ff;
-
-      font-family:
-        'Montserrat',
-        sans-serif;
 
       font-size: 11px;
       font-weight: 700;
@@ -476,7 +476,7 @@ letter-spacing: -0.04em;
       color: #55d0ff;
 
       font-family:
-        'Oswald',
+        'Anton',
         sans-serif;
 
       font-size: 25px;
@@ -493,6 +493,7 @@ letter-spacing: -0.04em;
       display: block;
 
       max-width: 190px;
+
       margin: auto;
 
       font-size: 13px;
@@ -535,18 +536,15 @@ letter-spacing: -0.04em;
 
     #match-datetime {
       color: #a7bcc8;
-
       font-weight: 600;
     }
 
 
-    /* ==============================
+    /* =========================
        RESULTS
-       ============================== */
+       ========================= */
 
     .results-section {
-      position: relative;
-
       padding:
         90px 0
         100px;
@@ -561,12 +559,7 @@ letter-spacing: -0.04em;
 
       border-top:
         1px solid
-        rgba(
-          70,
-          205,
-          255,
-          .10
-        );
+        rgba(70,205,255,.10);
     }
 
     .results-container {
@@ -602,7 +595,7 @@ letter-spacing: -0.04em;
       margin: 0;
 
       font-family:
-        'Oswald',
+        'Anton',
         sans-serif;
 
       font-size:
@@ -612,11 +605,7 @@ letter-spacing: -0.04em;
           66px
         );
 
-      font-weight: 600;
-
-      line-height: 1;
-
-      letter-spacing: .01em;
+      font-weight: 400;
 
       text-transform: uppercase;
     }
@@ -629,12 +618,7 @@ letter-spacing: -0.04em;
       margin-bottom: 10px;
 
       background:
-        rgba(
-          81,
-          206,
-          249,
-          .15
-        );
+        rgba(81,206,249,.15);
     }
 
     .results-grid {
@@ -643,18 +627,14 @@ letter-spacing: -0.04em;
       grid-template-columns:
         repeat(
           2,
-          minmax(0, 1fr)
+          minmax(0,1fr)
         );
 
       gap: 16px;
     }
 
     .result-card {
-      position: relative;
-
       min-height: 190px;
-
-      overflow: hidden;
 
       padding:
         25px
@@ -669,16 +649,9 @@ letter-spacing: -0.04em;
 
       border:
         1px solid
-        rgba(
-          76,
-          205,
-          255,
-          .17
-        );
+        rgba(76,205,255,.17);
 
-      transition:
-        transform .25s ease,
-        border-color .25s ease;
+      transition: .25s;
     }
 
     .result-card:hover {
@@ -686,12 +659,7 @@ letter-spacing: -0.04em;
         translateY(-3px);
 
       border-color:
-        rgba(
-          76,
-          205,
-          255,
-          .48
-        );
+        rgba(76,205,255,.48);
     }
 
     .result-top {
@@ -702,8 +670,7 @@ letter-spacing: -0.04em;
 
       gap: 20px;
 
-      margin-bottom:
-        26px;
+      margin-bottom: 26px;
     }
 
     .result-competition {
@@ -759,9 +726,6 @@ letter-spacing: -0.04em;
 
       flex:
         0 0 58px;
-
-      display: grid;
-      place-items: center;
     }
 
     .result-logo img {
@@ -788,9 +752,6 @@ letter-spacing: -0.04em;
       color: #708b9c;
 
       font-size: 9px;
-      font-weight: 500;
-
-      letter-spacing: .1em;
     }
 
     .result-score {
@@ -799,13 +760,10 @@ letter-spacing: -0.04em;
       text-align: center;
 
       font-family:
-        'Oswald',
+        'Anton',
         sans-serif;
 
       font-size: 38px;
-      font-weight: 600;
-
-      letter-spacing: .08em;
 
       color: #effbff;
     }
@@ -818,7 +776,6 @@ letter-spacing: -0.04em;
       color: #637e90;
 
       font-size: 9px;
-      font-weight: 500;
 
       letter-spacing: .15em;
 
@@ -834,12 +791,7 @@ letter-spacing: -0.04em;
 
       border:
         1px solid
-        rgba(
-          76,
-          205,
-          255,
-          .12
-        );
+        rgba(76,205,255,.12);
 
       text-align: center;
 
@@ -853,26 +805,20 @@ letter-spacing: -0.04em;
     }
 
 
-    /* ==============================
+    /* =========================
        FOOTER
-       ============================== */
+       ========================= */
 
     footer {
-      background:
-        #02080d;
+      background: #02080d;
 
       border-top:
         1px solid
-        rgba(
-          68,
-          201,
-          255,
-          .10
-        );
+        rgba(68,201,255,.10);
     }
 
     .footer-inner {
-      width: min(1440px, 92%);
+      width: min(1440px,92%);
 
       min-height: 110px;
 
@@ -881,9 +827,7 @@ letter-spacing: -0.04em;
       display: flex;
 
       align-items: center;
-
-      justify-content:
-        space-between;
+      justify-content: space-between;
 
       gap: 30px;
     }
@@ -922,9 +866,9 @@ letter-spacing: -0.04em;
     }
 
 
-    /* ==============================
+    /* =========================
        TABLET
-       ============================== */
+       ========================= */
 
     @media (max-width: 1100px) {
 
@@ -940,21 +884,12 @@ letter-spacing: -0.04em;
         width: 560px;
       }
 
-      h1.hero-title {
-        font-size:
-          clamp(
-            95px,
-            13vw,
-            175px
-          );
-      }
-
     }
 
 
-    /* ==============================
+    /* =========================
        MOBILE
-       ============================== */
+       ========================= */
 
     @media (max-width: 900px) {
 
@@ -975,8 +910,6 @@ letter-spacing: -0.04em;
       }
 
       .hero-content {
-        display: block;
-
         min-height: auto;
 
         padding-bottom: 40px;
@@ -985,20 +918,16 @@ letter-spacing: -0.04em;
       .hero-text {
         width: 100%;
 
-        padding:
-          100px 0
-          40px;
+        padding-top: 100px;
       }
 
-      h1.hero-title {
+      .hero-title {
         font-size:
           clamp(
             82px,
             25vw,
             155px
           );
-
-        line-height: .86;
       }
 
       .hero-subtitle {
@@ -1009,13 +938,7 @@ letter-spacing: -0.04em;
             28px
           );
 
-        letter-spacing:
-          .22em;
-      }
-
-      .small-title {
-        letter-spacing:
-          .35em;
+        letter-spacing: .22em;
       }
 
       .location {
@@ -1030,9 +953,7 @@ letter-spacing: -0.04em;
 
         width: 100%;
 
-        margin:
-          20px 0
-          20px;
+        margin-top: 60px;
       }
 
       .teams {
@@ -1059,36 +980,15 @@ letter-spacing: -0.04em;
       }
 
       .results-heading {
-        align-items:
-          flex-start;
-
         flex-direction:
           column;
+
+        align-items:
+          flex-start;
       }
 
       .results-line {
         width: 100%;
-      }
-
-      .result-card {
-        padding: 20px;
-      }
-
-      .result-logo {
-        width: 46px;
-        height: 46px;
-
-        flex-basis: 46px;
-      }
-
-      .result-score {
-        min-width: 72px;
-
-        font-size: 30px;
-      }
-
-      .result-team-name {
-        font-size: 11px;
       }
 
       .footer-inner {
@@ -1107,7 +1007,7 @@ letter-spacing: -0.04em;
 
     @media (max-width: 520px) {
 
-      h1.hero-title {
+      .hero-title {
         font-size:
           clamp(
             70px,
@@ -1119,8 +1019,7 @@ letter-spacing: -0.04em;
       .hero-subtitle {
         font-size: 17px;
 
-        letter-spacing:
-          .15em;
+        letter-spacing: .15em;
       }
 
       .match-box {
@@ -1155,19 +1054,22 @@ letter-spacing: -0.04em;
 <body>
 
 
-<!-- ==============================
-     HERO
-     ============================== -->
-
 <section class="hero">
+
 
   <header>
 
-    <a href="#" class="logo">
+
+    <a
+      href="#"
+      class="logo"
+    >
+
       <img
         src="logo.png"
         alt="Caspiy Futsal Club"
       >
+
     </a>
 
 
@@ -1222,7 +1124,9 @@ letter-spacing: -0.04em;
 
     </div>
 
+
   </header>
+
 
 
   <div class="hero-content">
@@ -1230,9 +1134,12 @@ letter-spacing: -0.04em;
 
     <div class="hero-text">
 
+
       <div class="small-title">
+
         Больше<br>
         чем игра
+
       </div>
 
 
@@ -1247,29 +1154,38 @@ letter-spacing: -0.04em;
 
 
       <div class="slogan">
+
         Наша стихия — движение<br>
         Наш дом — Каспий
+
       </div>
 
+
     </div>
+
 
 
     <div class="location">
 
+
       <div class="side-slogan">
+
         Один регион<br>
         Одна команда
+
       </div>
+
 
       AQTAU<br>
       KAZAKHSTAN
 
+
     </div>
 
 
-    <!-- NEXT MATCH -->
 
     <div class="match-box">
+
 
       <h3>
         Следующий матч
@@ -1281,6 +1197,7 @@ letter-spacing: -0.04em;
 
         <div class="team">
 
+
           <div class="team-logo">
 
             <img
@@ -1290,11 +1207,14 @@ letter-spacing: -0.04em;
 
           </div>
 
+
           <strong>
             КАСПИЙ
           </strong>
 
+
         </div>
+
 
 
         <div class="versus">
@@ -1302,7 +1222,9 @@ letter-spacing: -0.04em;
         </div>
 
 
+
         <div class="team">
+
 
           <div
             class="team-logo"
@@ -1311,11 +1233,13 @@ letter-spacing: -0.04em;
             ?
           </div>
 
+
           <strong
             id="opponent-name"
           >
             СОПЕРНИК
           </strong>
+
 
         </div>
 
@@ -1323,56 +1247,67 @@ letter-spacing: -0.04em;
       </div>
 
 
+
       <div class="match-info">
+
 
         <span id="match-datetime">
           ДАТА И ВРЕМЯ
         </span>
 
+
         <br>
+
 
         <span id="match-competition">
         </span>
 
+
         <br>
+
 
         <span id="match-venue">
           АКТАУ
         </span>
 
+
       </div>
+
 
     </div>
 
+
   </div>
+
 
 </section>
 
 
-
-<!-- ==============================
-     RESULTS
-     ============================== -->
 
 <section
   class="results-section"
   id="results"
 >
 
+
   <div class="results-container">
 
 
     <div class="results-heading">
 
+
       <div>
+
 
         <span>
           МАТЧ-ЦЕНТР
         </span>
 
+
         <h2>
           ПОСЛЕДНИЕ РЕЗУЛЬТАТЫ
         </h2>
+
 
       </div>
 
@@ -1380,7 +1315,9 @@ letter-spacing: -0.04em;
       <div class="results-line">
       </div>
 
+
     </div>
+
 
 
     <div
@@ -1388,61 +1325,68 @@ letter-spacing: -0.04em;
       id="results-list"
     >
 
+
       <div class="results-loading">
+
         Загрузка результатов...
+
       </div>
+
 
     </div>
 
 
   </div>
 
+
 </section>
 
 
 
-<!-- ==============================
-     FOOTER
-     ============================== -->
-
 <footer>
+
 
   <div class="footer-inner">
 
 
     <div class="footer-logo">
 
+
       <img
         src="logo.png"
         alt="Каспий"
       >
 
+
       <strong>
         CASPIY FUTSAL CLUB
       </strong>
 
+
     </div>
 
 
+
     <div class="footer-text">
+
       AQTAU · KAZAKHSTAN
+
     </div>
 
 
   </div>
 
+
 </footer>
 
 
 
-<!-- ==============================
-     SUPABASE
-     ============================== -->
-
 <script type="module">
+
 
   import { createClient } from
     'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
 
 
   const supabase =
@@ -1452,10 +1396,6 @@ letter-spacing: -0.04em;
     );
 
 
-
-  /* =========================
-     ФОРМАТ ДАТЫ И ВРЕМЕНИ
-     ========================= */
 
   function formatDateTime(value) {
 
@@ -1519,10 +1459,6 @@ letter-spacing: -0.04em;
 
 
 
-  /* =========================
-     СЛЕДУЮЩИЙ МАТЧ
-     ========================= */
-
   async function loadNextMatch() {
 
 
@@ -1555,7 +1491,6 @@ letter-spacing: -0.04em;
     if (error) {
 
       console.error(
-        'Ошибка загрузки следующего матча:',
         error
       );
 
@@ -1649,10 +1584,6 @@ letter-spacing: -0.04em;
 
 
 
-  /* =========================
-     ПОСЛЕДНИЕ РЕЗУЛЬТАТЫ
-     ========================= */
-
   async function loadResults() {
 
 
@@ -1685,12 +1616,6 @@ letter-spacing: -0.04em;
 
     if (error) {
 
-      console.error(
-        'Ошибка загрузки результатов:',
-        error
-      );
-
-
       resultsList.innerHTML = `
 
         <div class="results-empty">
@@ -1701,7 +1626,6 @@ letter-spacing: -0.04em;
         </div>
 
       `;
-
 
       return;
 
@@ -1724,7 +1648,6 @@ letter-spacing: -0.04em;
         </div>
 
       `;
-
 
       return;
 
@@ -1775,11 +1698,9 @@ letter-spacing: -0.04em;
 
 
           let leftTeam;
-
           let rightTeam;
 
           let leftScore;
-
           let rightScore;
 
 
@@ -1794,11 +1715,8 @@ letter-spacing: -0.04em;
               <div class="result-team">
 
                 <div class="result-logo">
-
                   ${caspiyLogo}
-
                 </div>
-
 
                 <div>
 
@@ -1820,16 +1738,11 @@ letter-spacing: -0.04em;
 
             rightTeam = `
 
-              <div
-                class="result-team away"
-              >
+              <div class="result-team away">
 
                 <div class="result-logo">
-
                   ${opponentLogo}
-
                 </div>
-
 
                 <div>
 
@@ -1861,11 +1774,8 @@ letter-spacing: -0.04em;
               <div class="result-team">
 
                 <div class="result-logo">
-
                   ${opponentLogo}
-
                 </div>
-
 
                 <div>
 
@@ -1883,16 +1793,11 @@ letter-spacing: -0.04em;
 
             rightTeam = `
 
-              <div
-                class="result-team away"
-              >
+              <div class="result-team away">
 
                 <div class="result-logo">
-
                   ${caspiyLogo}
-
                 </div>
-
 
                 <div>
 
@@ -1963,13 +1868,11 @@ letter-spacing: -0.04em;
                 ${leftTeam}
 
 
-
                 <div class="result-score">
 
                   ${leftScore}:${rightScore}
 
                 </div>
-
 
 
                 ${rightTeam}
@@ -1998,14 +1901,11 @@ letter-spacing: -0.04em;
 
 
 
-  /* =========================
-     ЗАПУСК
-     ========================= */
-
   await Promise.all([
     loadNextMatch(),
     loadResults()
   ]);
+
 
 </script>
 
