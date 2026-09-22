@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -31,15 +31,12 @@
 
       font-family: 'Montserrat', Arial, sans-serif;
 
-      color: #f4fbff;
+      color: #f1f8fc;
+      background: #020a10;
+    }
 
-      background:
-        radial-gradient(
-          circle at 70% 0%,
-          rgba(0,150,220,.13),
-          transparent 30%
-        ),
-        #020a10;
+    body.menu-open {
+      overflow: hidden;
     }
 
     a {
@@ -47,21 +44,15 @@
       text-decoration: none;
     }
 
+    /* HEADER */
 
-    /* =====================================================
-       HEADER
-       ===================================================== */
-
-    .header {
+    header {
       position: sticky;
       top: 0;
       z-index: 50;
 
-      background:
-        rgba(2,10,16,.94);
-
-      backdrop-filter:
-        blur(14px);
+      background: rgba(2,10,16,.96);
+      backdrop-filter: blur(15px);
 
       border-bottom:
         1px solid rgba(80,202,245,.14);
@@ -77,14 +68,16 @@
       align-items: center;
       justify-content: space-between;
 
-      gap: 30px;
+      gap: 25px;
     }
 
     .logo {
       display: flex;
       align-items: center;
-
       gap: 14px;
+
+      position: relative;
+      z-index: 60;
     }
 
     .logo img {
@@ -94,39 +87,22 @@
       object-fit: contain;
     }
 
-    .logo-text strong {
-      display: block;
-
+    .logo strong {
       font-family: 'Oswald',sans-serif;
 
       font-size: 20px;
-      font-weight: 700;
 
       letter-spacing: .08em;
     }
 
-    .logo-text span {
-      display: block;
-
-      margin-top: 3px;
-
-      color: #668899;
-
-      font-size: 8px;
-
-      letter-spacing: .24em;
-
-      text-transform: uppercase;
-    }
-
-    nav {
+    .desktop-nav {
       display: flex;
       align-items: center;
 
-      gap: 31px;
+      gap: 27px;
     }
 
-    nav a {
+    .desktop-nav a {
       position: relative;
 
       padding: 12px 0;
@@ -136,17 +112,17 @@
       font-size: 10px;
       font-weight: 700;
 
-      letter-spacing: .14em;
+      letter-spacing: .13em;
 
       text-transform: uppercase;
     }
 
-    nav a:hover,
-    nav a.active {
+    .desktop-nav a:hover,
+    .desktop-nav a.active {
       color: #62d6ff;
     }
 
-    nav a.active::after {
+    .desktop-nav a.active::after {
       content: "";
 
       position: absolute;
@@ -160,15 +136,25 @@
       background: #52d3ff;
     }
 
-    .back-button {
-      padding: 13px 19px;
+    .header-actions {
+      display: flex;
+      align-items: center;
 
-      border:
-        1px solid rgba(80,207,251,.45);
+      gap: 12px;
 
-      border-radius: 5px;
+      position: relative;
+      z-index: 60;
+    }
+
+    .ticket-button {
+      padding: 13px 18px;
 
       color: #caeffc;
+
+      border:
+        1px solid rgba(80,207,251,.42);
+
+      border-radius: 5px;
 
       font-size: 9px;
       font-weight: 700;
@@ -176,33 +162,243 @@
       letter-spacing: .13em;
 
       text-transform: uppercase;
-
-      transition: .2s;
     }
 
-    .back-button:hover {
-      background:
-        rgba(67,196,242,.09);
+    .ticket-button.disabled {
+      opacity: .35;
+      pointer-events: none;
     }
 
+    /* MOBILE BUTTON */
 
-    /* =====================================================
-       PAGE HERO
-       ===================================================== */
+    .mobile-menu-button {
+      display: none;
 
-    .page-hero {
+      width: 46px;
+      height: 46px;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 0;
+
+      background: rgba(4,22,34,.90);
+
+      border:
+        1px solid rgba(77,205,255,.32);
+
+      border-radius: 5px;
+
+      cursor: pointer;
+    }
+
+    .mobile-lines {
       position: relative;
 
-      min-height: 420px;
+      width: 21px;
+      height: 15px;
+    }
+
+    .mobile-lines span {
+      position: absolute;
+      left: 0;
+
+      width: 21px;
+      height: 2px;
+
+      background: #cbeffc;
+
+      transition:
+        .25s;
+    }
+
+    .mobile-lines span:nth-child(1) {
+      top: 0;
+    }
+
+    .mobile-lines span:nth-child(2) {
+      top: 6px;
+    }
+
+    .mobile-lines span:nth-child(3) {
+      top: 12px;
+    }
+
+    .mobile-menu-button.active
+    .mobile-lines span:nth-child(1) {
+      top: 6px;
+      transform: rotate(45deg);
+    }
+
+    .mobile-menu-button.active
+    .mobile-lines span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-button.active
+    .mobile-lines span:nth-child(3) {
+      top: 6px;
+      transform: rotate(-45deg);
+    }
+
+    /* MOBILE MENU */
+
+    .mobile-menu {
+      position: fixed;
+      z-index: 45;
+
+      inset: 0;
+
+      visibility: hidden;
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transform: translateX(100%);
+
+      transition:
+        transform .30s ease,
+        opacity .30s ease,
+        visibility .30s ease;
+
+      background:
+        radial-gradient(
+          circle at 80% 15%,
+          rgba(32,175,226,.18),
+          transparent 30%
+        ),
+        rgba(1,9,15,.99);
+    }
+
+    .mobile-menu.open {
+      visibility: visible;
+
+      opacity: 1;
+
+      pointer-events: auto;
+
+      transform: translateX(0);
+    }
+
+    .mobile-menu-inner {
+      width: min(540px,88%);
+      height: 100%;
+
+      margin: auto;
+
+      padding: 125px 0 40px;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-menu-small {
+      margin-bottom: 25px;
+
+      color: #51cffb;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .28em;
+
+      text-transform: uppercase;
+    }
+
+    .mobile-nav {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      min-height: 58px;
+
+      color: #d6e8f0;
+
+      border-bottom:
+        1px solid rgba(91,204,244,.11);
+
+      font-family: 'Oswald',sans-serif;
+
+      font-size: 28px;
+      font-weight: 500;
+
+      text-transform: uppercase;
+    }
+
+    .mobile-nav a::after {
+      content: "→";
+
+      color: #54d5ff;
+
+      font-size: 18px;
+    }
+
+    .mobile-nav a.active {
+      color: #58d5ff;
+    }
+
+    .mobile-ticket {
+      margin-top: 30px;
+
+      padding: 16px 20px;
+
+      text-align: center;
+
+      color: #031019;
+      background: #56d5ff;
+
+      border-radius: 5px;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    .mobile-ticket.disabled {
+      opacity: .30;
+      pointer-events: none;
+    }
+
+    .mobile-address {
+      margin-top: auto;
+
+      padding-top: 30px;
+
+      color: #4f7080;
+
+      font-size: 9px;
+      font-weight: 600;
+
+      line-height: 1.8;
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+
+      min-height: 500px;
 
       overflow: hidden;
 
       background:
         linear-gradient(
           90deg,
-          rgba(1,8,14,.97),
-          rgba(3,21,34,.73),
-          rgba(2,13,22,.84)
+          rgba(1,8,14,.96),
+          rgba(2,16,27,.60),
+          rgba(1,8,14,.38)
         ),
         url("hero-bg.png");
 
@@ -210,7 +406,7 @@
       background-position: center 55%;
     }
 
-    .page-hero::after {
+    .hero::after {
       content: "";
 
       position: absolute;
@@ -219,17 +415,17 @@
       background:
         linear-gradient(
           to bottom,
-          transparent 20%,
+          transparent 25%,
           #020a10 100%
         );
     }
 
-    .page-hero-inner {
+    .hero-inner {
       position: relative;
       z-index: 2;
 
       width: min(1440px,92%);
-      height: 420px;
+      min-height: 500px;
 
       margin: auto;
 
@@ -237,11 +433,11 @@
       flex-direction: column;
       justify-content: flex-end;
 
-      padding-bottom: 62px;
+      padding-bottom: 70px;
     }
 
-    .page-kicker {
-      margin-bottom: 12px;
+    .hero-small {
+      margin-bottom: 13px;
 
       color: #55d3ff;
 
@@ -253,129 +449,117 @@
       text-transform: uppercase;
     }
 
-    .page-title {
+    .hero-title {
       font-family: 'Oswald',sans-serif;
 
       font-size:
         clamp(
-          70px,
+          75px,
           9vw,
           145px
         );
 
       font-weight: 700;
 
-      line-height: .9;
+      line-height: .90;
 
       letter-spacing: -.035em;
 
       text-transform: uppercase;
     }
 
-    .page-description {
-      max-width: 590px;
+    .hero-text {
+      margin-top: 23px;
 
-      margin-top: 25px;
-
-      color: #83a1b1;
+      color: #88a6b4;
 
       font-size: 11px;
-      font-weight: 500;
 
-      line-height: 1.9;
-
-      letter-spacing: .11em;
+      letter-spacing: .13em;
 
       text-transform: uppercase;
     }
 
-
-    /* =====================================================
-       TEAM
-       ===================================================== */
+    /* TEAM */
 
     .team-section {
       padding:
-        70px 0
-        105px;
+        75px 0
+        110px;
+
+      background:
+        radial-gradient(
+          circle at 85% 5%,
+          rgba(0,160,220,.10),
+          transparent 30%
+        ),
+        #020a10;
     }
 
-    .team-container {
+    .container {
       width: min(1440px,92%);
       margin: auto;
     }
 
-
-    /* POSITION GROUP */
-
-    .position-group {
-      margin-bottom: 85px;
+    .group {
+      margin-bottom: 75px;
     }
 
-    .position-group:last-child {
+    .group:last-child {
       margin-bottom: 0;
     }
 
-    .position-header {
+    .group-heading {
       display: flex;
       align-items: flex-end;
 
-      gap: 26px;
+      gap: 25px;
 
       margin-bottom: 25px;
 
-      padding-bottom: 15px;
+      padding-bottom: 17px;
 
       border-bottom:
-        1px solid rgba(83,199,242,.16);
+        1px solid rgba(79,200,243,.14);
     }
 
-    .position-number {
-      color:
-        rgba(78,207,255,.22);
+    .group-number {
+      color: #55d4ff;
 
       font-family: 'Oswald',sans-serif;
 
-      font-size: 44px;
-      font-weight: 700;
-
-      line-height: 1;
+      font-size: 17px;
     }
 
-    .position-title {
+    .group-title {
       font-family: 'Oswald',sans-serif;
 
       font-size:
         clamp(
-          29px,
-          3vw,
-          43px
+          34px,
+          4vw,
+          55px
         );
 
       font-weight: 600;
 
-      line-height: 1;
-
       text-transform: uppercase;
     }
 
-    .position-line {
+    .group-line {
       flex: 1;
 
       height: 1px;
 
-      margin-bottom: 5px;
+      margin-bottom: 8px;
 
       background:
         linear-gradient(
           90deg,
-          rgba(86,207,250,.22),
+          rgba(77,204,251,.20),
           transparent
         );
     }
-
-
-    /* PLAYER GRID */
 
     .players-grid {
       display: grid;
@@ -383,29 +567,29 @@
       grid-template-columns:
         repeat(4,minmax(0,1fr));
 
-      gap: 15px;
+      gap: 14px;
     }
 
     .player-card {
       position: relative;
 
-      min-height: 500px;
+      min-height: 430px;
 
       overflow: hidden;
 
       background:
         linear-gradient(
-          180deg,
-          #102431,
-          #030a0f
+          145deg,
+          #092131,
+          #031019
         );
 
       border:
-        1px solid rgba(84,200,244,.13);
+        1px solid rgba(73,194,237,.15);
 
       transition:
-        transform .28s ease,
-        border-color .28s ease;
+        transform .25s,
+        border-color .25s;
     }
 
     .player-card:hover {
@@ -413,25 +597,7 @@
         translateY(-4px);
 
       border-color:
-        rgba(76,207,255,.44);
-    }
-
-    .player-card::before {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      z-index: 1;
-
-      background:
-        radial-gradient(
-          circle at 50% 88%,
-          rgba(0,145,220,.26),
-          transparent 43%
-        );
-
-      pointer-events: none;
+        rgba(77,210,255,.42);
     }
 
     .player-photo {
@@ -443,139 +609,92 @@
 
       object-fit: cover;
       object-position: center top;
-
-      filter:
-        saturate(.78)
-        contrast(1.05);
-
-      transition:
-        transform .5s ease;
-    }
-
-    .player-card:hover
-    .player-photo {
-      transform:
-        scale(1.035);
     }
 
     .player-overlay {
       position: absolute;
       inset: 0;
 
-      z-index: 1;
-
       background:
         linear-gradient(
           to bottom,
-          rgba(0,0,0,.03) 0%,
-          rgba(0,0,0,.04) 45%,
-          rgba(1,7,11,.50) 68%,
-          rgba(1,6,10,.98) 100%
+          rgba(2,8,12,.02) 25%,
+          rgba(2,9,14,.94) 100%
         );
     }
 
     .player-number {
       position: absolute;
-
-      top: 18px;
-      right: 18px;
-
       z-index: 3;
 
-      color:
-        rgba(255,255,255,.92);
+      top: 17px;
+      right: 18px;
+
+      color: rgba(235,249,255,.82);
 
       font-family: 'Oswald',sans-serif;
 
-      font-size: 105px;
+      font-size: 86px;
       font-weight: 700;
 
-      line-height: .85;
-
-      text-shadow:
-        0 6px 20px rgba(0,0,0,.35);
+      line-height: 1;
     }
 
     .player-info {
       position: absolute;
+      z-index: 4;
 
-      left: 25px;
-      right: 20px;
-      bottom: 27px;
-
-      z-index: 3;
+      left: 22px;
+      right: 22px;
+      bottom: 24px;
     }
 
     .player-name {
-      max-width: 240px;
-
       color: #fff;
 
       font-family: 'Oswald',sans-serif;
 
-      font-size: 28px;
+      font-size: 25px;
       font-weight: 600;
 
-      line-height: 1.05;
+      line-height: 1.1;
 
       text-transform: uppercase;
     }
 
     .player-position {
-      margin-top: 11px;
+      margin-top: 10px;
 
-      color: #58cdef;
+      color: #64d4fb;
 
       font-size: 9px;
       font-weight: 700;
 
-      letter-spacing: .20em;
+      letter-spacing: .15em;
 
       text-transform: uppercase;
     }
 
-    .no-photo {
-      position: absolute;
-      inset: 0;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      color:
-        rgba(120,181,207,.22);
-
-      font-family: 'Oswald',sans-serif;
-
-      font-size: 120px;
-      font-weight: 700;
-    }
-
-
-    /* EMPTY / LOADING */
-
-    .team-message {
-      padding: 60px;
-
-      color: #718f9e;
+    .empty {
+      padding: 70px;
 
       text-align: center;
 
+      color: #6f8e9d;
+
+      background: #04131e;
+
       border:
-        1px solid rgba(76,200,244,.12);
+        1px solid rgba(72,194,238,.12);
 
       font-size: 10px;
-      font-weight: 700;
 
-      letter-spacing: .20em;
+      letter-spacing: .15em;
 
       text-transform: uppercase;
     }
 
-
-    /* =====================================================
-       FOOTER
-       ===================================================== */
+    /* FOOTER */
 
     footer {
       background: #01070b;
@@ -629,26 +748,37 @@
       text-transform: uppercase;
     }
 
-
-    /* =====================================================
-       RESPONSIVE
-       ===================================================== */
+    /* RESPONSIVE */
 
     @media (max-width:1150px) {
-
-      nav {
-        display: none;
-      }
-
       .players-grid {
         grid-template-columns:
           repeat(3,minmax(0,1fr));
       }
+    }
+
+    @media (max-width:900px) {
+
+      .desktop-nav {
+        display: none;
+      }
+
+      .ticket-button {
+        display: none;
+      }
+
+      .mobile-menu-button {
+        display: flex;
+      }
+
+      .players-grid {
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
+      }
 
     }
 
-
-    @media (max-width:850px) {
+    @media (max-width:650px) {
 
       .header-inner {
         height: 78px;
@@ -659,59 +789,23 @@
         height: 55px;
       }
 
-      .logo-text {
+      .logo strong {
         display: none;
       }
 
-      .page-hero,
-      .page-hero-inner {
-        min-height: 330px;
-        height: 330px;
+      .hero,
+      .hero-inner {
+        min-height: 390px;
       }
 
-      .players-grid {
-        grid-template-columns:
-          repeat(2,minmax(0,1fr));
-      }
-
-      .player-card {
-        min-height: 430px;
-      }
-
-    }
-
-
-    @media (max-width:560px) {
-
-      .back-button {
-        padding:
-          11px 13px;
-
-        font-size: 8px;
-      }
-
-      .page-title {
+      .hero-title {
         font-size: 68px;
       }
 
-      .page-description {
-        font-size: 9px;
-      }
-
       .team-section {
-        padding-top: 50px;
-      }
-
-      .position-group {
-        margin-bottom: 60px;
-      }
-
-      .position-number {
-        font-size: 32px;
-      }
-
-      .position-title {
-        font-size: 27px;
+        padding:
+          55px 0
+          80px;
       }
 
       .players-grid {
@@ -719,15 +813,17 @@
       }
 
       .player-card {
-        min-height: 540px;
+        min-height: 500px;
       }
 
-      .player-number {
-        font-size: 115px;
+      .mobile-menu-inner {
+        padding-top: 105px;
       }
 
-      .player-name {
-        font-size: 30px;
+      .mobile-nav a {
+        min-height: 55px;
+
+        font-size: 25px;
       }
 
       .footer-inner {
@@ -735,23 +831,88 @@
         align-items: flex-start;
         justify-content: center;
 
-        padding:
-          25px 0;
+        padding: 25px 0;
       }
 
     }
   </style>
 </head>
 
-
 <body>
 
+<!-- MOBILE MENU -->
 
-<!-- =====================================================
-     HEADER
-     ===================================================== -->
+<div
+  class="mobile-menu"
+  id="mobileMenu"
+>
 
-<header class="header">
+  <div class="mobile-menu-inner">
+
+    <div class="mobile-menu-small">
+      CASPIY FUTSAL CLUB
+    </div>
+
+    <nav class="mobile-nav">
+
+      <a href="index.html">
+        БАСТЫ БЕТ
+      </a>
+
+      <a
+        href="team.html"
+        class="active"
+      >
+        КОМАНДА
+      </a>
+
+      <a href="matches.html">
+        МАТЧТАР
+      </a>
+
+      <a href="news.html">
+        ЖАҢАЛЫҚТАР
+      </a>
+
+      <a href="club.html">
+        КЛУБ
+      </a>
+
+      <a href="fans.html">
+        ЖАНКҮЙЕРЛЕР
+      </a>
+
+      <a href="contact.html">
+        БАЙЛАНЫС
+      </a>
+
+    </nav>
+
+    <a
+      href="#"
+      id="mobileTicketButton"
+      class="mobile-ticket disabled"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      БИЛЕТТЕР →
+    </a>
+
+    <div
+      class="mobile-address"
+      id="mobileAddress"
+    >
+      АҚТАУ · ҚАЗАҚСТАН
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header>
 
   <div class="header-inner">
 
@@ -765,22 +926,13 @@
         alt="CASPIY"
       >
 
-      <div class="logo-text">
-
-        <strong>
-          CASPIY
-        </strong>
-
-        <span>
-          FUTSAL CLUB
-        </span>
-
-      </div>
+      <strong>
+        CASPIY FUTSAL CLUB
+      </strong>
 
     </a>
 
-
-    <nav>
+    <nav class="desktop-nav">
 
       <a href="index.html">
         БАСТЫ БЕТ
@@ -793,57 +945,79 @@
         КОМАНДА
       </a>
 
-      <a href="index.html#matches">
+      <a href="matches.html">
         МАТЧТАР
       </a>
 
-      <a href="index.html#news">
+      <a href="news.html">
         ЖАҢАЛЫҚТАР
       </a>
 
-      <a href="#">
+      <a href="club.html">
         КЛУБ
       </a>
 
-      <a href="#">
+      <a href="fans.html">
+        ЖАНКҮЙЕРЛЕР
+      </a>
+
+      <a href="contact.html">
         БАЙЛАНЫС
       </a>
 
     </nav>
 
+    <div class="header-actions">
 
-    <a
-      href="index.html"
-      class="back-button"
-    >
-      ← БАСТЫ БЕТ
-    </a>
+      <a
+        href="#"
+        id="ticketButton"
+        class="ticket-button disabled"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        БИЛЕТТЕР →
+      </a>
+
+      <button
+        class="mobile-menu-button"
+        id="mobileMenuButton"
+        type="button"
+        aria-label="Мәзір"
+        aria-expanded="false"
+      >
+
+        <span class="mobile-lines">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+
+      </button>
+
+    </div>
 
   </div>
 
 </header>
 
 
+<!-- HERO -->
 
-<!-- =====================================================
-     HERO
-     ===================================================== -->
+<section class="hero">
 
-<section class="page-hero">
+  <div class="hero-inner">
 
-  <div class="page-hero-inner">
-
-    <div class="page-kicker">
+    <div class="hero-small">
       CASPIY FUTSAL CLUB
     </div>
 
-    <h1 class="page-title">
+    <h1 class="hero-title">
       КОМАНДА
     </h1>
 
-    <div class="page-description">
-      CASPIY FUTSAL CLUB КОМАНДАСЫНЫҢ
-      РЕСМИ ҚҰРАМЫ
+    <div class="hero-text">
+      CASPIY · АҚТАУ · ҚАЗАҚСТАН
     </div>
 
   </div>
@@ -851,31 +1025,25 @@
 </section>
 
 
+<!-- TEAM -->
 
-<!-- =====================================================
-     TEAM
-     ===================================================== -->
-
-<main class="team-section">
+<section class="team-section">
 
   <div
-    class="team-container"
-    id="team-container"
+    class="container"
+    id="teamContent"
   >
 
-    <div class="team-message">
+    <div class="empty">
       ОЙЫНШЫЛАР ЖҮКТЕЛУДЕ...
     </div>
 
   </div>
 
-</main>
+</section>
 
 
-
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -894,7 +1062,10 @@
 
     </div>
 
-    <div class="footer-copy">
+    <div
+      class="footer-copy"
+      id="footerAddress"
+    >
       АҚТАУ · ҚАЗАҚСТАН
     </div>
 
@@ -902,11 +1073,6 @@
 
 </footer>
 
-
-
-<!-- =====================================================
-     SUPABASE
-     ===================================================== -->
 
 <script type="module">
 
@@ -922,6 +1088,126 @@
     );
 
 
+  const mobileMenu =
+    document.getElementById(
+      'mobileMenu'
+    );
+
+
+  const mobileMenuButton =
+    document.getElementById(
+      'mobileMenuButton'
+    );
+
+
+  function openMenu() {
+
+    mobileMenu.classList.add(
+      'open'
+    );
+
+    mobileMenuButton.classList.add(
+      'active'
+    );
+
+    mobileMenuButton.setAttribute(
+      'aria-expanded',
+      'true'
+    );
+
+    document.body.classList.add(
+      'menu-open'
+    );
+
+  }
+
+
+  function closeMenu() {
+
+    mobileMenu.classList.remove(
+      'open'
+    );
+
+    mobileMenuButton.classList.remove(
+      'active'
+    );
+
+    mobileMenuButton.setAttribute(
+      'aria-expanded',
+      'false'
+    );
+
+    document.body.classList.remove(
+      'menu-open'
+    );
+
+  }
+
+
+  mobileMenuButton.addEventListener(
+    'click',
+    () => {
+
+      if (
+        mobileMenu.classList.contains(
+          'open'
+        )
+      ) {
+
+        closeMenu();
+
+      } else {
+
+        openMenu();
+
+      }
+
+    }
+  );
+
+
+  mobileMenu
+    .querySelectorAll('a')
+    .forEach(
+      link => {
+
+        link.addEventListener(
+          'click',
+          closeMenu
+        );
+
+      }
+    );
+
+
+  document.addEventListener(
+    'keydown',
+    event => {
+
+      if (
+        event.key === 'Escape'
+      ) {
+        closeMenu();
+      }
+
+    }
+  );
+
+
+  window.addEventListener(
+    'resize',
+    () => {
+
+      if (
+        window.innerWidth > 900
+      ) {
+        closeMenu();
+      }
+
+    }
+  );
+
+
   function escapeHtml(value) {
 
     return String(value ?? '')
@@ -934,56 +1220,131 @@
   }
 
 
+  /* SETTINGS */
+
+  async function loadSettings() {
+
+    const {
+      data
+    } =
+      await supabase
+        .from('site_settings')
+        .select(
+          'ticket_url,address'
+        )
+        .eq('id',1)
+        .maybeSingle();
+
+
+    if (!data) {
+      return;
+    }
+
+
+    const ticketButton =
+      document.getElementById(
+        'ticketButton'
+      );
+
+
+    const mobileTicketButton =
+      document.getElementById(
+        'mobileTicketButton'
+      );
+
+
+    if (data.ticket_url) {
+
+      ticketButton.href =
+        data.ticket_url;
+
+      mobileTicketButton.href =
+        data.ticket_url;
+
+      ticketButton.classList.remove(
+        'disabled'
+      );
+
+      mobileTicketButton.classList.remove(
+        'disabled'
+      );
+
+    }
+
+
+    if (data.address) {
+
+      const address =
+        data.address.toUpperCase();
+
+
+      document
+        .getElementById(
+          'footerAddress'
+        )
+        .textContent =
+          address;
+
+
+      document
+        .getElementById(
+          'mobileAddress'
+        )
+        .textContent =
+          address;
+
+    }
+
+  }
+
+
+  /* PLAYERS */
+
   const groups = [
 
     {
-      key: 'ҚАҚПАШЫ',
-      title: 'ҚАҚПАШЫЛАР'
+      value:'ҚАҚПАШЫ',
+      title:'ҚАҚПАШЫЛАР'
     },
 
     {
-      key: 'ҚОРҒАУШЫ',
-      title: 'ҚОРҒАУШЫЛАР'
+      value:'ҚОРҒАУШЫ',
+      title:'ҚОРҒАУШЫЛАР'
     },
 
     {
-      key: 'ӘМБЕБАП',
-      title: 'ӘМБЕБАПТАР'
+      value:'ӘМБЕБАП',
+      title:'ӘМБЕБАПТАР'
     },
 
     {
-      key: 'ШАБУЫЛШЫ',
-      title: 'ШАБУЫЛШЫЛАР'
+      value:'ШАБУЫЛШЫ',
+      title:'ШАБУЫЛШЫЛАР'
     }
 
   ];
 
 
-  function playerCard(player) {
-
-    const photo =
-      player.photo_url
-
-        ? `
-          <img
-            class="player-photo"
-            src="${escapeHtml(player.photo_url)}"
-            alt="${escapeHtml(player.name)}"
-          >
-        `
-
-        : `
-          <div class="no-photo">
-            ${player.number ?? ''}
-          </div>
-        `;
-
+  function playerCard(
+    player
+  ) {
 
     return `
 
       <article class="player-card">
 
-        ${photo}
+        ${
+          player.photo_url
+            ? `
+              <img
+                class="player-photo"
+                src="${escapeHtml(player.photo_url)}"
+                alt="${escapeHtml(player.name)}"
+                loading="lazy"
+              >
+            `
+            : ''
+        }
 
         <div class="player-overlay"></div>
 
@@ -1010,11 +1371,11 @@
   }
 
 
-  async function loadTeam() {
+  async function loadPlayers() {
 
-    const container =
+    const content =
       document.getElementById(
-        'team-container'
+        'teamContent'
       );
 
 
@@ -1034,45 +1395,26 @@
         .order(
           'sort_order',
           {
-            ascending: true
+            ascending:true
           }
         )
         .order(
           'number',
           {
-            ascending: true
+            ascending:true
           }
         );
 
 
-    if (error) {
-
-      console.error(error);
-
-      container.innerHTML = `
-
-        <div class="team-message">
-          ОЙЫНШЫЛАРДЫ ЖҮКТЕУ МҮМКІН БОЛМАДЫ
-        </div>
-
-      `;
-
-      return;
-
-    }
-
-
     if (
-      !data ||
-      data.length === 0
+      error ||
+      !data?.length
     ) {
 
-      container.innerHTML = `
-
-        <div class="team-message">
+      content.innerHTML = `
+        <div class="empty">
           ОЙЫНШЫЛАР ӘЗІРГЕ ҚОСЫЛМАҒАН
         </div>
-
       `;
 
       return;
@@ -1080,75 +1422,78 @@
     }
 
 
-    let html = '';
-
-    let visibleGroupNumber = 1;
-
-
-    groups.forEach(group => {
-
-      const players =
-        data.filter(
-          player =>
-            String(
-              player.position || ''
-            )
-            .toUpperCase()
-            .trim() ===
-            group.key
-        );
+    let html =
+      '';
 
 
-      if (
-        players.length === 0
-      ) {
-        return;
-      }
+    let groupNumber =
+      1;
 
 
-      html += `
+    groups.forEach(
+      group => {
 
-        <section class="position-group">
+        const players =
+          data.filter(
+            player =>
+              player.position ===
+              group.value
+          );
 
-          <div class="position-header">
 
-            <div class="position-number">
-              ${String(visibleGroupNumber).padStart(2,'0')}
+        if (
+          !players.length
+        ) {
+          return;
+        }
+
+
+        html += `
+
+          <section class="group">
+
+            <div class="group-heading">
+
+              <div class="group-number">
+                ${String(groupNumber).padStart(2,'0')}
+              </div>
+
+              <h2 class="group-title">
+                ${group.title}
+              </h2>
+
+              <div class="group-line"></div>
+
             </div>
 
-            <h2 class="position-title">
-              ${group.title}
-            </h2>
+            <div class="players-grid">
 
-            <div class="position-line"></div>
+              ${
+                players
+                  .map(
+                    player =>
+                      playerCard(player)
+                  )
+                  .join('')
+              }
 
-          </div>
+            </div>
 
+          </section>
 
-          <div class="players-grid">
-
-            ${
-              players
-                .map(playerCard)
-                .join('')
-            }
-
-          </div>
-
-        </section>
-
-      `;
+        `;
 
 
-      visibleGroupNumber++;
+        groupNumber++;
 
-    });
+      }
+    );
 
 
     const knownPositions =
       groups.map(
         group =>
-          group.key
+          group.value
       );
 
 
@@ -1156,43 +1501,41 @@
       data.filter(
         player =>
           !knownPositions.includes(
-            String(
-              player.position || ''
-            )
-            .toUpperCase()
-            .trim()
+            player.position
           )
       );
 
 
     if (
-      otherPlayers.length > 0
+      otherPlayers.length
     ) {
 
       html += `
 
-        <section class="position-group">
+        <section class="group">
 
-          <div class="position-header">
+          <div class="group-heading">
 
-            <div class="position-number">
-              ${String(visibleGroupNumber).padStart(2,'0')}
+            <div class="group-number">
+              ${String(groupNumber).padStart(2,'0')}
             </div>
 
-            <h2 class="position-title">
+            <h2 class="group-title">
               КОМАНДА
             </h2>
 
-            <div class="position-line"></div>
+            <div class="group-line"></div>
 
           </div>
-
 
           <div class="players-grid">
 
             ${
               otherPlayers
-                .map(playerCard)
+                .map(
+                  player =>
+                    playerCard(player)
+                )
                 .join('')
             }
 
@@ -1205,16 +1548,23 @@
     }
 
 
-    container.innerHTML =
-      html;
+    content.innerHTML =
+      html ||
+      `
+        <div class="empty">
+          ОЙЫНШЫЛАР ӘЗІРГЕ ҚОСЫЛМАҒАН
+        </div>
+      `;
 
   }
 
 
-  loadTeam();
+  await Promise.all([
+    loadSettings(),
+    loadPlayers()
+  ]);
 
 </script>
-
 
 </body>
 </html>
