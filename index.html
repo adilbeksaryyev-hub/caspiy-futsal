@@ -32,12 +32,18 @@
       overflow-x: hidden;
     }
 
+    body.menu-open {
+      overflow: hidden;
+    }
+
     a {
       color: inherit;
       text-decoration: none;
     }
 
-    /* HERO */
+    /* =====================================================
+       HERO
+       ===================================================== */
 
     .hero {
       position: relative;
@@ -74,7 +80,9 @@
       pointer-events: none;
     }
 
-    /* HEADER */
+    /* =====================================================
+       HEADER
+       ===================================================== */
 
     header {
       position: relative;
@@ -82,14 +90,24 @@
 
       width: min(1440px,92%);
       height: 105px;
+
       margin: auto;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
+      gap: 25px;
+
       border-bottom:
         1px solid rgba(115,209,255,.17);
+    }
+
+    .logo {
+      position: relative;
+      z-index: 22;
+
+      flex-shrink: 0;
     }
 
     .logo img {
@@ -98,14 +116,15 @@
       display: block;
     }
 
-    nav {
+    .desktop-nav {
       display: flex;
       align-items: center;
       gap: 30px;
     }
 
-    nav a {
+    .desktop-nav a {
       position: relative;
+
       padding: 13px 0;
 
       color: #c2d3dd;
@@ -117,7 +136,7 @@
       text-transform: uppercase;
     }
 
-    nav a::after {
+    .desktop-nav a::after {
       content: "";
 
       position: absolute;
@@ -133,20 +152,23 @@
       transition: .25s;
     }
 
-    nav a:hover,
-    nav a.active {
+    .desktop-nav a:hover,
+    .desktop-nav a.active {
       color: #63d7ff;
     }
 
-    nav a:hover::after,
-    nav a.active::after {
+    .desktop-nav a:hover::after,
+    .desktop-nav a.active::after {
       right: 0;
     }
 
     .top-actions {
       display: flex;
       align-items: center;
-      gap: 22px;
+
+      gap: 18px;
+
+      flex-shrink: 0;
     }
 
     .lang {
@@ -176,7 +198,8 @@
     }
 
     .ticket:hover {
-      background: rgba(38,188,245,.12);
+      background:
+        rgba(38,188,245,.12);
     }
 
     .ticket.disabled {
@@ -184,7 +207,236 @@
       pointer-events: none;
     }
 
-    /* HERO CONTENT */
+    /* =====================================================
+       MOBILE BUTTON
+       ===================================================== */
+
+    .mobile-menu-button {
+      position: relative;
+      z-index: 22;
+
+      display: none;
+
+      width: 46px;
+      height: 46px;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 0;
+
+      background:
+        rgba(4,22,34,.82);
+
+      border:
+        1px solid rgba(77,205,255,.32);
+
+      border-radius: 5px;
+
+      cursor: pointer;
+    }
+
+    .mobile-menu-button-lines {
+      position: relative;
+
+      width: 21px;
+      height: 15px;
+    }
+
+    .mobile-menu-button span {
+      position: absolute;
+      left: 0;
+
+      width: 21px;
+      height: 2px;
+
+      background: #cbeffc;
+
+      transition:
+        transform .25s,
+        opacity .25s,
+        top .25s;
+    }
+
+    .mobile-menu-button span:nth-child(1) {
+      top: 0;
+    }
+
+    .mobile-menu-button span:nth-child(2) {
+      top: 6px;
+    }
+
+    .mobile-menu-button span:nth-child(3) {
+      top: 12px;
+    }
+
+    .mobile-menu-button.active span:nth-child(1) {
+      top: 6px;
+      transform: rotate(45deg);
+    }
+
+    .mobile-menu-button.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-button.active span:nth-child(3) {
+      top: 6px;
+      transform: rotate(-45deg);
+    }
+
+    /* =====================================================
+       MOBILE MENU
+       ===================================================== */
+
+    .mobile-menu {
+      position: fixed;
+      z-index: 19;
+
+      inset: 0;
+
+      visibility: hidden;
+      opacity: 0;
+
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at 80% 15%,
+          rgba(32,175,226,.18),
+          transparent 30%
+        ),
+        rgba(1,9,15,.985);
+
+      transform:
+        translateX(100%);
+
+      transition:
+        transform .30s ease,
+        opacity .30s ease,
+        visibility .30s ease;
+    }
+
+    .mobile-menu.open {
+      visibility: visible;
+      opacity: 1;
+
+      pointer-events: auto;
+
+      transform:
+        translateX(0);
+    }
+
+    .mobile-menu-inner {
+      width: min(540px,88%);
+      height: 100%;
+
+      margin: auto;
+
+      padding:
+        125px 0
+        40px;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-menu-small {
+      margin-bottom: 25px;
+
+      color: #51cffb;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .28em;
+
+      text-transform: uppercase;
+    }
+
+    .mobile-nav {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      min-height: 58px;
+
+      border-bottom:
+        1px solid rgba(91,204,244,.11);
+
+      color: #d6e8f0;
+
+      font-family: 'Oswald',sans-serif;
+
+      font-size: 28px;
+      font-weight: 500;
+
+      letter-spacing: .02em;
+
+      text-transform: uppercase;
+    }
+
+    .mobile-nav a::after {
+      content: "→";
+
+      color: #54d5ff;
+
+      font-size: 18px;
+    }
+
+    .mobile-nav a.active {
+      color: #58d5ff;
+    }
+
+    .mobile-ticket {
+      margin-top: 30px;
+
+      padding: 16px 20px;
+
+      text-align: center;
+
+      color: #031019;
+      background: #56d5ff;
+
+      border-radius: 5px;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    .mobile-ticket.disabled {
+      opacity: .30;
+
+      pointer-events: none;
+    }
+
+    .mobile-menu-footer {
+      margin-top: auto;
+
+      padding-top: 30px;
+
+      color: #4f7080;
+
+      font-size: 9px;
+      font-weight: 600;
+
+      line-height: 1.8;
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+    }
+
+    /* =====================================================
+       HERO CONTENT
+       ===================================================== */
 
     .hero-content {
       position: relative;
@@ -338,7 +590,9 @@
       letter-spacing: .28em;
     }
 
-    /* NEXT MATCH */
+    /* =====================================================
+       NEXT MATCH
+       ===================================================== */
 
     .next-match-section {
       padding: 32px 0 58px;
@@ -488,6 +742,7 @@
     .next-team-logo img {
       width: 100%;
       height: 100%;
+
       object-fit: contain;
     }
 
@@ -498,11 +753,13 @@
       font-weight: 800;
 
       letter-spacing: .07em;
+
       text-transform: uppercase;
     }
 
     .next-team-city {
       min-height: 17px;
+
       margin-top: 7px;
 
       color: #88aebe;
@@ -510,6 +767,7 @@
       font-size: 10px;
 
       letter-spacing: .18em;
+
       text-transform: uppercase;
     }
 
@@ -520,6 +778,7 @@
       font-weight: 600;
 
       letter-spacing: .14em;
+
       text-transform: uppercase;
     }
 
@@ -555,6 +814,7 @@
       font-weight: 600;
 
       letter-spacing: .18em;
+
       text-transform: uppercase;
     }
 
@@ -574,8 +834,8 @@
       color: #f8fcff;
 
       font-family: 'Oswald',sans-serif;
-      font-size: 38px;
 
+      font-size: 38px;
       line-height: 1;
     }
 
@@ -587,10 +847,13 @@
       font-size: 9px;
 
       letter-spacing: .14em;
+
       text-transform: uppercase;
     }
 
-    /* PLAYERS */
+    /* =====================================================
+       PLAYERS
+       ===================================================== */
 
     .players-section {
       padding: 34px 0 78px;
@@ -648,7 +911,9 @@
 
     .players-grid {
       display: grid;
-      grid-template-columns: repeat(5,minmax(0,1fr));
+
+      grid-template-columns:
+        repeat(5,minmax(0,1fr));
 
       margin-top: 10px;
 
@@ -746,7 +1011,9 @@
       color: #879ca6;
     }
 
-    /* NEWS */
+    /* =====================================================
+       NEWS
+       ===================================================== */
 
     .news-section {
       padding: 82px 0 95px;
@@ -793,7 +1060,9 @@
     .news-heading h2 {
       font-family: 'Oswald',sans-serif;
 
-      font-size: clamp(38px,4.8vw,68px);
+      font-size:
+        clamp(38px,4.8vw,68px);
+
       font-weight: 600;
 
       text-transform: uppercase;
@@ -810,13 +1079,16 @@
 
     .news-grid {
       display: grid;
-      grid-template-columns: repeat(4,minmax(0,1fr));
+
+      grid-template-columns:
+        repeat(4,minmax(0,1fr));
 
       gap: 15px;
     }
 
     .news-card {
       display: block;
+
       overflow: hidden;
 
       color: inherit;
@@ -838,17 +1110,20 @@
     }
 
     .news-card:hover {
-      transform: translateY(-4px);
+      transform:
+        translateY(-4px);
 
       border-color:
         rgba(77,210,255,.43);
 
       box-shadow:
-        0 18px 45px rgba(0,0,0,.24);
+        0 18px 45px
+        rgba(0,0,0,.24);
     }
 
     .news-image {
       position: relative;
+
       aspect-ratio: 4 / 3;
 
       overflow: hidden;
@@ -873,7 +1148,8 @@
 
     .news-card:hover
     .news-image img {
-      transform: scale(1.035);
+      transform:
+        scale(1.035);
     }
 
     .news-no-image {
@@ -921,6 +1197,7 @@
       font-weight: 600;
 
       line-height: 1.2;
+
       text-transform: uppercase;
     }
 
@@ -970,7 +1247,8 @@
 
     .news-card:hover
     .news-arrow {
-      transform: translateX(4px);
+      transform:
+        translateX(4px);
     }
 
     .news-empty {
@@ -983,7 +1261,9 @@
       color: #7898a8;
     }
 
-    /* RESULTS */
+    /* =====================================================
+       RESULTS
+       ===================================================== */
 
     .results-section {
       padding: 90px 0 100px;
@@ -1026,7 +1306,9 @@
     .results-heading h2 {
       font-family: 'Oswald',sans-serif;
 
-      font-size: clamp(36px,4.6vw,66px);
+      font-size:
+        clamp(36px,4.6vw,66px);
+
       font-weight: 600;
     }
 
@@ -1042,7 +1324,9 @@
 
     .results-grid {
       display: grid;
-      grid-template-columns: repeat(2,minmax(0,1fr));
+
+      grid-template-columns:
+        repeat(2,minmax(0,1fr));
 
       gap: 16px;
     }
@@ -1158,7 +1442,9 @@
       color: #7894a5;
     }
 
-    /* FOOTER */
+    /* =====================================================
+       FOOTER
+       ===================================================== */
 
     footer {
       background: #02080d;
@@ -1206,19 +1492,31 @@
       letter-spacing: .22em;
     }
 
-    /* RESPONSIVE */
+    /* =====================================================
+       RESPONSIVE
+       ===================================================== */
 
     @media (max-width:1200px) {
+
+      .desktop-nav {
+        gap: 18px;
+      }
+
       .players-grid {
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns:
+          repeat(3,1fr);
       }
 
       .news-grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns:
+          repeat(2,1fr);
       }
+
     }
 
+
     @media (max-width:900px) {
+
       header {
         height: 82px;
       }
@@ -1227,12 +1525,25 @@
         height: 60px;
       }
 
-      nav {
+      .desktop-nav {
         display: none;
       }
 
-      .ticket {
+      .top-actions .ticket {
         display: none;
+      }
+
+      .top-actions .lang {
+        display: none;
+      }
+
+      .mobile-menu-button {
+        display: flex;
+      }
+
+      .hero-content {
+        min-height:
+          calc(100vh - 82px);
       }
 
       .hero-text {
@@ -1256,15 +1567,40 @@
       }
 
       .players-grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns:
+          repeat(2,1fr);
       }
 
       .results-grid {
         grid-template-columns: 1fr;
       }
+
     }
 
+
     @media (max-width:560px) {
+
+      header {
+        width: 90%;
+      }
+
+      .hero-content {
+        width: 90%;
+      }
+
+      .hero-title {
+        font-size: 82px;
+      }
+
+      .hero-subtitle {
+        font-size: 20px;
+        letter-spacing: .30em;
+      }
+
+      .small-title {
+        font-size: 9px;
+      }
+
       .players-grid,
       .news-grid {
         grid-template-columns: 1fr;
@@ -1274,8 +1610,41 @@
         min-height: 500px;
       }
 
-      .hero-title {
-        font-size: 82px;
+      .next-match-header {
+        padding:
+          0 17px;
+      }
+
+      .next-match-header h3 {
+        font-size: 13px;
+      }
+
+      .all-matches-link {
+        font-size: 8px;
+      }
+
+      .results-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .result-teams {
+        gap: 8px;
+      }
+
+      .result-logo {
+        width: 43px;
+        height: 43px;
+      }
+
+      .result-team-name {
+        font-size: 10px;
+      }
+
+      .result-score {
+        min-width: 65px;
+
+        font-size: 31px;
       }
 
       .footer-inner {
@@ -1285,19 +1654,112 @@
 
         gap: 12px;
 
-        padding: 25px 0;
+        padding:
+          25px 0;
       }
+
+      .mobile-menu-inner {
+        padding-top: 105px;
+      }
+
+      .mobile-nav a {
+        min-height: 55px;
+
+        font-size: 25px;
+      }
+
     }
   </style>
 </head>
 
 <body>
 
+<!-- =====================================================
+     MOBILE MENU
+     ===================================================== -->
+
+<div
+  class="mobile-menu"
+  id="mobileMenu"
+>
+
+  <div class="mobile-menu-inner">
+
+    <div class="mobile-menu-small">
+      CASPIY FUTSAL CLUB
+    </div>
+
+    <nav class="mobile-nav">
+
+      <a
+        href="index.html"
+        class="active"
+      >
+        БАСТЫ БЕТ
+      </a>
+
+      <a href="team.html">
+        КОМАНДА
+      </a>
+
+      <a href="matches.html">
+        МАТЧТАР
+      </a>
+
+      <a href="news.html">
+        ЖАҢАЛЫҚТАР
+      </a>
+
+      <a href="club.html">
+        КЛУБ
+      </a>
+
+      <a href="fans.html">
+        ЖАНКҮЙЕРЛЕР
+      </a>
+
+      <a href="contact.html">
+        БАЙЛАНЫС
+      </a>
+
+    </nav>
+
+
+    <a
+      href="#"
+      class="mobile-ticket disabled"
+      id="mobileTicketButton"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      БИЛЕТТЕР →
+    </a>
+
+
+    <div
+      class="mobile-menu-footer"
+      id="mobileAddress"
+    >
+      АҚТАУ · ҚАЗАҚСТАН
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
 <section class="hero">
 
   <header>
 
-    <a href="index.html" class="logo">
+    <a
+      href="index.html"
+      class="logo"
+    >
       <img
         src="logo.png"
         alt="CASPIY Futsal Club"
@@ -1305,7 +1767,7 @@
     </a>
 
 
-    <nav>
+    <nav class="desktop-nav">
 
       <a
         href="index.html"
@@ -1357,6 +1819,25 @@
         БИЛЕТТЕР →
       </a>
 
+
+      <button
+        class="mobile-menu-button"
+        id="mobileMenuButton"
+        type="button"
+        aria-label="Мәзірді ашу"
+        aria-expanded="false"
+      >
+
+        <span class="mobile-menu-button-lines">
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </span>
+
+      </button>
+
     </div>
 
   </header>
@@ -1403,6 +1884,10 @@
 
 </section>
 
+
+<!-- =====================================================
+     NEXT MATCH
+     ===================================================== -->
 
 <section class="next-match-section">
 
@@ -1591,6 +2076,10 @@
 </section>
 
 
+<!-- =====================================================
+     PLAYERS
+     ===================================================== -->
+
 <section class="players-section">
 
   <div class="players-container">
@@ -1610,6 +2099,7 @@
 
     </div>
 
+
     <div
       class="players-grid"
       id="players-list"
@@ -1625,6 +2115,10 @@
 
 </section>
 
+
+<!-- =====================================================
+     NEWS
+     ===================================================== -->
 
 <section class="news-section">
 
@@ -1670,6 +2164,10 @@
 </section>
 
 
+<!-- =====================================================
+     RESULTS
+     ===================================================== -->
+
 <section class="results-section">
 
   <div class="results-container">
@@ -1708,6 +2206,10 @@
 
 </section>
 
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
 
 <footer>
 
@@ -1752,8 +2254,150 @@
     );
 
 
-  let countdownTimer = null;
+  let countdownTimer =
+    null;
 
+
+  /* =====================================================
+     MOBILE MENU
+     ===================================================== */
+
+  const mobileMenu =
+    document.getElementById(
+      'mobileMenu'
+    );
+
+
+  const mobileMenuButton =
+    document.getElementById(
+      'mobileMenuButton'
+    );
+
+
+  function openMobileMenu() {
+
+    mobileMenu.classList.add(
+      'open'
+    );
+
+
+    mobileMenuButton.classList.add(
+      'active'
+    );
+
+
+    mobileMenuButton.setAttribute(
+      'aria-expanded',
+      'true'
+    );
+
+
+    document.body.classList.add(
+      'menu-open'
+    );
+
+  }
+
+
+  function closeMobileMenu() {
+
+    mobileMenu.classList.remove(
+      'open'
+    );
+
+
+    mobileMenuButton.classList.remove(
+      'active'
+    );
+
+
+    mobileMenuButton.setAttribute(
+      'aria-expanded',
+      'false'
+    );
+
+
+    document.body.classList.remove(
+      'menu-open'
+    );
+
+  }
+
+
+  mobileMenuButton
+    .addEventListener(
+      'click',
+      () => {
+
+        if (
+          mobileMenu.classList.contains(
+            'open'
+          )
+        ) {
+
+          closeMobileMenu();
+
+        } else {
+
+          openMobileMenu();
+
+        }
+
+      }
+    );
+
+
+  mobileMenu
+    .querySelectorAll('a')
+    .forEach(
+      link => {
+
+        link.addEventListener(
+          'click',
+          closeMobileMenu
+        );
+
+      }
+    );
+
+
+  document
+    .addEventListener(
+      'keydown',
+      event => {
+
+        if (
+          event.key === 'Escape'
+        ) {
+
+          closeMobileMenu();
+
+        }
+
+      }
+    );
+
+
+  window
+    .addEventListener(
+      'resize',
+      () => {
+
+        if (
+          window.innerWidth > 900
+        ) {
+
+          closeMobileMenu();
+
+        }
+
+      }
+    );
+
+
+  /* =====================================================
+     HELPERS
+     ===================================================== */
 
   function escapeHtml(value) {
 
@@ -1770,7 +2414,10 @@
   function pad(value) {
 
     return String(value)
-      .padStart(2,'0');
+      .padStart(
+        2,
+        '0'
+      );
 
   }
 
@@ -1869,7 +2516,9 @@
   }
 
 
-  /* SETTINGS */
+  /* =====================================================
+     SETTINGS
+     ===================================================== */
 
   async function loadSettings() {
 
@@ -1882,7 +2531,10 @@
         .select(
           'ticket_url,address'
         )
-        .eq('id',1)
+        .eq(
+          'id',
+          1
+        )
         .maybeSingle();
 
 
@@ -1900,12 +2552,28 @@
       );
 
 
+    const mobileTicketButton =
+      document.getElementById(
+        'mobileTicketButton'
+      );
+
+
     if (data.ticket_url) {
 
       ticketButton.href =
         data.ticket_url;
 
+
+      mobileTicketButton.href =
+        data.ticket_url;
+
+
       ticketButton.classList.remove(
+        'disabled'
+      );
+
+
+      mobileTicketButton.classList.remove(
         'disabled'
       );
 
@@ -1914,7 +2582,17 @@
       ticketButton.href =
         '#';
 
+
+      mobileTicketButton.href =
+        '#';
+
+
       ticketButton.classList.add(
+        'disabled'
+      );
+
+
+      mobileTicketButton.classList.add(
         'disabled'
       );
 
@@ -1923,19 +2601,33 @@
 
     if (data.address) {
 
+      const address =
+        data.address.toUpperCase();
+
+
       document
         .getElementById(
           'footerAddress'
         )
         .textContent =
-          data.address.toUpperCase();
+          address;
+
+
+      document
+        .getElementById(
+          'mobileAddress'
+        )
+        .textContent =
+          address;
 
     }
 
   }
 
 
-  /* PLAYERS */
+  /* =====================================================
+     PLAYERS
+     ===================================================== */
 
   async function loadPlayers() {
 
@@ -2036,7 +2728,9 @@
   }
 
 
-  /* NEWS */
+  /* =====================================================
+     NEWS
+     ===================================================== */
 
   async function loadNews() {
 
@@ -2098,7 +2792,6 @@
             <a
               class="news-card"
               href="news-detail.html?id=${item.id}"
-              aria-label="${escapeHtml(item.title)}"
             >
 
               <div class="news-image">
@@ -2169,9 +2862,13 @@
   }
 
 
-  /* COUNTDOWN */
+  /* =====================================================
+     COUNTDOWN
+     ===================================================== */
 
-  function startCountdown(matchDate) {
+  function startCountdown(
+    matchDate
+  ) {
 
     if (countdownTimer) {
 
@@ -2191,7 +2888,9 @@
         Date.now();
 
 
-      if (difference <= 0) {
+      if (
+        difference <= 0
+      ) {
 
         document
           .getElementById(
@@ -2233,8 +2932,10 @@
       const day =
         1000 * 60 * 60 * 24;
 
+
       const hour =
         1000 * 60 * 60;
+
 
       const minute =
         1000 * 60;
@@ -2304,7 +3005,9 @@
   }
 
 
-  /* NEXT MATCH */
+  /* =====================================================
+     NEXT MATCH
+     ===================================================== */
 
   async function loadNextMatch() {
 
@@ -2473,6 +3176,7 @@
         caspiy
       );
 
+
       renderTeam(
         'right',
         opponent
@@ -2484,6 +3188,7 @@
         'left',
         opponent
       );
+
 
       renderTeam(
         'right',
@@ -2518,7 +3223,8 @@
         'next-match-competition'
       )
       .textContent =
-        match.competition || '';
+        match.competition ||
+        '';
 
 
     document
@@ -2526,7 +3232,8 @@
         'next-match-venue'
       )
       .textContent =
-        match.venue || '';
+        match.venue ||
+        '';
 
 
     startCountdown(
@@ -2536,7 +3243,9 @@
   }
 
 
-  /* RESULTS */
+  /* =====================================================
+     RESULTS
+     ===================================================== */
 
   async function loadResults() {
 
@@ -2588,11 +3297,13 @@
           match => {
 
             const cs =
-              match.caspiy_score ?? '-';
+              match.caspiy_score ??
+              '-';
 
 
             const os =
-              match.opponent_score ?? '-';
+              match.opponent_score ??
+              '-';
 
 
             const caspiyTeam = `
@@ -2681,6 +3392,7 @@
                         )
                   }
 
+
                   <div class="result-score">
 
                     ${
@@ -2690,6 +3402,7 @@
                     }
 
                   </div>
+
 
                   ${
                     match.is_home !== false
@@ -2718,7 +3431,9 @@
   }
 
 
-  /* START */
+  /* =====================================================
+     START
+     ===================================================== */
 
   await Promise.all([
     loadSettings(),
