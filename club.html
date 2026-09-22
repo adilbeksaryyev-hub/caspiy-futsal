@@ -4,7 +4,104 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Клуб — CASPIY Futsal Club</title>
+  <title>Клуб — CASPIY Futsal Club | Ақтау</title>
+
+  <meta
+    name="description"
+    content="CASPIY Futsal Club туралы. Ақтау қаласы, Каспий жағалауы, клубтың болмысы, команда және жанкүйерлер."
+  >
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#020a10">
+
+  <link
+    rel="canonical"
+    href="https://adilbeksaryyev-hub.github.io/caspiy-futsal/club.html"
+  >
+
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- OPEN GRAPH -->
+
+  <meta property="og:type" content="website">
+
+  <meta
+    property="og:site_name"
+    content="CASPIY Futsal Club"
+  >
+
+  <meta
+    property="og:title"
+    content="Клуб — CASPIY Futsal Club"
+  >
+
+  <meta
+    property="og:description"
+    content="Бір өңір. Бір команда. CASPIY Futsal Club — Ақтау."
+  >
+
+  <meta
+    property="og:url"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/club.html"
+  >
+
+  <meta
+    property="og:image"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
+  >
+
+  <meta
+    property="og:image:secure_url"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
+  >
+
+  <meta
+    property="og:image:type"
+    content="image/png"
+  >
+
+  <meta
+    property="og:image:width"
+    content="1200"
+  >
+
+  <meta
+    property="og:image:height"
+    content="630"
+  >
+
+  <meta
+    property="og:image:alt"
+    content="CASPIY Futsal Club"
+  >
+
+  <meta
+    property="og:locale"
+    content="kk_KZ"
+  >
+
+  <!-- TWITTER / X -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Клуб — CASPIY Futsal Club"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Бір өңір. Бір команда. CASPIY Futsal Club — Ақтау."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,9 +125,7 @@
     body {
       min-height: 100vh;
       overflow-x: hidden;
-
       font-family: 'Montserrat', Arial, sans-serif;
-
       color: #f1f8fc;
       background: #020a10;
     }
@@ -50,71 +145,54 @@
       position: sticky;
       top: 0;
       z-index: 50;
-
       background: rgba(2,10,16,.96);
       backdrop-filter: blur(15px);
-
-      border-bottom:
-        1px solid rgba(80,202,245,.14);
+      border-bottom: 1px solid rgba(80,202,245,.14);
     }
 
     .header-inner {
       width: min(1440px,92%);
       height: 95px;
-
       margin: auto;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 25px;
     }
 
     .logo {
       position: relative;
       z-index: 60;
-
       display: flex;
       align-items: center;
-
       gap: 14px;
     }
 
     .logo img {
       width: 70px;
       height: 70px;
-
       object-fit: contain;
     }
 
     .logo strong {
       font-family: 'Oswald',sans-serif;
-
       font-size: 20px;
-
       letter-spacing: .08em;
     }
 
     .desktop-nav {
       display: flex;
       align-items: center;
-
       gap: 27px;
     }
 
     .desktop-nav a {
       position: relative;
-
       padding: 12px 0;
-
       color: #a9bfca;
-
       font-size: 10px;
       font-weight: 700;
-
       letter-spacing: .13em;
-
       text-transform: uppercase;
     }
 
@@ -125,43 +203,30 @@
 
     .desktop-nav a.active::after {
       content: "";
-
       position: absolute;
-
       left: 0;
       right: 0;
       bottom: 0;
-
       height: 2px;
-
       background: #52d3ff;
     }
 
     .header-actions {
       position: relative;
       z-index: 60;
-
       display: flex;
       align-items: center;
-
       gap: 12px;
     }
 
     .ticket-button {
       padding: 13px 18px;
-
       color: #caeffc;
-
-      border:
-        1px solid rgba(80,207,251,.42);
-
+      border: 1px solid rgba(80,207,251,.42);
       border-radius: 5px;
-
       font-size: 9px;
       font-weight: 700;
-
       letter-spacing: .13em;
-
       text-transform: uppercase;
     }
 
@@ -174,28 +239,19 @@
 
     .mobile-menu-button {
       display: none;
-
       width: 46px;
       height: 46px;
-
       align-items: center;
       justify-content: center;
-
       padding: 0;
-
       background: rgba(4,22,34,.90);
-
-      border:
-        1px solid rgba(77,205,255,.32);
-
+      border: 1px solid rgba(77,205,255,.32);
       border-radius: 5px;
-
       cursor: pointer;
     }
 
     .mobile-lines {
       position: relative;
-
       width: 21px;
       height: 15px;
     }
@@ -203,12 +259,9 @@
     .mobile-lines span {
       position: absolute;
       left: 0;
-
       width: 21px;
       height: 2px;
-
       background: #cbeffc;
-
       transition: .25s;
     }
 
@@ -246,16 +299,11 @@
     .mobile-menu {
       position: fixed;
       z-index: 45;
-
       inset: 0;
-
       visibility: hidden;
       opacity: 0;
-
       pointer-events: none;
-
       transform: translateX(100%);
-
       transition:
         transform .30s ease,
         opacity .30s ease,
@@ -273,34 +321,25 @@
     .mobile-menu.open {
       visibility: visible;
       opacity: 1;
-
       pointer-events: auto;
-
       transform: translateX(0);
     }
 
     .mobile-menu-inner {
       width: min(540px,88%);
       height: 100%;
-
       margin: auto;
-
       padding: 125px 0 40px;
-
       display: flex;
       flex-direction: column;
     }
 
     .mobile-menu-small {
       margin-bottom: 25px;
-
       color: #51cffb;
-
       font-size: 9px;
       font-weight: 700;
-
       letter-spacing: .28em;
-
       text-transform: uppercase;
     }
 
@@ -313,27 +352,18 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       min-height: 58px;
-
       color: #d6e8f0;
-
-      border-bottom:
-        1px solid rgba(91,204,244,.11);
-
+      border-bottom: 1px solid rgba(91,204,244,.11);
       font-family: 'Oswald',sans-serif;
-
       font-size: 28px;
       font-weight: 500;
-
       text-transform: uppercase;
     }
 
     .mobile-nav a::after {
       content: "→";
-
       color: #54d5ff;
-
       font-size: 18px;
     }
 
@@ -343,21 +373,14 @@
 
     .mobile-ticket {
       margin-top: 30px;
-
       padding: 16px 20px;
-
       text-align: center;
-
       color: #031019;
       background: #56d5ff;
-
       border-radius: 5px;
-
       font-size: 10px;
       font-weight: 800;
-
       letter-spacing: .14em;
-
       text-transform: uppercase;
     }
 
@@ -368,17 +391,12 @@
 
     .mobile-address {
       margin-top: auto;
-
       padding-top: 30px;
-
       color: #4f7080;
-
       font-size: 9px;
       font-weight: 600;
-
       line-height: 1.8;
       letter-spacing: .18em;
-
       text-transform: uppercase;
     }
 
@@ -386,9 +404,7 @@
 
     .hero {
       position: relative;
-
       min-height: 570px;
-
       overflow: hidden;
 
       background:
@@ -406,7 +422,6 @@
 
     .hero::after {
       content: "";
-
       position: absolute;
       inset: 0;
 
@@ -421,48 +436,30 @@
     .hero-inner {
       position: relative;
       z-index: 2;
-
       width: min(1440px,92%);
       min-height: 570px;
-
       margin: auto;
-
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-
       padding-bottom: 75px;
     }
 
     .hero-small {
       margin-bottom: 13px;
-
       color: #55d3ff;
-
       font-size: 10px;
       font-weight: 700;
-
       letter-spacing: .35em;
-
       text-transform: uppercase;
     }
 
     .hero-title {
       font-family: 'Oswald',sans-serif;
-
-      font-size:
-        clamp(
-          78px,
-          10vw,
-          155px
-        );
-
+      font-size: clamp(78px,10vw,155px);
       font-weight: 700;
-
       line-height: .90;
-
       letter-spacing: -.035em;
-
       text-transform: uppercase;
     }
 
@@ -472,16 +469,11 @@
 
     .hero-text {
       max-width: 670px;
-
       margin-top: 25px;
-
       color: #88a6b4;
-
       font-size: 11px;
-
       line-height: 1.9;
       letter-spacing: .12em;
-
       text-transform: uppercase;
     }
 
@@ -506,42 +498,25 @@
 
     .about-grid {
       display: grid;
-
-      grid-template-columns:
-        .8fr 1.2fr;
-
+      grid-template-columns: .8fr 1.2fr;
       gap: 75px;
-
       align-items: start;
     }
 
     .section-small {
       margin-bottom: 12px;
-
       color: #56d4ff;
-
       font-size: 9px;
       font-weight: 700;
-
       letter-spacing: .31em;
-
       text-transform: uppercase;
     }
 
     .section-title {
       font-family: 'Oswald',sans-serif;
-
-      font-size:
-        clamp(
-          45px,
-          6vw,
-          85px
-        );
-
+      font-size: clamp(45px,6vw,85px);
       font-weight: 600;
-
       line-height: .95;
-
       text-transform: uppercase;
     }
 
@@ -551,9 +526,7 @@
 
     .about-text {
       color: #93aeba;
-
       font-size: 13px;
-
       line-height: 2;
     }
 
@@ -569,26 +542,19 @@
 
     .identity {
       padding: 0 0 105px;
-
       background: #020a10;
     }
 
     .identity-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(3,minmax(0,1fr));
-
+      grid-template-columns: repeat(3,minmax(0,1fr));
       gap: 14px;
     }
 
     .identity-card {
       position: relative;
-
       min-height: 345px;
-
       overflow: hidden;
-
       padding: 30px;
 
       background:
@@ -598,21 +564,16 @@
           #031019
         );
 
-      border:
-        1px solid rgba(79,198,241,.16);
+      border: 1px solid rgba(79,198,241,.16);
     }
 
     .identity-card::after {
       content: "";
-
       position: absolute;
-
       right: -70px;
       bottom: -70px;
-
       width: 260px;
       height: 260px;
-
       border-radius: 50%;
 
       background:
@@ -626,53 +587,38 @@
     .identity-index {
       position: relative;
       z-index: 2;
-
       color: #55d4ff;
-
       font-size: 9px;
       font-weight: 700;
-
       letter-spacing: .25em;
     }
 
     .identity-card h3 {
       position: relative;
       z-index: 2;
-
       margin-top: 65px;
-
       font-family: 'Oswald',sans-serif;
-
       font-size: 42px;
       font-weight: 600;
-
       line-height: 1;
-
       text-transform: uppercase;
     }
 
     .identity-card p {
       position: relative;
       z-index: 2;
-
       max-width: 330px;
-
       margin-top: 20px;
-
       color: #7c9aa9;
-
       font-size: 11px;
-
       line-height: 1.9;
     }
 
-    /* QUOTE */
+    /* STATEMENT */
 
     .statement {
       position: relative;
-
       min-height: 520px;
-
       overflow: hidden;
 
       background:
@@ -689,7 +635,6 @@
 
     .statement::after {
       content: "";
-
       position: absolute;
       inset: 0;
 
@@ -704,12 +649,9 @@
     .statement-inner {
       position: relative;
       z-index: 2;
-
       width: min(1300px,92%);
       min-height: 520px;
-
       margin: auto;
-
       display: flex;
       align-items: center;
     }
@@ -720,31 +662,18 @@
 
     .statement-small {
       color: #56d4ff;
-
       font-size: 9px;
       font-weight: 700;
-
       letter-spacing: .32em;
-
       text-transform: uppercase;
     }
 
     .statement-title {
       margin-top: 16px;
-
       font-family: 'Oswald',sans-serif;
-
-      font-size:
-        clamp(
-          58px,
-          8vw,
-          120px
-        );
-
+      font-size: clamp(58px,8vw,120px);
       font-weight: 700;
-
       line-height: .9;
-
       text-transform: uppercase;
     }
 
@@ -756,35 +685,25 @@
 
     .club-links {
       padding: 100px 0;
-
       background: #03101a;
     }
 
     .links-heading {
       margin-bottom: 32px;
-
       padding-bottom: 18px;
-
-      border-bottom:
-        1px solid rgba(78,199,242,.15);
+      border-bottom: 1px solid rgba(78,199,242,.15);
     }
 
     .links-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(3,minmax(0,1fr));
-
+      grid-template-columns: repeat(3,minmax(0,1fr));
       gap: 14px;
     }
 
     .link-card {
       padding: 28px;
-
       background: #051722;
-
-      border:
-        1px solid rgba(77,197,241,.15);
+      border: 1px solid rgba(77,197,241,.15);
 
       transition:
         transform .25s,
@@ -793,40 +712,29 @@
 
     .link-card:hover {
       transform: translateY(-3px);
-
-      border-color:
-        rgba(83,211,255,.44);
+      border-color: rgba(83,211,255,.44);
     }
 
     .link-card-small {
       color: #54d4ff;
-
       font-size: 8px;
       font-weight: 700;
-
       letter-spacing: .22em;
-
       text-transform: uppercase;
     }
 
     .link-card h3 {
       margin-top: 35px;
-
       font-family: 'Oswald',sans-serif;
-
       font-size: 32px;
       font-weight: 600;
-
       text-transform: uppercase;
     }
 
     .link-card-arrow {
       display: block;
-
       margin-top: 24px;
-
       color: #58d5ff;
-
       font-size: 20px;
     }
 
@@ -834,53 +742,41 @@
 
     footer {
       background: #01070b;
-
-      border-top:
-        1px solid rgba(71,197,242,.10);
+      border-top: 1px solid rgba(71,197,242,.10);
     }
 
     .footer-inner {
       width: min(1440px,92%);
       min-height: 120px;
-
       margin: auto;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 30px;
     }
 
     .footer-brand {
       display: flex;
       align-items: center;
-
       gap: 14px;
     }
 
     .footer-brand img {
       width: 58px;
       height: 58px;
-
       object-fit: contain;
     }
 
     .footer-brand strong {
       font-size: 12px;
-
       letter-spacing: .17em;
-
       text-transform: uppercase;
     }
 
     .footer-copy {
       color: #506a78;
-
       font-size: 8px;
-
       letter-spacing: .20em;
-
       text-transform: uppercase;
     }
 
@@ -890,7 +786,6 @@
 
       .about-grid {
         grid-template-columns: 1fr;
-
         gap: 40px;
       }
 
@@ -971,7 +866,6 @@
 
       .mobile-nav a {
         min-height: 55px;
-
         font-size: 25px;
       }
 
@@ -979,7 +873,6 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-
         padding: 25px 0;
       }
 
@@ -991,10 +884,7 @@
 
 <!-- MOBILE MENU -->
 
-<div
-  class="mobile-menu"
-  id="mobileMenu"
->
+<div class="mobile-menu" id="mobileMenu">
 
   <div class="mobile-menu-inner">
 
@@ -1072,7 +962,7 @@
 
       <img
         src="logo.png"
-        alt="CASPIY"
+        alt="CASPIY Futsal Club"
       >
 
       <strong>
@@ -1236,7 +1126,6 @@
 
     <div class="identity-grid">
 
-
       <article class="identity-card">
 
         <div class="identity-index">
@@ -1292,7 +1181,6 @@
         </p>
 
       </article>
-
 
     </div>
 
