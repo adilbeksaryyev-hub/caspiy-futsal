@@ -113,6 +113,7 @@
 
     nav a {
       position: relative;
+
       padding: 13px 0;
 
       color: #c2d3dd;
@@ -215,6 +216,7 @@
       font-weight: 500;
 
       line-height: 1.8;
+
       letter-spacing: .48em;
 
       text-transform: uppercase;
@@ -222,7 +224,7 @@
 
 
     /* =====================================================
-       КАСПИЙ — ИСПРАВЛЕННЫЙ ВАРИАНТ
+       КАСПИЙ
        ===================================================== */
 
     .hero-title {
@@ -230,12 +232,6 @@
       width: fit-content;
 
       margin: 0;
-
-      /*
-        Добавляем место снизу.
-        Теперь фон физически может заполнить
-        буквы до самого нижнего края.
-      */
       padding: 2px 0 10px 0;
 
       font-family:
@@ -243,10 +239,6 @@
         'Arial Black',
         sans-serif;
 
-      /*
-        Высоту получаем через font-size,
-        а НЕ через scaleY.
-      */
       font-size:
         clamp(
           128px,
@@ -254,9 +246,6 @@
           225px
         );
 
-      /*
-        Было .80 — это и обрезало фон.
-      */
       line-height: 1;
 
       font-weight: 700;
@@ -265,25 +254,21 @@
 
       text-transform: uppercase;
 
-      /*
-        Оставляем только небольшое
-        сжатие по ширине.
-      */
       transform: scaleX(.91);
       transform-origin: left center;
 
       color: transparent;
 
       /*
-        Текстура занимает ВСЮ площадь
-        реального блока заголовка.
+        Светлее, ближе к вашему примеру.
       */
+
       background-image:
         linear-gradient(
           to bottom,
-          rgba(225,246,255,.16) 0%,
-          rgba(160,218,238,.05) 35%,
-          rgba(50,125,160,.03) 100%
+          rgba(245,252,255,.18) 0%,
+          rgba(192,232,247,.10) 35%,
+          rgba(75,157,195,.04) 100%
         ),
         url("./title-texture.png");
 
@@ -305,19 +290,15 @@
       -webkit-text-fill-color: transparent;
 
       -webkit-text-stroke:
-        1px rgba(205,238,250,.42);
+        1px rgba(220,245,255,.48);
 
-      /*
-        Средняя яркость:
-        не белая и не тёмная.
-      */
       filter:
-        brightness(1.12)
-        contrast(1.06)
-        saturate(.90)
+        brightness(1.22)
+        contrast(1.08)
+        saturate(.95)
         drop-shadow(
           0 7px 14px
-          rgba(0,0,0,.42)
+          rgba(0,0,0,.34)
         );
     }
 
@@ -325,12 +306,6 @@
     /* FUTSAL CLUB */
 
     .hero-subtitle {
-      /*
-        Отделяем от КАСПИЙ,
-        чтобы он вообще не влиял
-        на заголовок.
-      */
-
       margin-top: 4px;
 
       font-size:
@@ -1093,8 +1068,7 @@
 
         line-height: 1;
 
-        transform:
-          scaleX(.92);
+        transform: scaleX(.92);
 
         padding-bottom: 6px;
       }
@@ -1153,10 +1127,12 @@
   <header>
 
     <a href="#" class="logo">
+
       <img
         src="logo.png"
         alt="Caspiy Futsal Club"
       >
+
     </a>
 
 
@@ -1217,6 +1193,7 @@
 
     <div class="hero-text">
 
+
       <div class="small-title">
         Больше<br>
         чем игра
@@ -1238,24 +1215,29 @@
         Наш дом — Каспий
       </div>
 
+
     </div>
 
 
 
     <div class="location">
 
+
       <div class="side-slogan">
         Один регион<br>
         Одна команда
       </div>
 
+
       AQTAU<br>
       KAZAKHSTAN
+
 
     </div>
 
 
   </div>
+
 
 </section>
 
@@ -1270,14 +1252,17 @@
 
   <div class="next-match-container">
 
+
     <div class="next-match-card">
 
 
       <div class="next-match-header">
 
+
         <h3>
           СЛЕДУЮЩИЙ МАТЧ
         </h3>
+
 
         <a
           href="#results"
@@ -1286,6 +1271,7 @@
           ВСЕ МАТЧИ →
         </a>
 
+
       </div>
 
 
@@ -1293,7 +1279,10 @@
       <div class="next-match-body">
 
 
+        <!-- LEFT TEAM -->
+
         <div class="next-match-column">
+
 
           <div class="next-team-logo">
 
@@ -1305,12 +1294,14 @@
 
           </div>
 
+
           <div
             class="next-team-name"
             id="left-team-name"
           >
             КАСПИЙ
           </div>
+
 
           <div
             class="next-team-city"
@@ -1319,13 +1310,19 @@
             АКТАУ
           </div>
 
+
         </div>
+
 
 
         <div class="match-divider"></div>
 
 
+
+        <!-- MATCH INFO -->
+
         <div class="next-match-column">
+
 
           <div
             class="match-date"
@@ -1334,6 +1331,7 @@
             ДАТА МАТЧА
           </div>
 
+
           <div
             class="match-time"
             id="next-match-time"
@@ -1341,23 +1339,33 @@
             --:--
           </div>
 
+
           <div
             class="match-competition"
             id="next-match-competition"
-          ></div>
+          >
+          </div>
+
 
           <div
             class="match-venue"
             id="next-match-venue"
-          ></div>
+          >
+          </div>
+
 
         </div>
+
 
 
         <div class="match-divider"></div>
 
 
+
+        <!-- RIGHT TEAM -->
+
         <div class="next-match-column">
+
 
           <div class="next-team-logo">
 
@@ -1369,6 +1377,7 @@
 
           </div>
 
+
           <div
             class="next-team-name"
             id="right-team-name"
@@ -1376,18 +1385,26 @@
             СОПЕРНИК
           </div>
 
+
           <div
             class="next-team-city"
             id="right-team-city"
-          ></div>
+          >
+          </div>
+
 
         </div>
+
 
 
         <div class="match-divider"></div>
 
 
+
+        <!-- COUNTDOWN -->
+
         <div class="next-match-column">
+
 
           <div
             class="countdown-title"
@@ -1416,6 +1433,7 @@
             </div>
 
 
+
             <div class="countdown-part">
 
               <div
@@ -1430,6 +1448,7 @@
               </div>
 
             </div>
+
 
 
             <div class="countdown-part">
@@ -1450,14 +1469,18 @@
 
           </div>
 
+
         </div>
 
 
       </div>
 
+
     </div>
 
+
   </div>
+
 
 </section>
 
@@ -1472,7 +1495,9 @@
 
   <div class="results-container">
 
+
     <div class="results-heading">
+
 
       <div>
 
@@ -1486,9 +1511,12 @@
 
       </div>
 
+
       <div class="results-line"></div>
 
+
     </div>
+
 
 
     <div
@@ -1502,6 +1530,7 @@
 
     </div>
 
+
   </div>
 
 </section>
@@ -1513,6 +1542,7 @@
 <footer>
 
   <div class="footer-inner">
+
 
     <div class="footer-logo">
 
@@ -1532,11 +1562,14 @@
       AQTAU · KAZAKHSTAN
     </div>
 
+
   </div>
 
 </footer>
 
 
+
+<!-- SUPABASE -->
 
 <script type="module">
 
@@ -1554,9 +1587,14 @@
   let countdownTimer = null;
 
 
+
   function pad(value) {
-    return String(value).padStart(2,'0');
+
+    return String(value)
+      .padStart(2,'0');
+
   }
+
 
 
   function formatMatchDate(value) {
@@ -1580,6 +1618,7 @@
   }
 
 
+
   function formatMatchTime(value) {
 
     if (!value) return '--:--';
@@ -1592,11 +1631,11 @@
         minute: '2-digit',
         hour12: false
       }
-    ).format(
-      new Date(value)
-    );
+    )
+    .format(new Date(value));
 
   }
+
 
 
   function formatShortDate(value) {
@@ -1611,11 +1650,11 @@
         month: '2-digit',
         year: 'numeric'
       }
-    ).format(
-      new Date(value)
-    );
+    )
+    .format(new Date(value));
 
   }
+
 
 
   function findOpponentTeam(
@@ -1623,9 +1662,13 @@
     teams
   ) {
 
-    if (!opponent || !teams) {
+    if (
+      !opponent ||
+      !teams
+    ) {
       return null;
     }
+
 
     const value =
       opponent
@@ -1658,6 +1701,7 @@
   }
 
 
+
   function renderTeam(
     side,
     team
@@ -1682,6 +1726,9 @@
 
   }
 
+
+
+  /* COUNTDOWN */
 
   function startCountdown(
     matchDate
@@ -1722,6 +1769,7 @@
 
     function update() {
 
+
       const target =
         new Date(
           matchDate
@@ -1733,7 +1781,9 @@
         Date.now();
 
 
-      if (difference <= 0) {
+      if (
+        difference <= 0
+      ) {
 
         daysElement.textContent =
           '00';
@@ -1753,15 +1803,21 @@
 
 
       const day =
-        1000 * 60 * 60 * 24;
+        1000 *
+        60 *
+        60 *
+        24;
 
 
       const hour =
-        1000 * 60 * 60;
+        1000 *
+        60 *
+        60;
 
 
       const minute =
-        1000 * 60;
+        1000 *
+        60;
 
 
       const days =
@@ -1770,7 +1826,8 @@
         );
 
 
-      difference %= day;
+      difference %=
+        day;
 
 
       const hours =
@@ -1779,7 +1836,8 @@
         );
 
 
-      difference %= hour;
+      difference %=
+        hour;
 
 
       const minutes =
@@ -1814,6 +1872,8 @@
   }
 
 
+
+  /* NEXT MATCH */
 
   async function loadNextMatch() {
 
@@ -1865,7 +1925,27 @@
 
 
     if (!match) {
+
+      document.getElementById(
+        'next-match-date'
+      ).textContent =
+        'МАТЧ НЕ НАЗНАЧЕН';
+
+
+      document.getElementById(
+        'next-match-time'
+      ).textContent =
+        '--:--';
+
+
+      document.getElementById(
+        'countdown-title'
+      ).textContent =
+        'ОЖИДАЕМ СЛЕДУЮЩИЙ МАТЧ';
+
+
       return;
+
     }
 
 
@@ -1919,12 +1999,15 @@
     };
 
 
-    if (match.is_home) {
+    if (
+      match.is_home
+    ) {
 
       renderTeam(
         'left',
         caspiy
       );
+
 
       renderTeam(
         'right',
@@ -1937,6 +2020,7 @@
         'left',
         opponent
       );
+
 
       renderTeam(
         'right',
@@ -1965,13 +2049,15 @@
     document.getElementById(
       'next-match-competition'
     ).textContent =
-      match.competition || '';
+      match.competition ||
+      '';
 
 
     document.getElementById(
       'next-match-venue'
     ).textContent =
-      match.venue || '';
+      match.venue ||
+      '';
 
 
     startCountdown(
@@ -1981,6 +2067,8 @@
   }
 
 
+
+  /* RESULTS */
 
   async function loadResults() {
 
@@ -2075,7 +2163,9 @@
           let rs;
 
 
-          if (match.is_home) {
+          if (
+            match.is_home
+          ) {
 
 
             left = `
@@ -2120,8 +2210,12 @@
             `;
 
 
-            ls = cs;
-            rs = os;
+            ls =
+              cs;
+
+
+            rs =
+              os;
 
 
           } else {
@@ -2169,8 +2263,12 @@
             `;
 
 
-            ls = os;
-            rs = cs;
+            ls =
+              os;
+
+
+            rs =
+              cs;
 
           }
 
@@ -2222,10 +2320,12 @@
   }
 
 
+
   await Promise.all([
     loadNextMatch(),
     loadResults()
   ]);
+
 
 </script>
 
