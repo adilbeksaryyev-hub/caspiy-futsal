@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -51,9 +51,9 @@
       background:
         linear-gradient(
           90deg,
-          rgba(1,9,16,.90) 0%,
-          rgba(2,16,27,.68) 43%,
-          rgba(1,10,18,.34) 100%
+          rgba(1, 9, 16, .91) 0%,
+          rgba(2, 16, 27, .67) 43%,
+          rgba(1, 10, 18, .34) 100%
         ),
         url("hero-bg.png");
 
@@ -70,9 +70,9 @@
       background:
         linear-gradient(
           to bottom,
-          rgba(0,0,0,.02),
-          rgba(0,0,0,.03) 58%,
-          rgba(1,8,14,.55)
+          rgba(0,0,0,.02) 0%,
+          rgba(0,0,0,.02) 58%,
+          rgba(1,8,14,.55) 100%
         );
 
       pointer-events: none;
@@ -87,7 +87,7 @@
       position: relative;
       z-index: 20;
 
-      width: min(1440px,92%);
+      width: min(1440px, 92%);
       height: 105px;
       margin: auto;
 
@@ -100,8 +100,8 @@
     }
 
     .logo img {
-      width: auto;
       height: 82px;
+      width: auto;
       display: block;
     }
 
@@ -113,7 +113,6 @@
 
     nav a {
       position: relative;
-
       padding: 13px 0;
 
       color: #c2d3dd;
@@ -127,8 +126,8 @@
 
     nav a::after {
       content: "";
-
       position: absolute;
+
       left: 0;
       right: 100%;
       bottom: 0;
@@ -136,7 +135,6 @@
       height: 2px;
 
       background: #44ccff;
-
       transition: .25s;
     }
 
@@ -183,8 +181,7 @@
     }
 
     .ticket:hover {
-      background:
-        rgba(38,188,245,.12);
+      background: rgba(38,188,245,.12);
     }
 
 
@@ -196,7 +193,7 @@
       position: relative;
       z-index: 5;
 
-      width: min(1440px,92%);
+      width: min(1440px, 92%);
       min-height: calc(100vh - 105px);
 
       margin: auto;
@@ -204,11 +201,11 @@
 
     .hero-text {
       width: 72%;
-      padding-top: 115px;
+      padding-top: 108px;
     }
 
     .small-title {
-      margin-bottom: 22px;
+      margin-bottom: 20px;
 
       color: #8aaabd;
 
@@ -216,7 +213,6 @@
       font-weight: 500;
 
       line-height: 1.8;
-
       letter-spacing: .48em;
 
       text-transform: uppercase;
@@ -224,15 +220,14 @@
 
 
     /* =====================================================
-       КАСПИЙ
+       КАСПИЙ — КАК НА РЕФЕРЕНСЕ
        ===================================================== */
 
     .hero-title {
-      display: block;
-      width: fit-content;
+      display: inline-block;
 
       margin: 0;
-      padding: 2px 0 10px 0;
+      padding: 0 0 6px 0;
 
       font-family:
         'Oswald',
@@ -241,98 +236,137 @@
 
       font-size:
         clamp(
-          128px,
-          13.4vw,
-          225px
+          130px,
+          13.6vw,
+          230px
         );
 
-      line-height: 1;
+      line-height: .92;
 
       font-weight: 700;
 
-      letter-spacing: -.045em;
+      letter-spacing: -.055em;
 
       text-transform: uppercase;
 
-      transform: scaleX(.91);
+      /*
+        Буквы немного уже,
+        но остаются массивными.
+      */
+      transform: scaleX(.93);
       transform-origin: left center;
+
+
+      /*
+        Основной эффект как на референсе:
+        светлая ледяная основа.
+      */
 
       color: transparent;
 
-      /*
-        Светлее, ближе к вашему примеру.
-      */
-
       background-image:
+
         linear-gradient(
-          to bottom,
-          rgba(245,252,255,.18) 0%,
-          rgba(192,232,247,.10) 35%,
-          rgba(75,157,195,.04) 100%
+          180deg,
+          rgba(231, 249, 255, .93) 0%,
+          rgba(194, 231, 244, .94) 30%,
+          rgba(156, 207, 228, .95) 62%,
+          rgba(105, 172, 203, .96) 100%
         ),
+
         url("./title-texture.png");
+
+
+      /*
+        Текстура покрывает всё слово,
+        но не доминирует.
+      */
 
       background-size:
         100% 100%,
-        100% 100%;
+        115% 115%;
 
       background-position:
-        center,
-        center;
+        center center,
+        center 48%;
 
       background-repeat:
         no-repeat,
         no-repeat;
+
+
+      /*
+        Это главное:
+        фотография воды смешивается
+        со светлой ледяной основой.
+      */
+
+      background-blend-mode:
+        soft-light;
+
 
       -webkit-background-clip: text;
       background-clip: text;
 
       -webkit-text-fill-color: transparent;
 
+
+      /*
+        Чуть утолщаем края букв.
+      */
+
       -webkit-text-stroke:
-        1px rgba(220,245,255,.48);
+        1.6px rgba(215, 243, 253, .48);
+
 
       filter:
-        brightness(1.22)
-        contrast(1.08)
-        saturate(.95)
+        brightness(1.07)
+        contrast(1.03)
+        saturate(.78)
+
         drop-shadow(
-          0 7px 14px
-          rgba(0,0,0,.34)
+          0 3px 0
+          rgba(220,245,255,.08)
+        )
+
+        drop-shadow(
+          0 9px 17px
+          rgba(0,0,0,.38)
         );
     }
 
 
-    /* FUTSAL CLUB */
+    /* =====================================================
+       FUTSAL CLUB
+       ===================================================== */
 
     .hero-subtitle {
-      margin-top: 4px;
+      margin-top: 8px;
 
       font-size:
         clamp(
-          24px,
-          2.2vw,
-          38px
+          25px,
+          2.25vw,
+          39px
         );
 
       font-weight: 300;
 
-      letter-spacing: .34em;
+      letter-spacing: .43em;
 
       text-transform: uppercase;
 
-      color: #d8f0fc;
+      color: #d7effa;
 
       text-shadow:
-        0 0 10px
-        rgba(95,200,245,.12);
+        0 0 12px rgba(92,201,247,.14);
     }
 
 
     .slogan {
       margin-top: 34px;
 
-      color: #7f9dac;
+      color: #82a2b2;
 
       font-size: 10px;
       font-weight: 500;
@@ -402,13 +436,12 @@
     }
 
     .next-match-container {
-      width: min(1500px,96%);
+      width: min(1500px, 96%);
       margin: auto;
     }
 
     .next-match-card {
       position: relative;
-
       overflow: hidden;
 
       border:
@@ -471,9 +504,7 @@
     .next-match-header h3 {
       color: #8ddfff;
 
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald', sans-serif;
 
       font-size: 16px;
       font-weight: 500;
@@ -493,9 +524,6 @@
 
       text-transform: uppercase;
     }
-
-
-    /* MATCH BODY */
 
     .next-match-body {
       position: relative;
@@ -539,10 +567,7 @@
 
     .next-match-column {
       text-align: center;
-
-      padding:
-        10px
-        24px;
+      padding: 10px 24px;
     }
 
 
@@ -552,9 +577,7 @@
       width: 92px;
       height: 92px;
 
-      margin:
-        0 auto
-        13px;
+      margin: 0 auto 13px;
 
       display: flex;
       align-items: center;
@@ -601,7 +624,7 @@
     }
 
 
-    /* DATE */
+    /* MATCH INFO */
 
     .match-date {
       color: #b4cbd7;
@@ -615,15 +638,11 @@
     }
 
     .match-time {
-      margin:
-        8px 0
-        12px;
+      margin: 8px 0 12px;
 
       color: #f5fbff;
 
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald', sans-serif;
 
       font-size: 47px;
       font-weight: 500;
@@ -657,9 +676,7 @@
     }
 
 
-    /* =====================================================
-       COUNTDOWN
-       ===================================================== */
+    /* COUNTDOWN */
 
     .countdown-title {
       margin-bottom: 20px;
@@ -687,7 +704,6 @@
 
     .countdown-part {
       position: relative;
-
       text-align: center;
     }
 
@@ -952,7 +968,8 @@
 
     .results-empty,
     .results-loading {
-      grid-column: 1 / -1;
+      grid-column:
+        1 / -1;
 
       padding: 45px;
 
@@ -1055,7 +1072,7 @@
 
       .hero-text {
         width: 100%;
-        padding-top: 90px;
+        padding-top: 85px;
       }
 
       .hero-title {
@@ -1066,11 +1083,7 @@
             155px
           );
 
-        line-height: 1;
-
-        transform: scaleX(.92);
-
-        padding-bottom: 6px;
+        transform: scaleX(.93);
       }
 
       .hero-subtitle {
@@ -1081,7 +1094,7 @@
             28px
           );
 
-        letter-spacing: .22em;
+        letter-spacing: .25em;
       }
 
       .location {
@@ -1175,10 +1188,7 @@
         RU⌄
       </span>
 
-      <a
-        class="ticket"
-        href="#"
-      >
+      <a class="ticket" href="#">
         Билеты →
       </a>
 
@@ -1192,7 +1202,6 @@
 
 
     <div class="hero-text">
-
 
       <div class="small-title">
         Больше<br>
@@ -1215,29 +1224,24 @@
         Наш дом — Каспий
       </div>
 
-
     </div>
 
 
 
     <div class="location">
 
-
       <div class="side-slogan">
         Один регион<br>
         Одна команда
       </div>
 
-
       AQTAU<br>
       KAZAKHSTAN
-
 
     </div>
 
 
   </div>
-
 
 </section>
 
@@ -1258,11 +1262,9 @@
 
       <div class="next-match-header">
 
-
         <h3>
           СЛЕДУЮЩИЙ МАТЧ
         </h3>
-
 
         <a
           href="#results"
@@ -1271,7 +1273,6 @@
           ВСЕ МАТЧИ →
         </a>
 
-
       </div>
 
 
@@ -1279,10 +1280,7 @@
       <div class="next-match-body">
 
 
-        <!-- LEFT TEAM -->
-
         <div class="next-match-column">
-
 
           <div class="next-team-logo">
 
@@ -1294,14 +1292,12 @@
 
           </div>
 
-
           <div
             class="next-team-name"
             id="left-team-name"
           >
             КАСПИЙ
           </div>
-
 
           <div
             class="next-team-city"
@@ -1310,19 +1306,14 @@
             АКТАУ
           </div>
 
-
         </div>
-
 
 
         <div class="match-divider"></div>
 
 
 
-        <!-- MATCH INFO -->
-
         <div class="next-match-column">
-
 
           <div
             class="match-date"
@@ -1331,7 +1322,6 @@
             ДАТА МАТЧА
           </div>
 
-
           <div
             class="match-time"
             id="next-match-time"
@@ -1339,20 +1329,15 @@
             --:--
           </div>
 
-
           <div
             class="match-competition"
             id="next-match-competition"
-          >
-          </div>
-
+          ></div>
 
           <div
             class="match-venue"
             id="next-match-venue"
-          >
-          </div>
-
+          ></div>
 
         </div>
 
@@ -1362,10 +1347,7 @@
 
 
 
-        <!-- RIGHT TEAM -->
-
         <div class="next-match-column">
-
 
           <div class="next-team-logo">
 
@@ -1377,7 +1359,6 @@
 
           </div>
 
-
           <div
             class="next-team-name"
             id="right-team-name"
@@ -1385,13 +1366,10 @@
             СОПЕРНИК
           </div>
 
-
           <div
             class="next-team-city"
             id="right-team-city"
-          >
-          </div>
-
+          ></div>
 
         </div>
 
@@ -1401,10 +1379,7 @@
 
 
 
-        <!-- COUNTDOWN -->
-
         <div class="next-match-column">
-
 
           <div
             class="countdown-title"
@@ -1433,7 +1408,6 @@
             </div>
 
 
-
             <div class="countdown-part">
 
               <div
@@ -1448,7 +1422,6 @@
               </div>
 
             </div>
-
 
 
             <div class="countdown-part">
@@ -1469,18 +1442,14 @@
 
           </div>
 
-
         </div>
 
 
       </div>
 
-
     </div>
 
-
   </div>
-
 
 </section>
 
@@ -1498,7 +1467,6 @@
 
     <div class="results-heading">
 
-
       <div>
 
         <span>
@@ -1511,12 +1479,9 @@
 
       </div>
 
-
       <div class="results-line"></div>
 
-
     </div>
-
 
 
     <div
@@ -1543,7 +1508,6 @@
 
   <div class="footer-inner">
 
-
     <div class="footer-logo">
 
       <img
@@ -1557,19 +1521,15 @@
 
     </div>
 
-
     <div class="footer-text">
       AQTAU · KAZAKHSTAN
     </div>
-
 
   </div>
 
 </footer>
 
 
-
-<!-- SUPABASE -->
 
 <script type="module">
 
@@ -1587,14 +1547,9 @@
   let countdownTimer = null;
 
 
-
   function pad(value) {
-
-    return String(value)
-      .padStart(2,'0');
-
+    return String(value).padStart(2,'0');
   }
-
 
 
   function formatMatchDate(value) {
@@ -1618,7 +1573,6 @@
   }
 
 
-
   function formatMatchTime(value) {
 
     if (!value) return '--:--';
@@ -1635,7 +1589,6 @@
     .format(new Date(value));
 
   }
-
 
 
   function formatShortDate(value) {
@@ -1656,19 +1609,14 @@
   }
 
 
-
   function findOpponentTeam(
     opponent,
     teams
   ) {
 
-    if (
-      !opponent ||
-      !teams
-    ) {
+    if (!opponent || !teams) {
       return null;
     }
-
 
     const value =
       opponent
@@ -1701,7 +1649,6 @@
   }
 
 
-
   function renderTeam(
     side,
     team
@@ -1727,19 +1674,12 @@
   }
 
 
-
-  /* COUNTDOWN */
-
   function startCountdown(
     matchDate
   ) {
 
     if (countdownTimer) {
-
-      clearInterval(
-        countdownTimer
-      );
-
+      clearInterval(countdownTimer);
     }
 
 
@@ -1769,7 +1709,6 @@
 
     function update() {
 
-
       const target =
         new Date(
           matchDate
@@ -1781,9 +1720,7 @@
         Date.now();
 
 
-      if (
-        difference <= 0
-      ) {
+      if (difference <= 0) {
 
         daysElement.textContent =
           '00';
@@ -1803,21 +1740,15 @@
 
 
       const day =
-        1000 *
-        60 *
-        60 *
-        24;
+        1000 * 60 * 60 * 24;
 
 
       const hour =
-        1000 *
-        60 *
-        60;
+        1000 * 60 * 60;
 
 
       const minute =
-        1000 *
-        60;
+        1000 * 60;
 
 
       const days =
@@ -1826,8 +1757,7 @@
         );
 
 
-      difference %=
-        day;
+      difference %= day;
 
 
       const hours =
@@ -1836,8 +1766,7 @@
         );
 
 
-      difference %=
-        hour;
+      difference %= hour;
 
 
       const minutes =
@@ -1872,8 +1801,6 @@
   }
 
 
-
-  /* NEXT MATCH */
 
   async function loadNextMatch() {
 
@@ -1936,12 +1863,6 @@
         'next-match-time'
       ).textContent =
         '--:--';
-
-
-      document.getElementById(
-        'countdown-title'
-      ).textContent =
-        'ОЖИДАЕМ СЛЕДУЮЩИЙ МАТЧ';
 
 
       return;
@@ -2008,7 +1929,6 @@
         caspiy
       );
 
-
       renderTeam(
         'right',
         opponent
@@ -2020,7 +1940,6 @@
         'left',
         opponent
       );
-
 
       renderTeam(
         'right',
@@ -2049,15 +1968,13 @@
     document.getElementById(
       'next-match-competition'
     ).textContent =
-      match.competition ||
-      '';
+      match.competition || '';
 
 
     document.getElementById(
       'next-match-venue'
     ).textContent =
-      match.venue ||
-      '';
+      match.venue || '';
 
 
     startCountdown(
@@ -2067,8 +1984,6 @@
   }
 
 
-
-  /* RESULTS */
 
   async function loadResults() {
 
