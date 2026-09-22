@@ -322,37 +322,30 @@
       letter-spacing: .12em;
     }
 
-    .ticket-button {
-      padding: 14px 24px;
+.account-button {
+  padding: 14px 24px;
 
-      color: #e7f8ff;
+  color: #e7f8ff;
 
-      background:
-        rgba(2,13,22,.28);
+  background: rgba(2,13,22,.28);
 
-      border:
-        1px solid rgba(70,207,255,.74);
+  border: 1px solid rgba(70,207,255,.74);
+  border-radius: 5px;
 
-      border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
 
-      font-size: 10px;
-      font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
 
-      letter-spacing: .13em;
-      text-transform: uppercase;
+  transition: .25s;
+}
 
-      transition: .25s;
-    }
+.account-button:hover {
+  color: #031019;
+  background: #66d9ff;
+}
 
-    .ticket-button:hover {
-      background:
-        rgba(47,189,242,.13);
-    }
-
-    .ticket-button.disabled {
-      opacity: .35;
-      pointer-events: none;
-    }
 
 
     /* =========================================================
@@ -1794,7 +1787,7 @@
 
       .desktop-nav,
       .lang,
-      .header-actions .ticket-button {
+      .header-actions .account-button {
         display: none;
       }
 
@@ -2072,15 +2065,12 @@
 
     </nav>
 
-    <a
-      href="#"
-      id="mobileTicketButton"
-      class="mobile-ticket disabled"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      БИЛЕТТЕР →
-    </a>
+<a
+  href="account.html"
+  class="account-button"
+>
+  ЖЕКЕ КАБИНЕТ →
+</a>
 
     <div
       class="mobile-menu-footer"
@@ -2141,15 +2131,12 @@
         KZ⌄
       </span>
 
-      <a
-        href="#"
-        id="ticketButton"
-        class="ticket-button disabled"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        БИЛЕТТЕР →
-      </a>
+<a
+  href="account.html"
+  class="mobile-ticket"
+>
+  ЖЕКЕ КАБИНЕТ →
+</a>
 
       <button
         type="button"
@@ -2822,83 +2809,47 @@
 
   /* SETTINGS */
 
-  async function loadSettings() {
+async function loadSettings() {
 
-    const {
-      data
-    } =
-      await supabase
-        .from('site_settings')
-        .select(
-          'ticket_url,address'
-        )
-        .eq('id',1)
-        .maybeSingle();
+  const {
+    data
+  } =
+    await supabase
+      .from('site_settings')
+      .select('address')
+      .eq('id',1)
+      .maybeSingle();
 
 
-    if (!data) {
-      return;
-    }
+  if (!data) {
+    return;
+  }
 
 
-    const ticketButton =
-      document.getElementById(
-        'ticketButton'
-      );
+  if (data.address) {
+
+    const address =
+      data.address.toUpperCase();
 
 
-    const mobileTicket =
-      document.getElementById(
-        'mobileTicketButton'
-      );
+    document
+      .getElementById(
+        'footerAddress'
+      )
+      .textContent =
+        address;
 
 
-    if (data.ticket_url) {
-
-      ticketButton.href =
-        data.ticket_url;
-
-
-      mobileTicket.href =
-        data.ticket_url;
-
-
-      ticketButton
-        .classList
-        .remove('disabled');
-
-
-      mobileTicket
-        .classList
-        .remove('disabled');
-
-    }
-
-
-    if (data.address) {
-
-      const address =
-        data.address.toUpperCase();
-
-
-      document
-        .getElementById(
-          'footerAddress'
-        )
-        .textContent =
-          address;
-
-
-      document
-        .getElementById(
-          'mobileAddress'
-        )
-        .textContent =
-          address;
-
-    }
+    document
+      .getElementById(
+        'mobileAddress'
+      )
+      .textContent =
+        address;
 
   }
+
+}
 
 
   /* PLAYERS */
