@@ -4,7 +4,90 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Жанкүйерлер — CASPIY Futsal Club</title>
+  <title>Жанкүйерлер — CASPIY Futsal Club | Ақтау</title>
+
+  <meta
+    name="description"
+    content="CASPIY Futsal Club жанкүйерлеріне арналған бөлім. Матч билеттері, клубтың Instagram парақшасы және жанкүйерлерге арналған ақпарат."
+  >
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#020a10">
+
+  <link
+    rel="canonical"
+    href="https://adilbeksaryyev-hub.github.io/caspiy-futsal/fans.html"
+  >
+
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- OPEN GRAPH -->
+
+  <meta property="og:type" content="website">
+
+  <meta
+    property="og:site_name"
+    content="CASPIY Futsal Club"
+  >
+
+  <meta
+    property="og:title"
+    content="Жанкүйерлер — CASPIY Futsal Club"
+  >
+
+  <meta
+    property="og:description"
+    content="Бір өңір. Бір команда. CASPIY Futsal Club жанкүйерлеріне арналған бөлім."
+  >
+
+  <meta
+    property="og:url"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/fans.html"
+  >
+
+  <meta
+    property="og:image"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
+  >
+
+  <meta
+    property="og:image:secure_url"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
+  >
+
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta
+    property="og:image:alt"
+    content="CASPIY Futsal Club"
+  >
+
+  <meta property="og:locale" content="kk_KZ">
+
+  <!-- TWITTER / X -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Жанкүйерлер — CASPIY Futsal Club"
+  >
+
+  <meta
+    name="twitter:description"
+    content="CASPIY Futsal Club жанкүйерлеріне арналған бөлім."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,10 +111,8 @@
     body {
       min-height: 100vh;
       overflow-x: hidden;
-
       font-family: 'Montserrat', Arial, sans-serif;
-
-      color: #f3faff;
+      color: #f1f8fc;
       background: #020a10;
     }
 
@@ -50,71 +131,54 @@
       position: sticky;
       top: 0;
       z-index: 50;
-
       background: rgba(2,10,16,.96);
       backdrop-filter: blur(15px);
-
-      border-bottom:
-        1px solid rgba(80,202,245,.14);
+      border-bottom: 1px solid rgba(80,202,245,.14);
     }
 
     .header-inner {
       width: min(1440px,92%);
       height: 95px;
-
       margin: auto;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 25px;
     }
 
     .logo {
       position: relative;
       z-index: 60;
-
       display: flex;
       align-items: center;
-
       gap: 14px;
     }
 
     .logo img {
       width: 70px;
       height: 70px;
-
       object-fit: contain;
     }
 
     .logo strong {
       font-family: 'Oswald',sans-serif;
-
       font-size: 20px;
-
       letter-spacing: .08em;
     }
 
     .desktop-nav {
       display: flex;
       align-items: center;
-
       gap: 27px;
     }
 
     .desktop-nav a {
       position: relative;
-
       padding: 12px 0;
-
       color: #a9bfca;
-
       font-size: 10px;
       font-weight: 700;
-
       letter-spacing: .13em;
-
       text-transform: uppercase;
     }
 
@@ -125,47 +189,34 @@
 
     .desktop-nav a.active::after {
       content: "";
-
       position: absolute;
-
       left: 0;
       right: 0;
       bottom: 0;
-
       height: 2px;
-
       background: #52d3ff;
     }
 
     .header-actions {
       position: relative;
       z-index: 60;
-
       display: flex;
       align-items: center;
-
       gap: 12px;
     }
 
-    .header-ticket {
+    .ticket-button {
       padding: 13px 18px;
-
       color: #caeffc;
-
-      border:
-        1px solid rgba(80,207,251,.42);
-
+      border: 1px solid rgba(80,207,251,.42);
       border-radius: 5px;
-
       font-size: 9px;
       font-weight: 700;
-
       letter-spacing: .13em;
-
       text-transform: uppercase;
     }
 
-    .header-ticket.disabled {
+    .ticket-button.disabled {
       opacity: .35;
       pointer-events: none;
     }
@@ -174,28 +225,19 @@
 
     .mobile-menu-button {
       display: none;
-
       width: 46px;
       height: 46px;
-
       align-items: center;
       justify-content: center;
-
       padding: 0;
-
       background: rgba(4,22,34,.90);
-
-      border:
-        1px solid rgba(77,205,255,.32);
-
+      border: 1px solid rgba(77,205,255,.32);
       border-radius: 5px;
-
       cursor: pointer;
     }
 
     .mobile-lines {
       position: relative;
-
       width: 21px;
       height: 15px;
     }
@@ -203,12 +245,9 @@
     .mobile-lines span {
       position: absolute;
       left: 0;
-
       width: 21px;
       height: 2px;
-
       background: #cbeffc;
-
       transition: .25s;
     }
 
@@ -246,16 +285,11 @@
     .mobile-menu {
       position: fixed;
       z-index: 45;
-
       inset: 0;
-
       visibility: hidden;
       opacity: 0;
-
       pointer-events: none;
-
       transform: translateX(100%);
-
       transition:
         transform .30s ease,
         opacity .30s ease,
@@ -273,34 +307,25 @@
     .mobile-menu.open {
       visibility: visible;
       opacity: 1;
-
       pointer-events: auto;
-
       transform: translateX(0);
     }
 
     .mobile-menu-inner {
       width: min(540px,88%);
       height: 100%;
-
       margin: auto;
-
       padding: 125px 0 40px;
-
       display: flex;
       flex-direction: column;
     }
 
     .mobile-menu-small {
       margin-bottom: 25px;
-
       color: #51cffb;
-
       font-size: 9px;
       font-weight: 700;
-
       letter-spacing: .28em;
-
       text-transform: uppercase;
     }
 
@@ -313,27 +338,18 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       min-height: 58px;
-
       color: #d6e8f0;
-
-      border-bottom:
-        1px solid rgba(91,204,244,.11);
-
+      border-bottom: 1px solid rgba(91,204,244,.11);
       font-family: 'Oswald',sans-serif;
-
       font-size: 28px;
       font-weight: 500;
-
       text-transform: uppercase;
     }
 
     .mobile-nav a::after {
       content: "→";
-
       color: #54d5ff;
-
       font-size: 18px;
     }
 
@@ -343,21 +359,14 @@
 
     .mobile-ticket {
       margin-top: 30px;
-
       padding: 16px 20px;
-
       text-align: center;
-
       color: #031019;
       background: #56d5ff;
-
       border-radius: 5px;
-
       font-size: 10px;
       font-weight: 800;
-
       letter-spacing: .14em;
-
       text-transform: uppercase;
     }
 
@@ -368,17 +377,12 @@
 
     .mobile-address {
       margin-top: auto;
-
       padding-top: 30px;
-
       color: #4f7080;
-
       font-size: 9px;
       font-weight: 600;
-
       line-height: 1.8;
       letter-spacing: .18em;
-
       text-transform: uppercase;
     }
 
@@ -386,30 +390,26 @@
 
     .hero {
       position: relative;
-
-      min-height: 560px;
-
+      min-height: 570px;
       overflow: hidden;
 
       background:
         linear-gradient(
           90deg,
           rgba(1,8,14,.96),
-          rgba(2,16,27,.59),
-          rgba(1,8,14,.40)
+          rgba(2,16,27,.58),
+          rgba(1,8,14,.33)
         ),
         url("hero-bg.png");
 
       background-size: cover;
-      background-position: center;
+      background-position: center 58%;
     }
 
     .hero::after {
       content: "";
-
       position: absolute;
       inset: 0;
-
       background:
         linear-gradient(
           to bottom,
@@ -421,393 +421,179 @@
     .hero-inner {
       position: relative;
       z-index: 2;
-
       width: min(1440px,92%);
-      min-height: 560px;
-
+      min-height: 570px;
       margin: auto;
-
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-
       padding-bottom: 75px;
     }
 
-    .hero-kicker {
+    .hero-small {
       margin-bottom: 13px;
-
       color: #55d3ff;
-
       font-size: 10px;
       font-weight: 700;
-
       letter-spacing: .35em;
-
       text-transform: uppercase;
     }
 
     .hero-title {
-      max-width: 1000px;
-
       font-family: 'Oswald',sans-serif;
-
-      font-size:
-        clamp(
-          70px,
-          9vw,
-          145px
-        );
-
+      font-size: clamp(70px,9vw,140px);
       font-weight: 700;
-
-      line-height: .90;
-
+      line-height: .9;
       letter-spacing: -.035em;
-
       text-transform: uppercase;
     }
 
     .hero-title span {
-      color: #59d4ff;
+      color: #58d5ff;
     }
 
     .hero-text {
-      max-width: 620px;
-
-      margin-top: 26px;
-
-      color: #89a6b4;
-
+      max-width: 680px;
+      margin-top: 25px;
+      color: #8aa8b6;
       font-size: 11px;
-
       line-height: 1.9;
-      letter-spacing: .10em;
-
+      letter-spacing: .13em;
       text-transform: uppercase;
     }
 
     /* FAN CARDS */
 
     .fans-section {
-      padding: 90px 0 105px;
-
+      padding: 90px 0 110px;
       background:
         radial-gradient(
-          circle at 80% 10%,
-          rgba(0,156,220,.11),
-          transparent 32%
+          circle at 80% 5%,
+          rgba(0,160,220,.10),
+          transparent 30%
         ),
         #020a10;
     }
 
     .container {
-      width: min(1440px,92%);
+      width: min(1300px,92%);
       margin: auto;
     }
 
     .section-heading {
-      display: flex;
-      align-items: flex-end;
-
-      gap: 30px;
-
       margin-bottom: 35px;
       padding-bottom: 18px;
-
-      border-bottom:
-        1px solid rgba(84,200,244,.15);
+      border-bottom: 1px solid rgba(80,202,245,.14);
     }
 
-    .section-heading span {
-      color: #55d3ff;
-
+    .section-small {
+      margin-bottom: 10px;
+      color: #58d5ff;
       font-size: 9px;
       font-weight: 700;
-
       letter-spacing: .30em;
-
       text-transform: uppercase;
     }
 
-    .section-heading h2 {
-      margin-top: 7px;
-
+    .section-title {
       font-family: 'Oswald',sans-serif;
-
-      font-size:
-        clamp(
-          38px,
-          5vw,
-          70px
-        );
-
+      font-size: clamp(42px,5vw,70px);
       font-weight: 600;
-
       line-height: 1;
-
       text-transform: uppercase;
     }
 
-    .heading-line {
-      flex: 1;
-
-      height: 1px;
-
-      margin-bottom: 8px;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(82,207,255,.22),
-          transparent
-        );
-    }
-
-    .fans-grid {
+    .fan-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(3,minmax(0,1fr));
-
+      grid-template-columns: repeat(2,minmax(0,1fr));
       gap: 15px;
     }
 
     .fan-card {
       position: relative;
-
-      min-height: 330px;
-
+      min-height: 370px;
       overflow: hidden;
-
-      padding: 30px;
+      padding: 34px;
 
       background:
         linear-gradient(
           145deg,
-          #082131,
-          #031019
+          rgba(8,34,50,.98),
+          rgba(3,16,25,.98)
         );
 
-      border:
-        1px solid rgba(79,198,241,.16);
-
-      transition:
-        transform .25s ease,
-        border-color .25s ease;
-    }
-
-    .fan-card:hover {
-      transform: translateY(-4px);
-
-      border-color:
-        rgba(79,208,255,.42);
+      border: 1px solid rgba(76,200,244,.17);
     }
 
     .fan-card::after {
       content: "";
-
       position: absolute;
-
-      right: -65px;
-      bottom: -75px;
-
-      width: 260px;
-      height: 260px;
-
+      right: -95px;
+      bottom: -95px;
+      width: 330px;
+      height: 330px;
       border-radius: 50%;
-
       background:
         radial-gradient(
           circle,
-          rgba(36,188,244,.19),
-          transparent 68%
+          rgba(42,193,248,.17),
+          transparent 67%
         );
     }
 
-    .fan-index {
+    .fan-card-number {
       position: relative;
       z-index: 2;
-
-      color: #55d3ff;
-
+      color: #56d5ff;
       font-size: 9px;
       font-weight: 700;
-
       letter-spacing: .25em;
     }
 
     .fan-card h3 {
       position: relative;
       z-index: 2;
-
-      margin-top: 60px;
-
+      margin-top: 65px;
       font-family: 'Oswald',sans-serif;
-
-      font-size: 38px;
+      font-size: 43px;
       font-weight: 600;
-
-      line-height: 1.05;
-
+      line-height: 1;
       text-transform: uppercase;
     }
 
     .fan-card p {
       position: relative;
       z-index: 2;
-
-      max-width: 330px;
-
+      max-width: 480px;
       margin-top: 18px;
-
-      color: #7998a8;
-
+      color: #83a0ae;
       font-size: 11px;
-
       line-height: 1.9;
     }
 
-    .fan-link {
+    .fan-button {
       position: relative;
-      z-index: 2;
-
+      z-index: 3;
       display: inline-block;
-
       margin-top: 27px;
-
-      color: #60d7ff;
-
-      font-size: 9px;
-      font-weight: 700;
-
-      letter-spacing: .14em;
-
-      text-transform: uppercase;
-    }
-
-    .fan-link.disabled {
-      opacity: .38;
-      pointer-events: none;
-    }
-
-    /* TICKETS */
-
-    .tickets {
-      position: relative;
-
-      min-height: 480px;
-
-      overflow: hidden;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(0,10,18,.97),
-          rgba(0,27,45,.72),
-          rgba(0,13,23,.52)
-        ),
-        url("hero-bg.png");
-
-      background-size: cover;
-      background-position: center 65%;
-    }
-
-    .tickets::after {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      background:
-        linear-gradient(
-          to right,
-          rgba(1,8,13,.95),
-          rgba(1,8,13,.30)
-        );
-    }
-
-    .tickets-inner {
-      position: relative;
-      z-index: 2;
-
-      width: min(1440px,92%);
-      min-height: 480px;
-
-      margin: auto;
-
-      display: flex;
-      align-items: center;
-    }
-
-    .tickets-content {
-      max-width: 700px;
-    }
-
-    .tickets-small {
-      color: #54d3ff;
-
-      font-size: 9px;
-      font-weight: 700;
-
-      letter-spacing: .32em;
-
-      text-transform: uppercase;
-    }
-
-    .tickets-title {
-      margin-top: 13px;
-
-      font-family: 'Oswald',sans-serif;
-
-      font-size:
-        clamp(
-          55px,
-          7vw,
-          105px
-        );
-
-      font-weight: 700;
-
-      line-height: .92;
-
-      text-transform: uppercase;
-    }
-
-    .tickets-text {
-      max-width: 540px;
-
-      margin-top: 24px;
-
-      color: #8aa6b4;
-
-      font-size: 11px;
-
-      line-height: 1.9;
-    }
-
-    .ticket-button {
-      display: inline-block;
-
-      margin-top: 30px;
-
-      padding: 15px 25px;
-
-      color: #02111a;
-      background: #58d4ff;
-
+      padding: 14px 20px;
+      color: #031019;
+      background: #58d5ff;
       border-radius: 4px;
-
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 800;
-
-      letter-spacing: .14em;
-
+      letter-spacing: .13em;
       text-transform: uppercase;
     }
 
-    .ticket-button.disabled {
-      opacity: .35;
+    .fan-button.outline {
+      color: #bcecfb;
+      background: transparent;
+      border: 1px solid rgba(83,207,251,.45);
+    }
+
+    .fan-button.disabled {
+      opacity: .30;
       pointer-events: none;
     }
 
@@ -815,240 +601,170 @@
 
     .matchday {
       padding: 100px 0;
-
-      background: #03101a;
+      background: #04111a;
     }
 
     .matchday-grid {
       display: grid;
-
-      grid-template-columns:
-        .8fr 1.2fr;
-
-      gap: 70px;
-
+      grid-template-columns: .8fr 1.2fr;
+      gap: 80px;
       align-items: start;
     }
 
     .matchday-title {
       font-family: 'Oswald',sans-serif;
-
-      font-size:
-        clamp(
-          45px,
-          5vw,
-          76px
-        );
-
+      font-size: clamp(48px,6vw,88px);
       font-weight: 600;
-
-      line-height: 1;
-
+      line-height: .95;
       text-transform: uppercase;
     }
 
     .matchday-title span {
-      color: #56d3ff;
+      color: #58d5ff;
     }
 
     .tips {
       display: grid;
-
-      gap: 1px;
-
-      background:
-        rgba(77,202,247,.10);
+      gap: 12px;
     }
 
     .tip {
       display: grid;
-
-      grid-template-columns:
-        60px 1fr;
-
-      gap: 18px;
-
-      padding: 24px;
-
-      background: #04131f;
+      grid-template-columns: 52px 1fr;
+      gap: 20px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(78,198,241,.12);
     }
 
     .tip-number {
-      color: rgba(84,211,255,.38);
-
+      color: #55d4ff;
       font-family: 'Oswald',sans-serif;
-
-      font-size: 30px;
-      font-weight: 700;
+      font-size: 18px;
     }
 
-    .tip strong {
-      display: block;
-
-      margin-bottom: 7px;
-
-      color: #eaf8ff;
-
-      font-size: 12px;
-
+    .tip h4 {
+      font-family: 'Oswald',sans-serif;
+      font-size: 24px;
+      font-weight: 500;
       text-transform: uppercase;
     }
 
     .tip p {
-      color: #7694a3;
-
+      margin-top: 7px;
+      color: #7b99a8;
       font-size: 10px;
-
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
-    /* INSTAGRAM */
+    /* STATEMENT */
 
-    .social {
-      padding: 95px 0;
-
-      text-align: center;
+    .statement {
+      position: relative;
+      min-height: 500px;
+      overflow: hidden;
 
       background:
         linear-gradient(
-          180deg,
-          #03111b,
-          #02080d
+          90deg,
+          rgba(1,8,14,.95),
+          rgba(2,19,31,.58)
+        ),
+        url("hero-bg.png");
+
+      background-size: cover;
+      background-position: center 70%;
+    }
+
+    .statement::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to right,
+          rgba(1,8,13,.94),
+          rgba(1,8,13,.20)
         );
     }
 
-    .social-small {
-      color: #55d4ff;
+    .statement-inner {
+      position: relative;
+      z-index: 2;
+      width: min(1300px,92%);
+      min-height: 500px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+    }
 
+    .statement-small {
+      color: #58d5ff;
       font-size: 9px;
       font-weight: 700;
-
-      letter-spacing: .34em;
-
+      letter-spacing: .30em;
       text-transform: uppercase;
     }
 
-    .social h2 {
-      margin-top: 16px;
-
+    .statement-title {
+      margin-top: 15px;
       font-family: 'Oswald',sans-serif;
-
-      font-size:
-        clamp(
-          45px,
-          6vw,
-          88px
-        );
-
-      font-weight: 600;
-
-      line-height: 1;
-
-      text-transform: uppercase;
-    }
-
-    .instagram-button {
-      display: inline-block;
-
-      margin-top: 28px;
-
-      padding: 14px 24px;
-
-      color: #dff7ff;
-
-      border:
-        1px solid rgba(84,210,255,.46);
-
-      border-radius: 4px;
-
-      font-size: 10px;
+      font-size: clamp(56px,8vw,115px);
       font-weight: 700;
-
-      letter-spacing: .14em;
-
+      line-height: .9;
       text-transform: uppercase;
     }
 
-    .instagram-button.disabled {
-      opacity: .35;
-      pointer-events: none;
+    .statement-title span {
+      color: #58d5ff;
     }
 
     /* FOOTER */
 
     footer {
       background: #01070b;
-
-      border-top:
-        1px solid rgba(71,197,242,.10);
+      border-top: 1px solid rgba(71,197,242,.10);
     }
 
     .footer-inner {
       width: min(1440px,92%);
       min-height: 120px;
-
       margin: auto;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 30px;
     }
 
     .footer-brand {
       display: flex;
       align-items: center;
-
       gap: 14px;
     }
 
     .footer-brand img {
       width: 58px;
       height: 58px;
-
       object-fit: contain;
     }
 
     .footer-brand strong {
       font-size: 12px;
-
       letter-spacing: .17em;
-
       text-transform: uppercase;
     }
 
     .footer-copy {
       color: #506a78;
-
       font-size: 8px;
-
       letter-spacing: .20em;
-
       text-transform: uppercase;
     }
 
     /* RESPONSIVE */
 
-    @media (max-width:1100px) {
-
-      .fans-grid {
-        grid-template-columns:
-          repeat(2,minmax(0,1fr));
-      }
-
-      .matchday-grid {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-      }
-
-    }
-
     @media (max-width:900px) {
-
       .desktop-nav,
-      .header-ticket {
+      .ticket-button {
         display: none;
       }
 
@@ -1056,10 +772,19 @@
         display: flex;
       }
 
+      .matchday-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+    }
+
+    @media (max-width:750px) {
+      .fan-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width:650px) {
-
       .header-inner {
         height: 78px;
       }
@@ -1079,29 +804,35 @@
       }
 
       .hero-title {
-        font-size: 68px;
+        font-size: 62px;
       }
 
       .fans-section {
         padding: 65px 0 80px;
       }
 
-      .fans-grid {
-        grid-template-columns: 1fr;
-      }
-
       .fan-card {
-        min-height: 290px;
+        min-height: 330px;
+        padding: 27px;
       }
 
-      .tickets,
-      .tickets-inner {
-        min-height: 430px;
+      .fan-card h3 {
+        margin-top: 50px;
+        font-size: 36px;
+      }
+
+      .matchday {
+        padding: 75px 0;
       }
 
       .tip {
-        grid-template-columns:
-          45px 1fr;
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
+      }
+
+      .statement,
+      .statement-inner {
+        min-height: 420px;
       }
 
       .mobile-menu-inner {
@@ -1110,7 +841,6 @@
 
       .mobile-nav a {
         min-height: 55px;
-
         font-size: 25px;
       }
 
@@ -1118,10 +848,8 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-
         padding: 25px 0;
       }
-
     }
   </style>
 </head>
@@ -1130,10 +858,7 @@
 
 <!-- MOBILE MENU -->
 
-<div
-  class="mobile-menu"
-  id="mobileMenu"
->
+<div class="mobile-menu" id="mobileMenu">
 
   <div class="mobile-menu-inner">
 
@@ -1142,38 +867,13 @@
     </div>
 
     <nav class="mobile-nav">
-
-      <a href="index.html">
-        БАСТЫ БЕТ
-      </a>
-
-      <a href="team.html">
-        КОМАНДА
-      </a>
-
-      <a href="matches.html">
-        МАТЧТАР
-      </a>
-
-      <a href="news.html">
-        ЖАҢАЛЫҚТАР
-      </a>
-
-      <a href="club.html">
-        КЛУБ
-      </a>
-
-      <a
-        href="fans.html"
-        class="active"
-      >
-        ЖАНКҮЙЕРЛЕР
-      </a>
-
-      <a href="contact.html">
-        БАЙЛАНЫС
-      </a>
-
+      <a href="index.html">БАСТЫ БЕТ</a>
+      <a href="team.html">КОМАНДА</a>
+      <a href="matches.html">МАТЧТАР</a>
+      <a href="news.html">ЖАҢАЛЫҚТАР</a>
+      <a href="club.html">КЛУБ</a>
+      <a href="fans.html" class="active">ЖАНКҮЙЕРЛЕР</a>
+      <a href="contact.html">БАЙЛАНЫС</a>
     </nav>
 
     <a
@@ -1194,7 +894,6 @@
     </div>
 
   </div>
-
 </div>
 
 
@@ -1204,14 +903,11 @@
 
   <div class="header-inner">
 
-    <a
-      href="index.html"
-      class="logo"
-    >
+    <a href="index.html" class="logo">
 
       <img
         src="logo.png"
-        alt="CASPIY"
+        alt="CASPIY Futsal Club"
       >
 
       <strong>
@@ -1220,49 +916,22 @@
 
     </a>
 
-
     <nav class="desktop-nav">
-
-      <a href="index.html">
-        БАСТЫ БЕТ
-      </a>
-
-      <a href="team.html">
-        КОМАНДА
-      </a>
-
-      <a href="matches.html">
-        МАТЧТАР
-      </a>
-
-      <a href="news.html">
-        ЖАҢАЛЫҚТАР
-      </a>
-
-      <a href="club.html">
-        КЛУБ
-      </a>
-
-      <a
-        href="fans.html"
-        class="active"
-      >
-        ЖАНКҮЙЕРЛЕР
-      </a>
-
-      <a href="contact.html">
-        БАЙЛАНЫС
-      </a>
-
+      <a href="index.html">БАСТЫ БЕТ</a>
+      <a href="team.html">КОМАНДА</a>
+      <a href="matches.html">МАТЧТАР</a>
+      <a href="news.html">ЖАҢАЛЫҚТАР</a>
+      <a href="club.html">КЛУБ</a>
+      <a href="fans.html" class="active">ЖАНКҮЙЕРЛЕР</a>
+      <a href="contact.html">БАЙЛАНЫС</a>
     </nav>
-
 
     <div class="header-actions">
 
       <a
         href="#"
-        id="headerTicketButton"
-        class="header-ticket disabled"
+        id="ticketButton"
+        class="ticket-button disabled"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -1276,13 +945,11 @@
         aria-label="Мәзір"
         aria-expanded="false"
       >
-
         <span class="mobile-lines">
           <span></span>
           <span></span>
           <span></span>
         </span>
-
       </button>
 
     </div>
@@ -1298,7 +965,7 @@
 
   <div class="hero-inner">
 
-    <div class="hero-kicker">
+    <div class="hero-small">
       CASPIY FUTSAL CLUB
     </div>
 
@@ -1308,7 +975,7 @@
     </h1>
 
     <div class="hero-text">
-      БІР ӨҢІР · БІР КОМАНДА · БІРГЕ АЛҒА
+      БІР ӨҢІР · БІР КОМАНДА · БІРГЕ CASPIY
     </div>
 
   </div>
@@ -1316,7 +983,7 @@
 </section>
 
 
-<!-- FANS -->
+<!-- FAN SECTION -->
 
 <section class="fans-section">
 
@@ -1324,71 +991,38 @@
 
     <div class="section-heading">
 
-      <div>
-
-        <span>
-          CASPIY FAMILY
-        </span>
-
-        <h2>
-          ЖАНКҮЙЕРГЕ
-        </h2>
-
+      <div class="section-small">
+        CASPIY FAMILY
       </div>
 
-      <div class="heading-line"></div>
+      <h2 class="section-title">
+        КОМАНДАМЕН БІРГЕ
+      </h2>
 
     </div>
 
 
-    <div class="fans-grid">
+    <div class="fan-grid">
 
       <article class="fan-card">
 
-        <div class="fan-index">
-          01 / МАТЧТАР
+        <div class="fan-card-number">
+          01 / MATCH DAY
         </div>
 
         <h3>
-          КОМАНДАНЫ<br>
-          ҚОЛДА
+          БИЛЕТТЕР
         </h3>
 
         <p>
-          CASPIY матчтарының күнтізбесін қарап,
-          алдағы ойындарды алдын ала жоспарлаңыз.
-        </p>
-
-        <a
-          href="matches.html"
-          class="fan-link"
-        >
-          МАТЧТАР →
-        </a>
-
-      </article>
-
-
-      <article class="fan-card">
-
-        <div class="fan-index">
-          02 / БИЛЕТТЕР
-        </div>
-
-        <h3>
-          МАТЧҚА<br>
-          КЕЛ
-        </h3>
-
-        <p>
-          Билет сату сілтемесі қолжетімді болған кезде
-          осы жерден ресми билет парағына өте аласыз.
+          Алдағы CASPIY матчтарына билет туралы ақпарат
+          қолжетімді болған кезде осы бөлім арқылы өтуге болады.
         </p>
 
         <a
           href="#"
-          id="fanTicketLink"
-          class="fan-link disabled"
+          id="fanTicketButton"
+          class="fan-button disabled"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -1400,67 +1034,30 @@
 
       <article class="fan-card">
 
-        <div class="fan-index">
-          03 / MEDIA
+        <div class="fan-card-number">
+          02 / SOCIAL
         </div>
 
         <h3>
-          БІЗБЕН<br>
-          БІРГЕ БОЛ
+          INSTAGRAM
         </h3>
 
         <p>
-          Клуб жаңалықтарын, матчтар туралы ақпаратты
-          және CASPIY жаңартуларын бақылаңыз.
+          CASPIY Futsal Club жаңалықтары мен клуб контентін
+          әлеуметтік желіден бақылаңыз.
         </p>
 
         <a
-          href="news.html"
-          class="fan-link"
+          href="#"
+          id="instagramButton"
+          class="fan-button outline disabled"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          ЖАҢАЛЫҚТАР →
+          INSTAGRAM →
         </a>
 
       </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- TICKETS -->
-
-<section class="tickets">
-
-  <div class="tickets-inner">
-
-    <div class="tickets-content">
-
-      <div class="tickets-small">
-        MATCH DAY
-      </div>
-
-      <h2 class="tickets-title">
-        БІЗБЕН<br>
-        БІРГЕ БОЛ
-      </h2>
-
-      <div class="tickets-text">
-        CASPIY Futsal Club матчтарына келіп,
-        команданы трибунадан қолдаңыз.
-      </div>
-
-      <a
-        href="#"
-        id="ticketButton"
-        class="ticket-button disabled"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        БИЛЕТТЕР →
-      </a>
 
     </div>
 
@@ -1479,7 +1076,7 @@
 
       <div>
 
-        <div class="hero-kicker">
+        <div class="section-small">
           MATCH DAY
         </div>
 
@@ -1501,13 +1098,13 @@
 
           <div>
 
-            <strong>
-              МАТЧ УАҚЫТЫН ТЕКСЕРІҢІЗ
-            </strong>
+            <h4>
+              АЛДЫН АЛА КЕЛІҢІЗ
+            </h4>
 
             <p>
-              Матч алдында күнін, басталу уақытын
-              және өтетін орнын сайттағы матчтар бөлімінен тексеріңіз.
+              Матч басталмас бұрын аренаға ертерек келу
+              кіруді ыңғайлы етеді.
             </p>
 
           </div>
@@ -1523,13 +1120,13 @@
 
           <div>
 
-            <strong>
-              ЕРТЕРЕК КЕЛІҢІЗ
-            </strong>
+            <h4>
+              КОМАНДАНЫ ҚОЛДАҢЫЗ
+            </h4>
 
             <p>
-              Аренаға кіруге және өз орныңызды табуға
-              жеткілікті уақыт қалдырған ыңғайлы.
+              Трибунадағы қолдау — матч атмосферасының
+              маңызды бөлігі.
             </p>
 
           </div>
@@ -1545,13 +1142,13 @@
 
           <div>
 
-            <strong>
-              CASPIY-ДІ ҚОЛДАҢЫЗ
-            </strong>
+            <h4>
+              МАТЧ АҚПАРАТЫН ТЕКСЕРІҢІЗ
+            </h4>
 
             <p>
-              Команданың басты күші —
-              алаңдағы ойыншылар мен трибунадағы жанкүйерлердің бірлігі.
+              Ойын күні, басталу уақыты және өткізу орны
+              «Матчтар» бөлімінде көрсетіледі.
             </p>
 
           </div>
@@ -1567,30 +1164,24 @@
 </section>
 
 
-<!-- SOCIAL -->
+<!-- STATEMENT -->
 
-<section class="social">
+<section class="statement">
 
-  <div class="container">
+  <div class="statement-inner">
 
-    <div class="social-small">
-      SOCIAL MEDIA
+    <div>
+
+      <div class="statement-small">
+        CASPIY FUTSAL CLUB
+      </div>
+
+      <h2 class="statement-title">
+        БІР ӨҢІР.<br>
+        <span>БІР КОМАНДА.</span>
+      </h2>
+
     </div>
-
-    <h2>
-      CASPIY-ДІ<br>
-      БАҚЫЛА
-    </h2>
-
-    <a
-      href="#"
-      id="instagramButton"
-      class="instagram-button disabled"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      INSTAGRAM
-    </a>
 
   </div>
 
@@ -1709,13 +1300,9 @@
           'open'
         )
       ) {
-
         closeMenu();
-
       } else {
-
         openMenu();
-
       }
 
     }
@@ -1785,23 +1372,14 @@
       error ||
       !data
     ) {
-
-      console.error(
-        'Settings error:',
-        error
-      );
-
       return;
-
     }
 
-
-    /* TICKETS */
 
     const ticketButtons = [
 
       document.getElementById(
-        'headerTicketButton'
+        'ticketButton'
       ),
 
       document.getElementById(
@@ -1809,11 +1387,7 @@
       ),
 
       document.getElementById(
-        'fanTicketLink'
-      ),
-
-      document.getElementById(
-        'ticketButton'
+        'fanTicketButton'
       )
 
     ];
@@ -1839,8 +1413,6 @@
     }
 
 
-    /* INSTAGRAM */
-
     const instagramButton =
       document.getElementById(
         'instagramButton'
@@ -1854,20 +1426,22 @@
       instagramButton.href =
         data.instagram_url;
 
-
-      instagramButton.textContent =
-        data.instagram_name ||
-        'INSTAGRAM';
-
-
       instagramButton.classList.remove(
         'disabled'
       );
 
+
+      if (
+        data.instagram_name
+      ) {
+
+        instagramButton.textContent =
+          `${data.instagram_name} →`;
+
+      }
+
     }
 
-
-    /* ADDRESS */
 
     if (
       data.address
