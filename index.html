@@ -3096,36 +3096,61 @@
   }
 
 
-  function formatDate(value) {
+function formatDate(value) {
 
-    if (!value) {
-      return '';
-    }
-
-
-    return new Intl
-      .DateTimeFormat(
-        'kk-KZ',
-        {
-          timeZone:
-            'Asia/Aqtau',
-
-          day:
-            'numeric',
-
-          month:
-            'long',
-
-          year:
-            'numeric'
-        }
-      )
-      .format(
-        new Date(value)
-      )
-      .toUpperCase();
-
+  if (!value) {
+    return '';
   }
+
+  const months = [
+    'қаңтар',
+    'ақпан',
+    'наурыз',
+    'сәуір',
+    'мамыр',
+    'маусым',
+    'шілде',
+    'тамыз',
+    'қыркүйек',
+    'қазан',
+    'қараша',
+    'желтоқсан'
+  ];
+
+  const parts =
+    new Intl.DateTimeFormat(
+      'en-US',
+      {
+        timeZone: 'Asia/Aqtau',
+        day: 'numeric',
+        month: 'numeric',
+        year: 'numeric'
+      }
+    )
+    .formatToParts(
+      new Date(value)
+    );
+
+  const getPart =
+    type =>
+      Number(
+        parts.find(
+          part => part.type === type
+        )?.value
+      );
+
+  const day =
+    getPart('day');
+
+  const month =
+    getPart('month');
+
+  const year =
+    getPart('year');
+
+  return `${day} ${months[month - 1]} ${year} жыл`;
+
+}
 
 
   function formatShortDate(value) {
