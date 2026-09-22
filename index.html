@@ -113,7 +113,6 @@
 
     nav a {
       position: relative;
-
       padding: 13px 0;
 
       color: #c2d3dd;
@@ -204,11 +203,11 @@
 
     .hero-text {
       width: 72%;
-      padding-top: 125px;
+      padding-top: 115px;
     }
 
     .small-title {
-      margin-bottom: 24px;
+      margin-bottom: 22px;
 
       color: #8aaabd;
 
@@ -223,30 +222,42 @@
 
 
     /* =====================================================
-       КАСПИЙ
-       СВЕТЛАЯ ОСНОВА + ТЕКСТУРА ПОВЕРХ
+       КАСПИЙ — ИСПРАВЛЕННЫЙ ВАРИАНТ
        ===================================================== */
 
     .hero-title {
-      position: relative;
-
-      display: inline-block;
+      display: block;
+      width: fit-content;
 
       margin: 0;
+
+      /*
+        Добавляем место снизу.
+        Теперь фон физически может заполнить
+        буквы до самого нижнего края.
+      */
+      padding: 2px 0 10px 0;
 
       font-family:
         'Oswald',
         'Arial Black',
         sans-serif;
 
+      /*
+        Высоту получаем через font-size,
+        а НЕ через scaleY.
+      */
       font-size:
         clamp(
-          118px,
-          12.8vw,
-          215px
+          128px,
+          13.4vw,
+          225px
         );
 
-      line-height: .80;
+      /*
+        Было .80 — это и обрезало фон.
+      */
+      line-height: 1;
 
       font-weight: 700;
 
@@ -254,28 +265,39 @@
 
       text-transform: uppercase;
 
-      transform:
-        scaleX(.91)
-        scaleY(1.08);
-
-      transform-origin:
-        left center;
-
       /*
-        БАЗОВАЯ СВЕТЛАЯ ЛЕДЯНАЯ ЗАЛИВКА.
-        Она не позволит буквам стать слишком тёмными.
+        Оставляем только небольшое
+        сжатие по ширине.
       */
+      transform: scaleX(.91);
+      transform-origin: left center;
 
       color: transparent;
 
-      background:
+      /*
+        Текстура занимает ВСЮ площадь
+        реального блока заголовка.
+      */
+      background-image:
         linear-gradient(
-          180deg,
-          #d9f4ff 0%,
-          #a8ddf0 30%,
-          #75bcd7 65%,
-          #5998b5 100%
-        );
+          to bottom,
+          rgba(225,246,255,.16) 0%,
+          rgba(160,218,238,.05) 35%,
+          rgba(50,125,160,.03) 100%
+        ),
+        url("./title-texture.png");
+
+      background-size:
+        100% 100%,
+        100% 100%;
+
+      background-position:
+        center,
+        center;
+
+      background-repeat:
+        no-repeat,
+        no-repeat;
 
       -webkit-background-clip: text;
       background-clip: text;
@@ -283,80 +305,33 @@
       -webkit-text-fill-color: transparent;
 
       -webkit-text-stroke:
-        1px rgba(221,247,255,.38);
+        1px rgba(205,238,250,.42);
 
+      /*
+        Средняя яркость:
+        не белая и не тёмная.
+      */
       filter:
+        brightness(1.12)
+        contrast(1.06)
+        saturate(.90)
         drop-shadow(
-          0 6px 12px
-          rgba(0,0,0,.40)
+          0 7px 14px
+          rgba(0,0,0,.42)
         );
     }
 
 
-    /*
-      ВТОРОЙ СЛОЙ.
-      Та же надпись с картинкой волны.
-      Благодаря opacity светлая основа остаётся видна.
-    */
-
-    .hero-title::after {
-      content: attr(data-text);
-
-      position: absolute;
-
-      left: 0;
-      top: 0;
-
-      width: 100%;
-      height: 100%;
-
-      font: inherit;
-      line-height: inherit;
-
-      letter-spacing: inherit;
-
-      color: transparent;
-
-      background-image:
-        url("./title-texture.png");
-
-      /*
-        Вся текстура размещается внутри всего слова.
-      */
-
-      background-size:
-        100% 100%;
-
-      background-position:
-        center center;
-
-      background-repeat:
-        no-repeat;
-
-      -webkit-background-clip: text;
-      background-clip: text;
-
-      -webkit-text-fill-color:
-        transparent;
-
-      /*
-        Главное:
-        текстура не закрывает светлую основу полностью.
-      */
-
-      opacity: .72;
-
-      filter:
-        brightness(1.16)
-        contrast(.92)
-        saturate(.82);
-
-      pointer-events: none;
-    }
-
+    /* FUTSAL CLUB */
 
     .hero-subtitle {
-      margin-top: 18px;
+      /*
+        Отделяем от КАСПИЙ,
+        чтобы он вообще не влиял
+        на заголовок.
+      */
+
+      margin-top: 4px;
 
       font-size:
         clamp(
@@ -378,8 +353,9 @@
         rgba(95,200,245,.12);
     }
 
+
     .slogan {
-      margin-top: 35px;
+      margin-top: 34px;
 
       color: #7f9dac;
 
@@ -395,7 +371,7 @@
 
 
     /* =====================================================
-       RIGHT HERO TEXT
+       RIGHT HERO
        ===================================================== */
 
     .location {
@@ -543,6 +519,9 @@
       text-transform: uppercase;
     }
 
+
+    /* MATCH BODY */
+
     .next-match-body {
       position: relative;
       z-index: 2;
@@ -590,6 +569,9 @@
         10px
         24px;
     }
+
+
+    /* TEAM */
 
     .next-team-logo {
       width: 92px;
@@ -642,6 +624,9 @@
 
       text-transform: uppercase;
     }
+
+
+    /* DATE */
 
     .match-date {
       color: #b4cbd7;
@@ -697,7 +682,9 @@
     }
 
 
-    /* COUNTDOWN */
+    /* =====================================================
+       COUNTDOWN
+       ===================================================== */
 
     .countdown-title {
       margin-bottom: 20px;
@@ -937,8 +924,7 @@
       width: 58px;
       height: 58px;
 
-      flex:
-        0 0 58px;
+      flex: 0 0 58px;
     }
 
     .result-logo img {
@@ -1094,7 +1080,7 @@
 
       .hero-text {
         width: 100%;
-        padding-top: 100px;
+        padding-top: 90px;
       }
 
       .hero-title {
@@ -1105,9 +1091,12 @@
             155px
           );
 
+        line-height: 1;
+
         transform:
-          scaleX(.92)
-          scaleY(1.04);
+          scaleX(.92);
+
+        padding-bottom: 6px;
       }
 
       .hero-subtitle {
@@ -1133,8 +1122,7 @@
         width: 70%;
         height: 1px;
 
-        margin:
-          22px auto;
+        margin: 22px auto;
 
         background:
           linear-gradient(
@@ -1174,10 +1162,7 @@
 
     <nav>
 
-      <a
-        href="#"
-        class="active"
-      >
+      <a href="#" class="active">
         Главная
       </a>
 
@@ -1238,10 +1223,7 @@
       </div>
 
 
-      <h1
-        class="hero-title"
-        data-text="КАСПИЙ"
-      >
+      <h1 class="hero-title">
         КАСПИЙ
       </h1>
 
@@ -1545,6 +1527,7 @@
 
     </div>
 
+
     <div class="footer-text">
       AQTAU · KAZAKHSTAN
     </div>
@@ -1643,7 +1626,6 @@
     if (!opponent || !teams) {
       return null;
     }
-
 
     const value =
       opponent
@@ -1944,7 +1926,6 @@
         caspiy
       );
 
-
       renderTeam(
         'right',
         opponent
@@ -1956,7 +1937,6 @@
         'left',
         opponent
       );
-
 
       renderTeam(
         'right',
@@ -1985,15 +1965,13 @@
     document.getElementById(
       'next-match-competition'
     ).textContent =
-      match.competition ||
-      '';
+      match.competition || '';
 
 
     document.getElementById(
       'next-match-venue'
     ).textContent =
-      match.venue ||
-      '';
+      match.venue || '';
 
 
     startCountdown(
@@ -2042,10 +2020,7 @@
       list.innerHTML = `
 
         <div class="results-empty">
-
-          ЗАВЕРШЁННЫХ МАТЧЕЙ
-          ПОКА НЕТ
-
+          ЗАВЕРШЁННЫХ МАТЧЕЙ ПОКА НЕТ
         </div>
 
       `;
@@ -2102,6 +2077,7 @@
 
           if (match.is_home) {
 
+
             left = `
 
               <div class="result-team">
@@ -2144,15 +2120,13 @@
             `;
 
 
-            ls =
-              cs;
+            ls = cs;
+            rs = os;
 
-
-            rs =
-              os;
 
           } else {
 
+
             left = `
 
               <div class="result-team">
@@ -2195,12 +2169,8 @@
             `;
 
 
-            ls =
-              os;
-
-
-            rs =
-              cs;
+            ls = os;
+            rs = cs;
 
           }
 
@@ -2217,13 +2187,7 @@
                 </div>
 
                 <div class="result-date">
-
-                  ${
-                    formatShortDate(
-                      match.match_date
-                    )
-                  }
-
+                  ${formatShortDate(match.match_date)}
                 </div>
 
               </div>
@@ -2256,7 +2220,6 @@
       .join('');
 
   }
-
 
 
   await Promise.all([
