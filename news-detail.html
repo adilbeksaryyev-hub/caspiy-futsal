@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Жаңалық — CASPIY Futsal Club</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      font-family: 'Montserrat', Arial, sans-serif;
+
+      color: #eef9ff;
+      background: #020a10;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+
+      background: rgba(2,10,16,.96);
+      backdrop-filter: blur(15px);
+
+      border-bottom:
+        1px solid rgba(80,202,245,.14);
+    }
+
+    .header-inner {
+      width: min(1440px,92%);
+      height: 95px;
+
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo img {
+      width: 70px;
+      height: 70px;
+
+      object-fit: contain;
+    }
+
+    .logo strong {
+      font-family: 'Oswald',sans-serif;
+
+      font-size: 20px;
+
+      letter-spacing: .08em;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+
+      gap: 27px;
+    }
+
+    nav a {
+      position: relative;
+
+      padding: 12px 0;
+
+      color: #a9bfca;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #62d6ff;
+    }
+
+    nav a.active::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 2px;
+
+      background: #52d3ff;
+    }
+
+    .back-button {
+      padding: 13px 18px;
+
+      color: #caeffc;
+
+      border:
+        1px solid rgba(80,207,251,.42);
+
+      border-radius: 5px;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+    }
+
+    /* LOADING */
+
+    .loading {
+      min-height: 70vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 60px 20px;
+
+      color: #6d91a3;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+    }
+
+    /* ARTICLE HERO */
+
+    .article-hero {
+      position: relative;
+
+      min-height: 610px;
+
+      overflow: hidden;
+
+      background: #04121d;
+    }
+
+    .article-background {
+      position: absolute;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+
+    .article-hero::before {
+      content: "";
+
+      position: absolute;
+      z-index: 1;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(1,8,14,.97) 0%,
+          rgba(1,10,17,.79) 45%,
+          rgba(1,8,14,.44) 100%
+        );
+    }
+
+    .article-hero::after {
+      content: "";
+
+      position: absolute;
+      z-index: 1;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to bottom,
+          transparent 35%,
+          #020a10 100%
+        );
+    }
+
+    .article-hero.no-image {
+      background:
+        linear-gradient(
+          135deg,
+          #071f30,
+          #020a10
+        );
+    }
+
+    .article-hero-inner {
+      position: relative;
+      z-index: 3;
+
+      width: min(1180px,92%);
+      min-height: 610px;
+
+      margin: auto;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      padding-bottom: 74px;
+    }
+
+    .article-label {
+      margin-bottom: 17px;
+
+      color: #55d4ff;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .32em;
+
+      text-transform: uppercase;
+    }
+
+    .article-title {
+      max-width: 1000px;
+
+      font-family: 'Oswald',sans-serif;
+
+      font-size:
+        clamp(
+          48px,
+          6.7vw,
+          105px
+        );
+
+      font-weight: 600;
+
+      line-height: .98;
+
+      letter-spacing: -.02em;
+
+      text-transform: uppercase;
+    }
+
+    .article-date {
+      margin-top: 25px;
+
+      color: #8ba8b7;
+
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+    }
+
+    /* ARTICLE */
+
+    .article-section {
+      padding:
+        75px 0
+        110px;
+
+      background:
+        radial-gradient(
+          circle at 80% 5%,
+          rgba(0,155,220,.08),
+          transparent 30%
+        ),
+        #020a10;
+    }
+
+    .article-container {
+      width: min(920px,90%);
+      margin: auto;
+    }
+
+    .article-content {
+      color: #b0c7d2;
+
+      font-size: 15px;
+
+      line-height: 2;
+    }
+
+    .article-content p {
+      margin-bottom: 24px;
+    }
+
+    .article-content p:first-child::first-letter {
+      float: left;
+
+      margin:
+        7px 11px
+        0 0;
+
+      color: #58d5ff;
+
+      font-family: 'Oswald',sans-serif;
+
+      font-size: 65px;
+
+      line-height: .75;
+
+      font-weight: 700;
+    }
+
+    .article-separator {
+      width: 100%;
+      height: 1px;
+
+      margin:
+        48px 0
+        32px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(77,205,253,.35),
+          transparent
+        );
+    }
+
+    .article-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+    }
+
+    .article-club {
+      color: #5e7f8f;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .20em;
+
+      text-transform: uppercase;
+    }
+
+    .all-news-button {
+      display: inline-block;
+
+      padding: 13px 19px;
+
+      color: #07131a;
+
+      background: #55d4ff;
+
+      border-radius: 4px;
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+    }
+
+    /* ERROR */
+
+    .error-box {
+      width: min(700px,90%);
+
+      margin: 120px auto;
+
+      padding: 45px;
+
+      text-align: center;
+
+      background: #061722;
+
+      border:
+        1px solid rgba(82,202,246,.15);
+    }
+
+    .error-box h1 {
+      font-family: 'Oswald',sans-serif;
+
+      font-size: 43px;
+
+      text-transform: uppercase;
+    }
+
+    .error-box p {
+      margin-top: 17px;
+
+      color: #7695a4;
+
+      font-size: 11px;
+
+      line-height: 1.8;
+    }
+
+    .error-box a {
+      display: inline-block;
+
+      margin-top: 25px;
+
+      padding: 13px 20px;
+
+      color: #031019;
+      background: #55d4ff;
+
+      border-radius: 4px;
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: .13em;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #01070b;
+
+      border-top:
+        1px solid rgba(71,197,242,.10);
+    }
+
+    .footer-inner {
+      width: min(1440px,92%);
+      min-height: 120px;
+
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+
+      gap: 14px;
+    }
+
+    .footer-brand img {
+      width: 58px;
+      height: 58px;
+
+      object-fit: contain;
+    }
+
+    .footer-brand strong {
+      font-size: 12px;
+
+      letter-spacing: .17em;
+
+      text-transform: uppercase;
+    }
+
+    .footer-copy {
+      color: #506a78;
+
+      font-size: 8px;
+
+      letter-spacing: .20em;
+
+      text-transform: uppercase;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width:1050px) {
+      nav {
+        display: none;
+      }
+    }
+
+    @media (max-width:650px) {
+
+      .header-inner {
+        height: 78px;
+      }
+
+      .logo img {
+        width: 55px;
+        height: 55px;
+      }
+
+      .logo strong {
+        display: none;
+      }
+
+      .back-button {
+        padding: 11px 13px;
+      }
+
+      .article-hero,
+      .article-hero-inner {
+        min-height: 500px;
+      }
+
+      .article-title {
+        font-size: 48px;
+      }
+
+      .article-section {
+        padding:
+          55px 0
+          80px;
+      }
+
+      .article-content {
+        font-size: 14px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        padding:
+          25px 0;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="header-inner">
+
+    <a
+      href="index.html"
+      class="logo"
+    >
+
+      <img
+        src="logo.png"
+        alt="CASPIY"
+      >
+
+      <strong>
+        CASPIY FUTSAL CLUB
+      </strong>
+
+    </a>
+
+
+    <nav>
+
+      <a href="index.html">
+        БАСТЫ БЕТ
+      </a>
+
+      <a href="team.html">
+        КОМАНДА
+      </a>
+
+      <a href="matches.html">
+        МАТЧТАР
+      </a>
+
+      <a
+        href="news.html"
+        class="active"
+      >
+        ЖАҢАЛЫҚТАР
+      </a>
+
+      <a href="club.html">
+        КЛУБ
+      </a>
+
+      <a href="fans.html">
+        ЖАНКҮЙЕРЛЕР
+      </a>
+
+      <a href="contact.html">
+        БАЙЛАНЫС
+      </a>
+
+    </nav>
+
+
+    <a
+      href="news.html"
+      class="back-button"
+    >
+      ← ЖАҢАЛЫҚТАР
+    </a>
+
+  </div>
+
+</header>
+
+
+<main id="page">
+
+  <div class="loading">
+    ЖАҢАЛЫҚ ЖҮКТЕЛУДЕ...
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+
+      <img
+        src="logo.png"
+        alt="CASPIY"
+      >
+
+      <strong>
+        CASPIY FUTSAL CLUB
+      </strong>
+
+    </div>
+
+    <div
+      class="footer-copy"
+      id="footerAddress"
+    >
+      АҚТАУ · ҚАЗАҚСТАН
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script type="module">
+
+  import { createClient }
+  from
+  'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+
+  const supabase =
+    createClient(
+      'https://socqbqyhkyvxnsukgcqm.supabase.co',
+      'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK'
+    );
+
+
+  const page =
+    document.getElementById(
+      'page'
+    );
+
+
+  function escapeHtml(value) {
+
+    return String(value ?? '')
+      .replaceAll('&','&amp;')
+      .replaceAll('<','&lt;')
+      .replaceAll('>','&gt;')
+      .replaceAll('"','&quot;')
+      .replaceAll("'","&#039;");
+
+  }
+
+
+  function formatDate(value) {
+
+    if (!value) {
+      return '';
+    }
+
+
+    return new Intl.DateTimeFormat(
+      'kk-KZ',
+      {
+        timeZone:'Asia/Aqtau',
+        day:'numeric',
+        month:'long',
+        year:'numeric',
+        hour:'2-digit',
+        minute:'2-digit'
+      }
+    )
+    .format(
+      new Date(value)
+    )
+    .toUpperCase();
+
+  }
+
+
+  function createParagraphs(text) {
+
+    if (!text) {
+
+      return `
+        <p>
+          Толық ақпарат жақында жарияланады.
+        </p>
+      `;
+
+    }
+
+
+    const paragraphs =
+      String(text)
+        .split(/\n+/)
+        .map(item =>
+          item.trim()
+        )
+        .filter(Boolean);
+
+
+    return paragraphs
+      .map(
+        paragraph => `
+          <p>
+            ${escapeHtml(paragraph)}
+          </p>
+        `
+      )
+      .join('');
+
+  }
+
+
+  function showNotFound() {
+
+    document.title =
+      'Жаңалық табылмады — CASPIY';
+
+
+    page.innerHTML = `
+
+      <div class="error-box">
+
+        <h1>
+          ЖАҢАЛЫҚ ТАБЫЛМАДЫ
+        </h1>
+
+        <p>
+          Сұралған жаңалық жоқ немесе ол сайттан алынып тасталған.
+        </p>
+
+        <a href="news.html">
+          БАРЛЫҚ ЖАҢАЛЫҚТАР →
+        </a>
+
+      </div>
+
+    `;
+
+  }
+
+
+  async function loadArticle() {
+
+    const params =
+      new URLSearchParams(
+        window.location.search
+      );
+
+
+    const id =
+      params.get('id');
+
+
+    if (
+      !id ||
+      !/^\d+$/.test(id)
+    ) {
+
+      showNotFound();
+
+      return;
+
+    }
+
+
+    const {
+      data,
+      error
+    } =
+      await supabase
+        .from('news')
+        .select(
+          'id,title,description,image_url,published_at,is_active'
+        )
+        .eq(
+          'id',
+          Number(id)
+        )
+        .eq(
+          'is_active',
+          true
+        )
+        .maybeSingle();
+
+
+    if (
+      error ||
+      !data
+    ) {
+
+      console.error(error);
+
+      showNotFound();
+
+      return;
+
+    }
+
+
+    document.title =
+      `${data.title} — CASPIY Futsal Club`;
+
+
+    page.innerHTML = `
+
+      <article>
+
+        <section
+          class="article-hero ${data.image_url ? '' : 'no-image'}"
+        >
+
+          ${
+            data.image_url
+              ? `
+                <img
+                  class="article-background"
+                  src="${escapeHtml(data.image_url)}"
+                  alt="${escapeHtml(data.title)}"
+                >
+              `
+              : ''
+          }
+
+
+          <div class="article-hero-inner">
+
+            <div class="article-label">
+              CASPIY · ЖАҢАЛЫҚТАР
+            </div>
+
+            <h1 class="article-title">
+              ${escapeHtml(data.title)}
+            </h1>
+
+            <div class="article-date">
+              ${formatDate(data.published_at)}
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <section class="article-section">
+
+          <div class="article-container">
+
+            <div class="article-content">
+
+              ${createParagraphs(data.description)}
+
+            </div>
+
+
+            <div class="article-separator"></div>
+
+
+            <div class="article-bottom">
+
+              <div class="article-club">
+                CASPIY FUTSAL CLUB · АҚТАУ
+              </div>
+
+              <a
+                href="news.html"
+                class="all-news-button"
+              >
+                БАРЛЫҚ ЖАҢАЛЫҚТАР →
+              </a>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </article>
+
+    `;
+
+  }
+
+
+  async function loadSettings() {
+
+    const {
+      data
+    } =
+      await supabase
+        .from('site_settings')
+        .select('address')
+        .eq('id',1)
+        .maybeSingle();
+
+
+    if (
+      data?.address
+    ) {
+
+      document
+        .getElementById(
+          'footerAddress'
+        )
+        .textContent =
+          data.address.toUpperCase();
+
+    }
+
+  }
+
+
+  await Promise.all([
+    loadArticle(),
+    loadSettings()
+  ]);
+
+</script>
+
+</body>
+</html>
