@@ -10,7 +10,7 @@
 
   <title>CASPIY Futsal Club — Hero V2</title>
 
-  <!-- ТЕСТОВАЯ СТРАНИЦА: GOOGLE ЕЁ НЕ ИНДЕКСИРУЕТ -->
+  <!-- Тестовая страница -->
   <meta
     name="robots"
     content="noindex, nofollow, noarchive"
@@ -63,12 +63,9 @@
       min-height: 100vh;
       overflow-x: hidden;
 
-      font-family:
-        'Montserrat',
-        Arial,
-        sans-serif;
+      font-family: 'Montserrat', Arial, sans-serif;
 
-      color: #f1f8fc;
+      color: #eef8fc;
       background: #020a10;
     }
 
@@ -86,23 +83,13 @@
     }
 
     img {
+      display: block;
       max-width: 100%;
     }
 
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      white-space: nowrap;
-      border: 0;
-    }
 
     /* =========================================================
-       HERO V2
+       HERO
        ========================================================= */
 
     .hero {
@@ -112,13 +99,30 @@
 
       overflow: hidden;
 
-background:
-  url("hero-v2.png")
-  center 34% / cover
-  no-repeat;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(1,8,15,.40) 0%,
+          rgba(1,8,15,.18) 45%,
+          rgba(1,8,15,.31) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(1,8,15,.22) 0%,
+          rgba(1,8,15,.02) 50%,
+          rgba(1,8,15,.52) 100%
+        ),
+        url("hero-bg.png");
+
+      background-size: cover;
+
+      /* немного поднят фон */
+      background-position: center 42%;
+
+      background-repeat: no-repeat;
 
       border-bottom:
-        1px solid rgba(77,205,255,.08);
+        1px solid rgba(73,205,255,.10);
     }
 
     .hero::before {
@@ -127,22 +131,25 @@ background:
       position: absolute;
       inset: 0;
 
-      z-index: 1;
-
       pointer-events: none;
 
       background:
-        linear-gradient(
-          180deg,
-          rgba(1,8,15,.34) 0%,
-          rgba(1,8,15,.08) 20%,
-          rgba(1,8,15,.00) 55%,
-          rgba(1,8,15,.14) 80%,
-          rgba(1,8,15,.55) 100%
+        radial-gradient(
+          circle at 25% 42%,
+          rgba(69,201,255,.11),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 68% 40%,
+          rgba(52,178,232,.06),
+          transparent 34%
         );
     }
 
-    /* HEADER */
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
 
     header {
       position: relative;
@@ -157,22 +164,17 @@ background:
       align-items: center;
       justify-content: space-between;
 
-      gap: 25px;
+      gap: 24px;
 
       border-bottom:
-        1px solid rgba(115,209,255,.18);
+        1px solid rgba(115,209,255,.17);
     }
 
-    .logo {
-      position: relative;
-      z-index: 60;
-
+    .header-logo {
       flex-shrink: 0;
     }
 
-    .logo img {
-      display: block;
-
+    .header-logo img {
       height: 82px;
       width: auto;
     }
@@ -181,7 +183,7 @@ background:
       display: flex;
       align-items: center;
 
-      gap: 29px;
+      gap: 28px;
     }
 
     .desktop-nav a {
@@ -189,7 +191,7 @@ background:
 
       padding: 13px 0;
 
-      color: #d5e5ed;
+      color: #cfdee6;
 
       font-size: 10px;
       font-weight: 600;
@@ -201,7 +203,7 @@ background:
       white-space: nowrap;
 
       text-shadow:
-        0 2px 7px rgba(0,0,0,.55);
+        0 2px 8px rgba(0,0,0,.45);
     }
 
     .desktop-nav a::after {
@@ -215,14 +217,14 @@ background:
 
       height: 2px;
 
-      background: #44ccff;
+      background: #4bd1ff;
 
       transition: .25s;
     }
 
     .desktop-nav a:hover,
     .desktop-nav a.active {
-      color: #63d7ff;
+      color: #68d9ff;
     }
 
     .desktop-nav a:hover::after,
@@ -230,10 +232,7 @@ background:
       right: 0;
     }
 
-    .top-actions {
-      position: relative;
-      z-index: 60;
-
+    .header-actions {
       display: flex;
       align-items: center;
 
@@ -243,7 +242,7 @@ background:
     }
 
     .lang {
-      color: #d7e7ee;
+      color: #d6e5ec;
 
       font-size: 11px;
       font-weight: 500;
@@ -251,18 +250,18 @@ background:
       letter-spacing: .12em;
     }
 
-    .ticket {
+    .ticket-button {
       padding: 14px 24px;
 
       color: #e7f8ff;
 
       background:
-        rgba(1,12,21,.32);
+        rgba(2,13,22,.28);
 
       border:
-        1px solid rgba(70,207,255,.78);
+        1px solid rgba(70,207,255,.74);
 
-      border-radius: 6px;
+      border-radius: 5px;
 
       font-size: 10px;
       font-weight: 700;
@@ -274,21 +273,25 @@ background:
       transition: .25s;
     }
 
-    .ticket:hover {
+    .ticket-button:hover {
       background:
-        rgba(38,188,245,.15);
+        rgba(47,189,242,.13);
     }
 
-    .ticket.disabled {
+    .ticket-button.disabled {
       opacity: .35;
+
       pointer-events: none;
     }
 
-    /* DESKTOP HERO SPACE */
 
-    .desktop-hero-space {
+    /* =========================================================
+       DESKTOP HERO CONTENT
+       ========================================================= */
+
+    .hero-inner {
       position: relative;
-      z-index: 2;
+      z-index: 5;
 
       width: min(1440px,92%);
 
@@ -296,16 +299,305 @@ background:
         calc(100vh - 105px);
 
       margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        42% 58%;
+
+      align-items: center;
+
+      padding:
+        5px 0 75px;
     }
 
-    /* MOBILE HERO CONTENT */
-
-    .mobile-hero-content {
-      display: none;
+    .hero-logo-column {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
+    .hero-logo-wrap {
+      position: relative;
+
+      width:
+        min(340px,25vw);
+
+      aspect-ratio: 1 / 1;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-logo-wrap::before {
+      content: "";
+
+      position: absolute;
+
+      inset: -13%;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(82,204,255,.15) 0%,
+          rgba(55,178,230,.07) 43%,
+          transparent 70%
+        );
+
+      filter: blur(14px);
+    }
+
+    .hero-main-logo {
+      position: relative;
+      z-index: 2;
+
+      width: 100%;
+
+      filter:
+        drop-shadow(
+          0 0 16px
+          rgba(82,205,255,.24)
+        )
+        drop-shadow(
+          0 15px 30px
+          rgba(0,0,0,.34)
+        );
+    }
+
+    .hero-text {
+      position: relative;
+
+      padding-left: 48px;
+    }
+
+    .hero-small {
+      margin-bottom: 11px;
+
+      color: #69d5fa;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .38em;
+
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      margin: 0;
+
+      font-family:
+        'Oswald',
+        Arial,
+        sans-serif;
+
+      font-size:
+        clamp(78px,7.5vw,120px);
+
+      font-weight: 700;
+
+      line-height: .83;
+
+      letter-spacing: -.035em;
+
+      text-transform: uppercase;
+
+      color: #f7fbfd;
+
+      text-shadow:
+        0 8px 25px rgba(0,0,0,.30);
+    }
+
+    .hero-subtitle {
+      margin-top: 18px;
+
+      color: #ecf7fb;
+
+      font-size:
+        clamp(23px,2.45vw,39px);
+
+      font-weight: 500;
+
+      line-height: 1;
+
+      letter-spacing: .29em;
+
+      text-transform: uppercase;
+    }
+
+    .hero-line {
+      position: relative;
+
+      width: min(650px,95%);
+      height: 1px;
+
+      margin:
+        29px 0 25px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(83,211,255,.08),
+          rgba(83,211,255,.95),
+          rgba(83,211,255,.08)
+        );
+    }
+
+    .hero-line::after {
+      content: "";
+
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+
+      width: 100px;
+      height: 3px;
+
+      transform:
+        translate(-50%,-50%);
+
+      background:
+        radial-gradient(
+          ellipse,
+          rgba(116,224,255,.90),
+          transparent 70%
+        );
+    }
+
+    .hero-slogan {
+      color: #e4f1f6;
+
+      font-size:
+        clamp(17px,1.6vw,26px);
+
+      font-weight: 500;
+
+      line-height: 1.7;
+
+      letter-spacing: .19em;
+
+      text-transform: uppercase;
+    }
+
+    .hero-location {
+      margin-top: 18px;
+
+      display: flex;
+      align-items: center;
+
+      gap: 18px;
+
+      color: #69cfee;
+
+      font-size: 9px;
+      font-weight: 600;
+
+      letter-spacing: .30em;
+
+      text-transform: uppercase;
+    }
+
+    .hero-location::before,
+    .hero-location::after {
+      content: "";
+
+      width: 65px;
+      height: 1px;
+
+      background:
+        rgba(93,207,247,.48);
+    }
+
+
+    /* декоративные надписи */
+
+    .hero-more {
+      position: absolute;
+
+      z-index: 4;
+
+      top: 145px;
+      right: 42px;
+
+      padding-left: 18px;
+
+      color:
+        rgba(205,227,239,.76);
+
+      border-left:
+        1px solid rgba(95,207,247,.58);
+
+      font-size: 10px;
+      font-weight: 500;
+
+      line-height: 2;
+
+      letter-spacing: .30em;
+
+      text-transform: uppercase;
+    }
+
+    .hero-spirit {
+      position: absolute;
+
+      z-index: 4;
+
+      left: 42px;
+      bottom: 43px;
+
+      padding-left: 18px;
+
+      color:
+        rgba(205,227,239,.72);
+
+      border-left:
+        1px solid rgba(95,207,247,.58);
+
+      font-size: 9px;
+      font-weight: 500;
+
+      line-height: 2;
+
+      letter-spacing: .30em;
+
+      text-transform: uppercase;
+    }
+
+    .hero-aktau {
+      position: absolute;
+
+      z-index: 4;
+
+      right: 70px;
+      bottom: 155px;
+
+      color:
+        rgba(35,124,213,.40);
+
+      font-size:
+        clamp(62px,7vw,105px);
+
+      font-weight: 300;
+
+      font-style: italic;
+
+      line-height: 1;
+
+      transform:
+        rotate(-7deg);
+
+      pointer-events: none;
+
+      user-select: none;
+    }
+
 
     /* =========================================================
-       MOBILE MENU BUTTON
+       MOBILE MENU
        ========================================================= */
 
     .mobile-menu-button {
@@ -330,15 +622,16 @@ background:
       cursor: pointer;
     }
 
-    .mobile-menu-button-lines {
+    .menu-lines {
       position: relative;
 
       width: 21px;
       height: 15px;
     }
 
-    .mobile-menu-button-lines span {
+    .menu-lines span {
       position: absolute;
+
       left: 0;
 
       width: 21px;
@@ -349,20 +642,20 @@ background:
       transition: .25s;
     }
 
-    .mobile-menu-button-lines span:nth-child(1) {
+    .menu-lines span:nth-child(1) {
       top: 0;
     }
 
-    .mobile-menu-button-lines span:nth-child(2) {
+    .menu-lines span:nth-child(2) {
       top: 6px;
     }
 
-    .mobile-menu-button-lines span:nth-child(3) {
+    .menu-lines span:nth-child(3) {
       top: 12px;
     }
 
     .mobile-menu-button.active
-    .mobile-menu-button-lines span:nth-child(1) {
+    .menu-lines span:nth-child(1) {
       top: 6px;
 
       transform:
@@ -370,24 +663,21 @@ background:
     }
 
     .mobile-menu-button.active
-    .mobile-menu-button-lines span:nth-child(2) {
+    .menu-lines span:nth-child(2) {
       opacity: 0;
     }
 
     .mobile-menu-button.active
-    .mobile-menu-button-lines span:nth-child(3) {
+    .menu-lines span:nth-child(3) {
       top: 6px;
 
       transform:
         rotate(-45deg);
     }
 
-    /* =========================================================
-       MOBILE MENU
-       ========================================================= */
-
     .mobile-menu {
       position: fixed;
+
       z-index: 25;
 
       inset: 0;
@@ -538,12 +828,14 @@ background:
       text-transform: uppercase;
     }
 
+
     /* =========================================================
        NEXT MATCH
        ========================================================= */
 
     .next-match-section {
-      padding: 32px 0 58px;
+      padding:
+        32px 0 58px;
 
       background:
         linear-gradient(
@@ -551,9 +843,6 @@ background:
           #020a10,
           #020c14
         );
-
-      border-top:
-        1px solid rgba(74,207,255,.08);
     }
 
     .next-match-container {
@@ -599,7 +888,7 @@ background:
       background-size: cover;
 
       background-position:
-        center 72%;
+        center 70%;
 
       opacity: .16;
     }
@@ -608,12 +897,12 @@ background:
       position: relative;
       z-index: 2;
 
-      height: 54px;
+      min-height: 54px;
 
-      padding: 0 28px;
+      padding:
+        0 28px;
 
       display: flex;
-
       align-items: center;
       justify-content: space-between;
 
@@ -623,7 +912,7 @@ background:
         1px solid rgba(97,207,249,.17);
     }
 
-    .next-match-header h3 {
+    .next-match-header h2 {
       color: #8ddfff;
 
       font-family:
@@ -655,7 +944,8 @@ background:
 
       min-height: 235px;
 
-      padding: 19px 25px 22px;
+      padding:
+        19px 25px 22px;
 
       display: grid;
 
@@ -697,7 +987,6 @@ background:
         0 auto 13px;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
     }
@@ -746,7 +1035,8 @@ background:
     }
 
     .match-time {
-      margin: 8px 0 12px;
+      margin:
+        8px 0 12px;
 
       color: #f5fbff;
 
@@ -796,10 +1086,6 @@ background:
         repeat(3,1fr);
     }
 
-    .countdown-part {
-      text-align: center;
-    }
-
     .countdown-number {
       color: #f8fcff;
 
@@ -824,12 +1110,14 @@ background:
       text-transform: uppercase;
     }
 
+
     /* =========================================================
        PLAYERS
        ========================================================= */
 
     .players-section {
-      padding: 34px 0 78px;
+      padding:
+        34px 0 78px;
 
       background:
         linear-gradient(
@@ -852,13 +1140,13 @@ background:
       margin: auto;
     }
 
-    .players-header {
+    .section-header {
       min-height: 72px;
 
-      padding: 0 14px;
+      padding:
+        0 14px;
 
       display: flex;
-
       align-items: center;
       justify-content: space-between;
 
@@ -868,7 +1156,7 @@ background:
         1px solid rgba(255,255,255,.10);
     }
 
-    .players-header h2 {
+    .section-header h2 {
       font-family:
         'Oswald',
         sans-serif;
@@ -879,7 +1167,7 @@ background:
       text-transform: uppercase;
     }
 
-    .players-all {
+    .section-link {
       color: #8fdfff;
 
       font-size: 10px;
@@ -921,6 +1209,7 @@ background:
 
     .player-photo {
       position: absolute;
+
       inset: 0;
 
       width: 100%;
@@ -934,6 +1223,7 @@ background:
 
     .player-overlay {
       position: absolute;
+
       inset: 0;
 
       background:
@@ -946,6 +1236,7 @@ background:
 
     .player-number {
       position: absolute;
+
       z-index: 2;
 
       top: 17px;
@@ -966,6 +1257,7 @@ background:
 
     .player-info {
       position: absolute;
+
       z-index: 3;
 
       left: 23px;
@@ -1001,14 +1293,15 @@ background:
       text-transform: uppercase;
     }
 
-    .players-empty {
-      grid-column: 1 / -1;
+    .empty {
+      grid-column:
+        1 / -1;
 
-      padding: 65px;
+      padding: 60px;
 
       text-align: center;
 
-      color: #879ca6;
+      color: #7d99a8;
 
       font-size: 10px;
 
@@ -1017,12 +1310,14 @@ background:
       text-transform: uppercase;
     }
 
+
     /* =========================================================
        NEWS
        ========================================================= */
 
     .news-section {
-      padding: 82px 0 95px;
+      padding:
+        82px 0 95px;
 
       background:
         radial-gradient(
@@ -1045,7 +1340,6 @@ background:
       padding-bottom: 22px;
 
       display: flex;
-
       align-items: flex-end;
       justify-content: space-between;
 
@@ -1055,7 +1349,7 @@ background:
         1px solid rgba(94,202,244,.13);
     }
 
-    .news-heading-small {
+    .news-small {
       display: block;
 
       margin-bottom: 7px;
@@ -1083,17 +1377,6 @@ background:
       text-transform: uppercase;
     }
 
-    .news-all {
-      color: #8fdfff;
-
-      font-size: 10px;
-      font-weight: 700;
-
-      letter-spacing: .15em;
-
-      text-transform: uppercase;
-    }
-
     .news-grid {
       display: grid;
 
@@ -1108,8 +1391,6 @@ background:
 
       overflow: hidden;
 
-      color: inherit;
-
       background:
         linear-gradient(
           180deg,
@@ -1122,8 +1403,7 @@ background:
 
       transition:
         transform .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
+        border-color .25s ease;
     }
 
     .news-card:hover {
@@ -1132,9 +1412,6 @@ background:
 
       border-color:
         rgba(77,210,255,.43);
-
-      box-shadow:
-        0 18px 45px rgba(0,0,0,.24);
     }
 
     .news-image {
@@ -1145,11 +1422,7 @@ background:
       overflow: hidden;
 
       background:
-        linear-gradient(
-          135deg,
-          #0a293c,
-          #04121c
-        );
+        #071b28;
     }
 
     .news-image img {
@@ -1168,14 +1441,14 @@ background:
         scale(1.035);
     }
 
-    .news-no-image {
+    .news-placeholder {
       position: absolute;
 
       top: 50%;
       left: 50%;
 
-      width: 90px !important;
-      height: 90px !important;
+      width: 85px !important;
+      height: 85px !important;
 
       object-fit:
         contain !important;
@@ -1253,12 +1526,11 @@ background:
       padding-top: 19px;
 
       display: flex;
-
       align-items: center;
       justify-content: space-between;
     }
 
-    .news-read-more {
+    .read-more {
       color: #55d4ff;
 
       font-size: 9px;
@@ -1273,39 +1545,16 @@ background:
       color: #55d4ff;
 
       font-size: 19px;
-
-      transition:
-        transform .2s ease;
     }
 
-    .news-card:hover
-    .news-arrow {
-      transform:
-        translateX(4px);
-    }
-
-    .news-empty {
-      grid-column: 1 / -1;
-
-      padding: 55px;
-
-      text-align: center;
-
-      color: #7898a8;
-
-      font-size: 10px;
-
-      letter-spacing: .14em;
-
-      text-transform: uppercase;
-    }
 
     /* =========================================================
        RESULTS
        ========================================================= */
 
     .results-section {
-      padding: 90px 0 100px;
+      padding:
+        90px 0 100px;
 
       background:
         radial-gradient(
@@ -1326,7 +1575,6 @@ background:
       margin-bottom: 42px;
 
       display: flex;
-
       align-items: flex-end;
 
       gap: 34px;
@@ -1397,7 +1645,6 @@ background:
       margin-bottom: 26px;
 
       display: flex;
-
       justify-content: space-between;
 
       gap: 20px;
@@ -1431,7 +1678,6 @@ background:
 
     .result-team {
       display: flex;
-
       align-items: center;
 
       gap: 13px;
@@ -1497,21 +1743,6 @@ background:
       font-size: 9px;
     }
 
-    .results-empty {
-      grid-column: 1 / -1;
-
-      padding: 45px;
-
-      text-align: center;
-
-      color: #7894a5;
-
-      font-size: 10px;
-
-      letter-spacing: .14em;
-
-      text-transform: uppercase;
-    }
 
     /* =========================================================
        FOOTER
@@ -1531,7 +1762,6 @@ background:
       margin: auto;
 
       display: flex;
-
       align-items: center;
       justify-content: space-between;
 
@@ -1540,7 +1770,6 @@ background:
 
     .footer-logo {
       display: flex;
-
       align-items: center;
 
       gap: 14px;
@@ -1561,7 +1790,7 @@ background:
       text-transform: uppercase;
     }
 
-    .footer-text {
+    .footer-address {
       color: #506b7b;
 
       font-size: 9px;
@@ -1570,6 +1799,7 @@ background:
 
       text-transform: uppercase;
     }
+
 
     /* =========================================================
        RESPONSIVE
@@ -1585,6 +1815,15 @@ background:
         font-size: 9px;
       }
 
+      .hero-inner {
+        grid-template-columns:
+          39% 61%;
+      }
+
+      .hero-text {
+        padding-left: 25px;
+      }
+
       .players-grid {
         grid-template-columns:
           repeat(3,minmax(0,1fr));
@@ -1596,21 +1835,11 @@ background:
       }
     }
 
+
     @media (max-width:900px) {
 
       .hero {
         min-height: 760px;
-
-        background:
-          linear-gradient(
-            180deg,
-            rgba(1,8,15,.84) 0%,
-            rgba(1,8,15,.38) 46%,
-            rgba(1,8,15,.80) 100%
-          ),
-          url("hero-bg.png");
-
-        background-size: cover;
 
         background-position:
           center center;
@@ -1618,18 +1847,18 @@ background:
 
       header {
         height: 82px;
+
+        width: 90%;
       }
 
-      .logo img {
+      .header-logo img {
         height: 60px;
       }
 
-      .desktop-nav {
-        display: none;
-      }
-
-      .top-actions .ticket,
-      .top-actions .lang {
+      .desktop-nav,
+      .lang,
+      .header-actions
+      .ticket-button {
         display: none;
       }
 
@@ -1637,135 +1866,80 @@ background:
         display: flex;
       }
 
-      .desktop-hero-space {
+      .hero-more,
+      .hero-spirit,
+      .hero-aktau {
         display: none;
       }
 
-      .mobile-hero-content {
-        position: relative;
-        z-index: 4;
-
-        width: min(600px,90%);
-
+      .hero-inner {
         min-height:
           calc(760px - 82px);
 
-        margin: auto;
+        grid-template-columns: 1fr;
+
+        gap: 20px;
 
         padding:
-          45px 0 55px;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: center;
-        justify-content: center;
+          35px 0 55px;
 
         text-align: center;
       }
 
-      .mobile-hero-logo {
-        width: min(245px,60vw);
+      .hero-logo-wrap {
+        width:
+          min(235px,54vw);
 
-        margin-bottom: 25px;
-
-        filter:
-          drop-shadow(
-            0 0 20px
-            rgba(80,205,255,.18)
-          );
+        margin: auto;
       }
 
-      .mobile-hero-small {
-        margin-bottom: 10px;
+      .hero-text {
+        padding-left: 0;
+      }
 
-        color: #64d6ff;
-
+      .hero-small {
         font-size: 8px;
-        font-weight: 700;
-
-        letter-spacing: .31em;
-
-        text-transform: uppercase;
       }
 
-      .mobile-hero-title {
-        color: #f3fbff;
+      .hero-title {
+        font-size:
+          clamp(62px,15vw,95px);
+      }
 
-        font-family:
-          'Oswald',
-          sans-serif;
+      .hero-subtitle {
+        margin-top: 14px;
 
         font-size:
-          clamp(65px,16vw,105px);
+          clamp(18px,4.7vw,28px);
 
-        font-weight: 700;
-
-        line-height: .85;
-
-        letter-spacing: -.035em;
-
-        text-transform: uppercase;
+        letter-spacing: .24em;
       }
 
-      .mobile-hero-subtitle {
-        margin-top: 17px;
-
-        color: #dff3fb;
-
-        font-size:
-          clamp(17px,4.5vw,27px);
-
-        font-weight: 500;
-
-        letter-spacing: .27em;
-
-        text-transform: uppercase;
-      }
-
-      .mobile-hero-line {
-        width: min(340px,80%);
-
-        height: 1px;
+      .hero-line {
+        width: min(360px,85%);
 
         margin:
-          25px auto 22px;
-
-        background:
-          linear-gradient(
-            90deg,
-            transparent,
-            #59d4ff,
-            transparent
-          );
+          23px auto 20px;
       }
 
-      .mobile-hero-slogan {
-        color: #e1f2f8;
-
+      .hero-slogan {
         font-size:
           clamp(12px,3vw,17px);
 
-        font-weight: 500;
-
-        line-height: 1.7;
-
-        letter-spacing: .17em;
-
-        text-transform: uppercase;
+        letter-spacing: .16em;
       }
 
-      .mobile-hero-location {
-        margin-top: 15px;
-
-        color: #67cfee;
+      .hero-location {
+        justify-content: center;
 
         font-size: 8px;
 
-        letter-spacing: .24em;
+        gap: 10px;
+      }
 
-        text-transform: uppercase;
+      .hero-location::before,
+      .hero-location::after {
+        width: 35px;
       }
 
       .next-match-body {
@@ -1790,63 +1964,45 @@ background:
       }
     }
 
+
     @media (max-width:560px) {
 
-      header {
-        width: 90%;
-      }
-
       .hero {
-        min-height: 760px;
+        min-height: 740px;
       }
 
-      .mobile-hero-content {
+      .hero-inner {
         min-height:
-          calc(760px - 82px);
+          calc(740px - 82px);
 
         padding:
-          25px 0 45px;
+          20px 0 45px;
       }
 
-      .mobile-hero-logo {
-        width: 205px;
-
-        margin-bottom: 22px;
+      .hero-logo-wrap {
+        width: 195px;
       }
 
-      .mobile-hero-title {
-        font-size: 67px;
+      .hero-title {
+        font-size: 65px;
       }
 
-      .mobile-hero-subtitle {
+      .hero-subtitle {
         font-size: 18px;
 
-        letter-spacing: .23em;
+        letter-spacing: .21em;
       }
 
-      .mobile-hero-slogan {
+      .hero-slogan {
         font-size: 12px;
       }
 
-      .players-grid,
-      .news-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .player-card {
-        min-height: 500px;
-      }
-
       .next-match-header {
-        height: auto;
-
-        min-height: 58px;
-
         padding:
           12px 17px;
       }
 
-      .next-match-header h3 {
+      .next-match-header h2 {
         font-size: 13px;
       }
 
@@ -1857,7 +2013,17 @@ background:
       }
 
       .next-match-column {
-        padding: 12px 8px;
+        padding:
+          12px 8px;
+      }
+
+      .players-grid,
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .player-card {
+        min-height: 500px;
       }
 
       .news-heading {
@@ -1877,7 +2043,8 @@ background:
       }
 
       .result-card {
-        padding: 22px 15px;
+        padding:
+          22px 15px;
       }
 
       .result-teams {
@@ -1900,12 +2067,12 @@ background:
       }
 
       .footer-inner {
-        padding: 25px 0;
+        padding:
+          25px 0;
 
         flex-direction: column;
 
         align-items: flex-start;
-        justify-content: center;
 
         gap: 12px;
       }
@@ -1924,6 +2091,7 @@ background:
 </head>
 
 <body>
+
 
 <!-- =========================================================
      MOBILE MENU
@@ -1976,8 +2144,8 @@ background:
 
     <a
       href="#"
-      class="mobile-ticket disabled"
       id="mobileTicketButton"
+      class="mobile-ticket disabled"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -2005,7 +2173,7 @@ background:
 
     <a
       href="index-v2.html"
-      class="logo"
+      class="header-logo"
     >
       <img
         src="logo.png"
@@ -2050,16 +2218,16 @@ background:
     </nav>
 
 
-    <div class="top-actions">
+    <div class="header-actions">
 
       <span class="lang">
         KZ⌄
       </span>
 
       <a
-        class="ticket disabled"
-        id="ticketButton"
         href="#"
+        id="ticketButton"
+        class="ticket-button disabled"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -2068,16 +2236,14 @@ background:
 
 
       <button
-        class="mobile-menu-button"
-        id="mobileMenuButton"
         type="button"
-        aria-label="Мәзірді ашу"
+        id="mobileMenuButton"
+        class="mobile-menu-button"
+        aria-label="Мәзір"
         aria-expanded="false"
       >
 
-        <span
-          class="mobile-menu-button-lines"
-        >
+        <span class="menu-lines">
           <span></span>
           <span></span>
           <span></span>
@@ -2090,51 +2256,64 @@ background:
   </header>
 
 
-  <!-- GOOGLE ҮШІН НАҚТЫ H1 -->
+  <div class="hero-more">
+    MORE<br>
+    THAN<br>
+    A GAME
+  </div>
 
-  <h1 class="sr-only">
-    CASPIY Futsal Club — Ақтау
-  </h1>
+  <div class="hero-spirit">
+    CASPIAN<br>
+    SPIRIT<br>
+    UNITES US
+  </div>
+
+  <div class="hero-aktau">
+    Aktau
+  </div>
 
 
-  <!-- DESKTOP -->
+  <div class="hero-inner">
 
-  <div
-    class="desktop-hero-space"
-    aria-hidden="true"
-  ></div>
+    <div class="hero-logo-column">
 
+      <div class="hero-logo-wrap">
 
-  <!-- MOBILE -->
+        <img
+          class="hero-main-logo"
+          src="logo.png"
+          alt="CASPIY Futsal Club"
+        >
 
-  <div class="mobile-hero-content">
+      </div>
 
-    <img
-      class="mobile-hero-logo"
-      src="logo.png"
-      alt="CASPIY Futsal Club"
-    >
-
-    <div class="mobile-hero-small">
-      АҚТАУ · ҚАЗАҚСТАН
     </div>
 
-    <div class="mobile-hero-title">
-      CASPIY
-    </div>
 
-    <div class="mobile-hero-subtitle">
-      FUTSAL CLUB
-    </div>
+    <div class="hero-text">
 
-    <div class="mobile-hero-line"></div>
+      <div class="hero-small">
+        АҚТАУ · ҚАЗАҚСТАН
+      </div>
 
-    <div class="mobile-hero-slogan">
-      БІР ӨҢІР · БІР КОМАНДА
-    </div>
+      <h1 class="hero-title">
+        CASPIY
+      </h1>
 
-    <div class="mobile-hero-location">
-      АҚТАУ · КАСПИЙ
+      <div class="hero-subtitle">
+        FUTSAL CLUB
+      </div>
+
+      <div class="hero-line"></div>
+
+      <div class="hero-slogan">
+        БІР ӨҢІР · БІР КОМАНДА
+      </div>
+
+      <div class="hero-location">
+        АҚТАУ · ҚАЗАҚСТАН
+      </div>
+
     </div>
 
   </div>
@@ -2154,9 +2333,9 @@ background:
 
       <div class="next-match-header">
 
-        <h3>
+        <h2>
           КЕЛЕСІ МАТЧ
-        </h3>
+        </h2>
 
         <a
           href="matches.html"
@@ -2183,15 +2362,15 @@ background:
           </div>
 
           <div
-            class="next-team-name"
             id="left-team-name"
+            class="next-team-name"
           >
             КАСПИЙ
           </div>
 
           <div
-            class="next-team-city"
             id="left-team-city"
+            class="next-team-city"
           >
             АҚТАУ
           </div>
@@ -2205,27 +2384,27 @@ background:
         <div class="next-match-column">
 
           <div
-            class="match-date"
             id="next-match-date"
+            class="match-date"
           >
             МАТЧ КҮНІ
           </div>
 
           <div
-            class="match-time"
             id="next-match-time"
+            class="match-time"
           >
             --:--
           </div>
 
           <div
-            class="match-competition"
             id="next-match-competition"
+            class="match-competition"
           ></div>
 
           <div
-            class="match-venue"
             id="next-match-venue"
+            class="match-venue"
           ></div>
 
         </div>
@@ -2247,15 +2426,15 @@ background:
           </div>
 
           <div
-            class="next-team-name"
             id="right-team-name"
+            class="next-team-name"
           >
             ҚАРСЫЛАС
           </div>
 
           <div
-            class="next-team-city"
             id="right-team-city"
+            class="next-team-city"
           ></div>
 
         </div>
@@ -2267,19 +2446,19 @@ background:
         <div class="next-match-column">
 
           <div
-            class="countdown-title"
             id="countdown-title"
+            class="countdown-title"
           >
             МАТЧҚА ДЕЙІН
           </div>
 
           <div class="countdown">
 
-            <div class="countdown-part">
+            <div>
 
               <div
-                class="countdown-number"
                 id="countdown-days"
+                class="countdown-number"
               >
                 00
               </div>
@@ -2291,11 +2470,11 @@ background:
             </div>
 
 
-            <div class="countdown-part">
+            <div>
 
               <div
-                class="countdown-number"
                 id="countdown-hours"
+                class="countdown-number"
               >
                 00
               </div>
@@ -2307,11 +2486,11 @@ background:
             </div>
 
 
-            <div class="countdown-part">
+            <div>
 
               <div
-                class="countdown-number"
                 id="countdown-minutes"
+                class="countdown-number"
               >
                 00
               </div>
@@ -2343,7 +2522,7 @@ background:
 
   <div class="players-container">
 
-    <div class="players-header">
+    <div class="section-header">
 
       <h2>
         ОЙЫНШЫЛАР
@@ -2351,7 +2530,7 @@ background:
 
       <a
         href="team.html"
-        class="players-all"
+        class="section-link"
       >
         ТОЛЫҚ ҚҰРАМ →
       </a>
@@ -2361,10 +2540,10 @@ background:
 
     <div
       class="players-grid"
-      id="players-list"
+      id="playersList"
     >
 
-      <div class="players-empty">
+      <div class="empty">
         ОЙЫНШЫЛАР ЖҮКТЕЛУДЕ...
       </div>
 
@@ -2387,7 +2566,7 @@ background:
 
       <div>
 
-        <span class="news-heading-small">
+        <span class="news-small">
           CASPIY MEDIA
         </span>
 
@@ -2397,9 +2576,10 @@ background:
 
       </div>
 
+
       <a
         href="news.html"
-        class="news-all"
+        class="section-link"
       >
         БАРЛЫҚ ЖАҢАЛЫҚТАР →
       </a>
@@ -2409,10 +2589,10 @@ background:
 
     <div
       class="news-grid"
-      id="news-list"
+      id="newsList"
     >
 
-      <div class="news-empty">
+      <div class="empty">
         ЖАҢАЛЫҚТАР ЖҮКТЕЛУДЕ...
       </div>
 
@@ -2452,10 +2632,10 @@ background:
 
     <div
       class="results-grid"
-      id="results-list"
+      id="resultsList"
     >
 
-      <div class="results-empty">
+      <div class="empty">
         НӘТИЖЕЛЕР ЖҮКТЕЛУДЕ...
       </div>
 
@@ -2488,7 +2668,7 @@ background:
     </div>
 
     <div
-      class="footer-text"
+      class="footer-address"
       id="footerAddress"
     >
       АҚТАУ · ҚАЗАҚСТАН
@@ -2499,13 +2679,11 @@ background:
 </footer>
 
 
-<!-- =========================================================
-     SUPABASE
-     ========================================================= -->
-
 <script type="module">
 
-  import { createClient }
+  import {
+    createClient
+  }
   from
   'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
@@ -2536,53 +2714,16 @@ background:
     );
 
 
-  function openMobileMenu() {
-
-    mobileMenu
-      .classList
-      .add(
-        'open'
-      );
-
-
-    mobileMenuButton
-      .classList
-      .add(
-        'active'
-      );
-
-
-    mobileMenuButton
-      .setAttribute(
-        'aria-expanded',
-        'true'
-      );
-
-
-    document
-      .body
-      .classList
-      .add(
-        'menu-open'
-      );
-
-  }
-
-
   function closeMobileMenu() {
 
     mobileMenu
       .classList
-      .remove(
-        'open'
-      );
+      .remove('open');
 
 
     mobileMenuButton
       .classList
-      .remove(
-        'active'
-      );
+      .remove('active');
 
 
     mobileMenuButton
@@ -2592,12 +2733,9 @@ background:
       );
 
 
-    document
-      .body
+    document.body
       .classList
-      .remove(
-        'menu-open'
-      );
+      .remove('menu-open');
 
   }
 
@@ -2607,30 +2745,42 @@ background:
       'click',
       () => {
 
-        if (
+        const open =
           mobileMenu
             .classList
-            .contains(
-              'open'
-            )
-        ) {
+            .toggle('open');
 
-          closeMobileMenu();
 
-        } else {
+        mobileMenuButton
+          .classList
+          .toggle(
+            'active',
+            open
+          );
 
-          openMobileMenu();
 
-        }
+        mobileMenuButton
+          .setAttribute(
+            'aria-expanded',
+            open
+              ? 'true'
+              : 'false'
+          );
+
+
+        document.body
+          .classList
+          .toggle(
+            'menu-open',
+            open
+          );
 
       }
     );
 
 
   mobileMenu
-    .querySelectorAll(
-      'a'
-    )
+    .querySelectorAll('a')
     .forEach(
       link => {
 
@@ -2650,26 +2800,7 @@ background:
       event => {
 
         if (
-          event.key ===
-          'Escape'
-        ) {
-
-          closeMobileMenu();
-
-        }
-
-      }
-    );
-
-
-  window
-    .addEventListener(
-      'resize',
-      () => {
-
-        if (
-          window.innerWidth >
-          900
+          event.key === 'Escape'
         ) {
 
           closeMobileMenu();
@@ -2686,9 +2817,7 @@ background:
 
   function escapeHtml(value) {
 
-    return String(
-      value ?? ''
-    )
+    return String(value ?? '')
       .replaceAll(
         '&',
         '&amp;'
@@ -2707,7 +2836,7 @@ background:
       )
       .replaceAll(
         "'",
-        "&#039;"
+        '&#039;'
       );
 
   }
@@ -2715,9 +2844,7 @@ background:
 
   function pad(value) {
 
-    return String(
-      value
-    )
+    return String(value)
       .padStart(
         2,
         '0'
@@ -2726,7 +2853,7 @@ background:
   }
 
 
-  function formatMatchDate(value) {
+  function formatDate(value) {
 
     if (!value) {
       return '';
@@ -2754,37 +2881,6 @@ background:
         new Date(value)
       )
       .toUpperCase();
-
-  }
-
-
-  function formatMatchTime(value) {
-
-    if (!value) {
-      return '--:--';
-    }
-
-
-    return new Intl
-      .DateTimeFormat(
-        'kk-KZ',
-        {
-          timeZone:
-            'Asia/Aqtau',
-
-          hour:
-            '2-digit',
-
-          minute:
-            '2-digit',
-
-          hour12:
-            false
-        }
-      )
-      .format(
-        new Date(value)
-      );
 
   }
 
@@ -2820,10 +2916,10 @@ background:
   }
 
 
-  function formatNewsDate(value) {
+  function formatTime(value) {
 
     if (!value) {
-      return '';
+      return '--:--';
     }
 
 
@@ -2834,30 +2930,29 @@ background:
           timeZone:
             'Asia/Aqtau',
 
-          day:
-            'numeric',
+          hour:
+            '2-digit',
 
-          month:
-            'long',
+          minute:
+            '2-digit',
 
-          year:
-            'numeric'
+          hour12:
+            false
         }
       )
       .format(
         new Date(value)
-      )
-      .toUpperCase();
+      );
 
   }
 
 
-  function findOpponentTeam(
+  function findTeam(
     teams,
     opponent
   ) {
 
-    const opponentText =
+    const target =
       String(
         opponent || ''
       )
@@ -2877,8 +2972,8 @@ background:
 
 
         if (
-          !name ||
-          !opponentText
+          !target ||
+          !name
         ) {
 
           return false;
@@ -2887,15 +2982,8 @@ background:
 
 
         return (
-          opponentText
-            .includes(
-              name
-            ) ||
-
-          name
-            .includes(
-              opponentText
-            )
+          target.includes(name) ||
+          name.includes(target)
         );
 
       }
@@ -2911,8 +2999,7 @@ background:
   async function loadSettings() {
 
     const {
-      data,
-      error
+      data
     } =
       await supabase
         .from(
@@ -2928,13 +3015,8 @@ background:
         .maybeSingle();
 
 
-    if (
-      error ||
-      !data
-    ) {
-
+    if (!data) {
       return;
-
     }
 
 
@@ -2945,7 +3027,7 @@ background:
         );
 
 
-    const mobileTicketButton =
+    const mobileTicket =
       document
         .getElementById(
           'mobileTicketButton'
@@ -2960,7 +3042,7 @@ background:
         data.ticket_url;
 
 
-      mobileTicketButton.href =
+      mobileTicket.href =
         data.ticket_url;
 
 
@@ -2971,7 +3053,7 @@ background:
         );
 
 
-      mobileTicketButton
+      mobileTicket
         .classList
         .remove(
           'disabled'
@@ -3018,7 +3100,7 @@ background:
     const list =
       document
         .getElementById(
-          'players-list'
+          'playersList'
         );
 
 
@@ -3040,20 +3122,16 @@ background:
         .order(
           'sort_order',
           {
-            ascending:
-              true
+            ascending:true
           }
         )
         .order(
           'number',
           {
-            ascending:
-              true
+            ascending:true
           }
         )
-        .limit(
-          5
-        );
+        .limit(5);
 
 
     if (
@@ -3062,16 +3140,12 @@ background:
     ) {
 
       list.innerHTML = `
-
-        <div class="players-empty">
+        <div class="empty">
           ОЙЫНШЫЛАР ӘЗІРГЕ ҚОСЫЛМАҒАН
         </div>
-
       `;
 
-
       return;
-
     }
 
 
@@ -3097,11 +3171,9 @@ background:
 
               <div class="player-overlay"></div>
 
-
               <div class="player-number">
                 ${player.number ?? ''}
               </div>
-
 
               <div class="player-info">
 
@@ -3133,7 +3205,7 @@ background:
     const list =
       document
         .getElementById(
-          'news-list'
+          'newsList'
         );
 
 
@@ -3155,20 +3227,16 @@ background:
         .order(
           'sort_order',
           {
-            ascending:
-              true
+            ascending:true
           }
         )
         .order(
           'published_at',
           {
-            ascending:
-              false
+            ascending:false
           }
         )
-        .limit(
-          4
-        );
+        .limit(4);
 
 
     if (
@@ -3177,16 +3245,12 @@ background:
     ) {
 
       list.innerHTML = `
-
-        <div class="news-empty">
+        <div class="empty">
           ЖАҢАЛЫҚТАР ӘЗІРГЕ ҚОСЫЛМАҒАН
         </div>
-
       `;
 
-
       return;
-
     }
 
 
@@ -3213,7 +3277,7 @@ background:
                     `
                     : `
                       <img
-                        class="news-no-image"
+                        class="news-placeholder"
                         src="logo.png"
                         alt=""
                       >
@@ -3221,7 +3285,7 @@ background:
                 }
 
                 <div class="news-date">
-                  ${formatNewsDate(item.published_at)}
+                  ${formatDate(item.published_at)}
                 </div>
 
               </div>
@@ -3233,7 +3297,6 @@ background:
                   ${escapeHtml(item.title)}
                 </div>
 
-
                 ${
                   item.description
                     ? `
@@ -3244,10 +3307,9 @@ background:
                     : ''
                 }
 
-
                 <div class="news-bottom">
 
-                  <span class="news-read-more">
+                  <span class="read-more">
                     ТОЛЫҒЫРАҚ
                   </span>
 
@@ -3269,11 +3331,74 @@ background:
 
 
   /* =========================================================
-     COUNTDOWN
+     NEXT MATCH
      ========================================================= */
 
+  async function getNextMatch() {
+
+    const featured =
+      await supabase
+        .from(
+          'matches'
+        )
+        .select('*')
+        .eq(
+          'status',
+          'upcoming'
+        )
+        .eq(
+          'is_featured',
+          true
+        )
+        .order(
+          'match_date',
+          {
+            ascending:true
+          }
+        )
+        .limit(1)
+        .maybeSingle();
+
+
+    if (
+      featured.data
+    ) {
+
+      return featured.data;
+
+    }
+
+
+    const fallback =
+      await supabase
+        .from(
+          'matches'
+        )
+        .select('*')
+        .eq(
+          'status',
+          'upcoming'
+        )
+        .order(
+          'match_date',
+          {
+            ascending:true
+          }
+        )
+        .limit(1)
+        .maybeSingle();
+
+
+    return (
+      fallback.data ||
+      null
+    );
+
+  }
+
+
   function startCountdown(
-    matchDate
+    value
   ) {
 
     if (
@@ -3289,15 +3414,14 @@ background:
 
     function update() {
 
-      let difference =
-        new Date(
-          matchDate
-        ).getTime() -
+      let diff =
+        new Date(value)
+          .getTime() -
         Date.now();
 
 
       if (
-        difference <= 0
+        diff <= 0
       ) {
 
         document
@@ -3332,60 +3456,44 @@ background:
             'МАТЧ БАСТАЛДЫ';
 
 
-        clearInterval(
-          countdownTimer
-        );
-
-
         return;
 
       }
 
 
       const day =
-        1000 *
-        60 *
-        60 *
-        24;
+        1000 * 60 * 60 * 24;
 
 
       const hour =
-        1000 *
-        60 *
-        60;
+        1000 * 60 * 60;
 
 
       const minute =
-        1000 *
-        60;
+        1000 * 60;
 
 
       const days =
         Math.floor(
-          difference /
-          day
+          diff / day
         );
 
 
-      difference %=
-        day;
+      diff %= day;
 
 
       const hours =
         Math.floor(
-          difference /
-          hour
+          diff / hour
         );
 
 
-      difference %=
-        hour;
+      diff %= hour;
 
 
       const minutes =
         Math.floor(
-          difference /
-          minute
+          diff / minute
         );
 
 
@@ -3427,88 +3535,11 @@ background:
   }
 
 
-  /* =========================================================
-     NEXT MATCH
-     ========================================================= */
-
-  async function getNextMatch() {
-
-    const featured =
-      await supabase
-        .from(
-          'matches'
-        )
-        .select(
-          '*'
-        )
-        .eq(
-          'status',
-          'upcoming'
-        )
-        .eq(
-          'is_featured',
-          true
-        )
-        .order(
-          'match_date',
-          {
-            ascending:
-              true
-          }
-        )
-        .limit(
-          1
-        )
-        .maybeSingle();
-
-
-    if (
-      featured.data
-    ) {
-
-      return featured.data;
-
-    }
-
-
-    const fallback =
-      await supabase
-        .from(
-          'matches'
-        )
-        .select(
-          '*'
-        )
-        .eq(
-          'status',
-          'upcoming'
-        )
-        .order(
-          'match_date',
-          {
-            ascending:
-              true
-          }
-        )
-        .limit(
-          1
-        )
-        .maybeSingle();
-
-
-    return (
-      fallback.data ||
-      null
-    );
-
-  }
-
-
   async function loadNextMatch() {
 
     const [
       match,
-      teamsResponse
+      teamsResult
     ] =
       await Promise.all([
 
@@ -3529,9 +3560,7 @@ background:
       ]);
 
 
-    if (
-      !match
-    ) {
+    if (!match) {
 
       document
         .getElementById(
@@ -3549,26 +3578,18 @@ background:
           '--:--';
 
 
-      document
-        .getElementById(
-          'countdown-title'
-        )
-        .textContent =
-          'КЕЛЕСІ МАТЧ';
-
-
       return;
 
     }
 
 
     const teams =
-      teamsResponse.data ||
+      teamsResult.data ||
       [];
 
 
     const opponentTeam =
-      findOpponentTeam(
+      findTeam(
         teams,
         match.opponent
       );
@@ -3618,18 +3639,18 @@ background:
       team
     ) {
 
-      const logoElement =
+      const image =
         document
           .getElementById(
             `${side}-team-logo`
           );
 
 
-      logoElement.src =
+      image.src =
         team.logo;
 
 
-      logoElement.alt =
+      image.alt =
         team.name;
 
 
@@ -3652,8 +3673,7 @@ background:
 
 
     if (
-      match.is_home !==
-      false
+      match.is_home !== false
     ) {
 
       renderTeam(
@@ -3688,7 +3708,7 @@ background:
         'next-match-date'
       )
       .textContent =
-        formatMatchDate(
+        formatDate(
           match.match_date
         );
 
@@ -3698,7 +3718,7 @@ background:
         'next-match-time'
       )
       .textContent =
-        formatMatchTime(
+        formatTime(
           match.match_date
         );
 
@@ -3736,7 +3756,7 @@ background:
     name,
     city,
     logo,
-    right = false
+    right
   ) {
 
     return `
@@ -3757,7 +3777,6 @@ background:
           }
 
         </div>
-
 
         <div>
 
@@ -3783,13 +3802,13 @@ background:
     const list =
       document
         .getElementById(
-          'results-list'
+          'resultsList'
         );
 
 
     const [
-      matchesResponse,
-      teamsResponse
+      matchesResult,
+      teamsResult
     ] =
       await Promise.all([
 
@@ -3797,9 +3816,7 @@ background:
           .from(
             'matches'
           )
-          .select(
-            '*'
-          )
+          .select('*')
           .eq(
             'status',
             'finished'
@@ -3807,13 +3824,10 @@ background:
           .order(
             'match_date',
             {
-              ascending:
-                false
+              ascending:false
             }
           )
-          .limit(
-            4
-          ),
+          .limit(4),
 
         supabase
           .from(
@@ -3830,31 +3844,13 @@ background:
       ]);
 
 
-    if (
-      matchesResponse.error
-    ) {
-
-      list.innerHTML = `
-
-        <div class="results-empty">
-          НӘТИЖЕЛЕРДІ ЖҮКТЕУ КЕЗІНДЕ ҚАТЕ ОРЫН АЛДЫ
-        </div>
-
-      `;
-
-
-      return;
-
-    }
-
-
     const matches =
-      matchesResponse.data ||
+      matchesResult.data ||
       [];
 
 
     const teams =
-      teamsResponse.data ||
+      teamsResult.data ||
       [];
 
 
@@ -3863,16 +3859,12 @@ background:
     ) {
 
       list.innerHTML = `
-
-        <div class="results-empty">
+        <div class="empty">
           АЯҚТАЛҒАН МАТЧТАР ӘЗІРГЕ ЖОҚ
         </div>
-
       `;
 
-
       return;
-
     }
 
 
@@ -3881,28 +3873,32 @@ background:
         .map(
           match => {
 
-            const opponentTeam =
-              findOpponentTeam(
+            const team =
+              findTeam(
                 teams,
                 match.opponent
               );
 
 
             const opponentName =
-              opponentTeam?.name ||
+              team?.name ||
               match.opponent ||
               'ҚАРСЫЛАС';
 
 
             const opponentCity =
-              opponentTeam?.city ||
+              team?.city ||
               '';
 
 
             const opponentLogo =
-              opponentTeam?.logo_url ||
+              team?.logo_url ||
               match.opponent_logo_url ||
               '';
+
+
+            const home =
+              match.is_home !== false;
 
 
             const caspiyScore =
@@ -3915,13 +3911,8 @@ background:
               '-';
 
 
-            const homeIsCaspiy =
-              match.is_home !==
-              false;
-
-
-            const leftTeam =
-              homeIsCaspiy
+            const left =
+              home
                 ? resultTeamHtml(
                     'КАСПИЙ',
                     'АҚТАУ',
@@ -3936,8 +3927,8 @@ background:
                   );
 
 
-            const rightTeam =
-              homeIsCaspiy
+            const right =
+              home
                 ? resultTeamHtml(
                     opponentName,
                     opponentCity,
@@ -3953,7 +3944,7 @@ background:
 
 
             const score =
-              homeIsCaspiy
+              home
                 ? `${caspiyScore}:${opponentScore}`
                 : `${opponentScore}:${caspiyScore}`;
 
@@ -3977,15 +3968,13 @@ background:
 
                 <div class="result-teams">
 
-                  ${leftTeam}
-
+                  ${left}
 
                   <div class="result-score">
                     ${score}
                   </div>
 
-
-                  ${rightTeam}
+                  ${right}
 
                 </div>
 
@@ -4006,21 +3995,15 @@ background:
 
 
   /* =========================================================
-     START
+     LOAD
      ========================================================= */
 
   await Promise.all([
-
     loadSettings(),
-
     loadNextMatch(),
-
     loadPlayers(),
-
     loadNews(),
-
     loadResults()
-
   ]);
 
 </script>
