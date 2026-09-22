@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adilbeksaryyev-hub.github.io/caspiy-futsal/sitemap.xml
