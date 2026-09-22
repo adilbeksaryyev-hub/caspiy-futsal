@@ -1,0 +1,2190 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Жеке кабинет — CASPIY Futsal Club</title>
+
+  <meta
+    name="robots"
+    content="noindex, nofollow"
+  >
+
+  <meta
+    name="theme-color"
+    content="#020a10"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="logo.png"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
+      color: #edf8fc;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(1,8,15,.78),
+          rgba(1,8,15,.48),
+          rgba(1,8,15,.76)
+        ),
+        linear-gradient(
+          180deg,
+          rgba(1,8,15,.24),
+          rgba(1,8,15,.82)
+        ),
+        url("hero-bg.png");
+
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font-family: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+
+    /* HEADER */
+
+    header {
+      position: relative;
+      z-index: 30;
+
+      width: min(1440px,92%);
+      height: 105px;
+
+      margin: auto;
+
+      display: grid;
+      grid-template-columns:
+        1fr auto 1fr;
+
+      align-items: center;
+
+      border-bottom:
+        1px solid rgba(115,209,255,.17);
+    }
+
+    .desktop-nav {
+      grid-column: 2;
+
+      display: flex;
+      align-items: center;
+
+      gap: 32px;
+    }
+
+    .desktop-nav a {
+      position: relative;
+
+      padding: 14px 0;
+
+      color: #cfdee6;
+
+      font-size: 12px;
+      font-weight: 600;
+
+      letter-spacing: .11em;
+
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .desktop-nav a:hover {
+      color: #68d9ff;
+    }
+
+    .account-top {
+      grid-column: 3;
+      justify-self: end;
+
+      color: #62d6ff;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* MAIN */
+
+    .page {
+      width: min(1260px,92%);
+
+      min-height:
+        calc(100vh - 105px);
+
+      margin: auto;
+
+      display: grid;
+      grid-template-columns:
+        .95fr 1.05fr;
+
+      gap: 90px;
+
+      align-items: center;
+
+      padding:
+        65px 0 90px;
+    }
+
+    .intro {
+      max-width: 570px;
+    }
+
+    .intro-logo {
+      width: 145px;
+
+      margin-bottom: 28px;
+
+      filter:
+        drop-shadow(
+          0 0 20px rgba(85,207,255,.20)
+        );
+    }
+
+    .intro-small {
+      margin-bottom: 10px;
+
+      color: #58d2fb;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: .30em;
+
+      text-transform: uppercase;
+    }
+
+    .intro h1 {
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size:
+        clamp(55px,6vw,93px);
+
+      font-weight: 700;
+
+      line-height: .95;
+
+      text-transform: uppercase;
+    }
+
+    .intro p {
+      max-width: 520px;
+
+      margin-top: 25px;
+
+      color: #94aebb;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+    }
+
+    .intro-line {
+      width: 190px;
+      height: 1px;
+
+      margin-top: 32px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #53d6ff,
+          transparent
+        );
+    }
+
+
+    /* CARD */
+
+    .account-card {
+      width: 100%;
+      max-width: 560px;
+
+      justify-self: end;
+
+      padding: 38px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(5,27,42,.94),
+          rgba(2,13,22,.97)
+        );
+
+      border:
+        1px solid rgba(84,207,251,.25);
+
+      border-radius: 10px;
+
+      box-shadow:
+        0 30px 90px rgba(0,0,0,.34);
+    }
+
+    .card-top {
+      margin-bottom: 30px;
+
+      padding-bottom: 23px;
+
+      border-bottom:
+        1px solid rgba(90,207,249,.14);
+    }
+
+    .card-small {
+      margin-bottom: 7px;
+
+      color: #56d2fd;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .28em;
+
+      text-transform: uppercase;
+    }
+
+    .card-top h2 {
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size: 37px;
+      font-weight: 600;
+
+      text-transform: uppercase;
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      margin-bottom: 28px;
+
+      border-bottom:
+        1px solid rgba(92,205,246,.17);
+    }
+
+    .tab {
+      padding: 15px 10px;
+
+      color: #708f9f;
+
+      background: transparent;
+
+      border: 0;
+      border-bottom:
+        2px solid transparent;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: .10em;
+
+      text-transform: uppercase;
+    }
+
+    .tab.active {
+      color: #6edcff;
+
+      border-bottom-color:
+        #55d5ff;
+    }
+
+    .form {
+      display: none;
+    }
+
+    .form.active {
+      display: block;
+    }
+
+    .field {
+      margin-bottom: 19px;
+    }
+
+    .field label {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: #89a7b6;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+    }
+
+    .field input {
+      width: 100%;
+      height: 50px;
+
+      padding: 0 15px;
+
+      color: #effaff;
+
+      background:
+        rgba(5,21,32,.84);
+
+      border:
+        1px solid rgba(89,202,244,.21);
+
+      border-radius: 5px;
+
+      outline: none;
+
+      font-size: 14px;
+
+      transition: .2s;
+    }
+
+    .field input:focus {
+      border-color:
+        rgba(87,213,255,.72);
+
+      box-shadow:
+        0 0 0 3px rgba(76,197,242,.07);
+    }
+
+    .primary-button {
+      width: 100%;
+      min-height: 51px;
+
+      padding: 13px 20px;
+
+      color: #031019;
+
+      background:
+        linear-gradient(
+          90deg,
+          #60d9ff,
+          #a8ebff
+        );
+
+      border: 0;
+
+      border-radius: 5px;
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+    }
+
+    .primary-button:disabled {
+      opacity: .55;
+      cursor: wait;
+    }
+
+    .secondary-button {
+      width: 100%;
+      min-height: 48px;
+
+      margin-top: 12px;
+
+      color: #99dff7;
+
+      background: transparent;
+
+      border:
+        1px solid rgba(87,206,250,.28);
+
+      border-radius: 5px;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: .12em;
+
+      text-transform: uppercase;
+    }
+
+    .text-button {
+      display: block;
+
+      margin:
+        19px auto 0;
+
+      color: #69cdec;
+
+      background: transparent;
+
+      border: 0;
+
+      font-size: 10px;
+
+      letter-spacing: .08em;
+    }
+
+    .status {
+      display: none;
+
+      margin-bottom: 22px;
+
+      padding: 12px 14px;
+
+      color: #b6d5e2;
+
+      background:
+        rgba(41,130,169,.10);
+
+      border:
+        1px solid rgba(73,186,229,.20);
+
+      border-radius: 5px;
+
+      font-size: 12px;
+
+      line-height: 1.6;
+    }
+
+    .status.show {
+      display: block;
+    }
+
+    .status.success {
+      color: #aeeac9;
+
+      border-color:
+        rgba(75,210,139,.28);
+
+      background:
+        rgba(46,160,102,.10);
+    }
+
+    .status.error {
+      color: #ffb5b5;
+
+      border-color:
+        rgba(255,92,92,.28);
+
+      background:
+        rgba(183,49,49,.11);
+    }
+
+
+    /* PROFILE */
+
+    .profile {
+      display: none;
+    }
+
+    .profile.active {
+      display: block;
+    }
+
+    .profile-user {
+      padding:
+        23px 0 28px;
+
+      text-align: center;
+
+      border-bottom:
+        1px solid rgba(90,207,249,.13);
+    }
+
+    .profile-avatar {
+      width: 95px;
+      height: 95px;
+
+      margin:
+        0 auto 17px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #6fdcff;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(83,207,255,.16),
+          rgba(5,20,32,.9)
+        );
+
+      border:
+        1px solid rgba(82,208,252,.35);
+
+      border-radius: 50%;
+
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size: 35px;
+      font-weight: 600;
+    }
+
+    .profile-name {
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size: 28px;
+
+      text-transform: uppercase;
+    }
+
+    .profile-email {
+      margin-top: 6px;
+
+      color: #708f9f;
+
+      font-size: 12px;
+    }
+
+    .profile-info {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 12px;
+
+      margin:
+        25px 0;
+    }
+
+    .info-box {
+      padding: 17px;
+
+      background:
+        rgba(4,19,30,.62);
+
+      border:
+        1px solid rgba(79,193,235,.13);
+
+      border-radius: 5px;
+    }
+
+    .info-label {
+      margin-bottom: 7px;
+
+      color: #5d7d8e;
+
+      font-size: 8px;
+      font-weight: 700;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    .info-value {
+      color: #e8f7fc;
+
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .logout {
+      width: 100%;
+      min-height: 48px;
+
+      margin-top: 15px;
+
+      color: #ffb6b6;
+
+      background:
+        rgba(128,37,37,.10);
+
+      border:
+        1px solid rgba(255,106,106,.22);
+
+      border-radius: 5px;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: .12em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* MOBILE MENU */
+
+    .mobile-menu-button {
+      display: none;
+
+      width: 46px;
+      height: 46px;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 0;
+
+      background:
+        rgba(4,22,34,.90);
+
+      border:
+        1px solid rgba(77,205,255,.32);
+
+      border-radius: 5px;
+    }
+
+    .menu-lines {
+      position: relative;
+
+      width: 21px;
+      height: 15px;
+    }
+
+    .menu-lines span {
+      position: absolute;
+
+      left: 0;
+
+      width: 21px;
+      height: 2px;
+
+      background: #cbeffc;
+
+      transition: .25s;
+    }
+
+    .menu-lines span:nth-child(1) {
+      top: 0;
+    }
+
+    .menu-lines span:nth-child(2) {
+      top: 6px;
+    }
+
+    .menu-lines span:nth-child(3) {
+      top: 12px;
+    }
+
+    .mobile-menu-button.active
+    .menu-lines span:nth-child(1) {
+      top: 6px;
+      transform: rotate(45deg);
+    }
+
+    .mobile-menu-button.active
+    .menu-lines span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-button.active
+    .menu-lines span:nth-child(3) {
+      top: 6px;
+      transform: rotate(-45deg);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      z-index: 25;
+
+      inset: 0;
+
+      visibility: hidden;
+      opacity: 0;
+
+      pointer-events: none;
+
+      transform:
+        translateX(100%);
+
+      transition: .3s;
+
+      background:
+        rgba(1,9,15,.99);
+    }
+
+    .mobile-menu.open {
+      visibility: visible;
+      opacity: 1;
+
+      pointer-events: auto;
+
+      transform:
+        translateX(0);
+    }
+
+    .mobile-menu-inner {
+      width: 88%;
+      height: 100%;
+
+      margin: auto;
+
+      padding:
+        105px 0 40px;
+    }
+
+    .mobile-nav {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-nav a {
+      min-height: 57px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      color: #d6e8f0;
+
+      border-bottom:
+        1px solid rgba(91,204,244,.11);
+
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size: 26px;
+
+      text-transform: uppercase;
+    }
+
+    .mobile-nav a::after {
+      content: "→";
+
+      color: #54d5ff;
+
+      font-size: 17px;
+    }
+
+
+    @media (max-width:1000px) {
+      .page {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+      }
+
+      .intro {
+        max-width: 650px;
+
+        text-align: center;
+
+        margin: auto;
+      }
+
+      .intro-logo {
+        margin:
+          0 auto 25px;
+      }
+
+      .intro-line {
+        margin:
+          30px auto 0;
+      }
+
+      .account-card {
+        justify-self: center;
+      }
+    }
+
+
+    @media (max-width:900px) {
+      header {
+        width: 90%;
+        height: 82px;
+
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .desktop-nav,
+      .account-top {
+        display: none;
+      }
+
+      .mobile-menu-button {
+        display: flex;
+      }
+
+      .page {
+        min-height:
+          calc(100vh - 82px);
+
+        padding:
+          45px 0 70px;
+      }
+    }
+
+
+    @media (max-width:560px) {
+      .page {
+        width: 90%;
+
+        padding-top: 28px;
+      }
+
+      .intro-logo {
+        width: 105px;
+      }
+
+      .intro h1 {
+        font-size: 48px;
+      }
+
+      .intro p {
+        font-size: 12px;
+      }
+
+      .account-card {
+        padding:
+          27px 20px;
+      }
+
+      .card-top h2 {
+        font-size: 31px;
+      }
+
+      .profile-info {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+<div
+  class="mobile-menu"
+  id="mobileMenu"
+>
+  <div class="mobile-menu-inner">
+
+    <nav class="mobile-nav">
+
+      <a href="index.html">
+        БАСТЫ БЕТ
+      </a>
+
+      <a href="team.html">
+        КОМАНДА
+      </a>
+
+      <a href="matches.html">
+        МАТЧТАР
+      </a>
+
+      <a href="news.html">
+        ЖАҢАЛЫҚТАР
+      </a>
+
+      <a href="club.html">
+        КЛУБ
+      </a>
+
+      <a href="fans.html">
+        ЖАНКҮЙЕРЛЕР
+      </a>
+
+      <a href="contact.html">
+        БАЙЛАНЫС
+      </a>
+
+      <a href="account.html">
+        ЖЕКЕ КАБИНЕТ
+      </a>
+
+    </nav>
+
+  </div>
+</div>
+
+
+<header>
+
+  <nav class="desktop-nav">
+
+    <a href="index.html">
+      БАСТЫ БЕТ
+    </a>
+
+    <a href="team.html">
+      КОМАНДА
+    </a>
+
+    <a href="matches.html">
+      МАТЧТАР
+    </a>
+
+    <a href="news.html">
+      ЖАҢАЛЫҚТАР
+    </a>
+
+    <a href="club.html">
+      КЛУБ
+    </a>
+
+    <a href="fans.html">
+      ЖАНКҮЙЕРЛЕР
+    </a>
+
+    <a href="contact.html">
+      БАЙЛАНЫС
+    </a>
+
+  </nav>
+
+
+  <a
+    href="account.html"
+    class="account-top"
+  >
+    ЖЕКЕ КАБИНЕТ
+  </a>
+
+
+  <button
+    type="button"
+    class="mobile-menu-button"
+    id="mobileMenuButton"
+    aria-label="Мәзір"
+  >
+    <span class="menu-lines">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </button>
+
+</header>
+
+
+<main class="page">
+
+  <section class="intro">
+
+    <img
+      class="intro-logo"
+      src="logo.png"
+      alt="CASPIY Futsal Club"
+    >
+
+    <div class="intro-small">
+      CASPIY COMMUNITY
+    </div>
+
+    <h1>
+      ЖЕКЕ<br>
+      КАБИНЕТ
+    </h1>
+
+    <p>
+      CASPIY Futsal Club жанкүйерлеріне арналған жеке кеңістік.
+      Аккаунтыңызға кіріңіз немесе жаңа аккаунт ашыңыз.
+    </p>
+
+    <div class="intro-line"></div>
+
+  </section>
+
+
+  <section class="account-card">
+
+    <div class="card-top">
+
+      <div class="card-small">
+        CASPIY ID
+      </div>
+
+      <h2 id="cardTitle">
+        КІРУ
+      </h2>
+
+    </div>
+
+
+    <div
+      class="status"
+      id="status"
+    ></div>
+
+
+    <div
+      id="authArea"
+    >
+
+      <div class="tabs">
+
+        <button
+          class="tab active"
+          id="loginTab"
+          type="button"
+        >
+          КІРУ
+        </button>
+
+        <button
+          class="tab"
+          id="registerTab"
+          type="button"
+        >
+          ТІРКЕЛУ
+        </button>
+
+      </div>
+
+
+      <!-- LOGIN -->
+
+      <form
+        class="form active"
+        id="loginForm"
+      >
+
+        <div class="field">
+
+          <label for="loginEmail">
+            E-MAIL
+          </label>
+
+          <input
+            id="loginEmail"
+            type="email"
+            autocomplete="email"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="loginPassword">
+            ҚҰПИЯСӨЗ
+          </label>
+
+          <input
+            id="loginPassword"
+            type="password"
+            autocomplete="current-password"
+            minlength="6"
+            required
+          >
+
+        </div>
+
+
+        <button
+          class="primary-button"
+          id="loginButton"
+          type="submit"
+        >
+          КІРУ →
+        </button>
+
+
+        <button
+          class="text-button"
+          id="forgotButton"
+          type="button"
+        >
+          Құпиясөзді ұмыттыңыз ба?
+        </button>
+
+      </form>
+
+
+      <!-- REGISTER -->
+
+      <form
+        class="form"
+        id="registerForm"
+      >
+
+        <div class="field">
+
+          <label for="registerName">
+            АТЫ-ЖӨНІ
+          </label>
+
+          <input
+            id="registerName"
+            type="text"
+            autocomplete="name"
+            minlength="2"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="registerEmail">
+            E-MAIL
+          </label>
+
+          <input
+            id="registerEmail"
+            type="email"
+            autocomplete="email"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="registerPassword">
+            ҚҰПИЯСӨЗ
+          </label>
+
+          <input
+            id="registerPassword"
+            type="password"
+            autocomplete="new-password"
+            minlength="6"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="registerPassword2">
+            ҚҰПИЯСӨЗДІ ҚАЙТАЛАҢЫЗ
+          </label>
+
+          <input
+            id="registerPassword2"
+            type="password"
+            autocomplete="new-password"
+            minlength="6"
+            required
+          >
+
+        </div>
+
+
+        <button
+          class="primary-button"
+          id="registerButton"
+          type="submit"
+        >
+          ТІРКЕЛУ →
+        </button>
+
+      </form>
+
+    </div>
+
+
+    <!-- PROFILE -->
+
+    <div
+      class="profile"
+      id="profileArea"
+    >
+
+      <div class="profile-user">
+
+        <div
+          class="profile-avatar"
+          id="profileAvatar"
+        >
+          C
+        </div>
+
+        <div
+          class="profile-name"
+          id="profileName"
+        >
+          CASPIY USER
+        </div>
+
+        <div
+          class="profile-email"
+          id="profileEmail"
+        ></div>
+
+      </div>
+
+
+      <div class="profile-info">
+
+        <div class="info-box">
+
+          <div class="info-label">
+            МӘРТЕБЕ
+          </div>
+
+          <div class="info-value">
+            ЖАНКҮЙЕР
+          </div>
+
+        </div>
+
+
+        <div class="info-box">
+
+          <div class="info-label">
+            ТІРКЕЛГЕН КҮН
+          </div>
+
+          <div
+            class="info-value"
+            id="createdDate"
+          >
+            —
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <form id="profileForm">
+
+        <div class="field">
+
+          <label for="profileNameInput">
+            АТЫ-ЖӨНІ
+          </label>
+
+          <input
+            id="profileNameInput"
+            type="text"
+            minlength="2"
+          >
+
+        </div>
+
+        <button
+          class="secondary-button"
+          type="submit"
+        >
+          ПРОФИЛЬДІ САҚТАУ
+        </button>
+
+      </form>
+
+
+      <button
+        class="logout"
+        id="logoutButton"
+        type="button"
+      >
+        ШЫҒУ
+      </button>
+
+    </div>
+
+
+    <!-- PASSWORD RECOVERY -->
+
+    <form
+      class="form"
+      id="recoveryForm"
+    >
+
+      <div class="field">
+
+        <label for="newPassword">
+          ЖАҢА ҚҰПИЯСӨЗ
+        </label>
+
+        <input
+          id="newPassword"
+          type="password"
+          minlength="6"
+          autocomplete="new-password"
+          required
+        >
+
+      </div>
+
+      <button
+        class="primary-button"
+        type="submit"
+      >
+        ҚҰПИЯСӨЗДІ ЖАҢАРТУ
+      </button>
+
+    </form>
+
+  </section>
+
+</main>
+
+
+<script type="module">
+
+  import {
+    createClient
+  }
+  from
+  'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+
+  const supabase =
+    createClient(
+      'https://socqbqyhkyvxnsukgcqm.supabase.co',
+      'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK'
+    );
+
+
+  const ACCOUNT_URL =
+    'https://adilbeksaryyev-hub.github.io/caspiy-futsal/account.html';
+
+
+  const statusBox =
+    document.getElementById('status');
+
+  const authArea =
+    document.getElementById('authArea');
+
+  const profileArea =
+    document.getElementById('profileArea');
+
+  const recoveryForm =
+    document.getElementById('recoveryForm');
+
+  const loginForm =
+    document.getElementById('loginForm');
+
+  const registerForm =
+    document.getElementById('registerForm');
+
+  const loginTab =
+    document.getElementById('loginTab');
+
+  const registerTab =
+    document.getElementById('registerTab');
+
+  const cardTitle =
+    document.getElementById('cardTitle');
+
+
+  function showStatus(
+    message,
+    type = ''
+  ) {
+
+    statusBox.textContent =
+      message;
+
+    statusBox.className =
+      'status show';
+
+    if (type) {
+      statusBox.classList.add(type);
+    }
+
+  }
+
+
+  function hideStatus() {
+
+    statusBox.className =
+      'status';
+
+    statusBox.textContent =
+      '';
+
+  }
+
+
+  function showLogin() {
+
+    hideStatus();
+
+    loginTab.classList.add(
+      'active'
+    );
+
+    registerTab.classList.remove(
+      'active'
+    );
+
+    loginForm.classList.add(
+      'active'
+    );
+
+    registerForm.classList.remove(
+      'active'
+    );
+
+    recoveryForm.classList.remove(
+      'active'
+    );
+
+    cardTitle.textContent =
+      'КІРУ';
+
+  }
+
+
+  function showRegister() {
+
+    hideStatus();
+
+    registerTab.classList.add(
+      'active'
+    );
+
+    loginTab.classList.remove(
+      'active'
+    );
+
+    registerForm.classList.add(
+      'active'
+    );
+
+    loginForm.classList.remove(
+      'active'
+    );
+
+    recoveryForm.classList.remove(
+      'active'
+    );
+
+    cardTitle.textContent =
+      'ТІРКЕЛУ';
+
+  }
+
+
+  loginTab.addEventListener(
+    'click',
+    showLogin
+  );
+
+
+  registerTab.addEventListener(
+    'click',
+    showRegister
+  );
+
+
+  /* LOGIN */
+
+  loginForm.addEventListener(
+    'submit',
+    async event => {
+
+      event.preventDefault();
+
+      hideStatus();
+
+
+      const button =
+        document.getElementById(
+          'loginButton'
+        );
+
+
+      button.disabled = true;
+
+
+      const email =
+        document
+          .getElementById(
+            'loginEmail'
+          )
+          .value
+          .trim();
+
+
+      const password =
+        document
+          .getElementById(
+            'loginPassword'
+          )
+          .value;
+
+
+      const {
+        error
+      } =
+        await supabase
+          .auth
+          .signInWithPassword({
+            email,
+            password
+          });
+
+
+      button.disabled = false;
+
+
+      if (error) {
+
+        showStatus(
+          'E-mail немесе құпиясөз дұрыс емес.',
+          'error'
+        );
+
+        return;
+
+      }
+
+
+      showStatus(
+        'Кіру сәтті орындалды.',
+        'success'
+      );
+
+    }
+  );
+
+
+  /* REGISTER */
+
+  registerForm.addEventListener(
+    'submit',
+    async event => {
+
+      event.preventDefault();
+
+      hideStatus();
+
+
+      const name =
+        document
+          .getElementById(
+            'registerName'
+          )
+          .value
+          .trim();
+
+
+      const email =
+        document
+          .getElementById(
+            'registerEmail'
+          )
+          .value
+          .trim();
+
+
+      const password =
+        document
+          .getElementById(
+            'registerPassword'
+          )
+          .value;
+
+
+      const password2 =
+        document
+          .getElementById(
+            'registerPassword2'
+          )
+          .value;
+
+
+      if (
+        password !== password2
+      ) {
+
+        showStatus(
+          'Құпиясөздер сәйкес келмейді.',
+          'error'
+        );
+
+        return;
+
+      }
+
+
+      const button =
+        document.getElementById(
+          'registerButton'
+        );
+
+
+      button.disabled = true;
+
+
+      const {
+        data,
+        error
+      } =
+        await supabase
+          .auth
+          .signUp({
+
+            email,
+
+            password,
+
+            options: {
+
+              data: {
+                full_name:
+                  name
+              },
+
+              emailRedirectTo:
+                ACCOUNT_URL
+
+            }
+
+          });
+
+
+      button.disabled = false;
+
+
+      if (error) {
+
+        showStatus(
+          error.message,
+          'error'
+        );
+
+        return;
+
+      }
+
+
+      if (
+        data.session
+      ) {
+
+        showStatus(
+          'Тіркелу сәтті аяқталды.',
+          'success'
+        );
+
+      } else {
+
+        showStatus(
+          'Тіркелу сәтті. E-mail поштаңызға келген растау сілтемесін басыңыз.',
+          'success'
+        );
+
+      }
+
+    }
+  );
+
+
+  /* PASSWORD RESET */
+
+  document
+    .getElementById(
+      'forgotButton'
+    )
+    .addEventListener(
+      'click',
+      async () => {
+
+        hideStatus();
+
+
+        const email =
+          document
+            .getElementById(
+              'loginEmail'
+            )
+            .value
+            .trim();
+
+
+        if (!email) {
+
+          showStatus(
+            'Алдымен E-mail енгізіңіз.',
+            'error'
+          );
+
+          return;
+
+        }
+
+
+        const {
+          error
+        } =
+          await supabase
+            .auth
+            .resetPasswordForEmail(
+              email,
+              {
+                redirectTo:
+                  ACCOUNT_URL
+              }
+            );
+
+
+        if (error) {
+
+          showStatus(
+            error.message,
+            'error'
+          );
+
+          return;
+
+        }
+
+
+        showStatus(
+          'Құпиясөзді қалпына келтіру сілтемесі E-mail-ға жіберілді.',
+          'success'
+        );
+
+      }
+    );
+
+
+  /* PROFILE */
+
+  function showProfile(user) {
+
+    authArea.style.display =
+      'none';
+
+    recoveryForm.classList.remove(
+      'active'
+    );
+
+    profileArea.classList.add(
+      'active'
+    );
+
+    cardTitle.textContent =
+      'МЕНІҢ ПРОФИЛІМ';
+
+
+    const name =
+      user.user_metadata?.full_name ||
+      'CASPIY USER';
+
+
+    document
+      .getElementById(
+        'profileName'
+      )
+      .textContent =
+        name;
+
+
+    document
+      .getElementById(
+        'profileEmail'
+      )
+      .textContent =
+        user.email || '';
+
+
+    document
+      .getElementById(
+        'profileNameInput'
+      )
+      .value =
+        name;
+
+
+    document
+      .getElementById(
+        'profileAvatar'
+      )
+      .textContent =
+        name
+          .trim()
+          .charAt(0)
+          .toUpperCase() ||
+        'C';
+
+
+    if (
+      user.created_at
+    ) {
+
+      document
+        .getElementById(
+          'createdDate'
+        )
+        .textContent =
+          new Intl.DateTimeFormat(
+            'kk-KZ',
+            {
+              day:
+                '2-digit',
+
+              month:
+                '2-digit',
+
+              year:
+                'numeric'
+            }
+          )
+          .format(
+            new Date(
+              user.created_at
+            )
+          );
+
+    }
+
+  }
+
+
+  function showAuth() {
+
+    profileArea.classList.remove(
+      'active'
+    );
+
+    authArea.style.display =
+      'block';
+
+    showLogin();
+
+  }
+
+
+  document
+    .getElementById(
+      'profileForm'
+    )
+    .addEventListener(
+      'submit',
+      async event => {
+
+        event.preventDefault();
+
+        hideStatus();
+
+
+        const name =
+          document
+            .getElementById(
+              'profileNameInput'
+            )
+            .value
+            .trim();
+
+
+        if (!name) {
+          return;
+        }
+
+
+        const {
+          data,
+          error
+        } =
+          await supabase
+            .auth
+            .updateUser({
+
+              data: {
+                full_name:
+                  name
+              }
+
+            });
+
+
+        if (error) {
+
+          showStatus(
+            error.message,
+            'error'
+          );
+
+          return;
+
+        }
+
+
+        showProfile(
+          data.user
+        );
+
+
+        showStatus(
+          'Профиль сақталды.',
+          'success'
+        );
+
+      }
+    );
+
+
+  document
+    .getElementById(
+      'logoutButton'
+    )
+    .addEventListener(
+      'click',
+      async () => {
+
+        await supabase
+          .auth
+          .signOut();
+
+      }
+    );
+
+
+  /* NEW PASSWORD */
+
+  recoveryForm.addEventListener(
+    'submit',
+    async event => {
+
+      event.preventDefault();
+
+      hideStatus();
+
+
+      const password =
+        document
+          .getElementById(
+            'newPassword'
+          )
+          .value;
+
+
+      const {
+        error
+      } =
+        await supabase
+          .auth
+          .updateUser({
+            password
+          });
+
+
+      if (error) {
+
+        showStatus(
+          error.message,
+          'error'
+        );
+
+        return;
+
+      }
+
+
+      showStatus(
+        'Құпиясөз сәтті жаңартылды.',
+        'success'
+      );
+
+
+      const {
+        data
+      } =
+        await supabase
+          .auth
+          .getUser();
+
+
+      if (
+        data.user
+      ) {
+
+        showProfile(
+          data.user
+        );
+
+      }
+
+    }
+  );
+
+
+  /* AUTH EVENTS */
+
+  supabase
+    .auth
+    .onAuthStateChange(
+      async (
+        event,
+        session
+      ) => {
+
+        if (
+          event ===
+          'PASSWORD_RECOVERY'
+        ) {
+
+          authArea.style.display =
+            'none';
+
+          profileArea.classList.remove(
+            'active'
+          );
+
+          recoveryForm.classList.add(
+            'active'
+          );
+
+          cardTitle.textContent =
+            'ЖАҢА ҚҰПИЯСӨЗ';
+
+          return;
+
+        }
+
+
+        if (
+          session?.user
+        ) {
+
+          showProfile(
+            session.user
+          );
+
+        } else {
+
+          showAuth();
+
+        }
+
+      }
+    );
+
+
+  const {
+    data: {
+      session
+    }
+  } =
+    await supabase
+      .auth
+      .getSession();
+
+
+  if (
+    session?.user
+  ) {
+
+    showProfile(
+      session.user
+    );
+
+  } else {
+
+    showAuth();
+
+  }
+
+
+  /* MOBILE MENU */
+
+  const mobileMenu =
+    document.getElementById(
+      'mobileMenu'
+    );
+
+
+  const mobileMenuButton =
+    document.getElementById(
+      'mobileMenuButton'
+    );
+
+
+  mobileMenuButton
+    .addEventListener(
+      'click',
+      () => {
+
+        const open =
+          mobileMenu
+            .classList
+            .toggle(
+              'open'
+            );
+
+
+        mobileMenuButton
+          .classList
+          .toggle(
+            'active',
+            open
+          );
+
+
+        document.body
+          .classList
+          .toggle(
+            'menu-open',
+            open
+          );
+
+      }
+    );
+
+</script>
+
+</body>
+</html>
