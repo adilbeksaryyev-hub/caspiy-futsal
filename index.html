@@ -15,7 +15,6 @@
   >
 
   <style>
-
     * {
       margin: 0;
       padding: 0;
@@ -38,10 +37,7 @@
       text-decoration: none;
     }
 
-
-    /* =====================================================
-       HERO
-       ===================================================== */
+    /* HERO */
 
     .hero {
       position: relative;
@@ -78,10 +74,7 @@
       pointer-events: none;
     }
 
-
-    /* =====================================================
-       HEADER
-       ===================================================== */
+    /* HEADER */
 
     header {
       position: relative;
@@ -108,7 +101,7 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 34px;
+      gap: 30px;
     }
 
     nav a {
@@ -118,10 +111,10 @@
 
       color: #c2d3dd;
 
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 600;
 
-      letter-spacing: .13em;
+      letter-spacing: .12em;
       text-transform: uppercase;
     }
 
@@ -188,10 +181,12 @@
         rgba(38,188,245,.12);
     }
 
+    .ticket.disabled {
+      opacity: .38;
+      pointer-events: none;
+    }
 
-    /* =====================================================
-       HERO CONTENT
-       ===================================================== */
+    /* HERO CONTENT */
 
     .hero-content {
       position: relative;
@@ -217,16 +212,10 @@
       font-weight: 500;
 
       line-height: 1.8;
-
       letter-spacing: .48em;
 
       text-transform: uppercase;
     }
-
-
-    /* =====================================================
-       КАСПИЙ
-       ===================================================== */
 
     .hero-title {
       display: inline-block;
@@ -240,18 +229,12 @@
         sans-serif;
 
       font-size:
-        clamp(
-          130px,
-          13.6vw,
-          230px
-        );
+        clamp(130px,13.6vw,230px);
 
       line-height: .92;
-
       font-weight: 700;
 
       letter-spacing: -.055em;
-
       text-transform: uppercase;
 
       transform: scaleX(.93);
@@ -281,14 +264,12 @@
         no-repeat,
         no-repeat;
 
-      background-blend-mode:
-        soft-light;
+      background-blend-mode: soft-light;
 
       -webkit-background-clip: text;
       background-clip: text;
 
-      -webkit-text-fill-color:
-        transparent;
+      -webkit-text-fill-color: transparent;
 
       -webkit-text-stroke:
         1.6px rgba(215,243,253,.48);
@@ -297,32 +278,22 @@
         brightness(1.07)
         contrast(1.03)
         saturate(.78)
-        drop-shadow(
-          0 9px 17px
-          rgba(0,0,0,.38)
-        );
+        drop-shadow(0 9px 17px rgba(0,0,0,.38));
     }
-
 
     .hero-subtitle {
       margin-top: 8px;
 
       font-size:
-        clamp(
-          25px,
-          2.25vw,
-          39px
-        );
+        clamp(25px,2.25vw,39px);
 
       font-weight: 300;
 
       letter-spacing: .43em;
-
       text-transform: uppercase;
 
       color: #d7effa;
     }
-
 
     .slogan {
       margin-top: 34px;
@@ -333,14 +304,10 @@
       font-weight: 500;
 
       line-height: 2.1;
-
       letter-spacing: .28em;
 
       text-transform: uppercase;
     }
-
-
-    /* RIGHT HERO */
 
     .location {
       position: absolute;
@@ -356,7 +323,6 @@
       font-weight: 500;
 
       line-height: 2;
-
       letter-spacing: .30em;
 
       text-transform: uppercase;
@@ -371,19 +337,13 @@
       font-weight: 500;
 
       line-height: 1.8;
-
       letter-spacing: .28em;
     }
 
-
-    /* =====================================================
-       NEXT MATCH
-       ===================================================== */
+    /* NEXT MATCH */
 
     .next-match-section {
-      padding:
-        32px 0
-        58px;
+      padding: 32px 0 58px;
 
       background:
         linear-gradient(
@@ -403,7 +363,6 @@
 
     .next-match-card {
       position: relative;
-
       overflow: hidden;
 
       border:
@@ -418,10 +377,6 @@
           rgba(4,25,40,.94),
           rgba(2,14,24,.98)
         );
-
-      box-shadow:
-        0 0 34px rgba(0,174,255,.06),
-        inset 0 0 40px rgba(77,203,255,.03);
     }
 
     .next-match-card::before {
@@ -443,8 +398,6 @@
       background-position: center 72%;
 
       opacity: .16;
-
-      pointer-events: none;
     }
 
     .next-match-header {
@@ -466,15 +419,12 @@
     .next-match-header h3 {
       color: #8ddfff;
 
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald',sans-serif;
 
       font-size: 16px;
       font-weight: 500;
 
       letter-spacing: .17em;
-
       text-transform: uppercase;
     }
 
@@ -485,7 +435,6 @@
       font-weight: 500;
 
       letter-spacing: .17em;
-
       text-transform: uppercase;
     }
 
@@ -496,22 +445,16 @@
       display: grid;
 
       grid-template-columns:
-        1.05fr
-        1px
-        1.05fr
-        1px
-        1.05fr
-        1px
+        1.05fr 1px
+        1.05fr 1px
+        1.05fr 1px
         1.25fr;
 
       align-items: center;
 
       min-height: 235px;
 
-      padding:
-        19px
-        25px
-        22px;
+      padding: 19px 25px 22px;
     }
 
     .match-divider {
@@ -531,19 +474,14 @@
 
     .next-match-column {
       text-align: center;
-
-      padding:
-        10px
-        24px;
+      padding: 10px 24px;
     }
 
     .next-team-logo {
       width: 92px;
       height: 92px;
 
-      margin:
-        0 auto
-        13px;
+      margin: 0 auto 13px;
 
       display: flex;
       align-items: center;
@@ -553,7 +491,6 @@
     .next-team-logo img {
       width: 100%;
       height: 100%;
-
       object-fit: contain;
     }
 
@@ -564,22 +501,18 @@
       font-weight: 800;
 
       letter-spacing: .07em;
-
       text-transform: uppercase;
     }
 
     .next-team-city {
       min-height: 17px;
-
       margin-top: 7px;
 
       color: #88aebe;
 
       font-size: 10px;
-      font-weight: 500;
 
       letter-spacing: .18em;
-
       text-transform: uppercase;
     }
 
@@ -590,54 +523,31 @@
       font-weight: 600;
 
       letter-spacing: .14em;
-
       text-transform: uppercase;
     }
 
     .match-time {
-      margin:
-        8px 0
-        12px;
+      margin: 8px 0 12px;
 
       color: #f5fbff;
 
-      font-family:
-        'Oswald',
-        sans-serif;
-
+      font-family: 'Oswald',sans-serif;
       font-size: 47px;
-      font-weight: 500;
 
       line-height: 1;
     }
 
-    .match-competition {
+    .match-competition,
+    .match-venue {
       color: #75a6bb;
 
       font-size: 9px;
-      font-weight: 600;
 
       line-height: 1.7;
-
       letter-spacing: .15em;
 
       text-transform: uppercase;
     }
-
-    .match-venue {
-      margin-top: 4px;
-
-      color: #91b5c5;
-
-      font-size: 9px;
-
-      letter-spacing: .18em;
-
-      text-transform: uppercase;
-    }
-
-
-    /* COUNTDOWN */
 
     .countdown-title {
       margin-bottom: 20px;
@@ -648,55 +558,27 @@
       font-weight: 600;
 
       letter-spacing: .18em;
-
       text-transform: uppercase;
     }
 
     .countdown {
       display: grid;
-
-      grid-template-columns:
-        repeat(3,1fr);
+      grid-template-columns: repeat(3,1fr);
 
       max-width: 310px;
-
       margin: auto;
     }
 
     .countdown-part {
       position: relative;
-
       text-align: center;
-    }
-
-    .countdown-part:not(:last-child)::after {
-      content: "";
-
-      position: absolute;
-
-      top: 8px;
-      right: 0;
-
-      width: 1px;
-      height: 58px;
-
-      background:
-        linear-gradient(
-          transparent,
-          rgba(96,203,245,.35),
-          transparent
-        );
     }
 
     .countdown-number {
       color: #f8fcff;
 
-      font-family:
-        'Oswald',
-        sans-serif;
-
+      font-family: 'Oswald',sans-serif;
       font-size: 38px;
-      font-weight: 500;
 
       line-height: 1;
     }
@@ -707,22 +589,15 @@
       color: #8ba9b8;
 
       font-size: 9px;
-      font-weight: 600;
 
       letter-spacing: .14em;
-
       text-transform: uppercase;
     }
 
-
-    /* =====================================================
-       PLAYERS
-       ===================================================== */
+    /* PLAYERS */
 
     .players-section {
-      padding:
-        34px 0
-        78px;
+      padding: 34px 0 78px;
 
       background:
         linear-gradient(
@@ -732,19 +607,12 @@
           #030c14 100%
         );
 
-      color: #f1f8fc;
-
       border-top:
-        1px solid rgba(70,205,255,.08);
-
-      border-bottom:
         1px solid rgba(70,205,255,.08);
     }
 
     .players-container {
-      width:
-        min(1500px,96%);
-
+      width: min(1500px,96%);
       margin: auto;
     }
 
@@ -755,30 +623,19 @@
       align-items: center;
       justify-content: space-between;
 
-      gap: 20px;
-
-      padding:
-        0 14px;
+      padding: 0 14px;
 
       border-bottom:
         1px solid rgba(255,255,255,.10);
     }
 
     .players-header h2 {
-      margin: 0;
-
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald',sans-serif;
 
       font-size: 30px;
       font-weight: 700;
 
-      letter-spacing: .04em;
-
       text-transform: uppercase;
-
-      color: #f5fbff;
     }
 
     .players-all {
@@ -788,28 +645,15 @@
       font-weight: 700;
 
       letter-spacing: .15em;
-
-      text-transform: uppercase;
     }
 
     .players-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(5,minmax(0,1fr));
+      grid-template-columns: repeat(5,minmax(0,1fr));
 
       margin-top: 10px;
 
       background: #071017;
-
-      border-left:
-        1px solid rgba(255,255,255,.12);
-
-      border-right:
-        1px solid rgba(255,255,255,.12);
-
-      border-bottom:
-        1px solid rgba(255,255,255,.12);
     }
 
     .player-card {
@@ -819,35 +663,33 @@
 
       overflow: hidden;
 
-      background:
-        linear-gradient(
-          180deg,
-          #101820 0%,
-          #050a0e 100%
-        );
+      background: #071017;
 
       border-right:
         1px solid rgba(255,255,255,.18);
-
-      isolation: isolate;
     }
 
-    .player-card::before {
-      content: "";
-
+    .player-photo {
       position: absolute;
       inset: 0;
 
-      z-index: 1;
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .player-overlay {
+      position: absolute;
+      inset: 0;
 
       background:
-        radial-gradient(
-          circle at 50% 90%,
-          rgba(0,137,255,.26),
-          transparent 45%
+        linear-gradient(
+          to bottom,
+          transparent 40%,
+          rgba(2,6,9,.97) 100%
         );
-
-      pointer-events: none;
     }
 
     .player-number {
@@ -858,90 +700,28 @@
 
       z-index: 2;
 
-      color:
-        rgba(255,255,255,.94);
-
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald',sans-serif;
 
       font-size: 92px;
       font-weight: 700;
-
-      line-height: .9;
-
-      text-shadow:
-        0 5px 20px
-        rgba(0,0,0,.35);
-    }
-
-    .player-photo {
-      position: absolute;
-
-      inset: 0;
-
-      z-index: 0;
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-      object-position: center top;
-
-      filter:
-        saturate(.80)
-        contrast(1.06);
-
-      transition:
-        transform .45s ease;
-    }
-
-    .player-card:hover
-    .player-photo {
-      transform:
-        scale(1.035);
-    }
-
-    .player-overlay {
-      position: absolute;
-
-      inset: 0;
-
-      z-index: 1;
-
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(0,0,0,.04) 0%,
-          rgba(0,0,0,.05) 46%,
-          rgba(3,8,12,.50) 67%,
-          rgba(2,6,9,.97) 100%
-        );
     }
 
     .player-info {
       position: absolute;
 
       left: 23px;
-      right: 18px;
       bottom: 25px;
 
       z-index: 3;
     }
 
     .player-name {
-      max-width: 200px;
-
       color: #fff;
 
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald',sans-serif;
 
       font-size: 24px;
       font-weight: 600;
-
-      line-height: 1.05;
 
       text-transform: uppercase;
     }
@@ -955,46 +735,22 @@
       font-weight: 600;
 
       letter-spacing: .17em;
-
-      text-transform: uppercase;
-    }
-
-    .player-card:hover
-    .player-position {
-      color: #55d4ff;
     }
 
     .players-empty {
-      grid-column:
-        1 / -1;
+      grid-column: 1 / -1;
 
       padding: 65px;
 
       text-align: center;
 
       color: #879ca6;
-
-      background: #071017;
-
-      font-size: 11px;
-      font-weight: 600;
-
-      letter-spacing: .17em;
-
-      text-transform: uppercase;
     }
 
-
-    /* =====================================================
-       NEWS
-       ===================================================== */
+    /* NEWS */
 
     .news-section {
-      position: relative;
-
-      padding:
-        82px 0
-        95px;
+      padding: 82px 0 95px;
 
       background:
         radial-gradient(
@@ -1003,15 +759,10 @@
           transparent 30%
         ),
         #05111a;
-
-      border-bottom:
-        1px solid rgba(70,205,255,.08);
     }
 
     .news-container {
-      width:
-        min(1440px,92%);
-
+      width: min(1440px,92%);
       margin: auto;
     }
 
@@ -1020,10 +771,7 @@
       align-items: flex-end;
       justify-content: space-between;
 
-      gap: 30px;
-
       margin-bottom: 36px;
-
       padding-bottom: 22px;
 
       border-bottom:
@@ -1041,61 +789,35 @@
       font-weight: 700;
 
       letter-spacing: .30em;
-
-      text-transform: uppercase;
     }
 
     .news-heading h2 {
-      margin: 0;
+      font-family: 'Oswald',sans-serif;
 
-      font-family:
-        'Oswald',
-        sans-serif;
-
-      font-size:
-        clamp(
-          38px,
-          4.8vw,
-          68px
-        );
-
+      font-size: clamp(38px,4.8vw,68px);
       font-weight: 600;
-
-      line-height: 1;
 
       text-transform: uppercase;
     }
 
     .news-all {
-      flex: 0 0 auto;
-
-      margin-bottom: 7px;
-
       color: #8fdfff;
 
       font-size: 10px;
       font-weight: 700;
 
       letter-spacing: .15em;
-
-      text-transform: uppercase;
     }
 
     .news-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(4,minmax(0,1fr));
+      grid-template-columns: repeat(4,minmax(0,1fr));
 
       gap: 15px;
     }
 
     .news-card {
-      position: relative;
-
       overflow: hidden;
-
-      min-width: 0;
 
       background:
         linear-gradient(
@@ -1106,67 +828,22 @@
 
       border:
         1px solid rgba(73,194,237,.15);
-
-      transition:
-        transform .25s ease,
-        border-color .25s ease;
-    }
-
-    .news-card:hover {
-      transform:
-        translateY(-4px);
-
-      border-color:
-        rgba(79,210,255,.42);
     }
 
     .news-image {
       position: relative;
-
       aspect-ratio: 4 / 3;
 
       overflow: hidden;
 
-      background:
-        linear-gradient(
-          135deg,
-          #092234,
-          #031019
-        );
+      background: #071823;
     }
 
     .news-image img {
       width: 100%;
       height: 100%;
 
-      display: block;
-
       object-fit: cover;
-
-      transition:
-        transform .45s ease;
-    }
-
-    .news-card:hover
-    .news-image img {
-      transform:
-        scale(1.045);
-    }
-
-    .news-image::after {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      background:
-        linear-gradient(
-          to bottom,
-          transparent 40%,
-          rgba(2,9,14,.40) 100%
-        );
-
-      pointer-events: none;
     }
 
     .news-date {
@@ -1175,42 +852,27 @@
       left: 14px;
       bottom: 13px;
 
-      z-index: 2;
+      padding: 6px 8px;
 
-      color: #e5f8ff;
+      background: rgba(2,12,20,.80);
 
       font-size: 9px;
       font-weight: 700;
-
-      letter-spacing: .11em;
-
-      text-transform: uppercase;
-
-      text-shadow:
-        0 2px 8px rgba(0,0,0,.7);
     }
 
     .news-content {
-      padding:
-        20px
-        20px
-        23px;
+      padding: 20px;
     }
 
     .news-title {
-      min-height: 67px;
-
       color: #f3fbff;
 
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald',sans-serif;
 
       font-size: 20px;
       font-weight: 600;
 
       line-height: 1.2;
-
       text-transform: uppercase;
     }
 
@@ -1220,7 +882,6 @@
       color: #7898a8;
 
       font-size: 10px;
-
       line-height: 1.65;
 
       display: -webkit-box;
@@ -1239,47 +900,22 @@
       color: #55d4ff;
 
       font-size: 16px;
-
-      transition:
-        transform .2s ease;
-    }
-
-    .news-card:hover
-    .news-arrow {
-      transform:
-        translateX(5px);
     }
 
     .news-empty {
-      grid-column:
-        1 / -1;
+      grid-column: 1 / -1;
 
       padding: 55px;
 
       text-align: center;
 
       color: #7898a8;
-
-      border:
-        1px solid rgba(73,194,237,.12);
-
-      font-size: 10px;
-      font-weight: 600;
-
-      letter-spacing: .18em;
-
-      text-transform: uppercase;
     }
 
-
-    /* =====================================================
-       RESULTS
-       ===================================================== */
+    /* RESULTS */
 
     .results-section {
-      padding:
-        90px 0
-        100px;
+      padding: 90px 0 100px;
 
       background:
         radial-gradient(
@@ -1288,9 +924,6 @@
           transparent 30%
         ),
         #030c14;
-
-      border-top:
-        1px solid rgba(70,205,255,.08);
     }
 
     .results-container {
@@ -1315,56 +948,35 @@
       color: #51cef9;
 
       font-size: 10px;
-      font-weight: 600;
 
       letter-spacing: .35em;
-
-      text-transform: uppercase;
     }
 
     .results-heading h2 {
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald',sans-serif;
 
-      font-size:
-        clamp(
-          36px,
-          4.6vw,
-          66px
-        );
-
+      font-size: clamp(36px,4.6vw,66px);
       font-weight: 600;
-
-      text-transform: uppercase;
     }
 
     .results-line {
       flex: 1;
 
       height: 1px;
-
       margin-bottom: 10px;
 
-      background:
-        rgba(81,206,249,.15);
+      background: rgba(81,206,249,.15);
     }
 
     .results-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(2,minmax(0,1fr));
+      grid-template-columns: repeat(2,minmax(0,1fr));
 
       gap: 16px;
     }
 
     .result-card {
-      min-height: 190px;
-
-      padding:
-        25px
-        28px;
+      padding: 25px 28px;
 
       background:
         linear-gradient(
@@ -1381,8 +993,6 @@
       display: flex;
       justify-content: space-between;
 
-      gap: 20px;
-
       margin-bottom: 26px;
     }
 
@@ -1391,15 +1001,10 @@
 
       font-size: 9px;
       font-weight: 600;
-
-      letter-spacing: .19em;
-
-      text-transform: uppercase;
     }
 
     .result-date {
       color: #708b9c;
-
       font-size: 10px;
     }
 
@@ -1407,9 +1012,7 @@
       display: grid;
 
       grid-template-columns:
-        1fr
-        auto
-        1fr;
+        1fr auto 1fr;
 
       align-items: center;
 
@@ -1425,15 +1028,12 @@
 
     .result-team.away {
       flex-direction: row-reverse;
-
       text-align: right;
     }
 
     .result-logo {
       width: 58px;
       height: 58px;
-
-      flex: 0 0 58px;
     }
 
     .result-logo img {
@@ -1446,8 +1046,6 @@
     .result-team-name {
       font-size: 13px;
       font-weight: 800;
-
-      text-transform: uppercase;
     }
 
     .result-city {
@@ -1463,9 +1061,7 @@
 
       text-align: center;
 
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald',sans-serif;
 
       font-size: 38px;
     }
@@ -1478,37 +1074,19 @@
       color: #637e90;
 
       font-size: 9px;
-
-      letter-spacing: .15em;
-
-      text-transform: uppercase;
     }
 
-    .results-empty,
-    .results-loading {
-      grid-column:
-        1 / -1;
+    .results-empty {
+      grid-column: 1 / -1;
 
       padding: 45px;
-
-      border:
-        1px solid rgba(76,205,255,.12);
 
       text-align: center;
 
       color: #7894a5;
-
-      font-size: 10px;
-
-      letter-spacing: .22em;
-
-      text-transform: uppercase;
     }
 
-
-    /* =====================================================
-       FOOTER
-       ===================================================== */
+    /* FOOTER */
 
     footer {
       background: #02080d;
@@ -1546,8 +1124,6 @@
       font-size: 13px;
 
       letter-spacing: .15em;
-
-      text-transform: uppercase;
     }
 
     .footer-text {
@@ -1556,36 +1132,21 @@
       font-size: 9px;
 
       letter-spacing: .22em;
-
-      text-transform: uppercase;
     }
 
-
-    /* =====================================================
-       TABLET
-       ===================================================== */
+    /* RESPONSIVE */
 
     @media (max-width:1200px) {
-
       .players-grid {
-        grid-template-columns:
-          repeat(3,minmax(0,1fr));
+        grid-template-columns: repeat(3,1fr);
       }
 
       .news-grid {
-        grid-template-columns:
-          repeat(2,minmax(0,1fr));
+        grid-template-columns: repeat(2,1fr);
       }
-
     }
 
-
-    /* =====================================================
-       MOBILE
-       ===================================================== */
-
     @media (max-width:900px) {
-
       header {
         height: 82px;
       }
@@ -1602,38 +1163,9 @@
         display: none;
       }
 
-      .hero-content {
-        min-height:
-          calc(100vh - 82px);
-      }
-
       .hero-text {
         width: 100%;
-
         padding-top: 85px;
-      }
-
-      .hero-title {
-        font-size:
-          clamp(
-            82px,
-            25vw,
-            155px
-          );
-
-        transform:
-          scaleX(.93);
-      }
-
-      .hero-subtitle {
-        font-size:
-          clamp(
-            18px,
-            6vw,
-            28px
-          );
-
-        letter-spacing: .25em;
       }
 
       .location {
@@ -1648,54 +1180,19 @@
         width: 70%;
         height: 1px;
 
-        margin:
-          22px auto;
-
-        background:
-          linear-gradient(
-            90deg,
-            transparent,
-            rgba(98,203,243,.30),
-            transparent
-          );
+        margin: 22px auto;
       }
 
       .players-grid {
-        grid-template-columns:
-          repeat(2,minmax(0,1fr));
-      }
-
-      .player-card {
-        min-height: 400px;
+        grid-template-columns: repeat(2,1fr);
       }
 
       .results-grid {
         grid-template-columns: 1fr;
       }
-
     }
 
-
     @media (max-width:560px) {
-
-      .players-header,
-      .news-heading {
-        align-items: flex-start;
-      }
-
-      .players-header {
-        min-height: 64px;
-      }
-
-      .players-header h2 {
-        font-size: 23px;
-      }
-
-      .players-all,
-      .news-all {
-        font-size: 8px;
-      }
-
       .players-grid,
       .news-grid {
         grid-template-columns: 1fr;
@@ -1705,84 +1202,64 @@
         min-height: 500px;
       }
 
-      .player-number {
-        font-size: 105px;
+      .hero-title {
+        font-size: 82px;
       }
 
-      .player-name {
-        font-size: 29px;
-      }
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
 
-      .news-heading h2 {
-        font-size: 38px;
-      }
+        gap: 12px;
 
-      .news-title {
-        min-height: 0;
+        padding: 25px 0;
       }
-
     }
-
   </style>
 </head>
 
-
 <body>
-
-
-<!-- =====================================================
-     HERO
-     ===================================================== -->
 
 <section class="hero">
 
   <header>
 
-    <a href="#" class="logo">
-
-      <img
-        src="logo.png"
-        alt="Caspiy Futsal Club"
-      >
-
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="CASPIY Futsal Club">
     </a>
-
 
     <nav>
 
-      <a
-        href="#"
-        class="active"
-      >
+      <a href="index.html" class="active">
         БАСТЫ БЕТ
       </a>
 
-<a href="team.html">
-  КОМАНДА
-</a>
+      <a href="team.html">
+        КОМАНДА
+      </a>
 
-<a href="matches.html">
-  МАТЧТАР
-</a>
+      <a href="matches.html">
+        МАТЧТАР
+      </a>
 
-<a href="news.html">
-  ЖАҢАЛЫҚТАР
-</a>
+      <a href="news.html">
+        ЖАҢАЛЫҚТАР
+      </a>
 
-<a href="club.html">
-  КЛУБ
-</a>
+      <a href="club.html">
+        КЛУБ
+      </a>
 
       <a href="#">
         ЖАНКҮЙЕРЛЕР
       </a>
 
-<a href="contact.html">
-  БАЙЛАНЫС
-</a>
+      <a href="contact.html">
+        БАЙЛАНЫС
+      </a>
 
     </nav>
-
 
     <div class="top-actions">
 
@@ -1791,8 +1268,11 @@
       </span>
 
       <a
-        class="ticket"
+        class="ticket disabled"
+        id="ticketButton"
         href="#"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         БИЛЕТТЕР →
       </a>
@@ -1802,9 +1282,7 @@
   </header>
 
 
-
   <div class="hero-content">
-
 
     <div class="hero-text">
 
@@ -1813,16 +1291,13 @@
         АРТЫҚ
       </div>
 
-
       <h1 class="hero-title">
         КАСПИЙ
       </h1>
 
-
       <div class="hero-subtitle">
         FUTSAL CLUB
       </div>
-
 
       <div class="slogan">
         БІЗДІҢ БОЛМЫСЫМЫЗ — ҚОЗҒАЛЫС<br>
@@ -1830,8 +1305,6 @@
       </div>
 
     </div>
-
-
 
     <div class="location">
 
@@ -1845,26 +1318,16 @@
 
     </div>
 
-
   </div>
 
 </section>
 
 
-
-<!-- =====================================================
-     NEXT MATCH
-     ===================================================== -->
-
-<section
-  class="next-match-section"
-  id="matches"
->
+<section class="next-match-section" id="matches">
 
   <div class="next-match-container">
 
     <div class="next-match-card">
-
 
       <div class="next-match-header">
 
@@ -1872,30 +1335,26 @@
           КЕЛЕСІ МАТЧ
         </h3>
 
-<a
-  href="matches.html"
-  class="all-matches-link"
->
-  БАРЛЫҚ МАТЧТАР →
-</a>
+        <a
+          href="matches.html"
+          class="all-matches-link"
+        >
+          БАРЛЫҚ МАТЧТАР →
+        </a>
 
       </div>
 
 
-
       <div class="next-match-body">
-
 
         <div class="next-match-column">
 
           <div class="next-team-logo">
-
             <img
               id="left-team-logo"
               src="logo.png"
               alt=""
             >
-
           </div>
 
           <div
@@ -1916,7 +1375,6 @@
 
 
         <div class="match-divider"></div>
-
 
 
         <div class="next-match-column">
@@ -1951,17 +1409,14 @@
         <div class="match-divider"></div>
 
 
-
         <div class="next-match-column">
 
           <div class="next-team-logo">
-
             <img
               id="right-team-logo"
               src="logo.png"
               alt=""
             >
-
           </div>
 
           <div
@@ -1982,7 +1437,6 @@
         <div class="match-divider"></div>
 
 
-
         <div class="next-match-column">
 
           <div
@@ -1991,7 +1445,6 @@
           >
             МАТЧҚА ДЕЙІН
           </div>
-
 
           <div class="countdown">
 
@@ -2010,7 +1463,6 @@
 
             </div>
 
-
             <div class="countdown-part">
 
               <div
@@ -2025,7 +1477,6 @@
               </div>
 
             </div>
-
 
             <div class="countdown-part">
 
@@ -2046,7 +1497,6 @@
 
         </div>
 
-
       </div>
 
     </div>
@@ -2056,18 +1506,9 @@
 </section>
 
 
-
-<!-- =====================================================
-     PLAYERS
-     ===================================================== -->
-
-<section
-  class="players-section"
-  id="players"
->
+<section class="players-section" id="players">
 
   <div class="players-container">
-
 
     <div class="players-header">
 
@@ -2075,45 +1516,32 @@
         ОЙЫНШЫЛАР
       </h2>
 
-<a
-  href="team.html"
-  class="players-all"
->
-  ТОЛЫҚ ҚҰРАМ →
-</a>
+      <a
+        href="team.html"
+        class="players-all"
+      >
+        ТОЛЫҚ ҚҰРАМ →
+      </a>
 
     </div>
-
 
     <div
       class="players-grid"
       id="players-list"
     >
-
       <div class="players-empty">
         ОЙЫНШЫЛАР ЖҮКТЕЛУДЕ...
       </div>
-
     </div>
-
 
   </div>
 
 </section>
 
 
-
-<!-- =====================================================
-     NEWS
-     ===================================================== -->
-
-<section
-  class="news-section"
-  id="news"
->
+<section class="news-section" id="news">
 
   <div class="news-container">
-
 
     <div class="news-heading">
 
@@ -2129,46 +1557,32 @@
 
       </div>
 
-
-<a
-  href="news.html"
-  class="news-all"
->
-  БАРЛЫҚ ЖАҢАЛЫҚТАР →
-</a>
+      <a
+        href="news.html"
+        class="news-all"
+      >
+        БАРЛЫҚ ЖАҢАЛЫҚТАР →
+      </a>
 
     </div>
-
 
     <div
       class="news-grid"
       id="news-list"
     >
-
       <div class="news-empty">
         ЖАҢАЛЫҚТАР ЖҮКТЕЛУДЕ...
       </div>
-
     </div>
-
 
   </div>
 
 </section>
 
 
-
-<!-- =====================================================
-     RESULTS
-     ===================================================== -->
-
-<section
-  class="results-section"
-  id="results"
->
+<section class="results-section" id="results">
 
   <div class="results-container">
-
 
     <div class="results-heading">
 
@@ -2188,28 +1602,19 @@
 
     </div>
 
-
     <div
       class="results-grid"
       id="results-list"
     >
-
-      <div class="results-loading">
+      <div class="results-empty">
         НӘТИЖЕЛЕР ЖҮКТЕЛУДЕ...
       </div>
-
     </div>
-
 
   </div>
 
 </section>
 
-
-
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
 
 <footer>
 
@@ -2219,7 +1624,7 @@
 
       <img
         src="logo.png"
-        alt="Каспий"
+        alt="CASPIY"
       >
 
       <strong>
@@ -2228,7 +1633,10 @@
 
     </div>
 
-    <div class="footer-text">
+    <div
+      class="footer-text"
+      id="footerAddress"
+    >
       АҚТАУ · ҚАЗАҚСТАН
     </div>
 
@@ -2236,11 +1644,6 @@
 
 </footer>
 
-
-
-<!-- =====================================================
-     SUPABASE
-     ===================================================== -->
 
 <script type="module">
 
@@ -2259,11 +1662,6 @@
   let countdownTimer = null;
 
 
-
-  /* =====================================================
-     HELPERS
-     ===================================================== */
-
   function escapeHtml(value) {
 
     return String(value ?? '')
@@ -2272,7 +1670,6 @@
       .replaceAll('>','&gt;')
       .replaceAll('"','&quot;')
       .replaceAll("'","&#039;");
-
   }
 
 
@@ -2280,7 +1677,6 @@
 
     return String(value)
       .padStart(2,'0');
-
   }
 
 
@@ -2291,24 +1687,14 @@
     return new Intl.DateTimeFormat(
       'kk-KZ',
       {
-        timeZone:
-          'Asia/Aqtau',
-
-        day:
-          'numeric',
-
-        month:
-          'long',
-
-        year:
-          'numeric'
+        timeZone:'Asia/Aqtau',
+        day:'numeric',
+        month:'long',
+        year:'numeric'
       }
     )
-    .format(
-      new Date(value)
-    )
+    .format(new Date(value))
     .toUpperCase();
-
   }
 
 
@@ -2319,23 +1705,13 @@
     return new Intl.DateTimeFormat(
       'kk-KZ',
       {
-        timeZone:
-          'Asia/Aqtau',
-
-        hour:
-          '2-digit',
-
-        minute:
-          '2-digit',
-
-        hour12:
-          false
+        timeZone:'Asia/Aqtau',
+        hour:'2-digit',
+        minute:'2-digit',
+        hour12:false
       }
     )
-    .format(
-      new Date(value)
-    );
-
+    .format(new Date(value));
   }
 
 
@@ -2346,23 +1722,13 @@
     return new Intl.DateTimeFormat(
       'kk-KZ',
       {
-        timeZone:
-          'Asia/Aqtau',
-
-        day:
-          '2-digit',
-
-        month:
-          '2-digit',
-
-        year:
-          'numeric'
+        timeZone:'Asia/Aqtau',
+        day:'2-digit',
+        month:'2-digit',
+        year:'numeric'
       }
     )
-    .format(
-      new Date(value)
-    );
-
+    .format(new Date(value));
   }
 
 
@@ -2373,100 +1739,76 @@
     return new Intl.DateTimeFormat(
       'kk-KZ',
       {
-        timeZone:
-          'Asia/Aqtau',
-
-        day:
-          'numeric',
-
-        month:
-          'long',
-
-        year:
-          'numeric'
+        timeZone:'Asia/Aqtau',
+        day:'numeric',
+        month:'long',
+        year:'numeric'
       }
     )
-    .format(
-      new Date(value)
-    )
+    .format(new Date(value))
     .toUpperCase();
-
   }
 
 
-  function findOpponentTeam(
-    opponent,
-    teams
-  ) {
+  /* SETTINGS */
 
-    if (!opponent || !teams) {
-      return null;
+  async function loadSettings() {
+
+    const {
+      data,
+      error
+    } =
+      await supabase
+        .from('site_settings')
+        .select('ticket_url,address')
+        .eq('id',1)
+        .maybeSingle();
+
+
+    if (error || !data) {
+      return;
     }
 
 
-    const value =
-      opponent
-        .toLowerCase()
-        .trim();
+    const ticketButton =
+      document.getElementById(
+        'ticketButton'
+      );
 
 
-    return teams.find(
-      team => {
+    if (data.ticket_url) {
 
-        const name =
-          String(
-            team.name || ''
-          )
-          .toLowerCase()
-          .trim();
+      ticketButton.href =
+        data.ticket_url;
+
+      ticketButton.classList.remove(
+        'disabled'
+      );
+
+    } else {
+
+      ticketButton.href =
+        '#';
+
+      ticketButton.classList.add(
+        'disabled'
+      );
+    }
 
 
-        return (
-          name &&
-          (
-            value.includes(name) ||
-            name.includes(value)
-          )
-        );
+    if (data.address) {
 
-      }
-    ) || null;
-
+      document
+        .getElementById('footerAddress')
+        .textContent =
+          data.address.toUpperCase();
+    }
   }
 
 
-  function renderTeam(
-    side,
-    team
-  ) {
-
-    document.getElementById(
-      `${side}-team-logo`
-    ).src =
-      team.logo;
-
-
-    document.getElementById(
-      `${side}-team-name`
-    ).textContent =
-      team.name;
-
-
-    document.getElementById(
-      `${side}-team-city`
-    ).textContent =
-      team.city || '';
-
-  }
-
-
-
-  /* =====================================================
-     PLAYERS
-     ===================================================== */
+  /* PLAYERS */
 
   async function loadPlayers() {
-
 
     const list =
       document.getElementById(
@@ -2483,41 +1825,19 @@
         .select(
           'id,name,number,position,photo_url,sort_order'
         )
-        .eq(
-          'is_active',
-          true
-        )
+        .eq('is_active',true)
         .order(
           'sort_order',
-          {
-            ascending:true
-          }
+          {ascending:true}
         )
         .order(
           'number',
-          {
-            ascending:true
-          }
+          {ascending:true}
         )
         .limit(5);
 
 
-    if (error) {
-
-      list.innerHTML = `
-        <div class="players-empty">
-          ОЙЫНШЫЛАРДЫ ЖҮКТЕУ МҮМКІН БОЛМАДЫ
-        </div>
-      `;
-
-      return;
-    }
-
-
-    if (
-      !data ||
-      data.length === 0
-    ) {
+    if (error || !data?.length) {
 
       list.innerHTML = `
         <div class="players-empty">
@@ -2530,84 +1850,49 @@
 
 
     list.innerHTML =
-      data.map(
-        player => {
+      data.map(player => `
 
+        <article class="player-card">
 
-          const photo =
+          ${
             player.photo_url
-
               ? `
                 <img
                   class="player-photo"
-                  src="${escapeHtml(
-                    player.photo_url
-                  )}"
-                  alt="${escapeHtml(
-                    player.name
-                  )}"
+                  src="${escapeHtml(player.photo_url)}"
+                  alt="${escapeHtml(player.name)}"
                 >
               `
+              : ''
+          }
 
-              : '';
+          <div class="player-overlay"></div>
 
+          <div class="player-number">
+            ${player.number ?? ''}
+          </div>
 
-          return `
+          <div class="player-info">
 
-            <article class="player-card">
+            <div class="player-name">
+              ${escapeHtml(player.name)}
+            </div>
 
-              ${photo}
+            <div class="player-position">
+              ${escapeHtml(player.position || '')}
+            </div>
 
-              <div class="player-overlay"></div>
+          </div>
 
-              <div class="player-number">
+        </article>
 
-                ${
-                  player.number ??
-                  ''
-                }
-
-              </div>
-
-              <div class="player-info">
-
-                <div class="player-name">
-                  ${
-                    escapeHtml(
-                      player.name
-                    )
-                  }
-                </div>
-
-                <div class="player-position">
-                  ${
-                    escapeHtml(
-                      player.position ||
-                      ''
-                    )
-                  }
-                </div>
-
-              </div>
-
-            </article>
-
-          `;
-
-        }
-      )
-      .join('');
-
+      `).join('');
   }
 
 
-
-  /* =====================================================
-     NEWS
-     ===================================================== */
+  /* NEWS */
 
   async function loadNews() {
-
 
     const list =
       document.getElementById(
@@ -2622,43 +1907,17 @@
       await supabase
         .from('news')
         .select(
-          'id,title,description,image_url,published_at,sort_order'
+          'id,title,description,image_url,published_at'
         )
-        .eq(
-          'is_active',
-          true
-        )
-        .order(
-          'sort_order',
-          {
-            ascending:true
-          }
-        )
+        .eq('is_active',true)
         .order(
           'published_at',
-          {
-            ascending:false
-          }
+          {ascending:false}
         )
         .limit(4);
 
 
-    if (error) {
-
-      list.innerHTML = `
-        <div class="news-empty">
-          ЖАҢАЛЫҚТАРДЫ ЖҮКТЕУ МҮМКІН БОЛМАДЫ
-        </div>
-      `;
-
-      return;
-    }
-
-
-    if (
-      !data ||
-      data.length === 0
-    ) {
+    if (error || !data?.length) {
 
       list.innerHTML = `
         <div class="news-empty">
@@ -2671,165 +1930,85 @@
 
 
     list.innerHTML =
-      data.map(
-        item => {
+      data.map(item => `
 
+        <article class="news-card">
 
-          const image =
-            item.image_url
+          <div class="news-image">
 
-              ? `
-                <img
-                  src="${escapeHtml(
-                    item.image_url
-                  )}"
-                  alt="${escapeHtml(
-                    item.title
-                  )}"
-                >
-              `
+            ${
+              item.image_url
+                ? `
+                  <img
+                    src="${escapeHtml(item.image_url)}"
+                    alt="${escapeHtml(item.title)}"
+                  >
+                `
+                : ''
+            }
 
-              : '';
+            <div class="news-date">
+              ${formatNewsDate(item.published_at)}
+            </div>
 
+          </div>
 
-          return `
+          <div class="news-content">
 
-            <article class="news-card">
+            <div class="news-title">
+              ${escapeHtml(item.title)}
+            </div>
 
-              <div class="news-image">
+            ${
+              item.description
+                ? `
+                  <div class="news-description">
+                    ${escapeHtml(item.description)}
+                  </div>
+                `
+                : ''
+            }
 
-                ${image}
+            <span class="news-arrow">
+              →
+            </span>
 
-                <div class="news-date">
+          </div>
 
-                  ${
-                    formatNewsDate(
-                      item.published_at
-                    )
-                  }
+        </article>
 
-                </div>
-
-              </div>
-
-
-              <div class="news-content">
-
-                <div class="news-title">
-
-                  ${
-                    escapeHtml(
-                      item.title
-                    )
-                  }
-
-                </div>
-
-
-                ${
-                  item.description
-
-                    ? `
-                      <div class="news-description">
-                        ${
-                          escapeHtml(
-                            item.description
-                          )
-                        }
-                      </div>
-                    `
-
-                    : ''
-                }
-
-
-                <span class="news-arrow">
-                  →
-                </span>
-
-              </div>
-
-            </article>
-
-          `;
-
-        }
-      )
-      .join('');
-
+      `).join('');
   }
 
 
+  /* COUNTDOWN */
 
-  /* =====================================================
-     COUNTDOWN
-     ===================================================== */
-
-  function startCountdown(
-    matchDate
-  ) {
+  function startCountdown(matchDate) {
 
     if (countdownTimer) {
-
-      clearInterval(
-        countdownTimer
-      );
-
+      clearInterval(countdownTimer);
     }
-
-
-    const daysElement =
-      document.getElementById(
-        'countdown-days'
-      );
-
-
-    const hoursElement =
-      document.getElementById(
-        'countdown-hours'
-      );
-
-
-    const minutesElement =
-      document.getElementById(
-        'countdown-minutes'
-      );
-
-
-    const titleElement =
-      document.getElementById(
-        'countdown-title'
-      );
 
 
     function update() {
 
-
-      const target =
-        new Date(
-          matchDate
-        ).getTime();
-
-
       let difference =
-        target -
+        new Date(matchDate).getTime() -
         Date.now();
 
 
-      if (
-        difference <= 0
-      ) {
+      if (difference <= 0) {
 
-        daysElement.textContent =
+        document.getElementById('countdown-days').textContent =
           '00';
 
-        hoursElement.textContent =
+        document.getElementById('countdown-hours').textContent =
           '00';
 
-        minutesElement.textContent =
+        document.getElementById('countdown-minutes').textContent =
           '00';
 
-        titleElement.textContent =
+        document.getElementById('countdown-title').textContent =
           'МАТЧ БАСТАЛДЫ';
 
         return;
@@ -2839,50 +2018,39 @@
       const day =
         1000 * 60 * 60 * 24;
 
-
       const hour =
         1000 * 60 * 60;
-
 
       const minute =
         1000 * 60;
 
 
       const days =
-        Math.floor(
-          difference / day
-        );
+        Math.floor(difference / day);
 
 
       difference %= day;
 
 
       const hours =
-        Math.floor(
-          difference / hour
-        );
+        Math.floor(difference / hour);
 
 
       difference %= hour;
 
 
       const minutes =
-        Math.floor(
-          difference / minute
-        );
+        Math.floor(difference / minute);
 
 
-      daysElement.textContent =
+      document.getElementById('countdown-days').textContent =
         pad(days);
 
-
-      hoursElement.textContent =
+      document.getElementById('countdown-hours').textContent =
         pad(hours);
 
-
-      minutesElement.textContent =
+      document.getElementById('countdown-minutes').textContent =
         pad(minutes);
-
     }
 
 
@@ -2894,17 +2062,12 @@
         update,
         30000
       );
-
   }
 
 
-
-  /* =====================================================
-     NEXT MATCH
-     ===================================================== */
+  /* NEXT MATCH */
 
   async function loadNextMatch() {
-
 
     const [
       matchResponse,
@@ -2912,38 +2075,24 @@
     ] =
       await Promise.all([
 
-
         supabase
           .from('matches')
           .select('*')
-          .eq(
-            'is_featured',
-            true
-          )
-          .eq(
-            'status',
-            'upcoming'
-          )
+          .eq('is_featured',true)
+          .eq('status','upcoming')
           .order(
             'match_date',
-            {
-              ascending:true
-            }
+            {ascending:true}
           )
           .limit(1)
           .maybeSingle(),
-
 
         supabase
           .from('teams')
           .select(
             'name,city,logo_url'
           )
-          .eq(
-            'is_active',
-            true
-          )
-
+          .eq('is_active',true)
 
       ]);
 
@@ -2959,96 +2108,84 @@
       ).textContent =
         'МАТЧ ӘЗІРГЕ БЕЛГІЛЕНБЕДІ';
 
-
-      document.getElementById(
-        'next-match-time'
-      ).textContent =
-        '--:--';
-
-
       return;
     }
 
 
     const teams =
-      teamsResponse.data ||
-      [];
+      teamsResponse.data || [];
 
 
     const opponentTeam =
-      findOpponentTeam(
-        match.opponent,
-        teams
+      teams.find(team =>
+        String(match.opponent || '')
+          .toLowerCase()
+          .includes(
+            String(team.name || '')
+              .toLowerCase()
+          )
       );
 
 
     const caspiy = {
-
-      name:
-        'КАСПИЙ',
-
-      city:
-        'АҚТАУ',
-
-      logo:
-        'logo.png'
-
+      name:'КАСПИЙ',
+      city:'АҚТАУ',
+      logo:'logo.png'
     };
 
 
     const opponent = {
-
       name:
-        (
+        String(
           match.opponent ||
           opponentTeam?.name ||
           'ҚАРСЫЛАС'
-        )
-        .toUpperCase(),
+        ).toUpperCase(),
 
       city:
-        (
+        String(
           opponentTeam?.city ||
           ''
-        )
-        .toUpperCase(),
+        ).toUpperCase(),
 
       logo:
         opponentTeam?.logo_url ||
         match.opponent_logo_url ||
         'logo.png'
-
     };
 
 
-    if (
-      match.is_home
+    function renderTeam(
+      side,
+      team
     ) {
 
-      renderTeam(
-        'left',
-        caspiy
-      );
+      document.getElementById(
+        `${side}-team-logo`
+      ).src =
+        team.logo;
+
+      document.getElementById(
+        `${side}-team-name`
+      ).textContent =
+        team.name;
+
+      document.getElementById(
+        `${side}-team-city`
+      ).textContent =
+        team.city;
+    }
 
 
-      renderTeam(
-        'right',
-        opponent
-      );
+    if (match.is_home !== false) {
+
+      renderTeam('left',caspiy);
+      renderTeam('right',opponent);
 
     } else {
 
-      renderTeam(
-        'left',
-        opponent
-      );
-
-
-      renderTeam(
-        'right',
-        caspiy
-      );
-
+      renderTeam('left',opponent);
+      renderTeam('right',caspiy);
     }
 
 
@@ -3071,31 +2208,24 @@
     document.getElementById(
       'next-match-competition'
     ).textContent =
-      match.competition ||
-      '';
+      match.competition || '';
 
 
     document.getElementById(
       'next-match-venue'
     ).textContent =
-      match.venue ||
-      '';
+      match.venue || '';
 
 
     startCountdown(
       match.match_date
     );
-
   }
 
 
-
-  /* =====================================================
-     RESULTS
-     ===================================================== */
+  /* RESULTS */
 
   async function loadResults() {
-
 
     const list =
       document.getElementById(
@@ -3110,24 +2240,15 @@
       await supabase
         .from('matches')
         .select('*')
-        .eq(
-          'status',
-          'finished'
-        )
+        .eq('status','finished')
         .order(
           'match_date',
-          {
-            ascending:false
-          }
+          {ascending:false}
         )
         .limit(4);
 
 
-    if (
-      error ||
-      !data ||
-      data.length === 0
-    ) {
+    if (error || !data?.length) {
 
       list.innerHTML = `
         <div class="results-empty">
@@ -3140,243 +2261,123 @@
 
 
     list.innerHTML =
-      data.map(
-        match => {
+      data.map(match => {
+
+        const cs =
+          match.caspiy_score ?? '-';
+
+        const os =
+          match.opponent_score ?? '-';
 
 
-          const opponentName =
-            escapeHtml(
-              match.opponent ||
-              'ҚАРСЫЛАС'
-            );
+        const caspiyTeam = `
+          <div class="result-team">
+            <div class="result-logo">
+              <img src="logo.png" alt="">
+            </div>
+            <div>
+              <div class="result-team-name">
+                КАСПИЙ
+              </div>
+              <div class="result-city">
+                АҚТАУ
+              </div>
+            </div>
+          </div>
+        `;
 
 
-          const opponentLogo =
-            match.opponent_logo_url
+        const opponentTeam = `
+          <div class="result-team away">
+            <div class="result-logo">
+              ${
+                match.opponent_logo_url
+                  ? `
+                    <img
+                      src="${escapeHtml(match.opponent_logo_url)}"
+                      alt=""
+                    >
+                  `
+                  : ''
+              }
+            </div>
 
-              ? `
-                <img
-                  src="${escapeHtml(
-                    match.opponent_logo_url
-                  )}"
-                  alt=""
-                >
-              `
-
-              : '';
-
-
-          const caspiyLogo = `
-            <img
-              src="logo.png"
-              alt="Каспий"
-            >
-          `;
-
-
-          const cs =
-            match.caspiy_score ??
-            '-';
+            <div class="result-team-name">
+              ${escapeHtml(match.opponent || '')}
+            </div>
+          </div>
+        `;
 
 
-          const os =
-            match.opponent_score ??
-            '-';
+        return `
 
+          <article class="result-card">
 
-          let left;
-          let right;
+            <div class="result-top">
 
-          let ls;
-          let rs;
-
-
-          if (
-            match.is_home
-          ) {
-
-
-            left = `
-
-              <div class="result-team">
-
-                <div class="result-logo">
-                  ${caspiyLogo}
-                </div>
-
-                <div>
-
-                  <div class="result-team-name">
-                    КАСПИЙ
-                  </div>
-
-                  <div class="result-city">
-                    АҚТАУ
-                  </div>
-
-                </div>
-
+              <div class="result-competition">
+                ${escapeHtml(match.competition || 'МАТЧ')}
               </div>
 
-            `;
-
-
-            right = `
-
-              <div class="result-team away">
-
-                <div class="result-logo">
-                  ${opponentLogo}
-                </div>
-
-                <div class="result-team-name">
-                  ${opponentName}
-                </div>
-
+              <div class="result-date">
+                ${formatShortDate(match.match_date)}
               </div>
 
-            `;
+            </div>
 
+            <div class="result-teams">
 
-            ls = cs;
-            rs = os;
-
-
-          } else {
-
-
-            left = `
-
-              <div class="result-team">
-
-                <div class="result-logo">
-                  ${opponentLogo}
-                </div>
-
-                <div class="result-team-name">
-                  ${opponentName}
-                </div>
-
-              </div>
-
-            `;
-
-
-            right = `
-
-              <div class="result-team away">
-
-                <div class="result-logo">
-                  ${caspiyLogo}
-                </div>
-
-                <div>
-
-                  <div class="result-team-name">
-                    КАСПИЙ
-                  </div>
-
-                  <div class="result-city">
-                    АҚТАУ
-                  </div>
-
-                </div>
-
-              </div>
-
-            `;
-
-
-            ls = os;
-            rs = cs;
-
-          }
-
-
-          return `
-
-            <article class="result-card">
-
-              <div class="result-top">
-
-                <div class="result-competition">
-
-                  ${
-                    escapeHtml(
-                      match.competition ||
-                      'МАТЧ'
+              ${
+                match.is_home !== false
+                  ? caspiyTeam
+                  : opponentTeam.replace(
+                      'away',
+                      ''
                     )
-                  }
+              }
 
-                </div>
-
-                <div class="result-date">
-
-                  ${
-                    formatShortDate(
-                      match.match_date
-                    )
-                  }
-
-                </div>
-
-              </div>
-
-
-              <div class="result-teams">
-
-                ${left}
-
-                <div class="result-score">
-                  ${ls}:${rs}
-                </div>
-
-                ${right}
-
-              </div>
-
-
-              <div class="result-venue">
-
+              <div class="result-score">
                 ${
-                  escapeHtml(
-                    match.venue ||
-                    ''
-                  )
+                  match.is_home !== false
+                    ? `${cs}:${os}`
+                    : `${os}:${cs}`
                 }
-
               </div>
 
-            </article>
+              ${
+                match.is_home !== false
+                  ? opponentTeam
+                  : caspiyTeam.replace(
+                      'result-team"',
+                      'result-team away"'
+                    )
+              }
 
-          `;
+            </div>
 
-        }
-      )
-      .join('');
+            <div class="result-venue">
+              ${escapeHtml(match.venue || '')}
+            </div>
 
+          </article>
+
+        `;
+
+      }).join('');
   }
 
 
-
-  /* =====================================================
-     LOAD EVERYTHING
-     ===================================================== */
+  /* LOAD */
 
   await Promise.all([
-
+    loadSettings(),
     loadNextMatch(),
-
     loadPlayers(),
-
     loadNews(),
-
     loadResults()
-
   ]);
 
 </script>
-
 
 </body>
 </html>
