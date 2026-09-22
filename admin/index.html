@@ -15,7 +15,6 @@
   >
 
   <style>
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -24,13 +23,12 @@
 
     body {
       min-height: 100vh;
-
       font-family: 'Montserrat', Arial, sans-serif;
 
       background:
         radial-gradient(
           circle at 15% 0%,
-          rgba(0, 159, 220, .13),
+          rgba(0,159,220,.13),
           transparent 30%
         ),
         #03101a;
@@ -40,7 +38,8 @@
 
     button,
     input,
-    select {
+    select,
+    textarea {
       font: inherit;
     }
 
@@ -52,10 +51,7 @@
       display: none !important;
     }
 
-
-    /* ===============================
-       LOGIN
-       =============================== */
+    /* LOGIN */
 
     .login-view {
       min-height: 100vh;
@@ -68,31 +64,25 @@
     }
 
     .login-card {
-      width: min(460px, 100%);
+      width: min(460px,100%);
 
       padding: 38px;
 
-      background:
-        rgba(5, 25, 39, .96);
+      background: rgba(5,25,39,.96);
 
-      border:
-        1px solid rgba(73, 204, 255, .30);
-
+      border: 1px solid rgba(73,204,255,.30);
       border-radius: 10px;
 
-      box-shadow:
-        0 25px 70px rgba(0,0,0,.35);
+      box-shadow: 0 25px 70px rgba(0,0,0,.35);
     }
 
     .login-logo {
       width: 90px;
       height: 90px;
 
-      margin:
-        0 auto
-        20px;
-
       display: block;
+
+      margin: 0 auto 20px;
 
       object-fit: contain;
     }
@@ -102,10 +92,7 @@
 
       text-align: center;
 
-      font-family:
-        'Oswald',
-        sans-serif;
-
+      font-family: 'Oswald',sans-serif;
       font-size: 34px;
 
       letter-spacing: .08em;
@@ -119,14 +106,10 @@
       text-align: center;
 
       font-size: 12px;
-
       line-height: 1.7;
     }
 
-
-    /* ===============================
-       FORM
-       =============================== */
+    /* FORMS */
 
     .field {
       margin-bottom: 17px;
@@ -143,26 +126,21 @@
       font-weight: 700;
 
       letter-spacing: .12em;
-
       text-transform: uppercase;
     }
 
     input,
-    select {
+    select,
+    textarea {
       width: 100%;
 
-      padding:
-        13px
-        14px;
+      padding: 13px 14px;
 
       color: #eefaff;
 
-      background:
-        rgba(0, 10, 18, .78);
+      background: rgba(0,10,18,.78);
 
-      border:
-        1px solid rgba(87, 193, 234, .22);
-
+      border: 1px solid rgba(87,193,234,.22);
       border-radius: 5px;
 
       outline: none;
@@ -170,14 +148,22 @@
       transition: .2s;
     }
 
+    textarea {
+      min-height: 125px;
+
+      resize: vertical;
+
+      line-height: 1.65;
+    }
+
     input:focus,
-    select:focus {
-      border-color:
-        rgba(70, 206, 255, .72);
+    select:focus,
+    textarea:focus {
+      border-color: rgba(70,206,255,.72);
 
       box-shadow:
         0 0 0 3px
-        rgba(49, 184, 235, .07);
+        rgba(49,184,235,.07);
     }
 
     select option {
@@ -206,24 +192,18 @@
       font-size: 12px;
     }
 
-
-    /* ===============================
-       BUTTONS
-       =============================== */
+    /* BUTTONS */
 
     .btn {
       border: 0;
       border-radius: 5px;
 
-      padding:
-        13px
-        19px;
+      padding: 13px 19px;
 
       font-size: 11px;
       font-weight: 800;
 
       letter-spacing: .10em;
-
       text-transform: uppercase;
 
       transition: .2s;
@@ -232,39 +212,35 @@
     .btn-primary {
       color: #02111a;
 
-      background:
-        #54d5ff;
+      background: #54d5ff;
     }
 
     .btn-primary:hover {
-      background:
-        #83e1ff;
+      background: #83e1ff;
     }
 
     .btn-secondary {
       color: #b7deee;
 
       background:
-        rgba(71, 185, 227, .08);
+        rgba(71,185,227,.08);
 
       border:
-        1px solid rgba(74, 194, 238, .28);
+        1px solid rgba(74,194,238,.28);
     }
 
     .btn-danger {
       color: #ffb4b4;
 
       background:
-        rgba(255, 73, 73, .08);
+        rgba(255,73,73,.08);
 
       border:
-        1px solid rgba(255, 98, 98, .23);
+        1px solid rgba(255,98,98,.23);
     }
 
     .btn-small {
-      padding:
-        8px
-        11px;
+      padding: 8px 11px;
 
       font-size: 9px;
     }
@@ -272,26 +248,19 @@
     .login-actions {
       display: grid;
 
-      grid-template-columns:
-        1fr 1fr;
+      grid-template-columns: 1fr 1fr;
 
       gap: 10px;
     }
 
-
-    /* ===============================
-       MESSAGE
-       =============================== */
+    /* MESSAGE */
 
     .message {
       display: none;
 
-      margin:
-        15px 0;
+      margin: 15px 0;
 
-      padding:
-        12px
-        14px;
+      padding: 12px 14px;
 
       border-radius: 5px;
 
@@ -306,10 +275,10 @@
       color: #a8f3c5;
 
       background:
-        rgba(45, 190, 105, .09);
+        rgba(45,190,105,.09);
 
       border:
-        1px solid rgba(65, 209, 125, .23);
+        1px solid rgba(65,209,125,.23);
     }
 
     .message.error {
@@ -318,16 +287,13 @@
       color: #ffbaba;
 
       background:
-        rgba(220, 50, 50, .10);
+        rgba(220,50,50,.10);
 
       border:
-        1px solid rgba(255, 90, 90, .23);
+        1px solid rgba(255,90,90,.23);
     }
 
-
-    /* ===============================
-       ADMIN HEADER
-       =============================== */
+    /* HEADER */
 
     .admin-header {
       position: sticky;
@@ -335,18 +301,16 @@
       z-index: 50;
 
       background:
-        rgba(2, 13, 22, .95);
+        rgba(2,13,22,.95);
 
       backdrop-filter: blur(15px);
 
       border-bottom:
-        1px solid rgba(76, 201, 245, .15);
+        1px solid rgba(76,201,245,.15);
     }
 
     .admin-header-inner {
-      width:
-        min(1500px, 94%);
-
+      width: min(1500px,94%);
       min-height: 84px;
 
       margin: auto;
@@ -375,9 +339,7 @@
     .admin-brand strong {
       display: block;
 
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald',sans-serif;
 
       font-size: 21px;
 
@@ -394,7 +356,6 @@
       font-size: 9px;
 
       letter-spacing: .17em;
-
       text-transform: uppercase;
     }
 
@@ -403,22 +364,18 @@
       gap: 8px;
     }
 
-
-    /* ===============================
-       NAV
-       =============================== */
+    /* NAV */
 
     .admin-nav {
       background:
-        rgba(2, 14, 23, .92);
+        rgba(2,14,23,.92);
 
       border-bottom:
-        1px solid rgba(76, 201, 245, .10);
+        1px solid rgba(76,201,245,.10);
     }
 
     .admin-nav-inner {
-      width:
-        min(1500px, 94%);
+      width: min(1500px,94%);
 
       margin: auto;
 
@@ -432,9 +389,7 @@
     .nav-button {
       flex: 0 0 auto;
 
-      padding:
-        16px
-        21px;
+      padding: 16px 21px;
 
       border: 0;
 
@@ -446,7 +401,6 @@
       font-weight: 700;
 
       letter-spacing: .13em;
-
       text-transform: uppercase;
     }
 
@@ -457,14 +411,10 @@
         2px solid #4dd2ff;
     }
 
-
-    /* ===============================
-       CONTENT
-       =============================== */
+    /* CONTENT */
 
     .admin-content {
-      width:
-        min(1500px, 94%);
+      width: min(1500px,94%);
 
       margin: auto;
 
@@ -496,14 +446,11 @@
       font-weight: 700;
 
       letter-spacing: .25em;
-
       text-transform: uppercase;
     }
 
     .section-title h2 {
-      font-family:
-        'Oswald',
-        sans-serif;
+      font-family: 'Oswald',sans-serif;
 
       font-size:
         clamp(
@@ -517,10 +464,7 @@
       text-transform: uppercase;
     }
 
-
-    /* ===============================
-       PANEL
-       =============================== */
+    /* PANEL */
 
     .panel {
       margin-bottom: 27px;
@@ -528,10 +472,10 @@
       padding: 25px;
 
       background:
-        rgba(5, 24, 37, .88);
+        rgba(5,24,37,.88);
 
       border:
-        1px solid rgba(76, 199, 242, .15);
+        1px solid rgba(76,199,242,.15);
 
       border-radius: 7px;
     }
@@ -545,7 +489,6 @@
       font-weight: 800;
 
       letter-spacing: .13em;
-
       text-transform: uppercase;
     }
 
@@ -553,38 +496,26 @@
       display: grid;
 
       grid-template-columns:
-        repeat(
-          2,
-          minmax(0,1fr)
-        );
+        repeat(2,minmax(0,1fr));
 
-      gap:
-        4px
-        18px;
+      gap: 4px 18px;
     }
 
     .form-grid-3 {
       display: grid;
 
       grid-template-columns:
-        repeat(
-          3,
-          minmax(0,1fr)
-        );
+        repeat(3,minmax(0,1fr));
 
-      gap:
-        4px
-        18px;
+      gap: 4px 18px;
     }
 
     .full-width {
-      grid-column:
-        1 / -1;
+      grid-column: 1 / -1;
     }
 
     .form-actions {
       display: flex;
-
       flex-wrap: wrap;
 
       gap: 10px;
@@ -592,14 +523,10 @@
       margin-top: 8px;
     }
 
-
-    /* ===============================
-       LIST TABLE
-       =============================== */
+    /* LIST */
 
     .data-list {
       display: grid;
-
       gap: 10px;
     }
 
@@ -617,15 +544,13 @@
 
       min-height: 77px;
 
-      padding:
-        12px
-        15px;
+      padding: 12px 15px;
 
       background:
-        rgba(3, 16, 26, .86);
+        rgba(3,16,26,.86);
 
       border:
-        1px solid rgba(72, 190, 233, .10);
+        1px solid rgba(72,190,233,.10);
 
       border-radius: 5px;
     }
@@ -657,7 +582,6 @@
 
     .row-actions {
       display: flex;
-
       flex-wrap: wrap;
 
       justify-content: flex-end;
@@ -665,10 +589,7 @@
       gap: 7px;
     }
 
-
-    /* ===============================
-       MATCH
-       =============================== */
+    /* MATCH */
 
     .match-row {
       grid-template-columns:
@@ -680,32 +601,25 @@
 
       margin-left: 6px;
 
-      padding:
-        3px 6px;
+      padding: 3px 6px;
 
       color: #51d9ff;
 
       border:
-        1px solid rgba(79, 211, 255, .28);
+        1px solid rgba(79,211,255,.28);
 
       border-radius: 3px;
 
       font-size: 8px;
     }
 
-
-    /* ===============================
-       PLAYERS
-       =============================== */
+    /* PLAYERS */
 
     .players-admin-grid {
       display: grid;
 
       grid-template-columns:
-        repeat(
-          4,
-          minmax(0,1fr)
-        );
+        repeat(4,minmax(0,1fr));
 
       gap: 13px;
     }
@@ -725,7 +639,7 @@
         );
 
       border:
-        1px solid rgba(72, 200, 245, .17);
+        1px solid rgba(72,200,245,.17);
 
       border-radius: 5px;
     }
@@ -740,7 +654,7 @@
       background:
         radial-gradient(
           circle at center bottom,
-          rgba(49, 184, 239, .22),
+          rgba(49,184,239,.22),
           transparent 52%
         ),
         #04131f;
@@ -805,7 +719,6 @@
       font-weight: 700;
 
       letter-spacing: .13em;
-
       text-transform: uppercase;
     }
 
@@ -823,50 +736,172 @@
       gap: 6px;
 
       padding:
-        0
-        17px
-        17px;
+        0 17px 17px;
     }
 
+    /* NEWS */
 
-    /* ===============================
-       PREVIEW
-       =============================== */
+    .news-admin-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+      gap: 16px;
+    }
+
+    .news-admin-card {
+      overflow: hidden;
+
+      background:
+        #04131f;
+
+      border:
+        1px solid rgba(72,200,245,.16);
+
+      border-radius: 6px;
+    }
+
+    .news-admin-image {
+      position: relative;
+
+      height: 210px;
+
+      overflow: hidden;
+
+      background:
+        #061a28;
+    }
+
+    .news-admin-image img {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+
+      transition:
+        transform .3s ease;
+    }
+
+    .news-admin-card:hover
+    .news-admin-image img {
+      transform: scale(1.03);
+    }
+
+    .news-admin-date {
+      position: absolute;
+
+      left: 13px;
+      top: 13px;
+
+      padding: 6px 8px;
+
+      color: #dff7ff;
+
+      background:
+        rgba(2,12,20,.78);
+
+      border:
+        1px solid rgba(82,207,250,.20);
+
+      font-size: 8px;
+      font-weight: 700;
+
+      letter-spacing: .10em;
+    }
+
+    .news-admin-info {
+      padding: 17px;
+    }
+
+    .news-admin-title {
+      min-height: 44px;
+
+      color: #f5fbff;
+
+      font-size: 14px;
+      font-weight: 800;
+
+      line-height: 1.45;
+
+      text-transform: uppercase;
+    }
+
+    .news-admin-description {
+      margin-top: 9px;
+
+      color: #718f9f;
+
+      font-size: 10px;
+
+      line-height: 1.65;
+
+      display: -webkit-box;
+
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+
+      overflow: hidden;
+    }
+
+    .news-admin-meta {
+      margin-top: 12px;
+
+      color: #5f8193;
+
+      font-size: 9px;
+    }
+
+    .news-admin-actions {
+      display: flex;
+
+      gap: 7px;
+
+      padding:
+        0 17px 17px;
+    }
+
+    /* PREVIEW */
 
     .photo-preview {
       display: none;
 
-      width: 120px;
-      height: 150px;
+      width: 160px;
+      height: 130px;
 
       margin-top: 10px;
 
       object-fit: cover;
-      object-position: center top;
 
       border:
-        1px solid rgba(83, 207, 251, .28);
+        1px solid rgba(83,207,251,.28);
 
       border-radius: 4px;
     }
 
+    .player-preview {
+      width: 120px;
+      height: 150px;
 
-    /* ===============================
-       MOBILE
-       =============================== */
+      object-position: center top;
+    }
+
+    /* RESPONSIVE */
 
     @media (max-width:1100px) {
 
       .players-admin-grid {
         grid-template-columns:
-          repeat(
-            3,
-            minmax(0,1fr)
-          );
+          repeat(3,minmax(0,1fr));
       }
 
+      .news-admin-grid {
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
+      }
     }
-
 
     @media (max-width:850px) {
 
@@ -883,7 +918,8 @@
         font-size: 17px;
       }
 
-      .header-actions .btn-secondary {
+      .header-actions
+      .btn-secondary {
         display: none;
       }
 
@@ -892,12 +928,10 @@
         grid-template-columns: 1fr;
       }
 
-      .players-admin-grid {
+      .players-admin-grid,
+      .news-admin-grid {
         grid-template-columns:
-          repeat(
-            2,
-            minmax(0,1fr)
-          );
+          repeat(2,minmax(0,1fr));
       }
 
       .data-row,
@@ -905,16 +939,11 @@
         grid-template-columns: 1fr;
       }
 
-      .data-logo {
-        width: 50px;
-      }
-
       .row-actions {
-        justify-content: flex-start;
+        justify-content:
+          flex-start;
       }
-
     }
-
 
     @media (max-width:540px) {
 
@@ -922,7 +951,8 @@
         grid-template-columns: 1fr;
       }
 
-      .players-admin-grid {
+      .players-admin-grid,
+      .news-admin-grid {
         grid-template-columns: 1fr;
       }
 
@@ -933,19 +963,13 @@
       .panel {
         padding: 18px;
       }
-
     }
-
   </style>
 </head>
 
-
 <body>
 
-
-<!-- =====================================================
-     LOGIN
-     ===================================================== -->
+<!-- LOGIN -->
 
 <div
   class="login-view"
@@ -960,51 +984,39 @@
       alt="CASPIY"
     >
 
-    <h1>
-      CASPIY ADMIN
-    </h1>
+    <h1>CASPIY ADMIN</h1>
 
     <p>
       Клуб сайтын басқару панелі
     </p>
-
 
     <div
       class="message"
       id="loginMessage"
     ></div>
 
-
     <div class="field">
 
-      <label>
-        Email
-      </label>
+      <label>Email</label>
 
       <input
         type="email"
         id="loginEmail"
         value="adilbek.saryyev@gmail.com"
-        autocomplete="email"
       >
 
     </div>
 
-
     <div class="field">
 
-      <label>
-        Пароль
-      </label>
+      <label>Пароль</label>
 
       <input
         type="password"
         id="loginPassword"
-        autocomplete="current-password"
       >
 
     </div>
-
 
     <div class="login-actions">
 
@@ -1029,21 +1041,16 @@
 </div>
 
 
-
-<!-- =====================================================
-     ADMIN
-     ===================================================== -->
+<!-- ADMIN -->
 
 <div
   id="adminView"
   class="hidden"
 >
 
-
   <div class="admin-header">
 
     <div class="admin-header-inner">
-
 
       <div class="admin-brand">
 
@@ -1054,9 +1061,7 @@
 
         <div>
 
-          <strong>
-            CASPIY
-          </strong>
+          <strong>CASPIY</strong>
 
           <span>
             ADMIN PANEL
@@ -1065,7 +1070,6 @@
         </div>
 
       </div>
-
 
       <div class="header-actions">
 
@@ -1086,11 +1090,9 @@
 
       </div>
 
-
     </div>
 
   </div>
-
 
 
   <!-- NAV -->
@@ -1120,14 +1122,19 @@
         Игроки
       </button>
 
+      <button
+        class="nav-button"
+        data-section="newsSection"
+      >
+        Новости
+      </button>
+
     </div>
 
   </div>
 
 
-
   <main class="admin-content">
-
 
     <div
       class="message"
@@ -1135,29 +1142,20 @@
     ></div>
 
 
-
-    <!-- =================================================
-         MATCHES
-         ================================================= -->
+    <!-- MATCHES -->
 
     <section
       class="admin-section active"
       id="matchesSection"
     >
 
-
       <div class="section-title">
 
-        <span>
-          МАТЧ-ЦЕНТР
-        </span>
+        <span>МАТЧ-ЦЕНТР</span>
 
-        <h2>
-          МАТЧИ
-        </h2>
+        <h2>МАТЧИ</h2>
 
       </div>
-
 
       <div class="panel">
 
@@ -1165,18 +1163,13 @@
           Добавить / изменить матч
         </div>
 
-
         <form id="matchForm">
-
 
           <div class="form-grid">
 
-
             <div class="field">
 
-              <label>
-                Соперник
-              </label>
+              <label>Соперник</label>
 
               <select
                 id="matchTeam"
@@ -1190,7 +1183,6 @@
               </select>
 
             </div>
-
 
             <div class="field">
 
@@ -1206,12 +1198,9 @@
 
             </div>
 
-
             <div class="field">
 
-              <label>
-                Турнир
-              </label>
+              <label>Турнир</label>
 
               <input
                 type="text"
@@ -1222,12 +1211,9 @@
 
             </div>
 
-
             <div class="field">
 
-              <label>
-                Арена
-              </label>
+              <label>Арена</label>
 
               <input
                 type="text"
@@ -1237,12 +1223,9 @@
 
             </div>
 
-
             <div class="field">
 
-              <label>
-                Статус
-              </label>
+              <label>Статус</label>
 
               <select id="matchStatus">
 
@@ -1261,7 +1244,6 @@
               </select>
 
             </div>
-
 
             <div class="field">
 
@@ -1283,7 +1265,6 @@
 
             </div>
 
-
             <div class="field">
 
               <label>
@@ -1294,11 +1275,9 @@
                 type="number"
                 min="0"
                 id="caspiyScore"
-                placeholder="0"
               >
 
             </div>
-
 
             <div class="field">
 
@@ -1310,14 +1289,11 @@
                 type="number"
                 min="0"
                 id="opponentScore"
-                placeholder="0"
               >
 
             </div>
 
-
           </div>
-
 
           <label class="checkbox-field">
 
@@ -1329,7 +1305,6 @@
             Показывать как следующий матч
 
           </label>
-
 
           <div class="form-actions">
 
@@ -1350,11 +1325,9 @@
 
           </div>
 
-
         </form>
 
       </div>
-
 
 
       <div class="panel">
@@ -1370,33 +1343,23 @@
 
       </div>
 
-
     </section>
 
 
-
-    <!-- =================================================
-         TEAMS
-         ================================================= -->
+    <!-- TEAMS -->
 
     <section
       class="admin-section"
       id="teamsSection"
     >
 
-
       <div class="section-title">
 
-        <span>
-          СОПЕРНИКТЕР
-        </span>
+        <span>СОПЕРНИКТЕР</span>
 
-        <h2>
-          КОМАНДЫ
-        </h2>
+        <h2>КОМАНДЫ</h2>
 
       </div>
-
 
       <div class="panel">
 
@@ -1404,12 +1367,9 @@
           Добавить / изменить команду
         </div>
 
-
         <form id="teamForm">
 
-
           <div class="form-grid">
-
 
             <div class="field">
 
@@ -1421,32 +1381,24 @@
                 type="text"
                 id="teamName"
                 required
-                placeholder="Байтерек"
               >
 
             </div>
 
-
             <div class="field">
 
-              <label>
-                Город
-              </label>
+              <label>Город</label>
 
               <input
                 type="text"
                 id="teamCity"
-                placeholder="Орал"
               >
 
             </div>
 
-
             <div class="field full-width">
 
-              <label>
-                Логотип
-              </label>
+              <label>Логотип</label>
 
               <input
                 type="file"
@@ -1456,9 +1408,7 @@
 
             </div>
 
-
           </div>
-
 
           <label class="checkbox-field">
 
@@ -1471,7 +1421,6 @@
             Команда активна
 
           </label>
-
 
           <div class="form-actions">
 
@@ -1492,11 +1441,9 @@
 
           </div>
 
-
         </form>
 
       </div>
-
 
 
       <div class="panel">
@@ -1512,33 +1459,23 @@
 
       </div>
 
-
     </section>
 
 
-
-    <!-- =================================================
-         PLAYERS
-         ================================================= -->
+    <!-- PLAYERS -->
 
     <section
       class="admin-section"
       id="playersSection"
     >
 
-
       <div class="section-title">
 
-        <span>
-          ҚҰРАМ
-        </span>
+        <span>ҚҰРАМ</span>
 
-        <h2>
-          ОЙЫНШЫЛАР
-        </h2>
+        <h2>ОЙЫНШЫЛАР</h2>
 
       </div>
-
 
       <div class="panel">
 
@@ -1546,12 +1483,9 @@
           Добавить / изменить игрока
         </div>
 
-
         <form id="playerForm">
 
-
           <div class="form-grid-3">
-
 
             <div class="field">
 
@@ -1562,35 +1496,27 @@
               <input
                 type="text"
                 id="playerName"
-                placeholder="Нұржан Жұмағалиев"
                 required
               >
 
             </div>
 
-
             <div class="field">
 
-              <label>
-                Номер
-              </label>
+              <label>Номер</label>
 
               <input
                 type="number"
                 id="playerNumber"
                 min="0"
                 max="99"
-                placeholder="10"
               >
 
             </div>
 
-
             <div class="field">
 
-              <label>
-                Позиция
-              </label>
+              <label>Позиция</label>
 
               <select
                 id="playerPosition"
@@ -1621,7 +1547,6 @@
 
             </div>
 
-
             <div class="field">
 
               <label>
@@ -1637,7 +1562,6 @@
 
             </div>
 
-
             <div class="field full-width">
 
               <label>
@@ -1652,15 +1576,13 @@
 
               <img
                 id="playerPhotoPreview"
-                class="photo-preview"
-                alt="Preview"
+                class="photo-preview player-preview"
+                alt=""
               >
 
             </div>
 
-
           </div>
-
 
           <label class="checkbox-field">
 
@@ -1673,7 +1595,6 @@
             Показывать игрока на сайте
 
           </label>
-
 
           <div class="form-actions">
 
@@ -1694,11 +1615,9 @@
 
           </div>
 
-
         </form>
 
       </div>
-
 
 
       <div class="panel">
@@ -1714,14 +1633,167 @@
 
       </div>
 
-
     </section>
 
+
+    <!-- NEWS -->
+
+    <section
+      class="admin-section"
+      id="newsSection"
+    >
+
+      <div class="section-title">
+
+        <span>МЕДИА</span>
+
+        <h2>ЖАҢАЛЫҚТАР</h2>
+
+      </div>
+
+      <div class="panel">
+
+        <div class="panel-title">
+          Добавить / изменить новость
+        </div>
+
+        <form id="newsForm">
+
+          <div class="form-grid">
+
+            <div class="field full-width">
+
+              <label>
+                Заголовок
+              </label>
+
+              <input
+                type="text"
+                id="newsTitle"
+                placeholder="Каспий маңызды матчқа дайын"
+                required
+              >
+
+            </div>
+
+            <div class="field full-width">
+
+              <label>
+                Текст новости
+              </label>
+
+              <textarea
+                id="newsDescription"
+                placeholder="Краткий текст новости..."
+              ></textarea>
+
+            </div>
+
+            <div class="field">
+
+              <label>
+                Дата публикации
+              </label>
+
+              <input
+                type="datetime-local"
+                id="newsDate"
+                required
+              >
+
+            </div>
+
+            <div class="field">
+
+              <label>
+                Порядок на сайте
+              </label>
+
+              <input
+                type="number"
+                id="newsSort"
+                value="0"
+                min="0"
+              >
+
+            </div>
+
+            <div class="field full-width">
+
+              <label>
+                Фотография новости
+              </label>
+
+              <input
+                type="file"
+                id="newsImage"
+                accept="image/png,image/jpeg,image/webp"
+              >
+
+              <img
+                id="newsImagePreview"
+                class="photo-preview"
+                alt=""
+              >
+
+            </div>
+
+          </div>
+
+          <label class="checkbox-field">
+
+            <input
+              type="checkbox"
+              id="newsActive"
+              checked
+            >
+
+            Показывать новость на сайте
+
+          </label>
+
+          <div class="form-actions">
+
+            <button
+              type="submit"
+              class="btn btn-primary"
+            >
+              Сохранить новость
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-secondary hidden"
+              id="cancelNewsEdit"
+            >
+              Отмена
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+
+      <div class="panel">
+
+        <div class="panel-title">
+          Все новости
+        </div>
+
+        <div
+          class="news-admin-grid"
+          id="newsList"
+        ></div>
+
+      </div>
+
+    </section>
 
   </main>
 
 </div>
-
 
 
 <script type="module">
@@ -1731,18 +1803,11 @@
   'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
 
-
-  /* =====================================================
-     SUPABASE
-     ===================================================== */
-
   const SUPABASE_URL =
     'https://socqbqyhkyvxnsukgcqm.supabase.co';
 
-
   const SUPABASE_KEY =
     'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK';
-
 
   const ADMIN_UID =
     '80662bfe-0602-41e8-ac07-fff77451ea21';
@@ -1755,14 +1820,10 @@
     );
 
 
-
-  /* =====================================================
-     STATE
-     ===================================================== */
-
   let teamsCache = [];
   let matchesCache = [];
   let playersCache = [];
+  let newsCache = [];
 
   let editingTeamId = null;
   let editingTeamLogo = null;
@@ -1772,11 +1833,11 @@
   let editingPlayerId = null;
   let editingPlayerPhoto = null;
 
+  let editingNewsId = null;
+  let editingNewsImage = null;
 
 
-  /* =====================================================
-     HELPERS
-     ===================================================== */
+  /* HELPERS */
 
   function showMessage(
     element,
@@ -1790,7 +1851,6 @@
     element.textContent =
       text;
 
-
     setTimeout(() => {
 
       element.className =
@@ -1799,25 +1859,21 @@
       element.textContent =
         '';
 
-    }, 5000);
+    },5000);
 
   }
-
 
 
   function escapeHtml(value) {
 
-    return String(
-      value ?? ''
-    )
-    .replaceAll('&','&amp;')
-    .replaceAll('<','&lt;')
-    .replaceAll('>','&gt;')
-    .replaceAll('"','&quot;')
-    .replaceAll("'","&#039;");
+    return String(value ?? '')
+      .replaceAll('&','&amp;')
+      .replaceAll('<','&lt;')
+      .replaceAll('>','&gt;')
+      .replaceAll('"','&quot;')
+      .replaceAll("'","&#039;");
 
   }
-
 
 
   function uniqueFileName(file) {
@@ -1828,7 +1884,6 @@
         .pop()
         .toLowerCase();
 
-
     return `${
       Date.now()
     }-${
@@ -1838,7 +1893,6 @@
   }
 
 
-
   async function uploadFile(
     bucket,
     file
@@ -1846,7 +1900,6 @@
 
     const fileName =
       uniqueFileName(file);
-
 
     const {
       error
@@ -1866,11 +1919,9 @@
           }
         );
 
-
     if (error) {
       throw error;
     }
-
 
     const {
       data
@@ -1882,11 +1933,9 @@
           fileName
         );
 
-
     return data.publicUrl;
 
   }
-
 
 
   function aqtauInputToUTC(value) {
@@ -1895,18 +1944,11 @@
       return null;
     }
 
-
-    /*
-      datetime-local трактуем именно
-      как время Актау UTC+05:00
-    */
-
     return new Date(
       `${value}:00+05:00`
     ).toISOString();
 
   }
-
 
 
   function utcToAqtauInput(value) {
@@ -1915,17 +1957,14 @@
       return '';
     }
 
-
     const date =
       new Date(value);
-
 
     const local =
       new Date(
         date.getTime() +
         5 * 60 * 60 * 1000
       );
-
 
     return local
       .toISOString()
@@ -1934,13 +1973,11 @@
   }
 
 
-
   function formatDate(value) {
 
     if (!value) {
       return '';
     }
-
 
     return new Intl.DateTimeFormat(
       'kk-KZ',
@@ -1971,34 +2008,56 @@
   }
 
 
+  function formatNewsDate(value) {
 
-  /* =====================================================
-     LOGIN
-     ===================================================== */
+    if (!value) {
+      return '';
+    }
+
+    return new Intl.DateTimeFormat(
+      'kk-KZ',
+      {
+        timeZone:
+          'Asia/Aqtau',
+
+        day:
+          '2-digit',
+
+        month:
+          'long',
+
+        year:
+          'numeric'
+      }
+    )
+    .format(
+      new Date(value)
+    );
+
+  }
+
+
+  /* LOGIN */
 
   const loginView =
     document.getElementById(
       'loginView'
     );
 
-
   const adminView =
     document.getElementById(
       'adminView'
     );
-
 
   const loginMessage =
     document.getElementById(
       'loginMessage'
     );
 
-
   const globalMessage =
     document.getElementById(
       'globalMessage'
     );
-
 
 
   async function showAdmin(
@@ -2019,7 +2078,6 @@
       );
 
       return;
-
     }
 
 
@@ -2030,23 +2088,19 @@
 
       await supabase.auth.signOut();
 
-
       showMessage(
         loginMessage,
         'У этого аккаунта нет доступа к админ-панели.',
         'error'
       );
 
-
       return;
-
     }
 
 
     loginView.classList.add(
       'hidden'
     );
-
 
     adminView.classList.remove(
       'hidden'
@@ -2056,11 +2110,11 @@
     await Promise.all([
       loadTeams(),
       loadMatches(),
-      loadPlayers()
+      loadPlayers(),
+      loadNews()
     ]);
 
   }
-
 
 
   document
@@ -2071,7 +2125,6 @@
       'click',
       async () => {
 
-
         const email =
           document
             .getElementById(
@@ -2080,14 +2133,12 @@
             .value
             .trim();
 
-
         const password =
           document
             .getElementById(
               'loginPassword'
             )
             .value;
-
 
         const {
           data,
@@ -2100,7 +2151,6 @@
               password
             });
 
-
         if (error) {
 
           showMessage(
@@ -2110,9 +2160,7 @@
           );
 
           return;
-
         }
-
 
         await showAdmin(
           data.session
@@ -2120,7 +2168,6 @@
 
       }
     );
-
 
 
   document
@@ -2131,7 +2178,6 @@
       'click',
       async () => {
 
-
         const email =
           document
             .getElementById(
@@ -2140,10 +2186,8 @@
             .value
             .trim();
 
-
         const redirectUrl =
           `${window.location.origin}${window.location.pathname}`;
-
 
         const {
           error
@@ -2159,7 +2203,6 @@
               }
             });
 
-
         if (error) {
 
           showMessage(
@@ -2169,9 +2212,7 @@
           );
 
           return;
-
         }
-
 
         showMessage(
           loginMessage,
@@ -2180,7 +2221,6 @@
 
       }
     );
-
 
 
   document
@@ -2195,17 +2235,13 @@
           .auth
           .signOut();
 
-
         location.reload();
 
       }
     );
 
 
-
-  /* =====================================================
-     NAVIGATION
-     ===================================================== */
+  /* NAV */
 
   document
     .querySelectorAll(
@@ -2214,11 +2250,9 @@
     .forEach(
       button => {
 
-
         button.addEventListener(
           'click',
           () => {
-
 
             document
               .querySelectorAll(
@@ -2231,7 +2265,6 @@
                   )
               );
 
-
             document
               .querySelectorAll(
                 '.admin-section'
@@ -2243,13 +2276,11 @@
                   )
               );
 
-
             button
               .classList
               .add(
                 'active'
               );
-
 
             document
               .getElementById(
@@ -2267,13 +2298,9 @@
     );
 
 
-
-  /* =====================================================
-     TEAMS
-     ===================================================== */
+  /* TEAMS */
 
   async function loadTeams() {
-
 
     const {
       data,
@@ -2285,11 +2312,9 @@
         .order(
           'name',
           {
-            ascending:
-              true
+            ascending:true
           }
         );
-
 
     if (error) {
 
@@ -2300,44 +2325,33 @@
       );
 
       return;
-
     }
-
 
     teamsCache =
       data || [];
 
-
     renderTeams();
-
 
     fillTeamsSelect();
 
   }
 
 
-
   function fillTeamsSelect() {
-
 
     const select =
       document.getElementById(
         'matchTeam'
       );
 
-
     const currentValue =
       select.value;
 
-
     select.innerHTML = `
-
       <option value="">
         Выберите команду
       </option>
-
     `;
-
 
     teamsCache
       .filter(
@@ -2347,16 +2361,13 @@
       .forEach(
         team => {
 
-
           const option =
             document.createElement(
               'option'
             );
 
-
           option.value =
             team.id;
-
 
           option.textContent =
             `${team.name}${
@@ -2365,14 +2376,12 @@
                 : ''
             }`;
 
-
           select.appendChild(
             option
           );
 
         }
       );
-
 
     if (currentValue) {
       select.value =
@@ -2382,32 +2391,25 @@
   }
 
 
-
   function renderTeams() {
-
 
     const list =
       document.getElementById(
         'teamsList'
       );
 
-
     if (
       teamsCache.length === 0
     ) {
 
       list.innerHTML = `
-
         <div class="data-row">
           Команд пока нет.
         </div>
-
       `;
 
       return;
-
     }
-
 
     list.innerHTML =
       teamsCache
@@ -2420,37 +2422,27 @@
 
                 ${
                   team.logo_url
-
                     ? `
                       <img
                         class="data-logo"
-                        src="${escapeHtml(
-                          team.logo_url
-                        )}"
+                        src="${escapeHtml(team.logo_url)}"
                         alt=""
                       >
                     `
-
                     : ''
                 }
 
               </div>
 
-
               <div class="data-main">
 
                 <strong>
-                  ${escapeHtml(
-                    team.name
-                  )}
+                  ${escapeHtml(team.name)}
                 </strong>
 
                 <span>
-                  ${
-                    escapeHtml(
-                      team.city || ''
-                    )
-                  }
+                  ${escapeHtml(team.city || '')}
+
                   ${
                     team.is_active === false
                       ? ' · НЕАКТИВНА'
@@ -2459,7 +2451,6 @@
                 </span>
 
               </div>
-
 
               <div class="row-actions">
 
@@ -2488,7 +2479,6 @@
   }
 
 
-
   document
     .getElementById(
       'teamForm'
@@ -2497,12 +2487,9 @@
       'submit',
       async event => {
 
-
         event.preventDefault();
 
-
         try {
-
 
           const name =
             document
@@ -2512,7 +2499,6 @@
               .value
               .trim();
 
-
           const city =
             document
               .getElementById(
@@ -2521,14 +2507,12 @@
               .value
               .trim();
 
-
           const active =
             document
               .getElementById(
                 'teamActive'
               )
               .checked;
-
 
           const file =
             document
@@ -2537,10 +2521,8 @@
               )
               .files[0];
 
-
           let logoUrl =
             editingTeamLogo;
-
 
           if (file) {
 
@@ -2552,21 +2534,16 @@
 
           }
 
-
           const payload = {
-
             name,
             city,
             is_active:
               active,
             logo_url:
               logoUrl
-
           };
 
-
           let response;
-
 
           if (editingTeamId) {
 
@@ -2592,26 +2569,20 @@
 
           }
 
-
           if (response.error) {
             throw response.error;
           }
 
-
           resetTeamForm();
 
-
           await loadTeams();
-
 
           showMessage(
             globalMessage,
             'Команда сохранена.'
           );
 
-
         } catch(error) {
-
 
           showMessage(
             globalMessage,
@@ -2625,10 +2596,8 @@
     );
 
 
-
   window.editTeam =
     function(id) {
-
 
       const team =
         teamsCache.find(
@@ -2636,19 +2605,15 @@
             item.id === id
         );
 
-
       if (!team) {
         return;
       }
 
-
       editingTeamId =
         team.id;
 
-
       editingTeamLogo =
         team.logo_url || null;
-
 
       document
         .getElementById(
@@ -2657,7 +2622,6 @@
         .value =
           team.name || '';
 
-
       document
         .getElementById(
           'teamCity'
@@ -2665,14 +2629,12 @@
         .value =
           team.city || '';
 
-
       document
         .getElementById(
           'teamActive'
         )
         .checked =
           team.is_active !== false;
-
 
       document
         .getElementById(
@@ -2683,19 +2645,16 @@
           'hidden'
         );
 
-
       window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+        top:0,
+        behavior:'smooth'
       });
 
-  };
-
+    };
 
 
   window.deleteTeam =
     async function(id) {
-
 
       if (
         !confirm(
@@ -2704,7 +2663,6 @@
       ) {
         return;
       }
-
 
       const {
         error
@@ -2717,7 +2675,6 @@
             id
           );
 
-
       if (error) {
 
         showMessage(
@@ -2727,26 +2684,20 @@
         );
 
         return;
-
       }
-
 
       await loadTeams();
 
-  };
-
+    };
 
 
   function resetTeamForm() {
 
-
     editingTeamId =
       null;
 
-
     editingTeamLogo =
       null;
-
 
     document
       .getElementById(
@@ -2754,14 +2705,12 @@
       )
       .reset();
 
-
     document
       .getElementById(
         'teamActive'
       )
       .checked =
         true;
-
 
     document
       .getElementById(
@@ -2775,7 +2724,6 @@
   }
 
 
-
   document
     .getElementById(
       'cancelTeamEdit'
@@ -2786,13 +2734,9 @@
     );
 
 
-
-  /* =====================================================
-     MATCHES
-     ===================================================== */
+  /* MATCHES */
 
   async function loadMatches() {
-
 
     const {
       data,
@@ -2804,12 +2748,10 @@
         .order(
           'match_date',
           {
-            ascending:
-              false
+            ascending:false
           }
         )
         .limit(100);
-
 
     if (error) {
 
@@ -2820,45 +2762,35 @@
       );
 
       return;
-
     }
-
 
     matchesCache =
       data || [];
-
 
     renderMatches();
 
   }
 
 
-
   function renderMatches() {
-
 
     const list =
       document.getElementById(
         'matchesList'
       );
 
-
     if (
       matchesCache.length === 0
     ) {
 
       list.innerHTML = `
-
         <div class="data-row">
           Матчей пока нет.
         </div>
-
       `;
 
       return;
-
     }
-
 
     list.innerHTML =
       matchesCache
@@ -2867,74 +2799,55 @@
 
             <div class="data-row match-row">
 
-
               <div class="data-main">
 
                 <strong>
 
-                  КАСПИЙ — ${escapeHtml(
-                    match.opponent
-                  )}
+                  КАСПИЙ —
+                  ${escapeHtml(match.opponent)}
 
                   ${
                     match.is_featured
-
                       ? `
                         <span class="featured-tag">
                           БЛИЖАЙШИЙ
                         </span>
                       `
-
                       : ''
                   }
 
                 </strong>
 
-
                 <span>
 
-                  ${formatDate(
-                    match.match_date
-                  )}
+                  ${formatDate(match.match_date)}
 
                   ·
 
-                  ${escapeHtml(
-                    match.competition || ''
-                  )}
+                  ${escapeHtml(match.competition || '')}
 
                   ·
 
-                  ${escapeHtml(
-                    match.venue || ''
-                  )}
+                  ${escapeHtml(match.venue || '')}
 
                   <br>
 
                   Статус:
-                  ${escapeHtml(
-                    match.status || ''
-                  )}
+                  ${escapeHtml(match.status || '')}
 
                   ${
-                    match.status ===
-                    'finished'
-
+                    match.status === 'finished'
                       ? ` · Счёт: ${
-                          match.caspiy_score ??
-                          '-'
+                          match.caspiy_score ?? '-'
                         }:${
-                          match.opponent_score ??
-                          '-'
+                          match.opponent_score ?? '-'
                         }`
-
                       : ''
                   }
 
                 </span>
 
               </div>
-
 
               <div class="row-actions">
 
@@ -2961,7 +2874,6 @@
 
               </div>
 
-
             </div>
 
           `
@@ -2969,7 +2881,6 @@
         .join('');
 
   }
-
 
 
   document
@@ -2980,12 +2891,9 @@
       'submit',
       async event => {
 
-
         event.preventDefault();
 
-
         try {
-
 
           const teamId =
             Number(
@@ -2996,13 +2904,11 @@
                 .value
             );
 
-
           const team =
             teamsCache.find(
               item =>
                 item.id === teamId
             );
-
 
           if (!team) {
 
@@ -3012,7 +2918,6 @@
 
           }
 
-
           const matchDate =
             document
               .getElementById(
@@ -3020,14 +2925,12 @@
               )
               .value;
 
-
           const featured =
             document
               .getElementById(
                 'matchFeatured'
               )
               .checked;
-
 
           if (featured) {
 
@@ -3037,21 +2940,17 @@
               await supabase
                 .from('matches')
                 .update({
-                  is_featured:
-                    false
+                  is_featured:false
                 })
                 .eq(
                   'is_featured',
                   true
                 );
 
-
             if (error) {
               throw error;
             }
-
           }
-
 
           const caspiyScoreValue =
             document
@@ -3060,7 +2959,6 @@
               )
               .value;
 
-
           const opponentScoreValue =
             document
               .getElementById(
@@ -3068,14 +2966,12 @@
               )
               .value;
 
-
           const opponentName =
             `${team.name}${
               team.city
                 ? ` ${team.city}`
                 : ''
             }`;
-
 
           const payload = {
 
@@ -3137,12 +3033,9 @@
                 : Number(
                     opponentScoreValue
                   )
-
           };
 
-
           let response;
-
 
           if (editingMatchId) {
 
@@ -3168,26 +3061,20 @@
 
           }
 
-
           if (response.error) {
             throw response.error;
           }
 
-
           resetMatchForm();
 
-
           await loadMatches();
-
 
           showMessage(
             globalMessage,
             'Матч сохранён.'
           );
 
-
         } catch(error) {
-
 
           showMessage(
             globalMessage,
@@ -3201,10 +3088,8 @@
     );
 
 
-
   window.editMatch =
     function(id) {
-
 
       const match =
         matchesCache.find(
@@ -3212,27 +3097,18 @@
             item.id === id
         );
 
-
       if (!match) {
         return;
       }
 
-
       editingMatchId =
         match.id;
-
-
-      /*
-        Ищем команду по названию,
-        сохранённому в opponent.
-      */
 
       const opponent =
         String(
           match.opponent || ''
         )
         .toLowerCase();
-
 
       const team =
         teamsCache.find(
@@ -3244,14 +3120,12 @@
               )
               .toLowerCase();
 
-
             return (
               opponent.includes(name)
             );
 
           }
         );
-
 
       document
         .getElementById(
@@ -3262,7 +3136,6 @@
             ? team.id
             : '';
 
-
       document
         .getElementById(
           'matchDate'
@@ -3272,14 +3145,12 @@
             match.match_date
           );
 
-
       document
         .getElementById(
           'matchCompetition'
         )
         .value =
           match.competition || '';
-
 
       document
         .getElementById(
@@ -3288,7 +3159,6 @@
         .value =
           match.venue || '';
 
-
       document
         .getElementById(
           'matchStatus'
@@ -3296,7 +3166,6 @@
         .value =
           match.status ||
           'upcoming';
-
 
       document
         .getElementById(
@@ -3307,14 +3176,12 @@
             match.is_home !== false
           );
 
-
       document
         .getElementById(
           'matchFeatured'
         )
         .checked =
           !!match.is_featured;
-
 
       document
         .getElementById(
@@ -3324,7 +3191,6 @@
           match.caspiy_score ??
           '';
 
-
       document
         .getElementById(
           'opponentScore'
@@ -3332,7 +3198,6 @@
         .value =
           match.opponent_score ??
           '';
-
 
       document
         .getElementById(
@@ -3343,19 +3208,16 @@
           'hidden'
         );
 
-
       window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+        top:0,
+        behavior:'smooth'
       });
 
-  };
-
+    };
 
 
   window.featureMatch =
     async function(id) {
-
 
       let {
         error
@@ -3363,14 +3225,12 @@
         await supabase
           .from('matches')
           .update({
-            is_featured:
-              false
+            is_featured:false
           })
           .eq(
             'is_featured',
             true
           );
-
 
       if (error) {
 
@@ -3381,9 +3241,7 @@
         );
 
         return;
-
       }
-
 
       ({
         error
@@ -3391,14 +3249,12 @@
         await supabase
           .from('matches')
           .update({
-            is_featured:
-              true
+            is_featured:true
           })
           .eq(
             'id',
             id
           ));
-
 
       if (error) {
 
@@ -3409,25 +3265,20 @@
         );
 
         return;
-
       }
 
-
       await loadMatches();
-
 
       showMessage(
         globalMessage,
         'Ближайший матч изменён.'
       );
 
-  };
-
+    };
 
 
   window.deleteMatch =
     async function(id) {
-
 
       if (
         !confirm(
@@ -3436,7 +3287,6 @@
       ) {
         return;
       }
-
 
       const {
         error
@@ -3449,7 +3299,6 @@
             id
           );
 
-
       if (error) {
 
         showMessage(
@@ -3459,29 +3308,23 @@
         );
 
         return;
-
       }
-
 
       await loadMatches();
 
-  };
-
+    };
 
 
   function resetMatchForm() {
 
-
     editingMatchId =
       null;
-
 
     document
       .getElementById(
         'matchForm'
       )
       .reset();
-
 
     document
       .getElementById(
@@ -3490,14 +3333,12 @@
       .value =
         'true';
 
-
     document
       .getElementById(
         'matchStatus'
       )
       .value =
         'upcoming';
-
 
     document
       .getElementById(
@@ -3511,7 +3352,6 @@
   }
 
 
-
   document
     .getElementById(
       'cancelMatchEdit'
@@ -3522,13 +3362,9 @@
     );
 
 
-
-  /* =====================================================
-     PLAYERS
-     ===================================================== */
+  /* PLAYERS */
 
   async function loadPlayers() {
-
 
     const {
       data,
@@ -3540,18 +3376,15 @@
         .order(
           'sort_order',
           {
-            ascending:
-              true
+            ascending:true
           }
         )
         .order(
           'number',
           {
-            ascending:
-              true
+            ascending:true
           }
         );
-
 
     if (error) {
 
@@ -3562,45 +3395,35 @@
       );
 
       return;
-
     }
-
 
     playersCache =
       data || [];
-
 
     renderPlayers();
 
   }
 
 
-
   function renderPlayers() {
-
 
     const list =
       document.getElementById(
         'playersList'
       );
 
-
     if (
       playersCache.length === 0
     ) {
 
       list.innerHTML = `
-
         <div class="data-row">
           Игроков пока нет.
         </div>
-
       `;
 
       return;
-
     }
-
 
     list.innerHTML =
       playersCache
@@ -3609,65 +3432,39 @@
 
             <article class="player-admin-card">
 
-
               <div class="player-admin-photo">
 
-
                 <div class="player-number-big">
-
-                  ${
-                    player.number ??
-                    ''
-                  }
-
+                  ${player.number ?? ''}
                 </div>
-
 
                 ${
                   player.photo_url
-
                     ? `
                       <img
-                        src="${escapeHtml(
-                          player.photo_url
-                        )}"
-                        alt="${escapeHtml(
-                          player.name
-                        )}"
+                        src="${escapeHtml(player.photo_url)}"
+                        alt="${escapeHtml(player.name)}"
                       >
                     `
-
                     : ''
                 }
 
-
               </div>
-
 
               <div class="player-admin-info">
 
                 <strong>
-                  ${escapeHtml(
-                    player.name
-                  )}
+                  ${escapeHtml(player.name)}
                 </strong>
 
                 <span class="player-position">
-
-                  ${escapeHtml(
-                    player.position ||
-                    ''
-                  )}
-
+                  ${escapeHtml(player.position || '')}
                 </span>
 
                 <div class="player-meta">
 
                   Порядок:
-                  ${
-                    player.sort_order ??
-                    0
-                  }
+                  ${player.sort_order ?? 0}
 
                   ·
 
@@ -3680,7 +3477,6 @@
                 </div>
 
               </div>
-
 
               <div class="player-admin-actions">
 
@@ -3700,7 +3496,6 @@
 
               </div>
 
-
             </article>
 
           `
@@ -3708,7 +3503,6 @@
         .join('');
 
   }
-
 
 
   document
@@ -3719,16 +3513,13 @@
       'change',
       event => {
 
-
         const file =
           event.target.files[0];
-
 
         const preview =
           document.getElementById(
             'playerPhotoPreview'
           );
-
 
         if (!file) {
 
@@ -3736,22 +3527,18 @@
             'none';
 
           return;
-
         }
-
 
         preview.src =
           URL.createObjectURL(
             file
           );
 
-
         preview.style.display =
           'block';
 
       }
     );
-
 
 
   document
@@ -3762,12 +3549,9 @@
       'submit',
       async event => {
 
-
         event.preventDefault();
 
-
         try {
-
 
           const name =
             document
@@ -3777,14 +3561,12 @@
               .value
               .trim();
 
-
           const numberValue =
             document
               .getElementById(
                 'playerNumber'
               )
               .value;
-
 
           const position =
             document
@@ -3793,14 +3575,12 @@
               )
               .value;
 
-
           const sortValue =
             document
               .getElementById(
                 'playerSort'
               )
               .value;
-
 
           const active =
             document
@@ -3809,7 +3589,6 @@
               )
               .checked;
 
-
           const file =
             document
               .getElementById(
@@ -3817,10 +3596,8 @@
               )
               .files[0];
 
-
           let photoUrl =
             editingPlayerPhoto;
-
 
           if (file) {
 
@@ -3831,7 +3608,6 @@
               );
 
           }
-
 
           const payload = {
 
@@ -3859,13 +3635,9 @@
 
           };
 
-
           let response;
 
-
-          if (
-            editingPlayerId
-          ) {
+          if (editingPlayerId) {
 
             response =
               await supabase
@@ -3889,28 +3661,20 @@
 
           }
 
-
-          if (
-            response.error
-          ) {
+          if (response.error) {
             throw response.error;
           }
 
-
           resetPlayerForm();
 
-
           await loadPlayers();
-
 
           showMessage(
             globalMessage,
             'Игрок сохранён.'
           );
 
-
         } catch(error) {
-
 
           showMessage(
             globalMessage,
@@ -3924,10 +3688,8 @@
     );
 
 
-
   window.editPlayer =
     function(id) {
-
 
       const player =
         playersCache.find(
@@ -3935,19 +3697,15 @@
             item.id === id
         );
 
-
       if (!player) {
         return;
       }
 
-
       editingPlayerId =
         player.id;
 
-
       editingPlayerPhoto =
         player.photo_url || null;
-
 
       document
         .getElementById(
@@ -3955,7 +3713,6 @@
         )
         .value =
           player.name || '';
-
 
       document
         .getElementById(
@@ -3965,14 +3722,12 @@
           player.number ??
           '';
 
-
       document
         .getElementById(
           'playerPosition'
         )
         .value =
           player.position || '';
-
 
       document
         .getElementById(
@@ -3982,7 +3737,6 @@
           player.sort_order ??
           0;
 
-
       document
         .getElementById(
           'playerActive'
@@ -3990,20 +3744,15 @@
         .checked =
           player.is_active !== false;
 
-
       const preview =
         document.getElementById(
           'playerPhotoPreview'
         );
 
-
-      if (
-        player.photo_url
-      ) {
+      if (player.photo_url) {
 
         preview.src =
           player.photo_url;
-
 
         preview.style.display =
           'block';
@@ -4015,7 +3764,6 @@
 
       }
 
-
       document
         .getElementById(
           'cancelPlayerEdit'
@@ -4025,26 +3773,16 @@
           'hidden'
         );
 
-
-      document
-        .querySelector(
-          '[data-section="playersSection"]'
-        )
-        .click();
-
-
       window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+        top:0,
+        behavior:'smooth'
       });
 
-  };
-
+    };
 
 
   window.deletePlayer =
     async function(id) {
-
 
       if (
         !confirm(
@@ -4053,7 +3791,6 @@
       ) {
         return;
       }
-
 
       const {
         error
@@ -4066,7 +3803,6 @@
             id
           );
 
-
       if (error) {
 
         showMessage(
@@ -4076,39 +3812,31 @@
         );
 
         return;
-
       }
 
-
       await loadPlayers();
-
 
       showMessage(
         globalMessage,
         'Игрок удалён.'
       );
 
-  };
-
+    };
 
 
   function resetPlayerForm() {
 
-
     editingPlayerId =
       null;
 
-
     editingPlayerPhoto =
       null;
-
 
     document
       .getElementById(
         'playerForm'
       )
       .reset();
-
 
     document
       .getElementById(
@@ -4117,7 +3845,6 @@
       .value =
         0;
 
-
     document
       .getElementById(
         'playerActive'
@@ -4125,20 +3852,16 @@
       .checked =
         true;
 
-
     const preview =
       document.getElementById(
         'playerPhotoPreview'
       );
 
-
     preview.src =
       '';
 
-
     preview.style.display =
       'none';
-
 
     document
       .getElementById(
@@ -4152,7 +3875,6 @@
   }
 
 
-
   document
     .getElementById(
       'cancelPlayerEdit'
@@ -4163,10 +3885,553 @@
     );
 
 
+  /* NEWS */
 
-  /* =====================================================
-     START
-     ===================================================== */
+  async function loadNews() {
+
+    const {
+      data,
+      error
+    } =
+      await supabase
+        .from('news')
+        .select('*')
+        .order(
+          'sort_order',
+          {
+            ascending:true
+          }
+        )
+        .order(
+          'published_at',
+          {
+            ascending:false
+          }
+        );
+
+    if (error) {
+
+      showMessage(
+        globalMessage,
+        `Ошибка новостей: ${error.message}`,
+        'error'
+      );
+
+      return;
+    }
+
+    newsCache =
+      data || [];
+
+    renderNews();
+
+  }
+
+
+  function renderNews() {
+
+    const list =
+      document.getElementById(
+        'newsList'
+      );
+
+    if (
+      newsCache.length === 0
+    ) {
+
+      list.innerHTML = `
+        <div class="data-row">
+          Новостей пока нет.
+        </div>
+      `;
+
+      return;
+    }
+
+    list.innerHTML =
+      newsCache
+        .map(
+          item => `
+
+            <article class="news-admin-card">
+
+              <div class="news-admin-image">
+
+                ${
+                  item.image_url
+                    ? `
+                      <img
+                        src="${escapeHtml(item.image_url)}"
+                        alt="${escapeHtml(item.title)}"
+                      >
+                    `
+                    : ''
+                }
+
+                <div class="news-admin-date">
+                  ${escapeHtml(
+                    formatNewsDate(
+                      item.published_at
+                    )
+                  )}
+                </div>
+
+              </div>
+
+              <div class="news-admin-info">
+
+                <div class="news-admin-title">
+                  ${escapeHtml(item.title)}
+                </div>
+
+                <div class="news-admin-description">
+                  ${escapeHtml(item.description || '')}
+                </div>
+
+                <div class="news-admin-meta">
+
+                  Порядок:
+                  ${item.sort_order ?? 0}
+
+                  ·
+
+                  ${
+                    item.is_active === false
+                      ? 'СКРЫТА'
+                      : 'ОПУБЛИКОВАНА'
+                  }
+
+                </div>
+
+              </div>
+
+              <div class="news-admin-actions">
+
+                <button
+                  class="btn btn-secondary btn-small"
+                  onclick="window.editNews(${item.id})"
+                >
+                  Изменить
+                </button>
+
+                <button
+                  class="btn btn-danger btn-small"
+                  onclick="window.deleteNews(${item.id})"
+                >
+                  Удалить
+                </button>
+
+              </div>
+
+            </article>
+
+          `
+        )
+        .join('');
+
+  }
+
+
+  document
+    .getElementById(
+      'newsImage'
+    )
+    .addEventListener(
+      'change',
+      event => {
+
+        const file =
+          event.target.files[0];
+
+        const preview =
+          document.getElementById(
+            'newsImagePreview'
+          );
+
+        if (!file) {
+
+          preview.style.display =
+            'none';
+
+          return;
+        }
+
+        preview.src =
+          URL.createObjectURL(
+            file
+          );
+
+        preview.style.display =
+          'block';
+
+      }
+    );
+
+
+  document
+    .getElementById(
+      'newsForm'
+    )
+    .addEventListener(
+      'submit',
+      async event => {
+
+        event.preventDefault();
+
+        try {
+
+          const title =
+            document
+              .getElementById(
+                'newsTitle'
+              )
+              .value
+              .trim();
+
+          const description =
+            document
+              .getElementById(
+                'newsDescription'
+              )
+              .value
+              .trim();
+
+          const dateValue =
+            document
+              .getElementById(
+                'newsDate'
+              )
+              .value;
+
+          const sortValue =
+            document
+              .getElementById(
+                'newsSort'
+              )
+              .value;
+
+          const active =
+            document
+              .getElementById(
+                'newsActive'
+              )
+              .checked;
+
+          const file =
+            document
+              .getElementById(
+                'newsImage'
+              )
+              .files[0];
+
+          let imageUrl =
+            editingNewsImage;
+
+          if (file) {
+
+            imageUrl =
+              await uploadFile(
+                'news-images',
+                file
+              );
+
+          }
+
+          const payload = {
+
+            title,
+
+            description,
+
+            image_url:
+              imageUrl,
+
+            published_at:
+              aqtauInputToUTC(
+                dateValue
+              ),
+
+            is_active:
+              active,
+
+            sort_order:
+              Number(
+                sortValue || 0
+              )
+
+          };
+
+          let response;
+
+          if (editingNewsId) {
+
+            response =
+              await supabase
+                .from('news')
+                .update(
+                  payload
+                )
+                .eq(
+                  'id',
+                  editingNewsId
+                );
+
+          } else {
+
+            response =
+              await supabase
+                .from('news')
+                .insert(
+                  payload
+                );
+
+          }
+
+          if (response.error) {
+            throw response.error;
+          }
+
+          resetNewsForm();
+
+          await loadNews();
+
+          showMessage(
+            globalMessage,
+            'Новость сохранена.'
+          );
+
+        } catch(error) {
+
+          showMessage(
+            globalMessage,
+            error.message,
+            'error'
+          );
+
+        }
+
+      }
+    );
+
+
+  window.editNews =
+    function(id) {
+
+      const item =
+        newsCache.find(
+          news =>
+            news.id === id
+        );
+
+      if (!item) {
+        return;
+      }
+
+      editingNewsId =
+        item.id;
+
+      editingNewsImage =
+        item.image_url || null;
+
+      document
+        .getElementById(
+          'newsTitle'
+        )
+        .value =
+          item.title || '';
+
+      document
+        .getElementById(
+          'newsDescription'
+        )
+        .value =
+          item.description || '';
+
+      document
+        .getElementById(
+          'newsDate'
+        )
+        .value =
+          utcToAqtauInput(
+            item.published_at
+          );
+
+      document
+        .getElementById(
+          'newsSort'
+        )
+        .value =
+          item.sort_order ??
+          0;
+
+      document
+        .getElementById(
+          'newsActive'
+        )
+        .checked =
+          item.is_active !== false;
+
+      const preview =
+        document.getElementById(
+          'newsImagePreview'
+        );
+
+      if (item.image_url) {
+
+        preview.src =
+          item.image_url;
+
+        preview.style.display =
+          'block';
+
+      } else {
+
+        preview.style.display =
+          'none';
+
+      }
+
+      document
+        .getElementById(
+          'cancelNewsEdit'
+        )
+        .classList
+        .remove(
+          'hidden'
+        );
+
+      window.scrollTo({
+        top:0,
+        behavior:'smooth'
+      });
+
+    };
+
+
+  window.deleteNews =
+    async function(id) {
+
+      if (
+        !confirm(
+          'Удалить эту новость?'
+        )
+      ) {
+        return;
+      }
+
+      const {
+        error
+      } =
+        await supabase
+          .from('news')
+          .delete()
+          .eq(
+            'id',
+            id
+          );
+
+      if (error) {
+
+        showMessage(
+          globalMessage,
+          error.message,
+          'error'
+        );
+
+        return;
+      }
+
+      await loadNews();
+
+      showMessage(
+        globalMessage,
+        'Новость удалена.'
+      );
+
+    };
+
+
+  function resetNewsForm() {
+
+    editingNewsId =
+      null;
+
+    editingNewsImage =
+      null;
+
+    document
+      .getElementById(
+        'newsForm'
+      )
+      .reset();
+
+    document
+      .getElementById(
+        'newsSort'
+      )
+      .value =
+        0;
+
+    document
+      .getElementById(
+        'newsActive'
+      )
+      .checked =
+        true;
+
+    document
+      .getElementById(
+        'newsDate'
+      )
+      .value =
+        utcToAqtauInput(
+          new Date().toISOString()
+        );
+
+    const preview =
+      document.getElementById(
+        'newsImagePreview'
+      );
+
+    preview.src =
+      '';
+
+    preview.style.display =
+      'none';
+
+    document
+      .getElementById(
+        'cancelNewsEdit'
+      )
+      .classList
+      .add(
+        'hidden'
+      );
+
+  }
+
+
+  document
+    .getElementById(
+      'cancelNewsEdit'
+    )
+    .addEventListener(
+      'click',
+      resetNewsForm
+    );
+
+
+  /* START */
+
+  document
+    .getElementById(
+      'newsDate'
+    )
+    .value =
+      utcToAqtauInput(
+        new Date().toISOString()
+      );
+
 
   const {
     data: {
@@ -4206,7 +4471,6 @@
     );
 
 </script>
-
 
 </body>
 </html>
