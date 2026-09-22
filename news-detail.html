@@ -6,6 +6,78 @@
 
   <title>Жаңалық — CASPIY Futsal Club</title>
 
+  <meta
+    id="metaDescription"
+    name="description"
+    content="CASPIY Futsal Club жаңалығы."
+  >
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#020a10">
+
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- OPEN GRAPH -->
+
+  <meta property="og:type" content="article">
+
+  <meta
+    property="og:site_name"
+    content="CASPIY Futsal Club"
+  >
+
+  <meta
+    id="ogTitle"
+    property="og:title"
+    content="Жаңалық — CASPIY Futsal Club"
+  >
+
+  <meta
+    id="ogDescription"
+    property="og:description"
+    content="CASPIY Futsal Club жаңалығы."
+  >
+
+  <meta
+    id="ogUrl"
+    property="og:url"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/news-detail.html"
+  >
+
+  <meta
+    id="ogImage"
+    property="og:image"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
+  >
+
+  <meta property="og:locale" content="kk_KZ">
+
+  <!-- TWITTER / X -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    id="twitterTitle"
+    name="twitter:title"
+    content="Жаңалық — CASPIY Futsal Club"
+  >
+
+  <meta
+    id="twitterDescription"
+    name="twitter:description"
+    content="CASPIY Futsal Club жаңалығы."
+  >
+
+  <meta
+    id="twitterImage"
+    name="twitter:image"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
+  >
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -21,17 +93,11 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       min-height: 100vh;
       overflow-x: hidden;
-
       font-family: 'Montserrat', Arial, sans-serif;
-
-      color: #eef9ff;
+      color: #f1f8fc;
       background: #020a10;
     }
 
@@ -50,71 +116,54 @@
       position: sticky;
       top: 0;
       z-index: 50;
-
       background: rgba(2,10,16,.96);
       backdrop-filter: blur(15px);
-
-      border-bottom:
-        1px solid rgba(80,202,245,.14);
+      border-bottom: 1px solid rgba(80,202,245,.14);
     }
 
     .header-inner {
       width: min(1440px,92%);
       height: 95px;
-
       margin: auto;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 25px;
     }
 
     .logo {
       position: relative;
       z-index: 60;
-
       display: flex;
       align-items: center;
-
       gap: 14px;
     }
 
     .logo img {
       width: 70px;
       height: 70px;
-
       object-fit: contain;
     }
 
     .logo strong {
       font-family: 'Oswald',sans-serif;
-
       font-size: 20px;
-
       letter-spacing: .08em;
     }
 
     .desktop-nav {
       display: flex;
       align-items: center;
-
       gap: 27px;
     }
 
     .desktop-nav a {
       position: relative;
-
       padding: 12px 0;
-
       color: #a9bfca;
-
       font-size: 10px;
       font-weight: 700;
-
       letter-spacing: .13em;
-
       text-transform: uppercase;
     }
 
@@ -125,43 +174,30 @@
 
     .desktop-nav a.active::after {
       content: "";
-
       position: absolute;
-
       left: 0;
       right: 0;
       bottom: 0;
-
       height: 2px;
-
       background: #52d3ff;
     }
 
     .header-actions {
       position: relative;
       z-index: 60;
-
       display: flex;
       align-items: center;
-
       gap: 12px;
     }
 
     .ticket-button {
       padding: 13px 18px;
-
       color: #caeffc;
-
-      border:
-        1px solid rgba(80,207,251,.42);
-
+      border: 1px solid rgba(80,207,251,.42);
       border-radius: 5px;
-
       font-size: 9px;
       font-weight: 700;
-
       letter-spacing: .13em;
-
       text-transform: uppercase;
     }
 
@@ -170,32 +206,22 @@
       pointer-events: none;
     }
 
-    /* MOBILE BUTTON */
+    /* MOBILE */
 
     .mobile-menu-button {
       display: none;
-
       width: 46px;
       height: 46px;
-
       align-items: center;
       justify-content: center;
-
-      padding: 0;
-
       background: rgba(4,22,34,.90);
-
-      border:
-        1px solid rgba(77,205,255,.32);
-
+      border: 1px solid rgba(77,205,255,.32);
       border-radius: 5px;
-
       cursor: pointer;
     }
 
     .mobile-lines {
       position: relative;
-
       width: 21px;
       height: 15px;
     }
@@ -203,64 +229,39 @@
     .mobile-lines span {
       position: absolute;
       left: 0;
-
       width: 21px;
       height: 2px;
-
       background: #cbeffc;
-
       transition: .25s;
     }
 
-    .mobile-lines span:nth-child(1) {
-      top: 0;
-    }
+    .mobile-lines span:nth-child(1) { top: 0; }
+    .mobile-lines span:nth-child(2) { top: 6px; }
+    .mobile-lines span:nth-child(3) { top: 12px; }
 
-    .mobile-lines span:nth-child(2) {
-      top: 6px;
-    }
-
-    .mobile-lines span:nth-child(3) {
-      top: 12px;
-    }
-
-    .mobile-menu-button.active
-    .mobile-lines span:nth-child(1) {
+    .mobile-menu-button.active .mobile-lines span:nth-child(1) {
       top: 6px;
       transform: rotate(45deg);
     }
 
-    .mobile-menu-button.active
-    .mobile-lines span:nth-child(2) {
+    .mobile-menu-button.active .mobile-lines span:nth-child(2) {
       opacity: 0;
     }
 
-    .mobile-menu-button.active
-    .mobile-lines span:nth-child(3) {
+    .mobile-menu-button.active .mobile-lines span:nth-child(3) {
       top: 6px;
       transform: rotate(-45deg);
     }
 
-    /* MOBILE MENU */
-
     .mobile-menu {
       position: fixed;
       z-index: 45;
-
       inset: 0;
-
       visibility: hidden;
       opacity: 0;
-
       pointer-events: none;
-
       transform: translateX(100%);
-
-      transition:
-        transform .30s ease,
-        opacity .30s ease,
-        visibility .30s ease;
-
+      transition: .3s;
       background:
         radial-gradient(
           circle at 80% 15%,
@@ -273,35 +274,25 @@
     .mobile-menu.open {
       visibility: visible;
       opacity: 1;
-
       pointer-events: auto;
-
       transform: translateX(0);
     }
 
     .mobile-menu-inner {
       width: min(540px,88%);
       height: 100%;
-
       margin: auto;
-
       padding: 125px 0 40px;
-
       display: flex;
       flex-direction: column;
     }
 
     .mobile-menu-small {
       margin-bottom: 25px;
-
       color: #51cffb;
-
       font-size: 9px;
       font-weight: 700;
-
       letter-spacing: .28em;
-
-      text-transform: uppercase;
     }
 
     .mobile-nav {
@@ -313,27 +304,17 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       min-height: 58px;
-
       color: #d6e8f0;
-
-      border-bottom:
-        1px solid rgba(91,204,244,.11);
-
+      border-bottom: 1px solid rgba(91,204,244,.11);
       font-family: 'Oswald',sans-serif;
-
       font-size: 28px;
-      font-weight: 500;
-
       text-transform: uppercase;
     }
 
     .mobile-nav a::after {
       content: "→";
-
       color: #54d5ff;
-
       font-size: 18px;
     }
 
@@ -343,22 +324,13 @@
 
     .mobile-ticket {
       margin-top: 30px;
-
       padding: 16px 20px;
-
       text-align: center;
-
       color: #031019;
       background: #56d5ff;
-
       border-radius: 5px;
-
       font-size: 10px;
       font-weight: 800;
-
-      letter-spacing: .14em;
-
-      text-transform: uppercase;
     }
 
     .mobile-ticket.disabled {
@@ -368,385 +340,142 @@
 
     .mobile-address {
       margin-top: auto;
-
-      padding-top: 30px;
-
       color: #4f7080;
-
       font-size: 9px;
-      font-weight: 600;
-
-      line-height: 1.8;
       letter-spacing: .18em;
-
-      text-transform: uppercase;
-    }
-
-    /* LOADING */
-
-    .loading {
-      min-height: 70vh;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 60px 20px;
-
-      color: #6d91a3;
-
-      font-size: 11px;
-      font-weight: 700;
-
-      letter-spacing: .18em;
-
-      text-transform: uppercase;
-    }
-
-    /* ARTICLE HERO */
-
-    .article-hero {
-      position: relative;
-
-      min-height: 610px;
-
-      overflow: hidden;
-
-      background: #04121d;
-    }
-
-    .article-background {
-      position: absolute;
-      inset: 0;
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-    }
-
-    .article-hero::before {
-      content: "";
-
-      position: absolute;
-      z-index: 1;
-
-      inset: 0;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(1,8,14,.97) 0%,
-          rgba(1,10,17,.79) 45%,
-          rgba(1,8,14,.44) 100%
-        );
-    }
-
-    .article-hero::after {
-      content: "";
-
-      position: absolute;
-      z-index: 1;
-
-      inset: 0;
-
-      background:
-        linear-gradient(
-          to bottom,
-          transparent 35%,
-          #020a10 100%
-        );
-    }
-
-    .article-hero.no-image {
-      background:
-        linear-gradient(
-          135deg,
-          #071f30,
-          #020a10
-        );
-    }
-
-    .article-hero-inner {
-      position: relative;
-      z-index: 3;
-
-      width: min(1180px,92%);
-      min-height: 610px;
-
-      margin: auto;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-
-      padding-bottom: 74px;
-    }
-
-    .article-label {
-      margin-bottom: 17px;
-
-      color: #55d4ff;
-
-      font-size: 9px;
-      font-weight: 700;
-
-      letter-spacing: .32em;
-
-      text-transform: uppercase;
-    }
-
-    .article-title {
-      max-width: 1000px;
-
-      font-family: 'Oswald',sans-serif;
-
-      font-size:
-        clamp(
-          48px,
-          6.7vw,
-          105px
-        );
-
-      font-weight: 600;
-
-      line-height: .98;
-
-      letter-spacing: -.02em;
-
-      text-transform: uppercase;
-    }
-
-    .article-date {
-      margin-top: 25px;
-
-      color: #8ba8b7;
-
-      font-size: 10px;
-      font-weight: 600;
-
-      letter-spacing: .15em;
-
-      text-transform: uppercase;
     }
 
     /* ARTICLE */
 
-    .article-section {
-      padding:
-        75px 0
-        110px;
-
+    .article {
+      padding: 70px 0 110px;
       background:
         radial-gradient(
-          circle at 80% 5%,
-          rgba(0,155,220,.08),
+          circle at 85% 5%,
+          rgba(0,160,220,.10),
           transparent 30%
         ),
         #020a10;
     }
 
-    .article-container {
-      width: min(920px,90%);
+    .article-inner {
+      width: min(1050px,92%);
       margin: auto;
     }
 
-    .article-content {
-      color: #b0c7d2;
+    .back {
+      display: inline-block;
+      margin-bottom: 42px;
+      color: #58d5ff;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
 
-      font-size: 15px;
+    .article-label {
+      color: #58d5ff;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .30em;
+      text-transform: uppercase;
+    }
 
+    .article-title {
+      margin-top: 15px;
+      font-family: 'Oswald',sans-serif;
+      font-size: clamp(44px,7vw,92px);
+      font-weight: 600;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .article-date {
+      margin-top: 22px;
+      color: #718f9f;
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .article-image {
+      width: 100%;
+      margin-top: 45px;
+      overflow: hidden;
+      background: #071824;
+      border: 1px solid rgba(75,200,244,.15);
+    }
+
+    .article-image img {
+      display: block;
+      width: 100%;
+      max-height: 680px;
+      object-fit: cover;
+    }
+
+    .article-body {
+      max-width: 850px;
+      margin: 48px auto 0;
+      color: #9ab2bd;
+      font-size: 14px;
       line-height: 2;
     }
 
-    .article-content p {
+    .article-body p {
       margin-bottom: 24px;
     }
 
-    .article-content p:first-child::first-letter {
-      float: left;
-
-      margin:
-        7px 11px
-        0 0;
-
-      color: #58d5ff;
-
-      font-family: 'Oswald',sans-serif;
-
-      font-size: 65px;
-
-      line-height: .75;
-
-      font-weight: 700;
-    }
-
-    .article-separator {
-      width: 100%;
-      height: 1px;
-
-      margin:
-        48px 0
-        32px;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(77,205,253,.35),
-          transparent
-        );
-    }
-
-    .article-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 20px;
-
-      flex-wrap: wrap;
-    }
-
-    .article-club {
-      color: #5e7f8f;
-
-      font-size: 9px;
-      font-weight: 700;
-
-      letter-spacing: .20em;
-
-      text-transform: uppercase;
-    }
-
-    .all-news-button {
-      display: inline-block;
-
-      padding: 13px 19px;
-
-      color: #07131a;
-      background: #55d4ff;
-
-      border-radius: 4px;
-
-      font-size: 9px;
-      font-weight: 800;
-
-      letter-spacing: .13em;
-
-      text-transform: uppercase;
-    }
-
-    /* ERROR */
-
-    .error-box {
-      width: min(700px,90%);
-
-      margin: 120px auto;
-
-      padding: 45px;
-
+    .loading,
+    .error {
+      padding: 130px 20px;
       text-align: center;
-
-      background: #061722;
-
-      border:
-        1px solid rgba(82,202,246,.15);
-    }
-
-    .error-box h1 {
-      font-family: 'Oswald',sans-serif;
-
-      font-size: 43px;
-
-      text-transform: uppercase;
-    }
-
-    .error-box p {
-      margin-top: 17px;
-
-      color: #7695a4;
-
+      color: #718f9f;
       font-size: 11px;
-
-      line-height: 1.8;
-    }
-
-    .error-box a {
-      display: inline-block;
-
-      margin-top: 25px;
-
-      padding: 13px 20px;
-
-      color: #031019;
-      background: #55d4ff;
-
-      border-radius: 4px;
-
-      font-size: 9px;
-      font-weight: 800;
-
-      letter-spacing: .13em;
+      letter-spacing: .15em;
+      text-transform: uppercase;
     }
 
     /* FOOTER */
 
     footer {
       background: #01070b;
-
-      border-top:
-        1px solid rgba(71,197,242,.10);
+      border-top: 1px solid rgba(71,197,242,.10);
     }
 
     .footer-inner {
       width: min(1440px,92%);
       min-height: 120px;
-
       margin: auto;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 30px;
     }
 
     .footer-brand {
       display: flex;
       align-items: center;
-
       gap: 14px;
     }
 
     .footer-brand img {
       width: 58px;
       height: 58px;
-
       object-fit: contain;
     }
 
     .footer-brand strong {
       font-size: 12px;
-
       letter-spacing: .17em;
-
-      text-transform: uppercase;
     }
 
     .footer-copy {
       color: #506a78;
-
       font-size: 8px;
-
       letter-spacing: .20em;
-
-      text-transform: uppercase;
     }
 
-    /* RESPONSIVE */
-
     @media (max-width:900px) {
-
       .desktop-nav,
       .ticket-button {
         display: none;
@@ -755,11 +484,9 @@
       .mobile-menu-button {
         display: flex;
       }
-
     }
 
     @media (max-width:650px) {
-
       .header-inner {
         height: 78px;
       }
@@ -773,28 +500,21 @@
         display: none;
       }
 
-      .article-hero,
-      .article-hero-inner {
-        min-height: 500px;
+      .article {
+        padding: 45px 0 80px;
       }
 
       .article-title {
-        font-size: 48px;
+        font-size: 45px;
       }
 
-      .article-section {
-        padding:
-          55px 0
-          80px;
+      .article-image {
+        margin-top: 32px;
       }
 
-      .article-content {
-        font-size: 14px;
-      }
-
-      .article-bottom {
-        align-items: flex-start;
-        flex-direction: column;
+      .article-body {
+        margin-top: 32px;
+        font-size: 13px;
       }
 
       .mobile-menu-inner {
@@ -803,7 +523,6 @@
 
       .mobile-nav a {
         min-height: 55px;
-
         font-size: 25px;
       }
 
@@ -811,22 +530,15 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-
         padding: 25px 0;
       }
-
     }
   </style>
 </head>
 
 <body>
 
-<!-- MOBILE MENU -->
-
-<div
-  class="mobile-menu"
-  id="mobileMenu"
->
+<div class="mobile-menu" id="mobileMenu">
 
   <div class="mobile-menu-inner">
 
@@ -835,38 +547,13 @@
     </div>
 
     <nav class="mobile-nav">
-
-      <a href="index.html">
-        БАСТЫ БЕТ
-      </a>
-
-      <a href="team.html">
-        КОМАНДА
-      </a>
-
-      <a href="matches.html">
-        МАТЧТАР
-      </a>
-
-      <a
-        href="news.html"
-        class="active"
-      >
-        ЖАҢАЛЫҚТАР
-      </a>
-
-      <a href="club.html">
-        КЛУБ
-      </a>
-
-      <a href="fans.html">
-        ЖАНКҮЙЕРЛЕР
-      </a>
-
-      <a href="contact.html">
-        БАЙЛАНЫС
-      </a>
-
+      <a href="index.html">БАСТЫ БЕТ</a>
+      <a href="team.html">КОМАНДА</a>
+      <a href="matches.html">МАТЧТАР</a>
+      <a href="news.html" class="active">ЖАҢАЛЫҚТАР</a>
+      <a href="club.html">КЛУБ</a>
+      <a href="fans.html">ЖАНКҮЙЕРЛЕР</a>
+      <a href="contact.html">БАЙЛАНЫС</a>
     </nav>
 
     <a
@@ -879,10 +566,7 @@
       БИЛЕТТЕР →
     </a>
 
-    <div
-      class="mobile-address"
-      id="mobileAddress"
-    >
+    <div class="mobile-address" id="mobileAddress">
       АҚТАУ · ҚАЗАҚСТАН
     </div>
 
@@ -890,65 +574,24 @@
 
 </div>
 
-
-<!-- HEADER -->
-
 <header>
 
   <div class="header-inner">
 
-    <a
-      href="index.html"
-      class="logo"
-    >
-
-      <img
-        src="logo.png"
-        alt="CASPIY"
-      >
-
-      <strong>
-        CASPIY FUTSAL CLUB
-      </strong>
-
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="CASPIY Futsal Club">
+      <strong>CASPIY FUTSAL CLUB</strong>
     </a>
 
-
     <nav class="desktop-nav">
-
-      <a href="index.html">
-        БАСТЫ БЕТ
-      </a>
-
-      <a href="team.html">
-        КОМАНДА
-      </a>
-
-      <a href="matches.html">
-        МАТЧТАР
-      </a>
-
-      <a
-        href="news.html"
-        class="active"
-      >
-        ЖАҢАЛЫҚТАР
-      </a>
-
-      <a href="club.html">
-        КЛУБ
-      </a>
-
-      <a href="fans.html">
-        ЖАНКҮЙЕРЛЕР
-      </a>
-
-      <a href="contact.html">
-        БАЙЛАНЫС
-      </a>
-
+      <a href="index.html">БАСТЫ БЕТ</a>
+      <a href="team.html">КОМАНДА</a>
+      <a href="matches.html">МАТЧТАР</a>
+      <a href="news.html" class="active">ЖАҢАЛЫҚТАР</a>
+      <a href="club.html">КЛУБ</a>
+      <a href="fans.html">ЖАНКҮЙЕРЛЕР</a>
+      <a href="contact.html">БАЙЛАНЫС</a>
     </nav>
-
 
     <div class="header-actions">
 
@@ -969,13 +612,11 @@
         aria-label="Мәзір"
         aria-expanded="false"
       >
-
         <span class="mobile-lines">
           <span></span>
           <span></span>
           <span></span>
         </span>
-
       </button>
 
     </div>
@@ -985,40 +626,32 @@
 </header>
 
 
-<!-- ARTICLE -->
+<main class="article">
 
-<main id="page">
+  <div
+    class="article-inner"
+    id="articleContainer"
+  >
 
-  <div class="loading">
-    ЖАҢАЛЫҚ ЖҮКТЕЛУДЕ...
+    <div class="loading">
+      ЖАҢАЛЫҚ ЖҮКТЕЛУДЕ...
+    </div>
+
   </div>
 
 </main>
 
-
-<!-- FOOTER -->
 
 <footer>
 
   <div class="footer-inner">
 
     <div class="footer-brand">
-
-      <img
-        src="logo.png"
-        alt="CASPIY"
-      >
-
-      <strong>
-        CASPIY FUTSAL CLUB
-      </strong>
-
+      <img src="logo.png" alt="CASPIY">
+      <strong>CASPIY FUTSAL CLUB</strong>
     </div>
 
-    <div
-      class="footer-copy"
-      id="footerAddress"
-    >
+    <div class="footer-copy" id="footerAddress">
       АҚТАУ · ҚАЗАҚСТАН
     </div>
 
@@ -1030,77 +663,33 @@
 <script type="module">
 
   import { createClient }
-  from
-  'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+  from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
 
-  const supabase =
-    createClient(
-      'https://socqbqyhkyvxnsukgcqm.supabase.co',
-      'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK'
-    );
+  const supabase = createClient(
+    'https://socqbqyhkyvxnsukgcqm.supabase.co',
+    'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK'
+  );
 
-
-  const page =
-    document.getElementById(
-      'page'
-    );
-
-
-  /* MOBILE MENU */
 
   const mobileMenu =
-    document.getElementById(
-      'mobileMenu'
-    );
-
+    document.getElementById('mobileMenu');
 
   const mobileMenuButton =
-    document.getElementById(
-      'mobileMenuButton'
-    );
-
-
-  function openMenu() {
-
-    mobileMenu.classList.add(
-      'open'
-    );
-
-    mobileMenuButton.classList.add(
-      'active'
-    );
-
-    mobileMenuButton.setAttribute(
-      'aria-expanded',
-      'true'
-    );
-
-    document.body.classList.add(
-      'menu-open'
-    );
-
-  }
+    document.getElementById('mobileMenuButton');
 
 
   function closeMenu() {
 
-    mobileMenu.classList.remove(
-      'open'
-    );
-
-    mobileMenuButton.classList.remove(
-      'active'
-    );
+    mobileMenu.classList.remove('open');
+    mobileMenuButton.classList.remove('active');
 
     mobileMenuButton.setAttribute(
       'aria-expanded',
       'false'
     );
 
-    document.body.classList.remove(
-      'menu-open'
-    );
+    document.body.classList.remove('menu-open');
 
   }
 
@@ -1109,19 +698,23 @@
     'click',
     () => {
 
-      if (
-        mobileMenu.classList.contains(
-          'open'
-        )
-      ) {
+      const opened =
+        mobileMenu.classList.toggle('open');
 
-        closeMenu();
+      mobileMenuButton.classList.toggle(
+        'active',
+        opened
+      );
 
-      } else {
+      mobileMenuButton.setAttribute(
+        'aria-expanded',
+        String(opened)
+      );
 
-        openMenu();
-
-      }
+      document.body.classList.toggle(
+        'menu-open',
+        opened
+      );
 
     }
   );
@@ -1130,50 +723,13 @@
   mobileMenu
     .querySelectorAll('a')
     .forEach(
-      link => {
-
+      link =>
         link.addEventListener(
           'click',
           closeMenu
-        );
-
-      }
+        )
     );
 
-
-  document.addEventListener(
-    'keydown',
-    event => {
-
-      if (
-        event.key === 'Escape'
-      ) {
-
-        closeMenu();
-
-      }
-
-    }
-  );
-
-
-  window.addEventListener(
-    'resize',
-    () => {
-
-      if (
-        window.innerWidth > 900
-      ) {
-
-        closeMenu();
-
-      }
-
-    }
-  );
-
-
-  /* HELPERS */
 
   function escapeHtml(value) {
 
@@ -1189,10 +745,7 @@
 
   function formatDate(value) {
 
-    if (!value) {
-      return '';
-    }
-
+    if (!value) return '';
 
     return new Intl.DateTimeFormat(
       'kk-KZ',
@@ -1200,89 +753,105 @@
         timeZone:'Asia/Aqtau',
         day:'numeric',
         month:'long',
-        year:'numeric',
-        hour:'2-digit',
-        minute:'2-digit'
+        year:'numeric'
       }
     )
-    .format(
-      new Date(value)
-    )
+    .format(new Date(value))
     .toUpperCase();
 
   }
 
 
-  function createParagraphs(text) {
+  function descriptionText(text) {
+
+    return String(text || '')
+      .replace(/\s+/g,' ')
+      .trim()
+      .slice(0,160);
+
+  }
+
+
+  function renderParagraphs(text) {
 
     if (!text) {
-
-      return `
-        <p>
-          Толық ақпарат жақында жарияланады.
-        </p>
-      `;
-
+      return '';
     }
 
-
-    const paragraphs =
-      String(text)
-        .split(/\n+/)
-        .map(
-          item =>
-            item.trim()
-        )
-        .filter(Boolean);
-
-
-    return paragraphs
+    return String(text)
+      .split(/\n+/)
+      .filter(Boolean)
       .map(
-        paragraph => `
-          <p>
-            ${escapeHtml(paragraph)}
-          </p>
-        `
+        part =>
+          `<p>${escapeHtml(part.trim())}</p>`
       )
       .join('');
 
   }
 
 
-  /* NOT FOUND */
+  async function loadSettings() {
 
-  function showNotFound() {
+    const { data } =
+      await supabase
+        .from('site_settings')
+        .select('ticket_url,address')
+        .eq('id',1)
+        .maybeSingle();
 
-    document.title =
-      'Жаңалық табылмады — CASPIY';
+
+    if (!data) return;
 
 
-    page.innerHTML = `
+    if (data.ticket_url) {
 
-      <div class="error-box">
+      [
+        document.getElementById('ticketButton'),
+        document.getElementById('mobileTicketButton')
+      ]
+      .forEach(
+        button => {
 
-        <h1>
-          ЖАҢАЛЫҚ ТАБЫЛМАДЫ
-        </h1>
+          button.href =
+            data.ticket_url;
 
-        <p>
-          Сұралған жаңалық жоқ немесе ол сайттан алынып тасталған.
-        </p>
+          button.classList.remove(
+            'disabled'
+          );
 
-        <a href="news.html">
-          БАРЛЫҚ ЖАҢАЛЫҚТАР →
-        </a>
+        }
+      );
 
-      </div>
+    }
 
-    `;
+
+    if (data.address) {
+
+      const address =
+        data.address.toUpperCase();
+
+      document.getElementById(
+        'footerAddress'
+      ).textContent =
+        address;
+
+      document.getElementById(
+        'mobileAddress'
+      ).textContent =
+        address;
+
+    }
 
   }
 
 
-  /* ARTICLE */
-
   async function loadArticle() {
+
+    const container =
+      document.getElementById(
+        'articleContainer'
+      );
+
 
     const params =
       new URLSearchParams(
@@ -1291,15 +860,21 @@
 
 
     const id =
-      params.get('id');
+      Number(
+        params.get('id')
+      );
 
 
     if (
       !id ||
-      !/^\d+$/.test(id)
+      !Number.isInteger(id)
     ) {
 
-      showNotFound();
+      container.innerHTML = `
+        <div class="error">
+          ЖАҢАЛЫҚ ТАБЫЛМАДЫ
+        </div>
+      `;
 
       return;
 
@@ -1315,14 +890,8 @@
         .select(
           'id,title,description,image_url,published_at,is_active'
         )
-        .eq(
-          'id',
-          Number(id)
-        )
-        .eq(
-          'is_active',
-          true
-        )
+        .eq('id',id)
+        .eq('is_active',true)
         .maybeSingle();
 
 
@@ -1331,93 +900,152 @@
       !data
     ) {
 
-      console.error(
-        error
-      );
-
-      showNotFound();
+      container.innerHTML = `
+        <div class="error">
+          ЖАҢАЛЫҚ ТАБЫЛМАДЫ
+        </div>
+      `;
 
       return;
 
     }
 
 
+    const description =
+      descriptionText(
+        data.description
+      ) ||
+      'CASPIY Futsal Club жаңалығы.';
+
+
+    const currentUrl =
+      window.location.href;
+
+
+    const previewImage =
+      data.image_url ||
+      'https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png';
+
+
+    /* DYNAMIC SEO */
+
     document.title =
       `${data.title} — CASPIY Futsal Club`;
 
 
-    page.innerHTML = `
-
-      <article>
-
-        <section
-          class="article-hero ${data.image_url ? '' : 'no-image'}"
-        >
-
-          ${
-            data.image_url
-              ? `
-                <img
-                  class="article-background"
-                  src="${escapeHtml(data.image_url)}"
-                  alt="${escapeHtml(data.title)}"
-                >
-              `
-              : ''
-          }
+    document
+      .getElementById('metaDescription')
+      .setAttribute(
+        'content',
+        description
+      );
 
 
-          <div class="article-hero-inner">
-
-            <div class="article-label">
-              CASPIY · ЖАҢАЛЫҚТАР
-            </div>
-
-            <h1 class="article-title">
-              ${escapeHtml(data.title)}
-            </h1>
-
-            <div class="article-date">
-              ${formatDate(data.published_at)}
-            </div>
-
-          </div>
-
-        </section>
+    document
+      .getElementById('ogTitle')
+      .setAttribute(
+        'content',
+        data.title
+      );
 
 
-        <section class="article-section">
-
-          <div class="article-container">
-
-            <div class="article-content">
-
-              ${createParagraphs(data.description)}
-
-            </div>
+    document
+      .getElementById('ogDescription')
+      .setAttribute(
+        'content',
+        description
+      );
 
 
-            <div class="article-separator"></div>
+    document
+      .getElementById('ogUrl')
+      .setAttribute(
+        'content',
+        currentUrl
+      );
 
 
-            <div class="article-bottom">
+    document
+      .getElementById('ogImage')
+      .setAttribute(
+        'content',
+        previewImage
+      );
 
-              <div class="article-club">
-                CASPIY FUTSAL CLUB · АҚТАУ
-              </div>
 
-              <a
-                href="news.html"
-                class="all-news-button"
+    document
+      .getElementById('twitterTitle')
+      .setAttribute(
+        'content',
+        data.title
+      );
+
+
+    document
+      .getElementById('twitterDescription')
+      .setAttribute(
+        'content',
+        description
+      );
+
+
+    document
+      .getElementById('twitterImage')
+      .setAttribute(
+        'content',
+        previewImage
+      );
+
+
+    /* ARTICLE */
+
+    container.innerHTML = `
+
+      <a
+        href="news.html"
+        class="back"
+      >
+        ← БАРЛЫҚ ЖАҢАЛЫҚТАР
+      </a>
+
+
+      <div class="article-label">
+        CASPIY NEWS
+      </div>
+
+
+      <h1 class="article-title">
+        ${escapeHtml(data.title)}
+      </h1>
+
+
+      <div class="article-date">
+        ${formatDate(data.published_at)}
+      </div>
+
+
+      ${
+        data.image_url
+          ? `
+            <div class="article-image">
+              <img
+                src="${escapeHtml(data.image_url)}"
+                alt="${escapeHtml(data.title)}"
               >
-                БАРЛЫҚ ЖАҢАЛЫҚТАР →
-              </a>
-
             </div>
+          `
+          : ''
+      }
 
-          </div>
 
-        </section>
+      <article class="article-body">
+
+        ${
+          renderParagraphs(
+            data.description
+          ) ||
+          '<p>Толық ақпарат жақын арада жарияланады.</p>'
+        }
 
       </article>
 
@@ -1426,103 +1054,9 @@
   }
 
 
-  /* SETTINGS */
-
-  async function loadSettings() {
-
-    const {
-      data,
-      error
-    } =
-      await supabase
-        .from('site_settings')
-        .select(
-          'ticket_url,address'
-        )
-        .eq(
-          'id',
-          1
-        )
-        .maybeSingle();
-
-
-    if (
-      error ||
-      !data
-    ) {
-
-      return;
-
-    }
-
-
-    const ticketButton =
-      document.getElementById(
-        'ticketButton'
-      );
-
-
-    const mobileTicketButton =
-      document.getElementById(
-        'mobileTicketButton'
-      );
-
-
-    if (
-      data.ticket_url
-    ) {
-
-      ticketButton.href =
-        data.ticket_url;
-
-      mobileTicketButton.href =
-        data.ticket_url;
-
-
-      ticketButton.classList.remove(
-        'disabled'
-      );
-
-      mobileTicketButton.classList.remove(
-        'disabled'
-      );
-
-    }
-
-
-    if (
-      data.address
-    ) {
-
-      const address =
-        data.address.toUpperCase();
-
-
-      document
-        .getElementById(
-          'footerAddress'
-        )
-        .textContent =
-          address;
-
-
-      document
-        .getElementById(
-          'mobileAddress'
-        )
-        .textContent =
-          address;
-
-    }
-
-  }
-
-
-  /* START */
-
   await Promise.all([
-    loadArticle(),
-    loadSettings()
+    loadSettings(),
+    loadArticle()
   ]);
 
 </script>
