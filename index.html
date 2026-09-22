@@ -47,7 +47,16 @@
     href="hero-bg.png"
   >
 
-  <meta property="og:type" content="website">
+  <link
+    rel="preload"
+    as="image"
+    href="kaspiy-title.png"
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
 
   <meta
     property="og:title"
@@ -69,7 +78,10 @@
     content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
   >
 
-  <meta property="og:locale" content="kk_KZ">
+  <meta
+    property="og:locale"
+    content="kk_KZ"
+  >
 
   <meta
     name="twitter:card"
@@ -161,7 +173,9 @@
     }
 
 
-    /* HERO */
+    /* =========================================================
+       HERO
+       ========================================================= */
 
     .hero {
       position: relative;
@@ -211,7 +225,9 @@
     }
 
 
-    /* HEADER */
+    /* =========================================================
+       HEADER
+       ========================================================= */
 
     header {
       position: relative;
@@ -232,35 +248,33 @@
         1px solid rgba(115,209,255,.17);
     }
 
-.desktop-nav {
-  grid-column: 2;
-  justify-self: center;
+    .desktop-nav {
+      grid-column: 2;
+      justify-self: center;
 
-  display: flex;
-  align-items: center;
+      display: flex;
+      align-items: center;
 
-  gap: 32px;
-}
+      gap: 32px;
+    }
 
-.desktop-nav a {
-  position: relative;
+    .desktop-nav a {
+      position: relative;
 
-  padding: 14px 0;
+      padding: 14px 0;
 
-  color: #cfdee6;
+      color: #cfdee6;
 
-  font-size: 12px;
-  font-weight: 600;
+      font-size: 12px;
+      font-weight: 600;
 
-  letter-spacing: .11em;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      white-space: nowrap;
 
-  text-transform: uppercase;
-
-  white-space: nowrap;
-
-  text-shadow:
-    0 2px 8px rgba(0,0,0,.45);
-}
+      text-shadow:
+        0 2px 8px rgba(0,0,0,.45);
+    }
 
     .desktop-nav a::after {
       content: "";
@@ -341,7 +355,9 @@
     }
 
 
-    /* HERO CONTENT */
+    /* =========================================================
+       HERO CONTENT
+       ========================================================= */
 
     .hero-inner {
       position: relative;
@@ -408,12 +424,10 @@
 
       filter:
         drop-shadow(
-          0 0 16px
-          rgba(82,205,255,.24)
+          0 0 16px rgba(82,205,255,.24)
         )
         drop-shadow(
-          0 15px 30px
-          rgba(0,0,0,.34)
+          0 15px 30px rgba(0,0,0,.34)
         );
     }
 
@@ -422,33 +436,29 @@
       padding-left: 48px;
     }
 
-    .hero-title {
+    .hero-title-image-wrap {
       margin: 0;
+      padding: 0;
+    }
 
-      font-family:
-        'Oswald',
-        Arial,
-        sans-serif;
+    .hero-title-image {
+      width: min(560px,100%);
+      height: auto;
 
-      font-size:
-        clamp(105px,10.03vw,160px);
+      object-fit: contain;
 
-      font-weight: 700;
-
-      line-height: .83;
-
-      letter-spacing: -.035em;
-
-      text-transform: uppercase;
-
-      color: #f7fbfd;
-
-      text-shadow:
-        0 8px 25px rgba(0,0,0,.30);
+      filter:
+        brightness(1.04)
+        drop-shadow(
+          0 8px 25px rgba(0,0,0,.30)
+        )
+        drop-shadow(
+          0 0 12px rgba(93,213,255,.12)
+        );
     }
 
     .hero-subtitle {
-      margin-top: 18px;
+      margin-top: 10px;
 
       color: #ecf7fb;
 
@@ -549,7 +559,9 @@
     }
 
 
-    /* MOBILE MENU */
+    /* =========================================================
+       MOBILE MENU
+       ========================================================= */
 
     .mobile-menu-button {
       display: none;
@@ -767,7 +779,9 @@
     }
 
 
-    /* NEXT MATCH */
+    /* =========================================================
+       NEXT MATCH
+       ========================================================= */
 
     .next-match-section {
       padding:
@@ -1043,7 +1057,9 @@
     }
 
 
-    /* PLAYERS */
+    /* =========================================================
+       PLAYERS
+       ========================================================= */
 
     .players-section {
       padding:
@@ -1235,7 +1251,9 @@
     }
 
 
-    /* NEWS */
+    /* =========================================================
+       NEWS
+       ========================================================= */
 
     .news-section {
       padding:
@@ -1466,7 +1484,9 @@
     }
 
 
-    /* RESULTS */
+    /* =========================================================
+       RESULTS
+       ========================================================= */
 
     .results-section {
       padding:
@@ -1658,7 +1678,9 @@
     }
 
 
-    /* FOOTER */
+    /* =========================================================
+       FOOTER
+       ========================================================= */
 
     footer {
       background: #02080d;
@@ -1713,16 +1735,18 @@
     }
 
 
-    /* RESPONSIVE */
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
 
     @media (max-width:1250px) {
 
       .desktop-nav {
-        gap: 17px;
+        gap: 18px;
       }
 
       .desktop-nav a {
-        font-size: 9px;
+        font-size: 10px;
       }
 
       .hero-inner {
@@ -1803,13 +1827,16 @@
         padding-left: 0;
       }
 
-      .hero-title {
-        font-size:
-          clamp(62px,15vw,95px);
+      .hero-title-image {
+        width:
+          min(390px,86vw);
+
+        margin:
+          0 auto;
       }
 
       .hero-subtitle {
-        margin-top: 14px;
+        margin-top: 8px;
 
         font-size:
           clamp(18px,4.7vw,28px);
@@ -1885,8 +1912,12 @@
         width: 195px;
       }
 
-      .hero-title {
-        font-size: 65px;
+      .hero-title-image {
+        width:
+          min(315px,88vw);
+
+        margin:
+          0 auto;
       }
 
       .hero-subtitle {
@@ -1991,8 +2022,10 @@
 
 <!-- MOBILE MENU -->
 
-<div class="mobile-menu" id="mobileMenu">
-
+<div
+  class="mobile-menu"
+  id="mobileMenu"
+>
   <div class="mobile-menu-inner">
 
     <div class="mobile-menu-small">
@@ -2001,7 +2034,10 @@
 
     <nav class="mobile-nav">
 
-      <a href="index.html" class="active">
+      <a
+        href="index.html"
+        class="active"
+      >
         БАСТЫ БЕТ
       </a>
 
@@ -2049,7 +2085,6 @@
     </div>
 
   </div>
-
 </div>
 
 
@@ -2061,7 +2096,10 @@
 
     <nav class="desktop-nav">
 
-      <a href="index.html" class="active">
+      <a
+        href="index.html"
+        class="active"
+      >
         БАСТЫ БЕТ
       </a>
 
@@ -2148,8 +2186,14 @@
 
     <div class="hero-text">
 
-      <h1 class="hero-title">
-        CASPIY
+      <h1 class="hero-title-image-wrap">
+
+        <img
+          class="hero-title-image"
+          src="kaspiy-title.png"
+          alt="КАСПИЙ"
+        >
+
       </h1>
 
       <div class="hero-subtitle">
