@@ -53,10 +53,7 @@
     href="kaspiy-title.png"
   >
 
-  <meta
-    property="og:type"
-    content="website"
-  >
+  <meta property="og:type" content="website">
 
   <meta
     property="og:title"
@@ -78,10 +75,7 @@
     content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
   >
 
-  <meta
-    property="og:locale"
-    content="kk_KZ"
-  >
+  <meta property="og:locale" content="kk_KZ">
 
   <meta
     name="twitter:card"
@@ -136,6 +130,7 @@
   </script>
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -149,7 +144,12 @@
     body {
       min-height: 100vh;
       overflow-x: hidden;
-      font-family: 'Montserrat', Arial, sans-serif;
+
+      font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
       color: #eef8fc;
       background: #020a10;
     }
@@ -179,7 +179,9 @@
 
     .hero {
       position: relative;
+
       min-height: 100vh;
+
       overflow: hidden;
 
       background:
@@ -207,8 +209,10 @@
 
     .hero::before {
       content: "";
+
       position: absolute;
       inset: 0;
+
       pointer-events: none;
 
       background:
@@ -239,36 +243,55 @@
       margin: auto;
 
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
+
+      grid-template-columns:
+        1fr auto 1fr;
+
       align-items: center;
 
-      gap: 24px;
+      column-gap: 24px;
 
       border-bottom:
         1px solid rgba(115,209,255,.17);
     }
 
+
     .desktop-nav {
       grid-column: 2;
+
       justify-self: center;
+      align-self: center;
 
       display: flex;
       align-items: center;
+      justify-content: center;
 
       gap: 32px;
+
+      height: 100%;
     }
+
 
     .desktop-nav a {
       position: relative;
 
-      padding: 14px 0;
+      height: 100%;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0;
 
       color: #cfdee6;
 
       font-size: 12px;
       font-weight: 600;
 
+      line-height: 1;
+
       letter-spacing: .11em;
+
       text-transform: uppercase;
       white-space: nowrap;
 
@@ -276,13 +299,15 @@
         0 2px 8px rgba(0,0,0,.45);
     }
 
+
     .desktop-nav a::after {
       content: "";
 
       position: absolute;
+
       left: 0;
       right: 100%;
-      bottom: 0;
+      bottom: 28px;
 
       height: 2px;
 
@@ -291,61 +316,114 @@
       transition: .25s;
     }
 
+
     .desktop-nav a:hover,
     .desktop-nav a.active {
       color: #68d9ff;
     }
+
 
     .desktop-nav a:hover::after,
     .desktop-nav a.active::after {
       right: 0;
     }
 
+
     .header-actions {
       grid-column: 3;
+
       justify-self: end;
+      align-self: stretch;
 
       display: flex;
       align-items: center;
+      justify-content: flex-end;
 
       gap: 18px;
 
-      flex-shrink: 0;
+      height: 100%;
     }
 
+
     .lang {
+      height: 44px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
       color: #d6e5ec;
 
       font-size: 11px;
-      font-weight: 500;
+      font-weight: 600;
+
+      line-height: 1;
 
       letter-spacing: .12em;
+
+      white-space: nowrap;
     }
 
-.account-button {
-  padding: 14px 24px;
 
-  color: #e7f8ff;
+    .account-button {
+      height: 44px;
 
-  background: rgba(2,13,22,.28);
+      padding:
+        0 24px;
 
-  border: 1px solid rgba(70,207,255,.74);
-  border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
 
-  font-size: 10px;
-  font-weight: 700;
+      color: #031019;
 
-  letter-spacing: .13em;
-  text-transform: uppercase;
+      background:
+        linear-gradient(
+          90deg,
+          #5ed8ff,
+          #82e3ff
+        );
 
-  transition: .25s;
-}
+      border:
+        1px solid rgba(111,220,255,.95);
 
-.account-button:hover {
-  color: #031019;
-  background: #66d9ff;
-}
+      border-radius: 5px;
 
+      font-size: 10px;
+      font-weight: 800;
+
+      line-height: 1;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+
+      white-space: nowrap;
+
+      box-shadow:
+        0 0 0 rgba(83,208,251,0);
+
+      transition:
+        background .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease;
+    }
+
+
+    .account-button:hover {
+      background:
+        linear-gradient(
+          90deg,
+          #86e4ff,
+          #b6f0ff
+        );
+
+      box-shadow:
+        0 0 24px rgba(83,208,251,.18);
+
+      transform:
+        translateY(-1px);
+    }
 
 
     /* =========================================================
@@ -364,18 +442,23 @@
       margin: auto;
 
       display: grid;
-      grid-template-columns: 42% 58%;
+
+      grid-template-columns:
+        42% 58%;
+
       align-items: center;
 
       padding:
         5px 0 75px;
     }
 
+
     .hero-logo-column {
       display: flex;
       align-items: center;
       justify-content: center;
     }
+
 
     .hero-logo-wrap {
       position: relative;
@@ -390,10 +473,12 @@
       justify-content: center;
     }
 
+
     .hero-logo-wrap::before {
       content: "";
 
       position: absolute;
+
       inset: -13%;
 
       border-radius: 50%;
@@ -406,8 +491,10 @@
           transparent 70%
         );
 
-      filter: blur(14px);
+      filter:
+        blur(14px);
     }
+
 
     .hero-main-logo {
       position: relative;
@@ -424,18 +511,24 @@
         );
     }
 
+
     .hero-text {
       position: relative;
+
       padding-left: 48px;
     }
+
 
     .hero-title-image-wrap {
       margin: 0;
       padding: 0;
     }
 
+
     .hero-title-image {
-      width: min(560px,100%);
+      width:
+        min(560px,100%);
+
       height: auto;
 
       object-fit: contain;
@@ -449,6 +542,7 @@
           0 0 12px rgba(93,213,255,.12)
         );
     }
+
 
     .hero-subtitle {
       margin-top: 10px;
@@ -467,10 +561,13 @@
       text-transform: uppercase;
     }
 
+
     .hero-line {
       position: relative;
 
-      width: min(650px,95%);
+      width:
+        min(650px,95%);
+
       height: 1px;
 
       margin:
@@ -484,6 +581,7 @@
           rgba(83,211,255,.08)
         );
     }
+
 
     .hero-line::after {
       content: "";
@@ -507,6 +605,7 @@
         );
     }
 
+
     .hero-slogan {
       color: #e4f1f6;
 
@@ -522,28 +621,33 @@
       text-transform: uppercase;
     }
 
-.hero-location {
-  width: min(650px,95%);
 
-  margin-top: 18px;
+    .hero-location {
+      width:
+        min(650px,95%);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+      margin-top: 18px;
 
-  gap: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  text-align: center;
+      gap: 18px;
 
-  color: #69cfee;
+      text-align: center;
 
-  font-size: 9px;
-  font-weight: 600;
+      color: #69cfee;
 
-  letter-spacing: .30em;
+      font-size: 9px;
+      font-weight: 600;
 
-  text-transform: uppercase;
-}
+      line-height: 1;
+
+      letter-spacing: .30em;
+
+      text-transform: uppercase;
+    }
+
 
     .hero-location::before,
     .hero-location::after {
@@ -583,6 +687,7 @@
       cursor: pointer;
     }
 
+
     .menu-lines {
       position: relative;
 
@@ -590,8 +695,10 @@
       height: 15px;
     }
 
+
     .menu-lines span {
       position: absolute;
+
       left: 0;
 
       width: 21px;
@@ -602,34 +709,45 @@
       transition: .25s;
     }
 
+
     .menu-lines span:nth-child(1) {
       top: 0;
     }
+
 
     .menu-lines span:nth-child(2) {
       top: 6px;
     }
 
+
     .menu-lines span:nth-child(3) {
       top: 12px;
     }
 
+
     .mobile-menu-button.active
     .menu-lines span:nth-child(1) {
       top: 6px;
-      transform: rotate(45deg);
+
+      transform:
+        rotate(45deg);
     }
+
 
     .mobile-menu-button.active
     .menu-lines span:nth-child(2) {
       opacity: 0;
     }
 
+
     .mobile-menu-button.active
     .menu-lines span:nth-child(3) {
       top: 6px;
-      transform: rotate(-45deg);
+
+      transform:
+        rotate(-45deg);
     }
+
 
     .mobile-menu {
       position: fixed;
@@ -638,7 +756,9 @@
       inset: 0;
 
       visibility: hidden;
+
       opacity: 0;
+
       pointer-events: none;
 
       transform:
@@ -658,27 +778,35 @@
         rgba(1,9,15,.99);
     }
 
+
     .mobile-menu.open {
       visibility: visible;
+
       opacity: 1;
+
       pointer-events: auto;
 
       transform:
         translateX(0);
     }
 
+
     .mobile-menu-inner {
-      width: min(540px,88%);
+      width:
+        min(540px,88%);
+
       height: 100%;
 
       margin: auto;
 
       padding:
-        125px 0 40px;
+        105px 0 40px;
 
       display: flex;
+
       flex-direction: column;
     }
+
 
     .mobile-menu-small {
       margin-bottom: 25px;
@@ -693,10 +821,13 @@
       text-transform: uppercase;
     }
 
+
     .mobile-nav {
       display: flex;
+
       flex-direction: column;
     }
+
 
     .mobile-nav a {
       display: flex;
@@ -704,7 +835,7 @@
       align-items: center;
       justify-content: space-between;
 
-      min-height: 58px;
+      min-height: 57px;
 
       color: #d6e8f0;
 
@@ -715,49 +846,55 @@
         'Oswald',
         sans-serif;
 
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 500;
 
       text-transform: uppercase;
     }
+
 
     .mobile-nav a::after {
       content: "→";
 
       color: #54d5ff;
 
-      font-size: 18px;
+      font-size: 17px;
     }
+
 
     .mobile-nav a.active {
       color: #58d5ff;
     }
 
-    .mobile-ticket {
-      margin-top: 30px;
 
-      padding: 16px 20px;
+    .mobile-account {
+      margin-top: 28px;
 
-      text-align: center;
+      min-height: 50px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       color: #031019;
 
-      background: #56d5ff;
+      background:
+        linear-gradient(
+          90deg,
+          #5ed8ff,
+          #90e8ff
+        );
 
       border-radius: 5px;
 
       font-size: 10px;
       font-weight: 800;
 
-      letter-spacing: .14em;
+      letter-spacing: .13em;
 
       text-transform: uppercase;
     }
 
-    .mobile-ticket.disabled {
-      opacity: .30;
-      pointer-events: none;
-    }
 
     .mobile-menu-footer {
       margin-top: auto;
@@ -793,10 +930,14 @@
         );
     }
 
+
     .next-match-container {
-      width: min(1500px,96%);
+      width:
+        min(1500px,96%);
+
       margin: auto;
     }
+
 
     .next-match-card {
       position: relative;
@@ -817,6 +958,7 @@
         );
     }
 
+
     .next-match-card::before {
       content: "";
 
@@ -833,11 +975,13 @@
         url("hero-bg.png");
 
       background-size: cover;
+
       background-position:
         center 70%;
 
       opacity: .16;
     }
+
 
     .next-match-header {
       position: relative;
@@ -858,6 +1002,7 @@
         1px solid rgba(97,207,249,.17);
     }
 
+
     .next-match-header h2 {
       color: #8ddfff;
 
@@ -873,6 +1018,7 @@
       text-transform: uppercase;
     }
 
+
     .all-matches-link {
       color: #92adba;
 
@@ -883,6 +1029,7 @@
 
       text-transform: uppercase;
     }
+
 
     .next-match-body {
       position: relative;
@@ -904,6 +1051,7 @@
       align-items: center;
     }
 
+
     .match-divider {
       width: 1px;
       height: 135px;
@@ -919,10 +1067,14 @@
         );
     }
 
+
     .next-match-column {
-      padding: 10px 24px;
+      padding:
+        10px 24px;
+
       text-align: center;
     }
+
 
     .next-team-logo {
       width: 92px;
@@ -936,11 +1088,14 @@
       justify-content: center;
     }
 
+
     .next-team-logo img {
       width: 100%;
       height: 100%;
+
       object-fit: contain;
     }
+
 
     .next-team-name {
       color: #f5fbff;
@@ -952,6 +1107,7 @@
 
       text-transform: uppercase;
     }
+
 
     .next-team-city {
       min-height: 17px;
@@ -967,6 +1123,7 @@
       text-transform: uppercase;
     }
 
+
     .match-date {
       color: #b4cbd7;
 
@@ -977,6 +1134,7 @@
 
       text-transform: uppercase;
     }
+
 
     .match-time {
       margin:
@@ -993,6 +1151,7 @@
       line-height: 1;
     }
 
+
     .match-competition,
     .match-venue {
       color: #75a6bb;
@@ -1005,6 +1164,7 @@
 
       text-transform: uppercase;
     }
+
 
     .countdown-title {
       margin-bottom: 20px;
@@ -1019,6 +1179,7 @@
       text-transform: uppercase;
     }
 
+
     .countdown {
       max-width: 310px;
 
@@ -1029,6 +1190,7 @@
       grid-template-columns:
         repeat(3,1fr);
     }
+
 
     .countdown-number {
       color: #f8fcff;
@@ -1041,6 +1203,7 @@
 
       line-height: 1;
     }
+
 
     .countdown-label {
       margin-top: 9px;
@@ -1078,10 +1241,14 @@
         1px solid rgba(70,205,255,.08);
     }
 
+
     .players-container {
-      width: min(1500px,96%);
+      width:
+        min(1500px,96%);
+
       margin: auto;
     }
+
 
     .section-header {
       min-height: 72px;
@@ -1099,6 +1266,7 @@
         1px solid rgba(255,255,255,.10);
     }
 
+
     .section-header h2 {
       font-family:
         'Oswald',
@@ -1109,6 +1277,7 @@
 
       text-transform: uppercase;
     }
+
 
     .section-link {
       color: #8fdfff;
@@ -1121,6 +1290,7 @@
       text-transform: uppercase;
     }
 
+
     .players-grid {
       margin-top: 10px;
 
@@ -1131,6 +1301,7 @@
 
       background: #071017;
     }
+
 
     .player-card {
       position: relative;
@@ -1150,20 +1321,25 @@
         1px solid rgba(255,255,255,.16);
     }
 
+
     .player-photo {
       position: absolute;
+
       inset: 0;
 
       width: 100%;
       height: 100%;
 
       object-fit: cover;
+
       object-position:
         center top;
     }
 
+
     .player-overlay {
       position: absolute;
+
       inset: 0;
 
       background:
@@ -1173,6 +1349,7 @@
           rgba(2,6,9,.98) 100%
         );
     }
+
 
     .player-number {
       position: absolute;
@@ -1194,6 +1371,7 @@
       line-height: 1;
     }
 
+
     .player-info {
       position: absolute;
       z-index: 3;
@@ -1202,6 +1380,7 @@
       right: 23px;
       bottom: 25px;
     }
+
 
     .player-name {
       color: #fff;
@@ -1218,6 +1397,7 @@
       text-transform: uppercase;
     }
 
+
     .player-position {
       margin-top: 10px;
 
@@ -1230,6 +1410,7 @@
 
       text-transform: uppercase;
     }
+
 
     .empty {
       grid-column:
@@ -1266,10 +1447,14 @@
         #05111a;
     }
 
+
     .news-container {
-      width: min(1440px,92%);
+      width:
+        min(1440px,92%);
+
       margin: auto;
     }
+
 
     .news-heading {
       margin-bottom: 36px;
@@ -1286,6 +1471,7 @@
         1px solid rgba(94,202,244,.13);
     }
 
+
     .news-small {
       display: block;
 
@@ -1301,6 +1487,7 @@
       text-transform: uppercase;
     }
 
+
     .news-heading h2 {
       font-family:
         'Oswald',
@@ -1314,6 +1501,7 @@
       text-transform: uppercase;
     }
 
+
     .news-grid {
       display: grid;
 
@@ -1323,8 +1511,10 @@
       gap: 15px;
     }
 
+
     .news-card {
       display: block;
+
       overflow: hidden;
 
       background:
@@ -1342,6 +1532,7 @@
         border-color .25s ease;
     }
 
+
     .news-card:hover {
       transform:
         translateY(-4px);
@@ -1350,6 +1541,7 @@
         rgba(77,210,255,.43);
     }
 
+
     .news-image {
       position: relative;
 
@@ -1357,9 +1549,9 @@
 
       overflow: hidden;
 
-      background:
-        #071b28;
+      background: #071b28;
     }
+
 
     .news-image img {
       width: 100%;
@@ -1371,11 +1563,13 @@
         transform .35s ease;
     }
 
+
     .news-card:hover
     .news-image img {
       transform:
         scale(1.035);
     }
+
 
     .news-placeholder {
       position: absolute;
@@ -1395,13 +1589,15 @@
         translate(-50%,-50%);
     }
 
+
     .news-date {
       position: absolute;
 
       left: 14px;
       bottom: 13px;
 
-      padding: 6px 8px;
+      padding:
+        6px 8px;
 
       color: #f2fbff;
 
@@ -1412,14 +1608,17 @@
       font-weight: 700;
     }
 
+
     .news-content {
       min-height: 205px;
 
       padding: 20px;
 
       display: flex;
+
       flex-direction: column;
     }
+
 
     .news-title {
       color: #f3fbff;
@@ -1435,6 +1634,7 @@
 
       text-transform: uppercase;
     }
+
 
     .news-description {
       margin-top: 13px;
@@ -1455,6 +1655,7 @@
       overflow: hidden;
     }
 
+
     .news-bottom {
       margin-top: auto;
 
@@ -1464,6 +1665,7 @@
       align-items: center;
       justify-content: space-between;
     }
+
 
     .read-more {
       color: #55d4ff;
@@ -1476,8 +1678,10 @@
       text-transform: uppercase;
     }
 
+
     .news-arrow {
       color: #55d4ff;
+
       font-size: 19px;
     }
 
@@ -1499,10 +1703,14 @@
         #030c14;
     }
 
+
     .results-container {
-      width: min(1440px,92%);
+      width:
+        min(1440px,92%);
+
       margin: auto;
     }
+
 
     .results-heading {
       margin-bottom: 42px;
@@ -1512,6 +1720,7 @@
 
       gap: 34px;
     }
+
 
     .results-heading span {
       display: block;
@@ -1527,6 +1736,7 @@
       text-transform: uppercase;
     }
 
+
     .results-heading h2 {
       font-family:
         'Oswald',
@@ -1540,6 +1750,7 @@
       text-transform: uppercase;
     }
 
+
     .results-line {
       flex: 1;
 
@@ -1551,6 +1762,7 @@
         rgba(81,206,249,.15);
     }
 
+
     .results-grid {
       display: grid;
 
@@ -1560,8 +1772,10 @@
       gap: 16px;
     }
 
+
     .result-card {
-      padding: 25px 28px;
+      padding:
+        25px 28px;
 
       background:
         linear-gradient(
@@ -1574,6 +1788,7 @@
         1px solid rgba(76,205,255,.17);
     }
 
+
     .result-top {
       margin-bottom: 26px;
 
@@ -1582,6 +1797,7 @@
 
       gap: 20px;
     }
+
 
     .result-competition {
       color: #55cefa;
@@ -1592,10 +1808,13 @@
       text-transform: uppercase;
     }
 
+
     .result-date {
       color: #708b9c;
+
       font-size: 10px;
     }
+
 
     .result-teams {
       display: grid;
@@ -1608,12 +1827,14 @@
       gap: 20px;
     }
 
+
     .result-team {
       display: flex;
       align-items: center;
 
       gap: 13px;
     }
+
 
     .result-team.right {
       flex-direction:
@@ -1622,12 +1843,15 @@
       text-align: right;
     }
 
+
     .result-logo {
-      flex: 0 0 auto;
+      flex:
+        0 0 auto;
 
       width: 58px;
       height: 58px;
     }
+
 
     .result-logo img {
       width: 100%;
@@ -1636,12 +1860,14 @@
       object-fit: contain;
     }
 
+
     .result-team-name {
       font-size: 13px;
       font-weight: 800;
 
       text-transform: uppercase;
     }
+
 
     .result-city {
       margin-top: 4px;
@@ -1652,6 +1878,7 @@
 
       text-transform: uppercase;
     }
+
 
     .result-score {
       min-width: 100px;
@@ -1664,6 +1891,7 @@
 
       font-size: 38px;
     }
+
 
     .result-venue {
       margin-top: 23px;
@@ -1687,8 +1915,11 @@
         1px solid rgba(68,201,255,.10);
     }
 
+
     .footer-inner {
-      width: min(1440px,92%);
+      width:
+        min(1440px,92%);
+
       min-height: 110px;
 
       margin: auto;
@@ -1700,12 +1931,14 @@
       gap: 30px;
     }
 
+
     .footer-logo {
       display: flex;
       align-items: center;
 
       gap: 14px;
     }
+
 
     .footer-logo img {
       width: 55px;
@@ -1714,6 +1947,7 @@
       object-fit: contain;
     }
 
+
     .footer-logo strong {
       font-size: 13px;
 
@@ -1721,6 +1955,7 @@
 
       text-transform: uppercase;
     }
+
 
     .footer-address {
       color: #506b7b;
@@ -1745,6 +1980,13 @@
 
       .desktop-nav a {
         font-size: 10px;
+      }
+
+      .account-button {
+        padding:
+          0 18px;
+
+        font-size: 9px;
       }
 
       .hero-inner {
@@ -1772,33 +2014,46 @@
 
       .hero {
         min-height: 760px;
+
         background-position:
           center center;
       }
 
+
       header {
         height: 82px;
+
         width: 90%;
 
         display: flex;
+
         align-items: center;
+
         justify-content: flex-end;
       }
 
+
       .desktop-nav,
       .lang,
-      .header-actions .account-button {
+      .account-button {
         display: none;
       }
 
+
       .header-actions {
         display: flex;
+
+        width: auto;
+        height: auto;
+
         margin-left: auto;
       }
+
 
       .mobile-menu-button {
         display: flex;
       }
+
 
       .hero-inner {
         min-height:
@@ -1814,6 +2069,7 @@
         text-align: center;
       }
 
+
       .hero-logo-wrap {
         width:
           min(235px,54vw);
@@ -1821,9 +2077,11 @@
         margin: auto;
       }
 
+
       .hero-text {
         padding-left: 0;
       }
+
 
       .hero-title-image {
         width:
@@ -1832,6 +2090,7 @@
         margin:
           0 auto;
       }
+
 
       .hero-subtitle {
         margin-top: 8px;
@@ -1842,12 +2101,15 @@
         letter-spacing: .24em;
       }
 
+
       .hero-line {
-        width: min(360px,85%);
+        width:
+          min(360px,85%);
 
         margin:
           23px auto 20px;
       }
+
 
       .hero-slogan {
         font-size:
@@ -1856,22 +2118,32 @@
         letter-spacing: .16em;
       }
 
+
       .hero-location {
+        width:
+          min(360px,85%);
+
         justify-content: center;
+
+        margin:
+          18px auto 0;
 
         font-size: 8px;
 
         gap: 10px;
       }
 
+
       .hero-location::before,
       .hero-location::after {
         width: 35px;
       }
 
+
       .next-match-body {
         display: block;
       }
+
 
       .match-divider {
         width: 70%;
@@ -1881,10 +2153,12 @@
           22px auto;
       }
 
+
       .players-grid {
         grid-template-columns:
           repeat(2,minmax(0,1fr));
       }
+
 
       .results-grid {
         grid-template-columns: 1fr;
@@ -1898,6 +2172,7 @@
         min-height: 740px;
       }
 
+
       .hero-inner {
         min-height:
           calc(740px - 82px);
@@ -1906,9 +2181,11 @@
           20px 0 45px;
       }
 
+
       .hero-logo-wrap {
         width: 195px;
       }
+
 
       .hero-title-image {
         width:
@@ -1918,107 +2195,130 @@
           0 auto;
       }
 
+
       .hero-subtitle {
         font-size: 18px;
 
         letter-spacing: .21em;
       }
 
+
       .hero-slogan {
         font-size: 12px;
       }
+
 
       .next-match-header {
         padding:
           12px 17px;
       }
 
+
       .next-match-header h2 {
         font-size: 13px;
       }
 
+
       .all-matches-link {
         font-size: 8px;
+
         text-align: right;
       }
+
 
       .next-match-column {
         padding:
           12px 8px;
       }
 
+
       .players-grid,
       .news-grid {
         grid-template-columns: 1fr;
       }
 
+
       .player-card {
         min-height: 500px;
       }
 
+
       .news-heading {
         align-items: flex-start;
+
         flex-direction: column;
       }
 
+
       .results-heading {
         align-items: flex-start;
+
         flex-direction: column;
       }
+
 
       .results-line {
         width: 100%;
       }
+
 
       .result-card {
         padding:
           22px 15px;
       }
 
+
       .result-teams {
         gap: 8px;
       }
+
 
       .result-logo {
         width: 43px;
         height: 43px;
       }
 
+
       .result-team-name {
         font-size: 10px;
       }
 
+
       .result-score {
         min-width: 65px;
+
         font-size: 31px;
       }
+
 
       .footer-inner {
         padding:
           25px 0;
 
         flex-direction: column;
+
         align-items: flex-start;
 
         gap: 12px;
       }
 
-      .mobile-menu-inner {
-        padding-top: 105px;
-      }
 
       .mobile-nav a {
         min-height: 55px;
+
         font-size: 25px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
 
-<!-- MOBILE MENU -->
+<!-- =========================================================
+     MOBILE MENU
+     ========================================================= -->
 
 <div
   class="mobile-menu"
@@ -2065,12 +2365,14 @@
 
     </nav>
 
-<a
-  href="account.html"
-  class="account-button"
->
-  ЖЕКЕ КАБИНЕТ →
-</a>
+
+    <a
+      href="account.html"
+      class="mobile-account"
+    >
+      ЖЕКЕ КАБИНЕТ →
+    </a>
+
 
     <div
       class="mobile-menu-footer"
@@ -2083,11 +2385,15 @@
 </div>
 
 
-<!-- HERO -->
+<!-- =========================================================
+     HERO
+     ========================================================= -->
 
 <section class="hero">
 
+
   <header>
+
 
     <nav class="desktop-nav">
 
@@ -2131,12 +2437,14 @@
         KZ⌄
       </span>
 
-<a
-  href="account.html"
-  class="mobile-ticket"
->
-  ЖЕКЕ КАБИНЕТ →
-</a>
+
+      <a
+        href="account.html"
+        class="account-button"
+      >
+        ЖЕКЕ КАБИНЕТ →
+      </a>
+
 
       <button
         type="button"
@@ -2147,19 +2455,23 @@
       >
 
         <span class="menu-lines">
+
           <span></span>
           <span></span>
           <span></span>
+
         </span>
 
       </button>
 
     </div>
 
+
   </header>
 
 
   <div class="hero-inner">
+
 
     <div class="hero-logo-column">
 
@@ -2178,6 +2490,7 @@
 
     <div class="hero-text">
 
+
       <h1 class="hero-title-image-wrap">
 
         <img
@@ -2188,34 +2501,44 @@
 
       </h1>
 
+
       <div class="hero-subtitle">
         FUTSAL CLUB
       </div>
 
+
       <div class="hero-line"></div>
+
 
       <div class="hero-slogan">
         БІР ӨҢІР · БІР КОМАНДА
       </div>
 
+
       <div class="hero-location">
         АҚТАУ · ҚАЗАҚСТАН
       </div>
 
+
     </div>
 
+
   </div>
+
 
 </section>
 
 
-<!-- NEXT MATCH -->
+<!-- =========================================================
+     NEXT MATCH
+     ========================================================= -->
 
 <section class="next-match-section">
 
   <div class="next-match-container">
 
     <div class="next-match-card">
+
 
       <div class="next-match-header">
 
@@ -2234,6 +2557,7 @@
 
 
       <div class="next-match-body">
+
 
         <div class="next-match-column">
 
@@ -2338,7 +2662,9 @@
             МАТЧҚА ДЕЙІН
           </div>
 
+
           <div class="countdown">
+
 
             <div>
 
@@ -2387,11 +2713,15 @@
 
             </div>
 
+
           </div>
+
 
         </div>
 
+
       </div>
+
 
     </div>
 
@@ -2400,11 +2730,14 @@
 </section>
 
 
-<!-- PLAYERS -->
+<!-- =========================================================
+     PLAYERS
+     ========================================================= -->
 
 <section class="players-section">
 
   <div class="players-container">
+
 
     <div class="section-header">
 
@@ -2421,25 +2754,32 @@
 
     </div>
 
+
     <div
       class="players-grid"
       id="playersList"
     >
+
       <div class="empty">
         ОЙЫНШЫЛАР ЖҮКТЕЛУДЕ...
       </div>
+
     </div>
+
 
   </div>
 
 </section>
 
 
-<!-- NEWS -->
+<!-- =========================================================
+     NEWS
+     ========================================================= -->
 
 <section class="news-section">
 
   <div class="news-container">
+
 
     <div class="news-heading">
 
@@ -2455,6 +2795,7 @@
 
       </div>
 
+
       <a
         href="news.html"
         class="section-link"
@@ -2464,25 +2805,32 @@
 
     </div>
 
+
     <div
       class="news-grid"
       id="newsList"
     >
+
       <div class="empty">
         ЖАҢАЛЫҚТАР ЖҮКТЕЛУДЕ...
       </div>
+
     </div>
+
 
   </div>
 
 </section>
 
 
-<!-- RESULTS -->
+<!-- =========================================================
+     RESULTS
+     ========================================================= -->
 
 <section class="results-section">
 
   <div class="results-container">
+
 
     <div class="results-heading">
 
@@ -2502,25 +2850,32 @@
 
     </div>
 
+
     <div
       class="results-grid"
       id="resultsList"
     >
+
       <div class="empty">
         НӘТИЖЕЛЕР ЖҮКТЕЛУДЕ...
       </div>
+
     </div>
+
 
   </div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
 
 <footer>
 
   <div class="footer-inner">
+
 
     <div class="footer-logo">
 
@@ -2535,6 +2890,7 @@
 
     </div>
 
+
     <div
       class="footer-address"
       id="footerAddress"
@@ -2542,10 +2898,15 @@
       АҚТАУ · ҚАЗАҚСТАН
     </div>
 
+
   </div>
 
 </footer>
 
+
+<!-- =========================================================
+     SUPABASE
+     ========================================================= -->
 
 <script type="module">
 
@@ -2566,7 +2927,9 @@
   let countdownTimer = null;
 
 
-  /* MOBILE MENU */
+  /* =========================================================
+     MOBILE MENU
+     ========================================================= */
 
   const mobileMenu =
     document.getElementById(
@@ -2584,12 +2947,16 @@
 
     mobileMenu
       .classList
-      .remove('open');
+      .remove(
+        'open'
+      );
 
 
     mobileMenuButton
       .classList
-      .remove('active');
+      .remove(
+        'active'
+      );
 
 
     mobileMenuButton
@@ -2601,7 +2968,9 @@
 
     document.body
       .classList
-      .remove('menu-open');
+      .remove(
+        'menu-open'
+      );
 
   }
 
@@ -2614,7 +2983,9 @@
         const open =
           mobileMenu
             .classList
-            .toggle('open');
+            .toggle(
+              'open'
+            );
 
 
         mobileMenuButton
@@ -2646,7 +3017,9 @@
 
 
   mobileMenu
-    .querySelectorAll('a')
+    .querySelectorAll(
+      'a'
+    )
     .forEach(
       link => {
 
@@ -2659,40 +3032,66 @@
     );
 
 
-  document.addEventListener(
-    'keydown',
-    event => {
+  document
+    .addEventListener(
+      'keydown',
+      event => {
 
-      if (
-        event.key === 'Escape'
-      ) {
+        if (
+          event.key ===
+          'Escape'
+        ) {
 
-        closeMobileMenu();
+          closeMobileMenu();
+
+        }
 
       }
-
-    }
-  );
+    );
 
 
-  /* HELPERS */
+  /* =========================================================
+     HELPERS
+     ========================================================= */
 
   function escapeHtml(value) {
 
-    return String(value ?? '')
-      .replaceAll('&','&amp;')
-      .replaceAll('<','&lt;')
-      .replaceAll('>','&gt;')
-      .replaceAll('"','&quot;')
-      .replaceAll("'","&#039;");
+    return String(
+      value ?? ''
+    )
+      .replaceAll(
+        '&',
+        '&amp;'
+      )
+      .replaceAll(
+        '<',
+        '&lt;'
+      )
+      .replaceAll(
+        '>',
+        '&gt;'
+      )
+      .replaceAll(
+        '"',
+        '&quot;'
+      )
+      .replaceAll(
+        "'",
+        '&#039;'
+      );
 
   }
 
 
   function pad(value) {
 
-    return String(value)
-      .padStart(2,'0');
+    return String(
+      value
+    )
+      .padStart(
+        2,
+        '0'
+      );
 
   }
 
@@ -2704,19 +3103,27 @@
     }
 
 
-    return new Intl.DateTimeFormat(
-      'kk-KZ',
-      {
-        timeZone:'Asia/Aqtau',
-        day:'numeric',
-        month:'long',
-        year:'numeric'
-      }
-    )
-    .format(
-      new Date(value)
-    )
-    .toUpperCase();
+    return new Intl
+      .DateTimeFormat(
+        'kk-KZ',
+        {
+          timeZone:
+            'Asia/Aqtau',
+
+          day:
+            'numeric',
+
+          month:
+            'long',
+
+          year:
+            'numeric'
+        }
+      )
+      .format(
+        new Date(value)
+      )
+      .toUpperCase();
 
   }
 
@@ -2728,18 +3135,26 @@
     }
 
 
-    return new Intl.DateTimeFormat(
-      'kk-KZ',
-      {
-        timeZone:'Asia/Aqtau',
-        day:'2-digit',
-        month:'2-digit',
-        year:'numeric'
-      }
-    )
-    .format(
-      new Date(value)
-    );
+    return new Intl
+      .DateTimeFormat(
+        'kk-KZ',
+        {
+          timeZone:
+            'Asia/Aqtau',
+
+          day:
+            '2-digit',
+
+          month:
+            '2-digit',
+
+          year:
+            'numeric'
+        }
+      )
+      .format(
+        new Date(value)
+      );
 
   }
 
@@ -2751,18 +3166,26 @@
     }
 
 
-    return new Intl.DateTimeFormat(
-      'kk-KZ',
-      {
-        timeZone:'Asia/Aqtau',
-        hour:'2-digit',
-        minute:'2-digit',
-        hour12:false
-      }
-    )
-    .format(
-      new Date(value)
-    );
+    return new Intl
+      .DateTimeFormat(
+        'kk-KZ',
+        {
+          timeZone:
+            'Asia/Aqtau',
+
+          hour:
+            '2-digit',
+
+          minute:
+            '2-digit',
+
+          hour12:
+            false
+        }
+      )
+      .format(
+        new Date(value)
+      );
 
   }
 
@@ -2791,8 +3214,13 @@
           .toLowerCase();
 
 
-        if (!target || !name) {
+        if (
+          !target ||
+          !name
+        ) {
+
           return false;
+
         }
 
 
@@ -2807,59 +3235,74 @@
   }
 
 
-  /* SETTINGS */
+  /* =========================================================
+     SETTINGS
+     ========================================================= */
 
-async function loadSettings() {
+  async function loadSettings() {
 
-  const {
-    data
-  } =
-    await supabase
-      .from('site_settings')
-      .select('address')
-      .eq('id',1)
-      .maybeSingle();
+    const {
+      data
+    } =
+      await supabase
+        .from(
+          'site_settings'
+        )
+        .select(
+          'address'
+        )
+        .eq(
+          'id',
+          1
+        )
+        .maybeSingle();
 
 
-  if (!data) {
-    return;
+    if (!data) {
+      return;
+    }
+
+
+    if (
+      data.address
+    ) {
+
+      const address =
+        data.address
+          .toUpperCase();
+
+
+      document
+        .getElementById(
+          'footerAddress'
+        )
+        .textContent =
+          address;
+
+
+      document
+        .getElementById(
+          'mobileAddress'
+        )
+        .textContent =
+          address;
+
+    }
+
   }
 
 
-  if (data.address) {
-
-    const address =
-      data.address.toUpperCase();
-
-
-    document
-      .getElementById(
-        'footerAddress'
-      )
-      .textContent =
-        address;
-
-
-    document
-      .getElementById(
-        'mobileAddress'
-      )
-      .textContent =
-        address;
-
-  }
-
-}
-
-
-  /* PLAYERS */
+  /* =========================================================
+     PLAYERS
+     ========================================================= */
 
   async function loadPlayers() {
 
     const list =
-      document.getElementById(
-        'playersList'
-      );
+      document
+        .getElementById(
+          'playersList'
+        );
 
 
     const {
@@ -2867,7 +3310,9 @@ async function loadSettings() {
       error
     } =
       await supabase
-        .from('players')
+        .from(
+          'players'
+        )
         .select(
           'id,name,number,position,photo_url,sort_order'
         )
@@ -2878,16 +3323,20 @@ async function loadSettings() {
         .order(
           'sort_order',
           {
-            ascending:true
+            ascending:
+              true
           }
         )
         .order(
           'number',
           {
-            ascending:true
+            ascending:
+              true
           }
         )
-        .limit(5);
+        .limit(
+          5
+        );
 
 
     if (
@@ -2896,69 +3345,79 @@ async function loadSettings() {
     ) {
 
       list.innerHTML = `
+
         <div class="empty">
           ОЙЫНШЫЛАР ӘЗІРГЕ ҚОСЫЛМАҒАН
         </div>
+
       `;
 
+
       return;
+
     }
 
 
     list.innerHTML =
-      data.map(
-        player => `
+      data
+        .map(
+          player => `
 
-          <article class="player-card">
+            <article class="player-card">
 
-            ${
-              player.photo_url
-                ? `
-                  <img
-                    class="player-photo"
-                    src="${escapeHtml(player.photo_url)}"
-                    alt="${escapeHtml(player.name)}"
-                    loading="lazy"
-                  >
-                `
-                : ''
-            }
+              ${
+                player.photo_url
+                  ? `
+                    <img
+                      class="player-photo"
+                      src="${escapeHtml(player.photo_url)}"
+                      alt="${escapeHtml(player.name)}"
+                      loading="lazy"
+                    >
+                  `
+                  : ''
+              }
 
-            <div class="player-overlay"></div>
+              <div class="player-overlay"></div>
 
-            <div class="player-number">
-              ${player.number ?? ''}
-            </div>
 
-            <div class="player-info">
-
-              <div class="player-name">
-                ${escapeHtml(player.name)}
+              <div class="player-number">
+                ${player.number ?? ''}
               </div>
 
-              <div class="player-position">
-                ${escapeHtml(player.position || '')}
+
+              <div class="player-info">
+
+                <div class="player-name">
+                  ${escapeHtml(player.name)}
+                </div>
+
+                <div class="player-position">
+                  ${escapeHtml(player.position || '')}
+                </div>
+
               </div>
 
-            </div>
+            </article>
 
-          </article>
-
-        `
-      )
-      .join('');
+          `
+        )
+        .join('');
 
   }
 
 
-  /* NEWS */
+  /* =========================================================
+     NEWS
+     ========================================================= */
 
   async function loadNews() {
 
     const list =
-      document.getElementById(
-        'newsList'
-      );
+      document
+        .getElementById(
+          'newsList'
+        );
 
 
     const {
@@ -2966,7 +3425,9 @@ async function loadSettings() {
       error
     } =
       await supabase
-        .from('news')
+        .from(
+          'news'
+        )
         .select(
           'id,title,description,image_url,published_at,sort_order'
         )
@@ -2977,16 +3438,20 @@ async function loadSettings() {
         .order(
           'sort_order',
           {
-            ascending:true
+            ascending:
+              true
           }
         )
         .order(
           'published_at',
           {
-            ascending:false
+            ascending:
+              false
           }
         )
-        .limit(4);
+        .limit(
+          4
+        );
 
 
     if (
@@ -2995,98 +3460,115 @@ async function loadSettings() {
     ) {
 
       list.innerHTML = `
+
         <div class="empty">
           ЖАҢАЛЫҚТАР ӘЗІРГЕ ҚОСЫЛМАҒАН
         </div>
+
       `;
 
+
       return;
+
     }
 
 
     list.innerHTML =
-      data.map(
-        item => `
+      data
+        .map(
+          item => `
 
-          <a
-            class="news-card"
-            href="news-detail.html?id=${item.id}"
-          >
+            <a
+              class="news-card"
+              href="news-detail.html?id=${item.id}"
+            >
 
-            <div class="news-image">
+              <div class="news-image">
 
-              ${
-                item.image_url
-                  ? `
-                    <img
-                      src="${escapeHtml(item.image_url)}"
-                      alt="${escapeHtml(item.title)}"
-                      loading="lazy"
-                    >
-                  `
-                  : `
-                    <img
-                      class="news-placeholder"
-                      src="logo.png"
-                      alt=""
-                    >
-                  `
-              }
-
-              <div class="news-date">
-                ${formatDate(item.published_at)}
-              </div>
-
-            </div>
+                ${
+                  item.image_url
+                    ? `
+                      <img
+                        src="${escapeHtml(item.image_url)}"
+                        alt="${escapeHtml(item.title)}"
+                        loading="lazy"
+                      >
+                    `
+                    : `
+                      <img
+                        class="news-placeholder"
+                        src="logo.png"
+                        alt=""
+                      >
+                    `
+                }
 
 
-            <div class="news-content">
-
-              <div class="news-title">
-                ${escapeHtml(item.title)}
-              </div>
-
-              ${
-                item.description
-                  ? `
-                    <div class="news-description">
-                      ${escapeHtml(item.description)}
-                    </div>
-                  `
-                  : ''
-              }
-
-              <div class="news-bottom">
-
-                <span class="read-more">
-                  ТОЛЫҒЫРАҚ
-                </span>
-
-                <span class="news-arrow">
-                  →
-                </span>
+                <div class="news-date">
+                  ${formatDate(item.published_at)}
+                </div>
 
               </div>
 
-            </div>
 
-          </a>
+              <div class="news-content">
 
-        `
-      )
-      .join('');
+
+                <div class="news-title">
+                  ${escapeHtml(item.title)}
+                </div>
+
+
+                ${
+                  item.description
+                    ? `
+                      <div class="news-description">
+                        ${escapeHtml(item.description)}
+                      </div>
+                    `
+                    : ''
+                }
+
+
+                <div class="news-bottom">
+
+                  <span class="read-more">
+                    ТОЛЫҒЫРАҚ
+                  </span>
+
+                  <span class="news-arrow">
+                    →
+                  </span>
+
+                </div>
+
+
+              </div>
+
+
+            </a>
+
+          `
+        )
+        .join('');
 
   }
 
 
-  /* NEXT MATCH */
+  /* =========================================================
+     NEXT MATCH
+     ========================================================= */
 
   async function getNextMatch() {
 
     const featured =
       await supabase
-        .from('matches')
-        .select('*')
+        .from(
+          'matches'
+        )
+        .select(
+          '*'
+        )
         .eq(
           'status',
           'upcoming'
@@ -3098,22 +3580,33 @@ async function loadSettings() {
         .order(
           'match_date',
           {
-            ascending:true
+            ascending:
+              true
           }
         )
-        .limit(1)
+        .limit(
+          1
+        )
         .maybeSingle();
 
 
-    if (featured.data) {
+    if (
+      featured.data
+    ) {
+
       return featured.data;
+
     }
 
 
     const fallback =
       await supabase
-        .from('matches')
-        .select('*')
+        .from(
+          'matches'
+        )
+        .select(
+          '*'
+        )
         .eq(
           'status',
           'upcoming'
@@ -3121,111 +3614,163 @@ async function loadSettings() {
         .order(
           'match_date',
           {
-            ascending:true
+            ascending:
+              true
           }
         )
-        .limit(1)
+        .limit(
+          1
+        )
         .maybeSingle();
 
 
-    return fallback.data || null;
+    return (
+      fallback.data ||
+      null
+    );
 
   }
 
 
-  function startCountdown(value) {
+  function startCountdown(
+    value
+  ) {
 
-    if (countdownTimer) {
+    if (
+      countdownTimer
+    ) {
+
       clearInterval(
         countdownTimer
       );
+
     }
 
 
     function update() {
 
       let diff =
-        new Date(value).getTime() -
+        new Date(
+          value
+        ).getTime() -
         Date.now();
 
 
-      if (diff <= 0) {
+      if (
+        diff <= 0
+      ) {
 
-        document.getElementById(
-          'countdown-days'
-        ).textContent = '00';
-
-
-        document.getElementById(
-          'countdown-hours'
-        ).textContent = '00';
-
-
-        document.getElementById(
-          'countdown-minutes'
-        ).textContent = '00';
+        document
+          .getElementById(
+            'countdown-days'
+          )
+          .textContent =
+            '00';
 
 
-        document.getElementById(
-          'countdown-title'
-        ).textContent =
-          'МАТЧ БАСТАЛДЫ';
+        document
+          .getElementById(
+            'countdown-hours'
+          )
+          .textContent =
+            '00';
+
+
+        document
+          .getElementById(
+            'countdown-minutes'
+          )
+          .textContent =
+            '00';
+
+
+        document
+          .getElementById(
+            'countdown-title'
+          )
+          .textContent =
+            'МАТЧ БАСТАЛДЫ';
 
 
         clearInterval(
           countdownTimer
         );
 
+
         return;
+
       }
 
 
       const day =
-        1000 * 60 * 60 * 24;
+        1000 *
+        60 *
+        60 *
+        24;
 
 
       const hour =
-        1000 * 60 * 60;
+        1000 *
+        60 *
+        60;
 
 
       const minute =
-        1000 * 60;
+        1000 *
+        60;
 
 
       const days =
-        Math.floor(diff / day);
+        Math.floor(
+          diff /
+          day
+        );
 
 
-      diff %= day;
+      diff %=
+        day;
 
 
       const hours =
-        Math.floor(diff / hour);
+        Math.floor(
+          diff /
+          hour
+        );
 
 
-      diff %= hour;
+      diff %=
+        hour;
 
 
       const minutes =
-        Math.floor(diff / minute);
+        Math.floor(
+          diff /
+          minute
+        );
 
 
-      document.getElementById(
-        'countdown-days'
-      ).textContent =
-        pad(days);
+      document
+        .getElementById(
+          'countdown-days'
+        )
+        .textContent =
+          pad(days);
 
 
-      document.getElementById(
-        'countdown-hours'
-      ).textContent =
-        pad(hours);
+      document
+        .getElementById(
+          'countdown-hours'
+        )
+        .textContent =
+          pad(hours);
 
 
-      document.getElementById(
-        'countdown-minutes'
-      ).textContent =
-        pad(minutes);
+      document
+        .getElementById(
+          'countdown-minutes'
+        )
+        .textContent =
+          pad(minutes);
 
     }
 
@@ -3253,7 +3798,9 @@ async function loadSettings() {
         getNextMatch(),
 
         supabase
-          .from('teams')
+          .from(
+            'teams'
+          )
           .select(
             'name,city,logo_url'
           )
@@ -3265,26 +3812,34 @@ async function loadSettings() {
       ]);
 
 
-    if (!match) {
+    if (
+      !match
+    ) {
 
-      document.getElementById(
-        'next-match-date'
-      ).textContent =
-        'МАТЧ ӘЗІРГЕ БЕЛГІЛЕНБЕДІ';
+      document
+        .getElementById(
+          'next-match-date'
+        )
+        .textContent =
+          'МАТЧ ӘЗІРГЕ БЕЛГІЛЕНБЕДІ';
 
 
-      document.getElementById(
-        'next-match-time'
-      ).textContent =
-        '--:--';
+      document
+        .getElementById(
+          'next-match-time'
+        )
+        .textContent =
+          '--:--';
 
 
       return;
+
     }
 
 
     const teams =
-      teamsResult.data || [];
+      teamsResult.data ||
+      [];
 
 
     const opponentTeam =
@@ -3295,9 +3850,16 @@ async function loadSettings() {
 
 
     const caspiy = {
-      name:'КАСПИЙ',
-      city:'АҚТАУ',
-      logo:'logo.png'
+
+      name:
+        'КАСПИЙ',
+
+      city:
+        'АҚТАУ',
+
+      logo:
+        'logo.png'
+
     };
 
 
@@ -3332,9 +3894,10 @@ async function loadSettings() {
     ) {
 
       const image =
-        document.getElementById(
-          `${side}-team-logo`
-        );
+        document
+          .getElementById(
+            `${side}-team-logo`
+          );
 
 
       image.src =
@@ -3345,22 +3908,27 @@ async function loadSettings() {
         team.name;
 
 
-      document.getElementById(
-        `${side}-team-name`
-      ).textContent =
-        team.name;
+      document
+        .getElementById(
+          `${side}-team-name`
+        )
+        .textContent =
+          team.name;
 
 
-      document.getElementById(
-        `${side}-team-city`
-      ).textContent =
-        team.city;
+      document
+        .getElementById(
+          `${side}-team-city`
+        )
+        .textContent =
+          team.city;
 
     }
 
 
     if (
-      match.is_home !== false
+      match.is_home !==
+      false
     ) {
 
       renderTeam(
@@ -3390,32 +3958,42 @@ async function loadSettings() {
     }
 
 
-    document.getElementById(
-      'next-match-date'
-    ).textContent =
-      formatDate(
-        match.match_date
-      );
+    document
+      .getElementById(
+        'next-match-date'
+      )
+      .textContent =
+        formatDate(
+          match.match_date
+        );
 
 
-    document.getElementById(
-      'next-match-time'
-    ).textContent =
-      formatTime(
-        match.match_date
-      );
+    document
+      .getElementById(
+        'next-match-time'
+      )
+      .textContent =
+        formatTime(
+          match.match_date
+        );
 
 
-    document.getElementById(
-      'next-match-competition'
-    ).textContent =
-      match.competition || '';
+    document
+      .getElementById(
+        'next-match-competition'
+      )
+      .textContent =
+        match.competition ||
+        '';
 
 
-    document.getElementById(
-      'next-match-venue'
-    ).textContent =
-      match.venue || '';
+    document
+      .getElementById(
+        'next-match-venue'
+      )
+      .textContent =
+        match.venue ||
+        '';
 
 
     startCountdown(
@@ -3425,7 +4003,9 @@ async function loadSettings() {
   }
 
 
-  /* RESULTS */
+  /* =========================================================
+     RESULTS
+     ========================================================= */
 
   function resultTeamHtml(
     name,
@@ -3453,6 +4033,7 @@ async function loadSettings() {
 
         </div>
 
+
         <div>
 
           <div class="result-team-name">
@@ -3475,9 +4056,10 @@ async function loadSettings() {
   async function loadResults() {
 
     const list =
-      document.getElementById(
-        'resultsList'
-      );
+      document
+        .getElementById(
+          'resultsList'
+        );
 
 
     const [
@@ -3487,8 +4069,12 @@ async function loadSettings() {
       await Promise.all([
 
         supabase
-          .from('matches')
-          .select('*')
+          .from(
+            'matches'
+          )
+          .select(
+            '*'
+          )
           .eq(
             'status',
             'finished'
@@ -3496,13 +4082,18 @@ async function loadSettings() {
           .order(
             'match_date',
             {
-              ascending:false
+              ascending:
+                false
             }
           )
-          .limit(4),
+          .limit(
+            4
+          ),
 
         supabase
-          .from('teams')
+          .from(
+            'teams'
+          )
           .select(
             'name,city,logo_url'
           )
@@ -3515,155 +4106,178 @@ async function loadSettings() {
 
 
     const matches =
-      matchesResult.data || [];
+      matchesResult.data ||
+      [];
 
 
     const teams =
-      teamsResult.data || [];
+      teamsResult.data ||
+      [];
 
 
-    if (!matches.length) {
+    if (
+      !matches.length
+    ) {
 
       list.innerHTML = `
+
         <div class="empty">
           АЯҚТАЛҒАН МАТЧТАР ӘЗІРГЕ ЖОҚ
         </div>
+
       `;
 
+
       return;
+
     }
 
 
     list.innerHTML =
-      matches.map(
-        match => {
+      matches
+        .map(
+          match => {
 
-          const team =
-            findTeam(
-              teams,
-              match.opponent
-            );
-
-
-          const opponentName =
-            team?.name ||
-            match.opponent ||
-            'ҚАРСЫЛАС';
+            const team =
+              findTeam(
+                teams,
+                match.opponent
+              );
 
 
-          const opponentCity =
-            team?.city || '';
+            const opponentName =
+              team?.name ||
+              match.opponent ||
+              'ҚАРСЫЛАС';
 
 
-          const opponentLogo =
-            team?.logo_url ||
-            match.opponent_logo_url ||
-            '';
+            const opponentCity =
+              team?.city ||
+              '';
 
 
-          const home =
-            match.is_home !== false;
+            const opponentLogo =
+              team?.logo_url ||
+              match.opponent_logo_url ||
+              '';
 
 
-          const caspiyScore =
-            match.caspiy_score ?? '-';
+            const home =
+              match.is_home !==
+              false;
 
 
-          const opponentScore =
-            match.opponent_score ?? '-';
+            const caspiyScore =
+              match.caspiy_score ??
+              '-';
 
 
-          const left =
-            home
-              ? resultTeamHtml(
-                  'КАСПИЙ',
-                  'АҚТАУ',
-                  'logo.png',
-                  false
-                )
-              : resultTeamHtml(
-                  opponentName,
-                  opponentCity,
-                  opponentLogo,
-                  false
-                );
+            const opponentScore =
+              match.opponent_score ??
+              '-';
 
 
-          const right =
-            home
-              ? resultTeamHtml(
-                  opponentName,
-                  opponentCity,
-                  opponentLogo,
-                  true
-                )
-              : resultTeamHtml(
-                  'КАСПИЙ',
-                  'АҚТАУ',
-                  'logo.png',
-                  true
-                );
+            const left =
+              home
+                ? resultTeamHtml(
+                    'КАСПИЙ',
+                    'АҚТАУ',
+                    'logo.png',
+                    false
+                  )
+                : resultTeamHtml(
+                    opponentName,
+                    opponentCity,
+                    opponentLogo,
+                    false
+                  );
 
 
-          const score =
-            home
-              ? `${caspiyScore}:${opponentScore}`
-              : `${opponentScore}:${caspiyScore}`;
+            const right =
+              home
+                ? resultTeamHtml(
+                    opponentName,
+                    opponentCity,
+                    opponentLogo,
+                    true
+                  )
+                : resultTeamHtml(
+                    'КАСПИЙ',
+                    'АҚТАУ',
+                    'logo.png',
+                    true
+                  );
 
 
-          return `
+            const score =
+              home
+                ? `${caspiyScore}:${opponentScore}`
+                : `${opponentScore}:${caspiyScore}`;
 
-            <article class="result-card">
 
-              <div class="result-top">
+            return `
 
-                <div class="result-competition">
-                  ${escapeHtml(match.competition || 'МАТЧ')}
+              <article class="result-card">
+
+                <div class="result-top">
+
+                  <div class="result-competition">
+                    ${escapeHtml(match.competition || 'МАТЧ')}
+                  </div>
+
+                  <div class="result-date">
+                    ${formatShortDate(match.match_date)}
+                  </div>
+
                 </div>
 
-                <div class="result-date">
-                  ${formatShortDate(match.match_date)}
+
+                <div class="result-teams">
+
+                  ${left}
+
+
+                  <div class="result-score">
+                    ${score}
+                  </div>
+
+
+                  ${right}
+
                 </div>
 
-              </div>
 
-
-              <div class="result-teams">
-
-                ${left}
-
-                <div class="result-score">
-                  ${score}
+                <div class="result-venue">
+                  ${escapeHtml(match.venue || '')}
                 </div>
 
-                ${right}
+              </article>
 
-              </div>
+            `;
 
-
-              <div class="result-venue">
-                ${escapeHtml(match.venue || '')}
-              </div>
-
-            </article>
-
-          `;
-
-        }
-      )
-      .join('');
+          }
+        )
+        .join('');
 
   }
 
 
-  /* LOAD */
+  /* =========================================================
+     LOAD
+     ========================================================= */
 
   await Promise.all([
+
     loadSettings(),
+
     loadNextMatch(),
+
     loadPlayers(),
+
     loadNews(),
+
     loadResults()
+
   ]);
 
 </script>
