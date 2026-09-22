@@ -8,23 +8,11 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <!-- ОСНОВНОЕ SEO -->
-
   <title>CASPIY Futsal Club — Ақтау</title>
 
   <meta
     name="description"
     content="CASPIY Futsal Club — Ақтау қаласының футзал клубы. Команда құрамы, матчтар, нәтижелер, жаңалықтар және клуб туралы ақпарат."
-  >
-
-  <meta
-    name="keywords"
-    content="CASPIY, Caspiy Futsal Club, Каспий футзал, Ақтау футзал, Актау футзал, футзал Казахстан, futsal Kazakhstan"
-  >
-
-  <meta
-    name="author"
-    content="CASPIY Futsal Club"
   >
 
   <meta
@@ -37,16 +25,10 @@
     content="#020a10"
   >
 
-
-  <!-- CANONICAL -->
-
   <link
     rel="canonical"
     href="https://adilbeksaryyev-hub.github.io/caspiy-futsal/"
   >
-
-
-  <!-- FAVICON -->
 
   <link
     rel="icon"
@@ -59,9 +41,7 @@
     href="logo.png"
   >
 
-
-  <!-- OPEN GRAPH
-       WhatsApp / Telegram / Facebook / LinkedIn -->
+  <!-- OPEN GRAPH -->
 
   <meta
     property="og:type"
@@ -103,8 +83,7 @@
     content="kk_KZ"
   >
 
-
-  <!-- X / TWITTER -->
+  <!-- SOCIAL PREVIEW -->
 
   <meta
     name="twitter:card"
@@ -126,30 +105,6 @@
     content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/hero-bg.png"
   >
 
-
-  <!-- GOOGLE / SEARCH ENGINES -->
-
-  <meta
-    name="application-name"
-    content="CASPIY Futsal Club"
-  >
-
-  <meta
-    name="apple-mobile-web-app-title"
-    content="CASPIY"
-  >
-
-  <meta
-    name="apple-mobile-web-app-capable"
-    content="yes"
-  >
-
-  <meta
-    name="apple-mobile-web-app-status-bar-style"
-    content="black-translucent"
-  >
-
-
   <!-- STRUCTURED DATA -->
 
   <script type="application/ld+json">
@@ -167,7 +122,6 @@
     }
   }
   </script>
-
 
   <!-- FONTS -->
 
@@ -187,10 +141,1911 @@
     rel="stylesheet"
   >
 
-
-  <!-- ВАШ СТИЛЬ -->
-
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      font-family: 'Montserrat', Arial, sans-serif;
+
+      color: #f1f8fc;
+      background: #020a10;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+      position: relative;
+
+      min-height: 100vh;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(1,9,16,.91) 0%,
+          rgba(2,16,27,.67) 43%,
+          rgba(1,10,18,.34) 100%
+        ),
+        url("hero-bg.png");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,.02) 0%,
+          rgba(0,0,0,.02) 58%,
+          rgba(1,8,14,.62) 100%
+        );
+
+      pointer-events: none;
+    }
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    header {
+      position: relative;
+      z-index: 30;
+
+      width: min(1440px,92%);
+      height: 105px;
+
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 25px;
+
+      border-bottom:
+        1px solid rgba(115,209,255,.17);
+    }
+
+    .logo {
+      position: relative;
+      z-index: 60;
+
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      height: 82px;
+      width: auto;
+
+      display: block;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+
+      gap: 29px;
+    }
+
+    .desktop-nav a {
+      position: relative;
+
+      padding: 13px 0;
+
+      color: #c2d3dd;
+
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: .12em;
+
+      text-transform: uppercase;
+
+      white-space: nowrap;
+    }
+
+    .desktop-nav a::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      right: 100%;
+      bottom: 0;
+
+      height: 2px;
+
+      background: #44ccff;
+
+      transition: .25s;
+    }
+
+    .desktop-nav a:hover,
+    .desktop-nav a.active {
+      color: #63d7ff;
+    }
+
+    .desktop-nav a:hover::after,
+    .desktop-nav a.active::after {
+      right: 0;
+    }
+
+    .top-actions {
+      position: relative;
+      z-index: 60;
+
+      display: flex;
+      align-items: center;
+
+      gap: 18px;
+
+      flex-shrink: 0;
+    }
+
+    .lang {
+      color: #c7d7e0;
+
+      font-size: 11px;
+      font-weight: 500;
+
+      letter-spacing: .12em;
+    }
+
+    .ticket {
+      padding: 14px 24px;
+
+      color: #e7f8ff;
+
+      border:
+        1px solid rgba(70,207,255,.78);
+
+      border-radius: 6px;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+
+      transition: .25s;
+    }
+
+    .ticket:hover {
+      background:
+        rgba(38,188,245,.12);
+    }
+
+    .ticket.disabled {
+      opacity: .35;
+
+      pointer-events: none;
+    }
+
+    /* =====================================================
+       MOBILE MENU BUTTON
+       ===================================================== */
+
+    .mobile-menu-button {
+      display: none;
+
+      width: 46px;
+      height: 46px;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 0;
+
+      background:
+        rgba(4,22,34,.90);
+
+      border:
+        1px solid rgba(77,205,255,.32);
+
+      border-radius: 5px;
+
+      cursor: pointer;
+    }
+
+    .mobile-menu-button-lines {
+      position: relative;
+
+      width: 21px;
+      height: 15px;
+    }
+
+    .mobile-menu-button-lines span {
+      position: absolute;
+      left: 0;
+
+      width: 21px;
+      height: 2px;
+
+      background: #cbeffc;
+
+      transition: .25s;
+    }
+
+    .mobile-menu-button-lines span:nth-child(1) {
+      top: 0;
+    }
+
+    .mobile-menu-button-lines span:nth-child(2) {
+      top: 6px;
+    }
+
+    .mobile-menu-button-lines span:nth-child(3) {
+      top: 12px;
+    }
+
+    .mobile-menu-button.active
+    .mobile-menu-button-lines span:nth-child(1) {
+      top: 6px;
+
+      transform:
+        rotate(45deg);
+    }
+
+    .mobile-menu-button.active
+    .mobile-menu-button-lines span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-button.active
+    .mobile-menu-button-lines span:nth-child(3) {
+      top: 6px;
+
+      transform:
+        rotate(-45deg);
+    }
+
+    /* =====================================================
+       MOBILE MENU
+       ===================================================== */
+
+    .mobile-menu {
+      position: fixed;
+      z-index: 25;
+
+      inset: 0;
+
+      visibility: hidden;
+      opacity: 0;
+
+      pointer-events: none;
+
+      transform:
+        translateX(100%);
+
+      transition:
+        transform .30s ease,
+        opacity .30s ease,
+        visibility .30s ease;
+
+      background:
+        radial-gradient(
+          circle at 80% 15%,
+          rgba(32,175,226,.18),
+          transparent 30%
+        ),
+        rgba(1,9,15,.99);
+    }
+
+    .mobile-menu.open {
+      visibility: visible;
+      opacity: 1;
+
+      pointer-events: auto;
+
+      transform:
+        translateX(0);
+    }
+
+    .mobile-menu-inner {
+      width: min(540px,88%);
+      height: 100%;
+
+      margin: auto;
+
+      padding:
+        125px 0
+        40px;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-menu-small {
+      margin-bottom: 25px;
+
+      color: #51cffb;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .28em;
+
+      text-transform: uppercase;
+    }
+
+    .mobile-nav {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      min-height: 58px;
+
+      color: #d6e8f0;
+
+      border-bottom:
+        1px solid rgba(91,204,244,.11);
+
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size: 28px;
+      font-weight: 500;
+
+      text-transform: uppercase;
+    }
+
+    .mobile-nav a::after {
+      content: "→";
+
+      color: #54d5ff;
+
+      font-size: 18px;
+    }
+
+    .mobile-nav a.active {
+      color: #58d5ff;
+    }
+
+    .mobile-ticket {
+      margin-top: 30px;
+
+      padding: 16px 20px;
+
+      text-align: center;
+
+      color: #031019;
+      background: #56d5ff;
+
+      border-radius: 5px;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    .mobile-ticket.disabled {
+      opacity: .30;
+
+      pointer-events: none;
+    }
+
+    .mobile-menu-footer {
+      margin-top: auto;
+
+      padding-top: 30px;
+
+      color: #4f7080;
+
+      font-size: 9px;
+      font-weight: 600;
+
+      line-height: 1.8;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+    }
+
+    /* =====================================================
+       HERO CONTENT
+       ===================================================== */
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+
+      width: min(1440px,92%);
+      min-height:
+        calc(100vh - 105px);
+
+      margin: auto;
+    }
+
+    .hero-text {
+      width: 72%;
+
+      padding-top: 108px;
+    }
+
+    .small-title {
+      margin-bottom: 20px;
+
+      color: #8aaabd;
+
+      font-size: 11px;
+      font-weight: 500;
+
+      line-height: 1.8;
+
+      letter-spacing: .48em;
+
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      display: inline-block;
+
+      margin: 0;
+
+      padding:
+        0 0 6px 0;
+
+      font-family:
+        'Oswald',
+        'Arial Black',
+        sans-serif;
+
+      font-size:
+        clamp(
+          130px,
+          13.6vw,
+          230px
+        );
+
+      line-height: .92;
+
+      font-weight: 700;
+
+      letter-spacing: -.055em;
+
+      text-transform: uppercase;
+
+      transform:
+        scaleX(.93);
+
+      transform-origin:
+        left center;
+
+      color: transparent;
+
+      background-image:
+        linear-gradient(
+          180deg,
+          rgba(231,249,255,.93) 0%,
+          rgba(194,231,244,.94) 30%,
+          rgba(156,207,228,.95) 62%,
+          rgba(105,172,203,.96) 100%
+        ),
+        url("./title-texture.png");
+
+      background-size:
+        100% 100%,
+        115% 115%;
+
+      background-position:
+        center center,
+        center 48%;
+
+      background-repeat:
+        no-repeat,
+        no-repeat;
+
+      background-blend-mode:
+        soft-light;
+
+      -webkit-background-clip:
+        text;
+
+      background-clip:
+        text;
+
+      -webkit-text-fill-color:
+        transparent;
+
+      -webkit-text-stroke:
+        1.6px
+        rgba(215,243,253,.48);
+
+      filter:
+        brightness(1.07)
+        contrast(1.03)
+        saturate(.78)
+        drop-shadow(
+          0 9px 17px
+          rgba(0,0,0,.38)
+        );
+    }
+
+    .hero-subtitle {
+      margin-top: 8px;
+
+      color: #d7effa;
+
+      font-size:
+        clamp(
+          25px,
+          2.25vw,
+          39px
+        );
+
+      font-weight: 300;
+
+      letter-spacing: .43em;
+
+      text-transform: uppercase;
+    }
+
+    .slogan {
+      margin-top: 34px;
+
+      color: #82a2b2;
+
+      font-size: 10px;
+      font-weight: 500;
+
+      line-height: 2.1;
+
+      letter-spacing: .28em;
+
+      text-transform: uppercase;
+    }
+
+    .location {
+      position: absolute;
+
+      top: 110px;
+      right: 0;
+
+      text-align: right;
+
+      color: #55cefa;
+
+      font-size: 10px;
+      font-weight: 500;
+
+      line-height: 2;
+
+      letter-spacing: .30em;
+
+      text-transform: uppercase;
+    }
+
+    .side-slogan {
+      margin-bottom: 17px;
+
+      color: #e0f6ff;
+
+      font-size: 16px;
+      font-weight: 500;
+
+      line-height: 1.8;
+
+      letter-spacing: .28em;
+    }
+
+    /* =====================================================
+       NEXT MATCH
+       ===================================================== */
+
+    .next-match-section {
+      padding:
+        32px 0
+        58px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #020a10,
+          #020c14
+        );
+
+      border-top:
+        1px solid rgba(74,207,255,.08);
+    }
+
+    .next-match-container {
+      width: min(1500px,96%);
+      margin: auto;
+    }
+
+    .next-match-card {
+      position: relative;
+
+      overflow: hidden;
+
+      border:
+        1px solid rgba(71,205,255,.48);
+
+      border-radius: 7px;
+
+      background:
+        linear-gradient(
+          105deg,
+          rgba(3,21,34,.97),
+          rgba(4,25,40,.94),
+          rgba(2,14,24,.98)
+        );
+    }
+
+    .next-match-card::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(1,13,22,.80),
+          rgba(2,18,29,.55),
+          rgba(1,12,21,.80)
+        ),
+        url("hero-bg.png");
+
+      background-size: cover;
+      background-position: center 72%;
+
+      opacity: .16;
+    }
+
+    .next-match-header {
+      position: relative;
+      z-index: 2;
+
+      height: 54px;
+
+      padding: 0 28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      border-bottom:
+        1px solid rgba(97,207,249,.17);
+    }
+
+    .next-match-header h3 {
+      color: #8ddfff;
+
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size: 16px;
+      font-weight: 500;
+
+      letter-spacing: .17em;
+
+      text-transform: uppercase;
+    }
+
+    .all-matches-link {
+      color: #92adba;
+
+      font-size: 10px;
+      font-weight: 500;
+
+      letter-spacing: .17em;
+
+      text-transform: uppercase;
+    }
+
+    .next-match-body {
+      position: relative;
+      z-index: 2;
+
+      min-height: 235px;
+
+      padding:
+        19px 25px
+        22px;
+
+      display: grid;
+
+      grid-template-columns:
+        1.05fr
+        1px
+        1.05fr
+        1px
+        1.05fr
+        1px
+        1.25fr;
+
+      align-items: center;
+    }
+
+    .match-divider {
+      width: 1px;
+      height: 135px;
+
+      justify-self: center;
+
+      background:
+        linear-gradient(
+          to bottom,
+          transparent,
+          rgba(98,203,243,.32),
+          transparent
+        );
+    }
+
+    .next-match-column {
+      padding: 10px 24px;
+
+      text-align: center;
+    }
+
+    .next-team-logo {
+      width: 92px;
+      height: 92px;
+
+      margin:
+        0 auto 13px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .next-team-logo img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
+
+    .next-team-name {
+      color: #f5fbff;
+
+      font-size: 17px;
+      font-weight: 800;
+
+      letter-spacing: .07em;
+
+      text-transform: uppercase;
+    }
+
+    .next-team-city {
+      min-height: 17px;
+
+      margin-top: 7px;
+
+      color: #88aebe;
+
+      font-size: 10px;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+    }
+
+    .match-date {
+      color: #b4cbd7;
+
+      font-size: 11px;
+      font-weight: 600;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    .match-time {
+      margin:
+        8px 0 12px;
+
+      color: #f5fbff;
+
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size: 47px;
+
+      line-height: 1;
+    }
+
+    .match-competition,
+    .match-venue {
+      color: #75a6bb;
+
+      font-size: 9px;
+
+      line-height: 1.7;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+    }
+
+    .countdown-title {
+      margin-bottom: 20px;
+
+      color: #89a8b7;
+
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+    }
+
+    .countdown {
+      max-width: 310px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+    }
+
+    .countdown-part {
+      text-align: center;
+    }
+
+    .countdown-number {
+      color: #f8fcff;
+
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size: 38px;
+
+      line-height: 1;
+    }
+
+    .countdown-label {
+      margin-top: 9px;
+
+      color: #8ba9b8;
+
+      font-size: 9px;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    /* =====================================================
+       PLAYERS
+       ===================================================== */
+
+    .players-section {
+      padding:
+        34px 0
+        78px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #030c14 0%,
+          #04111a 45%,
+          #030c14 100%
+        );
+
+      border-top:
+        1px solid rgba(70,205,255,.08);
+
+      border-bottom:
+        1px solid rgba(70,205,255,.08);
+    }
+
+    .players-container {
+      width: min(1500px,96%);
+      margin: auto;
+    }
+
+    .players-header {
+      min-height: 72px;
+
+      padding: 0 14px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 25px;
+
+      border-bottom:
+        1px solid rgba(255,255,255,.10);
+    }
+
+    .players-header h2 {
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size: 30px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+    }
+
+    .players-all {
+      color: #8fdfff;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+    }
+
+    .players-grid {
+      margin-top: 10px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          5,
+          minmax(0,1fr)
+        );
+
+      background: #071017;
+    }
+
+    .player-card {
+      position: relative;
+
+      min-height: 440px;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          #0a2231,
+          #050f16
+        );
+
+      border-right:
+        1px solid rgba(255,255,255,.16);
+    }
+
+    .player-photo {
+      position: absolute;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .player-overlay {
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to bottom,
+          transparent 35%,
+          rgba(2,6,9,.98) 100%
+        );
+    }
+
+    .player-number {
+      position: absolute;
+      z-index: 2;
+
+      top: 17px;
+      right: 17px;
+
+      color:
+        rgba(244,251,255,.88);
+
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size: 92px;
+      font-weight: 700;
+
+      line-height: 1;
+    }
+
+    .player-info {
+      position: absolute;
+      z-index: 3;
+
+      left: 23px;
+      right: 23px;
+      bottom: 25px;
+    }
+
+    .player-name {
+      color: #fff;
+
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size: 24px;
+      font-weight: 600;
+
+      line-height: 1.1;
+
+      text-transform: uppercase;
+    }
+
+    .player-position {
+      margin-top: 10px;
+
+      color: #84a9bc;
+
+      font-size: 9px;
+      font-weight: 600;
+
+      letter-spacing: .17em;
+
+      text-transform: uppercase;
+    }
+
+    .players-empty {
+      grid-column:
+        1 / -1;
+
+      padding: 65px;
+
+      text-align: center;
+
+      color: #879ca6;
+
+      font-size: 10px;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    /* =====================================================
+       NEWS
+       ===================================================== */
+
+    .news-section {
+      padding:
+        82px 0
+        95px;
+
+      background:
+        radial-gradient(
+          circle at 85% 5%,
+          rgba(29,171,225,.10),
+          transparent 30%
+        ),
+        #05111a;
+    }
+
+    .news-container {
+      width: min(1440px,92%);
+      margin: auto;
+    }
+
+    .news-heading {
+      margin-bottom: 36px;
+
+      padding-bottom: 22px;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      gap: 25px;
+
+      border-bottom:
+        1px solid rgba(94,202,244,.13);
+    }
+
+    .news-heading-small {
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: #55cef9;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .30em;
+
+      text-transform: uppercase;
+    }
+
+    .news-heading h2 {
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size:
+        clamp(
+          38px,
+          4.8vw,
+          68px
+        );
+
+      font-weight: 600;
+
+      text-transform: uppercase;
+    }
+
+    .news-all {
+      color: #8fdfff;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+    }
+
+    .news-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          4,
+          minmax(0,1fr)
+        );
+
+      gap: 15px;
+    }
+
+    .news-card {
+      display: block;
+
+      overflow: hidden;
+
+      color: inherit;
+
+      background:
+        linear-gradient(
+          180deg,
+          #091c29,
+          #041019
+        );
+
+      border:
+        1px solid rgba(73,194,237,.15);
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .news-card:hover {
+      transform:
+        translateY(-4px);
+
+      border-color:
+        rgba(77,210,255,.43);
+
+      box-shadow:
+        0 18px 45px
+        rgba(0,0,0,.24);
+    }
+
+    .news-image {
+      position: relative;
+
+      aspect-ratio: 4 / 3;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          135deg,
+          #0a293c,
+          #04121c
+        );
+    }
+
+    .news-image img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition:
+        transform .35s ease;
+    }
+
+    .news-card:hover
+    .news-image img {
+      transform:
+        scale(1.035);
+    }
+
+    .news-no-image {
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+
+      width: 90px !important;
+      height: 90px !important;
+
+      object-fit: contain !important;
+
+      opacity: .18;
+
+      transform:
+        translate(-50%,-50%);
+    }
+
+    .news-date {
+      position: absolute;
+
+      left: 14px;
+      bottom: 13px;
+
+      padding: 6px 8px;
+
+      color: #f2fbff;
+
+      background:
+        rgba(2,12,20,.84);
+
+      font-size: 9px;
+      font-weight: 700;
+    }
+
+    .news-content {
+      min-height: 205px;
+
+      padding: 20px;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news-title {
+      color: #f3fbff;
+
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size: 20px;
+      font-weight: 600;
+
+      line-height: 1.2;
+
+      text-transform: uppercase;
+    }
+
+    .news-description {
+      margin-top: 13px;
+
+      color: #7898a8;
+
+      font-size: 10px;
+
+      line-height: 1.65;
+
+      display: -webkit-box;
+
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+
+      overflow: hidden;
+    }
+
+    .news-bottom {
+      margin-top: auto;
+
+      padding-top: 19px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .news-read-more {
+      color: #55d4ff;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+    }
+
+    .news-arrow {
+      color: #55d4ff;
+
+      font-size: 19px;
+
+      transition:
+        transform .2s ease;
+    }
+
+    .news-card:hover
+    .news-arrow {
+      transform:
+        translateX(4px);
+    }
+
+    .news-empty {
+      grid-column:
+        1 / -1;
+
+      padding: 55px;
+
+      text-align: center;
+
+      color: #7898a8;
+
+      font-size: 10px;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    /* =====================================================
+       RESULTS
+       ===================================================== */
+
+    .results-section {
+      padding:
+        90px 0
+        100px;
+
+      background:
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(0,153,220,.09),
+          transparent 30%
+        ),
+        #030c14;
+    }
+
+    .results-container {
+      width: min(1440px,92%);
+      margin: auto;
+    }
+
+    .results-heading {
+      margin-bottom: 42px;
+
+      display: flex;
+      align-items: flex-end;
+
+      gap: 34px;
+    }
+
+    .results-heading span {
+      display: block;
+
+      margin-bottom: 9px;
+
+      color: #51cef9;
+
+      font-size: 10px;
+
+      letter-spacing: .35em;
+
+      text-transform: uppercase;
+    }
+
+    .results-heading h2 {
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size:
+        clamp(
+          36px,
+          4.6vw,
+          66px
+        );
+
+      font-weight: 600;
+
+      text-transform: uppercase;
+    }
+
+    .results-line {
+      flex: 1;
+
+      height: 1px;
+
+      margin-bottom: 10px;
+
+      background:
+        rgba(81,206,249,.15);
+    }
+
+    .results-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          2,
+          minmax(0,1fr)
+        );
+
+      gap: 16px;
+    }
+
+    .result-card {
+      padding: 25px 28px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(8,30,45,.94),
+          rgba(3,15,24,.99)
+        );
+
+      border:
+        1px solid rgba(76,205,255,.17);
+    }
+
+    .result-top {
+      margin-bottom: 26px;
+
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .result-competition {
+      color: #55cefa;
+
+      font-size: 9px;
+      font-weight: 600;
+
+      text-transform: uppercase;
+    }
+
+    .result-date {
+      color: #708b9c;
+
+      font-size: 10px;
+    }
+
+    .result-teams {
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+      align-items: center;
+
+      gap: 20px;
+    }
+
+    .result-team {
+      display: flex;
+      align-items: center;
+
+      gap: 13px;
+    }
+
+    .result-team.right {
+      flex-direction: row-reverse;
+
+      text-align: right;
+    }
+
+    .result-logo {
+      flex: 0 0 auto;
+
+      width: 58px;
+      height: 58px;
+    }
+
+    .result-logo img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
+
+    .result-team-name {
+      font-size: 13px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+    }
+
+    .result-city {
+      margin-top: 4px;
+
+      color: #708b9c;
+
+      font-size: 9px;
+
+      text-transform: uppercase;
+    }
+
+    .result-score {
+      min-width: 100px;
+
+      text-align: center;
+
+      font-family:
+        'Oswald',
+        sans-serif;
+
+      font-size: 38px;
+    }
+
+    .result-venue {
+      margin-top: 23px;
+
+      text-align: center;
+
+      color: #637e90;
+
+      font-size: 9px;
+    }
+
+    .results-empty {
+      grid-column:
+        1 / -1;
+
+      padding: 45px;
+
+      text-align: center;
+
+      color: #7894a5;
+
+      font-size: 10px;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer {
+      background: #02080d;
+
+      border-top:
+        1px solid rgba(68,201,255,.10);
+    }
+
+    .footer-inner {
+      width: min(1440px,92%);
+      min-height: 110px;
+
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+
+      gap: 14px;
+    }
+
+    .footer-logo img {
+      width: 55px;
+      height: 55px;
+
+      object-fit: contain;
+    }
+
+    .footer-logo strong {
+      font-size: 13px;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+    }
+
+    .footer-text {
+      color: #506b7b;
+
+      font-size: 9px;
+
+      letter-spacing: .22em;
+
+      text-transform: uppercase;
+    }
+
+    /* =====================================================
+       RESPONSIVE
+       ===================================================== */
+
+    @media (max-width:1250px) {
+
+      .desktop-nav {
+        gap: 17px;
+      }
+
+      .desktop-nav a {
+        font-size: 9px;
+      }
+
+      .players-grid {
+        grid-template-columns:
+          repeat(
+            3,
+            minmax(0,1fr)
+          );
+      }
+
+      .news-grid {
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0,1fr)
+          );
+      }
+
+    }
+
+    @media (max-width:900px) {
+
+      header {
+        height: 82px;
+      }
+
+      .logo img {
+        height: 60px;
+      }
+
+      .desktop-nav {
+        display: none;
+      }
+
+      .top-actions .ticket,
+      .top-actions .lang {
+        display: none;
+      }
+
+      .mobile-menu-button {
+        display: flex;
+      }
+
+      .hero-content {
+        min-height:
+          calc(100vh - 82px);
+      }
+
+      .hero-text {
+        width: 100%;
+
+        padding-top: 85px;
+      }
+
+      .location {
+        display: none;
+      }
+
+      .next-match-body {
+        display: block;
+      }
+
+      .match-divider {
+        width: 70%;
+        height: 1px;
+
+        margin: 22px auto;
+      }
+
+      .players-grid {
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0,1fr)
+          );
+      }
+
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width:560px) {
+
+      header,
+      .hero-content {
+        width: 90%;
+      }
+
+      .hero {
+        min-height: 760px;
+      }
+
+      .hero-content {
+        min-height:
+          calc(760px - 82px);
+      }
+
+      .hero-text {
+        padding-top: 100px;
+      }
+
+      .hero-title {
+        font-size: 82px;
+      }
+
+      .hero-subtitle {
+        font-size: 20px;
+
+        letter-spacing: .28em;
+      }
+
+      .small-title {
+        font-size: 9px;
+      }
+
+      .slogan {
+        font-size: 9px;
+
+        letter-spacing: .18em;
+      }
+
+      .players-grid,
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .player-card {
+        min-height: 500px;
+      }
+
+      .next-match-header {
+        height: auto;
+
+        min-height: 58px;
+
+        padding:
+          12px 17px;
+      }
+
+      .next-match-header h3 {
+        font-size: 13px;
+      }
+
+      .all-matches-link {
+        font-size: 8px;
+
+        text-align: right;
+      }
+
+      .next-match-column {
+        padding: 12px 8px;
+      }
+
+      .news-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .results-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .results-line {
+        width: 100%;
+      }
+
+      .result-card {
+        padding: 22px 15px;
+      }
+
+      .result-teams {
+        gap: 8px;
+      }
+
+      .result-logo {
+        width: 43px;
+        height: 43px;
+      }
+
+      .result-team-name {
+        font-size: 10px;
+      }
+
+      .result-score {
+        min-width: 65px;
+
+        font-size: 31px;
+      }
+
+      .footer-inner {
+        padding: 25px 0;
+
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        gap: 12px;
+      }
+
+      .mobile-menu-inner {
+        padding-top: 105px;
+      }
+
+      .mobile-nav a {
+        min-height: 55px;
+
+        font-size: 25px;
+      }
+
+    }
+  </style>
+</head>
 
 <body>
 
@@ -244,7 +2099,6 @@
 
     </nav>
 
-
     <a
       href="#"
       class="mobile-ticket disabled"
@@ -254,7 +2108,6 @@
     >
       БИЛЕТТЕР →
     </a>
-
 
     <div
       class="mobile-menu-footer"
@@ -285,7 +2138,6 @@
         alt="CASPIY Futsal Club"
       >
     </a>
-
 
     <nav class="desktop-nav">
 
@@ -322,7 +2174,6 @@
 
     </nav>
 
-
     <div class="top-actions">
 
       <span class="lang">
@@ -339,7 +2190,6 @@
         БИЛЕТТЕР →
       </a>
 
-
       <button
         class="mobile-menu-button"
         id="mobileMenuButton"
@@ -347,15 +2197,11 @@
         aria-label="Мәзірді ашу"
         aria-expanded="false"
       >
-
         <span class="mobile-menu-button-lines">
-
           <span></span>
           <span></span>
           <span></span>
-
         </span>
-
       </button>
 
     </div>
@@ -386,7 +2232,6 @@
       </div>
 
     </div>
-
 
     <div class="location">
 
@@ -553,6 +2398,7 @@
 
             </div>
 
+
             <div class="countdown-part">
 
               <div
@@ -567,6 +2413,7 @@
               </div>
 
             </div>
+
 
             <div class="countdown-part">
 
@@ -619,7 +2466,6 @@
 
     </div>
 
-
     <div
       class="players-grid"
       id="players-list"
@@ -667,7 +2513,6 @@
 
     </div>
 
-
     <div
       class="news-grid"
       id="news-list"
@@ -709,7 +2554,6 @@
       <div class="results-line"></div>
 
     </div>
-
 
     <div
       class="results-grid"
@@ -800,17 +2644,14 @@
       'open'
     );
 
-
     mobileMenuButton.classList.add(
       'active'
     );
-
 
     mobileMenuButton.setAttribute(
       'aria-expanded',
       'true'
     );
-
 
     document.body.classList.add(
       'menu-open'
@@ -825,17 +2666,14 @@
       'open'
     );
 
-
     mobileMenuButton.classList.remove(
       'active'
     );
-
 
     mobileMenuButton.setAttribute(
       'aria-expanded',
       'false'
     );
-
 
     document.body.classList.remove(
       'menu-open'
@@ -844,27 +2682,26 @@
   }
 
 
-  mobileMenuButton
-    .addEventListener(
-      'click',
-      () => {
+  mobileMenuButton.addEventListener(
+    'click',
+    () => {
 
-        if (
-          mobileMenu.classList.contains(
-            'open'
-          )
-        ) {
+      if (
+        mobileMenu.classList.contains(
+          'open'
+        )
+      ) {
 
-          closeMobileMenu();
+        closeMobileMenu();
 
-        } else {
+      } else {
 
-          openMobileMenu();
-
-        }
+        openMobileMenu();
 
       }
-    );
+
+    }
+  );
 
 
   mobileMenu
@@ -881,38 +2718,36 @@
     );
 
 
-  document
-    .addEventListener(
-      'keydown',
-      event => {
+  document.addEventListener(
+    'keydown',
+    event => {
 
-        if (
-          event.key === 'Escape'
-        ) {
+      if (
+        event.key === 'Escape'
+      ) {
 
-          closeMobileMenu();
-
-        }
+        closeMobileMenu();
 
       }
-    );
+
+    }
+  );
 
 
-  window
-    .addEventListener(
-      'resize',
-      () => {
+  window.addEventListener(
+    'resize',
+    () => {
 
-        if (
-          window.innerWidth > 900
-        ) {
+      if (
+        window.innerWidth > 900
+      ) {
 
-          closeMobileMenu();
-
-        }
+        closeMobileMenu();
 
       }
-    );
+
+    }
+  );
 
 
   /* =====================================================
@@ -921,12 +2756,29 @@
 
   function escapeHtml(value) {
 
-    return String(value ?? '')
-      .replaceAll('&','&amp;')
-      .replaceAll('<','&lt;')
-      .replaceAll('>','&gt;')
-      .replaceAll('"','&quot;')
-      .replaceAll("'","&#039;");
+    return String(
+      value ?? ''
+    )
+    .replaceAll(
+      '&',
+      '&amp;'
+    )
+    .replaceAll(
+      '<',
+      '&lt;'
+    )
+    .replaceAll(
+      '>',
+      '&gt;'
+    )
+    .replaceAll(
+      '"',
+      '&quot;'
+    )
+    .replaceAll(
+      "'",
+      '&#039;'
+    );
 
   }
 
@@ -952,10 +2804,17 @@
     return new Intl.DateTimeFormat(
       'kk-KZ',
       {
-        timeZone:'Asia/Aqtau',
-        day:'numeric',
-        month:'long',
-        year:'numeric'
+        timeZone:
+          'Asia/Aqtau',
+
+        day:
+          'numeric',
+
+        month:
+          'long',
+
+        year:
+          'numeric'
       }
     )
     .format(
@@ -976,10 +2835,17 @@
     return new Intl.DateTimeFormat(
       'kk-KZ',
       {
-        timeZone:'Asia/Aqtau',
-        hour:'2-digit',
-        minute:'2-digit',
-        hour12:false
+        timeZone:
+          'Asia/Aqtau',
+
+        hour:
+          '2-digit',
+
+        minute:
+          '2-digit',
+
+        hour12:
+          false
       }
     )
     .format(
@@ -999,10 +2865,17 @@
     return new Intl.DateTimeFormat(
       'kk-KZ',
       {
-        timeZone:'Asia/Aqtau',
-        day:'2-digit',
-        month:'2-digit',
-        year:'numeric'
+        timeZone:
+          'Asia/Aqtau',
+
+        day:
+          '2-digit',
+
+        month:
+          '2-digit',
+
+        year:
+          'numeric'
       }
     )
     .format(
@@ -1022,16 +2895,66 @@
     return new Intl.DateTimeFormat(
       'kk-KZ',
       {
-        timeZone:'Asia/Aqtau',
-        day:'numeric',
-        month:'long',
-        year:'numeric'
+        timeZone:
+          'Asia/Aqtau',
+
+        day:
+          'numeric',
+
+        month:
+          'long',
+
+        year:
+          'numeric'
       }
     )
     .format(
       new Date(value)
     )
     .toUpperCase();
+
+  }
+
+
+  function findOpponentTeam(
+    teams,
+    opponent
+  ) {
+
+    const opponentText =
+      String(
+        opponent || ''
+      )
+      .trim()
+      .toLowerCase();
+
+
+    return teams.find(
+      team => {
+
+        const name =
+          String(
+            team.name || ''
+          )
+          .trim()
+          .toLowerCase();
+
+
+        if (
+          !name ||
+          !opponentText
+        ) {
+          return false;
+        }
+
+
+        return (
+          opponentText.includes(name) ||
+          name.includes(opponentText)
+        );
+
+      }
+    );
 
   }
 
@@ -1047,7 +2970,9 @@
       error
     } =
       await supabase
-        .from('site_settings')
+        .from(
+          'site_settings'
+        )
         .select(
           'ticket_url,address'
         )
@@ -1062,7 +2987,16 @@
       error ||
       !data
     ) {
+
+      if (error) {
+        console.error(
+          'Settings:',
+          error
+        );
+      }
+
       return;
+
     }
 
 
@@ -1078,7 +3012,9 @@
       );
 
 
-    if (data.ticket_url) {
+    if (
+      data.ticket_url
+    ) {
 
       ticketButton.href =
         data.ticket_url;
@@ -1119,7 +3055,9 @@
     }
 
 
-    if (data.address) {
+    if (
+      data.address
+    ) {
 
       const address =
         data.address.toUpperCase();
@@ -1185,8 +3123,26 @@
         .limit(5);
 
 
+    if (error) {
+
+      console.error(
+        'Players:',
+        error
+      );
+
+
+      list.innerHTML = `
+        <div class="players-empty">
+          ОЙЫНШЫЛАРДЫ ЖҮКТЕУ КЕЗІНДЕ ҚАТЕ ОРЫН АЛДЫ
+        </div>
+      `;
+
+      return;
+
+    }
+
+
     if (
-      error ||
       !data?.length
     ) {
 
@@ -1202,48 +3158,47 @@
 
 
     list.innerHTML =
-      data
-        .map(
-          player => `
+      data.map(
+        player => `
 
-            <article class="player-card">
+          <article class="player-card">
 
-              ${
-                player.photo_url
-                  ? `
-                    <img
-                      class="player-photo"
-                      src="${escapeHtml(player.photo_url)}"
-                      alt="${escapeHtml(player.name)}"
-                      loading="lazy"
-                    >
-                  `
-                  : ''
-              }
+            ${
+              player.photo_url
+                ? `
+                  <img
+                    class="player-photo"
+                    src="${escapeHtml(player.photo_url)}"
+                    alt="${escapeHtml(player.name)}"
+                    loading="lazy"
+                  >
+                `
+                : ''
+            }
 
-              <div class="player-overlay"></div>
+            <div class="player-overlay"></div>
 
-              <div class="player-number">
-                ${player.number ?? ''}
+            <div class="player-number">
+              ${player.number ?? ''}
+            </div>
+
+            <div class="player-info">
+
+              <div class="player-name">
+                ${escapeHtml(player.name)}
               </div>
 
-              <div class="player-info">
-
-                <div class="player-name">
-                  ${escapeHtml(player.name)}
-                </div>
-
-                <div class="player-position">
-                  ${escapeHtml(player.position || '')}
-                </div>
-
+              <div class="player-position">
+                ${escapeHtml(player.position || '')}
               </div>
 
-            </article>
+            </div>
 
-          `
-        )
-        .join('');
+          </article>
+
+        `
+      )
+      .join('');
 
   }
 
@@ -1288,8 +3243,26 @@
         .limit(4);
 
 
+    if (error) {
+
+      console.error(
+        'News:',
+        error
+      );
+
+
+      list.innerHTML = `
+        <div class="news-empty">
+          ЖАҢАЛЫҚТАРДЫ ЖҮКТЕУ КЕЗІНДЕ ҚАТЕ ОРЫН АЛДЫ
+        </div>
+      `;
+
+      return;
+
+    }
+
+
     if (
-      error ||
       !data?.length
     ) {
 
@@ -1305,79 +3278,78 @@
 
 
     list.innerHTML =
-      data
-        .map(
-          item => `
+      data.map(
+        item => `
 
-            <a
-              class="news-card"
-              href="news-detail.html?id=${item.id}"
-            >
+          <a
+            class="news-card"
+            href="news-detail.html?id=${item.id}"
+          >
 
-              <div class="news-image">
+            <div class="news-image">
 
-                ${
-                  item.image_url
-                    ? `
-                      <img
-                        src="${escapeHtml(item.image_url)}"
-                        alt="${escapeHtml(item.title)}"
-                        loading="lazy"
-                      >
-                    `
-                    : `
-                      <img
-                        class="news-no-image"
-                        src="logo.png"
-                        alt=""
-                      >
-                    `
-                }
+              ${
+                item.image_url
+                  ? `
+                    <img
+                      src="${escapeHtml(item.image_url)}"
+                      alt="${escapeHtml(item.title)}"
+                      loading="lazy"
+                    >
+                  `
+                  : `
+                    <img
+                      class="news-no-image"
+                      src="logo.png"
+                      alt=""
+                    >
+                  `
+              }
 
-                <div class="news-date">
-                  ${formatNewsDate(item.published_at)}
-                </div>
+              <div class="news-date">
+                ${formatNewsDate(item.published_at)}
+              </div>
 
+            </div>
+
+
+            <div class="news-content">
+
+              <div class="news-title">
+                ${escapeHtml(item.title)}
               </div>
 
 
-              <div class="news-content">
-
-                <div class="news-title">
-                  ${escapeHtml(item.title)}
-                </div>
-
-
-                ${
-                  item.description
-                    ? `
-                      <div class="news-description">
-                        ${escapeHtml(item.description)}
-                      </div>
-                    `
-                    : ''
-                }
+              ${
+                item.description
+                  ? `
+                    <div class="news-description">
+                      ${escapeHtml(item.description)}
+                    </div>
+                  `
+                  : ''
+              }
 
 
-                <div class="news-bottom">
+              <div class="news-bottom">
 
-                  <span class="news-read-more">
-                    ТОЛЫҒЫРАҚ
-                  </span>
+                <span class="news-read-more">
+                  ТОЛЫҒЫРАҚ
+                </span>
 
-                  <span class="news-arrow">
-                    →
-                  </span>
-
-                </div>
+                <span class="news-arrow">
+                  →
+                </span>
 
               </div>
 
-            </a>
+            </div>
 
-          `
-        )
-        .join('');
+          </a>
+
+        `
+      )
+      .join('');
 
   }
 
@@ -1390,7 +3362,9 @@
     matchDate
   ) {
 
-    if (countdownTimer) {
+    if (
+      countdownTimer
+    ) {
 
       clearInterval(
         countdownTimer
@@ -1444,26 +3418,38 @@
             'МАТЧ БАСТАЛДЫ';
 
 
+        clearInterval(
+          countdownTimer
+        );
+
+
         return;
 
       }
 
 
       const day =
-        1000 * 60 * 60 * 24;
+        1000 *
+        60 *
+        60 *
+        24;
 
 
       const hour =
-        1000 * 60 * 60;
+        1000 *
+        60 *
+        60;
 
 
       const minute =
-        1000 * 60;
+        1000 *
+        60;
 
 
       const days =
         Math.floor(
-          difference / day
+          difference /
+          day
         );
 
 
@@ -1473,7 +3459,8 @@
 
       const hours =
         Math.floor(
-          difference / hour
+          difference /
+          hour
         );
 
 
@@ -1483,7 +3470,8 @@
 
       const minutes =
         Math.floor(
-          difference / minute
+          difference /
+          minute
         );
 
 
@@ -1529,33 +3517,72 @@
      NEXT MATCH
      ===================================================== */
 
+  async function getNextMatch() {
+
+    const featured =
+      await supabase
+        .from('matches')
+        .select('*')
+        .eq(
+          'status',
+          'upcoming'
+        )
+        .eq(
+          'is_featured',
+          true
+        )
+        .order(
+          'match_date',
+          {
+            ascending:true
+          }
+        )
+        .limit(1)
+        .maybeSingle();
+
+
+    if (
+      featured.data
+    ) {
+
+      return featured.data;
+
+    }
+
+
+    const fallback =
+      await supabase
+        .from('matches')
+        .select('*')
+        .eq(
+          'status',
+          'upcoming'
+        )
+        .order(
+          'match_date',
+          {
+            ascending:true
+          }
+        )
+        .limit(1)
+        .maybeSingle();
+
+
+    return fallback.data ||
+      null;
+
+  }
+
+
   async function loadNextMatch() {
 
     const [
-      matchResponse,
+      match,
       teamsResponse
     ] =
       await Promise.all([
 
-        supabase
-          .from('matches')
-          .select('*')
-          .eq(
-            'is_featured',
-            true
-          )
-          .eq(
-            'status',
-            'upcoming'
-          )
-          .order(
-            'match_date',
-            {
-              ascending:true
-            }
-          )
-          .limit(1)
-          .maybeSingle(),
+        getNextMatch(),
 
         supabase
           .from('teams')
@@ -1570,11 +3597,9 @@
       ]);
 
 
-    const match =
-      matchResponse.data;
-
-
-    if (!match) {
+    if (
+      !match
+    ) {
 
       document
         .getElementById(
@@ -1582,6 +3607,14 @@
         )
         .textContent =
           'МАТЧ ӘЗІРГЕ БЕЛГІЛЕНБЕДІ';
+
+
+      document
+        .getElementById(
+          'next-match-time'
+        )
+        .textContent =
+          '--:--';
 
 
       document
@@ -1598,22 +3631,14 @@
 
 
     const teams =
-      teamsResponse.data || [];
+      teamsResponse.data ||
+      [];
 
 
     const opponentTeam =
-      teams.find(
-        team =>
-          String(
-            match.opponent || ''
-          )
-          .toLowerCase()
-          .includes(
-            String(
-              team.name || ''
-            )
-            .toLowerCase()
-          )
+      findOpponentTeam(
+        teams,
+        match.opponent
       );
 
 
@@ -1661,12 +3686,18 @@
       team
     ) {
 
-      document
-        .getElementById(
+      const logoElement =
+        document.getElementById(
           `${side}-team-logo`
-        )
-        .src =
-          team.logo;
+        );
+
+
+      logoElement.src =
+        team.logo;
+
+
+      logoElement.alt =
+        team.name;
 
 
       document
@@ -1767,6 +3798,51 @@
      RESULTS
      ===================================================== */
 
+  function resultTeamHtml(
+    name,
+    city,
+    logo,
+    right = false
+  ) {
+
+    return `
+
+      <div class="result-team ${right ? 'right' : ''}">
+
+        <div class="result-logo">
+
+          ${
+            logo
+              ? `
+                <img
+                  src="${escapeHtml(logo)}"
+                  alt="${escapeHtml(name)}"
+                >
+              `
+              : ''
+          }
+
+        </div>
+
+        <div>
+
+          <div class="result-team-name">
+            ${escapeHtml(name)}
+          </div>
+
+          <div class="result-city">
+            ${escapeHtml(city || '')}
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
   async function loadResults() {
 
     const list =
@@ -1775,29 +3851,73 @@
       );
 
 
-    const {
-      data,
-      error
-    } =
-      await supabase
-        .from('matches')
-        .select('*')
-        .eq(
-          'status',
-          'finished'
-        )
-        .order(
-          'match_date',
-          {
-            ascending:false
-          }
-        )
-        .limit(4);
+    const [
+      matchesResponse,
+      teamsResponse
+    ] =
+      await Promise.all([
+
+        supabase
+          .from('matches')
+          .select('*')
+          .eq(
+            'status',
+            'finished'
+          )
+          .order(
+            'match_date',
+            {
+              ascending:false
+            }
+          )
+          .limit(4),
+
+        supabase
+          .from('teams')
+          .select(
+            'name,city,logo_url'
+          )
+          .eq(
+            'is_active',
+            true
+          )
+
+      ]);
 
 
     if (
-      error ||
-      !data?.length
+      matchesResponse.error
+    ) {
+
+      console.error(
+        'Results:',
+        matchesResponse.error
+      );
+
+
+      list.innerHTML = `
+        <div class="results-empty">
+          НӘТИЖЕЛЕРДІ ЖҮКТЕУ КЕЗІНДЕ ҚАТЕ ОРЫН АЛДЫ
+        </div>
+      `;
+
+      return;
+
+    }
+
+
+    const matches =
+      matchesResponse.data ||
+      [];
+
+
+    const teams =
+      teamsResponse.data ||
+      [];
+
+
+    if (
+      !matches.length
     ) {
 
       list.innerHTML = `
@@ -1812,141 +3932,126 @@
 
 
     list.innerHTML =
-      data
-        .map(
-          match => {
+      matches.map(
+        match => {
 
-            const cs =
-              match.caspiy_score ??
-              '-';
-
-
-            const os =
-              match.opponent_score ??
-              '-';
+          const opponentTeam =
+            findOpponentTeam(
+              teams,
+              match.opponent
+            );
 
 
-            const caspiyTeam = `
+          const opponentName =
+            opponentTeam?.name ||
+            match.opponent ||
+            'ҚАРСЫЛАС';
 
-              <div class="result-team">
 
-                <div class="result-logo">
+          const opponentCity =
+            opponentTeam?.city ||
+            '';
 
-                  <img
-                    src="logo.png"
-                    alt=""
-                  >
 
+          const opponentLogo =
+            opponentTeam?.logo_url ||
+            match.opponent_logo_url ||
+            '';
+
+
+          const caspiyScore =
+            match.caspiy_score ??
+            '-';
+
+
+          const opponentScore =
+            match.opponent_score ??
+            '-';
+
+
+          const homeIsCaspiy =
+            match.is_home !== false;
+
+
+          const leftTeam =
+            homeIsCaspiy
+              ? resultTeamHtml(
+                  'КАСПИЙ',
+                  'АҚТАУ',
+                  'logo.png',
+                  false
+                )
+              : resultTeamHtml(
+                  opponentName,
+                  opponentCity,
+                  opponentLogo,
+                  false
+                );
+
+
+          const rightTeam =
+            homeIsCaspiy
+              ? resultTeamHtml(
+                  opponentName,
+                  opponentCity,
+                  opponentLogo,
+                  true
+                )
+              : resultTeamHtml(
+                  'КАСПИЙ',
+                  'АҚТАУ',
+                  'logo.png',
+                  true
+                );
+
+
+          const score =
+            homeIsCaspiy
+              ? `${caspiyScore}:${opponentScore}`
+              : `${opponentScore}:${caspiyScore}`;
+
+
+          return `
+
+            <article class="result-card">
+
+              <div class="result-top">
+
+                <div class="result-competition">
+                  ${escapeHtml(match.competition || 'МАТЧ')}
                 </div>
 
-                <div>
-
-                  <div class="result-team-name">
-                    КАСПИЙ
-                  </div>
-
-                  <div class="result-city">
-                    АҚТАУ
-                  </div>
-
+                <div class="result-date">
+                  ${formatShortDate(match.match_date)}
                 </div>
 
               </div>
 
-            `;
 
+              <div class="result-teams">
 
-            const opponentTeam = `
+                ${leftTeam}
 
-              <div class="result-team away">
-
-                <div class="result-logo">
-
-                  ${
-                    match.opponent_logo_url
-                      ? `
-                        <img
-                          src="${escapeHtml(match.opponent_logo_url)}"
-                          alt=""
-                        >
-                      `
-                      : ''
-                  }
-
+                <div class="result-score">
+                  ${score}
                 </div>
 
-                <div class="result-team-name">
-                  ${escapeHtml(match.opponent || '')}
-                </div>
+                ${rightTeam}
 
               </div>
 
-            `;
 
+              <div class="result-venue">
+                ${escapeHtml(match.venue || '')}
+              </div>
 
-            return `
+            </article>
 
-              <article class="result-card">
+          `;
 
-                <div class="result-top">
-
-                  <div class="result-competition">
-                    ${escapeHtml(match.competition || 'МАТЧ')}
-                  </div>
-
-                  <div class="result-date">
-                    ${formatShortDate(match.match_date)}
-                  </div>
-
-                </div>
-
-
-                <div class="result-teams">
-
-                  ${
-                    match.is_home !== false
-                      ? caspiyTeam
-                      : opponentTeam.replace(
-                          'result-team away',
-                          'result-team'
-                        )
-                  }
-
-
-                  <div class="result-score">
-
-                    ${
-                      match.is_home !== false
-                        ? `${cs}:${os}`
-                        : `${os}:${cs}`
-                    }
-
-                  </div>
-
-
-                  ${
-                    match.is_home !== false
-                      ? opponentTeam
-                      : caspiyTeam.replace(
-                          'result-team"',
-                          'result-team away"'
-                        )
-                  }
-
-                </div>
-
-
-                <div class="result-venue">
-                  ${escapeHtml(match.venue || '')}
-                </div>
-
-              </article>
-
-            `;
-
-          }
-        )
-        .join('');
+        }
+      )
+      .join('');
 
   }
 
