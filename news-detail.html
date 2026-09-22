@@ -35,6 +35,10 @@
       background: #020a10;
     }
 
+    body.menu-open {
+      overflow: hidden;
+    }
+
     a {
       color: inherit;
       text-decoration: none;
@@ -64,12 +68,16 @@
       align-items: center;
       justify-content: space-between;
 
-      gap: 30px;
+      gap: 25px;
     }
 
     .logo {
+      position: relative;
+      z-index: 60;
+
       display: flex;
       align-items: center;
+
       gap: 14px;
     }
 
@@ -88,14 +96,14 @@
       letter-spacing: .08em;
     }
 
-    nav {
+    .desktop-nav {
       display: flex;
       align-items: center;
 
       gap: 27px;
     }
 
-    nav a {
+    .desktop-nav a {
       position: relative;
 
       padding: 12px 0;
@@ -110,12 +118,12 @@
       text-transform: uppercase;
     }
 
-    nav a:hover,
-    nav a.active {
+    .desktop-nav a:hover,
+    .desktop-nav a.active {
       color: #62d6ff;
     }
 
-    nav a.active::after {
+    .desktop-nav a.active::after {
       content: "";
 
       position: absolute;
@@ -129,7 +137,17 @@
       background: #52d3ff;
     }
 
-    .back-button {
+    .header-actions {
+      position: relative;
+      z-index: 60;
+
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+    }
+
+    .ticket-button {
       padding: 13px 18px;
 
       color: #caeffc;
@@ -143,6 +161,223 @@
       font-weight: 700;
 
       letter-spacing: .13em;
+
+      text-transform: uppercase;
+    }
+
+    .ticket-button.disabled {
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    /* MOBILE BUTTON */
+
+    .mobile-menu-button {
+      display: none;
+
+      width: 46px;
+      height: 46px;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 0;
+
+      background: rgba(4,22,34,.90);
+
+      border:
+        1px solid rgba(77,205,255,.32);
+
+      border-radius: 5px;
+
+      cursor: pointer;
+    }
+
+    .mobile-lines {
+      position: relative;
+
+      width: 21px;
+      height: 15px;
+    }
+
+    .mobile-lines span {
+      position: absolute;
+      left: 0;
+
+      width: 21px;
+      height: 2px;
+
+      background: #cbeffc;
+
+      transition: .25s;
+    }
+
+    .mobile-lines span:nth-child(1) {
+      top: 0;
+    }
+
+    .mobile-lines span:nth-child(2) {
+      top: 6px;
+    }
+
+    .mobile-lines span:nth-child(3) {
+      top: 12px;
+    }
+
+    .mobile-menu-button.active
+    .mobile-lines span:nth-child(1) {
+      top: 6px;
+      transform: rotate(45deg);
+    }
+
+    .mobile-menu-button.active
+    .mobile-lines span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-button.active
+    .mobile-lines span:nth-child(3) {
+      top: 6px;
+      transform: rotate(-45deg);
+    }
+
+    /* MOBILE MENU */
+
+    .mobile-menu {
+      position: fixed;
+      z-index: 45;
+
+      inset: 0;
+
+      visibility: hidden;
+      opacity: 0;
+
+      pointer-events: none;
+
+      transform: translateX(100%);
+
+      transition:
+        transform .30s ease,
+        opacity .30s ease,
+        visibility .30s ease;
+
+      background:
+        radial-gradient(
+          circle at 80% 15%,
+          rgba(32,175,226,.18),
+          transparent 30%
+        ),
+        rgba(1,9,15,.99);
+    }
+
+    .mobile-menu.open {
+      visibility: visible;
+      opacity: 1;
+
+      pointer-events: auto;
+
+      transform: translateX(0);
+    }
+
+    .mobile-menu-inner {
+      width: min(540px,88%);
+      height: 100%;
+
+      margin: auto;
+
+      padding: 125px 0 40px;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-menu-small {
+      margin-bottom: 25px;
+
+      color: #51cffb;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .28em;
+
+      text-transform: uppercase;
+    }
+
+    .mobile-nav {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      min-height: 58px;
+
+      color: #d6e8f0;
+
+      border-bottom:
+        1px solid rgba(91,204,244,.11);
+
+      font-family: 'Oswald',sans-serif;
+
+      font-size: 28px;
+      font-weight: 500;
+
+      text-transform: uppercase;
+    }
+
+    .mobile-nav a::after {
+      content: "→";
+
+      color: #54d5ff;
+
+      font-size: 18px;
+    }
+
+    .mobile-nav a.active {
+      color: #58d5ff;
+    }
+
+    .mobile-ticket {
+      margin-top: 30px;
+
+      padding: 16px 20px;
+
+      text-align: center;
+
+      color: #031019;
+      background: #56d5ff;
+
+      border-radius: 5px;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    .mobile-ticket.disabled {
+      opacity: .30;
+      pointer-events: none;
+    }
+
+    .mobile-address {
+      margin-top: auto;
+
+      padding-top: 30px;
+
+      color: #4f7080;
+
+      font-size: 9px;
+      font-weight: 600;
+
+      line-height: 1.8;
+      letter-spacing: .18em;
 
       text-transform: uppercase;
     }
@@ -389,7 +624,6 @@
       padding: 13px 19px;
 
       color: #07131a;
-
       background: #55d4ff;
 
       border-radius: 4px;
@@ -511,10 +745,17 @@
 
     /* RESPONSIVE */
 
-    @media (max-width:1050px) {
-      nav {
+    @media (max-width:900px) {
+
+      .desktop-nav,
+      .ticket-button {
         display: none;
       }
+
+      .mobile-menu-button {
+        display: flex;
+      }
+
     }
 
     @media (max-width:650px) {
@@ -530,10 +771,6 @@
 
       .logo strong {
         display: none;
-      }
-
-      .back-button {
-        padding: 11px 13px;
       }
 
       .article-hero,
@@ -555,13 +792,27 @@
         font-size: 14px;
       }
 
+      .article-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .mobile-menu-inner {
+        padding-top: 105px;
+      }
+
+      .mobile-nav a {
+        min-height: 55px;
+
+        font-size: 25px;
+      }
+
       .footer-inner {
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
 
-        padding:
-          25px 0;
+        padding: 25px 0;
       }
 
     }
@@ -569,6 +820,78 @@
 </head>
 
 <body>
+
+<!-- MOBILE MENU -->
+
+<div
+  class="mobile-menu"
+  id="mobileMenu"
+>
+
+  <div class="mobile-menu-inner">
+
+    <div class="mobile-menu-small">
+      CASPIY FUTSAL CLUB
+    </div>
+
+    <nav class="mobile-nav">
+
+      <a href="index.html">
+        БАСТЫ БЕТ
+      </a>
+
+      <a href="team.html">
+        КОМАНДА
+      </a>
+
+      <a href="matches.html">
+        МАТЧТАР
+      </a>
+
+      <a
+        href="news.html"
+        class="active"
+      >
+        ЖАҢАЛЫҚТАР
+      </a>
+
+      <a href="club.html">
+        КЛУБ
+      </a>
+
+      <a href="fans.html">
+        ЖАНКҮЙЕРЛЕР
+      </a>
+
+      <a href="contact.html">
+        БАЙЛАНЫС
+      </a>
+
+    </nav>
+
+    <a
+      href="#"
+      id="mobileTicketButton"
+      class="mobile-ticket disabled"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      БИЛЕТТЕР →
+    </a>
+
+    <div
+      class="mobile-address"
+      id="mobileAddress"
+    >
+      АҚТАУ · ҚАЗАҚСТАН
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- HEADER -->
 
 <header>
 
@@ -591,7 +914,7 @@
     </a>
 
 
-    <nav>
+    <nav class="desktop-nav">
 
       <a href="index.html">
         БАСТЫ БЕТ
@@ -627,17 +950,42 @@
     </nav>
 
 
-    <a
-      href="news.html"
-      class="back-button"
-    >
-      ← ЖАҢАЛЫҚТАР
-    </a>
+    <div class="header-actions">
+
+      <a
+        href="#"
+        id="ticketButton"
+        class="ticket-button disabled"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        БИЛЕТТЕР →
+      </a>
+
+      <button
+        class="mobile-menu-button"
+        id="mobileMenuButton"
+        type="button"
+        aria-label="Мәзір"
+        aria-expanded="false"
+      >
+
+        <span class="mobile-lines">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+
+      </button>
+
+    </div>
 
   </div>
 
 </header>
 
+
+<!-- ARTICLE -->
 
 <main id="page">
 
@@ -647,6 +995,8 @@
 
 </main>
 
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -696,6 +1046,134 @@
       'page'
     );
 
+
+  /* MOBILE MENU */
+
+  const mobileMenu =
+    document.getElementById(
+      'mobileMenu'
+    );
+
+
+  const mobileMenuButton =
+    document.getElementById(
+      'mobileMenuButton'
+    );
+
+
+  function openMenu() {
+
+    mobileMenu.classList.add(
+      'open'
+    );
+
+    mobileMenuButton.classList.add(
+      'active'
+    );
+
+    mobileMenuButton.setAttribute(
+      'aria-expanded',
+      'true'
+    );
+
+    document.body.classList.add(
+      'menu-open'
+    );
+
+  }
+
+
+  function closeMenu() {
+
+    mobileMenu.classList.remove(
+      'open'
+    );
+
+    mobileMenuButton.classList.remove(
+      'active'
+    );
+
+    mobileMenuButton.setAttribute(
+      'aria-expanded',
+      'false'
+    );
+
+    document.body.classList.remove(
+      'menu-open'
+    );
+
+  }
+
+
+  mobileMenuButton.addEventListener(
+    'click',
+    () => {
+
+      if (
+        mobileMenu.classList.contains(
+          'open'
+        )
+      ) {
+
+        closeMenu();
+
+      } else {
+
+        openMenu();
+
+      }
+
+    }
+  );
+
+
+  mobileMenu
+    .querySelectorAll('a')
+    .forEach(
+      link => {
+
+        link.addEventListener(
+          'click',
+          closeMenu
+        );
+
+      }
+    );
+
+
+  document.addEventListener(
+    'keydown',
+    event => {
+
+      if (
+        event.key === 'Escape'
+      ) {
+
+        closeMenu();
+
+      }
+
+    }
+  );
+
+
+  window.addEventListener(
+    'resize',
+    () => {
+
+      if (
+        window.innerWidth > 900
+      ) {
+
+        closeMenu();
+
+      }
+
+    }
+  );
+
+
+  /* HELPERS */
 
   function escapeHtml(value) {
 
@@ -751,8 +1229,9 @@
     const paragraphs =
       String(text)
         .split(/\n+/)
-        .map(item =>
-          item.trim()
+        .map(
+          item =>
+            item.trim()
         )
         .filter(Boolean);
 
@@ -769,6 +1248,8 @@
 
   }
 
+
+  /* NOT FOUND */
 
   function showNotFound() {
 
@@ -798,6 +1279,8 @@
 
   }
 
+
+  /* ARTICLE */
 
   async function loadArticle() {
 
@@ -848,7 +1331,9 @@
       !data
     ) {
 
-      console.error(error);
+      console.error(
+        error
+      );
 
       showNotFound();
 
@@ -941,33 +1426,99 @@
   }
 
 
+  /* SETTINGS */
+
   async function loadSettings() {
 
     const {
-      data
+      data,
+      error
     } =
       await supabase
         .from('site_settings')
-        .select('address')
-        .eq('id',1)
+        .select(
+          'ticket_url,address'
+        )
+        .eq(
+          'id',
+          1
+        )
         .maybeSingle();
 
 
     if (
-      data?.address
+      error ||
+      !data
     ) {
+
+      return;
+
+    }
+
+
+    const ticketButton =
+      document.getElementById(
+        'ticketButton'
+      );
+
+
+    const mobileTicketButton =
+      document.getElementById(
+        'mobileTicketButton'
+      );
+
+
+    if (
+      data.ticket_url
+    ) {
+
+      ticketButton.href =
+        data.ticket_url;
+
+      mobileTicketButton.href =
+        data.ticket_url;
+
+
+      ticketButton.classList.remove(
+        'disabled'
+      );
+
+      mobileTicketButton.classList.remove(
+        'disabled'
+      );
+
+    }
+
+
+    if (
+      data.address
+    ) {
+
+      const address =
+        data.address.toUpperCase();
+
 
       document
         .getElementById(
           'footerAddress'
         )
         .textContent =
-          data.address.toUpperCase();
+          address;
+
+
+      document
+        .getElementById(
+          'mobileAddress'
+        )
+        .textContent =
+          address;
 
     }
 
   }
 
+
+  /* START */
 
   await Promise.all([
     loadArticle(),
