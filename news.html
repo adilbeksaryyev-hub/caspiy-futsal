@@ -27,10 +27,12 @@
 
     body {
       min-height: 100vh;
-      font-family: 'Montserrat', Arial, sans-serif;
-      background: #020a10;
-      color: #f4fbff;
       overflow-x: hidden;
+
+      font-family: 'Montserrat', Arial, sans-serif;
+
+      color: #f1f8fc;
+      background: #020a10;
     }
 
     a {
@@ -48,41 +50,50 @@
       background: rgba(2,10,16,.95);
       backdrop-filter: blur(15px);
 
-      border-bottom: 1px solid rgba(80,202,245,.14);
+      border-bottom:
+        1px solid rgba(80,202,245,.14);
     }
 
     .header-inner {
       width: min(1440px,92%);
       height: 95px;
+
       margin: auto;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 30px;
     }
 
     .logo {
       display: flex;
       align-items: center;
+
       gap: 14px;
     }
 
     .logo img {
       width: 70px;
       height: 70px;
+
       object-fit: contain;
     }
 
     .logo strong {
       font-family: 'Oswald', sans-serif;
+
       font-size: 20px;
+
       letter-spacing: .08em;
     }
 
     nav {
       display: flex;
-      gap: 30px;
+      align-items: center;
+
+      gap: 27px;
     }
 
     nav a {
@@ -95,7 +106,8 @@
       font-size: 10px;
       font-weight: 700;
 
-      letter-spacing: .14em;
+      letter-spacing: .13em;
+
       text-transform: uppercase;
     }
 
@@ -121,41 +133,44 @@
     .home-button {
       padding: 13px 18px;
 
-      border: 1px solid rgba(80,207,251,.42);
-      border-radius: 5px;
-
       color: #caeffc;
+
+      border:
+        1px solid rgba(80,207,251,.42);
+
+      border-radius: 5px;
 
       font-size: 9px;
       font-weight: 700;
 
       letter-spacing: .13em;
+
       text-transform: uppercase;
     }
 
     /* HERO */
 
-    .page-hero {
+    .hero {
       position: relative;
 
-      min-height: 390px;
+      min-height: 470px;
+
+      overflow: hidden;
 
       background:
         linear-gradient(
           90deg,
-          rgba(1,8,14,.97),
-          rgba(3,21,34,.70),
-          rgba(2,13,22,.83)
+          rgba(1,8,14,.96),
+          rgba(2,16,27,.60),
+          rgba(1,8,14,.38)
         ),
         url("hero-bg.png");
 
       background-size: cover;
-      background-position: center 52%;
-
-      overflow: hidden;
+      background-position: center 55%;
     }
 
-    .page-hero::after {
+    .hero::after {
       content: "";
 
       position: absolute;
@@ -164,17 +179,17 @@
       background:
         linear-gradient(
           to bottom,
-          transparent 20%,
+          transparent 25%,
           #020a10 100%
         );
     }
 
-    .page-hero-inner {
+    .hero-inner {
       position: relative;
       z-index: 2;
 
       width: min(1440px,92%);
-      min-height: 390px;
+      min-height: 470px;
 
       margin: auto;
 
@@ -182,11 +197,11 @@
       flex-direction: column;
       justify-content: flex-end;
 
-      padding-bottom: 55px;
+      padding-bottom: 68px;
     }
 
-    .kicker {
-      margin-bottom: 12px;
+    .hero-small {
+      margin-bottom: 13px;
 
       color: #55d3ff;
 
@@ -194,17 +209,37 @@
       font-weight: 700;
 
       letter-spacing: .35em;
+
       text-transform: uppercase;
     }
 
-    .page-title {
-      font-family: 'Oswald', sans-serif;
+    .hero-title {
+      font-family: 'Oswald',sans-serif;
 
-      font-size: clamp(70px,9vw,140px);
+      font-size:
+        clamp(
+          75px,
+          9vw,
+          145px
+        );
+
       font-weight: 700;
 
-      line-height: .9;
+      line-height: .90;
+
       letter-spacing: -.035em;
+
+      text-transform: uppercase;
+    }
+
+    .hero-text {
+      margin-top: 23px;
+
+      color: #88a6b4;
+
+      font-size: 11px;
+
+      letter-spacing: .13em;
 
       text-transform: uppercase;
     }
@@ -212,56 +247,78 @@
     /* NEWS */
 
     .news-section {
-      padding: 70px 0 105px;
+      padding:
+        80px 0
+        110px;
 
       background:
         radial-gradient(
-          circle at 80% 5%,
-          rgba(0,157,220,.09),
+          circle at 85% 5%,
+          rgba(0,160,220,.10),
           transparent 30%
         ),
         #020a10;
     }
 
-    .news-container {
+    .container {
       width: min(1440px,92%);
       margin: auto;
     }
 
-    .news-top {
+    .section-heading {
       display: flex;
       align-items: flex-end;
+      justify-content: space-between;
 
       gap: 30px;
 
-      margin-bottom: 30px;
+      margin-bottom: 38px;
 
-      padding-bottom: 18px;
+      padding-bottom: 20px;
 
-      border-bottom: 1px solid rgba(84,200,244,.15);
+      border-bottom:
+        1px solid rgba(82,200,244,.14);
     }
 
-    .news-top h2 {
-      font-family: 'Oswald', sans-serif;
+    .heading-small {
+      display: block;
 
-      font-size: 35px;
+      margin-bottom: 7px;
+
+      color: #55d3ff;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .30em;
+
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      font-family: 'Oswald',sans-serif;
+
+      font-size:
+        clamp(
+          38px,
+          5vw,
+          68px
+        );
+
       font-weight: 600;
 
       text-transform: uppercase;
     }
 
-    .news-line {
-      flex: 1;
-      height: 1px;
+    .news-count {
+      color: #638292;
 
-      margin-bottom: 6px;
+      font-size: 9px;
+      font-weight: 600;
 
-      background:
-        linear-gradient(
-          90deg,
-          rgba(82,207,255,.20),
-          transparent
-        );
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
     }
 
     .news-grid {
@@ -270,28 +327,40 @@
       grid-template-columns:
         repeat(3,minmax(0,1fr));
 
-      gap: 18px;
+      gap: 17px;
     }
 
     .news-card {
+      position: relative;
+
+      display: block;
+
       overflow: hidden;
 
       background:
         linear-gradient(
           180deg,
-          #091c29,
+          #091d2b,
           #041019
         );
 
-      border: 1px solid rgba(73,194,237,.15);
+      border:
+        1px solid rgba(73,194,237,.15);
 
-      transition: .3s ease;
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
     }
 
     .news-card:hover {
       transform: translateY(-4px);
 
-      border-color: rgba(79,210,255,.42);
+      border-color:
+        rgba(76,209,255,.44);
+
+      box-shadow:
+        0 18px 45px rgba(0,0,0,.22);
     }
 
     .news-image {
@@ -301,22 +370,28 @@
 
       overflow: hidden;
 
-      background: #071823;
+      background:
+        linear-gradient(
+          135deg,
+          #0a293c,
+          #04121c
+        );
     }
 
     .news-image img {
       width: 100%;
       height: 100%;
 
-      display: block;
-
       object-fit: cover;
 
-      transition: transform .4s ease;
+      transition:
+        transform .35s ease;
     }
 
-    .news-card:hover .news-image img {
-      transform: scale(1.04);
+    .news-card:hover
+    .news-image img {
+      transform:
+        scale(1.035);
     }
 
     .news-image::after {
@@ -328,80 +403,233 @@
       background:
         linear-gradient(
           to bottom,
-          transparent 45%,
-          rgba(1,7,11,.55) 100%
+          transparent 50%,
+          rgba(2,10,16,.55)
         );
+
+      pointer-events: none;
+    }
+
+    .no-image-logo {
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+
+      width: 110px;
+      height: 110px;
+
+      transform:
+        translate(-50%,-50%);
+
+      object-fit: contain;
+
+      opacity: .18;
     }
 
     .news-date {
       position: absolute;
+      z-index: 2;
 
       left: 15px;
       bottom: 14px;
 
-      z-index: 2;
+      padding: 7px 9px;
 
-      color: #e3f7ff;
+      color: #e9f9ff;
 
-      font-size: 9px;
+      background:
+        rgba(2,12,20,.84);
+
+      font-size: 8px;
       font-weight: 700;
 
-      letter-spacing: .12em;
-      text-transform: uppercase;
+      letter-spacing: .08em;
     }
 
     .news-content {
-      padding: 22px;
+      min-height: 225px;
+
+      display: flex;
+      flex-direction: column;
+
+      padding: 23px;
+    }
+
+    .news-label {
+      margin-bottom: 11px;
+
+      color: #55d4ff;
+
+      font-size: 8px;
+      font-weight: 700;
+
+      letter-spacing: .22em;
+
+      text-transform: uppercase;
     }
 
     .news-title {
-      color: #fff;
+      color: #f3fbff;
 
-      font-family: 'Oswald', sans-serif;
+      font-family: 'Oswald',sans-serif;
 
-      font-size: 23px;
+      font-size: 24px;
       font-weight: 600;
 
-      line-height: 1.2;
+      line-height: 1.17;
 
       text-transform: uppercase;
     }
 
     .news-description {
-      margin-top: 13px;
+      margin-top: 14px;
 
-      color: #7c9ba9;
+      color: #7d9aa9;
 
-      font-size: 11px;
+      font-size: 10px;
 
-      line-height: 1.7;
+      line-height: 1.75;
+
+      display: -webkit-box;
+
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+
+      overflow: hidden;
     }
 
-    .news-arrow {
-      display: inline-block;
+    .news-bottom {
+      margin-top: auto;
+      padding-top: 22px;
 
-      margin-top: 20px;
-
-      color: #55d4ff;
-
-      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .message {
+    .read-more {
+      color: #60d8ff;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+    }
+
+    .arrow {
+      color: #59d4ff;
+
+      font-size: 21px;
+
+      transition:
+        transform .2s ease;
+    }
+
+    .news-card:hover
+    .arrow {
+      transform:
+        translateX(4px);
+    }
+
+    .empty {
       grid-column: 1 / -1;
 
-      padding: 60px;
-
-      border: 1px solid rgba(76,200,244,.12);
-
-      color: #718f9e;
+      padding: 70px 25px;
 
       text-align: center;
 
+      color: #6f8e9d;
+
+      background: #04131e;
+
+      border:
+        1px solid rgba(72,194,238,.12);
+
       font-size: 10px;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+    }
+
+    /* CTA */
+
+    .cta {
+      position: relative;
+
+      min-height: 350px;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(1,9,15,.96),
+          rgba(2,21,34,.63)
+        ),
+        url("hero-bg.png");
+
+      background-size: cover;
+      background-position: center 70%;
+    }
+
+    .cta::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to right,
+          rgba(1,8,13,.93),
+          rgba(1,8,13,.20)
+        );
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 2;
+
+      width: min(1440px,92%);
+      min-height: 350px;
+
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .cta-small {
+      color: #55d3ff;
+
+      font-size: 9px;
       font-weight: 700;
 
-      letter-spacing: .20em;
+      letter-spacing: .30em;
+
+      text-transform: uppercase;
+    }
+
+    .cta-title {
+      margin-top: 10px;
+
+      font-family: 'Oswald',sans-serif;
+
+      font-size:
+        clamp(
+          45px,
+          6vw,
+          90px
+        );
+
+      font-weight: 700;
+
+      line-height: .95;
+
       text-transform: uppercase;
     }
 
@@ -410,7 +638,8 @@
     footer {
       background: #01070b;
 
-      border-top: 1px solid rgba(71,197,242,.10);
+      border-top:
+        1px solid rgba(71,197,242,.10);
     }
 
     .footer-inner {
@@ -422,11 +651,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      gap: 30px;
     }
 
     .footer-brand {
       display: flex;
       align-items: center;
+
       gap: 14px;
     }
 
@@ -441,6 +673,7 @@
       font-size: 12px;
 
       letter-spacing: .17em;
+
       text-transform: uppercase;
     }
 
@@ -450,16 +683,20 @@
       font-size: 8px;
 
       letter-spacing: .20em;
+
       text-transform: uppercase;
     }
 
-    @media (max-width:1050px) {
+    /* RESPONSIVE */
+
+    @media (max-width:1100px) {
       nav {
         display: none;
       }
 
       .news-grid {
-        grid-template-columns: repeat(2,minmax(0,1fr));
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
       }
     }
 
@@ -477,25 +714,38 @@
         display: none;
       }
 
-      .page-hero,
-      .page-hero-inner {
-        min-height: 310px;
+      .home-button {
+        padding: 11px 13px;
       }
 
-      .page-title {
-        font-size: 65px;
+      .hero,
+      .hero-inner {
+        min-height: 390px;
+      }
+
+      .hero-title {
+        font-size: 68px;
+      }
+
+      .news-section {
+        padding:
+          60px 0
+          80px;
       }
 
       .news-grid {
         grid-template-columns: 1fr;
       }
 
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
       .footer-inner {
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-
-        gap: 14px;
 
         padding: 25px 0;
       }
@@ -506,17 +756,28 @@
 <body>
 
 <header>
+
   <div class="header-inner">
 
-    <a href="index.html" class="logo">
-      <img src="logo.png" alt="CASPIY">
+    <a
+      href="index.html"
+      class="logo"
+    >
+
+      <img
+        src="logo.png"
+        alt="CASPIY"
+      >
 
       <strong>
         CASPIY FUTSAL CLUB
       </strong>
+
     </a>
 
+
     <nav>
+
       <a href="index.html">
         БАСТЫ БЕТ
       </a>
@@ -525,68 +786,99 @@
         КОМАНДА
       </a>
 
-      <a href="index.html#matches">
+      <a href="matches.html">
         МАТЧТАР
       </a>
 
-      <a href="news.html" class="active">
+      <a
+        href="news.html"
+        class="active"
+      >
         ЖАҢАЛЫҚТАР
       </a>
 
-      <a href="#">
+      <a href="club.html">
         КЛУБ
       </a>
 
-      <a href="#">
+      <a href="fans.html">
+        ЖАНКҮЙЕРЛЕР
+      </a>
+
+      <a href="contact.html">
         БАЙЛАНЫС
       </a>
+
     </nav>
 
-    <a href="index.html" class="home-button">
+
+    <a
+      href="index.html"
+      class="home-button"
+    >
       ← БАСТЫ БЕТ
     </a>
 
   </div>
+
 </header>
 
 
-<section class="page-hero">
+<section class="hero">
 
-  <div class="page-hero-inner">
+  <div class="hero-inner">
 
-    <div class="kicker">
+    <div class="hero-small">
       CASPIY MEDIA
     </div>
 
-    <h1 class="page-title">
+    <h1 class="hero-title">
       ЖАҢАЛЫҚТАР
     </h1>
+
+    <div class="hero-text">
+      КЛУБ · КОМАНДА · МАТЧТАР · ОҚИҒАЛАР
+    </div>
 
   </div>
 
 </section>
 
 
-<main class="news-section">
+<section class="news-section">
 
-  <div class="news-container">
+  <div class="container">
 
-    <div class="news-top">
+    <div class="section-heading">
 
-      <h2>
-        СОҢҒЫ ЖАҢАЛЫҚТАР
-      </h2>
+      <div>
 
-      <div class="news-line"></div>
+        <span class="heading-small">
+          CASPIY FUTSAL CLUB
+        </span>
+
+        <h2>
+          СОҢҒЫ ЖАҢАЛЫҚТАР
+        </h2>
+
+      </div>
+
+      <div
+        class="news-count"
+        id="newsCount"
+      >
+        ЖҮКТЕЛУДЕ...
+      </div>
 
     </div>
 
+
     <div
       class="news-grid"
-      id="news-list"
+      id="newsGrid"
     >
 
-      <div class="message">
+      <div class="empty">
         ЖАҢАЛЫҚТАР ЖҮКТЕЛУДЕ...
       </div>
 
@@ -594,7 +886,29 @@
 
   </div>
 
-</main>
+</section>
+
+
+<section class="cta">
+
+  <div class="cta-inner">
+
+    <div>
+
+      <div class="cta-small">
+        CASPIY FUTSAL CLUB
+      </div>
+
+      <h2 class="cta-title">
+        БІР ӨҢІР.<br>
+        БІР КОМАНДА.
+      </h2>
+
+    </div>
+
+  </div>
+
+</section>
 
 
 <footer>
@@ -614,7 +928,10 @@
 
     </div>
 
-    <div class="footer-copy">
+    <div
+      class="footer-copy"
+      id="footerAddress"
+    >
       АҚТАУ · ҚАЗАҚСТАН
     </div>
 
@@ -626,7 +943,8 @@
 <script type="module">
 
   import { createClient }
-  from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+  from
+  'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
 
   const supabase =
@@ -636,42 +954,55 @@
     );
 
 
+  const newsGrid =
+    document.getElementById(
+      'newsGrid'
+    );
+
+
+  const newsCount =
+    document.getElementById(
+      'newsCount'
+    );
+
+
   function escapeHtml(value) {
+
     return String(value ?? '')
       .replaceAll('&','&amp;')
       .replaceAll('<','&lt;')
       .replaceAll('>','&gt;')
       .replaceAll('"','&quot;')
       .replaceAll("'","&#039;");
+
   }
 
 
   function formatDate(value) {
 
-    if (!value) return '';
+    if (!value) {
+      return '';
+    }
+
 
     return new Intl.DateTimeFormat(
       'kk-KZ',
       {
-        timeZone: 'Asia/Aqtau',
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
+        timeZone:'Asia/Aqtau',
+        day:'numeric',
+        month:'long',
+        year:'numeric'
       }
     )
-    .format(new Date(value))
+    .format(
+      new Date(value)
+    )
     .toUpperCase();
 
   }
 
 
   async function loadNews() {
-
-    const list =
-      document.getElementById(
-        'news-list'
-      );
-
 
     const {
       data,
@@ -687,15 +1018,15 @@
           true
         )
         .order(
-          'published_at',
-          {
-            ascending:false
-          }
-        )
-        .order(
           'sort_order',
           {
             ascending:true
+          }
+        )
+        .order(
+          'published_at',
+          {
+            ascending:false
           }
         );
 
@@ -704,84 +1035,161 @@
 
       console.error(error);
 
-      list.innerHTML = `
-        <div class="message">
-          ЖАҢАЛЫҚТАРДЫ ЖҮКТЕУ МҮМКІН БОЛМАДЫ
+
+      newsGrid.innerHTML = `
+
+        <div class="empty">
+          ЖАҢАЛЫҚТАРДЫ ЖҮКТЕУ КЕЗІНДЕ ҚАТЕ ОРЫН АЛДЫ
         </div>
+
       `;
 
+
+      newsCount.textContent =
+        'ҚАТЕ';
+
       return;
+
     }
 
 
-    if (!data || data.length === 0) {
+    if (!data?.length) {
 
-      list.innerHTML = `
-        <div class="message">
+      newsGrid.innerHTML = `
+
+        <div class="empty">
           ЖАҢАЛЫҚТАР ӘЗІРГЕ ҚОСЫЛМАҒАН
         </div>
+
       `;
 
+
+      newsCount.textContent =
+        '0 ЖАҢАЛЫҚ';
+
       return;
+
     }
 
 
-    list.innerHTML =
-      data.map(item => `
-
-        <article class="news-card">
-
-          <div class="news-image">
-
-            ${
-              item.image_url
-                ? `
-                  <img
-                    src="${escapeHtml(item.image_url)}"
-                    alt="${escapeHtml(item.title)}"
-                  >
-                `
-                : ''
-            }
-
-            <div class="news-date">
-              ${formatDate(item.published_at)}
-            </div>
-
-          </div>
+    newsCount.textContent =
+      `${data.length} ЖАҢАЛЫҚ`;
 
 
-          <div class="news-content">
+    newsGrid.innerHTML =
+      data
+        .map(
+          item => `
 
-            <div class="news-title">
-              ${escapeHtml(item.title)}
-            </div>
+            <a
+              class="news-card"
+              href="news-detail.html?id=${item.id}"
+            >
 
-            ${
-              item.description
-                ? `
-                  <div class="news-description">
-                    ${escapeHtml(item.description)}
-                  </div>
-                `
-                : ''
-            }
+              <div class="news-image">
 
-            <span class="news-arrow">
-              →
-            </span>
+                ${
+                  item.image_url
+                    ? `
+                      <img
+                        src="${escapeHtml(item.image_url)}"
+                        alt="${escapeHtml(item.title)}"
+                        loading="lazy"
+                      >
+                    `
+                    : `
+                      <img
+                        class="no-image-logo"
+                        src="logo.png"
+                        alt=""
+                      >
+                    `
+                }
 
-          </div>
+                <div class="news-date">
+                  ${formatDate(item.published_at)}
+                </div>
 
-        </article>
+              </div>
 
-      `)
-      .join('');
+
+              <div class="news-content">
+
+                <div class="news-label">
+                  CASPIY NEWS
+                </div>
+
+                <h3 class="news-title">
+                  ${escapeHtml(item.title)}
+                </h3>
+
+
+                ${
+                  item.description
+                    ? `
+                      <div class="news-description">
+                        ${escapeHtml(item.description)}
+                      </div>
+                    `
+                    : ''
+                }
+
+
+                <div class="news-bottom">
+
+                  <span class="read-more">
+                    ТОЛЫҒЫРАҚ
+                  </span>
+
+                  <span class="arrow">
+                    →
+                  </span>
+
+                </div>
+
+              </div>
+
+            </a>
+
+          `
+        )
+        .join('');
 
   }
 
 
-  loadNews();
+  async function loadSettings() {
+
+    const {
+      data
+    } =
+      await supabase
+        .from('site_settings')
+        .select('address')
+        .eq('id',1)
+        .maybeSingle();
+
+
+    if (
+      data?.address
+    ) {
+
+      document
+        .getElementById(
+          'footerAddress'
+        )
+        .textContent =
+          data.address.toUpperCase();
+
+    }
+
+  }
+
+
+  await Promise.all([
+    loadNews(),
+    loadSettings()
+  ]);
 
 </script>
 
