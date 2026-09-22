@@ -31,8 +31,12 @@
 
       font-family: 'Montserrat', Arial, sans-serif;
 
+      color: #f1f8fc;
       background: #020a10;
-      color: #f2f9fd;
+    }
+
+    body.menu-open {
+      overflow: hidden;
     }
 
     a {
@@ -40,17 +44,14 @@
       text-decoration: none;
     }
 
-
-    /* =====================================================
-       HEADER
-       ===================================================== */
+    /* HEADER */
 
     header {
       position: sticky;
       top: 0;
       z-index: 50;
 
-      background: rgba(2,10,16,.95);
+      background: rgba(2,10,16,.96);
       backdrop-filter: blur(15px);
 
       border-bottom:
@@ -67,10 +68,13 @@
       align-items: center;
       justify-content: space-between;
 
-      gap: 30px;
+      gap: 25px;
     }
 
     .logo {
+      position: relative;
+      z-index: 60;
+
       display: flex;
       align-items: center;
 
@@ -88,19 +92,18 @@
       font-family: 'Oswald',sans-serif;
 
       font-size: 20px;
-      font-weight: 700;
 
       letter-spacing: .08em;
     }
 
-    nav {
+    .desktop-nav {
       display: flex;
       align-items: center;
 
-      gap: 30px;
+      gap: 27px;
     }
 
-    nav a {
+    .desktop-nav a {
       position: relative;
 
       padding: 12px 0;
@@ -110,16 +113,17 @@
       font-size: 10px;
       font-weight: 700;
 
-      letter-spacing: .14em;
+      letter-spacing: .13em;
+
       text-transform: uppercase;
     }
 
-    nav a:hover,
-    nav a.active {
+    .desktop-nav a:hover,
+    .desktop-nav a.active {
       color: #62d6ff;
     }
 
-    nav a.active::after {
+    .desktop-nav a.active::after {
       content: "";
 
       position: absolute;
@@ -133,7 +137,17 @@
       background: #52d3ff;
     }
 
-    .home-button {
+    .header-actions {
+      position: relative;
+      z-index: 60;
+
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+    }
+
+    .ticket-button {
       padding: 13px 18px;
 
       color: #caeffc;
@@ -147,32 +161,247 @@
       font-weight: 700;
 
       letter-spacing: .13em;
+
       text-transform: uppercase;
     }
 
+    .ticket-button.disabled {
+      opacity: .35;
+      pointer-events: none;
+    }
 
-    /* =====================================================
-       HERO
-       ===================================================== */
+    /* MOBILE BUTTON */
+
+    .mobile-menu-button {
+      display: none;
+
+      width: 46px;
+      height: 46px;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 0;
+
+      background: rgba(4,22,34,.90);
+
+      border:
+        1px solid rgba(77,205,255,.32);
+
+      border-radius: 5px;
+
+      cursor: pointer;
+    }
+
+    .mobile-lines {
+      position: relative;
+
+      width: 21px;
+      height: 15px;
+    }
+
+    .mobile-lines span {
+      position: absolute;
+      left: 0;
+
+      width: 21px;
+      height: 2px;
+
+      background: #cbeffc;
+
+      transition: .25s;
+    }
+
+    .mobile-lines span:nth-child(1) {
+      top: 0;
+    }
+
+    .mobile-lines span:nth-child(2) {
+      top: 6px;
+    }
+
+    .mobile-lines span:nth-child(3) {
+      top: 12px;
+    }
+
+    .mobile-menu-button.active
+    .mobile-lines span:nth-child(1) {
+      top: 6px;
+      transform: rotate(45deg);
+    }
+
+    .mobile-menu-button.active
+    .mobile-lines span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-button.active
+    .mobile-lines span:nth-child(3) {
+      top: 6px;
+      transform: rotate(-45deg);
+    }
+
+    /* MOBILE MENU */
+
+    .mobile-menu {
+      position: fixed;
+      z-index: 45;
+
+      inset: 0;
+
+      visibility: hidden;
+      opacity: 0;
+
+      pointer-events: none;
+
+      transform: translateX(100%);
+
+      transition:
+        transform .30s ease,
+        opacity .30s ease,
+        visibility .30s ease;
+
+      background:
+        radial-gradient(
+          circle at 80% 15%,
+          rgba(32,175,226,.18),
+          transparent 30%
+        ),
+        rgba(1,9,15,.99);
+    }
+
+    .mobile-menu.open {
+      visibility: visible;
+      opacity: 1;
+
+      pointer-events: auto;
+
+      transform: translateX(0);
+    }
+
+    .mobile-menu-inner {
+      width: min(540px,88%);
+      height: 100%;
+
+      margin: auto;
+
+      padding: 125px 0 40px;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-menu-small {
+      margin-bottom: 25px;
+
+      color: #51cffb;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .28em;
+
+      text-transform: uppercase;
+    }
+
+    .mobile-nav {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      min-height: 58px;
+
+      color: #d6e8f0;
+
+      border-bottom:
+        1px solid rgba(91,204,244,.11);
+
+      font-family: 'Oswald',sans-serif;
+
+      font-size: 28px;
+      font-weight: 500;
+
+      text-transform: uppercase;
+    }
+
+    .mobile-nav a::after {
+      content: "→";
+
+      color: #54d5ff;
+
+      font-size: 18px;
+    }
+
+    .mobile-nav a.active {
+      color: #58d5ff;
+    }
+
+    .mobile-ticket {
+      margin-top: 30px;
+
+      padding: 16px 20px;
+
+      text-align: center;
+
+      color: #031019;
+      background: #56d5ff;
+
+      border-radius: 5px;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    .mobile-ticket.disabled {
+      opacity: .30;
+      pointer-events: none;
+    }
+
+    .mobile-address {
+      margin-top: auto;
+
+      padding-top: 30px;
+
+      color: #4f7080;
+
+      font-size: 9px;
+      font-weight: 600;
+
+      line-height: 1.8;
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+    }
+
+    /* HERO */
 
     .hero {
       position: relative;
 
-      min-height: 620px;
+      min-height: 570px;
 
       overflow: hidden;
 
       background:
         linear-gradient(
           90deg,
-          rgba(1,8,14,.96) 0%,
-          rgba(2,14,23,.67) 50%,
-          rgba(1,8,14,.42) 100%
+          rgba(1,8,14,.96),
+          rgba(2,16,27,.60),
+          rgba(1,8,14,.35)
         ),
         url("hero-bg.png");
 
       background-size: cover;
-      background-position: center;
+      background-position: center 55%;
     }
 
     .hero::after {
@@ -184,7 +413,7 @@
       background:
         linear-gradient(
           to bottom,
-          transparent 40%,
+          transparent 30%,
           #020a10 100%
         );
     }
@@ -194,7 +423,7 @@
       z-index: 2;
 
       width: min(1440px,92%);
-      min-height: 620px;
+      min-height: 570px;
 
       margin: auto;
 
@@ -202,18 +431,19 @@
       flex-direction: column;
       justify-content: flex-end;
 
-      padding-bottom: 80px;
+      padding-bottom: 75px;
     }
 
-    .hero-kicker {
-      margin-bottom: 14px;
+    .hero-small {
+      margin-bottom: 13px;
 
-      color: #56d2ff;
+      color: #55d3ff;
 
       font-size: 10px;
       font-weight: 700;
 
       letter-spacing: .35em;
+
       text-transform: uppercase;
     }
 
@@ -222,58 +452,55 @@
 
       font-size:
         clamp(
-          80px,
-          11vw,
-          170px
+          78px,
+          10vw,
+          155px
         );
 
       font-weight: 700;
 
-      line-height: .88;
+      line-height: .90;
 
-      letter-spacing: -.04em;
+      letter-spacing: -.035em;
 
       text-transform: uppercase;
+    }
+
+    .hero-title span {
+      color: #57d3ff;
     }
 
     .hero-text {
-      max-width: 650px;
+      max-width: 670px;
 
-      margin-top: 28px;
+      margin-top: 25px;
 
-      color: #8eaab8;
+      color: #88a6b4;
 
       font-size: 11px;
-      font-weight: 500;
 
-      line-height: 2;
-
-      letter-spacing: .10em;
+      line-height: 1.9;
+      letter-spacing: .12em;
 
       text-transform: uppercase;
     }
 
-
-    /* =====================================================
-       ABOUT
-       ===================================================== */
+    /* ABOUT */
 
     .about {
-      padding:
-        100px 0
-        110px;
+      padding: 95px 0;
 
       background:
         radial-gradient(
-          circle at 80% 15%,
-          rgba(0,156,220,.11),
+          circle at 80% 5%,
+          rgba(0,157,220,.09),
           transparent 30%
         ),
         #020a10;
     }
 
     .container {
-      width: min(1440px,92%);
+      width: min(1300px,92%);
       margin: auto;
     }
 
@@ -281,22 +508,24 @@
       display: grid;
 
       grid-template-columns:
-        .9fr 1.1fr;
+        .8fr 1.2fr;
 
-      gap: 80px;
+      gap: 75px;
 
       align-items: start;
     }
 
-    .section-number {
-      margin-bottom: 15px;
+    .section-small {
+      margin-bottom: 12px;
 
-      color: rgba(83,210,255,.35);
+      color: #56d4ff;
 
-      font-family: 'Oswald',sans-serif;
-
-      font-size: 42px;
+      font-size: 9px;
       font-weight: 700;
+
+      letter-spacing: .31em;
+
+      text-transform: uppercase;
     }
 
     .section-title {
@@ -305,40 +534,41 @@
       font-size:
         clamp(
           45px,
-          5vw,
-          76px
+          6vw,
+          85px
         );
 
       font-weight: 600;
 
-      line-height: 1;
+      line-height: .95;
 
       text-transform: uppercase;
     }
 
-    .about-copy {
-      padding-top: 20px;
+    .section-title span {
+      color: #58d5ff;
+    }
 
-      color: #8fa9b6;
+    .about-text {
+      color: #93aeba;
 
       font-size: 13px;
 
       line-height: 2;
     }
 
-    .about-copy p + p {
-      margin-top: 20px;
+    .about-text p {
+      margin-bottom: 24px;
     }
 
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
 
-    /* =====================================================
-       IDENTITY CARDS
-       ===================================================== */
+    /* IDENTITY */
 
     .identity {
-      padding:
-        20px 0
-        110px;
+      padding: 0 0 105px;
 
       background: #020a10;
     }
@@ -349,22 +579,22 @@
       grid-template-columns:
         repeat(3,minmax(0,1fr));
 
-      gap: 16px;
+      gap: 14px;
     }
 
     .identity-card {
       position: relative;
 
-      min-height: 300px;
+      min-height: 345px;
 
       overflow: hidden;
 
-      padding: 32px;
+      padding: 30px;
 
       background:
         linear-gradient(
           145deg,
-          #081e2d,
+          #082131,
           #031019
         );
 
@@ -372,24 +602,24 @@
         1px solid rgba(79,198,241,.16);
     }
 
-    .identity-card::before {
+    .identity-card::after {
       content: "";
 
       position: absolute;
 
-      right: -40px;
+      right: -70px;
       bottom: -70px;
 
-      width: 220px;
-      height: 220px;
+      width: 260px;
+      height: 260px;
 
       border-radius: 50%;
 
       background:
         radial-gradient(
           circle,
-          rgba(34,183,240,.22),
-          transparent 70%
+          rgba(40,187,241,.17),
+          transparent 68%
         );
     }
 
@@ -397,7 +627,7 @@
       position: relative;
       z-index: 2;
 
-      color: #54d3ff;
+      color: #55d4ff;
 
       font-size: 9px;
       font-weight: 700;
@@ -409,12 +639,14 @@
       position: relative;
       z-index: 2;
 
-      margin-top: 38px;
+      margin-top: 65px;
 
       font-family: 'Oswald',sans-serif;
 
-      font-size: 38px;
+      font-size: 42px;
       font-weight: 600;
+
+      line-height: 1;
 
       text-transform: uppercase;
     }
@@ -423,23 +655,20 @@
       position: relative;
       z-index: 2;
 
-      margin-top: 18px;
-
       max-width: 330px;
 
-      color: #7998a8;
+      margin-top: 20px;
+
+      color: #7c9aa9;
 
       font-size: 11px;
 
       line-height: 1.9;
     }
 
+    /* QUOTE */
 
-    /* =====================================================
-       CITY
-       ===================================================== */
-
-    .city {
+    .statement {
       position: relative;
 
       min-height: 520px;
@@ -449,8 +678,8 @@
       background:
         linear-gradient(
           90deg,
-          rgba(2,10,16,.95),
-          rgba(2,10,16,.60)
+          rgba(1,8,14,.96),
+          rgba(2,19,31,.64)
         ),
         url("hero-bg.png");
 
@@ -458,7 +687,7 @@
       background-position: center 70%;
     }
 
-    .city::after {
+    .statement::after {
       content: "";
 
       position: absolute;
@@ -467,17 +696,16 @@
       background:
         linear-gradient(
           to right,
-          rgba(1,8,13,.95) 0%,
-          rgba(1,8,13,.55) 55%,
-          rgba(1,8,13,.15) 100%
+          rgba(1,8,13,.93),
+          rgba(1,8,13,.25)
         );
     }
 
-    .city-inner {
+    .statement-inner {
       position: relative;
       z-index: 2;
 
-      width: min(1440px,92%);
+      width: min(1300px,92%);
       min-height: 520px;
 
       margin: auto;
@@ -486,14 +714,12 @@
       align-items: center;
     }
 
-    .city-content {
-      max-width: 620px;
+    .statement-content {
+      max-width: 850px;
     }
 
-    .city-small {
-      margin-bottom: 13px;
-
-      color: #55d4ff;
+    .statement-small {
+      color: #56d4ff;
 
       font-size: 9px;
       font-weight: 700;
@@ -503,14 +729,16 @@
       text-transform: uppercase;
     }
 
-    .city-title {
+    .statement-title {
+      margin-top: 16px;
+
       font-family: 'Oswald',sans-serif;
 
       font-size:
         clamp(
-          60px,
-          7vw,
-          110px
+          58px,
+          8vw,
+          120px
         );
 
       font-weight: 700;
@@ -520,77 +748,89 @@
       text-transform: uppercase;
     }
 
-    .city-text {
-      margin-top: 26px;
-
-      color: #8ca7b5;
-
-      font-size: 12px;
-
-      line-height: 1.9;
+    .statement-title span {
+      color: #56d4ff;
     }
 
+    /* LINKS */
 
-    /* =====================================================
-       MOTTO
-       ===================================================== */
+    .club-links {
+      padding: 100px 0;
 
-    .motto {
-      padding:
-        100px 0;
-
-      text-align: center;
-
-      background:
-        linear-gradient(
-          180deg,
-          #03111b,
-          #02090e
-        );
+      background: #03101a;
     }
 
-    .motto-small {
-      margin-bottom: 20px;
+    .links-heading {
+      margin-bottom: 32px;
 
-      color: #55cff8;
+      padding-bottom: 18px;
 
-      font-size: 9px;
+      border-bottom:
+        1px solid rgba(78,199,242,.15);
+    }
+
+    .links-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+      gap: 14px;
+    }
+
+    .link-card {
+      padding: 28px;
+
+      background: #051722;
+
+      border:
+        1px solid rgba(77,197,241,.15);
+
+      transition:
+        transform .25s,
+        border-color .25s;
+    }
+
+    .link-card:hover {
+      transform: translateY(-3px);
+
+      border-color:
+        rgba(83,211,255,.44);
+    }
+
+    .link-card-small {
+      color: #54d4ff;
+
+      font-size: 8px;
       font-weight: 700;
 
-      letter-spacing: .35em;
+      letter-spacing: .22em;
 
       text-transform: uppercase;
     }
 
-    .motto h2 {
-      max-width: 950px;
-
-      margin: auto;
+    .link-card h3 {
+      margin-top: 35px;
 
       font-family: 'Oswald',sans-serif;
 
-      font-size:
-        clamp(
-          42px,
-          6vw,
-          90px
-        );
-
+      font-size: 32px;
       font-weight: 600;
-
-      line-height: 1.05;
 
       text-transform: uppercase;
     }
 
-    .motto h2 span {
-      color: #58d3ff;
+    .link-card-arrow {
+      display: block;
+
+      margin-top: 24px;
+
+      color: #58d5ff;
+
+      font-size: 20px;
     }
 
-
-    /* =====================================================
-       FOOTER
-       ===================================================== */
+    /* FOOTER */
 
     footer {
       background: #01070b;
@@ -644,30 +884,36 @@
       text-transform: uppercase;
     }
 
+    /* RESPONSIVE */
 
-    /* =====================================================
-       RESPONSIVE
-       ===================================================== */
-
-    @media (max-width:1050px) {
-
-      nav {
-        display: none;
-      }
+    @media (max-width:1000px) {
 
       .about-grid {
         grid-template-columns: 1fr;
 
-        gap: 35px;
+        gap: 40px;
       }
 
-      .identity-grid {
+      .identity-grid,
+      .links-grid {
         grid-template-columns:
           repeat(2,minmax(0,1fr));
       }
 
     }
 
+    @media (max-width:900px) {
+
+      .desktop-nav,
+      .ticket-button {
+        display: none;
+      }
+
+      .mobile-menu-button {
+        display: flex;
+      }
+
+    }
 
     @media (max-width:650px) {
 
@@ -686,34 +932,47 @@
 
       .hero,
       .hero-inner {
-        min-height: 470px;
-      }
-
-      .hero-inner {
-        padding-bottom: 55px;
+        min-height: 440px;
       }
 
       .hero-title {
-        font-size: 80px;
+        font-size: 70px;
       }
 
       .about {
-        padding:
-          70px 0
-          80px;
+        padding: 65px 0;
       }
 
-      .identity-grid {
+      .identity {
+        padding-bottom: 70px;
+      }
+
+      .identity-grid,
+      .links-grid {
         grid-template-columns: 1fr;
       }
 
       .identity-card {
-        min-height: 260px;
+        min-height: 290px;
       }
 
-      .city,
-      .city-inner {
+      .statement,
+      .statement-inner {
         min-height: 430px;
+      }
+
+      .club-links {
+        padding: 70px 0;
+      }
+
+      .mobile-menu-inner {
+        padding-top: 105px;
+      }
+
+      .mobile-nav a {
+        min-height: 55px;
+
+        font-size: 25px;
       }
 
       .footer-inner {
@@ -728,32 +987,22 @@
   </style>
 </head>
 
-
 <body>
 
+<!-- MOBILE MENU -->
 
-<header>
+<div
+  class="mobile-menu"
+  id="mobileMenu"
+>
 
-  <div class="header-inner">
+  <div class="mobile-menu-inner">
 
-    <a
-      href="index.html"
-      class="logo"
-    >
+    <div class="mobile-menu-small">
+      CASPIY FUTSAL CLUB
+    </div>
 
-      <img
-        src="logo.png"
-        alt="CASPIY"
-      >
-
-      <strong>
-        CASPIY FUTSAL CLUB
-      </strong>
-
-    </a>
-
-
-    <nav>
+    <nav class="mobile-nav">
 
       <a href="index.html">
         БАСТЫ БЕТ
@@ -778,41 +1027,149 @@
         КЛУБ
       </a>
 
-      <a href="#">
+      <a href="fans.html">
+        ЖАНКҮЙЕРЛЕР
+      </a>
+
+      <a href="contact.html">
+        БАЙЛАНЫС
+      </a>
+
+    </nav>
+
+    <a
+      href="#"
+      id="mobileTicketButton"
+      class="mobile-ticket disabled"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      БИЛЕТТЕР →
+    </a>
+
+    <div
+      class="mobile-address"
+      id="mobileAddress"
+    >
+      АҚТАУ · ҚАЗАҚСТАН
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+  <div class="header-inner">
+
+    <a
+      href="index.html"
+      class="logo"
+    >
+
+      <img
+        src="logo.png"
+        alt="CASPIY"
+      >
+
+      <strong>
+        CASPIY FUTSAL CLUB
+      </strong>
+
+    </a>
+
+
+    <nav class="desktop-nav">
+
+      <a href="index.html">
+        БАСТЫ БЕТ
+      </a>
+
+      <a href="team.html">
+        КОМАНДА
+      </a>
+
+      <a href="matches.html">
+        МАТЧТАР
+      </a>
+
+      <a href="news.html">
+        ЖАҢАЛЫҚТАР
+      </a>
+
+      <a
+        href="club.html"
+        class="active"
+      >
+        КЛУБ
+      </a>
+
+      <a href="fans.html">
+        ЖАНКҮЙЕРЛЕР
+      </a>
+
+      <a href="contact.html">
         БАЙЛАНЫС
       </a>
 
     </nav>
 
 
-    <a
-      href="index.html"
-      class="home-button"
-    >
-      ← БАСТЫ БЕТ
-    </a>
+    <div class="header-actions">
+
+      <a
+        href="#"
+        id="ticketButton"
+        class="ticket-button disabled"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        БИЛЕТТЕР →
+      </a>
+
+      <button
+        class="mobile-menu-button"
+        id="mobileMenuButton"
+        type="button"
+        aria-label="Мәзір"
+        aria-expanded="false"
+      >
+
+        <span class="mobile-lines">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+
+      </button>
+
+    </div>
 
   </div>
 
 </header>
 
 
+<!-- HERO -->
 
 <section class="hero">
 
   <div class="hero-inner">
 
-    <div class="hero-kicker">
+    <div class="hero-small">
       CASPIY FUTSAL CLUB
     </div>
 
     <h1 class="hero-title">
-      КЛУБ
+      БІЗДІҢ<br>
+      <span>КЛУБ</span>
     </h1>
 
     <div class="hero-text">
-      АҚТАУ. КАСПИЙ. ФУТЗАЛ.<br>
-      БІР ӨҢІР — БІР КОМАНДА.
+      АҚТАУ · КАСПИЙ · ФУТЗАЛ · БІР ӨҢІР · БІР КОМАНДА
     </div>
 
   </div>
@@ -820,6 +1177,7 @@
 </section>
 
 
+<!-- ABOUT -->
 
 <section class="about">
 
@@ -829,30 +1187,36 @@
 
       <div>
 
-        <div class="section-number">
-          01
+        <div class="section-small">
+          CASPIY
         </div>
 
         <h2 class="section-title">
-          БІЗ<br>
-          ТУРАЛЫ
+          ОЙЫННАН<br>
+          <span>ДА АРТЫҚ</span>
         </h2>
 
       </div>
 
 
-      <div class="about-copy">
+      <div class="about-text">
 
         <p>
-          CASPIY FUTSAL CLUB — Ақтау қаласының футзал командасы.
-          Клубтың болмысы Каспий теңізінің мінезімен,
-          қаланың энергиясымен және жанкүйерлердің қолдауымен байланысты.
+          CASPIY Futsal Club — Ақтау қаласын таныстыратын
+          футзал командасы. Клубтың бейнесінде Каспий теңізі,
+          қала және командалық рух біріктірілген.
         </p>
 
         <p>
-          Біздің мақсатымыз — алаңда мінез көрсету,
-          командалық рухты қалыптастыру және Ақтауды
-          футзал алаңында лайықты таныстыру.
+          CASPIY үшін команда тек алаңдағы ойынмен шектелмейді.
+          Ойыншылар, жанкүйерлер және қала бір ортақ бағытта
+          бірігеді.
+        </p>
+
+        <p>
+          Клубтың негізгі ұстанымы —
+          бір өңірдің атынан бірге ойнау,
+          бірге қолдау және бірге алға жылжу.
         </p>
 
       </div>
@@ -864,6 +1228,7 @@
 </section>
 
 
+<!-- IDENTITY -->
 
 <section class="identity">
 
@@ -879,12 +1244,13 @@
         </div>
 
         <h3>
-          БІЗДІҢ ҚАЛА
+          БІЗДІҢ<br>
+          ҮЙІМІЗ
         </h3>
 
         <p>
-          CASPIY Futsal Club өз болмысын Ақтаумен байланыстырады.
-          Команда үшін қала — тек мекен емес, клубтың мінезі мен рухының бір бөлігі.
+          CASPIY клубының негізгі болмысы
+          Ақтау қаласымен және Каспий жағалауымен байланысты.
         </p>
 
       </article>
@@ -893,16 +1259,17 @@
       <article class="identity-card">
 
         <div class="identity-index">
-          02 / КАСПИЙ
+          02 / КОМАНДА
         </div>
 
         <h3>
-          БІЗДІҢ БОЛМЫС
+          БІРГЕ<br>
+          АЛҒА
         </h3>
 
         <p>
-          Каспий — клубтың атауында ғана емес,
-          оның визуалды стилінде, түстерінде және идеясының негізінде.
+          Ортақ мақсат, тәртіп және командалық бірлік —
+          CASPIY идеясының маңызды бөлігі.
         </p>
 
       </article>
@@ -911,16 +1278,17 @@
       <article class="identity-card">
 
         <div class="identity-index">
-          03 / ФУТЗАЛ
+          03 / ЖАНКҮЙЕР
         </div>
 
         <h3>
-          БІЗДІҢ ОЙЫН
+          БІР<br>
+          ӨҢІР
         </h3>
 
         <p>
-          Жылдамдық, қозғалыс, тәртіп және командалық әрекет —
-          CASPIY Futsal Club ойын философиясының негізгі элементтері.
+          Жанкүйерлер — клубтың ажырамас бөлігі.
+          Команда мен трибуна бір мақсатқа бірігеді.
         </p>
 
       </article>
@@ -933,27 +1301,23 @@
 </section>
 
 
+<!-- STATEMENT -->
 
-<section class="city">
+<section class="statement">
 
-  <div class="city-inner">
+  <div class="statement-inner">
 
-    <div class="city-content">
+    <div class="statement-content">
 
-      <div class="city-small">
-        БІЗДІҢ ҮЙІМІЗ
+      <div class="statement-small">
+        CASPIY FUTSAL CLUB
       </div>
 
-      <h2 class="city-title">
-        АҚТАУ
+      <h2 class="statement-title">
+        БІР ӨҢІР.<br>
+        <span>БІР КОМАНДА.</span>
       </h2>
 
-      <div class="city-text">
-        Каспий жағалауындағы қала.
-        Біздің команда осы өңірді, оның адамдарын және
-        футзалға деген құштарлығын алаңда таныстырады.
-      </div>
-
     </div>
 
   </div>
@@ -961,25 +1325,95 @@
 </section>
 
 
+<!-- LINKS -->
 
-<section class="motto">
+<section class="club-links">
 
   <div class="container">
 
-    <div class="motto-small">
-      CASPIY FUTSAL CLUB
+    <div class="links-heading">
+
+      <div class="section-small">
+        CASPIY
+      </div>
+
+      <h2 class="section-title">
+        КЛУБПЕН<br>
+        <span>ТАНЫС</span>
+      </h2>
+
     </div>
 
-    <h2>
-      БІР ӨҢІР.<br>
-      <span>БІР КОМАНДА.</span>
-    </h2>
+
+    <div class="links-grid">
+
+      <a
+        href="team.html"
+        class="link-card"
+      >
+
+        <div class="link-card-small">
+          ҚҰРАМ
+        </div>
+
+        <h3>
+          КОМАНДА
+        </h3>
+
+        <span class="link-card-arrow">
+          →
+        </span>
+
+      </a>
+
+
+      <a
+        href="matches.html"
+        class="link-card"
+      >
+
+        <div class="link-card-small">
+          MATCH CENTER
+        </div>
+
+        <h3>
+          МАТЧТАР
+        </h3>
+
+        <span class="link-card-arrow">
+          →
+        </span>
+
+      </a>
+
+
+      <a
+        href="contact.html"
+        class="link-card"
+      >
+
+        <div class="link-card-small">
+          БАЙЛАНЫС
+        </div>
+
+        <h3>
+          КОНТАКТ
+        </h3>
+
+        <span class="link-card-arrow">
+          →
+        </span>
+
+      </a>
+
+    </div>
 
   </div>
 
 </section>
 
 
+<!-- FOOTER -->
 
 <footer>
 
@@ -998,7 +1432,10 @@
 
     </div>
 
-    <div class="footer-copy">
+    <div
+      class="footer-copy"
+      id="footerAddress"
+    >
       АҚТАУ · ҚАЗАҚСТАН
     </div>
 
@@ -1006,6 +1443,233 @@
 
 </footer>
 
+
+<script type="module">
+
+  import { createClient }
+  from
+  'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+
+  const supabase =
+    createClient(
+      'https://socqbqyhkyvxnsukgcqm.supabase.co',
+      'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK'
+    );
+
+
+  /* MOBILE MENU */
+
+  const mobileMenu =
+    document.getElementById(
+      'mobileMenu'
+    );
+
+
+  const mobileMenuButton =
+    document.getElementById(
+      'mobileMenuButton'
+    );
+
+
+  function openMenu() {
+
+    mobileMenu.classList.add(
+      'open'
+    );
+
+    mobileMenuButton.classList.add(
+      'active'
+    );
+
+    mobileMenuButton.setAttribute(
+      'aria-expanded',
+      'true'
+    );
+
+    document.body.classList.add(
+      'menu-open'
+    );
+
+  }
+
+
+  function closeMenu() {
+
+    mobileMenu.classList.remove(
+      'open'
+    );
+
+    mobileMenuButton.classList.remove(
+      'active'
+    );
+
+    mobileMenuButton.setAttribute(
+      'aria-expanded',
+      'false'
+    );
+
+    document.body.classList.remove(
+      'menu-open'
+    );
+
+  }
+
+
+  mobileMenuButton.addEventListener(
+    'click',
+    () => {
+
+      if (
+        mobileMenu.classList.contains(
+          'open'
+        )
+      ) {
+
+        closeMenu();
+
+      } else {
+
+        openMenu();
+
+      }
+
+    }
+  );
+
+
+  mobileMenu
+    .querySelectorAll('a')
+    .forEach(
+      link => {
+
+        link.addEventListener(
+          'click',
+          closeMenu
+        );
+
+      }
+    );
+
+
+  document.addEventListener(
+    'keydown',
+    event => {
+
+      if (
+        event.key === 'Escape'
+      ) {
+        closeMenu();
+      }
+
+    }
+  );
+
+
+  window.addEventListener(
+    'resize',
+    () => {
+
+      if (
+        window.innerWidth > 900
+      ) {
+        closeMenu();
+      }
+
+    }
+  );
+
+
+  /* SETTINGS */
+
+  async function loadSettings() {
+
+    const {
+      data,
+      error
+    } =
+      await supabase
+        .from('site_settings')
+        .select(
+          'ticket_url,address'
+        )
+        .eq('id',1)
+        .maybeSingle();
+
+
+    if (
+      error ||
+      !data
+    ) {
+      return;
+    }
+
+
+    const ticketButton =
+      document.getElementById(
+        'ticketButton'
+      );
+
+
+    const mobileTicketButton =
+      document.getElementById(
+        'mobileTicketButton'
+      );
+
+
+    if (
+      data.ticket_url
+    ) {
+
+      ticketButton.href =
+        data.ticket_url;
+
+      mobileTicketButton.href =
+        data.ticket_url;
+
+
+      ticketButton.classList.remove(
+        'disabled'
+      );
+
+      mobileTicketButton.classList.remove(
+        'disabled'
+      );
+
+    }
+
+
+    if (
+      data.address
+    ) {
+
+      const address =
+        data.address.toUpperCase();
+
+
+      document
+        .getElementById(
+          'footerAddress'
+        )
+        .textContent =
+          address;
+
+
+      document
+        .getElementById(
+          'mobileAddress'
+        )
+        .textContent =
+          address;
+
+    }
+
+  }
+
+
+  await loadSettings();
+
+</script>
 
 </body>
 </html>
