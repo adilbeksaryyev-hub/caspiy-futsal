@@ -4,7 +4,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Матчтар — CASPIY Futsal Club</title>
+  <title>Матчтар — CASPIY Futsal Club | Ақтау</title>
+
+  <meta
+    name="description"
+    content="CASPIY Futsal Club матчтары. Алдағы ойындар, соңғы нәтижелер, қарсыластар, матч уақыты және өтетін орны."
+  >
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#020a10">
+
+  <link
+    rel="canonical"
+    href="https://adilbeksaryyev-hub.github.io/caspiy-futsal/matches.html"
+  >
+
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- OPEN GRAPH -->
+
+  <meta property="og:type" content="website">
+
+  <meta
+    property="og:site_name"
+    content="CASPIY Futsal Club"
+  >
+
+  <meta
+    property="og:title"
+    content="Матчтар — CASPIY Futsal Club"
+  >
+
+  <meta
+    property="og:description"
+    content="CASPIY Futsal Club матчтарының күнтізбесі мен нәтижелері."
+  >
+
+  <meta
+    property="og:url"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/matches.html"
+  >
+
+  <meta
+    property="og:image"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
+  >
+
+  <meta
+    property="og:image:secure_url"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
+  >
+
+  <meta
+    property="og:image:type"
+    content="image/png"
+  >
+
+  <meta
+    property="og:image:alt"
+    content="CASPIY Futsal Club"
+  >
+
+  <meta
+    property="og:locale"
+    content="kk_KZ"
+  >
+
+  <!-- TWITTER / X -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Матчтар — CASPIY Futsal Club"
+  >
+
+  <meta
+    name="twitter:description"
+    content="CASPIY Futsal Club матчтарының күнтізбесі мен нәтижелері."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,9 +115,7 @@
     body {
       min-height: 100vh;
       overflow-x: hidden;
-
       font-family: 'Montserrat', Arial, sans-serif;
-
       color: #f1f8fc;
       background: #020a10;
     }
@@ -44,79 +129,60 @@
       text-decoration: none;
     }
 
-    /* =====================================================
-       HEADER
-       ===================================================== */
+    /* HEADER */
 
     header {
       position: sticky;
       top: 0;
       z-index: 50;
-
       background: rgba(2,10,16,.96);
       backdrop-filter: blur(15px);
-
-      border-bottom:
-        1px solid rgba(80,202,245,.14);
+      border-bottom: 1px solid rgba(80,202,245,.14);
     }
 
     .header-inner {
       width: min(1440px,92%);
       height: 95px;
-
       margin: auto;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 25px;
     }
 
     .logo {
       position: relative;
       z-index: 60;
-
       display: flex;
       align-items: center;
-
       gap: 14px;
     }
 
     .logo img {
       width: 70px;
       height: 70px;
-
       object-fit: contain;
     }
 
     .logo strong {
       font-family: 'Oswald',sans-serif;
-
       font-size: 20px;
-
       letter-spacing: .08em;
     }
 
     .desktop-nav {
       display: flex;
       align-items: center;
-
       gap: 27px;
     }
 
     .desktop-nav a {
       position: relative;
-
       padding: 12px 0;
-
       color: #a9bfca;
-
       font-size: 10px;
       font-weight: 700;
-
       letter-spacing: .13em;
-
       text-transform: uppercase;
     }
 
@@ -127,43 +193,30 @@
 
     .desktop-nav a.active::after {
       content: "";
-
       position: absolute;
-
       left: 0;
       right: 0;
       bottom: 0;
-
       height: 2px;
-
       background: #52d3ff;
     }
 
     .header-actions {
       position: relative;
       z-index: 60;
-
       display: flex;
       align-items: center;
-
       gap: 12px;
     }
 
     .ticket-button {
       padding: 13px 18px;
-
       color: #caeffc;
-
-      border:
-        1px solid rgba(80,207,251,.42);
-
+      border: 1px solid rgba(80,207,251,.42);
       border-radius: 5px;
-
       font-size: 9px;
       font-weight: 700;
-
       letter-spacing: .13em;
-
       text-transform: uppercase;
     }
 
@@ -172,34 +225,23 @@
       pointer-events: none;
     }
 
-    /* =====================================================
-       MOBILE BUTTON
-       ===================================================== */
+    /* MOBILE BUTTON */
 
     .mobile-menu-button {
       display: none;
-
       width: 46px;
       height: 46px;
-
       align-items: center;
       justify-content: center;
-
       padding: 0;
-
       background: rgba(4,22,34,.90);
-
-      border:
-        1px solid rgba(77,205,255,.32);
-
+      border: 1px solid rgba(77,205,255,.32);
       border-radius: 5px;
-
       cursor: pointer;
     }
 
     .mobile-lines {
       position: relative;
-
       width: 21px;
       height: 15px;
     }
@@ -207,12 +249,9 @@
     .mobile-lines span {
       position: absolute;
       left: 0;
-
       width: 21px;
       height: 2px;
-
       background: #cbeffc;
-
       transition: .25s;
     }
 
@@ -245,23 +284,16 @@
       transform: rotate(-45deg);
     }
 
-    /* =====================================================
-       MOBILE MENU
-       ===================================================== */
+    /* MOBILE MENU */
 
     .mobile-menu {
       position: fixed;
       z-index: 45;
-
       inset: 0;
-
       visibility: hidden;
       opacity: 0;
-
       pointer-events: none;
-
       transform: translateX(100%);
-
       transition:
         transform .30s ease,
         opacity .30s ease,
@@ -279,34 +311,25 @@
     .mobile-menu.open {
       visibility: visible;
       opacity: 1;
-
       pointer-events: auto;
-
       transform: translateX(0);
     }
 
     .mobile-menu-inner {
       width: min(540px,88%);
       height: 100%;
-
       margin: auto;
-
       padding: 125px 0 40px;
-
       display: flex;
       flex-direction: column;
     }
 
     .mobile-menu-small {
       margin-bottom: 25px;
-
       color: #51cffb;
-
       font-size: 9px;
       font-weight: 700;
-
       letter-spacing: .28em;
-
       text-transform: uppercase;
     }
 
@@ -319,27 +342,18 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       min-height: 58px;
-
       color: #d6e8f0;
-
-      border-bottom:
-        1px solid rgba(91,204,244,.11);
-
+      border-bottom: 1px solid rgba(91,204,244,.11);
       font-family: 'Oswald',sans-serif;
-
       font-size: 28px;
       font-weight: 500;
-
       text-transform: uppercase;
     }
 
     .mobile-nav a::after {
       content: "→";
-
       color: #54d5ff;
-
       font-size: 18px;
     }
 
@@ -349,21 +363,14 @@
 
     .mobile-ticket {
       margin-top: 30px;
-
       padding: 16px 20px;
-
       text-align: center;
-
       color: #031019;
       background: #56d5ff;
-
       border-radius: 5px;
-
       font-size: 10px;
       font-weight: 800;
-
       letter-spacing: .14em;
-
       text-transform: uppercase;
     }
 
@@ -374,29 +381,20 @@
 
     .mobile-address {
       margin-top: auto;
-
       padding-top: 30px;
-
       color: #4f7080;
-
       font-size: 9px;
       font-weight: 600;
-
       line-height: 1.8;
       letter-spacing: .18em;
-
       text-transform: uppercase;
     }
 
-    /* =====================================================
-       HERO
-       ===================================================== */
+    /* HERO */
 
     .hero {
       position: relative;
-
       min-height: 470px;
-
       overflow: hidden;
 
       background:
@@ -414,7 +412,6 @@
 
     .hero::after {
       content: "";
-
       position: absolute;
       inset: 0;
 
@@ -429,71 +426,45 @@
     .hero-inner {
       position: relative;
       z-index: 2;
-
       width: min(1440px,92%);
       min-height: 470px;
-
       margin: auto;
-
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-
       padding-bottom: 68px;
     }
 
     .hero-small {
       margin-bottom: 13px;
-
       color: #55d3ff;
-
       font-size: 10px;
       font-weight: 700;
-
       letter-spacing: .35em;
-
       text-transform: uppercase;
     }
 
     .hero-title {
       font-family: 'Oswald',sans-serif;
-
-      font-size:
-        clamp(
-          75px,
-          9vw,
-          145px
-        );
-
+      font-size: clamp(75px,9vw,145px);
       font-weight: 700;
-
       line-height: .9;
-
       letter-spacing: -.035em;
-
       text-transform: uppercase;
     }
 
     .hero-text {
       margin-top: 23px;
-
       color: #88a6b4;
-
       font-size: 11px;
-
       letter-spacing: .13em;
-
       text-transform: uppercase;
     }
 
-    /* =====================================================
-       MATCHES
-       ===================================================== */
+    /* MATCHES */
 
     .matches-section {
-      padding:
-        80px 0
-        110px;
+      padding: 80px 0 110px;
 
       background:
         radial-gradient(
@@ -520,50 +491,31 @@
     .group-heading {
       display: flex;
       align-items: flex-end;
-
       gap: 28px;
-
       margin-bottom: 28px;
-
       padding-bottom: 18px;
-
-      border-bottom:
-        1px solid rgba(79,200,243,.14);
+      border-bottom: 1px solid rgba(79,200,243,.14);
     }
 
     .group-small {
       color: #55d4ff;
-
       font-size: 9px;
       font-weight: 700;
-
       letter-spacing: .27em;
-
       text-transform: uppercase;
     }
 
     .group-title {
       margin-top: 7px;
-
       font-family: 'Oswald',sans-serif;
-
-      font-size:
-        clamp(
-          38px,
-          5vw,
-          67px
-        );
-
+      font-size: clamp(38px,5vw,67px);
       font-weight: 600;
-
       text-transform: uppercase;
     }
 
     .group-line {
       flex: 1;
-
       height: 1px;
-
       margin-bottom: 8px;
 
       background:
@@ -576,17 +528,12 @@
 
     .matches-list {
       display: grid;
-
       gap: 13px;
     }
 
-    /* MATCH CARD */
-
     .match-card {
       position: relative;
-
       overflow: hidden;
-
       min-height: 190px;
 
       background:
@@ -596,8 +543,7 @@
           rgba(3,15,24,.98)
         );
 
-      border:
-        1px solid rgba(74,198,241,.16);
+      border: 1px solid rgba(74,198,241,.16);
 
       transition:
         border-color .25s,
@@ -605,128 +551,91 @@
     }
 
     .match-card:hover {
-      border-color:
-        rgba(77,208,255,.42);
-
-      transform:
-        translateY(-2px);
+      border-color: rgba(77,208,255,.42);
+      transform: translateY(-2px);
     }
 
     .match-card.featured {
-      border-color:
-        rgba(82,211,255,.58);
+      border-color: rgba(82,211,255,.58);
     }
 
     .featured-label {
       position: absolute;
-
       top: 0;
       left: 0;
-
       padding: 7px 12px;
-
       color: #041019;
-
       background: #58d5ff;
-
       font-size: 8px;
       font-weight: 800;
-
       letter-spacing: .15em;
-
       text-transform: uppercase;
     }
 
     .match-card-inner {
       display: grid;
-
       grid-template-columns:
         180px
         minmax(0,1fr)
         135px;
 
       align-items: center;
-
       min-height: 190px;
-
       padding: 28px 30px;
     }
 
     .match-info {
       padding-right: 20px;
-
-      border-right:
-        1px solid rgba(84,197,240,.12);
+      border-right: 1px solid rgba(84,197,240,.12);
     }
 
     .match-date {
       color: #edf9ff;
-
       font-family: 'Oswald',sans-serif;
-
       font-size: 28px;
-
       line-height: 1.1;
     }
 
     .match-time {
       margin-top: 6px;
-
       color: #55d4ff;
-
       font-family: 'Oswald',sans-serif;
-
       font-size: 20px;
     }
 
     .match-competition {
       margin-top: 13px;
-
       color: #6e91a2;
-
       font-size: 8px;
       font-weight: 700;
-
       line-height: 1.6;
       letter-spacing: .12em;
-
       text-transform: uppercase;
     }
 
     .teams {
       display: grid;
-
-      grid-template-columns:
-        1fr
-        80px
-        1fr;
-
+      grid-template-columns: 1fr 80px 1fr;
       align-items: center;
-
       gap: 18px;
-
       padding: 0 35px;
     }
 
     .team {
       display: flex;
       align-items: center;
-
       gap: 17px;
     }
 
     .team.right {
       flex-direction: row-reverse;
-
       text-align: right;
     }
 
     .team-logo {
       flex: 0 0 auto;
-
       width: 68px;
       height: 68px;
-
       display: flex;
       align-items: center;
       justify-content: center;
@@ -735,137 +644,92 @@
     .team-logo img {
       width: 100%;
       height: 100%;
-
       object-fit: contain;
     }
 
     .team-name {
       color: #f5fbff;
-
       font-size: 14px;
       font-weight: 800;
-
       line-height: 1.35;
-
       text-transform: uppercase;
     }
 
     .team-city {
       margin-top: 5px;
-
       color: #66899a;
-
       font-size: 8px;
       font-weight: 600;
-
       letter-spacing: .11em;
-
       text-transform: uppercase;
     }
 
     .versus {
       text-align: center;
-
       color: #5e8294;
-
       font-family: 'Oswald',sans-serif;
-
       font-size: 17px;
-
       letter-spacing: .07em;
     }
 
     .score {
       text-align: center;
-
       color: #f6fcff;
-
       font-family: 'Oswald',sans-serif;
-
       font-size: 41px;
-
       line-height: 1;
     }
 
     .match-meta {
       padding-left: 20px;
-
       text-align: right;
-
-      border-left:
-        1px solid rgba(84,197,240,.12);
+      border-left: 1px solid rgba(84,197,240,.12);
     }
 
     .status {
       display: inline-block;
-
       padding: 6px 8px;
-
       color: #75dbff;
-
-      border:
-        1px solid rgba(72,200,243,.22);
-
+      border: 1px solid rgba(72,200,243,.22);
       font-size: 8px;
       font-weight: 700;
-
       letter-spacing: .11em;
-
       text-transform: uppercase;
     }
 
     .status.finished {
       color: #a7c2ce;
-
-      border-color:
-        rgba(158,192,205,.16);
+      border-color: rgba(158,192,205,.16);
     }
 
     .status.postponed {
       color: #ffc285;
-
-      border-color:
-        rgba(255,181,96,.24);
+      border-color: rgba(255,181,96,.24);
     }
 
     .venue {
       margin-top: 13px;
-
       color: #7392a2;
-
       font-size: 9px;
-
       line-height: 1.7;
     }
 
     .empty {
       padding: 65px 25px;
-
       text-align: center;
-
       color: #708e9d;
-
       background: #04131e;
-
-      border:
-        1px solid rgba(72,194,238,.12);
-
+      border: 1px solid rgba(72,194,238,.12);
       font-size: 10px;
-
       letter-spacing: .15em;
-
       text-transform: uppercase;
     }
 
-    /* =====================================================
-       CTA
-       ===================================================== */
+    /* CTA */
 
     .cta {
       position: relative;
-
       min-height: 350px;
-
       overflow: hidden;
 
       background:
@@ -882,7 +746,6 @@
 
     .cta::after {
       content: "";
-
       position: absolute;
       inset: 0;
 
@@ -897,62 +760,40 @@
     .cta-inner {
       position: relative;
       z-index: 2;
-
       width: min(1300px,92%);
       min-height: 350px;
-
       margin: auto;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 40px;
     }
 
     .cta-small {
       color: #55d3ff;
-
       font-size: 9px;
       font-weight: 700;
-
       letter-spacing: .30em;
-
       text-transform: uppercase;
     }
 
     .cta-title {
       margin-top: 10px;
-
       font-family: 'Oswald',sans-serif;
-
-      font-size:
-        clamp(
-          45px,
-          6vw,
-          86px
-        );
-
+      font-size: clamp(45px,6vw,86px);
       font-weight: 700;
-
       line-height: .95;
-
       text-transform: uppercase;
     }
 
     .cta-ticket {
       padding: 15px 24px;
-
       color: #031019;
       background: #58d5ff;
-
       border-radius: 4px;
-
       font-size: 10px;
       font-weight: 800;
-
       letter-spacing: .14em;
-
       text-transform: uppercase;
     }
 
@@ -961,65 +802,49 @@
       pointer-events: none;
     }
 
-    /* =====================================================
-       FOOTER
-       ===================================================== */
+    /* FOOTER */
 
     footer {
       background: #01070b;
-
-      border-top:
-        1px solid rgba(71,197,242,.10);
+      border-top: 1px solid rgba(71,197,242,.10);
     }
 
     .footer-inner {
       width: min(1440px,92%);
       min-height: 120px;
-
       margin: auto;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 30px;
     }
 
     .footer-brand {
       display: flex;
       align-items: center;
-
       gap: 14px;
     }
 
     .footer-brand img {
       width: 58px;
       height: 58px;
-
       object-fit: contain;
     }
 
     .footer-brand strong {
       font-size: 12px;
-
       letter-spacing: .17em;
-
       text-transform: uppercase;
     }
 
     .footer-copy {
       color: #506a78;
-
       font-size: 8px;
-
       letter-spacing: .20em;
-
       text-transform: uppercase;
     }
 
-    /* =====================================================
-       RESPONSIVE
-       ===================================================== */
+    /* RESPONSIVE */
 
     @media (max-width:1100px) {
 
@@ -1054,18 +879,14 @@
 
       .match-card-inner {
         grid-template-columns: 1fr;
-
         gap: 25px;
-
         padding: 30px 24px;
       }
 
       .match-info,
       .match-meta {
         padding: 0;
-
         text-align: center;
-
         border: 0;
       }
 
@@ -1112,9 +933,7 @@
       }
 
       .matches-section {
-        padding:
-          55px 0
-          80px;
+        padding: 55px 0 80px;
       }
 
       .group-heading {
@@ -1132,15 +951,12 @@
 
       .team {
         flex-direction: column;
-
         gap: 9px;
-
         text-align: center;
       }
 
       .team.right {
         flex-direction: column;
-
         text-align: center;
       }
 
@@ -1163,7 +979,6 @@
 
       .mobile-nav a {
         min-height: 55px;
-
         font-size: 25px;
       }
 
@@ -1171,7 +986,6 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-
         padding: 25px 0;
       }
 
@@ -1187,7 +1001,6 @@
   class="mobile-menu"
   id="mobileMenu"
 >
-
   <div class="mobile-menu-inner">
 
     <div class="mobile-menu-small">
@@ -1247,7 +1060,6 @@
     </div>
 
   </div>
-
 </div>
 
 
@@ -1264,7 +1076,7 @@
 
       <img
         src="logo.png"
-        alt="CASPIY"
+        alt="CASPIY Futsal Club"
       >
 
       <strong>
@@ -1373,7 +1185,6 @@
 <section class="matches-section">
 
   <div class="container">
-
 
     <section class="match-group">
 
@@ -1564,9 +1375,7 @@
   let teamsCache = [];
 
 
-  /* =====================================================
-     MOBILE MENU
-     ===================================================== */
+  /* MOBILE MENU */
 
   const mobileMenu =
     document.getElementById(
@@ -1684,9 +1493,7 @@
   );
 
 
-  /* =====================================================
-     HELPERS
-     ===================================================== */
+  /* HELPERS */
 
   function escapeHtml(value) {
 
@@ -1747,9 +1554,7 @@
   }
 
 
-  function findTeam(
-    opponent
-  ) {
+  function findTeam(opponent) {
 
     const text =
       String(
@@ -1872,9 +1677,7 @@
   }
 
 
-  function getStatusLabel(
-    status
-  ) {
+  function getStatusLabel(status) {
 
     if (
       status === 'finished'
@@ -1895,9 +1698,7 @@
   }
 
 
-  function renderMatchCard(
-    match
-  ) {
+  function renderMatchCard(match) {
 
     const homeCaspiy =
       match.is_home !== false;
@@ -2040,9 +1841,7 @@
   }
 
 
-  /* =====================================================
-     SETTINGS
-     ===================================================== */
+  /* SETTINGS */
 
   async function loadSettings() {
 
@@ -2128,9 +1927,7 @@
   }
 
 
-  /* =====================================================
-     TEAMS
-     ===================================================== */
+  /* TEAMS */
 
   async function loadTeams() {
 
@@ -2150,18 +1947,13 @@
 
 
     if (!error) {
-
-      teamsCache =
-        data || [];
-
+      teamsCache = data || [];
     }
 
   }
 
 
-  /* =====================================================
-     MATCHES
-     ===================================================== */
+  /* MATCHES */
 
   async function loadMatches() {
 
@@ -2342,10 +2134,6 @@
 
   }
 
-
-  /* =====================================================
-     START
-     ===================================================== */
 
   await Promise.all([
     loadSettings(),
