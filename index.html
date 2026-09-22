@@ -106,7 +106,6 @@
 
     nav a {
       position: relative;
-
       padding: 13px 0;
 
       color: #c2d3dd;
@@ -177,8 +176,7 @@
     }
 
     .ticket:hover {
-      background:
-        rgba(38,188,245,.12);
+      background: rgba(38,188,245,.12);
     }
 
     .ticket.disabled {
@@ -221,7 +219,7 @@
       display: inline-block;
 
       margin: 0;
-      padding: 0 0 6px 0;
+      padding: 0 0 6px;
 
       font-family:
         'Oswald',
@@ -405,7 +403,6 @@
       z-index: 2;
 
       height: 54px;
-
       padding: 0 28px;
 
       display: flex;
@@ -570,7 +567,6 @@
     }
 
     .countdown-part {
-      position: relative;
       text-align: center;
     }
 
@@ -608,6 +604,9 @@
         );
 
       border-top:
+        1px solid rgba(70,205,255,.08);
+
+      border-bottom:
         1px solid rgba(70,205,255,.08);
     }
 
@@ -817,7 +816,10 @@
     }
 
     .news-card {
+      display: block;
       overflow: hidden;
+
+      color: inherit;
 
       background:
         linear-gradient(
@@ -828,6 +830,21 @@
 
       border:
         1px solid rgba(73,194,237,.15);
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-4px);
+
+      border-color:
+        rgba(77,210,255,.43);
+
+      box-shadow:
+        0 18px 45px rgba(0,0,0,.24);
     }
 
     .news-image {
@@ -836,7 +853,12 @@
 
       overflow: hidden;
 
-      background: #071823;
+      background:
+        linear-gradient(
+          135deg,
+          #0a293c,
+          #04121c
+        );
     }
 
     .news-image img {
@@ -844,6 +866,31 @@
       height: 100%;
 
       object-fit: cover;
+
+      transition:
+        transform .35s ease;
+    }
+
+    .news-card:hover
+    .news-image img {
+      transform: scale(1.035);
+    }
+
+    .news-no-image {
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+
+      width: 90px !important;
+      height: 90px !important;
+
+      object-fit: contain !important;
+
+      opacity: .18;
+
+      transform:
+        translate(-50%,-50%);
     }
 
     .news-date {
@@ -854,7 +901,8 @@
 
       padding: 6px 8px;
 
-      background: rgba(2,12,20,.80);
+      background:
+        rgba(2,12,20,.84);
 
       font-size: 9px;
       font-weight: 700;
@@ -892,14 +940,37 @@
       overflow: hidden;
     }
 
-    .news-arrow {
-      display: inline-block;
+    .news-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
       margin-top: 19px;
+    }
 
+    .news-read-more {
       color: #55d4ff;
 
-      font-size: 16px;
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+    }
+
+    .news-arrow {
+      color: #55d4ff;
+
+      font-size: 19px;
+
+      transition:
+        transform .2s ease;
+    }
+
+    .news-card:hover
+    .news-arrow {
+      transform: translateX(4px);
     }
 
     .news-empty {
@@ -965,7 +1036,8 @@
       height: 1px;
       margin-bottom: 10px;
 
-      background: rgba(81,206,249,.15);
+      background:
+        rgba(81,206,249,.15);
     }
 
     .results-grid {
@@ -1226,12 +1298,19 @@
   <header>
 
     <a href="index.html" class="logo">
-      <img src="logo.png" alt="CASPIY Futsal Club">
+      <img
+        src="logo.png"
+        alt="CASPIY Futsal Club"
+      >
     </a>
+
 
     <nav>
 
-      <a href="index.html" class="active">
+      <a
+        href="index.html"
+        class="active"
+      >
         БАСТЫ БЕТ
       </a>
 
@@ -1251,15 +1330,16 @@
         КЛУБ
       </a>
 
-<a href="fans.html">
-  ЖАНКҮЙЕРЛЕР
-</a>
+      <a href="fans.html">
+        ЖАНКҮЙЕРЛЕР
+      </a>
 
       <a href="contact.html">
         БАЙЛАНЫС
       </a>
 
     </nav>
+
 
     <div class="top-actions">
 
@@ -1306,6 +1386,7 @@
 
     </div>
 
+
     <div class="location">
 
       <div class="side-slogan">
@@ -1323,7 +1404,7 @@
 </section>
 
 
-<section class="next-match-section" id="matches">
+<section class="next-match-section">
 
   <div class="next-match-container">
 
@@ -1350,11 +1431,13 @@
         <div class="next-match-column">
 
           <div class="next-team-logo">
+
             <img
               id="left-team-logo"
               src="logo.png"
               alt=""
             >
+
           </div>
 
           <div
@@ -1412,11 +1495,13 @@
         <div class="next-match-column">
 
           <div class="next-team-logo">
+
             <img
               id="right-team-logo"
               src="logo.png"
               alt=""
             >
+
           </div>
 
           <div
@@ -1506,7 +1591,7 @@
 </section>
 
 
-<section class="players-section" id="players">
+<section class="players-section">
 
   <div class="players-container">
 
@@ -1529,9 +1614,11 @@
       class="players-grid"
       id="players-list"
     >
+
       <div class="players-empty">
         ОЙЫНШЫЛАР ЖҮКТЕЛУДЕ...
       </div>
+
     </div>
 
   </div>
@@ -1539,7 +1626,7 @@
 </section>
 
 
-<section class="news-section" id="news">
+<section class="news-section">
 
   <div class="news-container">
 
@@ -1566,13 +1653,16 @@
 
     </div>
 
+
     <div
       class="news-grid"
       id="news-list"
     >
+
       <div class="news-empty">
         ЖАҢАЛЫҚТАР ЖҮКТЕЛУДЕ...
       </div>
+
     </div>
 
   </div>
@@ -1580,7 +1670,7 @@
 </section>
 
 
-<section class="results-section" id="results">
+<section class="results-section">
 
   <div class="results-container">
 
@@ -1602,13 +1692,16 @@
 
     </div>
 
+
     <div
       class="results-grid"
       id="results-list"
     >
+
       <div class="results-empty">
         НӘТИЖЕЛЕР ЖҮКТЕЛУДЕ...
       </div>
+
     </div>
 
   </div>
@@ -1670,6 +1763,7 @@
       .replaceAll('>','&gt;')
       .replaceAll('"','&quot;')
       .replaceAll("'","&#039;");
+
   }
 
 
@@ -1677,12 +1771,16 @@
 
     return String(value)
       .padStart(2,'0');
+
   }
 
 
   function formatMatchDate(value) {
 
-    if (!value) return '';
+    if (!value) {
+      return '';
+    }
+
 
     return new Intl.DateTimeFormat(
       'kk-KZ',
@@ -1693,14 +1791,20 @@
         year:'numeric'
       }
     )
-    .format(new Date(value))
+    .format(
+      new Date(value)
+    )
     .toUpperCase();
+
   }
 
 
   function formatMatchTime(value) {
 
-    if (!value) return '--:--';
+    if (!value) {
+      return '--:--';
+    }
+
 
     return new Intl.DateTimeFormat(
       'kk-KZ',
@@ -1711,13 +1815,19 @@
         hour12:false
       }
     )
-    .format(new Date(value));
+    .format(
+      new Date(value)
+    );
+
   }
 
 
   function formatShortDate(value) {
 
-    if (!value) return '';
+    if (!value) {
+      return '';
+    }
+
 
     return new Intl.DateTimeFormat(
       'kk-KZ',
@@ -1728,13 +1838,19 @@
         year:'numeric'
       }
     )
-    .format(new Date(value));
+    .format(
+      new Date(value)
+    );
+
   }
 
 
   function formatNewsDate(value) {
 
-    if (!value) return '';
+    if (!value) {
+      return '';
+    }
+
 
     return new Intl.DateTimeFormat(
       'kk-KZ',
@@ -1745,8 +1861,11 @@
         year:'numeric'
       }
     )
-    .format(new Date(value))
+    .format(
+      new Date(value)
+    )
     .toUpperCase();
+
   }
 
 
@@ -1760,12 +1879,17 @@
     } =
       await supabase
         .from('site_settings')
-        .select('ticket_url,address')
+        .select(
+          'ticket_url,address'
+        )
         .eq('id',1)
         .maybeSingle();
 
 
-    if (error || !data) {
+    if (
+      error ||
+      !data
+    ) {
       return;
     }
 
@@ -1793,16 +1917,21 @@
       ticketButton.classList.add(
         'disabled'
       );
+
     }
 
 
     if (data.address) {
 
       document
-        .getElementById('footerAddress')
+        .getElementById(
+          'footerAddress'
+        )
         .textContent =
           data.address.toUpperCase();
+
     }
+
   }
 
 
@@ -1825,19 +1954,29 @@
         .select(
           'id,name,number,position,photo_url,sort_order'
         )
-        .eq('is_active',true)
+        .eq(
+          'is_active',
+          true
+        )
         .order(
           'sort_order',
-          {ascending:true}
+          {
+            ascending:true
+          }
         )
         .order(
           'number',
-          {ascending:true}
+          {
+            ascending:true
+          }
         )
         .limit(5);
 
 
-    if (error || !data?.length) {
+    if (
+      error ||
+      !data?.length
+    ) {
 
       list.innerHTML = `
         <div class="players-empty">
@@ -1846,47 +1985,54 @@
       `;
 
       return;
+
     }
 
 
     list.innerHTML =
-      data.map(player => `
+      data
+        .map(
+          player => `
 
-        <article class="player-card">
+            <article class="player-card">
 
-          ${
-            player.photo_url
-              ? `
-                <img
-                  class="player-photo"
-                  src="${escapeHtml(player.photo_url)}"
-                  alt="${escapeHtml(player.name)}"
-                >
-              `
-              : ''
-          }
+              ${
+                player.photo_url
+                  ? `
+                    <img
+                      class="player-photo"
+                      src="${escapeHtml(player.photo_url)}"
+                      alt="${escapeHtml(player.name)}"
+                      loading="lazy"
+                    >
+                  `
+                  : ''
+              }
 
-          <div class="player-overlay"></div>
+              <div class="player-overlay"></div>
 
-          <div class="player-number">
-            ${player.number ?? ''}
-          </div>
+              <div class="player-number">
+                ${player.number ?? ''}
+              </div>
 
-          <div class="player-info">
+              <div class="player-info">
 
-            <div class="player-name">
-              ${escapeHtml(player.name)}
-            </div>
+                <div class="player-name">
+                  ${escapeHtml(player.name)}
+                </div>
 
-            <div class="player-position">
-              ${escapeHtml(player.position || '')}
-            </div>
+                <div class="player-position">
+                  ${escapeHtml(player.position || '')}
+                </div>
 
-          </div>
+              </div>
 
-        </article>
+            </article>
 
-      `).join('');
+          `
+        )
+        .join('');
+
   }
 
 
@@ -1907,17 +2053,31 @@
       await supabase
         .from('news')
         .select(
-          'id,title,description,image_url,published_at'
+          'id,title,description,image_url,published_at,sort_order'
         )
-        .eq('is_active',true)
+        .eq(
+          'is_active',
+          true
+        )
+        .order(
+          'sort_order',
+          {
+            ascending:true
+          }
+        )
         .order(
           'published_at',
-          {ascending:false}
+          {
+            ascending:false
+          }
         )
         .limit(4);
 
 
-    if (error || !data?.length) {
+    if (
+      error ||
+      !data?.length
+    ) {
 
       list.innerHTML = `
         <div class="news-empty">
@@ -1926,58 +2086,86 @@
       `;
 
       return;
+
     }
 
 
     list.innerHTML =
-      data.map(item => `
+      data
+        .map(
+          item => `
 
-        <article class="news-card">
+            <a
+              class="news-card"
+              href="news-detail.html?id=${item.id}"
+              aria-label="${escapeHtml(item.title)}"
+            >
 
-          <div class="news-image">
+              <div class="news-image">
 
-            ${
-              item.image_url
-                ? `
-                  <img
-                    src="${escapeHtml(item.image_url)}"
-                    alt="${escapeHtml(item.title)}"
-                  >
-                `
-                : ''
-            }
+                ${
+                  item.image_url
+                    ? `
+                      <img
+                        src="${escapeHtml(item.image_url)}"
+                        alt="${escapeHtml(item.title)}"
+                        loading="lazy"
+                      >
+                    `
+                    : `
+                      <img
+                        class="news-no-image"
+                        src="logo.png"
+                        alt=""
+                      >
+                    `
+                }
 
-            <div class="news-date">
-              ${formatNewsDate(item.published_at)}
-            </div>
+                <div class="news-date">
+                  ${formatNewsDate(item.published_at)}
+                </div>
 
-          </div>
+              </div>
 
-          <div class="news-content">
 
-            <div class="news-title">
-              ${escapeHtml(item.title)}
-            </div>
+              <div class="news-content">
 
-            ${
-              item.description
-                ? `
-                  <div class="news-description">
-                    ${escapeHtml(item.description)}
-                  </div>
-                `
-                : ''
-            }
+                <div class="news-title">
+                  ${escapeHtml(item.title)}
+                </div>
 
-            <span class="news-arrow">
-              →
-            </span>
 
-          </div>
+                ${
+                  item.description
+                    ? `
+                      <div class="news-description">
+                        ${escapeHtml(item.description)}
+                      </div>
+                    `
+                    : ''
+                }
 
-        </article>
 
-      `).join('');
+                <div class="news-bottom">
+
+                  <span class="news-read-more">
+                    ТОЛЫҒЫРАҚ
+                  </span>
+
+                  <span class="news-arrow">
+                    →
+                  </span>
+
+                </div>
+
+              </div>
+
+            </a>
+
+          `
+        )
+        .join('');
+
   }
 
 
@@ -1986,32 +2174,59 @@
   function startCountdown(matchDate) {
 
     if (countdownTimer) {
-      clearInterval(countdownTimer);
+
+      clearInterval(
+        countdownTimer
+      );
+
     }
 
 
     function update() {
 
       let difference =
-        new Date(matchDate).getTime() -
+        new Date(
+          matchDate
+        ).getTime() -
         Date.now();
 
 
       if (difference <= 0) {
 
-        document.getElementById('countdown-days').textContent =
-          '00';
+        document
+          .getElementById(
+            'countdown-days'
+          )
+          .textContent =
+            '00';
 
-        document.getElementById('countdown-hours').textContent =
-          '00';
 
-        document.getElementById('countdown-minutes').textContent =
-          '00';
+        document
+          .getElementById(
+            'countdown-hours'
+          )
+          .textContent =
+            '00';
 
-        document.getElementById('countdown-title').textContent =
-          'МАТЧ БАСТАЛДЫ';
+
+        document
+          .getElementById(
+            'countdown-minutes'
+          )
+          .textContent =
+            '00';
+
+
+        document
+          .getElementById(
+            'countdown-title'
+          )
+          .textContent =
+            'МАТЧ БАСТАЛДЫ';
+
 
         return;
+
       }
 
 
@@ -2026,31 +2241,54 @@
 
 
       const days =
-        Math.floor(difference / day);
+        Math.floor(
+          difference / day
+        );
 
 
-      difference %= day;
+      difference %=
+        day;
 
 
       const hours =
-        Math.floor(difference / hour);
+        Math.floor(
+          difference / hour
+        );
 
 
-      difference %= hour;
+      difference %=
+        hour;
 
 
       const minutes =
-        Math.floor(difference / minute);
+        Math.floor(
+          difference / minute
+        );
 
 
-      document.getElementById('countdown-days').textContent =
-        pad(days);
+      document
+        .getElementById(
+          'countdown-days'
+        )
+        .textContent =
+          pad(days);
 
-      document.getElementById('countdown-hours').textContent =
-        pad(hours);
 
-      document.getElementById('countdown-minutes').textContent =
-        pad(minutes);
+      document
+        .getElementById(
+          'countdown-hours'
+        )
+        .textContent =
+          pad(hours);
+
+
+      document
+        .getElementById(
+          'countdown-minutes'
+        )
+        .textContent =
+          pad(minutes);
+
     }
 
 
@@ -2062,6 +2300,7 @@
         update,
         30000
       );
+
   }
 
 
@@ -2078,11 +2317,19 @@
         supabase
           .from('matches')
           .select('*')
-          .eq('is_featured',true)
-          .eq('status','upcoming')
+          .eq(
+            'is_featured',
+            true
+          )
+          .eq(
+            'status',
+            'upcoming'
+          )
           .order(
             'match_date',
-            {ascending:true}
+            {
+              ascending:true
+            }
           )
           .limit(1)
           .maybeSingle(),
@@ -2092,7 +2339,10 @@
           .select(
             'name,city,logo_url'
           )
-          .eq('is_active',true)
+          .eq(
+            'is_active',
+            true
+          )
 
       ]);
 
@@ -2103,12 +2353,24 @@
 
     if (!match) {
 
-      document.getElementById(
-        'next-match-date'
-      ).textContent =
-        'МАТЧ ӘЗІРГЕ БЕЛГІЛЕНБЕДІ';
+      document
+        .getElementById(
+          'next-match-date'
+        )
+        .textContent =
+          'МАТЧ ӘЗІРГЕ БЕЛГІЛЕНБЕДІ';
+
+
+      document
+        .getElementById(
+          'countdown-title'
+        )
+        .textContent =
+          'КЕЛЕСІ МАТЧ';
+
 
       return;
+
     }
 
 
@@ -2117,41 +2379,57 @@
 
 
     const opponentTeam =
-      teams.find(team =>
-        String(match.opponent || '')
+      teams.find(
+        team =>
+          String(
+            match.opponent || ''
+          )
           .toLowerCase()
           .includes(
-            String(team.name || '')
-              .toLowerCase()
+            String(
+              team.name || ''
+            )
+            .toLowerCase()
           )
       );
 
 
     const caspiy = {
-      name:'КАСПИЙ',
-      city:'АҚТАУ',
-      logo:'logo.png'
+
+      name:
+        'КАСПИЙ',
+
+      city:
+        'АҚТАУ',
+
+      logo:
+        'logo.png'
+
     };
 
 
     const opponent = {
+
       name:
         String(
-          match.opponent ||
           opponentTeam?.name ||
+          match.opponent ||
           'ҚАРСЫЛАС'
-        ).toUpperCase(),
+        )
+        .toUpperCase(),
 
       city:
         String(
           opponentTeam?.city ||
           ''
-        ).toUpperCase(),
+        )
+        .toUpperCase(),
 
       logo:
         opponentTeam?.logo_url ||
         match.opponent_logo_url ||
         'logo.png'
+
     };
 
 
@@ -2160,66 +2438,101 @@
       team
     ) {
 
-      document.getElementById(
-        `${side}-team-logo`
-      ).src =
-        team.logo;
+      document
+        .getElementById(
+          `${side}-team-logo`
+        )
+        .src =
+          team.logo;
 
-      document.getElementById(
-        `${side}-team-name`
-      ).textContent =
-        team.name;
 
-      document.getElementById(
-        `${side}-team-city`
-      ).textContent =
-        team.city;
+      document
+        .getElementById(
+          `${side}-team-name`
+        )
+        .textContent =
+          team.name;
+
+
+      document
+        .getElementById(
+          `${side}-team-city`
+        )
+        .textContent =
+          team.city;
+
     }
 
 
-    if (match.is_home !== false) {
+    if (
+      match.is_home !== false
+    ) {
 
-      renderTeam('left',caspiy);
-      renderTeam('right',opponent);
+      renderTeam(
+        'left',
+        caspiy
+      );
+
+      renderTeam(
+        'right',
+        opponent
+      );
 
     } else {
 
-      renderTeam('left',opponent);
-      renderTeam('right',caspiy);
+      renderTeam(
+        'left',
+        opponent
+      );
+
+      renderTeam(
+        'right',
+        caspiy
+      );
+
     }
 
 
-    document.getElementById(
-      'next-match-date'
-    ).textContent =
-      formatMatchDate(
-        match.match_date
-      );
+    document
+      .getElementById(
+        'next-match-date'
+      )
+      .textContent =
+        formatMatchDate(
+          match.match_date
+        );
 
 
-    document.getElementById(
-      'next-match-time'
-    ).textContent =
-      formatMatchTime(
-        match.match_date
-      );
+    document
+      .getElementById(
+        'next-match-time'
+      )
+      .textContent =
+        formatMatchTime(
+          match.match_date
+        );
 
 
-    document.getElementById(
-      'next-match-competition'
-    ).textContent =
-      match.competition || '';
+    document
+      .getElementById(
+        'next-match-competition'
+      )
+      .textContent =
+        match.competition || '';
 
 
-    document.getElementById(
-      'next-match-venue'
-    ).textContent =
-      match.venue || '';
+    document
+      .getElementById(
+        'next-match-venue'
+      )
+      .textContent =
+        match.venue || '';
 
 
     startCountdown(
       match.match_date
     );
+
   }
 
 
@@ -2240,15 +2553,23 @@
       await supabase
         .from('matches')
         .select('*')
-        .eq('status','finished')
+        .eq(
+          'status',
+          'finished'
+        )
         .order(
           'match_date',
-          {ascending:false}
+          {
+            ascending:false
+          }
         )
         .limit(4);
 
 
-    if (error || !data?.length) {
+    if (
+      error ||
+      !data?.length
+    ) {
 
       list.innerHTML = `
         <div class="results-empty">
@@ -2257,117 +2578,147 @@
       `;
 
       return;
+
     }
 
 
     list.innerHTML =
-      data.map(match => {
+      data
+        .map(
+          match => {
 
-        const cs =
-          match.caspiy_score ?? '-';
-
-        const os =
-          match.opponent_score ?? '-';
-
-
-        const caspiyTeam = `
-          <div class="result-team">
-            <div class="result-logo">
-              <img src="logo.png" alt="">
-            </div>
-            <div>
-              <div class="result-team-name">
-                КАСПИЙ
-              </div>
-              <div class="result-city">
-                АҚТАУ
-              </div>
-            </div>
-          </div>
-        `;
+            const cs =
+              match.caspiy_score ?? '-';
 
 
-        const opponentTeam = `
-          <div class="result-team away">
-            <div class="result-logo">
-              ${
-                match.opponent_logo_url
-                  ? `
-                    <img
-                      src="${escapeHtml(match.opponent_logo_url)}"
-                      alt=""
-                    >
-                  `
-                  : ''
-              }
-            </div>
-
-            <div class="result-team-name">
-              ${escapeHtml(match.opponent || '')}
-            </div>
-          </div>
-        `;
+            const os =
+              match.opponent_score ?? '-';
 
 
-        return `
+            const caspiyTeam = `
 
-          <article class="result-card">
+              <div class="result-team">
 
-            <div class="result-top">
+                <div class="result-logo">
 
-              <div class="result-competition">
-                ${escapeHtml(match.competition || 'МАТЧ')}
+                  <img
+                    src="logo.png"
+                    alt=""
+                  >
+
+                </div>
+
+                <div>
+
+                  <div class="result-team-name">
+                    КАСПИЙ
+                  </div>
+
+                  <div class="result-city">
+                    АҚТАУ
+                  </div>
+
+                </div>
+
               </div>
 
-              <div class="result-date">
-                ${formatShortDate(match.match_date)}
+            `;
+
+
+            const opponentTeam = `
+
+              <div class="result-team away">
+
+                <div class="result-logo">
+
+                  ${
+                    match.opponent_logo_url
+                      ? `
+                        <img
+                          src="${escapeHtml(match.opponent_logo_url)}"
+                          alt=""
+                        >
+                      `
+                      : ''
+                  }
+
+                </div>
+
+                <div class="result-team-name">
+                  ${escapeHtml(match.opponent || '')}
+                </div>
+
               </div>
 
-            </div>
+            `;
 
-            <div class="result-teams">
 
-              ${
-                match.is_home !== false
-                  ? caspiyTeam
-                  : opponentTeam.replace(
-                      'away',
-                      ''
-                    )
-              }
+            return `
 
-              <div class="result-score">
-                ${
-                  match.is_home !== false
-                    ? `${cs}:${os}`
-                    : `${os}:${cs}`
-                }
-              </div>
+              <article class="result-card">
 
-              ${
-                match.is_home !== false
-                  ? opponentTeam
-                  : caspiyTeam.replace(
-                      'result-team"',
-                      'result-team away"'
-                    )
-              }
+                <div class="result-top">
 
-            </div>
+                  <div class="result-competition">
+                    ${escapeHtml(match.competition || 'МАТЧ')}
+                  </div>
 
-            <div class="result-venue">
-              ${escapeHtml(match.venue || '')}
-            </div>
+                  <div class="result-date">
+                    ${formatShortDate(match.match_date)}
+                  </div>
 
-          </article>
+                </div>
 
-        `;
 
-      }).join('');
+                <div class="result-teams">
+
+                  ${
+                    match.is_home !== false
+                      ? caspiyTeam
+                      : opponentTeam.replace(
+                          'result-team away',
+                          'result-team'
+                        )
+                  }
+
+                  <div class="result-score">
+
+                    ${
+                      match.is_home !== false
+                        ? `${cs}:${os}`
+                        : `${os}:${cs}`
+                    }
+
+                  </div>
+
+                  ${
+                    match.is_home !== false
+                      ? opponentTeam
+                      : caspiyTeam.replace(
+                          'result-team"',
+                          'result-team away"'
+                        )
+                  }
+
+                </div>
+
+
+                <div class="result-venue">
+                  ${escapeHtml(match.venue || '')}
+                </div>
+
+              </article>
+
+            `;
+
+          }
+        )
+        .join('');
+
   }
 
 
-  /* LOAD */
+  /* START */
 
   await Promise.all([
     loadSettings(),
