@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Матчтар — CASPIY Futsal Club</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      font-family: 'Montserrat', Arial, sans-serif;
+
+      color: #f4fbff;
+      background: #020a10;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+
+      background: rgba(2,10,16,.95);
+      backdrop-filter: blur(15px);
+
+      border-bottom: 1px solid rgba(80,202,245,.14);
+    }
+
+    .header-inner {
+      width: min(1440px,92%);
+      height: 95px;
+
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+
+      gap: 14px;
+    }
+
+    .logo img {
+      width: 70px;
+      height: 70px;
+
+      object-fit: contain;
+    }
+
+    .logo strong {
+      font-family: 'Oswald',sans-serif;
+
+      font-size: 20px;
+
+      letter-spacing: .08em;
+    }
+
+    nav {
+      display: flex;
+
+      gap: 30px;
+    }
+
+    nav a {
+      position: relative;
+
+      padding: 12px 0;
+
+      color: #a9bfca;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #62d6ff;
+    }
+
+    nav a.active::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 2px;
+
+      background: #52d3ff;
+    }
+
+    .home-button {
+      padding: 13px 18px;
+
+      border: 1px solid rgba(80,207,251,.42);
+      border-radius: 5px;
+
+      color: #caeffc;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+    }
+
+    /* HERO */
+
+    .page-hero {
+      position: relative;
+
+      min-height: 390px;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(1,8,14,.97),
+          rgba(3,21,34,.70),
+          rgba(2,13,22,.83)
+        ),
+        url("hero-bg.png");
+
+      background-size: cover;
+      background-position: center 55%;
+    }
+
+    .page-hero::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to bottom,
+          transparent 20%,
+          #020a10 100%
+        );
+    }
+
+    .page-hero-inner {
+      position: relative;
+      z-index: 2;
+
+      width: min(1440px,92%);
+      min-height: 390px;
+
+      margin: auto;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      padding-bottom: 55px;
+    }
+
+    .kicker {
+      margin-bottom: 12px;
+
+      color: #55d3ff;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: .35em;
+
+      text-transform: uppercase;
+    }
+
+    .page-title {
+      font-family: 'Oswald',sans-serif;
+
+      font-size: clamp(70px,9vw,140px);
+      font-weight: 700;
+
+      line-height: .9;
+
+      letter-spacing: -.035em;
+
+      text-transform: uppercase;
+    }
+
+    /* MATCHES */
+
+    .matches-section {
+      padding: 70px 0 105px;
+
+      background:
+        radial-gradient(
+          circle at 82% 5%,
+          rgba(0,157,220,.09),
+          transparent 30%
+        ),
+        #020a10;
+    }
+
+    .matches-container {
+      width: min(1440px,92%);
+
+      margin: auto;
+    }
+
+    .match-group {
+      margin-bottom: 85px;
+    }
+
+    .match-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: flex-end;
+
+      gap: 25px;
+
+      margin-bottom: 28px;
+
+      padding-bottom: 17px;
+
+      border-bottom:
+        1px solid rgba(84,200,244,.15);
+    }
+
+    .section-heading span {
+      color: rgba(86,208,255,.32);
+
+      font-family: 'Oswald',sans-serif;
+
+      font-size: 43px;
+      font-weight: 700;
+
+      line-height: 1;
+    }
+
+    .section-heading h2 {
+      font-family: 'Oswald',sans-serif;
+
+      font-size: clamp(30px,3.8vw,50px);
+      font-weight: 600;
+
+      line-height: 1;
+
+      text-transform: uppercase;
+    }
+
+    .heading-line {
+      flex: 1;
+
+      height: 1px;
+
+      margin-bottom: 5px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(82,207,255,.22),
+          transparent
+        );
+    }
+
+    /* MATCH CARD */
+
+    .match-list {
+      display: grid;
+
+      gap: 14px;
+    }
+
+    .match-card {
+      position: relative;
+
+      min-height: 190px;
+
+      display: grid;
+
+      grid-template-columns:
+        210px 1fr 230px;
+
+      align-items: center;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          105deg,
+          rgba(5,25,39,.98),
+          rgba(4,18,29,.98)
+        );
+
+      border: 1px solid rgba(76,201,245,.15);
+
+      transition: .25s ease;
+    }
+
+    .match-card:hover {
+      border-color: rgba(80,211,255,.42);
+
+      transform: translateY(-2px);
+    }
+
+    .match-date-area {
+      align-self: stretch;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      padding: 25px 28px;
+
+      border-right:
+        1px solid rgba(87,200,241,.12);
+    }
+
+    .date {
+      color: #f0f9fd;
+
+      font-family: 'Oswald',sans-serif;
+
+      font-size: 25px;
+      font-weight: 600;
+
+      line-height: 1.1;
+    }
+
+    .time {
+      margin-top: 8px;
+
+      color: #58d4ff;
+
+      font-family: 'Oswald',sans-serif;
+
+      font-size: 39px;
+
+      line-height: 1;
+    }
+
+    .competition {
+      margin-top: 11px;
+
+      color: #708f9f;
+
+      font-size: 8px;
+      font-weight: 700;
+
+      line-height: 1.5;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    .teams {
+      display: grid;
+
+      grid-template-columns:
+        1fr auto 1fr;
+
+      align-items: center;
+
+      gap: 25px;
+
+      padding: 25px 35px;
+    }
+
+    .team {
+      display: flex;
+      align-items: center;
+
+      gap: 16px;
+    }
+
+    .team.away {
+      flex-direction: row-reverse;
+
+      text-align: right;
+    }
+
+    .team-logo {
+      width: 76px;
+      height: 76px;
+
+      flex: 0 0 76px;
+    }
+
+    .team-logo img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
+
+    .team-name {
+      color: #f8fcff;
+
+      font-size: 15px;
+      font-weight: 800;
+
+      line-height: 1.35;
+
+      text-transform: uppercase;
+    }
+
+    .team-city {
+      margin-top: 5px;
+
+      color: #668899;
+
+      font-size: 9px;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+    }
+
+    .versus {
+      min-width: 95px;
+
+      text-align: center;
+
+      color: #7292a1;
+
+      font-family: 'Oswald',sans-serif;
+
+      font-size: 25px;
+    }
+
+    .score {
+      color: #ffffff;
+
+      font-family: 'Oswald',sans-serif;
+
+      font-size: 46px;
+      font-weight: 600;
+    }
+
+    .match-meta {
+      align-self: stretch;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      padding: 25px;
+
+      border-left:
+        1px solid rgba(87,200,241,.12);
+    }
+
+    .venue-label {
+      margin-bottom: 6px;
+
+      color: #56cff8;
+
+      font-size: 8px;
+      font-weight: 700;
+
+      letter-spacing: .17em;
+
+      text-transform: uppercase;
+    }
+
+    .venue {
+      color: #c7dbe4;
+
+      font-size: 11px;
+      font-weight: 600;
+
+      line-height: 1.6;
+    }
+
+    .status {
+      display: inline-block;
+
+      width: fit-content;
+
+      margin-top: 14px;
+
+      padding: 6px 8px;
+
+      color: #8edfff;
+
+      border: 1px solid rgba(82,207,255,.25);
+
+      font-size: 8px;
+      font-weight: 700;
+
+      letter-spacing: .12em;
+
+      text-transform: uppercase;
+    }
+
+    .message {
+      padding: 55px;
+
+      color: #718f9e;
+
+      text-align: center;
+
+      border: 1px solid rgba(76,200,244,.12);
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: .20em;
+
+      text-transform: uppercase;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #01070b;
+
+      border-top:
+        1px solid rgba(71,197,242,.10);
+    }
+
+    .footer-inner {
+      width: min(1440px,92%);
+      min-height: 120px;
+
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+
+      gap: 14px;
+    }
+
+    .footer-brand img {
+      width: 58px;
+      height: 58px;
+
+      object-fit: contain;
+    }
+
+    .footer-brand strong {
+      font-size: 12px;
+
+      letter-spacing: .17em;
+
+      text-transform: uppercase;
+    }
+
+    .footer-copy {
+      color: #506a78;
+
+      font-size: 8px;
+
+      letter-spacing: .20em;
+
+      text-transform: uppercase;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width:1100px) {
+      nav {
+        display: none;
+      }
+
+      .match-card {
+        grid-template-columns: 170px 1fr;
+      }
+
+      .match-meta {
+        grid-column: 1 / -1;
+
+        border-left: 0;
+        border-top: 1px solid rgba(87,200,241,.12);
+      }
+    }
+
+    @media (max-width:750px) {
+      .header-inner {
+        height: 78px;
+      }
+
+      .logo img {
+        width: 55px;
+        height: 55px;
+      }
+
+      .logo strong {
+        display: none;
+      }
+
+      .page-hero,
+      .page-hero-inner {
+        min-height: 310px;
+      }
+
+      .page-title {
+        font-size: 65px;
+      }
+
+      .match-card {
+        display: block;
+      }
+
+      .match-date-area {
+        border-right: 0;
+        border-bottom:
+          1px solid rgba(87,200,241,.12);
+      }
+
+      .teams {
+        padding: 30px 20px;
+
+        grid-template-columns: 1fr;
+      }
+
+      .team,
+      .team.away {
+        justify-content: center;
+
+        flex-direction: column;
+
+        text-align: center;
+      }
+
+      .versus {
+        margin: 4px auto;
+      }
+
+      .match-meta {
+        border-top:
+          1px solid rgba(87,200,241,.12);
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        gap: 14px;
+
+        padding: 25px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="header-inner">
+
+    <a href="index.html" class="logo">
+
+      <img
+        src="logo.png"
+        alt="CASPIY"
+      >
+
+      <strong>
+        CASPIY FUTSAL CLUB
+      </strong>
+
+    </a>
+
+
+    <nav>
+
+      <a href="index.html">
+        БАСТЫ БЕТ
+      </a>
+
+      <a href="team.html">
+        КОМАНДА
+      </a>
+
+      <a href="matches.html" class="active">
+        МАТЧТАР
+      </a>
+
+      <a href="news.html">
+        ЖАҢАЛЫҚТАР
+      </a>
+
+      <a href="#">
+        КЛУБ
+      </a>
+
+      <a href="#">
+        БАЙЛАНЫС
+      </a>
+
+    </nav>
+
+
+    <a
+      href="index.html"
+      class="home-button"
+    >
+      ← БАСТЫ БЕТ
+    </a>
+
+  </div>
+
+</header>
+
+
+<section class="page-hero">
+
+  <div class="page-hero-inner">
+
+    <div class="kicker">
+      CASPIY MATCH CENTER
+    </div>
+
+    <h1 class="page-title">
+      МАТЧТАР
+    </h1>
+
+  </div>
+
+</section>
+
+
+<main class="matches-section">
+
+  <div class="matches-container">
+
+
+    <section class="match-group">
+
+      <div class="section-heading">
+
+        <span>01</span>
+
+        <h2>
+          АЛДАҒЫ МАТЧТАР
+        </h2>
+
+        <div class="heading-line"></div>
+
+      </div>
+
+      <div
+        class="match-list"
+        id="upcoming-list"
+      >
+
+        <div class="message">
+          МАТЧТАР ЖҮКТЕЛУДЕ...
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="match-group">
+
+      <div class="section-heading">
+
+        <span>02</span>
+
+        <h2>
+          СОҢҒЫ НӘТИЖЕЛЕР
+        </h2>
+
+        <div class="heading-line"></div>
+
+      </div>
+
+      <div
+        class="match-list"
+        id="finished-list"
+      >
+
+        <div class="message">
+          НӘТИЖЕЛЕР ЖҮКТЕЛУДЕ...
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+
+      <img
+        src="logo.png"
+        alt="CASPIY"
+      >
+
+      <strong>
+        CASPIY FUTSAL CLUB
+      </strong>
+
+    </div>
+
+    <div class="footer-copy">
+      АҚТАУ · ҚАЗАҚСТАН
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script type="module">
+
+  import { createClient }
+  from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+
+  const supabase =
+    createClient(
+      'https://socqbqyhkyvxnsukgcqm.supabase.co',
+      'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK'
+    );
+
+
+  function escapeHtml(value) {
+    return String(value ?? '')
+      .replaceAll('&','&amp;')
+      .replaceAll('<','&lt;')
+      .replaceAll('>','&gt;')
+      .replaceAll('"','&quot;')
+      .replaceAll("'","&#039;");
+  }
+
+
+  function formatDate(value) {
+
+    if (!value) return '';
+
+    return new Intl.DateTimeFormat(
+      'kk-KZ',
+      {
+        timeZone: 'Asia/Aqtau',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }
+    )
+    .format(new Date(value))
+    .toUpperCase();
+
+  }
+
+
+  function formatTime(value) {
+
+    if (!value) return '';
+
+    return new Intl.DateTimeFormat(
+      'kk-KZ',
+      {
+        timeZone: 'Asia/Aqtau',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      }
+    )
+    .format(new Date(value));
+
+  }
+
+
+  function makeTeam(
+    name,
+    city,
+    logo,
+    away = false
+  ) {
+
+    return `
+      <div class="team ${away ? 'away' : ''}">
+
+        <div class="team-logo">
+
+          <img
+            src="${escapeHtml(logo || 'logo.png')}"
+            alt=""
+          >
+
+        </div>
+
+        <div>
+
+          <div class="team-name">
+            ${escapeHtml(name)}
+          </div>
+
+          <div class="team-city">
+            ${escapeHtml(city || '')}
+          </div>
+
+        </div>
+
+      </div>
+    `;
+
+  }
+
+
+  function matchCard(match) {
+
+    const caspiy = {
+      name: 'КАСПИЙ',
+      city: 'АҚТАУ',
+      logo: 'logo.png'
+    };
+
+
+    const opponent = {
+      name: match.opponent || 'ҚАРСЫЛАС',
+      city: '',
+      logo: match.opponent_logo_url || 'logo.png'
+    };
+
+
+    let leftTeam;
+    let rightTeam;
+
+    let center;
+
+
+    if (match.is_home !== false) {
+
+      leftTeam =
+        makeTeam(
+          caspiy.name,
+          caspiy.city,
+          caspiy.logo
+        );
+
+      rightTeam =
+        makeTeam(
+          opponent.name,
+          opponent.city,
+          opponent.logo,
+          true
+        );
+
+    } else {
+
+      leftTeam =
+        makeTeam(
+          opponent.name,
+          opponent.city,
+          opponent.logo
+        );
+
+      rightTeam =
+        makeTeam(
+          caspiy.name,
+          caspiy.city,
+          caspiy.logo,
+          true
+        );
+
+    }
+
+
+    if (match.status === 'finished') {
+
+      const caspiyScore =
+        match.caspiy_score ?? '-';
+
+      const opponentScore =
+        match.opponent_score ?? '-';
+
+
+      if (match.is_home !== false) {
+
+        center = `
+          <div class="versus score">
+            ${caspiyScore}:${opponentScore}
+          </div>
+        `;
+
+      } else {
+
+        center = `
+          <div class="versus score">
+            ${opponentScore}:${caspiyScore}
+          </div>
+        `;
+
+      }
+
+    } else {
+
+      center = `
+        <div class="versus">
+          VS
+        </div>
+      `;
+
+    }
+
+
+    const statusText =
+      match.status === 'finished'
+        ? 'АЯҚТАЛДЫ'
+        : match.status === 'postponed'
+          ? 'КЕЙІНГЕ ҚАЛДЫРЫЛДЫ'
+          : 'АЛДАҒЫ МАТЧ';
+
+
+    return `
+
+      <article class="match-card">
+
+
+        <div class="match-date-area">
+
+          <div class="date">
+            ${formatDate(match.match_date)}
+          </div>
+
+          <div class="time">
+            ${formatTime(match.match_date)}
+          </div>
+
+          <div class="competition">
+            ${escapeHtml(match.competition || '')}
+          </div>
+
+        </div>
+
+
+        <div class="teams">
+
+          ${leftTeam}
+
+          ${center}
+
+          ${rightTeam}
+
+        </div>
+
+
+        <div class="match-meta">
+
+          <div class="venue-label">
+            ӨТЕТІН ОРЫН
+          </div>
+
+          <div class="venue">
+            ${escapeHtml(match.venue || '—')}
+          </div>
+
+          <div class="status">
+            ${statusText}
+          </div>
+
+        </div>
+
+
+      </article>
+
+    `;
+
+  }
+
+
+  async function loadMatches() {
+
+    const upcomingList =
+      document.getElementById(
+        'upcoming-list'
+      );
+
+    const finishedList =
+      document.getElementById(
+        'finished-list'
+      );
+
+
+    const [
+      upcomingResponse,
+      finishedResponse
+    ] =
+      await Promise.all([
+
+        supabase
+          .from('matches')
+          .select('*')
+          .eq('status','upcoming')
+          .order(
+            'match_date',
+            {
+              ascending:true
+            }
+          ),
+
+        supabase
+          .from('matches')
+          .select('*')
+          .eq('status','finished')
+          .order(
+            'match_date',
+            {
+              ascending:false
+            }
+          )
+
+      ]);
+
+
+    if (upcomingResponse.error) {
+
+      upcomingList.innerHTML = `
+        <div class="message">
+          МАТЧТАРДЫ ЖҮКТЕУ МҮМКІН БОЛМАДЫ
+        </div>
+      `;
+
+    } else if (
+      !upcomingResponse.data ||
+      upcomingResponse.data.length === 0
+    ) {
+
+      upcomingList.innerHTML = `
+        <div class="message">
+          АЛДАҒЫ МАТЧТАР ӘЗІРГЕ ЖОҚ
+        </div>
+      `;
+
+    } else {
+
+      upcomingList.innerHTML =
+        upcomingResponse.data
+          .map(matchCard)
+          .join('');
+
+    }
+
+
+    if (finishedResponse.error) {
+
+      finishedList.innerHTML = `
+        <div class="message">
+          НӘТИЖЕЛЕРДІ ЖҮКТЕУ МҮМКІН БОЛМАДЫ
+        </div>
+      `;
+
+    } else if (
+      !finishedResponse.data ||
+      finishedResponse.data.length === 0
+    ) {
+
+      finishedList.innerHTML = `
+        <div class="message">
+          АЯҚТАЛҒАН МАТЧТАР ӘЗІРГЕ ЖОҚ
+        </div>
+      `;
+
+    } else {
+
+      finishedList.innerHTML =
+        finishedResponse.data
+          .map(matchCard)
+          .join('');
+
+    }
+
+  }
+
+
+  loadMatches();
+
+</script>
+
+</body>
+</html>
