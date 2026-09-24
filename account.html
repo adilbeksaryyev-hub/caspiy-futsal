@@ -42,6 +42,11 @@
     rel="stylesheet"
   >
 
+  <!-- Сохраняем адрес до обработки Supabase -->
+  <script>
+    window.__CASPIY_INITIAL_URL__ = window.location.href;
+  </script>
+
   <style>
     * {
       margin: 0;
@@ -114,8 +119,7 @@
       margin: auto;
 
       display: grid;
-      grid-template-columns:
-        1fr auto 1fr;
+      grid-template-columns: 1fr auto 1fr;
 
       align-items: center;
 
@@ -129,7 +133,7 @@
       display: flex;
       align-items: center;
 
-      gap: 32px;
+      gap: 30px;
     }
 
     .desktop-nav a {
@@ -139,10 +143,10 @@
 
       color: #cfdee6;
 
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
 
-      letter-spacing: .11em;
+      letter-spacing: .10em;
 
       text-transform: uppercase;
       white-space: nowrap;
@@ -178,6 +182,7 @@
       margin: auto;
 
       display: grid;
+
       grid-template-columns:
         .95fr 1.05fr;
 
@@ -200,7 +205,8 @@
 
       filter:
         drop-shadow(
-          0 0 20px rgba(85,207,255,.20)
+          0 0 20px
+          rgba(85,207,255,.20)
         );
     }
 
@@ -259,7 +265,7 @@
     }
 
 
-    /* CARD */
+    /* ACCOUNT CARD */
 
     .account-card {
       width: 100%;
@@ -336,6 +342,7 @@
       background: transparent;
 
       border: 0;
+
       border-bottom:
         2px solid transparent;
 
@@ -409,7 +416,8 @@
         rgba(87,213,255,.72);
 
       box-shadow:
-        0 0 0 3px rgba(76,197,242,.07);
+        0 0 0 3px
+        rgba(76,197,242,.07);
     }
 
     .primary-button {
@@ -728,7 +736,9 @@
     .mobile-menu-button.active
     .menu-lines span:nth-child(1) {
       top: 6px;
-      transform: rotate(45deg);
+
+      transform:
+        rotate(45deg);
     }
 
     .mobile-menu-button.active
@@ -739,7 +749,9 @@
     .mobile-menu-button.active
     .menu-lines span:nth-child(3) {
       top: 6px;
-      transform: rotate(-45deg);
+
+      transform:
+        rotate(-45deg);
     }
 
     .mobile-menu {
@@ -784,6 +796,7 @@
 
     .mobile-nav {
       display: flex;
+
       flex-direction: column;
     }
 
@@ -817,7 +830,10 @@
     }
 
 
+    /* RESPONSIVE */
+
     @media (max-width:1000px) {
+
       .page {
         grid-template-columns: 1fr;
 
@@ -849,11 +865,13 @@
 
 
     @media (max-width:900px) {
+
       header {
         width: 90%;
         height: 82px;
 
         display: flex;
+
         justify-content: flex-end;
       }
 
@@ -877,6 +895,7 @@
 
 
     @media (max-width:560px) {
+
       .page {
         width: 90%;
 
@@ -913,6 +932,8 @@
 
 <body>
 
+
+<!-- MOBILE MENU -->
 
 <div
   class="mobile-menu"
@@ -959,6 +980,8 @@
   </div>
 </div>
 
+
+<!-- HEADER -->
 
 <header>
 
@@ -1008,6 +1031,7 @@
     class="mobile-menu-button"
     id="mobileMenuButton"
     aria-label="Мәзір"
+    aria-expanded="false"
   >
     <span class="menu-lines">
       <span></span>
@@ -1018,6 +1042,8 @@
 
 </header>
 
+
+<!-- MAIN -->
 
 <main class="page">
 
@@ -1069,9 +1095,9 @@
     ></div>
 
 
-    <div
-      id="authArea"
-    >
+    <!-- AUTH -->
+
+    <div id="authArea">
 
       <div class="tabs">
 
@@ -1241,6 +1267,58 @@
     </div>
 
 
+    <!-- PASSWORD RECOVERY -->
+
+    <form
+      class="form"
+      id="recoveryForm"
+    >
+
+      <div class="field">
+
+        <label for="newPassword">
+          ЖАҢА ҚҰПИЯСӨЗ
+        </label>
+
+        <input
+          id="newPassword"
+          type="password"
+          minlength="6"
+          autocomplete="new-password"
+          required
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="newPassword2">
+          ҚҰПИЯСӨЗДІ ҚАЙТАЛАҢЫЗ
+        </label>
+
+        <input
+          id="newPassword2"
+          type="password"
+          minlength="6"
+          autocomplete="new-password"
+          required
+        >
+
+      </div>
+
+
+      <button
+        class="primary-button"
+        id="recoveryButton"
+        type="submit"
+      >
+        ЖАҢА ҚҰПИЯСӨЗДІ САҚТАУ →
+      </button>
+
+    </form>
+
+
     <!-- PROFILE -->
 
     <div
@@ -1341,39 +1419,6 @@
 
     </div>
 
-
-    <!-- PASSWORD RECOVERY -->
-
-    <form
-      class="form"
-      id="recoveryForm"
-    >
-
-      <div class="field">
-
-        <label for="newPassword">
-          ЖАҢА ҚҰПИЯСӨЗ
-        </label>
-
-        <input
-          id="newPassword"
-          type="password"
-          minlength="6"
-          autocomplete="new-password"
-          required
-        >
-
-      </div>
-
-      <button
-        class="primary-button"
-        type="submit"
-      >
-        ҚҰПИЯСӨЗДІ ЖАҢАРТУ
-      </button>
-
-    </form>
-
   </section>
 
 </main>
@@ -1388,44 +1433,132 @@
   'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
 
-  const supabase =
-    createClient(
-      'https://socqbqyhkyvxnsukgcqm.supabase.co',
-      'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK'
-    );
+  const SUPABASE_URL =
+    'https://socqbqyhkyvxnsukgcqm.supabase.co';
+
+
+  const SUPABASE_KEY =
+    'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK';
 
 
   const ACCOUNT_URL =
     'https://adilbeksaryyev-hub.github.io/caspiy-futsal/account.html';
 
 
+  const supabase =
+    createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY,
+      {
+        auth: {
+          persistSession: true,
+          autoRefreshToken: true,
+          detectSessionInUrl: true
+        }
+      }
+    );
+
+
+  /* =========================================================
+     RECOVERY DETECTION
+     ========================================================= */
+
+  const initialUrl =
+    window.__CASPIY_INITIAL_URL__ ||
+    window.location.href;
+
+
+  const pendingRecovery =
+    localStorage.getItem(
+      'caspiy_password_recovery'
+    ) === '1';
+
+
+  const currentUrl =
+    new URL(initialUrl);
+
+
+  const hasCode =
+    currentUrl.searchParams.has(
+      'code'
+    );
+
+
+  const hasRecoveryType =
+    initialUrl.includes(
+      'type=recovery'
+    );
+
+
+  let recoveryMode =
+    hasRecoveryType ||
+    (
+      pendingRecovery &&
+      hasCode
+    );
+
+
+  /* =========================================================
+     ELEMENTS
+     ========================================================= */
+
   const statusBox =
-    document.getElementById('status');
+    document.getElementById(
+      'status'
+    );
+
 
   const authArea =
-    document.getElementById('authArea');
+    document.getElementById(
+      'authArea'
+    );
+
 
   const profileArea =
-    document.getElementById('profileArea');
+    document.getElementById(
+      'profileArea'
+    );
+
 
   const recoveryForm =
-    document.getElementById('recoveryForm');
+    document.getElementById(
+      'recoveryForm'
+    );
+
 
   const loginForm =
-    document.getElementById('loginForm');
+    document.getElementById(
+      'loginForm'
+    );
+
 
   const registerForm =
-    document.getElementById('registerForm');
+    document.getElementById(
+      'registerForm'
+    );
+
 
   const loginTab =
-    document.getElementById('loginTab');
+    document.getElementById(
+      'loginTab'
+    );
+
 
   const registerTab =
-    document.getElementById('registerTab');
+    document.getElementById(
+      'registerTab'
+    );
+
 
   const cardTitle =
-    document.getElementById('cardTitle');
+    document.getElementById(
+      'cardTitle'
+    );
 
+
+  /* =========================================================
+     STATUS
+     ========================================================= */
 
   function showStatus(
     message,
@@ -1435,11 +1568,21 @@
     statusBox.textContent =
       message;
 
+
     statusBox.className =
       'status show';
 
-    if (type) {
-      statusBox.classList.add(type);
+
+    if (
+      type
+    ) {
+
+      statusBox
+        .classList
+        .add(
+          type
+        );
+
     }
 
   }
@@ -1450,35 +1593,68 @@
     statusBox.className =
       'status';
 
+
     statusBox.textContent =
       '';
 
   }
 
 
+  /* =========================================================
+     SCREEN STATES
+     ========================================================= */
+
   function showLogin() {
 
-    hideStatus();
+    recoveryMode =
+      false;
 
-    loginTab.classList.add(
-      'active'
-    );
 
-    registerTab.classList.remove(
-      'active'
-    );
+    authArea.style.display =
+      'block';
 
-    loginForm.classList.add(
-      'active'
-    );
 
-    registerForm.classList.remove(
-      'active'
-    );
+    profileArea
+      .classList
+      .remove(
+        'active'
+      );
 
-    recoveryForm.classList.remove(
-      'active'
-    );
+
+    recoveryForm
+      .classList
+      .remove(
+        'active'
+      );
+
+
+    loginTab
+      .classList
+      .add(
+        'active'
+      );
+
+
+    registerTab
+      .classList
+      .remove(
+        'active'
+      );
+
+
+    loginForm
+      .classList
+      .add(
+        'active'
+      );
+
+
+    registerForm
+      .classList
+      .remove(
+        'active'
+      );
+
 
     cardTitle.textContent =
       'КІРУ';
@@ -1488,27 +1664,55 @@
 
   function showRegister() {
 
-    hideStatus();
+    recoveryMode =
+      false;
 
-    registerTab.classList.add(
-      'active'
-    );
 
-    loginTab.classList.remove(
-      'active'
-    );
+    authArea.style.display =
+      'block';
 
-    registerForm.classList.add(
-      'active'
-    );
 
-    loginForm.classList.remove(
-      'active'
-    );
+    profileArea
+      .classList
+      .remove(
+        'active'
+      );
 
-    recoveryForm.classList.remove(
-      'active'
-    );
+
+    recoveryForm
+      .classList
+      .remove(
+        'active'
+      );
+
+
+    registerTab
+      .classList
+      .add(
+        'active'
+      );
+
+
+    loginTab
+      .classList
+      .remove(
+        'active'
+      );
+
+
+    registerForm
+      .classList
+      .add(
+        'active'
+      );
+
+
+    loginForm
+      .classList
+      .remove(
+        'active'
+      );
+
 
     cardTitle.textContent =
       'ТІРКЕЛУ';
@@ -1516,312 +1720,65 @@
   }
 
 
-  loginTab.addEventListener(
-    'click',
-    showLogin
-  );
+  function showRecovery() {
 
+    recoveryMode =
+      true;
 
-  registerTab.addEventListener(
-    'click',
-    showRegister
-  );
-
-
-  /* LOGIN */
-
-  loginForm.addEventListener(
-    'submit',
-    async event => {
-
-      event.preventDefault();
-
-      hideStatus();
-
-
-      const button =
-        document.getElementById(
-          'loginButton'
-        );
-
-
-      button.disabled = true;
-
-
-      const email =
-        document
-          .getElementById(
-            'loginEmail'
-          )
-          .value
-          .trim();
-
-
-      const password =
-        document
-          .getElementById(
-            'loginPassword'
-          )
-          .value;
-
-
-      const {
-        error
-      } =
-        await supabase
-          .auth
-          .signInWithPassword({
-            email,
-            password
-          });
-
-
-      button.disabled = false;
-
-
-      if (error) {
-
-        showStatus(
-          'E-mail немесе құпиясөз дұрыс емес.',
-          'error'
-        );
-
-        return;
-
-      }
-
-
-      showStatus(
-        'Кіру сәтті орындалды.',
-        'success'
-      );
-
-    }
-  );
-
-
-  /* REGISTER */
-
-  registerForm.addEventListener(
-    'submit',
-    async event => {
-
-      event.preventDefault();
-
-      hideStatus();
-
-
-      const name =
-        document
-          .getElementById(
-            'registerName'
-          )
-          .value
-          .trim();
-
-
-      const email =
-        document
-          .getElementById(
-            'registerEmail'
-          )
-          .value
-          .trim();
-
-
-      const password =
-        document
-          .getElementById(
-            'registerPassword'
-          )
-          .value;
-
-
-      const password2 =
-        document
-          .getElementById(
-            'registerPassword2'
-          )
-          .value;
-
-
-      if (
-        password !== password2
-      ) {
-
-        showStatus(
-          'Құпиясөздер сәйкес келмейді.',
-          'error'
-        );
-
-        return;
-
-      }
-
-
-      const button =
-        document.getElementById(
-          'registerButton'
-        );
-
-
-      button.disabled = true;
-
-
-      const {
-        data,
-        error
-      } =
-        await supabase
-          .auth
-          .signUp({
-
-            email,
-
-            password,
-
-            options: {
-
-              data: {
-                full_name:
-                  name
-              },
-
-              emailRedirectTo:
-                ACCOUNT_URL
-
-            }
-
-          });
-
-
-      button.disabled = false;
-
-
-      if (error) {
-
-        showStatus(
-          error.message,
-          'error'
-        );
-
-        return;
-
-      }
-
-
-      if (
-        data.session
-      ) {
-
-        showStatus(
-          'Тіркелу сәтті аяқталды.',
-          'success'
-        );
-
-      } else {
-
-        showStatus(
-          'Тіркелу сәтті. E-mail поштаңызға келген растау сілтемесін басыңыз.',
-          'success'
-        );
-
-      }
-
-    }
-  );
-
-
-  /* PASSWORD RESET */
-
-  document
-    .getElementById(
-      'forgotButton'
-    )
-    .addEventListener(
-      'click',
-      async () => {
-
-        hideStatus();
-
-
-        const email =
-          document
-            .getElementById(
-              'loginEmail'
-            )
-            .value
-            .trim();
-
-
-        if (!email) {
-
-          showStatus(
-            'Алдымен E-mail енгізіңіз.',
-            'error'
-          );
-
-          return;
-
-        }
-
-
-        const {
-          error
-        } =
-          await supabase
-            .auth
-            .resetPasswordForEmail(
-              email,
-              {
-                redirectTo:
-                  ACCOUNT_URL
-              }
-            );
-
-
-        if (error) {
-
-          showStatus(
-            error.message,
-            'error'
-          );
-
-          return;
-
-        }
-
-
-        showStatus(
-          'Құпиясөзді қалпына келтіру сілтемесі E-mail-ға жіберілді.',
-          'success'
-        );
-
-      }
-    );
-
-
-  /* PROFILE */
-
-  function showProfile(user) {
 
     authArea.style.display =
       'none';
 
-    recoveryForm.classList.remove(
-      'active'
-    );
 
-    profileArea.classList.add(
-      'active'
-    );
+    profileArea
+      .classList
+      .remove(
+        'active'
+      );
+
+
+    recoveryForm
+      .classList
+      .add(
+        'active'
+      );
+
+
+    cardTitle.textContent =
+      'ЖАҢА ҚҰПИЯСӨЗ';
+
+  }
+
+
+  function showProfile(
+    user
+  ) {
+
+    recoveryForm
+      .classList
+      .remove(
+        'active'
+      );
+
+
+    authArea.style.display =
+      'none';
+
+
+    profileArea
+      .classList
+      .add(
+        'active'
+      );
+
 
     cardTitle.textContent =
       'МЕНІҢ ПРОФИЛІМ';
 
 
     const name =
-      user.user_metadata?.full_name ||
+      user.user_metadata
+        ?.full_name ||
       'CASPIY USER';
 
 
@@ -1838,7 +1795,8 @@
         'profileEmail'
       )
       .textContent =
-        user.email || '';
+        user.email ||
+        '';
 
 
     document
@@ -1870,43 +1828,495 @@
           'createdDate'
         )
         .textContent =
-          new Intl.DateTimeFormat(
-            'kk-KZ',
-            {
-              day:
-                '2-digit',
+          new Intl
+            .DateTimeFormat(
+              'kk-KZ',
+              {
+                day:
+                  '2-digit',
 
-              month:
-                '2-digit',
+                month:
+                  '2-digit',
 
-              year:
-                'numeric'
-            }
-          )
-          .format(
-            new Date(
-              user.created_at
+                year:
+                  'numeric'
+              }
             )
-          );
+            .format(
+              new Date(
+                user.created_at
+              )
+            );
 
     }
 
   }
 
 
-  function showAuth() {
+  /* =========================================================
+     TABS
+     ========================================================= */
 
-    profileArea.classList.remove(
-      'active'
+  loginTab
+    .addEventListener(
+      'click',
+      () => {
+
+        hideStatus();
+        showLogin();
+
+      }
     );
 
-    authArea.style.display =
-      'block';
 
-    showLogin();
+  registerTab
+    .addEventListener(
+      'click',
+      () => {
 
-  }
+        hideStatus();
+        showRegister();
 
+      }
+    );
+
+
+  /* =========================================================
+     LOGIN
+     ========================================================= */
+
+  loginForm
+    .addEventListener(
+      'submit',
+      async event => {
+
+        event.preventDefault();
+
+        hideStatus();
+
+
+        const button =
+          document
+            .getElementById(
+              'loginButton'
+            );
+
+
+        button.disabled =
+          true;
+
+
+        const email =
+          document
+            .getElementById(
+              'loginEmail'
+            )
+            .value
+            .trim();
+
+
+        const password =
+          document
+            .getElementById(
+              'loginPassword'
+            )
+            .value;
+
+
+        const {
+          error
+        } =
+          await supabase
+            .auth
+            .signInWithPassword({
+              email,
+              password
+            });
+
+
+        button.disabled =
+          false;
+
+
+        if (
+          error
+        ) {
+
+          showStatus(
+            'E-mail немесе құпиясөз дұрыс емес.',
+            'error'
+          );
+
+
+          return;
+
+        }
+
+
+        localStorage
+          .removeItem(
+            'caspiy_password_recovery'
+          );
+
+      }
+    );
+
+
+  /* =========================================================
+     REGISTER
+     ========================================================= */
+
+  registerForm
+    .addEventListener(
+      'submit',
+      async event => {
+
+        event.preventDefault();
+
+        hideStatus();
+
+
+        const name =
+          document
+            .getElementById(
+              'registerName'
+            )
+            .value
+            .trim();
+
+
+        const email =
+          document
+            .getElementById(
+              'registerEmail'
+            )
+            .value
+            .trim();
+
+
+        const password =
+          document
+            .getElementById(
+              'registerPassword'
+            )
+            .value;
+
+
+        const password2 =
+          document
+            .getElementById(
+              'registerPassword2'
+            )
+            .value;
+
+
+        if (
+          password !==
+          password2
+        ) {
+
+          showStatus(
+            'Құпиясөздер сәйкес келмейді.',
+            'error'
+          );
+
+
+          return;
+
+        }
+
+
+        const button =
+          document
+            .getElementById(
+              'registerButton'
+            );
+
+
+        button.disabled =
+          true;
+
+
+        const {
+          data,
+          error
+        } =
+          await supabase
+            .auth
+            .signUp({
+
+              email,
+
+              password,
+
+              options: {
+
+                data: {
+                  full_name:
+                    name
+                },
+
+                emailRedirectTo:
+                  ACCOUNT_URL
+
+              }
+
+            });
+
+
+        button.disabled =
+          false;
+
+
+        if (
+          error
+        ) {
+
+          showStatus(
+            error.message,
+            'error'
+          );
+
+
+          return;
+
+        }
+
+
+        if (
+          data.session
+        ) {
+
+          showStatus(
+            'Тіркелу сәтті аяқталды.',
+            'success'
+          );
+
+        } else {
+
+          showStatus(
+            'Тіркелу сәтті. E-mail поштаңызға келген растау сілтемесін басыңыз.',
+            'success'
+          );
+
+        }
+
+      }
+    );
+
+
+  /* =========================================================
+     FORGOT PASSWORD
+     ========================================================= */
+
+  document
+    .getElementById(
+      'forgotButton'
+    )
+    .addEventListener(
+      'click',
+      async () => {
+
+        hideStatus();
+
+
+        const email =
+          document
+            .getElementById(
+              'loginEmail'
+            )
+            .value
+            .trim();
+
+
+        if (
+          !email
+        ) {
+
+          showStatus(
+            'Алдымен E-mail енгізіңіз.',
+            'error'
+          );
+
+
+          return;
+
+        }
+
+
+        localStorage
+          .setItem(
+            'caspiy_password_recovery',
+            '1'
+          );
+
+
+        const {
+          error
+        } =
+          await supabase
+            .auth
+            .resetPasswordForEmail(
+              email,
+              {
+                redirectTo:
+                  ACCOUNT_URL
+              }
+            );
+
+
+        if (
+          error
+        ) {
+
+          localStorage
+            .removeItem(
+              'caspiy_password_recovery'
+            );
+
+
+          showStatus(
+            error.message,
+            'error'
+          );
+
+
+          return;
+
+        }
+
+
+        showStatus(
+          'Құпиясөзді қалпына келтіру сілтемесі E-mail поштаңызға жіберілді. Поштадағы сілтемені ашыңыз.',
+          'success'
+        );
+
+      }
+    );
+
+
+  /* =========================================================
+     SET NEW PASSWORD
+     ========================================================= */
+
+  recoveryForm
+    .addEventListener(
+      'submit',
+      async event => {
+
+        event.preventDefault();
+
+        hideStatus();
+
+
+        const password =
+          document
+            .getElementById(
+              'newPassword'
+            )
+            .value;
+
+
+        const password2 =
+          document
+            .getElementById(
+              'newPassword2'
+            )
+            .value;
+
+
+        if (
+          password !==
+          password2
+        ) {
+
+          showStatus(
+            'Құпиясөздер сәйкес келмейді.',
+            'error'
+          );
+
+
+          return;
+
+        }
+
+
+        const button =
+          document
+            .getElementById(
+              'recoveryButton'
+            );
+
+
+        button.disabled =
+          true;
+
+
+        const {
+          data,
+          error
+        } =
+          await supabase
+            .auth
+            .updateUser({
+              password
+            });
+
+
+        button.disabled =
+          false;
+
+
+        if (
+          error
+        ) {
+
+          showStatus(
+            'Құпиясөзді өзгерту мүмкін болмады. Қалпына келтіру сілтемесін қайта сұраңыз.',
+            'error'
+          );
+
+
+          return;
+
+        }
+
+
+        recoveryMode =
+          false;
+
+
+        localStorage
+          .removeItem(
+            'caspiy_password_recovery'
+          );
+
+
+        window.history
+          .replaceState(
+            {},
+            document.title,
+            'account.html'
+          );
+
+
+        showProfile(
+          data.user
+        );
+
+
+        showStatus(
+          'Құпиясөз сәтті жаңартылды.',
+          'success'
+        );
+
+      }
+    );
+
+
+  /* =========================================================
+     PROFILE UPDATE
+     ========================================================= */
 
   document
     .getElementById(
@@ -1930,8 +2340,12 @@
             .trim();
 
 
-        if (!name) {
+        if (
+          !name
+        ) {
+
           return;
+
         }
 
 
@@ -1951,12 +2365,15 @@
             });
 
 
-        if (error) {
+        if (
+          error
+        ) {
 
           showStatus(
             error.message,
             'error'
           );
+
 
           return;
 
@@ -1977,6 +2394,10 @@
     );
 
 
+  /* =========================================================
+     LOGOUT
+     ========================================================= */
+
   document
     .getElementById(
       'logoutButton'
@@ -1984,6 +2405,16 @@
     .addEventListener(
       'click',
       async () => {
+
+        recoveryMode =
+          false;
+
+
+        localStorage
+          .removeItem(
+            'caspiy_password_recovery'
+          );
+
 
         await supabase
           .auth
@@ -1993,103 +2424,62 @@
     );
 
 
-  /* NEW PASSWORD */
-
-  recoveryForm.addEventListener(
-    'submit',
-    async event => {
-
-      event.preventDefault();
-
-      hideStatus();
-
-
-      const password =
-        document
-          .getElementById(
-            'newPassword'
-          )
-          .value;
-
-
-      const {
-        error
-      } =
-        await supabase
-          .auth
-          .updateUser({
-            password
-          });
-
-
-      if (error) {
-
-        showStatus(
-          error.message,
-          'error'
-        );
-
-        return;
-
-      }
-
-
-      showStatus(
-        'Құпиясөз сәтті жаңартылды.',
-        'success'
-      );
-
-
-      const {
-        data
-      } =
-        await supabase
-          .auth
-          .getUser();
-
-
-      if (
-        data.user
-      ) {
-
-        showProfile(
-          data.user
-        );
-
-      }
-
-    }
-  );
-
-
-  /* AUTH EVENTS */
+  /* =========================================================
+     AUTH EVENTS
+     ========================================================= */
 
   supabase
     .auth
     .onAuthStateChange(
-      async (
+      (
         event,
         session
       ) => {
+
+        console.log(
+          'CASPIY AUTH:',
+          event
+        );
+
 
         if (
           event ===
           'PASSWORD_RECOVERY'
         ) {
 
-          authArea.style.display =
-            'none';
+          recoveryMode =
+            true;
 
-          profileArea.classList.remove(
-            'active'
-          );
 
-          recoveryForm.classList.add(
-            'active'
-          );
+          localStorage
+            .setItem(
+              'caspiy_password_recovery',
+              '1'
+            );
 
-          cardTitle.textContent =
-            'ЖАҢА ҚҰПИЯСӨЗ';
+
+          showRecovery();
+
+
+          hideStatus();
+
+
+          return;
+
+        }
+
+
+        if (
+          event ===
+          'SIGNED_OUT'
+        ) {
+
+          recoveryMode =
+            false;
+
+
+          showLogin();
+
 
           return;
 
@@ -2100,13 +2490,19 @@
           session?.user
         ) {
 
-          showProfile(
-            session.user
-          );
+          if (
+            recoveryMode
+          ) {
 
-        } else {
+            showRecovery();
 
-          showAuth();
+          } else {
+
+            showProfile(
+              session.user
+            );
+
+          }
 
         }
 
@@ -2114,32 +2510,143 @@
     );
 
 
-  const {
-    data: {
-      session
+  /* =========================================================
+     INITIAL STATE
+     ========================================================= */
+
+  async function initializeAccount() {
+
+    const {
+      data: {
+        session
+      },
+      error
+    } =
+      await supabase
+        .auth
+        .getSession();
+
+
+    if (
+      error
+    ) {
+
+      showLogin();
+
+
+      showStatus(
+        'Авторизацияны тексеру кезінде қате пайда болды.',
+        'error'
+      );
+
+
+      return;
+
     }
-  } =
-    await supabase
-      .auth
-      .getSession();
 
 
-  if (
-    session?.user
-  ) {
+    if (
+      session?.user
+    ) {
 
-    showProfile(
-      session.user
-    );
+      if (
+        recoveryMode
+      ) {
 
-  } else {
+        showRecovery();
 
-    showAuth();
+      } else {
+
+        showProfile(
+          session.user
+        );
+
+      }
+
+
+      return;
+
+    }
+
+
+    if (
+      recoveryMode
+    ) {
+
+      showRecovery();
+
+
+      showStatus(
+        'Қалпына келтіру сілтемесі тексерілуде...',
+        ''
+      );
+
+
+      setTimeout(
+        async () => {
+
+          const {
+            data: {
+              session:
+                delayedSession
+            }
+          } =
+            await supabase
+              .auth
+              .getSession();
+
+
+          if (
+            delayedSession?.user
+          ) {
+
+            showRecovery();
+
+            hideStatus();
+
+          } else {
+
+            recoveryMode =
+              false;
+
+
+            localStorage
+              .removeItem(
+                'caspiy_password_recovery'
+              );
+
+
+            showLogin();
+
+
+            showStatus(
+              'Қалпына келтіру сілтемесі жарамсыз немесе мерзімі аяқталған. Жаңа сілтеме сұраңыз.',
+              'error'
+            );
+
+          }
+
+        },
+        1800
+      );
+
+
+      return;
+
+    }
+
+
+    showLogin();
 
   }
 
 
-  /* MOBILE MENU */
+  await initializeAccount();
+
+
+  /* =========================================================
+     MOBILE MENU
+     ========================================================= */
 
   const mobileMenu =
     document.getElementById(
@@ -2174,11 +2681,59 @@
           );
 
 
+        mobileMenuButton
+          .setAttribute(
+            'aria-expanded',
+            open
+              ? 'true'
+              : 'false'
+          );
+
+
         document.body
           .classList
           .toggle(
             'menu-open',
             open
+          );
+
+      }
+    );
+
+
+  mobileMenu
+    .querySelectorAll(
+      'a'
+    )
+    .forEach(
+      link => {
+
+        link
+          .addEventListener(
+            'click',
+            () => {
+
+              mobileMenu
+                .classList
+                .remove(
+                  'open'
+                );
+
+
+              mobileMenuButton
+                .classList
+                .remove(
+                  'active'
+                );
+
+
+              document.body
+                .classList
+                .remove(
+                  'menu-open'
+                );
+
+            }
           );
 
       }
