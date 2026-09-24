@@ -192,6 +192,35 @@
       gap: 10px;
     }
 
+    .login-link {
+      display: block;
+      margin: 17px auto 0;
+      padding: 0;
+      color: #5fd6ff;
+      background: transparent;
+      border: 0;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .05em;
+    }
+
+    .login-link:hover {
+      color: #a9ecff;
+    }
+
+    .recovery-title {
+      margin-bottom: 8px;
+      color: #eaf8ff;
+      font-family: 'Oswald',sans-serif;
+      font-size: 25px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .recovery-text {
+      margin-bottom: 24px !important;
+    }
+
     /* MESSAGE */
 
     .message {
@@ -684,29 +713,109 @@
 
     <div class="message" id="loginMessage"></div>
 
-    <div class="field">
-      <label>Email</label>
-      <input
-        type="email"
-        id="loginEmail"
-        value="adilbek.saryyev@gmail.com"
+    <div id="loginFormArea">
+
+      <div class="field">
+        <label>Email</label>
+        <input
+          type="email"
+          id="loginEmail"
+          value="adilbek.saryyev@gmail.com"
+          autocomplete="email"
+        >
+      </div>
+
+      <div class="field">
+        <label>Пароль</label>
+        <input
+          type="password"
+          id="loginPassword"
+          autocomplete="current-password"
+        >
+      </div>
+
+      <div class="login-actions">
+
+        <button
+          class="btn btn-primary"
+          id="passwordLoginBtn"
+          type="button"
+        >
+          Войти
+        </button>
+
+        <button
+          class="btn btn-secondary"
+          id="magicLoginBtn"
+          type="button"
+        >
+          Получить ссылку
+        </button>
+
+      </div>
+
+      <button
+        class="login-link"
+        id="forgotPasswordBtn"
+        type="button"
       >
-    </div>
-
-    <div class="field">
-      <label>Пароль</label>
-      <input type="password" id="loginPassword">
-    </div>
-
-    <div class="login-actions">
-
-      <button class="btn btn-primary" id="passwordLoginBtn">
-        Войти
+        Забыли пароль?
       </button>
 
-      <button class="btn btn-secondary" id="magicLoginBtn">
-        Получить ссылку
-      </button>
+    </div>
+
+    <div
+      id="recoveryArea"
+      class="hidden"
+    >
+
+      <div class="recovery-title">
+        Новый пароль
+      </div>
+
+      <p class="recovery-text">
+        Введите новый пароль администратора два раза.
+      </p>
+
+      <div class="field">
+        <label>Новый пароль</label>
+        <input
+          type="password"
+          id="newPassword"
+          minlength="6"
+          autocomplete="new-password"
+        >
+      </div>
+
+      <div class="field">
+        <label>Повторите новый пароль</label>
+        <input
+          type="password"
+          id="newPasswordRepeat"
+          minlength="6"
+          autocomplete="new-password"
+        >
+      </div>
+
+      <div class="login-actions">
+
+        <button
+          class="btn btn-primary"
+          id="saveNewPasswordBtn"
+          type="button"
+        >
+          Сохранить пароль
+        </button>
+
+        <button
+          class="btn btn-secondary"
+          id="cancelRecoveryBtn"
+          type="button"
+        >
+          Отмена
+        </button>
+
+      </div>
 
     </div>
 
@@ -1387,7 +1496,14 @@
   const supabase =
     createClient(
       'https://socqbqyhkyvxnsukgcqm.supabase.co',
-      'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK'
+      'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK',
+      {
+        auth:{
+          persistSession:true,
+          autoRefreshToken:true,
+          detectSessionInUrl:true
+        }
+      }
     );
 
 
@@ -1572,6 +1688,44 @@
   const globalMessage =
     document.getElementById('globalMessage');
 
+  const loginFormArea =
+    document.getElementById('loginFormArea');
+
+  const recoveryArea =
+    document.getElementById('recoveryArea');
+
+  const RECOVERY_FLAG =
+    'caspiy_admin_password_recovery';
+
+  const ADMIN_URL =
+    `${window.location.origin}${window.location.pathname}`;
+
+  let recoveryMode =
+    localStorage.getItem(RECOVERY_FLAG) === '1';
+
+
+  function showLoginForm() {
+
+    recoveryMode = false;
+
+    loginFormArea.classList.remove('hidden');
+    recoveryArea.classList.add('hidden');
+
+  }
+
+
+  function showRecoveryForm() {
+
+    recoveryMode = true;
+
+    loginView.classList.remove('hidden');
+    adminView.classList.add('hidden');
+
+    loginFormArea.classList.add('hidden');
+    recoveryArea.classList.remove('hidden');
+
+  }
+
 
   /* AUTH */
 
@@ -1683,8 +1837,17 @@
             .trim();
 
 
-        const redirectUrl =
-          `${window.location.origin}${window.location.pathname}`;
+        if (!email) {
+
+          showMessage(
+            loginMessage,
+            'Введите E-mail администратора.',
+            'error'
+          );
+
+          return;
+
+        }
 
 
         const {
@@ -1696,7 +1859,9 @@
               email,
               options:{
                 emailRedirectTo:
-                  redirectUrl
+                  ADMIN_URL,
+                shouldCreateUser:
+                  false
               }
             });
 
@@ -1716,8 +1881,256 @@
 
         showMessage(
           loginMessage,
-          'Ссылка отправлена на почту.'
+          'Ссылка для входа отправлена на почту.'
         );
+
+      }
+    );
+
+
+  document
+    .getElementById('forgotPasswordBtn')
+    .addEventListener(
+      'click',
+      async () => {
+
+        const email =
+          document
+            .getElementById('loginEmail')
+            .value
+            .trim();
+
+
+        if (!email) {
+
+          showMessage(
+            loginMessage,
+            'Сначала введите E-mail администратора.',
+            'error'
+          );
+
+          return;
+
+        }
+
+
+        localStorage.setItem(
+          RECOVERY_FLAG,
+          '1'
+        );
+
+
+        const {
+          error
+        } =
+          await supabase
+            .auth
+            .resetPasswordForEmail(
+              email,
+              {
+                redirectTo:
+                  ADMIN_URL
+              }
+            );
+
+
+        if (error) {
+
+          localStorage.removeItem(
+            RECOVERY_FLAG
+          );
+
+
+          showMessage(
+            loginMessage,
+            error.message,
+            'error'
+          );
+
+          return;
+
+        }
+
+
+        showMessage(
+          loginMessage,
+          'Ссылка для восстановления пароля отправлена на почту.'
+        );
+
+      }
+    );
+
+
+  document
+    .getElementById('saveNewPasswordBtn')
+    .addEventListener(
+      'click',
+      async () => {
+
+        const password =
+          document
+            .getElementById('newPassword')
+            .value;
+
+
+        const passwordRepeat =
+          document
+            .getElementById('newPasswordRepeat')
+            .value;
+
+
+        if (
+          !password ||
+          password.length < 6
+        ) {
+
+          showMessage(
+            loginMessage,
+            'Новый пароль должен содержать минимум 6 символов.',
+            'error'
+          );
+
+          return;
+
+        }
+
+
+        if (
+          password !== passwordRepeat
+        ) {
+
+          showMessage(
+            loginMessage,
+            'Пароли не совпадают.',
+            'error'
+          );
+
+          return;
+
+        }
+
+
+        const {
+          data:{
+            session
+          }
+        } =
+          await supabase
+            .auth
+            .getSession();
+
+
+        if (
+          !session?.user ||
+          session.user.id !== ADMIN_UID
+        ) {
+
+          localStorage.removeItem(
+            RECOVERY_FLAG
+          );
+
+          await supabase.auth.signOut();
+
+          showLoginForm();
+
+          showMessage(
+            loginMessage,
+            'Ссылка восстановления недействительна или не относится к администратору.',
+            'error'
+          );
+
+          return;
+
+        }
+
+
+        const {
+          error
+        } =
+          await supabase
+            .auth
+            .updateUser({
+              password
+            });
+
+
+        if (error) {
+
+          showMessage(
+            loginMessage,
+            error.message,
+            'error'
+          );
+
+          return;
+
+        }
+
+
+        recoveryMode = false;
+
+        localStorage.removeItem(
+          RECOVERY_FLAG
+        );
+
+
+        document
+          .getElementById('newPassword')
+          .value = '';
+
+        document
+          .getElementById('newPasswordRepeat')
+          .value = '';
+
+
+        window.history.replaceState(
+          {},
+          document.title,
+          window.location.pathname
+        );
+
+
+        showMessage(
+          loginMessage,
+          'Пароль успешно изменён.'
+        );
+
+
+        const {
+          data:{
+            session:updatedSession
+          }
+        } =
+          await supabase
+            .auth
+            .getSession();
+
+
+        await showAdmin(
+          updatedSession
+        );
+
+      }
+    );
+
+
+  document
+    .getElementById('cancelRecoveryBtn')
+    .addEventListener(
+      'click',
+      async () => {
+
+        recoveryMode = false;
+
+        localStorage.removeItem(
+          RECOVERY_FLAG
+        );
+
+        await supabase
+          .auth
+          .signOut();
+
+        showLoginForm();
 
       }
     );
@@ -1728,6 +2141,12 @@
     .addEventListener(
       'click',
       async () => {
+
+        recoveryMode = false;
+
+        localStorage.removeItem(
+          RECOVERY_FLAG
+        );
 
         await supabase.auth.signOut();
 
@@ -3905,6 +4324,193 @@
     );
 
 
+  const pageUrl =
+    new URL(
+      window.location.href
+    );
+
+
+  const authError =
+    pageUrl.searchParams.get(
+      'error_description'
+    ) ||
+    pageUrl.searchParams.get(
+      'error'
+    );
+
+
+  if (authError) {
+
+    recoveryMode = false;
+
+    localStorage.removeItem(
+      RECOVERY_FLAG
+    );
+
+    showLoginForm();
+
+    showMessage(
+      loginMessage,
+      decodeURIComponent(
+        String(authError)
+          .replaceAll('+',' ')
+      ),
+      'error'
+    );
+
+  }
+
+
+  if (
+    window.location.href.includes(
+      'type=recovery'
+    )
+  ) {
+
+    recoveryMode = true;
+
+    localStorage.setItem(
+      RECOVERY_FLAG,
+      '1'
+    );
+
+  }
+
+
+  async function handleAuthEvent(
+    event,
+    session
+  ) {
+
+    if (
+      event === 'PASSWORD_RECOVERY'
+    ) {
+
+      if (
+        !session?.user ||
+        session.user.id !== ADMIN_UID
+      ) {
+
+        recoveryMode = false;
+
+        localStorage.removeItem(
+          RECOVERY_FLAG
+        );
+
+        await supabase
+          .auth
+          .signOut();
+
+        showLoginForm();
+
+        showMessage(
+          loginMessage,
+          'Нет доступа к восстановлению пароля администратора.',
+          'error'
+        );
+
+        return;
+
+      }
+
+
+      recoveryMode = true;
+
+      localStorage.setItem(
+        RECOVERY_FLAG,
+        '1'
+      );
+
+      showRecoveryForm();
+
+      return;
+
+    }
+
+
+    if (
+      event === 'SIGNED_IN'
+    ) {
+
+      if (recoveryMode) {
+
+        if (
+          session?.user?.id === ADMIN_UID
+        ) {
+
+          showRecoveryForm();
+
+        } else {
+
+          recoveryMode = false;
+
+          localStorage.removeItem(
+            RECOVERY_FLAG
+          );
+
+          await supabase
+            .auth
+            .signOut();
+
+          showLoginForm();
+
+        }
+
+        return;
+
+      }
+
+
+      await showAdmin(
+        session
+      );
+
+      return;
+
+    }
+
+
+    if (
+      event === 'SIGNED_OUT'
+    ) {
+
+      loginView.classList.remove(
+        'hidden'
+      );
+
+      adminView.classList.add(
+        'hidden'
+      );
+
+      showLoginForm();
+
+    }
+
+  }
+
+
+  supabase
+    .auth
+    .onAuthStateChange(
+      (
+        event,
+        session
+      ) => {
+
+        setTimeout(
+          () => {
+            handleAuthEvent(
+              event,
+              session
+            );
+          },
+          0
+        );
+
+      }
+    );
+
+
   const {
     data:{
       session
@@ -3915,31 +4521,40 @@
       .getSession();
 
 
-  await showAdmin(
-    session
-  );
+  if (
+    session?.user &&
+    recoveryMode
+  ) {
 
+    if (
+      session.user.id === ADMIN_UID
+    ) {
 
-  supabase
-    .auth
-    .onAuthStateChange(
-      async (
-        event,
-        session
-      ) => {
+      showRecoveryForm();
 
-        if (
-          event === 'SIGNED_IN'
-        ) {
+    } else {
 
-          await showAdmin(
-            session
-          );
+      recoveryMode = false;
 
-        }
+      localStorage.removeItem(
+        RECOVERY_FLAG
+      );
 
-      }
+      await supabase
+        .auth
+        .signOut();
+
+      showLoginForm();
+
+    }
+
+  } else {
+
+    await showAdmin(
+      session
     );
+
+  }
 
 </script>
 
