@@ -480,14 +480,34 @@
     }
 
     .standings-table tbody tr.caspiy-row {
+      position: relative;
       background:
         linear-gradient(
           90deg,
-          rgba(42,179,230,.13),
-          rgba(42,179,230,.025)
+          rgba(62,203,255,.24),
+          rgba(42,179,230,.08) 45%,
+          rgba(42,179,230,.03)
         );
       box-shadow:
-        inset 3px 0 0 #55d4ff;
+        inset 4px 0 0 #55d4ff,
+        inset 0 0 0 1px rgba(85,212,255,.18),
+        0 10px 28px rgba(27,145,190,.14);
+      transform: scale(1.012);
+    }
+
+    .standings-table tbody tr.caspiy-row:hover {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(62,203,255,.30),
+          rgba(42,179,230,.10) 45%,
+          rgba(42,179,230,.04)
+        );
+    }
+
+    .standings-table tbody tr.caspiy-row td {
+      border-top: 1px solid rgba(85,212,255,.16);
+      border-bottom: 1px solid rgba(85,212,255,.16);
     }
 
     .position-cell {
@@ -531,7 +551,15 @@
     }
 
     .caspiy-row .team-name {
-      color: #72ddff;
+      color: #8ce7ff;
+      font-size: 13px;
+      text-shadow: 0 0 18px rgba(92,220,255,.16);
+    }
+
+    .caspiy-row .team-logo {
+      width: 54px;
+      height: 54px;
+      filter: drop-shadow(0 0 12px rgba(79,213,255,.22));
     }
 
     .points-cell {
@@ -562,15 +590,35 @@
     }
 
     .standing-card.caspiy-card {
+      position: relative;
       background:
+        radial-gradient(circle at top left, rgba(83,215,255,.12), transparent 42%),
         linear-gradient(
           145deg,
-          rgba(12,48,67,.98),
-          rgba(3,18,28,.98)
+          rgba(14,59,82,.98),
+          rgba(4,20,31,.98)
         );
-      border-color: rgba(88,213,255,.36);
+      border-color: rgba(88,213,255,.48);
       box-shadow:
-        inset 3px 0 0 #55d4ff;
+        inset 4px 0 0 #55d4ff,
+        0 12px 30px rgba(24,121,158,.22),
+        0 0 0 1px rgba(85,212,255,.12);
+      transform: scale(1.02);
+    }
+
+    .standing-card.caspiy-card::before {
+      content: 'CASPIY';
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      padding: 4px 8px;
+      border: 1px solid rgba(92,220,255,.32);
+      border-radius: 999px;
+      color: #9befff;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      background: rgba(73,201,244,.08);
     }
 
     .standing-card-top {
@@ -622,7 +670,20 @@
     }
 
     .caspiy-card .standing-team-name {
-      color: #72ddff;
+      color: #97eeff;
+      font-size: 12px;
+      text-shadow: 0 0 16px rgba(92,220,255,.18);
+    }
+
+    .caspiy-card .standing-team-logo {
+      width: 48px;
+      height: 48px;
+      filter: drop-shadow(0 0 12px rgba(79,213,255,.22));
+    }
+
+    .caspiy-card .standing-points strong {
+      color: #9befff;
+      text-shadow: 0 0 14px rgba(92,220,255,.18);
     }
 
     .standing-points {
