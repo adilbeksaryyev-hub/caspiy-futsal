@@ -1,14 +1,119 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
-  <meta name="robots" content="noindex, nofollow, noarchive">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>CASPIY — Админ-панель</title>
+  <title>Команда — CASPIY Futsal Club | Ақтау</title>
+
+  <meta
+    name="description"
+    content="CASPIY Futsal Club командасы. Ақтау футзал клубының ойыншылары және бапкерлер құрамы."
+  >
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#020a10">
+
+  <link
+    rel="canonical"
+    href="https://adilbeksaryyev-hub.github.io/caspiy-futsal/team.html"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="logo.png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="logo.png"
+  >
+
+  <!-- OPEN GRAPH -->
+
+  <meta property="og:type" content="website">
+
+  <meta
+    property="og:site_name"
+    content="CASPIY Futsal Club"
+  >
+
+  <meta
+    property="og:title"
+    content="Команда — CASPIY Futsal Club"
+  >
+
+  <meta
+    property="og:description"
+    content="CASPIY Futsal Club ойыншылары және бапкерлер құрамымен танысыңыз."
+  >
+
+  <meta
+    property="og:url"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/team.html"
+  >
+
+  <meta
+    property="og:image"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
+  >
+
+  <meta
+    property="og:image:secure_url"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
+  >
+
+  <meta
+    property="og:image:type"
+    content="image/png"
+  >
+
+  <meta
+    property="og:image:width"
+    content="1200"
+  >
+
+  <meta
+    property="og:image:height"
+    content="630"
+  >
+
+  <meta
+    property="og:image:alt"
+    content="CASPIY Futsal Club"
+  >
+
+  <meta
+    property="og:locale"
+    content="kk_KZ"
+  >
+
+  <!-- TWITTER / X -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Команда — CASPIY Futsal Club"
+  >
+
+  <meta
+    name="twitter:description"
+    content="CASPIY Futsal Club ойыншылары және бапкерлер құрамымен танысыңыз."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
     rel="stylesheet"
@@ -16,1622 +121,1043 @@
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       min-height: 100vh;
+      overflow-x: hidden;
       font-family: 'Montserrat', Arial, sans-serif;
-      background:
-        radial-gradient(circle at 15% 0%, rgba(0,159,220,.13), transparent 30%),
-        #03101a;
-      color: #eaf8ff;
+      color: #f1f8fc;
+      background: #020a10;
     }
 
-    button,
-    input,
-    select,
-    textarea {
-      font: inherit;
+    body.menu-open {
+      overflow: hidden;
     }
 
-    button {
-      cursor: pointer;
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
-    /* LOGIN */
-
-    .login-view {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 25px;
-    }
-
-    .login-card {
-      width: min(460px,100%);
-      padding: 38px;
-      background: rgba(5,25,39,.96);
-      border: 1px solid rgba(73,204,255,.30);
-      border-radius: 10px;
-      box-shadow: 0 25px 70px rgba(0,0,0,.35);
-    }
-
-    .login-logo {
-      width: 90px;
-      height: 90px;
-      display: block;
-      margin: 0 auto 20px;
-      object-fit: contain;
-    }
-
-    .login-card h1 {
-      margin-bottom: 8px;
-      text-align: center;
-      font-family: 'Oswald',sans-serif;
-      font-size: 34px;
-      letter-spacing: .08em;
-    }
-
-    .login-card p {
-      margin-bottom: 28px;
-      color: #7d9aaa;
-      text-align: center;
-      font-size: 12px;
-    }
-
-    /* FORM */
-
-    .field {
-      margin-bottom: 17px;
-    }
-
-    .field label {
-      display: block;
-      margin-bottom: 8px;
-      color: #81aec3;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 13px 14px;
-      color: #eefaff;
-      background: rgba(0,10,18,.78);
-      border: 1px solid rgba(87,193,234,.22);
-      border-radius: 5px;
-      outline: none;
-    }
-
-    textarea {
-      min-height: 125px;
-      resize: vertical;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: rgba(70,206,255,.72);
-      box-shadow: 0 0 0 3px rgba(49,184,235,.07);
-    }
-
-    select option {
-      color: #fff;
-      background: #071823;
-    }
-
-    input[type="checkbox"] {
-      width: auto;
-    }
-
-    .checkbox-field {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 10px 0 20px;
-      color: #9ab7c5;
-      font-size: 12px;
-    }
-
-    /* BUTTONS */
-
-    .btn {
-      border: 0;
-      border-radius: 5px;
-      padding: 13px 19px;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .10em;
-      text-transform: uppercase;
-    }
-
-    .btn-primary {
-      color: #02111a;
-      background: #54d5ff;
-    }
-
-    .btn-secondary {
-      color: #b7deee;
-      background: rgba(71,185,227,.08);
-      border: 1px solid rgba(74,194,238,.28);
-    }
-
-    .btn-danger {
-      color: #ffb4b4;
-      background: rgba(255,73,73,.08);
-      border: 1px solid rgba(255,98,98,.23);
-    }
-
-    .btn-success {
-      color: #baf8cf;
-      background: rgba(50,190,105,.08);
-      border: 1px solid rgba(65,209,125,.22);
-    }
-
-    .btn-small {
-      padding: 8px 11px;
-      font-size: 9px;
-    }
-
-    .login-actions,
-    .form-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .login-link {
-      display: block;
-      margin: 17px auto 0;
-      padding: 0;
-      color: #5fd6ff;
-      background: transparent;
-      border: 0;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: .05em;
-    }
-
-    .login-link:hover {
-      color: #a9ecff;
-    }
-
-    .recovery-title {
-      margin-bottom: 8px;
-      color: #eaf8ff;
-      font-family: 'Oswald',sans-serif;
-      font-size: 25px;
-      text-align: center;
-      text-transform: uppercase;
-    }
-
-    .recovery-text {
-      margin-bottom: 24px !important;
-    }
-
-    /* MESSAGE */
-
-    .message {
-      display: none;
-      margin: 15px 0;
-      padding: 12px 14px;
-      border-radius: 5px;
-      font-size: 11px;
-      line-height: 1.6;
-    }
-
-    .message.success {
-      display: block;
-      color: #a8f3c5;
-      background: rgba(45,190,105,.09);
-      border: 1px solid rgba(65,209,125,.23);
-    }
-
-    .message.error {
-      display: block;
-      color: #ffbaba;
-      background: rgba(220,50,50,.10);
-      border: 1px solid rgba(255,90,90,.23);
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     /* HEADER */
 
-    .admin-header {
+    header {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(2,13,22,.95);
+      background: rgba(2,10,16,.96);
       backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(76,201,245,.15);
+      border-bottom: 1px solid rgba(80,202,245,.14);
     }
 
-    .admin-header-inner {
-      width: min(1500px,94%);
-      min-height: 84px;
+    .header-inner {
+      width: min(1440px,92%);
+      height: 95px;
       margin: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 25px;
     }
 
-    .admin-brand {
+    .logo {
       display: flex;
       align-items: center;
-      gap: 13px;
+      gap: 14px;
+      position: relative;
+      z-index: 60;
     }
 
-    .admin-brand img {
-      width: 60px;
-      height: 60px;
+    .logo img {
+      width: 70px;
+      height: 70px;
       object-fit: contain;
     }
 
-    .admin-brand strong {
-      display: block;
+    .logo strong {
       font-family: 'Oswald',sans-serif;
-      font-size: 21px;
+      font-size: 20px;
+      letter-spacing: .08em;
     }
 
-    .admin-brand span {
-      display: block;
-      color: #618294;
-      font-size: 9px;
-      letter-spacing: .17em;
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+    }
+
+    .desktop-nav a {
+      position: relative;
+      padding: 12px 0;
+      color: #a9bfca;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .desktop-nav a:hover,
+    .desktop-nav a.active {
+      color: #62d6ff;
+    }
+
+    .desktop-nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: #52d3ff;
     }
 
     .header-actions {
       display: flex;
-      gap: 8px;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 60;
     }
 
-    /* NAV */
-
-    .admin-nav {
-      background: rgba(2,14,23,.92);
-      border-bottom: 1px solid rgba(76,201,245,.10);
-    }
-
-    .admin-nav-inner {
-      width: min(1500px,94%);
-      margin: auto;
-      display: flex;
-      overflow-x: auto;
-    }
-
-    .nav-button {
-      flex: 0 0 auto;
-      padding: 16px 20px;
-      border: 0;
-      color: #789baa;
-      background: none;
-      font-size: 10px;
+    .ticket-button {
+      padding: 13px 18px;
+      color: #caeffc;
+      border: 1px solid rgba(80,207,251,.42);
+      border-radius: 5px;
+      font-size: 9px;
       font-weight: 700;
       letter-spacing: .13em;
       text-transform: uppercase;
     }
 
-    .nav-button.active {
-      color: #64d8ff;
-      border-bottom: 2px solid #4dd2ff;
+    .ticket-button.disabled {
+      opacity: .35;
+      pointer-events: none;
     }
 
-    .messages-badge {
-      display: inline-flex;
+    /* MOBILE BUTTON */
+
+    .mobile-menu-button {
+      display: none;
+      width: 46px;
+      height: 46px;
       align-items: center;
       justify-content: center;
-      min-width: 18px;
-      height: 18px;
-      margin-left: 6px;
-      padding: 0 5px;
-      color: #03101a;
-      background: #55d5ff;
-      border-radius: 20px;
-      font-size: 8px;
-      font-weight: 800;
+      padding: 0;
+      background: rgba(4,22,34,.90);
+      border: 1px solid rgba(77,205,255,.32);
+      border-radius: 5px;
+      cursor: pointer;
     }
 
-    /* CONTENT */
+    .mobile-lines {
+      position: relative;
+      width: 21px;
+      height: 15px;
+    }
 
-    .admin-content {
-      width: min(1500px,94%);
+    .mobile-lines span {
+      position: absolute;
+      left: 0;
+      width: 21px;
+      height: 2px;
+      background: #cbeffc;
+      transition: .25s;
+    }
+
+    .mobile-lines span:nth-child(1) {
+      top: 0;
+    }
+
+    .mobile-lines span:nth-child(2) {
+      top: 6px;
+    }
+
+    .mobile-lines span:nth-child(3) {
+      top: 12px;
+    }
+
+    .mobile-menu-button.active
+    .mobile-lines span:nth-child(1) {
+      top: 6px;
+      transform: rotate(45deg);
+    }
+
+    .mobile-menu-button.active
+    .mobile-lines span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-button.active
+    .mobile-lines span:nth-child(3) {
+      top: 6px;
+      transform: rotate(-45deg);
+    }
+
+    /* MOBILE MENU */
+
+    .mobile-menu {
+      position: fixed;
+      z-index: 45;
+      inset: 0;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(100%);
+      transition:
+        transform .30s ease,
+        opacity .30s ease,
+        visibility .30s ease;
+
+      background:
+        radial-gradient(
+          circle at 80% 15%,
+          rgba(32,175,226,.18),
+          transparent 30%
+        ),
+        rgba(1,9,15,.99);
+    }
+
+    .mobile-menu.open {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(0);
+    }
+
+    .mobile-menu-inner {
+      width: min(540px,88%);
+      height: 100%;
       margin: auto;
-      padding: 38px 0 80px;
+      padding: 125px 0 40px;
+      display: flex;
+      flex-direction: column;
     }
 
-    .admin-section {
-      display: none;
-    }
-
-    .admin-section.active {
-      display: block;
-    }
-
-    .section-title {
-      margin-bottom: 27px;
-    }
-
-    .section-title span {
-      display: block;
-      margin-bottom: 7px;
-      color: #55cefa;
+    .mobile-menu-small {
+      margin-bottom: 25px;
+      color: #51cffb;
       font-size: 9px;
       font-weight: 700;
-      letter-spacing: .25em;
+      letter-spacing: .28em;
+      text-transform: uppercase;
     }
 
-    .section-title h2 {
+    .mobile-nav {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 58px;
+      color: #d6e8f0;
+      border-bottom: 1px solid rgba(91,204,244,.11);
       font-family: 'Oswald',sans-serif;
-      font-size: clamp(32px,4vw,50px);
+      font-size: 28px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .mobile-nav a::after {
+      content: "→";
+      color: #54d5ff;
+      font-size: 18px;
+    }
+
+    .mobile-nav a.active {
+      color: #58d5ff;
+    }
+
+    .mobile-ticket {
+      margin-top: 30px;
+      padding: 16px 20px;
+      text-align: center;
+      color: #031019;
+      background: #56d5ff;
+      border-radius: 5px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .mobile-ticket.disabled {
+      opacity: .30;
+      pointer-events: none;
+    }
+
+    .mobile-address {
+      margin-top: auto;
+      padding-top: 30px;
+      color: #4f7080;
+      font-size: 9px;
+      font-weight: 600;
+      line-height: 1.8;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      min-height: 500px;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(1,8,14,.96),
+          rgba(2,16,27,.60),
+          rgba(1,8,14,.38)
+        ),
+        url("hero-bg.png");
+
+      background-size: cover;
+      background-position: center 55%;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to bottom,
+          transparent 25%,
+          #020a10 100%
+        );
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(1440px,92%);
+      min-height: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 70px;
+    }
+
+    .hero-small {
+      margin-bottom: 13px;
+      color: #55d3ff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-family: 'Oswald',sans-serif;
+      font-size: clamp(75px,9vw,145px);
+      font-weight: 700;
+      line-height: .90;
+      letter-spacing: -.035em;
+      text-transform: uppercase;
+    }
+
+    .hero-text {
+      margin-top: 23px;
+      color: #88a6b4;
+      font-size: 11px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    /* TEAM */
+
+    .team-section {
+      padding: 75px 0 110px;
+
+      background:
+        radial-gradient(
+          circle at 85% 5%,
+          rgba(0,160,220,.10),
+          transparent 30%
+        ),
+        #020a10;
+    }
+
+    .container {
+      width: min(1440px,92%);
+      margin: auto;
+    }
+
+    .group {
+      margin-bottom: 75px;
+    }
+
+    .group:last-child {
+      margin-bottom: 0;
+    }
+
+    .group-heading {
+      display: flex;
+      align-items: flex-end;
+      gap: 25px;
+      margin-bottom: 25px;
+      padding-bottom: 17px;
+      border-bottom: 1px solid rgba(79,200,243,.14);
+    }
+
+    .group-number {
+      color: #55d4ff;
+      font-family: 'Oswald',sans-serif;
+      font-size: 17px;
+    }
+
+    .group-title {
+      font-family: 'Oswald',sans-serif;
+      font-size: clamp(34px,4vw,55px);
       font-weight: 600;
       text-transform: uppercase;
     }
 
-    .panel {
-      margin-bottom: 27px;
-      padding: 25px;
-      background: rgba(5,24,37,.88);
-      border: 1px solid rgba(76,199,242,.15);
-      border-radius: 7px;
-    }
+    .group-line {
+      flex: 1;
+      height: 1px;
+      margin-bottom: 8px;
 
-    .panel-title {
-      margin-bottom: 22px;
-      color: #a9d4e7;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2,minmax(0,1fr));
-      gap: 4px 18px;
-    }
-
-    .form-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3,minmax(0,1fr));
-      gap: 4px 18px;
-    }
-
-    .full-width {
-      grid-column: 1 / -1;
-    }
-
-    /* LIST */
-
-    .data-list {
-      display: grid;
-      gap: 10px;
-    }
-
-    .data-row {
-      display: grid;
-      grid-template-columns: 60px 1fr auto;
-      align-items: center;
-      gap: 16px;
-      min-height: 77px;
-      padding: 12px 15px;
-      background: rgba(3,16,26,.86);
-      border: 1px solid rgba(72,190,233,.10);
-      border-radius: 5px;
-    }
-
-    .match-row {
-      grid-template-columns: 1fr auto;
-    }
-
-    .data-logo {
-      width: 55px;
-      height: 55px;
-      object-fit: contain;
-    }
-
-    .data-main strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 13px;
-      text-transform: uppercase;
-    }
-
-    .data-main span {
-      color: #698a9b;
-      font-size: 10px;
-      line-height: 1.7;
-    }
-
-    .row-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 7px;
-    }
-
-    /* CARDS */
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(4,minmax(0,1fr));
-      gap: 13px;
-    }
-
-    .content-card {
-      overflow: hidden;
-      background: #04131f;
-      border: 1px solid rgba(72,200,245,.16);
-      border-radius: 6px;
-    }
-
-    .content-image {
-      position: relative;
-      height: 230px;
-      background: #061a28;
-      overflow: hidden;
-    }
-
-    .content-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .big-number {
-      position: absolute;
-      top: 5px;
-      right: 12px;
-      z-index: 2;
-      font-family: 'Oswald',sans-serif;
-      font-size: 80px;
-      color: rgba(255,255,255,.25);
-    }
-
-    .content-info {
-      padding: 17px;
-    }
-
-    .content-info strong {
-      display: block;
-      font-size: 14px;
-      line-height: 1.4;
-      text-transform: uppercase;
-    }
-
-    .content-meta {
-      margin-top: 9px;
-      color: #6b8c9d;
-      font-size: 9px;
-      line-height: 1.7;
-    }
-
-    .card-actions {
-      display: flex;
-      gap: 7px;
-      padding: 0 17px 17px;
-    }
-
-    /* MESSAGES */
-
-    .messages-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .contact-message-card {
-      padding: 22px;
-      background: rgba(3,17,27,.90);
-      border: 1px solid rgba(75,196,238,.14);
-      border-radius: 6px;
-    }
-
-    .contact-message-card.new {
-      border-color: rgba(77,211,255,.48);
       background:
         linear-gradient(
-          135deg,
-          rgba(7,36,53,.98),
-          rgba(3,17,27,.94)
+          90deg,
+          rgba(77,204,251,.20),
+          transparent
         );
     }
 
-    .message-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 15px;
-    }
-
-    .message-sender strong {
-      display: block;
-      color: #fff;
-      font-size: 14px;
-    }
-
-    .message-sender a {
-      display: inline-block;
-      margin-top: 6px;
-      color: #62d7ff;
-      font-size: 10px;
-    }
-
-    .message-date {
-      color: #648392;
-      font-size: 9px;
-      white-space: nowrap;
-    }
-
-    .message-subject {
-      margin-bottom: 10px;
-      color: #dff6ff;
-      font-family: 'Oswald',sans-serif;
-      font-size: 21px;
-      text-transform: uppercase;
-    }
-
-    .message-text {
-      color: #9ab3bf;
-      font-size: 11px;
-      line-height: 1.8;
-      white-space: pre-wrap;
-    }
-
-    .message-status {
-      display: inline-block;
-      margin-top: 17px;
-      padding: 6px 8px;
-      border: 1px solid rgba(82,207,255,.25);
-      color: #86dfff;
-      font-size: 8px;
-      font-weight: 700;
-      letter-spacing: .12em;
-    }
-
-    .message-card-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 18px;
-    }
-
-    /* SETTINGS */
-
-    .settings-grid {
+    .players-grid {
       display: grid;
-      grid-template-columns: repeat(2,minmax(0,1fr));
-      gap: 5px 20px;
+      grid-template-columns: repeat(4,minmax(0,1fr));
+      gap: 14px;
     }
 
-    .settings-info {
-      margin-bottom: 25px;
-      padding: 18px 20px;
-      color: #8db0c0;
-      background: rgba(66,191,237,.05);
-      border: 1px solid rgba(72,196,239,.12);
-      border-radius: 5px;
-      font-size: 11px;
-      line-height: 1.8;
+    .player-card {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          #092131,
+          #031019
+        );
+
+      border: 1px solid rgba(73,194,237,.15);
+
+      transition:
+        transform .25s,
+        border-color .25s;
     }
 
-    .settings-preview {
-      margin-top: 30px;
-      padding: 22px;
-      background: rgba(2,14,23,.75);
-      border: 1px solid rgba(78,198,241,.12);
-      border-radius: 6px;
+    .player-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(77,210,255,.42);
     }
 
-    .settings-preview h3 {
-      margin-bottom: 16px;
-      color: #55d3ff;
+    .player-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .player-overlay {
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(2,8,12,.02) 25%,
+          rgba(2,9,14,.94) 100%
+        );
+    }
+
+    .player-number {
+      position: absolute;
+      z-index: 3;
+      top: 17px;
+      right: 18px;
+      color: rgba(235,249,255,.82);
       font-family: 'Oswald',sans-serif;
-      font-size: 22px;
+      font-size: 86px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .player-info {
+      position: absolute;
+      z-index: 4;
+      left: 22px;
+      right: 22px;
+      bottom: 24px;
+    }
+
+    .player-name {
+      color: #fff;
+      font-family: 'Oswald',sans-serif;
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 1.1;
       text-transform: uppercase;
     }
 
-    .settings-preview-row {
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255,255,255,.05);
-      color: #8aa9b8;
-      font-size: 11px;
+    .player-position {
+      margin-top: 10px;
+      color: #64d4fb;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .staff-card .player-info {
+      bottom: 28px;
+    }
+
+    .staff-card .player-name {
+      font-size: 27px;
+    }
+
+    .staff-role {
+      margin-top: 11px;
+      color: #64d4fb;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .15em;
       line-height: 1.6;
+      text-transform: uppercase;
     }
 
-    .settings-preview-row strong {
-      color: #e8f8ff;
+    .staff-card.no-photo::before {
+      content: "CASPIY";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-55%);
+      color: rgba(105,214,255,.08);
+      font-family: 'Oswald',sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      letter-spacing: .08em;
     }
 
-    @media (max-width:1100px) {
-      .card-grid {
+    .empty {
+      padding: 70px;
+      text-align: center;
+      color: #6f8e9d;
+      background: #04131e;
+      border: 1px solid rgba(72,194,238,.12);
+      font-size: 10px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #01070b;
+      border-top: 1px solid rgba(71,197,242,.10);
+    }
+
+    .footer-inner {
+      width: min(1440px,92%);
+      min-height: 120px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+    }
+
+    .footer-brand strong {
+      font-size: 12px;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .footer-copy {
+      color: #506a78;
+      font-size: 8px;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width:1150px) {
+      .players-grid {
         grid-template-columns: repeat(3,minmax(0,1fr));
       }
     }
 
-    @media (max-width:850px) {
-      .form-grid,
-      .form-grid-3,
-      .settings-grid {
-        grid-template-columns: 1fr;
+    @media (max-width:900px) {
+
+      .desktop-nav {
+        display: none;
       }
 
-      .card-grid {
+      .ticket-button {
+        display: none;
+      }
+
+      .mobile-menu-button {
+        display: flex;
+      }
+
+      .players-grid {
         grid-template-columns: repeat(2,minmax(0,1fr));
       }
 
-      .data-row,
-      .match-row {
-        grid-template-columns: 1fr;
-      }
-
-      .row-actions {
-        justify-content: flex-start;
-      }
     }
 
-    @media (max-width:550px) {
-      .card-grid {
+    @media (max-width:650px) {
+
+      .header-inner {
+        height: 78px;
+      }
+
+      .logo img {
+        width: 55px;
+        height: 55px;
+      }
+
+      .logo strong {
+        display: none;
+      }
+
+      .hero,
+      .hero-inner {
+        min-height: 390px;
+      }
+
+      .hero-title {
+        font-size: 68px;
+      }
+
+      .team-section {
+        padding: 55px 0 80px;
+      }
+
+      .players-grid {
         grid-template-columns: 1fr;
       }
 
-      .panel {
-        padding: 18px;
+      .player-card {
+        min-height: 500px;
       }
 
-      .message-head {
-        flex-direction: column;
+      .mobile-menu-inner {
+        padding-top: 105px;
       }
+
+      .mobile-nav a {
+        min-height: 55px;
+        font-size: 25px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 25px 0;
+      }
+
     }
   </style>
 </head>
 
 <body>
 
-<!-- LOGIN -->
+<!-- MOBILE MENU -->
 
-<div class="login-view" id="loginView">
+<div class="mobile-menu" id="mobileMenu">
 
-  <div class="login-card">
+  <div class="mobile-menu-inner">
 
-    <img class="login-logo" src="../logo.png" alt="CASPIY">
+    <div class="mobile-menu-small">
+      CASPIY FUTSAL CLUB
+    </div>
 
-    <h1>CASPIY ADMIN</h1>
+    <nav class="mobile-nav">
 
-    <p>Клуб сайтын басқару панелі</p>
+      <a href="index.html">
+        БАСТЫ БЕТ
+      </a>
 
-    <div class="message" id="loginMessage"></div>
+      <a href="team.html" class="active">
+        КОМАНДА
+      </a>
 
-    <div id="loginFormArea">
+      <a href="matches.html">
+        МАТЧТАР
+      </a>
 
-      <div class="field">
-        <label>Email</label>
-        <input
-          type="email"
-          id="loginEmail"
-          value="adilbek.saryyev@gmail.com"
-          autocomplete="email"
-        >
-      </div>
+      <a href="news.html">
+        ЖАҢАЛЫҚТАР
+      </a>
 
-      <div class="field">
-        <label>Пароль</label>
-        <input
-          type="password"
-          id="loginPassword"
-          autocomplete="current-password"
-        >
-      </div>
+      <a href="club.html">
+        КЛУБ
+      </a>
 
-      <div class="login-actions">
+      <a href="fans.html">
+        ЖАНКҮЙЕРЛЕР
+      </a>
 
-        <button
-          class="btn btn-primary"
-          id="passwordLoginBtn"
-          type="button"
-        >
-          Войти
-        </button>
+      <a href="contact.html">
+        БАЙЛАНЫС
+      </a>
 
-        <button
-          class="btn btn-secondary"
-          id="magicLoginBtn"
-          type="button"
-        >
-          Получить ссылку
-        </button>
+    </nav>
 
-      </div>
+    <a
+      href="#"
+      id="mobileTicketButton"
+      class="mobile-ticket disabled"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      БИЛЕТТЕР →
+    </a>
+
+    <div
+      class="mobile-address"
+      id="mobileAddress"
+    >
+      АҚТАУ · ҚАЗАҚСТАН
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+  <div class="header-inner">
+
+    <a
+      href="index.html"
+      class="logo"
+    >
+
+      <img
+        src="logo.png"
+        alt="CASPIY Futsal Club"
+      >
+
+      <strong>
+        CASPIY FUTSAL CLUB
+      </strong>
+
+    </a>
+
+    <nav class="desktop-nav">
+
+      <a href="index.html">
+        БАСТЫ БЕТ
+      </a>
+
+      <a
+        href="team.html"
+        class="active"
+      >
+        КОМАНДА
+      </a>
+
+      <a href="matches.html">
+        МАТЧТАР
+      </a>
+
+      <a href="news.html">
+        ЖАҢАЛЫҚТАР
+      </a>
+
+      <a href="club.html">
+        КЛУБ
+      </a>
+
+      <a href="fans.html">
+        ЖАНКҮЙЕРЛЕР
+      </a>
+
+      <a href="contact.html">
+        БАЙЛАНЫС
+      </a>
+
+    </nav>
+
+    <div class="header-actions">
+
+      <a
+        href="#"
+        id="ticketButton"
+        class="ticket-button disabled"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        БИЛЕТТЕР →
+      </a>
 
       <button
-        class="login-link"
-        id="forgotPasswordBtn"
+        class="mobile-menu-button"
+        id="mobileMenuButton"
         type="button"
+        aria-label="Мәзір"
+        aria-expanded="false"
       >
-        Забыли пароль?
+
+        <span class="mobile-lines">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+
       </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div class="hero-small">
+      CASPIY FUTSAL CLUB
+    </div>
+
+    <h1 class="hero-title">
+      КОМАНДА
+    </h1>
+
+    <div class="hero-text">
+      CASPIY · АҚТАУ · ҚАЗАҚСТАН
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- TEAM -->
+
+<section class="team-section">
+
+  <div
+    class="container"
+    id="teamContent"
+  >
+
+    <div class="empty">
+      ОЙЫНШЫЛАР ЖҮКТЕЛУДЕ...
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+
+      <img
+        src="logo.png"
+        alt="CASPIY"
+      >
+
+      <strong>
+        CASPIY FUTSAL CLUB
+      </strong>
 
     </div>
 
     <div
-      id="recoveryArea"
-      class="hidden"
+      class="footer-copy"
+      id="footerAddress"
     >
-
-      <div class="recovery-title">
-        Новый пароль
-      </div>
-
-      <p class="recovery-text">
-        Введите новый пароль администратора два раза.
-      </p>
-
-      <div class="field">
-        <label>Новый пароль</label>
-        <input
-          type="password"
-          id="newPassword"
-          minlength="6"
-          autocomplete="new-password"
-        >
-      </div>
-
-      <div class="field">
-        <label>Повторите новый пароль</label>
-        <input
-          type="password"
-          id="newPasswordRepeat"
-          minlength="6"
-          autocomplete="new-password"
-        >
-      </div>
-
-      <div class="login-actions">
-
-        <button
-          class="btn btn-primary"
-          id="saveNewPasswordBtn"
-          type="button"
-        >
-          Сохранить пароль
-        </button>
-
-        <button
-          class="btn btn-secondary"
-          id="cancelRecoveryBtn"
-          type="button"
-        >
-          Отмена
-        </button>
-
-      </div>
-
+      АҚТАУ · ҚАЗАҚСТАН
     </div>
 
   </div>
 
-</div>
-
-
-<!-- ADMIN -->
-
-<div id="adminView" class="hidden">
-
-  <div class="admin-header">
-
-    <div class="admin-header-inner">
-
-      <div class="admin-brand">
-
-        <img src="../logo.png" alt="CASPIY">
-
-        <div>
-          <strong>CASPIY</strong>
-          <span>ADMIN PANEL</span>
-        </div>
-
-      </div>
-
-      <div class="header-actions">
-
-        <a
-          href="../"
-          target="_blank"
-          class="btn btn-secondary"
-        >
-          Открыть сайт
-        </a>
-
-        <button class="btn btn-danger" id="logoutBtn">
-          Выйти
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <div class="admin-nav">
-
-    <div class="admin-nav-inner">
-
-      <button
-        class="nav-button active"
-        data-section="matchesSection"
-      >
-        Матчи
-      </button>
-
-      <button
-        class="nav-button"
-        data-section="teamsSection"
-      >
-        Команды
-      </button>
-
-      <button
-        class="nav-button"
-        data-section="playersSection"
-      >
-        Команда
-      </button>
-
-      <button
-        class="nav-button"
-        data-section="newsSection"
-      >
-        Новости
-      </button>
-
-      <button
-        class="nav-button"
-        data-section="messagesSection"
-      >
-        Сообщения
-        <span
-          class="messages-badge hidden"
-          id="messagesBadge"
-        >0</span>
-      </button>
-
-      <button
-        class="nav-button"
-        data-section="settingsSection"
-      >
-        Настройки
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <main class="admin-content">
-
-    <div class="message" id="globalMessage"></div>
-
-
-    <!-- MATCHES -->
-
-    <section
-      class="admin-section active"
-      id="matchesSection"
-    >
-
-      <div class="section-title">
-        <span>МАТЧ-ЦЕНТР</span>
-        <h2>МАТЧИ</h2>
-      </div>
-
-      <div class="panel">
-
-        <div class="panel-title">
-          Добавить / изменить матч
-        </div>
-
-        <form id="matchForm">
-
-          <div class="form-grid">
-
-            <div class="field">
-
-              <label>Соперник</label>
-
-              <select id="matchTeam" required>
-                <option value="">Выберите команду</option>
-              </select>
-
-            </div>
-
-            <div class="field">
-              <label>Дата и время</label>
-              <input
-                type="datetime-local"
-                id="matchDate"
-                required
-              >
-            </div>
-
-            <div class="field">
-              <label>Турнир</label>
-              <input type="text" id="matchCompetition" required>
-            </div>
-
-            <div class="field">
-              <label>Арена</label>
-              <input type="text" id="matchVenue">
-            </div>
-
-            <div class="field">
-
-              <label>Статус</label>
-
-              <select id="matchStatus">
-                <option value="upcoming">Предстоящий</option>
-                <option value="finished">Завершён</option>
-                <option value="postponed">Перенесён</option>
-              </select>
-
-            </div>
-
-            <div class="field">
-
-              <label>Хозяева / гости</label>
-
-              <select id="matchIsHome">
-                <option value="true">Каспий — хозяева</option>
-                <option value="false">Каспий — гости</option>
-              </select>
-
-            </div>
-
-            <div class="field">
-              <label>Голы Каспия</label>
-              <input type="number" min="0" id="caspiyScore">
-            </div>
-
-            <div class="field">
-              <label>Голы соперника</label>
-              <input type="number" min="0" id="opponentScore">
-            </div>
-
-          </div>
-
-          <label class="checkbox-field">
-            <input type="checkbox" id="matchFeatured">
-            Показывать как следующий матч
-          </label>
-
-          <div class="form-actions">
-
-            <button type="submit" class="btn btn-primary">
-              Сохранить матч
-            </button>
-
-            <button
-              type="button"
-              class="btn btn-secondary hidden"
-              id="cancelMatchEdit"
-            >
-              Отмена
-            </button>
-
-          </div>
-
-        </form>
-
-      </div>
-
-      <div class="panel">
-
-        <div class="panel-title">
-          Все матчи
-        </div>
-
-        <div class="data-list" id="matchesList"></div>
-
-      </div>
-
-    </section>
-
-
-    <!-- TEAMS -->
-
-    <section class="admin-section" id="teamsSection">
-
-      <div class="section-title">
-        <span>СОПЕРНИКТЕР</span>
-        <h2>КОМАНДЫ</h2>
-      </div>
-
-      <div class="panel">
-
-        <div class="panel-title">
-          Добавить / изменить команду
-        </div>
-
-        <form id="teamForm">
-
-          <div class="form-grid">
-
-            <div class="field">
-              <label>Название</label>
-              <input type="text" id="teamName" required>
-            </div>
-
-            <div class="field">
-              <label>Город</label>
-              <input type="text" id="teamCity">
-            </div>
-
-            <div class="field full-width">
-              <label>Логотип</label>
-              <input
-                type="file"
-                id="teamLogo"
-                accept="image/png,image/jpeg,image/webp"
-              >
-            </div>
-
-          </div>
-
-          <label class="checkbox-field">
-            <input type="checkbox" id="teamActive" checked>
-            Команда активна
-          </label>
-
-          <div class="form-actions">
-
-            <button type="submit" class="btn btn-primary">
-              Сохранить команду
-            </button>
-
-            <button
-              type="button"
-              class="btn btn-secondary hidden"
-              id="cancelTeamEdit"
-            >
-              Отмена
-            </button>
-
-          </div>
-
-        </form>
-
-      </div>
-
-      <div class="panel">
-
-        <div class="panel-title">
-          Все команды
-        </div>
-
-        <div class="data-list" id="teamsList"></div>
-
-      </div>
-
-    </section>
-
-
-    <!-- PLAYERS -->
-
-    <section class="admin-section" id="playersSection">
-
-      <div class="section-title">
-        <span>CASPIY FUTSAL CLUB</span>
-        <h2>КОМАНДА</h2>
-      </div>
-
-      <div class="panel">
-
-        <div class="panel-title">
-          Добавить / изменить игрока
-        </div>
-
-        <form id="playerForm">
-
-          <div class="form-grid-3">
-
-            <div class="field">
-              <label>Имя и фамилия</label>
-              <input type="text" id="playerName" required>
-            </div>
-
-            <div class="field">
-              <label>Номер</label>
-              <input
-                type="number"
-                id="playerNumber"
-                min="0"
-                max="99"
-              >
-            </div>
-
-            <div class="field">
-
-              <label>Позиция</label>
-
-              <select id="playerPosition" required>
-                <option value="">Выберите позицию</option>
-                <option value="ҚАҚПАШЫ">Қақпашы</option>
-                <option value="ҚОРҒАУШЫ">Қорғаушы</option>
-                <option value="ӘМБЕБАП">Әмбебап</option>
-                <option value="ШАБУЫЛШЫ">Шабуылшы</option>
-              </select>
-
-            </div>
-
-            <div class="field">
-              <label>Порядок</label>
-              <input
-                type="number"
-                id="playerSort"
-                value="0"
-                min="0"
-              >
-            </div>
-
-            <div class="field full-width">
-              <label>Фотография</label>
-              <input
-                type="file"
-                id="playerPhoto"
-                accept="image/png,image/jpeg,image/webp"
-              >
-            </div>
-
-          </div>
-
-          <label class="checkbox-field">
-            <input type="checkbox" id="playerActive" checked>
-            Показывать игрока на сайте
-          </label>
-
-          <div class="form-actions">
-
-            <button type="submit" class="btn btn-primary">
-              Сохранить игрока
-            </button>
-
-            <button
-              type="button"
-              class="btn btn-secondary hidden"
-              id="cancelPlayerEdit"
-            >
-              Отмена
-            </button>
-
-          </div>
-
-        </form>
-
-      </div>
-
-      <div class="panel">
-
-        <div class="panel-title">
-          Состав команды
-        </div>
-
-        <div class="card-grid" id="playersList"></div>
-
-      </div>
-
-
-      <div class="panel">
-
-        <div class="panel-title">
-          Тренерский штаб
-        </div>
-
-        <form id="staffForm">
-
-          <div class="form-grid-3">
-
-            <div class="field">
-              <label>Имя и фамилия</label>
-              <input
-                type="text"
-                id="staffName"
-                required
-              >
-            </div>
-
-            <div class="field">
-              <label>Должность</label>
-              <input
-                type="text"
-                id="staffRole"
-                placeholder="Например: Бас бапкер"
-                required
-              >
-            </div>
-
-            <div class="field">
-              <label>Порядок</label>
-              <input
-                type="number"
-                id="staffSort"
-                value="0"
-                min="0"
-              >
-            </div>
-
-            <div class="field full-width">
-              <label>Фотография</label>
-              <input
-                type="file"
-                id="staffPhoto"
-                accept="image/png,image/jpeg,image/webp"
-              >
-            </div>
-
-          </div>
-
-          <label class="checkbox-field">
-            <input
-              type="checkbox"
-              id="staffActive"
-              checked
-            >
-            Показывать в разделе «Команда»
-          </label>
-
-          <div class="form-actions">
-
-            <button
-              type="submit"
-              class="btn btn-primary"
-            >
-              Сохранить сотрудника
-            </button>
-
-            <button
-              type="button"
-              class="btn btn-secondary hidden"
-              id="cancelStaffEdit"
-            >
-              Отмена
-            </button>
-
-          </div>
-
-        </form>
-
-      </div>
-
-
-      <div class="panel">
-
-        <div class="panel-title">
-          Список тренерского штаба
-        </div>
-
-        <div
-          class="card-grid"
-          id="teamStaffList"
-        ></div>
-
-      </div>
-
-    </section>
-
-
-    <!-- NEWS -->
-
-    <section class="admin-section" id="newsSection">
-
-      <div class="section-title">
-        <span>МЕДИА</span>
-        <h2>ЖАҢАЛЫҚТАР</h2>
-      </div>
-
-      <div class="panel">
-
-        <div class="panel-title">
-          Добавить / изменить новость
-        </div>
-
-        <form id="newsForm">
-
-          <div class="form-grid">
-
-            <div class="field full-width">
-              <label>Заголовок</label>
-              <input type="text" id="newsTitle" required>
-            </div>
-
-            <div class="field full-width">
-              <label>Текст</label>
-              <textarea id="newsDescription"></textarea>
-            </div>
-
-            <div class="field">
-              <label>Дата публикации</label>
-              <input
-                type="datetime-local"
-                id="newsDate"
-                required
-              >
-            </div>
-
-            <div class="field">
-              <label>Порядок</label>
-              <input
-                type="number"
-                id="newsSort"
-                value="0"
-                min="0"
-              >
-            </div>
-
-            <div class="field full-width">
-              <label>Фотография</label>
-              <input
-                type="file"
-                id="newsImage"
-                accept="image/png,image/jpeg,image/webp"
-              >
-            </div>
-
-          </div>
-
-          <label class="checkbox-field">
-            <input type="checkbox" id="newsActive" checked>
-            Показывать новость на сайте
-          </label>
-
-          <div class="form-actions">
-
-            <button type="submit" class="btn btn-primary">
-              Сохранить новость
-            </button>
-
-            <button
-              type="button"
-              class="btn btn-secondary hidden"
-              id="cancelNewsEdit"
-            >
-              Отмена
-            </button>
-
-          </div>
-
-        </form>
-
-      </div>
-
-      <div class="panel">
-
-        <div class="panel-title">
-          Все новости
-        </div>
-
-        <div class="card-grid" id="newsList"></div>
-
-      </div>
-
-    </section>
-
-
-    <!-- MESSAGES -->
-
-    <section class="admin-section" id="messagesSection">
-
-      <div class="section-title">
-        <span>БАЙЛАНЫС</span>
-        <h2>СООБЩЕНИЯ</h2>
-      </div>
-
-      <div class="panel">
-
-        <div class="panel-title">
-          Сообщения с сайта
-        </div>
-
-        <div class="messages-list" id="messagesList"></div>
-
-      </div>
-
-    </section>
-
-
-    <!-- SETTINGS -->
-
-    <section class="admin-section" id="settingsSection">
-
-      <div class="section-title">
-        <span>CASPIY WEBSITE</span>
-        <h2>НАСТРОЙКИ</h2>
-      </div>
-
-      <div class="panel">
-
-        <div class="panel-title">
-          Контактные данные сайта
-        </div>
-
-        <div class="settings-info">
-          Эти данные будут использоваться на страницах CASPIY.
-          После следующего шага телефон, E-mail, Instagram,
-          адрес и ссылка на билеты будут обновляться на сайте автоматически.
-        </div>
-
-        <form id="settingsForm">
-
-          <div class="settings-grid">
-
-            <div class="field">
-              <label>Официальный E-mail</label>
-              <input
-                type="email"
-                id="settingEmail"
-                placeholder="info@caspiy.kz"
-              >
-            </div>
-
-            <div class="field">
-              <label>Телефон</label>
-              <input
-                type="text"
-                id="settingPhone"
-                placeholder="+7 700 000 00 00"
-              >
-            </div>
-
-            <div class="field">
-              <label>Название Instagram</label>
-              <input
-                type="text"
-                id="settingInstagramName"
-                placeholder="@caspiyfutsal"
-              >
-            </div>
-
-            <div class="field">
-              <label>Ссылка Instagram</label>
-              <input
-                type="url"
-                id="settingInstagramUrl"
-                placeholder="https://instagram.com/..."
-              >
-            </div>
-
-            <div class="field full-width">
-              <label>Адрес / город</label>
-              <input
-                type="text"
-                id="settingAddress"
-                placeholder="Ақтау, Қазақстан"
-              >
-            </div>
-
-            <div class="field full-width">
-              <label>Ссылка на билеты</label>
-              <input
-                type="url"
-                id="settingTicketUrl"
-                placeholder="https://..."
-              >
-            </div>
-
-          </div>
-
-          <div class="form-actions">
-
-            <button
-              type="submit"
-              class="btn btn-primary"
-            >
-              Сохранить настройки
-            </button>
-
-          </div>
-
-        </form>
-
-
-        <div class="settings-preview">
-
-          <h3>Текущие данные</h3>
-
-          <div class="settings-preview-row">
-            E-mail:
-            <strong id="previewEmail">—</strong>
-          </div>
-
-          <div class="settings-preview-row">
-            Телефон:
-            <strong id="previewPhone">—</strong>
-          </div>
-
-          <div class="settings-preview-row">
-            Instagram:
-            <strong id="previewInstagram">—</strong>
-          </div>
-
-          <div class="settings-preview-row">
-            Адрес:
-            <strong id="previewAddress">—</strong>
-          </div>
-
-          <div class="settings-preview-row">
-            Билеты:
-            <strong id="previewTicket">—</strong>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-</div>
+</footer>
 
 
 <script type="module">
 
   import { createClient }
-  from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+  from
+  'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
 
   const supabase =
     createClient(
       'https://socqbqyhkyvxnsukgcqm.supabase.co',
-      'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK',
-      {
-        auth:{
-          persistSession:true,
-          autoRefreshToken:true,
-          detectSessionInUrl:true
-        }
+      'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK'
+    );
+
+
+  /* MOBILE MENU */
+
+  const mobileMenu =
+    document.getElementById(
+      'mobileMenu'
+    );
+
+
+  const mobileMenuButton =
+    document.getElementById(
+      'mobileMenuButton'
+    );
+
+
+  function openMenu() {
+
+    mobileMenu.classList.add(
+      'open'
+    );
+
+    mobileMenuButton.classList.add(
+      'active'
+    );
+
+    mobileMenuButton.setAttribute(
+      'aria-expanded',
+      'true'
+    );
+
+    document.body.classList.add(
+      'menu-open'
+    );
+
+  }
+
+
+  function closeMenu() {
+
+    mobileMenu.classList.remove(
+      'open'
+    );
+
+    mobileMenuButton.classList.remove(
+      'active'
+    );
+
+    mobileMenuButton.setAttribute(
+      'aria-expanded',
+      'false'
+    );
+
+    document.body.classList.remove(
+      'menu-open'
+    );
+
+  }
+
+
+  mobileMenuButton.addEventListener(
+    'click',
+    () => {
+
+      if (
+        mobileMenu.classList.contains(
+          'open'
+        )
+      ) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+
+    }
+  );
+
+
+  mobileMenu
+    .querySelectorAll('a')
+    .forEach(
+      link => {
+
+        link.addEventListener(
+          'click',
+          closeMenu
+        );
+
       }
     );
 
 
-  const ADMIN_UID =
-    '80662bfe-0602-41e8-ac07-fff77451ea21';
+  document.addEventListener(
+    'keydown',
+    event => {
+
+      if (
+        event.key === 'Escape'
+      ) {
+        closeMenu();
+      }
+
+    }
+  );
 
 
-  let teamsCache = [];
-  let matchesCache = [];
-  let playersCache = [];
-  let teamStaffCache = [];
-  let newsCache = [];
-  let messagesCache = [];
-  let settingsCache = null;
+  window.addEventListener(
+    'resize',
+    () => {
 
-  let editingTeamId = null;
-  let editingTeamLogo = null;
+      if (
+        window.innerWidth > 900
+      ) {
+        closeMenu();
+      }
 
-  let editingMatchId = null;
+    }
+  );
 
-  let editingPlayerId = null;
-  let editingPlayerPhoto = null;
-
-  let editingStaffId = null;
-  let editingStaffPhoto = null;
-
-  let editingNewsId = null;
-  let editingNewsImage = null;
-
-
-  /* HELPERS */
 
   function escapeHtml(value) {
 
@@ -1645,1562 +1171,162 @@
   }
 
 
-  function showMessage(element,text,type='success') {
+  /* SETTINGS */
 
-    element.className =
-      `message ${type}`;
-
-    element.textContent =
-      text;
-
-    setTimeout(() => {
-
-      element.className =
-        'message';
-
-      element.textContent =
-        '';
-
-    },5000);
-
-  }
-
-
-  async function uploadFile(bucket,file) {
-
-    const ext =
-      file.name
-        .split('.')
-        .pop()
-        .toLowerCase();
-
-
-    const fileName =
-      `${Date.now()}-${crypto.randomUUID()}.${ext}`;
-
-
-    const {
-      error
-    } =
-      await supabase
-        .storage
-        .from(bucket)
-        .upload(
-          fileName,
-          file,
-          {
-            cacheControl:'3600',
-            upsert:false
-          }
-        );
-
-
-    if (error) {
-      throw error;
-    }
-
+  async function loadSettings() {
 
     const {
       data
     } =
-      supabase
-        .storage
-        .from(bucket)
-        .getPublicUrl(fileName);
-
-
-    return data.publicUrl;
-
-  }
-
-
-  function aqtauInputToUTC(value) {
-
-    if (!value) {
-      return null;
-    }
-
-    return new Date(
-      `${value}:00+05:00`
-    ).toISOString();
-
-  }
-
-
-  function utcToAqtauInput(value) {
-
-    if (!value) {
-      return '';
-    }
-
-
-    const date =
-      new Date(value);
-
-
-    const local =
-      new Date(
-        date.getTime() +
-        5 * 60 * 60 * 1000
-      );
-
-
-    return local
-      .toISOString()
-      .slice(0,16);
-
-  }
-
-
-  function formatDate(value) {
-
-    if (!value) {
-      return '';
-    }
-
-
-    return new Intl.DateTimeFormat(
-      'ru-RU',
-      {
-        timeZone:'Asia/Aqtau',
-        day:'2-digit',
-        month:'2-digit',
-        year:'numeric',
-        hour:'2-digit',
-        minute:'2-digit'
-      }
-    )
-    .format(
-      new Date(value)
-    );
-
-  }
-
-
-  const loginView =
-    document.getElementById('loginView');
-
-  const adminView =
-    document.getElementById('adminView');
-
-  const loginMessage =
-    document.getElementById('loginMessage');
-
-  const globalMessage =
-    document.getElementById('globalMessage');
-
-  const loginFormArea =
-    document.getElementById('loginFormArea');
-
-  const recoveryArea =
-    document.getElementById('recoveryArea');
-
-  const RECOVERY_FLAG =
-    'caspiy_admin_password_recovery';
-
-  const ADMIN_URL =
-    `${window.location.origin}${window.location.pathname}`;
-
-  let recoveryMode =
-    localStorage.getItem(RECOVERY_FLAG) === '1';
-
-
-  function showLoginForm() {
-
-    recoveryMode = false;
-
-    loginFormArea.classList.remove('hidden');
-    recoveryArea.classList.add('hidden');
-
-  }
-
-
-  function showRecoveryForm() {
-
-    recoveryMode = true;
-
-    loginView.classList.remove('hidden');
-    adminView.classList.add('hidden');
-
-    loginFormArea.classList.add('hidden');
-    recoveryArea.classList.remove('hidden');
-
-  }
-
-
-  /* AUTH */
-
-  async function showAdmin(session) {
-
-    if (!session?.user) {
-
-      loginView.classList.remove('hidden');
-      adminView.classList.add('hidden');
-
-      return;
-
-    }
-
-
-    if (session.user.id !== ADMIN_UID) {
-
-      await supabase.auth.signOut();
-
-      showMessage(
-        loginMessage,
-        'Нет доступа к админ-панели.',
-        'error'
-      );
-
-      return;
-
-    }
-
-
-    loginView.classList.add('hidden');
-    adminView.classList.remove('hidden');
-
-
-    await Promise.all([
-      loadTeams(),
-      loadMatches(),
-      loadPlayers(),
-      loadTeamStaff(),
-      loadNews(),
-      loadMessages(),
-      loadSettings()
-    ]);
-
-  }
-
-
-  document
-    .getElementById('passwordLoginBtn')
-    .addEventListener(
-      'click',
-      async () => {
-
-        const email =
-          document
-            .getElementById('loginEmail')
-            .value
-            .trim();
-
-
-        const password =
-          document
-            .getElementById('loginPassword')
-            .value;
-
-
-        const {
-          data,
-          error
-        } =
-          await supabase
-            .auth
-            .signInWithPassword({
-              email,
-              password
-            });
-
-
-        if (error) {
-
-          showMessage(
-            loginMessage,
-            error.message,
-            'error'
-          );
-
-          return;
-
-        }
-
-
-        await showAdmin(
-          data.session
-        );
-
-      }
-    );
-
-
-  document
-    .getElementById('magicLoginBtn')
-    .addEventListener(
-      'click',
-      async () => {
-
-        const email =
-          document
-            .getElementById('loginEmail')
-            .value
-            .trim();
-
-
-        if (!email) {
-
-          showMessage(
-            loginMessage,
-            'Введите E-mail администратора.',
-            'error'
-          );
-
-          return;
-
-        }
-
-
-        const {
-          error
-        } =
-          await supabase
-            .auth
-            .signInWithOtp({
-              email,
-              options:{
-                emailRedirectTo:
-                  ADMIN_URL,
-                shouldCreateUser:
-                  false
-              }
-            });
-
-
-        if (error) {
-
-          showMessage(
-            loginMessage,
-            error.message,
-            'error'
-          );
-
-          return;
-
-        }
-
-
-        showMessage(
-          loginMessage,
-          'Ссылка для входа отправлена на почту.'
-        );
-
-      }
-    );
-
-
-  document
-    .getElementById('forgotPasswordBtn')
-    .addEventListener(
-      'click',
-      async () => {
-
-        const email =
-          document
-            .getElementById('loginEmail')
-            .value
-            .trim();
-
-
-        if (!email) {
-
-          showMessage(
-            loginMessage,
-            'Сначала введите E-mail администратора.',
-            'error'
-          );
-
-          return;
-
-        }
-
-
-        localStorage.setItem(
-          RECOVERY_FLAG,
-          '1'
-        );
-
-
-        const {
-          error
-        } =
-          await supabase
-            .auth
-            .resetPasswordForEmail(
-              email,
-              {
-                redirectTo:
-                  ADMIN_URL
-              }
-            );
-
-
-        if (error) {
-
-          localStorage.removeItem(
-            RECOVERY_FLAG
-          );
-
-
-          showMessage(
-            loginMessage,
-            error.message,
-            'error'
-          );
-
-          return;
-
-        }
-
-
-        showMessage(
-          loginMessage,
-          'Ссылка для восстановления пароля отправлена на почту.'
-        );
-
-      }
-    );
-
-
-  document
-    .getElementById('saveNewPasswordBtn')
-    .addEventListener(
-      'click',
-      async () => {
-
-        const password =
-          document
-            .getElementById('newPassword')
-            .value;
-
-
-        const passwordRepeat =
-          document
-            .getElementById('newPasswordRepeat')
-            .value;
-
-
-        if (
-          !password ||
-          password.length < 6
-        ) {
-
-          showMessage(
-            loginMessage,
-            'Новый пароль должен содержать минимум 6 символов.',
-            'error'
-          );
-
-          return;
-
-        }
-
-
-        if (
-          password !== passwordRepeat
-        ) {
-
-          showMessage(
-            loginMessage,
-            'Пароли не совпадают.',
-            'error'
-          );
-
-          return;
-
-        }
-
-
-        const {
-          data:{
-            session
-          }
-        } =
-          await supabase
-            .auth
-            .getSession();
-
-
-        if (
-          !session?.user ||
-          session.user.id !== ADMIN_UID
-        ) {
-
-          localStorage.removeItem(
-            RECOVERY_FLAG
-          );
-
-          await supabase.auth.signOut();
-
-          showLoginForm();
-
-          showMessage(
-            loginMessage,
-            'Ссылка восстановления недействительна или не относится к администратору.',
-            'error'
-          );
-
-          return;
-
-        }
-
-
-        const {
-          error
-        } =
-          await supabase
-            .auth
-            .updateUser({
-              password
-            });
-
-
-        if (error) {
-
-          showMessage(
-            loginMessage,
-            error.message,
-            'error'
-          );
-
-          return;
-
-        }
-
-
-        recoveryMode = false;
-
-        localStorage.removeItem(
-          RECOVERY_FLAG
-        );
-
-
-        document
-          .getElementById('newPassword')
-          .value = '';
-
-        document
-          .getElementById('newPasswordRepeat')
-          .value = '';
-
-
-        window.history.replaceState(
-          {},
-          document.title,
-          window.location.pathname
-        );
-
-
-        showMessage(
-          loginMessage,
-          'Пароль успешно изменён.'
-        );
-
-
-        const {
-          data:{
-            session:updatedSession
-          }
-        } =
-          await supabase
-            .auth
-            .getSession();
-
-
-        await showAdmin(
-          updatedSession
-        );
-
-      }
-    );
-
-
-  document
-    .getElementById('cancelRecoveryBtn')
-    .addEventListener(
-      'click',
-      async () => {
-
-        recoveryMode = false;
-
-        localStorage.removeItem(
-          RECOVERY_FLAG
-        );
-
-        await supabase
-          .auth
-          .signOut();
-
-        showLoginForm();
-
-      }
-    );
-
-
-  document
-    .getElementById('logoutBtn')
-    .addEventListener(
-      'click',
-      async () => {
-
-        recoveryMode = false;
-
-        localStorage.removeItem(
-          RECOVERY_FLAG
-        );
-
-        await supabase.auth.signOut();
-
-        location.reload();
-
-      }
-    );
-
-
-  /* NAV */
-
-  document
-    .querySelectorAll('.nav-button')
-    .forEach(
-      button => {
-
-        button.addEventListener(
-          'click',
-          () => {
-
-            document
-              .querySelectorAll('.nav-button')
-              .forEach(
-                item =>
-                  item.classList.remove('active')
-              );
-
-
-            document
-              .querySelectorAll('.admin-section')
-              .forEach(
-                section =>
-                  section.classList.remove('active')
-              );
-
-
-            button.classList.add('active');
-
-
-            document
-              .getElementById(
-                button.dataset.section
-              )
-              .classList
-              .add('active');
-
-
-            if (
-              button.dataset.section ===
-              'messagesSection'
-            ) {
-              loadMessages();
-            }
-
-
-            if (
-              button.dataset.section ===
-              'settingsSection'
-            ) {
-              loadSettings();
-            }
-
-          }
-        );
-
-      }
-    );
-
-
-  /* TEAMS */
-
-  async function loadTeams() {
-
-    const {
-      data,
-      error
-    } =
       await supabase
-        .from('teams')
-        .select('*')
-        .order('name');
+        .from('site_settings')
+        .select(
+          'ticket_url,address'
+        )
+        .eq('id',1)
+        .maybeSingle();
 
 
-    if (error) {
+    if (!data) {
       return;
     }
 
 
-    teamsCache =
-      data || [];
-
-
-    renderTeams();
-    fillTeamsSelect();
-
-  }
-
-
-  function fillTeamsSelect() {
-
-    const select =
-      document.getElementById('matchTeam');
-
-
-    const currentValue =
-      select.value;
-
-
-    select.innerHTML =
-      '<option value="">Выберите команду</option>';
-
-
-    teamsCache
-      .filter(
-        team =>
-          team.is_active !== false
-      )
-      .forEach(
-        team => {
-
-          const option =
-            document.createElement('option');
-
-
-          option.value =
-            team.id;
-
-
-          option.textContent =
-            `${team.name}${team.city ? ` — ${team.city}` : ''}`;
-
-
-          select.appendChild(
-            option
-          );
-
-        }
+    const ticketButton =
+      document.getElementById(
+        'ticketButton'
       );
 
 
-    if (currentValue) {
-      select.value =
-        currentValue;
+    const mobileTicketButton =
+      document.getElementById(
+        'mobileTicketButton'
+      );
+
+
+    if (data.ticket_url) {
+
+      ticketButton.href =
+        data.ticket_url;
+
+      mobileTicketButton.href =
+        data.ticket_url;
+
+      ticketButton.classList.remove(
+        'disabled'
+      );
+
+      mobileTicketButton.classList.remove(
+        'disabled'
+      );
+
     }
 
-  }
 
+    if (data.address) {
 
-  function renderTeams() {
-
-    const list =
-      document.getElementById('teamsList');
-
-
-    if (!teamsCache.length) {
-
-      list.innerHTML =
-        '<div class="data-row">Команд пока нет.</div>';
-
-      return;
-
-    }
-
-
-    list.innerHTML =
-      teamsCache
-        .map(
-          team => `
-
-            <div class="data-row">
-
-              <div>
-
-                ${
-                  team.logo_url
-                    ? `
-                      <img
-                        class="data-logo"
-                        src="${escapeHtml(team.logo_url)}"
-                        alt=""
-                      >
-                    `
-                    : ''
-                }
-
-              </div>
-
-              <div class="data-main">
-
-                <strong>
-                  ${escapeHtml(team.name)}
-                </strong>
-
-                <span>
-                  ${escapeHtml(team.city || '')}
-                </span>
-
-              </div>
-
-              <div class="row-actions">
-
-                <button
-                  class="btn btn-secondary btn-small"
-                  onclick="window.editTeam(${team.id})"
-                >
-                  Изменить
-                </button>
-
-                <button
-                  class="btn btn-danger btn-small"
-                  onclick="window.deleteTeam(${team.id})"
-                >
-                  Удалить
-                </button>
-
-              </div>
-
-            </div>
-
-          `
-        )
-        .join('');
-
-  }
-
-
-  document
-    .getElementById('teamForm')
-    .addEventListener(
-      'submit',
-      async event => {
-
-        event.preventDefault();
-
-
-        try {
-
-          const file =
-            document
-              .getElementById('teamLogo')
-              .files[0];
-
-
-          let logoUrl =
-            editingTeamLogo;
-
-
-          if (file) {
-
-            logoUrl =
-              await uploadFile(
-                'team-logos',
-                file
-              );
-
-          }
-
-
-          const payload = {
-
-            name:
-              document
-                .getElementById('teamName')
-                .value
-                .trim(),
-
-            city:
-              document
-                .getElementById('teamCity')
-                .value
-                .trim(),
-
-            logo_url:
-              logoUrl,
-
-            is_active:
-              document
-                .getElementById('teamActive')
-                .checked
-
-          };
-
-
-          let response;
-
-
-          if (editingTeamId) {
-
-            response =
-              await supabase
-                .from('teams')
-                .update(payload)
-                .eq('id',editingTeamId);
-
-          } else {
-
-            response =
-              await supabase
-                .from('teams')
-                .insert(payload);
-
-          }
-
-
-          if (response.error) {
-            throw response.error;
-          }
-
-
-          resetTeamForm();
-
-          await loadTeams();
-
-
-          showMessage(
-            globalMessage,
-            'Команда сохранена.'
-          );
-
-
-        } catch(error) {
-
-          showMessage(
-            globalMessage,
-            error.message,
-            'error'
-          );
-
-        }
-
-      }
-    );
-
-
-  window.editTeam =
-    function(id) {
-
-      const team =
-        teamsCache.find(
-          item =>
-            item.id === id
-        );
-
-
-      if (!team) {
-        return;
-      }
-
-
-      editingTeamId =
-        team.id;
-
-      editingTeamLogo =
-        team.logo_url || null;
-
-
-      document.getElementById('teamName').value =
-        team.name || '';
-
-      document.getElementById('teamCity').value =
-        team.city || '';
-
-      document.getElementById('teamActive').checked =
-        team.is_active !== false;
+      const address =
+        data.address.toUpperCase();
 
 
       document
-        .getElementById('cancelTeamEdit')
-        .classList
-        .remove('hidden');
-
-    };
-
-
-  window.deleteTeam =
-    async function(id) {
-
-      if (
-        !confirm('Удалить команду?')
-      ) {
-        return;
-      }
-
-
-      const {
-        error
-      } =
-        await supabase
-          .from('teams')
-          .delete()
-          .eq('id',id);
-
-
-      if (error) {
-
-        showMessage(
-          globalMessage,
-          error.message,
-          'error'
-        );
-
-        return;
-
-      }
-
-
-      await loadTeams();
-
-    };
-
-
-  function resetTeamForm() {
-
-    editingTeamId =
-      null;
-
-    editingTeamLogo =
-      null;
-
-
-    document
-      .getElementById('teamForm')
-      .reset();
-
-
-    document
-      .getElementById('teamActive')
-      .checked =
-        true;
-
-
-    document
-      .getElementById('cancelTeamEdit')
-      .classList
-      .add('hidden');
-
-  }
-
-
-  document
-    .getElementById('cancelTeamEdit')
-    .addEventListener(
-      'click',
-      resetTeamForm
-    );
-
-
-  /* MATCHES */
-
-  async function loadMatches() {
-
-    const {
-      data,
-      error
-    } =
-      await supabase
-        .from('matches')
-        .select('*')
-        .order(
-          'match_date',
-          {
-            ascending:false
-          }
-        );
-
-
-    if (error) {
-      return;
-    }
-
-
-    matchesCache =
-      data || [];
-
-
-    renderMatches();
-
-  }
-
-
-  function renderMatches() {
-
-    const list =
-      document.getElementById('matchesList');
-
-
-    if (!matchesCache.length) {
-
-      list.innerHTML =
-        '<div class="data-row">Матчей пока нет.</div>';
-
-      return;
-
-    }
-
-
-    list.innerHTML =
-      matchesCache
-        .map(
-          match => `
-
-            <div class="data-row match-row">
-
-              <div class="data-main">
-
-                <strong>
-                  КАСПИЙ — ${escapeHtml(match.opponent)}
-                  ${match.is_featured ? ' · БЛИЖАЙШИЙ' : ''}
-                </strong>
-
-                <span>
-
-                  ${formatDate(match.match_date)}
-
-                  · ${escapeHtml(match.competition || '')}
-
-                  · ${escapeHtml(match.venue || '')}
-
-                  <br>
-
-                  ${escapeHtml(match.status || '')}
-
-                  ${
-                    match.status === 'finished'
-                      ? ` · ${match.caspiy_score ?? '-'}:${match.opponent_score ?? '-'}`
-                      : ''
-                  }
-
-                </span>
-
-              </div>
-
-              <div class="row-actions">
-
-                <button
-                  class="btn btn-secondary btn-small"
-                  onclick="window.featureMatch(${match.id})"
-                >
-                  Ближайший
-                </button>
-
-                <button
-                  class="btn btn-secondary btn-small"
-                  onclick="window.editMatch(${match.id})"
-                >
-                  Изменить
-                </button>
-
-                <button
-                  class="btn btn-danger btn-small"
-                  onclick="window.deleteMatch(${match.id})"
-                >
-                  Удалить
-                </button>
-
-              </div>
-
-            </div>
-
-          `
+        .getElementById(
+          'footerAddress'
         )
-        .join('');
-
-  }
-
-
-  document
-    .getElementById('matchForm')
-    .addEventListener(
-      'submit',
-      async event => {
-
-        event.preventDefault();
-
-
-        try {
-
-          const teamId =
-            Number(
-              document
-                .getElementById('matchTeam')
-                .value
-            );
-
-
-          const team =
-            teamsCache.find(
-              item =>
-                item.id === teamId
-            );
-
-
-          if (!team) {
-            throw new Error(
-              'Выберите команду.'
-            );
-          }
-
-
-          const featured =
-            document
-              .getElementById('matchFeatured')
-              .checked;
-
-
-          if (featured) {
-
-            const {
-              error
-            } =
-              await supabase
-                .from('matches')
-                .update({
-                  is_featured:false
-                })
-                .eq(
-                  'is_featured',
-                  true
-                );
-
-
-            if (error) {
-              throw error;
-            }
-
-          }
-
-
-          const cs =
-            document
-              .getElementById('caspiyScore')
-              .value;
-
-
-          const os =
-            document
-              .getElementById('opponentScore')
-              .value;
-
-
-          const payload = {
-
-            opponent:
-              `${team.name}${team.city ? ` ${team.city}` : ''}`,
-
-            opponent_logo_url:
-              team.logo_url || null,
-
-            match_date:
-              aqtauInputToUTC(
-                document
-                  .getElementById('matchDate')
-                  .value
-              ),
-
-            competition:
-              document
-                .getElementById('matchCompetition')
-                .value
-                .trim(),
-
-            venue:
-              document
-                .getElementById('matchVenue')
-                .value
-                .trim(),
-
-            status:
-              document
-                .getElementById('matchStatus')
-                .value,
-
-            is_home:
-              document
-                .getElementById('matchIsHome')
-                .value === 'true',
-
-            is_featured:
-              featured,
-
-            caspiy_score:
-              cs === ''
-                ? null
-                : Number(cs),
-
-            opponent_score:
-              os === ''
-                ? null
-                : Number(os)
-
-          };
-
-
-          let response;
-
-
-          if (editingMatchId) {
-
-            response =
-              await supabase
-                .from('matches')
-                .update(payload)
-                .eq('id',editingMatchId);
-
-          } else {
-
-            response =
-              await supabase
-                .from('matches')
-                .insert(payload);
-
-          }
-
-
-          if (response.error) {
-            throw response.error;
-          }
-
-
-          resetMatchForm();
-
-          await loadMatches();
-
-
-          showMessage(
-            globalMessage,
-            'Матч сохранён.'
-          );
-
-
-        } catch(error) {
-
-          showMessage(
-            globalMessage,
-            error.message,
-            'error'
-          );
-
-        }
-
-      }
-    );
-
-
-  window.editMatch =
-    function(id) {
-
-      const match =
-        matchesCache.find(
-          item =>
-            item.id === id
-        );
-
-
-      if (!match) {
-        return;
-      }
-
-
-      editingMatchId =
-        match.id;
-
-
-      const opponent =
-        String(match.opponent || '')
-          .toLowerCase();
-
-
-      const team =
-        teamsCache.find(
-          item =>
-            opponent.includes(
-              String(item.name || '')
-                .toLowerCase()
-            )
-        );
-
-
-      document.getElementById('matchTeam').value =
-        team?.id || '';
-
-      document.getElementById('matchDate').value =
-        utcToAqtauInput(match.match_date);
-
-      document.getElementById('matchCompetition').value =
-        match.competition || '';
-
-      document.getElementById('matchVenue').value =
-        match.venue || '';
-
-      document.getElementById('matchStatus').value =
-        match.status || 'upcoming';
-
-      document.getElementById('matchIsHome').value =
-        String(match.is_home !== false);
-
-      document.getElementById('matchFeatured').checked =
-        !!match.is_featured;
-
-      document.getElementById('caspiyScore').value =
-        match.caspiy_score ?? '';
-
-      document.getElementById('opponentScore').value =
-        match.opponent_score ?? '';
+        .textContent =
+          address;
 
 
       document
-        .getElementById('cancelMatchEdit')
-        .classList
-        .remove('hidden');
+        .getElementById(
+          'mobileAddress'
+        )
+        .textContent =
+          address;
 
-    };
-
-
-  window.featureMatch =
-    async function(id) {
-
-      let {
-        error
-      } =
-        await supabase
-          .from('matches')
-          .update({
-            is_featured:false
-          })
-          .eq(
-            'is_featured',
-            true
-          );
-
-
-      if (error) {
-
-        showMessage(
-          globalMessage,
-          error.message,
-          'error'
-        );
-
-        return;
-
-      }
-
-
-      ({
-        error
-      } =
-        await supabase
-          .from('matches')
-          .update({
-            is_featured:true
-          })
-          .eq('id',id));
-
-
-      if (error) {
-
-        showMessage(
-          globalMessage,
-          error.message,
-          'error'
-        );
-
-        return;
-
-      }
-
-
-      await loadMatches();
-
-    };
-
-
-  window.deleteMatch =
-    async function(id) {
-
-      if (
-        !confirm('Удалить матч?')
-      ) {
-        return;
-      }
-
-
-      const {
-        error
-      } =
-        await supabase
-          .from('matches')
-          .delete()
-          .eq('id',id);
-
-
-      if (error) {
-
-        showMessage(
-          globalMessage,
-          error.message,
-          'error'
-        );
-
-        return;
-
-      }
-
-
-      await loadMatches();
-
-    };
-
-
-  function resetMatchForm() {
-
-    editingMatchId =
-      null;
-
-
-    document
-      .getElementById('matchForm')
-      .reset();
-
-
-    document
-      .getElementById('matchIsHome')
-      .value =
-        'true';
-
-
-    document
-      .getElementById('matchStatus')
-      .value =
-        'upcoming';
-
-
-    document
-      .getElementById('cancelMatchEdit')
-      .classList
-      .add('hidden');
+    }
 
   }
-
-
-  document
-    .getElementById('cancelMatchEdit')
-    .addEventListener(
-      'click',
-      resetMatchForm
-    );
 
 
   /* PLAYERS */
 
+  const groups = [
+
+    {
+      value:'ҚАҚПАШЫ',
+      title:'ҚАҚПАШЫЛАР'
+    },
+
+    {
+      value:'ҚОРҒАУШЫ',
+      title:'ҚОРҒАУШЫЛАР'
+    },
+
+    {
+      value:'ӘМБЕБАП',
+      title:'ӘМБЕБАПТАР'
+    },
+
+    {
+      value:'ШАБУЫЛШЫ',
+      title:'ШАБУЫЛШЫЛАР'
+    }
+
+  ];
+
+
+  function playerCard(player) {
+
+    return `
+
+      <article class="player-card">
+
+        ${
+          player.photo_url
+            ? `
+              <img
+                class="player-photo"
+                src="${escapeHtml(player.photo_url)}"
+                alt="${escapeHtml(player.name)}"
+                loading="lazy"
+              >
+            `
+            : ''
+        }
+
+        <div class="player-overlay"></div>
+
+        <div class="player-number">
+          ${player.number ?? ''}
+        </div>
+
+        <div class="player-info">
+
+          <div class="player-name">
+            ${escapeHtml(player.name)}
+          </div>
+
+          <div class="player-position">
+            ${escapeHtml(player.position || '')}
+          </div>
+
+        </div>
+
+      </article>
+
+    `;
+
+  }
+
+
   async function loadPlayers() {
+
+    const content =
+      document.getElementById(
+        'teamContent'
+      );
+
 
     const {
       data,
@@ -3208,362 +1334,230 @@
     } =
       await supabase
         .from('players')
-        .select('*')
-        .order('sort_order')
-        .order('number');
-
-
-    if (error) {
-      return;
-    }
-
-
-    playersCache =
-      data || [];
-
-
-    renderPlayers();
-
-  }
-
-
-  function renderPlayers() {
-
-    const list =
-      document.getElementById('playersList');
-
-
-    if (!playersCache.length) {
-
-      list.innerHTML =
-        '<div class="data-row">Игроков пока нет.</div>';
-
-      return;
-
-    }
-
-
-    list.innerHTML =
-      playersCache
-        .map(
-          player => `
-
-            <article class="content-card">
-
-              <div class="content-image">
-
-                <div class="big-number">
-                  ${player.number ?? ''}
-                </div>
-
-                ${
-                  player.photo_url
-                    ? `
-                      <img
-                        src="${escapeHtml(player.photo_url)}"
-                        alt=""
-                      >
-                    `
-                    : ''
-                }
-
-              </div>
-
-              <div class="content-info">
-
-                <strong>
-                  ${escapeHtml(player.name)}
-                </strong>
-
-                <div class="content-meta">
-                  ${escapeHtml(player.position || '')}
-                  · Порядок ${player.sort_order ?? 0}
-                  · ${player.is_active === false ? 'СКРЫТ' : 'АКТИВЕН'}
-                </div>
-
-              </div>
-
-              <div class="card-actions">
-
-                <button
-                  class="btn btn-secondary btn-small"
-                  onclick="window.editPlayer(${player.id})"
-                >
-                  Изменить
-                </button>
-
-                <button
-                  class="btn btn-danger btn-small"
-                  onclick="window.deletePlayer(${player.id})"
-                >
-                  Удалить
-                </button>
-
-              </div>
-
-            </article>
-
-          `
+        .select(
+          'id,name,number,position,photo_url,sort_order'
         )
-        .join('');
-
-  }
-
-
-  document
-    .getElementById('playerForm')
-    .addEventListener(
-      'submit',
-      async event => {
-
-        event.preventDefault();
-
-
-        try {
-
-          const file =
-            document
-              .getElementById('playerPhoto')
-              .files[0];
-
-
-          let photoUrl =
-            editingPlayerPhoto;
-
-
-          if (file) {
-
-            photoUrl =
-              await uploadFile(
-                'player-photos',
-                file
-              );
-
+        .eq(
+          'is_active',
+          true
+        )
+        .order(
+          'sort_order',
+          {
+            ascending:true
           }
-
-
-          const numberValue =
-            document
-              .getElementById('playerNumber')
-              .value;
-
-
-          const payload = {
-
-            name:
-              document
-                .getElementById('playerName')
-                .value
-                .trim(),
-
-            number:
-              numberValue === ''
-                ? null
-                : Number(numberValue),
-
-            position:
-              document
-                .getElementById('playerPosition')
-                .value,
-
-            photo_url:
-              photoUrl,
-
-            is_active:
-              document
-                .getElementById('playerActive')
-                .checked,
-
-            sort_order:
-              Number(
-                document
-                  .getElementById('playerSort')
-                  .value || 0
-              )
-
-          };
-
-
-          let response;
-
-
-          if (editingPlayerId) {
-
-            response =
-              await supabase
-                .from('players')
-                .update(payload)
-                .eq('id',editingPlayerId);
-
-          } else {
-
-            response =
-              await supabase
-                .from('players')
-                .insert(payload);
-
+        )
+        .order(
+          'number',
+          {
+            ascending:true
           }
+        );
 
 
-          if (response.error) {
-            throw response.error;
-          }
+    if (
+      error ||
+      !data?.length
+    ) {
+
+      content.innerHTML = `
+        <div class="empty">
+          ОЙЫНШЫЛАР ӘЗІРГЕ ҚОСЫЛМАҒАН
+        </div>
+      `;
+
+      return;
+
+    }
 
 
-          resetPlayerForm();
+    let html = '';
+    let groupNumber = 1;
 
-          await loadPlayers();
 
+    groups.forEach(
+      group => {
 
-          showMessage(
-            globalMessage,
-            'Игрок сохранён.'
+        const players =
+          data.filter(
+            player =>
+              player.position ===
+              group.value
           );
 
 
-        } catch(error) {
-
-          showMessage(
-            globalMessage,
-            error.message,
-            'error'
-          );
-
+        if (!players.length) {
+          return;
         }
 
+
+        html += `
+
+          <section class="group">
+
+            <div class="group-heading">
+
+              <div class="group-number">
+                ${String(groupNumber).padStart(2,'0')}
+              </div>
+
+              <h2 class="group-title">
+                ${group.title}
+              </h2>
+
+              <div class="group-line"></div>
+
+            </div>
+
+            <div class="players-grid">
+
+              ${
+                players
+                  .map(
+                    player =>
+                      playerCard(player)
+                  )
+                  .join('')
+              }
+
+            </div>
+
+          </section>
+
+        `;
+
+
+        groupNumber++;
+
       }
     );
 
 
-  window.editPlayer =
-    function(id) {
-
-      const player =
-        playersCache.find(
-          item =>
-            item.id === id
-        );
+    const knownPositions =
+      groups.map(
+        group =>
+          group.value
+      );
 
 
-      if (!player) {
-        return;
-      }
+    const otherPlayers =
+      data.filter(
+        player =>
+          !knownPositions.includes(
+            player.position
+          )
+      );
 
 
-      editingPlayerId =
-        player.id;
+    if (
+      otherPlayers.length
+    ) {
 
-      editingPlayerPhoto =
-        player.photo_url || null;
+      html += `
 
+        <section class="group">
 
-      document.getElementById('playerName').value =
-        player.name || '';
+          <div class="group-heading">
 
-      document.getElementById('playerNumber').value =
-        player.number ?? '';
+            <div class="group-number">
+              ${String(groupNumber).padStart(2,'0')}
+            </div>
 
-      document.getElementById('playerPosition').value =
-        player.position || '';
+            <h2 class="group-title">
+              КОМАНДА
+            </h2>
 
-      document.getElementById('playerSort').value =
-        player.sort_order ?? 0;
+            <div class="group-line"></div>
 
-      document.getElementById('playerActive').checked =
-        player.is_active !== false;
+          </div>
 
+          <div class="players-grid">
 
-      document
-        .getElementById('cancelPlayerEdit')
-        .classList
-        .remove('hidden');
+            ${
+              otherPlayers
+                .map(
+                  player =>
+                    playerCard(player)
+                )
+                .join('')
+            }
 
-    };
+          </div>
 
+        </section>
 
-  window.deletePlayer =
-    async function(id) {
+      `;
 
-      if (
-        !confirm('Удалить игрока?')
-      ) {
-        return;
-      }
-
-
-      const {
-        error
-      } =
-        await supabase
-          .from('players')
-          .delete()
-          .eq('id',id);
+    }
 
 
-      if (error) {
-
-        showMessage(
-          globalMessage,
-          error.message,
-          'error'
-        );
-
-        return;
-
-      }
-
-
-      await loadPlayers();
-
-    };
-
-
-  function resetPlayerForm() {
-
-    editingPlayerId =
-      null;
-
-    editingPlayerPhoto =
-      null;
-
-
-    document
-      .getElementById('playerForm')
-      .reset();
-
-
-    document
-      .getElementById('playerSort')
-      .value =
-        0;
-
-
-    document
-      .getElementById('playerActive')
-      .checked =
-        true;
-
-
-    document
-      .getElementById('cancelPlayerEdit')
-      .classList
-      .add('hidden');
+    content.innerHTML =
+      html ||
+      `
+        <div class="empty">
+          ОЙЫНШЫЛАР ӘЗІРГЕ ҚОСЫЛМАҒАН
+        </div>
+      `;
 
   }
-
-
-  document
-    .getElementById('cancelPlayerEdit')
-    .addEventListener(
-      'click',
-      resetPlayerForm
-    );
 
 
 
   /* TEAM STAFF */
 
+  function staffCard(staff) {
+
+    const hasPhoto =
+      !!staff.photo_url;
+
+
+    return `
+
+      <article
+        class="player-card staff-card ${hasPhoto ? '' : 'no-photo'}"
+      >
+
+        ${
+          hasPhoto
+            ? `
+              <img
+                class="player-photo"
+                src="${escapeHtml(staff.photo_url)}"
+                alt="${escapeHtml(staff.name)}"
+                loading="lazy"
+              >
+            `
+            : ''
+        }
+
+        <div class="player-overlay"></div>
+
+        <div class="player-info">
+
+          <div class="player-name">
+            ${escapeHtml(staff.name)}
+          </div>
+
+          <div class="staff-role">
+            ${escapeHtml(staff.role || '')}
+          </div>
+
+        </div>
+
+      </article>
+
+    `;
+
+  }
+
+
   async function loadTeamStaff() {
+
+    const content =
+      document.getElementById(
+        'teamContent'
+      );
+
 
     const {
       data,
@@ -3571,1471 +1565,110 @@
     } =
       await supabase
         .from('team_staff')
-        .select('*')
-        .order('sort_order')
-        .order('name');
-
-
-    if (error) {
-
-      const list =
-        document.getElementById('teamStaffList');
-
-      if (list) {
-        list.innerHTML =
-          `<div class="data-row">${escapeHtml(error.message)}</div>`;
-      }
-
-      return;
-
-    }
-
-
-    teamStaffCache =
-      data || [];
-
-
-    renderTeamStaff();
-
-  }
-
-
-  function renderTeamStaff() {
-
-    const list =
-      document.getElementById('teamStaffList');
-
-
-    if (!list) {
-      return;
-    }
-
-
-    if (!teamStaffCache.length) {
-
-      list.innerHTML =
-        '<div class="data-row">Тренерский штаб пока не добавлен.</div>';
-
-      return;
-
-    }
-
-
-    list.innerHTML =
-      teamStaffCache
-        .map(
-          staff => `
-
-            <article class="content-card">
-
-              <div class="content-image">
-
-                ${
-                  staff.photo_url
-                    ? `
-                      <img
-                        src="${escapeHtml(staff.photo_url)}"
-                        alt="${escapeHtml(staff.name || '')}"
-                      >
-                    `
-                    : ''
-                }
-
-              </div>
-
-              <div class="content-info">
-
-                <strong>
-                  ${escapeHtml(staff.name)}
-                </strong>
-
-                <div class="content-meta">
-                  ${escapeHtml(staff.role || '')}
-                  · Порядок ${staff.sort_order ?? 0}
-                  · ${staff.is_active === false ? 'СКРЫТ' : 'АКТИВЕН'}
-                </div>
-
-              </div>
-
-              <div class="card-actions">
-
-                <button
-                  class="btn btn-secondary btn-small"
-                  onclick="window.editStaff(${staff.id})"
-                >
-                  Изменить
-                </button>
-
-                <button
-                  class="btn btn-danger btn-small"
-                  onclick="window.deleteStaff(${staff.id})"
-                >
-                  Удалить
-                </button>
-
-              </div>
-
-            </article>
-
-          `
+        .select(
+          'id,name,role,photo_url,sort_order'
         )
-        .join('');
-
-  }
-
-
-  document
-    .getElementById('staffForm')
-    .addEventListener(
-      'submit',
-      async event => {
-
-        event.preventDefault();
-
-
-        try {
-
-          const file =
-            document
-              .getElementById('staffPhoto')
-              .files[0];
-
-
-          let photoUrl =
-            editingStaffPhoto;
-
-
-          if (file) {
-
-            photoUrl =
-              await uploadFile(
-                'player-photos',
-                file
-              );
-
-          }
-
-
-          const payload = {
-
-            name:
-              document
-                .getElementById('staffName')
-                .value
-                .trim(),
-
-            role:
-              document
-                .getElementById('staffRole')
-                .value
-                .trim(),
-
-            photo_url:
-              photoUrl,
-
-            sort_order:
-              Number(
-                document
-                  .getElementById('staffSort')
-                  .value || 0
-              ),
-
-            is_active:
-              document
-                .getElementById('staffActive')
-                .checked
-
-          };
-
-
-          let response;
-
-
-          if (editingStaffId) {
-
-            response =
-              await supabase
-                .from('team_staff')
-                .update(payload)
-                .eq(
-                  'id',
-                  editingStaffId
-                );
-
-          } else {
-
-            response =
-              await supabase
-                .from('team_staff')
-                .insert(payload);
-
-          }
-
-
-          if (response.error) {
-            throw response.error;
-          }
-
-
-          resetStaffForm();
-
-          await loadTeamStaff();
-
-
-          showMessage(
-            globalMessage,
-            'Сотрудник тренерского штаба сохранён.'
-          );
-
-
-        } catch(error) {
-
-          showMessage(
-            globalMessage,
-            error.message,
-            'error'
-          );
-
-        }
-
-      }
-    );
-
-
-  window.editStaff =
-    function(id) {
-
-      const staff =
-        teamStaffCache.find(
-          item =>
-            item.id === id
-        );
-
-
-      if (!staff) {
-        return;
-      }
-
-
-      editingStaffId =
-        staff.id;
-
-      editingStaffPhoto =
-        staff.photo_url || null;
-
-
-      document
-        .getElementById('staffName')
-        .value =
-          staff.name || '';
-
-      document
-        .getElementById('staffRole')
-        .value =
-          staff.role || '';
-
-      document
-        .getElementById('staffSort')
-        .value =
-          staff.sort_order ?? 0;
-
-      document
-        .getElementById('staffActive')
-        .checked =
-          staff.is_active !== false;
-
-
-      document
-        .getElementById('cancelStaffEdit')
-        .classList
-        .remove('hidden');
-
-
-      document
-        .getElementById('staffName')
-        .focus();
-
-    };
-
-
-  window.deleteStaff =
-    async function(id) {
-
-      if (
-        !confirm(
-          'Удалить сотрудника тренерского штаба?'
+        .eq(
+          'is_active',
+          true
         )
-      ) {
-        return;
-      }
-
-
-      const {
-        error
-      } =
-        await supabase
-          .from('team_staff')
-          .delete()
-          .eq('id',id);
-
-
-      if (error) {
-
-        showMessage(
-          globalMessage,
-          error.message,
-          'error'
-        );
-
-        return;
-
-      }
-
-
-      await loadTeamStaff();
-
-    };
-
-
-  function resetStaffForm() {
-
-    editingStaffId =
-      null;
-
-    editingStaffPhoto =
-      null;
-
-
-    document
-      .getElementById('staffForm')
-      .reset();
-
-
-    document
-      .getElementById('staffSort')
-      .value =
-        0;
-
-
-    document
-      .getElementById('staffActive')
-      .checked =
-        true;
-
-
-    document
-      .getElementById('cancelStaffEdit')
-      .classList
-      .add('hidden');
-
-  }
-
-
-  document
-    .getElementById('cancelStaffEdit')
-    .addEventListener(
-      'click',
-      resetStaffForm
-    );
-
-
-  /* NEWS */
-
-  async function loadNews() {
-
-    const {
-      data,
-      error
-    } =
-      await supabase
-        .from('news')
-        .select('*')
-        .order('sort_order')
         .order(
-          'published_at',
+          'sort_order',
           {
-            ascending:false
+            ascending:true
           }
-        );
-
-
-    if (error) {
-      return;
-    }
-
-
-    newsCache =
-      data || [];
-
-
-    renderNews();
-
-  }
-
-
-  function renderNews() {
-
-    const list =
-      document.getElementById('newsList');
-
-
-    if (!newsCache.length) {
-
-      list.innerHTML =
-        '<div class="data-row">Новостей пока нет.</div>';
-
-      return;
-
-    }
-
-
-    list.innerHTML =
-      newsCache
-        .map(
-          item => `
-
-            <article class="content-card">
-
-              <div class="content-image">
-
-                ${
-                  item.image_url
-                    ? `
-                      <img
-                        src="${escapeHtml(item.image_url)}"
-                        alt=""
-                      >
-                    `
-                    : ''
-                }
-
-              </div>
-
-              <div class="content-info">
-
-                <strong>
-                  ${escapeHtml(item.title)}
-                </strong>
-
-                <div class="content-meta">
-                  ${formatDate(item.published_at)}
-                  · ${item.is_active === false ? 'СКРЫТА' : 'ОПУБЛИКОВАНА'}
-                </div>
-
-              </div>
-
-              <div class="card-actions">
-
-                <button
-                  class="btn btn-secondary btn-small"
-                  onclick="window.editNews(${item.id})"
-                >
-                  Изменить
-                </button>
-
-                <button
-                  class="btn btn-danger btn-small"
-                  onclick="window.deleteNews(${item.id})"
-                >
-                  Удалить
-                </button>
-
-              </div>
-
-            </article>
-
-          `
         )
-        .join('');
-
-  }
-
-
-  document
-    .getElementById('newsForm')
-    .addEventListener(
-      'submit',
-      async event => {
-
-        event.preventDefault();
-
-
-        try {
-
-          const file =
-            document
-              .getElementById('newsImage')
-              .files[0];
-
-
-          let imageUrl =
-            editingNewsImage;
-
-
-          if (file) {
-
-            imageUrl =
-              await uploadFile(
-                'news-images',
-                file
-              );
-
-          }
-
-
-          const payload = {
-
-            title:
-              document
-                .getElementById('newsTitle')
-                .value
-                .trim(),
-
-            description:
-              document
-                .getElementById('newsDescription')
-                .value
-                .trim(),
-
-            image_url:
-              imageUrl,
-
-            published_at:
-              aqtauInputToUTC(
-                document
-                  .getElementById('newsDate')
-                  .value
-              ),
-
-            sort_order:
-              Number(
-                document
-                  .getElementById('newsSort')
-                  .value || 0
-              ),
-
-            is_active:
-              document
-                .getElementById('newsActive')
-                .checked
-
-          };
-
-
-          let response;
-
-
-          if (editingNewsId) {
-
-            response =
-              await supabase
-                .from('news')
-                .update(payload)
-                .eq('id',editingNewsId);
-
-          } else {
-
-            response =
-              await supabase
-                .from('news')
-                .insert(payload);
-
-          }
-
-
-          if (response.error) {
-            throw response.error;
-          }
-
-
-          resetNewsForm();
-
-          await loadNews();
-
-
-          showMessage(
-            globalMessage,
-            'Новость сохранена.'
-          );
-
-
-        } catch(error) {
-
-          showMessage(
-            globalMessage,
-            error.message,
-            'error'
-          );
-
-        }
-
-      }
-    );
-
-
-  window.editNews =
-    function(id) {
-
-      const item =
-        newsCache.find(
-          news =>
-            news.id === id
-        );
-
-
-      if (!item) {
-        return;
-      }
-
-
-      editingNewsId =
-        item.id;
-
-      editingNewsImage =
-        item.image_url || null;
-
-
-      document.getElementById('newsTitle').value =
-        item.title || '';
-
-      document.getElementById('newsDescription').value =
-        item.description || '';
-
-      document.getElementById('newsDate').value =
-        utcToAqtauInput(item.published_at);
-
-      document.getElementById('newsSort').value =
-        item.sort_order ?? 0;
-
-      document.getElementById('newsActive').checked =
-        item.is_active !== false;
-
-
-      document
-        .getElementById('cancelNewsEdit')
-        .classList
-        .remove('hidden');
-
-    };
-
-
-  window.deleteNews =
-    async function(id) {
-
-      if (
-        !confirm('Удалить новость?')
-      ) {
-        return;
-      }
-
-
-      const {
-        error
-      } =
-        await supabase
-          .from('news')
-          .delete()
-          .eq('id',id);
-
-
-      if (error) {
-
-        showMessage(
-          globalMessage,
-          error.message,
-          'error'
-        );
-
-        return;
-
-      }
-
-
-      await loadNews();
-
-    };
-
-
-  function resetNewsForm() {
-
-    editingNewsId =
-      null;
-
-    editingNewsImage =
-      null;
-
-
-    document
-      .getElementById('newsForm')
-      .reset();
-
-
-    document
-      .getElementById('newsSort')
-      .value =
-        0;
-
-
-    document
-      .getElementById('newsActive')
-      .checked =
-        true;
-
-
-    document
-      .getElementById('newsDate')
-      .value =
-        utcToAqtauInput(
-          new Date().toISOString()
-        );
-
-
-    document
-      .getElementById('cancelNewsEdit')
-      .classList
-      .add('hidden');
-
-  }
-
-
-  document
-    .getElementById('cancelNewsEdit')
-    .addEventListener(
-      'click',
-      resetNewsForm
-    );
-
-
-  /* MESSAGES */
-
-  async function loadMessages() {
-
-    const list =
-      document.getElementById('messagesList');
-
-
-    const {
-      data,
-      error
-    } =
-      await supabase
-        .from('contact_messages')
-        .select('*')
         .order(
-          'created_at',
+          'name',
           {
-            ascending:false
+            ascending:true
           }
         );
 
 
-    if (error) {
-
-      list.innerHTML = `
-        <div class="data-row">
-          ${escapeHtml(error.message)}
-        </div>
-      `;
-
+    if (
+      error ||
+      !data?.length
+    ) {
       return;
-
     }
 
 
-    messagesCache =
-      data || [];
-
-
-    renderMessages();
-    updateMessagesBadge();
-
-  }
-
-
-  function updateMessagesBadge() {
-
-    const badge =
-      document.getElementById('messagesBadge');
-
-
-    const count =
-      messagesCache.filter(
-        item =>
-          item.status === 'new'
+    const currentGroups =
+      content.querySelectorAll(
+        '.group'
       ).length;
 
 
-    if (count > 0) {
-
-      badge.textContent =
-        count;
-
-      badge.classList.remove('hidden');
-
-    } else {
-
-      badge.classList.add('hidden');
-
-    }
-
-  }
+    const groupNumber =
+      currentGroups + 1;
 
 
-  function renderMessages() {
+    const staffHtml = `
 
-    const list =
-      document.getElementById('messagesList');
+      <section class="group">
 
+        <div class="group-heading">
 
-    if (!messagesCache.length) {
+          <div class="group-number">
+            ${String(groupNumber).padStart(2,'0')}
+          </div>
 
-      list.innerHTML = `
-        <div class="data-row">
-          Сообщений пока нет.
+          <h2 class="group-title">
+            БАПКЕРЛЕР ҚҰРАМЫ
+          </h2>
+
+          <div class="group-line"></div>
+
         </div>
-      `;
 
-      return;
+        <div class="players-grid">
 
-    }
-
-
-    list.innerHTML =
-      messagesCache
-        .map(
-          item => {
-
-            const isNew =
-              item.status === 'new';
-
-
-            return `
-
-              <article
-                class="contact-message-card ${isNew ? 'new' : ''}"
-              >
-
-                <div class="message-head">
-
-                  <div class="message-sender">
-
-                    <strong>
-                      ${escapeHtml(item.name)}
-                    </strong>
-
-                    <a
-                      href="mailto:${escapeHtml(item.email)}"
-                    >
-                      ${escapeHtml(item.email)}
-                    </a>
-
-                  </div>
-
-                  <div class="message-date">
-                    ${formatDate(item.created_at)}
-                  </div>
-
-                </div>
-
-
-                <div class="message-subject">
-                  ${escapeHtml(item.subject)}
-                </div>
-
-
-                <div class="message-text">
-                  ${escapeHtml(item.message)}
-                </div>
-
-
-                <div class="message-status">
-                  ${isNew ? 'НОВОЕ' : 'ОБРАБОТАНО'}
-                </div>
-
-
-                <div class="message-card-actions">
-
-                  ${
-                    isNew
-                      ? `
-                        <button
-                          class="btn btn-success btn-small"
-                          onclick="window.markMessageDone(${item.id})"
-                        >
-                          Обработано
-                        </button>
-                      `
-                      : `
-                        <button
-                          class="btn btn-secondary btn-small"
-                          onclick="window.markMessageNew(${item.id})"
-                        >
-                          Вернуть в новые
-                        </button>
-                      `
-                  }
-
-
-                  <a
-                    class="btn btn-secondary btn-small"
-                    href="mailto:${escapeHtml(item.email)}?subject=${encodeURIComponent('Re: ' + (item.subject || ''))}"
-                  >
-                    Ответить
-                  </a>
-
-
-                  <button
-                    class="btn btn-danger btn-small"
-                    onclick="window.deleteMessage(${item.id})"
-                  >
-                    Удалить
-                  </button>
-
-                </div>
-
-              </article>
-
-            `;
-
+          ${
+            data
+              .map(
+                staff =>
+                  staffCard(staff)
+              )
+              .join('')
           }
-        )
-        .join('');
 
-  }
+        </div>
 
+      </section>
 
-  window.markMessageDone =
-    async function(id) {
-
-      const {
-        error
-      } =
-        await supabase
-          .from('contact_messages')
-          .update({
-            status:'done'
-          })
-          .eq('id',id);
+    `;
 
 
-      if (error) {
-
-        showMessage(
-          globalMessage,
-          error.message,
-          'error'
-        );
-
-        return;
-
-      }
-
-
-      await loadMessages();
-
-    };
-
-
-  window.markMessageNew =
-    async function(id) {
-
-      const {
-        error
-      } =
-        await supabase
-          .from('contact_messages')
-          .update({
-            status:'new'
-          })
-          .eq('id',id);
-
-
-      if (error) {
-
-        showMessage(
-          globalMessage,
-          error.message,
-          'error'
-        );
-
-        return;
-
-      }
-
-
-      await loadMessages();
-
-    };
-
-
-  window.deleteMessage =
-    async function(id) {
-
-      if (
-        !confirm(
-          'Удалить это сообщение?'
-        )
-      ) {
-        return;
-      }
-
-
-      const {
-        error
-      } =
-        await supabase
-          .from('contact_messages')
-          .delete()
-          .eq('id',id);
-
-
-      if (error) {
-
-        showMessage(
-          globalMessage,
-          error.message,
-          'error'
-        );
-
-        return;
-
-      }
-
-
-      await loadMessages();
-
-    };
-
-
-  /* SETTINGS */
-
-  async function loadSettings() {
-
-    const {
-      data,
-      error
-    } =
-      await supabase
-        .from('site_settings')
-        .select('*')
-        .eq('id',1)
-        .maybeSingle();
-
-
-    if (error) {
-
-      showMessage(
-        globalMessage,
-        `Ошибка настроек: ${error.message}`,
-        'error'
+    const emptyBlock =
+      content.querySelector(
+        '.empty'
       );
-
-      return;
-
-    }
-
-
-    settingsCache =
-      data || {
-        id:1,
-        email:'',
-        phone:'',
-        instagram_url:'',
-        instagram_name:'',
-        address:'',
-        ticket_url:''
-      };
-
-
-    document.getElementById('settingEmail').value =
-      settingsCache.email || '';
-
-    document.getElementById('settingPhone').value =
-      settingsCache.phone || '';
-
-    document.getElementById('settingInstagramName').value =
-      settingsCache.instagram_name || '';
-
-    document.getElementById('settingInstagramUrl').value =
-      settingsCache.instagram_url || '';
-
-    document.getElementById('settingAddress').value =
-      settingsCache.address || '';
-
-    document.getElementById('settingTicketUrl').value =
-      settingsCache.ticket_url || '';
-
-
-    renderSettingsPreview();
-
-  }
-
-
-  function renderSettingsPreview() {
-
-    const settings =
-      settingsCache || {};
-
-
-    document.getElementById('previewEmail').textContent =
-      settings.email || 'Не указано';
-
-    document.getElementById('previewPhone').textContent =
-      settings.phone || 'Не указано';
-
-    document.getElementById('previewInstagram').textContent =
-      settings.instagram_name ||
-      settings.instagram_url ||
-      'Не указано';
-
-    document.getElementById('previewAddress').textContent =
-      settings.address || 'Не указано';
-
-    document.getElementById('previewTicket').textContent =
-      settings.ticket_url || 'Не указано';
-
-  }
-
-
-  document
-    .getElementById('settingsForm')
-    .addEventListener(
-      'submit',
-      async event => {
-
-        event.preventDefault();
-
-
-        const payload = {
-
-          id:1,
-
-          email:
-            document
-              .getElementById('settingEmail')
-              .value
-              .trim(),
-
-          phone:
-            document
-              .getElementById('settingPhone')
-              .value
-              .trim(),
-
-          instagram_name:
-            document
-              .getElementById('settingInstagramName')
-              .value
-              .trim(),
-
-          instagram_url:
-            document
-              .getElementById('settingInstagramUrl')
-              .value
-              .trim(),
-
-          address:
-            document
-              .getElementById('settingAddress')
-              .value
-              .trim(),
-
-          ticket_url:
-            document
-              .getElementById('settingTicketUrl')
-              .value
-              .trim(),
-
-          updated_at:
-            new Date().toISOString()
-
-        };
-
-
-        const {
-          data,
-          error
-        } =
-          await supabase
-            .from('site_settings')
-            .upsert(
-              payload,
-              {
-                onConflict:'id'
-              }
-            )
-            .select()
-            .single();
-
-
-        if (error) {
-
-          showMessage(
-            globalMessage,
-            error.message,
-            'error'
-          );
-
-          return;
-
-        }
-
-
-        settingsCache =
-          data;
-
-
-        renderSettingsPreview();
-
-
-        showMessage(
-          globalMessage,
-          'Настройки сайта сохранены.'
-        );
-
-      }
-    );
-
-
-  /* START */
-
-  document.getElementById('newsDate').value =
-    utcToAqtauInput(
-      new Date().toISOString()
-    );
-
-
-  const pageUrl =
-    new URL(
-      window.location.href
-    );
-
-
-  const authError =
-    pageUrl.searchParams.get(
-      'error_description'
-    ) ||
-    pageUrl.searchParams.get(
-      'error'
-    );
-
-
-  if (authError) {
-
-    recoveryMode = false;
-
-    localStorage.removeItem(
-      RECOVERY_FLAG
-    );
-
-    showLoginForm();
-
-    showMessage(
-      loginMessage,
-      decodeURIComponent(
-        String(authError)
-          .replaceAll('+',' ')
-      ),
-      'error'
-    );
-
-  }
-
-
-  if (
-    window.location.href.includes(
-      'type=recovery'
-    )
-  ) {
-
-    recoveryMode = true;
-
-    localStorage.setItem(
-      RECOVERY_FLAG,
-      '1'
-    );
-
-  }
-
-
-  async function handleAuthEvent(
-    event,
-    session
-  ) {
-
-    if (
-      event === 'PASSWORD_RECOVERY'
-    ) {
-
-      if (
-        !session?.user ||
-        session.user.id !== ADMIN_UID
-      ) {
-
-        recoveryMode = false;
-
-        localStorage.removeItem(
-          RECOVERY_FLAG
-        );
-
-        await supabase
-          .auth
-          .signOut();
-
-        showLoginForm();
-
-        showMessage(
-          loginMessage,
-          'Нет доступа к восстановлению пароля администратора.',
-          'error'
-        );
-
-        return;
-
-      }
-
-
-      recoveryMode = true;
-
-      localStorage.setItem(
-        RECOVERY_FLAG,
-        '1'
-      );
-
-      showRecoveryForm();
-
-      return;
-
-    }
 
 
     if (
-      event === 'SIGNED_IN'
+      emptyBlock &&
+      !content.querySelector(
+        '.group'
+      )
     ) {
 
-      if (recoveryMode) {
-
-        if (
-          session?.user?.id === ADMIN_UID
-        ) {
-
-          showRecoveryForm();
-
-        } else {
-
-          recoveryMode = false;
-
-          localStorage.removeItem(
-            RECOVERY_FLAG
-          );
-
-          await supabase
-            .auth
-            .signOut();
-
-          showLoginForm();
-
-        }
-
-        return;
-
-      }
-
-
-      await showAdmin(
-        session
-      );
-
-      return;
+      emptyBlock.remove();
 
     }
 
 
-    if (
-      event === 'SIGNED_OUT'
-    ) {
-
-      loginView.classList.remove(
-        'hidden'
-      );
-
-      adminView.classList.add(
-        'hidden'
-      );
-
-      showLoginForm();
-
-    }
-
-  }
-
-
-  supabase
-    .auth
-    .onAuthStateChange(
-      (
-        event,
-        session
-      ) => {
-
-        setTimeout(
-          () => {
-            handleAuthEvent(
-              event,
-              session
-            );
-          },
-          0
-        );
-
-      }
-    );
-
-
-  const {
-    data:{
-      session
-    }
-  } =
-    await supabase
-      .auth
-      .getSession();
-
-
-  if (
-    session?.user &&
-    recoveryMode
-  ) {
-
-    if (
-      session.user.id === ADMIN_UID
-    ) {
-
-      showRecoveryForm();
-
-    } else {
-
-      recoveryMode = false;
-
-      localStorage.removeItem(
-        RECOVERY_FLAG
-      );
-
-      await supabase
-        .auth
-        .signOut();
-
-      showLoginForm();
-
-    }
-
-  } else {
-
-    await showAdmin(
-      session
+    content.insertAdjacentHTML(
+      'beforeend',
+      staffHtml
     );
 
   }
+
+
+  await loadSettings();
+  await loadPlayers();
+  await loadTeamStaff();
 
 </script>
 
