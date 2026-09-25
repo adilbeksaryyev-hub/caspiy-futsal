@@ -886,7 +886,7 @@
         class="nav-button"
         data-section="playersSection"
       >
-        Игроки
+        Команда
       </button>
 
       <button
@@ -1131,8 +1131,8 @@
     <section class="admin-section" id="playersSection">
 
       <div class="section-title">
-        <span>ҚҰРАМ</span>
-        <h2>ОЙЫНШЫЛАР</h2>
+        <span>CASPIY FUTSAL CLUB</span>
+        <h2>КОМАНДА</h2>
       </div>
 
       <div class="panel">
@@ -1227,6 +1227,103 @@
         </div>
 
         <div class="card-grid" id="playersList"></div>
+
+      </div>
+
+
+      <div class="panel">
+
+        <div class="panel-title">
+          Тренерский штаб
+        </div>
+
+        <form id="staffForm">
+
+          <div class="form-grid-3">
+
+            <div class="field">
+              <label>Имя и фамилия</label>
+              <input
+                type="text"
+                id="staffName"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label>Должность</label>
+              <input
+                type="text"
+                id="staffRole"
+                placeholder="Например: Бас бапкер"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label>Порядок</label>
+              <input
+                type="number"
+                id="staffSort"
+                value="0"
+                min="0"
+              >
+            </div>
+
+            <div class="field full-width">
+              <label>Фотография</label>
+              <input
+                type="file"
+                id="staffPhoto"
+                accept="image/png,image/jpeg,image/webp"
+              >
+            </div>
+
+          </div>
+
+          <label class="checkbox-field">
+            <input
+              type="checkbox"
+              id="staffActive"
+              checked
+            >
+            Показывать в разделе «Команда»
+          </label>
+
+          <div class="form-actions">
+
+            <button
+              type="submit"
+              class="btn btn-primary"
+            >
+              Сохранить сотрудника
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-secondary hidden"
+              id="cancelStaffEdit"
+            >
+              Отмена
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+
+      <div class="panel">
+
+        <div class="panel-title">
+          Список тренерского штаба
+        </div>
+
+        <div
+          class="card-grid"
+          id="teamStaffList"
+        ></div>
 
       </div>
 
@@ -1514,6 +1611,7 @@
   let teamsCache = [];
   let matchesCache = [];
   let playersCache = [];
+  let teamStaffCache = [];
   let newsCache = [];
   let messagesCache = [];
   let settingsCache = null;
@@ -1525,6 +1623,9 @@
 
   let editingPlayerId = null;
   let editingPlayerPhoto = null;
+
+  let editingStaffId = null;
+  let editingStaffPhoto = null;
 
   let editingNewsId = null;
   let editingNewsImage = null;
@@ -1764,6 +1865,7 @@
       loadTeams(),
       loadMatches(),
       loadPlayers(),
+      loadTeamStaff(),
       loadNews(),
       loadMessages(),
       loadSettings()
@@ -3455,6 +3557,385 @@
     .addEventListener(
       'click',
       resetPlayerForm
+    );
+
+
+
+  /* TEAM STAFF */
+
+  async function loadTeamStaff() {
+
+    const {
+      data,
+      error
+    } =
+      await supabase
+        .from('team_staff')
+        .select('*')
+        .order('sort_order')
+        .order('name');
+
+
+    if (error) {
+
+      const list =
+        document.getElementById('teamStaffList');
+
+      if (list) {
+        list.innerHTML =
+          `<div class="data-row">${escapeHtml(error.message)}</div>`;
+      }
+
+      return;
+
+    }
+
+
+    teamStaffCache =
+      data || [];
+
+
+    renderTeamStaff();
+
+  }
+
+
+  function renderTeamStaff() {
+
+    const list =
+      document.getElementById('teamStaffList');
+
+
+    if (!list) {
+      return;
+    }
+
+
+    if (!teamStaffCache.length) {
+
+      list.innerHTML =
+        '<div class="data-row">Тренерский штаб пока не добавлен.</div>';
+
+      return;
+
+    }
+
+
+    list.innerHTML =
+      teamStaffCache
+        .map(
+          staff => `
+
+            <article class="content-card">
+
+              <div class="content-image">
+
+                ${
+                  staff.photo_url
+                    ? `
+                      <img
+                        src="${escapeHtml(staff.photo_url)}"
+                        alt="${escapeHtml(staff.name || '')}"
+                      >
+                    `
+                    : ''
+                }
+
+              </div>
+
+              <div class="content-info">
+
+                <strong>
+                  ${escapeHtml(staff.name)}
+                </strong>
+
+                <div class="content-meta">
+                  ${escapeHtml(staff.role || '')}
+                  · Порядок ${staff.sort_order ?? 0}
+                  · ${staff.is_active === false ? 'СКРЫТ' : 'АКТИВЕН'}
+                </div>
+
+              </div>
+
+              <div class="card-actions">
+
+                <button
+                  class="btn btn-secondary btn-small"
+                  onclick="window.editStaff(${staff.id})"
+                >
+                  Изменить
+                </button>
+
+                <button
+                  class="btn btn-danger btn-small"
+                  onclick="window.deleteStaff(${staff.id})"
+                >
+                  Удалить
+                </button>
+
+              </div>
+
+            </article>
+
+          `
+        )
+        .join('');
+
+  }
+
+
+  document
+    .getElementById('staffForm')
+    .addEventListener(
+      'submit',
+      async event => {
+
+        event.preventDefault();
+
+
+        try {
+
+          const file =
+            document
+              .getElementById('staffPhoto')
+              .files[0];
+
+
+          let photoUrl =
+            editingStaffPhoto;
+
+
+          if (file) {
+
+            photoUrl =
+              await uploadFile(
+                'player-photos',
+                file
+              );
+
+          }
+
+
+          const payload = {
+
+            name:
+              document
+                .getElementById('staffName')
+                .value
+                .trim(),
+
+            role:
+              document
+                .getElementById('staffRole')
+                .value
+                .trim(),
+
+            photo_url:
+              photoUrl,
+
+            sort_order:
+              Number(
+                document
+                  .getElementById('staffSort')
+                  .value || 0
+              ),
+
+            is_active:
+              document
+                .getElementById('staffActive')
+                .checked
+
+          };
+
+
+          let response;
+
+
+          if (editingStaffId) {
+
+            response =
+              await supabase
+                .from('team_staff')
+                .update(payload)
+                .eq(
+                  'id',
+                  editingStaffId
+                );
+
+          } else {
+
+            response =
+              await supabase
+                .from('team_staff')
+                .insert(payload);
+
+          }
+
+
+          if (response.error) {
+            throw response.error;
+          }
+
+
+          resetStaffForm();
+
+          await loadTeamStaff();
+
+
+          showMessage(
+            globalMessage,
+            'Сотрудник тренерского штаба сохранён.'
+          );
+
+
+        } catch(error) {
+
+          showMessage(
+            globalMessage,
+            error.message,
+            'error'
+          );
+
+        }
+
+      }
+    );
+
+
+  window.editStaff =
+    function(id) {
+
+      const staff =
+        teamStaffCache.find(
+          item =>
+            item.id === id
+        );
+
+
+      if (!staff) {
+        return;
+      }
+
+
+      editingStaffId =
+        staff.id;
+
+      editingStaffPhoto =
+        staff.photo_url || null;
+
+
+      document
+        .getElementById('staffName')
+        .value =
+          staff.name || '';
+
+      document
+        .getElementById('staffRole')
+        .value =
+          staff.role || '';
+
+      document
+        .getElementById('staffSort')
+        .value =
+          staff.sort_order ?? 0;
+
+      document
+        .getElementById('staffActive')
+        .checked =
+          staff.is_active !== false;
+
+
+      document
+        .getElementById('cancelStaffEdit')
+        .classList
+        .remove('hidden');
+
+
+      document
+        .getElementById('staffName')
+        .focus();
+
+    };
+
+
+  window.deleteStaff =
+    async function(id) {
+
+      if (
+        !confirm(
+          'Удалить сотрудника тренерского штаба?'
+        )
+      ) {
+        return;
+      }
+
+
+      const {
+        error
+      } =
+        await supabase
+          .from('team_staff')
+          .delete()
+          .eq('id',id);
+
+
+      if (error) {
+
+        showMessage(
+          globalMessage,
+          error.message,
+          'error'
+        );
+
+        return;
+
+      }
+
+
+      await loadTeamStaff();
+
+    };
+
+
+  function resetStaffForm() {
+
+    editingStaffId =
+      null;
+
+    editingStaffPhoto =
+      null;
+
+
+    document
+      .getElementById('staffForm')
+      .reset();
+
+
+    document
+      .getElementById('staffSort')
+      .value =
+        0;
+
+
+    document
+      .getElementById('staffActive')
+      .checked =
+        true;
+
+
+    document
+      .getElementById('cancelStaffEdit')
+      .classList
+      .add('hidden');
+
+  }
+
+
+  document
+    .getElementById('cancelStaffEdit')
+    .addEventListener(
+      'click',
+      resetStaffForm
     );
 
 
