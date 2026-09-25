@@ -461,6 +461,58 @@
       text-transform: uppercase;
     }
 
+    /* MATCH FILTER */
+
+    .match-filter {
+      width: min(1300px,92%);
+      margin: 0 auto 34px;
+      display: flex;
+      gap: 10px;
+      padding: 6px;
+      background: rgba(4,20,31,.78);
+      border: 1px solid rgba(78,201,245,.16);
+      border-radius: 7px;
+    }
+
+    .match-filter-button {
+      flex: 1;
+      min-height: 50px;
+      padding: 12px 18px;
+      border: 0;
+      border-radius: 5px;
+      color: #7898a8;
+      background: transparent;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition:
+        color .2s,
+        background .2s,
+        box-shadow .2s;
+    }
+
+    .match-filter-button:hover {
+      color: #d9f4ff;
+      background: rgba(81,205,250,.07);
+    }
+
+    .match-filter-button.active {
+      color: #031019;
+      background: #58d5ff;
+      box-shadow: 0 0 24px rgba(88,213,255,.13);
+    }
+
+    .match-filter-panel {
+      display: none;
+    }
+
+    .match-filter-panel.active {
+      display: block;
+    }
+
     /* MATCHES */
 
     .matches-section {
@@ -910,6 +962,15 @@
 
     @media (max-width:650px) {
 
+      .match-filter {
+        flex-direction: column;
+        margin-bottom: 25px;
+      }
+
+      .match-filter-button {
+        width: 100%;
+      }
+
       .header-inner {
         height: 78px;
       }
@@ -1164,7 +1225,45 @@
 
 <section class="matches-section">
 
+  <div
+    class="match-filter"
+    role="tablist"
+    aria-label="Матчтар сүзгісі"
+  >
+
+    <button
+      class="match-filter-button active"
+      id="upcomingFilterBtn"
+      type="button"
+      role="tab"
+      aria-selected="true"
+      aria-controls="upcomingPanel"
+    >
+      АЛДАҒЫ МАТЧТАР
+    </button>
+
+    <button
+      class="match-filter-button"
+      id="resultsFilterBtn"
+      type="button"
+      role="tab"
+      aria-selected="false"
+      aria-controls="resultsPanel"
+    >
+      СОҢҒЫ НӘТИЖЕЛЕР
+    </button>
+
+  </div>
+
+
   <div class="container">
+
+    <div
+      class="match-filter-panel active"
+      id="upcomingPanel"
+      role="tabpanel"
+      aria-labelledby="upcomingFilterBtn"
+    >
 
     <section class="match-group">
 
@@ -1200,6 +1299,15 @@
 
     </section>
 
+    </div>
+
+
+    <div
+      class="match-filter-panel"
+      id="resultsPanel"
+      role="tabpanel"
+      aria-labelledby="resultsFilterBtn"
+    >
 
     <section class="match-group">
 
@@ -1235,6 +1343,14 @@
 
     </section>
 
+    </div>
+
+
+    <div
+      class="match-filter-panel active"
+      id="postponedPanel"
+      data-filter-parent="upcoming"
+    >
 
     <section
       class="match-group"
@@ -1267,6 +1383,8 @@
       ></div>
 
     </section>
+
+    </div>
 
   </div>
 
@@ -1471,6 +1589,114 @@
 
     }
   );
+
+
+  /* MATCH FILTER */
+
+  const upcomingFilterBtn =
+    document.getElementById(
+      'upcomingFilterBtn'
+    );
+
+  const resultsFilterBtn =
+    document.getElementById(
+      'resultsFilterBtn'
+    );
+
+  const upcomingPanel =
+    document.getElementById(
+      'upcomingPanel'
+    );
+
+  const resultsPanel =
+    document.getElementById(
+      'resultsPanel'
+    );
+
+  const postponedPanel =
+    document.getElementById(
+      'postponedPanel'
+    );
+
+
+  function setMatchFilter(type) {
+
+    const showUpcoming =
+      type === 'upcoming';
+
+
+    upcomingFilterBtn
+      .classList
+      .toggle(
+        'active',
+        showUpcoming
+      );
+
+    resultsFilterBtn
+      .classList
+      .toggle(
+        'active',
+        !showUpcoming
+      );
+
+
+    upcomingFilterBtn
+      .setAttribute(
+        'aria-selected',
+        String(showUpcoming)
+      );
+
+    resultsFilterBtn
+      .setAttribute(
+        'aria-selected',
+        String(!showUpcoming)
+      );
+
+
+    upcomingPanel
+      .classList
+      .toggle(
+        'active',
+        showUpcoming
+      );
+
+    postponedPanel
+      .classList
+      .toggle(
+        'active',
+        showUpcoming
+      );
+
+    resultsPanel
+      .classList
+      .toggle(
+        'active',
+        !showUpcoming
+      );
+
+  }
+
+
+  upcomingFilterBtn
+    .addEventListener(
+      'click',
+      () => {
+        setMatchFilter(
+          'upcoming'
+        );
+      }
+    );
+
+
+  resultsFilterBtn
+    .addEventListener(
+      'click',
+      () => {
+        setMatchFilter(
+          'results'
+        );
+      }
+    );
 
 
   /* HELPERS */
