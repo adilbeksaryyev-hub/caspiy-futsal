@@ -190,7 +190,7 @@
       position: relative;
       padding: 12px 0;
       color: #a9bfca;
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: .13em;
       text-transform: uppercase;
@@ -219,21 +219,6 @@
       gap: 12px;
     }
 
-    .ticket-button {
-      padding: 13px 18px;
-      color: #caeffc;
-      border: 1px solid rgba(80,207,251,.42);
-      border-radius: 5px;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-
-    .ticket-button.disabled {
-      opacity: .35;
-      pointer-events: none;
-    }
 
     /* MOBILE BUTTON */
 
@@ -371,23 +356,6 @@
       color: #58d5ff;
     }
 
-    .mobile-ticket {
-      margin-top: 30px;
-      padding: 16px 20px;
-      text-align: center;
-      color: #031019;
-      background: #56d5ff;
-      border-radius: 5px;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .mobile-ticket.disabled {
-      opacity: .30;
-      pointer-events: none;
-    }
 
     .mobile-address {
       margin-top: auto;
@@ -799,8 +767,7 @@
 
     @media (max-width:900px) {
 
-      .desktop-nav,
-      .ticket-button {
+      .desktop-nav {
         display: none;
       }
 
@@ -906,6 +873,10 @@
         МАТЧТАР
       </a>
 
+      <a href="standings.html">
+        КЕСТЕ
+      </a>
+
       <a href="news.html">
         ЖАҢАЛЫҚТАР
       </a>
@@ -926,16 +897,6 @@
       </a>
 
     </nav>
-
-    <a
-      href="#"
-      id="mobileTicketButton"
-      class="mobile-ticket disabled"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      БИЛЕТТЕР →
-    </a>
 
     <div
       class="mobile-address"
@@ -986,6 +947,10 @@
         МАТЧТАР
       </a>
 
+      <a href="standings.html">
+        КЕСТЕ
+      </a>
+
       <a href="news.html">
         ЖАҢАЛЫҚТАР
       </a>
@@ -1009,16 +974,6 @@
 
 
     <div class="header-actions">
-
-      <a
-        href="#"
-        id="ticketButton"
-        class="ticket-button disabled"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        БИЛЕТТЕР →
-      </a>
 
       <button
         class="mobile-menu-button"
@@ -1479,7 +1434,7 @@
       await supabase
         .from('site_settings')
         .select(
-          'ticket_url,address'
+          'address'
         )
         .eq('id',1)
         .maybeSingle();
@@ -1490,40 +1445,6 @@
       !data
     ) {
       return;
-    }
-
-
-    const ticketButton =
-      document.getElementById(
-        'ticketButton'
-      );
-
-
-    const mobileTicketButton =
-      document.getElementById(
-        'mobileTicketButton'
-      );
-
-
-    if (
-      data.ticket_url
-    ) {
-
-      ticketButton.href =
-        data.ticket_url;
-
-      mobileTicketButton.href =
-        data.ticket_url;
-
-
-      ticketButton.classList.remove(
-        'disabled'
-      );
-
-      mobileTicketButton.classList.remove(
-        'disabled'
-      );
-
     }
 
 
