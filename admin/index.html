@@ -891,6 +891,13 @@
 
       <button
         class="nav-button"
+        data-section="standingsSection"
+      >
+        Таблица
+      </button>
+
+      <button
+        class="nav-button"
         data-section="newsSection"
       >
         Новости
@@ -1330,6 +1337,171 @@
     </section>
 
 
+    <!-- STANDINGS -->
+
+    <section class="admin-section" id="standingsSection">
+
+      <div class="section-title">
+        <span>ҚАЗАҚСТАН ЧЕМПИОНАТЫ</span>
+        <h2>ТАБЛИЦА</h2>
+      </div>
+
+      <div class="panel">
+
+        <div class="panel-title">
+          Добавить / изменить строку таблицы
+        </div>
+
+        <form id="standingForm">
+
+          <div class="form-grid-3">
+
+            <div class="field">
+              <label>Команда</label>
+
+              <select id="standingTeam" required>
+                <option value="">Выберите команду</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Место</label>
+              <input
+                type="number"
+                id="standingPosition"
+                min="1"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label>Игр</label>
+              <input
+                type="number"
+                id="standingPlayed"
+                min="0"
+                value="0"
+              >
+            </div>
+
+            <div class="field">
+              <label>Побед</label>
+              <input
+                type="number"
+                id="standingWins"
+                min="0"
+                value="0"
+              >
+            </div>
+
+            <div class="field">
+              <label>Ничьих</label>
+              <input
+                type="number"
+                id="standingDraws"
+                min="0"
+                value="0"
+              >
+            </div>
+
+            <div class="field">
+              <label>Поражений</label>
+              <input
+                type="number"
+                id="standingLosses"
+                min="0"
+                value="0"
+              >
+            </div>
+
+            <div class="field">
+              <label>Забито</label>
+              <input
+                type="number"
+                id="standingGoalsFor"
+                min="0"
+                value="0"
+              >
+            </div>
+
+            <div class="field">
+              <label>Пропущено</label>
+              <input
+                type="number"
+                id="standingGoalsAgainst"
+                min="0"
+                value="0"
+              >
+            </div>
+
+            <div class="field">
+              <label>Очки</label>
+              <input
+                type="number"
+                id="standingPoints"
+                min="0"
+                value="0"
+              >
+            </div>
+
+            <div class="field">
+              <label>Порядок</label>
+              <input
+                type="number"
+                id="standingSort"
+                min="0"
+                value="0"
+              >
+            </div>
+
+          </div>
+
+          <label class="checkbox-field">
+            <input
+              type="checkbox"
+              id="standingActive"
+              checked
+            >
+            Показывать в таблице
+          </label>
+
+          <div class="form-actions">
+
+            <button
+              type="submit"
+              class="btn btn-primary"
+            >
+              Сохранить
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-secondary hidden"
+              id="cancelStandingEdit"
+            >
+              Отмена
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+
+      <div class="panel">
+
+        <div class="panel-title">
+          Турнирная таблица
+        </div>
+
+        <div class="data-list" id="standingsList"></div>
+
+      </div>
+
+    </section>
+
+
     <!-- NEWS -->
 
     <section class="admin-section" id="newsSection">
@@ -1612,6 +1784,7 @@
   let matchesCache = [];
   let playersCache = [];
   let teamStaffCache = [];
+  let standingsCache = [];
   let newsCache = [];
   let messagesCache = [];
   let settingsCache = null;
@@ -1626,6 +1799,8 @@
 
   let editingStaffId = null;
   let editingStaffPhoto = null;
+
+  let editingStandingId = null;
 
   let editingNewsId = null;
   let editingNewsImage = null;
@@ -1866,6 +2041,7 @@
       loadMatches(),
       loadPlayers(),
       loadTeamStaff(),
+      loadStandings(),
       loadNews(),
       loadMessages(),
       loadSettings()
@@ -2306,6 +2482,15 @@
 
             if (
               button.dataset.section ===
+              'standingsSection'
+            ) {
+              fillStandingsTeamSelect();
+              loadStandings();
+            }
+
+
+            if (
+              button.dataset.section ===
               'settingsSection'
             ) {
               loadSettings();
@@ -2343,6 +2528,66 @@
 
     renderTeams();
     fillTeamsSelect();
+    fillStandingsTeamSelect();
+
+  }
+
+
+  function fillStandingsTeamSelect() {
+
+    const select =
+      document.getElementById(
+        'standingTeam'
+      );
+
+
+    if (!select) {
+      return;
+    }
+
+
+    const currentValue =
+      select.value;
+
+
+    select.innerHTML =
+      '<option value="">Выберите команду</option>';
+
+
+    teamsCache
+      .filter(
+        team =>
+          team.is_active !== false
+      )
+      .forEach(
+        team => {
+
+          const option =
+            document.createElement(
+              'option'
+            );
+
+
+          option.value =
+            team.id;
+
+
+          option.textContent =
+            `${team.name}${team.city ? ` — ${team.city}` : ''}`;
+
+
+          select.appendChild(
+            option
+          );
+
+        }
+      );
+
+
+    if (currentValue) {
+      select.value =
+        currentValue;
+    }
 
   }
 
@@ -3936,6 +4181,596 @@
     .addEventListener(
       'click',
       resetStaffForm
+    );
+
+
+
+
+  /* STANDINGS */
+
+  async function loadStandings() {
+
+    const {
+      data,
+      error
+    } =
+      await supabase
+        .from('standings')
+        .select('*')
+        .order(
+          'position',
+          {
+            ascending:true
+          }
+        )
+        .order(
+          'sort_order',
+          {
+            ascending:true
+          }
+        );
+
+
+    const list =
+      document.getElementById(
+        'standingsList'
+      );
+
+
+    if (error) {
+
+      if (list) {
+        list.innerHTML =
+          `<div class="data-row">${escapeHtml(error.message)}</div>`;
+      }
+
+      return;
+
+    }
+
+
+    standingsCache =
+      data || [];
+
+
+    renderStandings();
+
+  }
+
+
+  function renderStandings() {
+
+    const list =
+      document.getElementById(
+        'standingsList'
+      );
+
+
+    if (!list) {
+      return;
+    }
+
+
+    if (!standingsCache.length) {
+
+      list.innerHTML =
+        '<div class="data-row">Турнирная таблица пока пустая.</div>';
+
+      return;
+
+    }
+
+
+    list.innerHTML =
+      standingsCache
+        .map(
+          item => `
+
+            <div class="data-row">
+
+              <div>
+
+                ${
+                  item.logo_url
+                    ? `
+                      <img
+                        class="data-logo"
+                        src="${escapeHtml(item.logo_url)}"
+                        alt=""
+                      >
+                    `
+                    : `
+                      <div
+                        class="data-logo"
+                        style="
+                          display:flex;
+                          align-items:center;
+                          justify-content:center;
+                          font-family:'Oswald',sans-serif;
+                          font-size:22px;
+                          color:#55d5ff;
+                        "
+                      >
+                        ${item.position ?? ''}
+                      </div>
+                    `
+                }
+
+              </div>
+
+
+              <div class="data-main">
+
+                <strong>
+                  ${item.position}. ${escapeHtml(item.team_name)}
+                </strong>
+
+                <span>
+                  И ${item.played ?? 0}
+                  · В ${item.wins ?? 0}
+                  · Н ${item.draws ?? 0}
+                  · П ${item.losses ?? 0}
+                  · М ${item.goals_for ?? 0}:${item.goals_against ?? 0}
+                  · О ${item.points ?? 0}
+                  · ${item.is_active === false ? 'СКРЫТА' : 'АКТИВНА'}
+                </span>
+
+              </div>
+
+
+              <div class="row-actions">
+
+                <button
+                  class="btn btn-secondary btn-small"
+                  onclick="window.editStanding(${item.id})"
+                >
+                  Изменить
+                </button>
+
+                <button
+                  class="btn btn-danger btn-small"
+                  onclick="window.deleteStanding(${item.id})"
+                >
+                  Удалить
+                </button>
+
+              </div>
+
+            </div>
+
+          `
+        )
+        .join('');
+
+  }
+
+
+  document
+    .getElementById('standingForm')
+    .addEventListener(
+      'submit',
+      async event => {
+
+        event.preventDefault();
+
+
+        try {
+
+          const teamId =
+            Number(
+              document
+                .getElementById(
+                  'standingTeam'
+                )
+                .value
+            );
+
+
+          const team =
+            teamsCache.find(
+              item =>
+                item.id === teamId
+            );
+
+
+          if (!team) {
+            throw new Error(
+              'Выберите команду.'
+            );
+          }
+
+
+          const payload = {
+
+            position:
+              Number(
+                document
+                  .getElementById(
+                    'standingPosition'
+                  )
+                  .value
+              ),
+
+            team_name:
+              team.name,
+
+            logo_url:
+              team.logo_url || null,
+
+            played:
+              Number(
+                document
+                  .getElementById(
+                    'standingPlayed'
+                  )
+                  .value || 0
+              ),
+
+            wins:
+              Number(
+                document
+                  .getElementById(
+                    'standingWins'
+                  )
+                  .value || 0
+              ),
+
+            draws:
+              Number(
+                document
+                  .getElementById(
+                    'standingDraws'
+                  )
+                  .value || 0
+              ),
+
+            losses:
+              Number(
+                document
+                  .getElementById(
+                    'standingLosses'
+                  )
+                  .value || 0
+              ),
+
+            goals_for:
+              Number(
+                document
+                  .getElementById(
+                    'standingGoalsFor'
+                  )
+                  .value || 0
+              ),
+
+            goals_against:
+              Number(
+                document
+                  .getElementById(
+                    'standingGoalsAgainst'
+                  )
+                  .value || 0
+              ),
+
+            points:
+              Number(
+                document
+                  .getElementById(
+                    'standingPoints'
+                  )
+                  .value || 0
+              ),
+
+            sort_order:
+              Number(
+                document
+                  .getElementById(
+                    'standingSort'
+                  )
+                  .value || 0
+              ),
+
+            is_active:
+              document
+                .getElementById(
+                  'standingActive'
+                )
+                .checked,
+
+            updated_at:
+              new Date().toISOString()
+
+          };
+
+
+          let response;
+
+
+          if (editingStandingId) {
+
+            response =
+              await supabase
+                .from('standings')
+                .update(payload)
+                .eq(
+                  'id',
+                  editingStandingId
+                );
+
+          } else {
+
+            response =
+              await supabase
+                .from('standings')
+                .insert(payload);
+
+          }
+
+
+          if (response.error) {
+            throw response.error;
+          }
+
+
+          resetStandingForm();
+
+          await loadStandings();
+
+
+          showMessage(
+            globalMessage,
+            'Турнирная таблица сохранена.'
+          );
+
+
+        } catch(error) {
+
+          showMessage(
+            globalMessage,
+            error.message,
+            'error'
+          );
+
+        }
+
+      }
+    );
+
+
+  window.editStanding =
+    function(id) {
+
+      const item =
+        standingsCache.find(
+          row =>
+            row.id === id
+        );
+
+
+      if (!item) {
+        return;
+      }
+
+
+      editingStandingId =
+        item.id;
+
+
+      const team =
+        teamsCache.find(
+          teamItem =>
+            String(
+              teamItem.name || ''
+            ).toLowerCase() ===
+            String(
+              item.team_name || ''
+            ).toLowerCase()
+        );
+
+
+      document
+        .getElementById(
+          'standingTeam'
+        )
+        .value =
+          team?.id || '';
+
+
+      document
+        .getElementById(
+          'standingPosition'
+        )
+        .value =
+          item.position ?? '';
+
+
+      document
+        .getElementById(
+          'standingPlayed'
+        )
+        .value =
+          item.played ?? 0;
+
+
+      document
+        .getElementById(
+          'standingWins'
+        )
+        .value =
+          item.wins ?? 0;
+
+
+      document
+        .getElementById(
+          'standingDraws'
+        )
+        .value =
+          item.draws ?? 0;
+
+
+      document
+        .getElementById(
+          'standingLosses'
+        )
+        .value =
+          item.losses ?? 0;
+
+
+      document
+        .getElementById(
+          'standingGoalsFor'
+        )
+        .value =
+          item.goals_for ?? 0;
+
+
+      document
+        .getElementById(
+          'standingGoalsAgainst'
+        )
+        .value =
+          item.goals_against ?? 0;
+
+
+      document
+        .getElementById(
+          'standingPoints'
+        )
+        .value =
+          item.points ?? 0;
+
+
+      document
+        .getElementById(
+          'standingSort'
+        )
+        .value =
+          item.sort_order ?? 0;
+
+
+      document
+        .getElementById(
+          'standingActive'
+        )
+        .checked =
+          item.is_active !== false;
+
+
+      document
+        .getElementById(
+          'cancelStandingEdit'
+        )
+        .classList
+        .remove('hidden');
+
+
+      document
+        .getElementById(
+          'standingTeam'
+        )
+        .focus();
+
+    };
+
+
+  window.deleteStanding =
+    async function(id) {
+
+      if (
+        !confirm(
+          'Удалить строку из турнирной таблицы?'
+        )
+      ) {
+        return;
+      }
+
+
+      const {
+        error
+      } =
+        await supabase
+          .from('standings')
+          .delete()
+          .eq(
+            'id',
+            id
+          );
+
+
+      if (error) {
+
+        showMessage(
+          globalMessage,
+          error.message,
+          'error'
+        );
+
+        return;
+
+      }
+
+
+      await loadStandings();
+
+    };
+
+
+  function resetStandingForm() {
+
+    editingStandingId =
+      null;
+
+
+    document
+      .getElementById(
+        'standingForm'
+      )
+      .reset();
+
+
+    [
+      'standingPlayed',
+      'standingWins',
+      'standingDraws',
+      'standingLosses',
+      'standingGoalsFor',
+      'standingGoalsAgainst',
+      'standingPoints',
+      'standingSort'
+    ]
+      .forEach(
+        id => {
+          document
+            .getElementById(id)
+            .value = 0;
+        }
+      );
+
+
+    document
+      .getElementById(
+        'standingActive'
+      )
+      .checked =
+        true;
+
+
+    document
+      .getElementById(
+        'cancelStandingEdit'
+      )
+      .classList
+      .add('hidden');
+
+  }
+
+
+  document
+    .getElementById(
+      'cancelStandingEdit'
+    )
+    .addEventListener(
+      'click',
+      resetStandingForm
     );
 
 
