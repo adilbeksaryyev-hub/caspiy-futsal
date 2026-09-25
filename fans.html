@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="CASPIY Futsal Club жанкүйерлеріне арналған бөлім. Матч билеттері, клубтың Instagram парақшасы және жанкүйерлерге арналған ақпарат."
+    content="CASPIY Futsal Club жанкүйерлеріне арналған бөлім. Клубтың Instagram парақшасы, матч күні және жанкүйерлерге арналған ақпарат."
   >
 
   <meta name="robots" content="index, follow">
@@ -176,7 +176,7 @@
       position: relative;
       padding: 12px 0;
       color: #a9bfca;
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: .13em;
       text-transform: uppercase;
@@ -205,21 +205,6 @@
       gap: 12px;
     }
 
-    .ticket-button {
-      padding: 13px 18px;
-      color: #caeffc;
-      border: 1px solid rgba(80,207,251,.42);
-      border-radius: 5px;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-
-    .ticket-button.disabled {
-      opacity: .35;
-      pointer-events: none;
-    }
 
     /* MOBILE BUTTON */
 
@@ -357,23 +342,6 @@
       color: #58d5ff;
     }
 
-    .mobile-ticket {
-      margin-top: 30px;
-      padding: 16px 20px;
-      text-align: center;
-      color: #031019;
-      background: #56d5ff;
-      border-radius: 5px;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .mobile-ticket.disabled {
-      opacity: .30;
-      pointer-events: none;
-    }
 
     .mobile-address {
       margin-top: auto;
@@ -505,7 +473,7 @@
 
     .fan-grid {
       display: grid;
-      grid-template-columns: repeat(2,minmax(0,1fr));
+      grid-template-columns: 1fr;
       gap: 15px;
     }
 
@@ -763,8 +731,7 @@
     /* RESPONSIVE */
 
     @media (max-width:900px) {
-      .desktop-nav,
-      .ticket-button {
+      .desktop-nav {
         display: none;
       }
 
@@ -775,12 +742,6 @@
       .matchday-grid {
         grid-template-columns: 1fr;
         gap: 45px;
-      }
-    }
-
-    @media (max-width:750px) {
-      .fan-grid {
-        grid-template-columns: 1fr;
       }
     }
 
@@ -870,21 +831,12 @@
       <a href="index.html">БАСТЫ БЕТ</a>
       <a href="team.html">КОМАНДА</a>
       <a href="matches.html">МАТЧТАР</a>
+      <a href="standings.html">КЕСТЕ</a>
       <a href="news.html">ЖАҢАЛЫҚТАР</a>
       <a href="club.html">КЛУБ</a>
       <a href="fans.html" class="active">ЖАНКҮЙЕРЛЕР</a>
       <a href="contact.html">БАЙЛАНЫС</a>
     </nav>
-
-    <a
-      href="#"
-      id="mobileTicketButton"
-      class="mobile-ticket disabled"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      БИЛЕТТЕР →
-    </a>
 
     <div
       class="mobile-address"
@@ -920,6 +872,7 @@
       <a href="index.html">БАСТЫ БЕТ</a>
       <a href="team.html">КОМАНДА</a>
       <a href="matches.html">МАТЧТАР</a>
+      <a href="standings.html">КЕСТЕ</a>
       <a href="news.html">ЖАҢАЛЫҚТАР</a>
       <a href="club.html">КЛУБ</a>
       <a href="fans.html" class="active">ЖАНКҮЙЕРЛЕР</a>
@@ -927,16 +880,6 @@
     </nav>
 
     <div class="header-actions">
-
-      <a
-        href="#"
-        id="ticketButton"
-        class="ticket-button disabled"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        БИЛЕТТЕР →
-      </a>
 
       <button
         class="mobile-menu-button"
@@ -1003,39 +946,10 @@
 
 
     <div class="fan-grid">
-
-      <article class="fan-card">
-
-        <div class="fan-card-number">
-          01 / MATCH DAY
-        </div>
-
-        <h3>
-          БИЛЕТТЕР
-        </h3>
-
-        <p>
-          Алдағы CASPIY матчтарына билет туралы ақпарат
-          қолжетімді болған кезде осы бөлім арқылы өтуге болады.
-        </p>
-
-        <a
-          href="#"
-          id="fanTicketButton"
-          class="fan-button disabled"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          БИЛЕТТЕР →
-        </a>
-
-      </article>
-
-
-      <article class="fan-card">
+<article class="fan-card">
 
         <div class="fan-card-number">
-          02 / SOCIAL
+          01 / SOCIAL
         </div>
 
         <h3>
@@ -1362,7 +1276,7 @@
       await supabase
         .from('site_settings')
         .select(
-          'ticket_url,instagram_url,instagram_name,address'
+          'instagram_url,instagram_name,address'
         )
         .eq('id',1)
         .maybeSingle();
@@ -1373,43 +1287,6 @@
       !data
     ) {
       return;
-    }
-
-
-    const ticketButtons = [
-
-      document.getElementById(
-        'ticketButton'
-      ),
-
-      document.getElementById(
-        'mobileTicketButton'
-      ),
-
-      document.getElementById(
-        'fanTicketButton'
-      )
-
-    ];
-
-
-    if (
-      data.ticket_url
-    ) {
-
-      ticketButtons.forEach(
-        button => {
-
-          button.href =
-            data.ticket_url;
-
-          button.classList.remove(
-            'disabled'
-          );
-
-        }
-      );
-
     }
 
 
