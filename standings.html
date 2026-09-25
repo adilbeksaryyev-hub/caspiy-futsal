@@ -544,6 +544,153 @@
       white-space: nowrap;
     }
 
+    /* MOBILE STANDINGS */
+
+    .standings-mobile {
+      display: none;
+    }
+
+    .standing-card {
+      overflow: hidden;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(7,31,46,.98),
+          rgba(3,16,25,.98)
+        );
+      border: 1px solid rgba(75,200,244,.16);
+    }
+
+    .standing-card.caspiy-card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(12,48,67,.98),
+          rgba(3,18,28,.98)
+        );
+      border-color: rgba(88,213,255,.36);
+      box-shadow:
+        inset 3px 0 0 #55d4ff;
+    }
+
+    .standing-card-top {
+      display: grid;
+      grid-template-columns: 44px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 15px 15px 13px;
+    }
+
+    .standing-place {
+      color: #f2fbff;
+      font-family: 'Oswald',sans-serif;
+      font-size: 25px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .standing-team {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .standing-team-logo {
+      flex: 0 0 auto;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .standing-team-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .standing-team-name {
+      min-width: 0;
+      color: #eefaff;
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.25;
+      text-transform: uppercase;
+      overflow-wrap: anywhere;
+    }
+
+    .caspiy-card .standing-team-name {
+      color: #72ddff;
+    }
+
+    .standing-points {
+      min-width: 48px;
+      text-align: center;
+    }
+
+    .standing-points strong {
+      display: block;
+      color: #fff;
+      font-family: 'Oswald',sans-serif;
+      font-size: 27px;
+      line-height: 1;
+    }
+
+    .standing-points span {
+      display: block;
+      margin-top: 4px;
+      color: #5f8495;
+      font-size: 7px;
+      font-weight: 800;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+
+    .standing-stats {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      border-top: 1px solid rgba(255,255,255,.055);
+    }
+
+    .standing-stat {
+      min-height: 57px;
+      padding: 11px 6px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,.045);
+      border-bottom: 1px solid rgba(255,255,255,.045);
+    }
+
+    .standing-stat:nth-child(3n) {
+      border-right: 0;
+    }
+
+    .standing-stat:nth-last-child(-n+2) {
+      border-bottom: 0;
+    }
+
+    .standing-stat:last-child {
+      border-right: 0;
+    }
+
+    .standing-stat span {
+      display: block;
+      color: #587b8d;
+      font-size: 7px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .standing-stat strong {
+      display: block;
+      margin-top: 5px;
+      color: #dceef5;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
     .empty {
       padding: 70px 25px;
       text-align: center;
@@ -605,6 +752,27 @@
       .mobile-menu-button {
         display: flex;
       }
+    }
+
+    @media (max-width:760px) {
+
+      .table-wrap {
+        display: none;
+      }
+
+      .standings-mobile {
+        display: grid;
+        gap: 10px;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+      }
+
+      .section-line {
+        display: none;
+      }
+
     }
 
     @media (max-width:650px) {
@@ -1297,6 +1465,121 @@
           </tbody>
 
         </table>
+
+      </div>
+
+
+      <div class="standings-mobile">
+
+        ${
+          data
+            .map(
+              item => {
+
+                const isCaspiy =
+                  String(
+                    item.team_name || ''
+                  )
+                  .toLowerCase()
+                  .includes(
+                    'касп'
+                  ) ||
+                  String(
+                    item.team_name || ''
+                  )
+                  .toLowerCase()
+                  .includes(
+                    'casp'
+                  );
+
+
+                return `
+
+                  <article
+                    class="standing-card ${isCaspiy ? 'caspiy-card' : ''}"
+                  >
+
+                    <div class="standing-card-top">
+
+                      <div class="standing-place">
+                        ${item.position ?? ''}
+                      </div>
+
+                      <div class="standing-team">
+
+                        <div class="standing-team-logo">
+
+                          ${
+                            item.logo_url
+                              ? `
+                                <img
+                                  src="${escapeHtml(item.logo_url)}"
+                                  alt="${escapeHtml(item.team_name || '')}"
+                                  loading="lazy"
+                                >
+                              `
+                              : ''
+                          }
+
+                        </div>
+
+                        <div class="standing-team-name">
+                          ${escapeHtml(item.team_name || '')}
+                        </div>
+
+                      </div>
+
+                      <div class="standing-points">
+                        <strong>
+                          ${item.points ?? 0}
+                        </strong>
+                        <span>
+                          ҰПАЙ
+                        </span>
+                      </div>
+
+                    </div>
+
+
+                    <div class="standing-stats">
+
+                      <div class="standing-stat">
+                        <span>ОЙЫН</span>
+                        <strong>${item.played ?? 0}</strong>
+                      </div>
+
+                      <div class="standing-stat">
+                        <span>ЖЕҢІС</span>
+                        <strong>${item.wins ?? 0}</strong>
+                      </div>
+
+                      <div class="standing-stat">
+                        <span>ТЕҢ</span>
+                        <strong>${item.draws ?? 0}</strong>
+                      </div>
+
+                      <div class="standing-stat">
+                        <span>ЖЕҢІЛІС</span>
+                        <strong>${item.losses ?? 0}</strong>
+                      </div>
+
+                      <div class="standing-stat">
+                        <span>ГОЛ</span>
+                        <strong>
+                          ${item.goals_for ?? 0}:${item.goals_against ?? 0}
+                        </strong>
+                      </div>
+
+                    </div>
+
+                  </article>
+
+                `;
+
+              }
+            )
+            .join('')
+        }
 
       </div>
 
