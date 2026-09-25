@@ -480,19 +480,17 @@
     }
 
     .standings-table tbody tr.caspiy-row {
-      position: relative;
       background:
         linear-gradient(
           90deg,
-          rgba(62,203,255,.24),
-          rgba(42,179,230,.08) 45%,
-          rgba(42,179,230,.03)
+          rgba(62,203,255,.19),
+          rgba(42,179,230,.07) 48%,
+          rgba(42,179,230,.025)
         );
       box-shadow:
         inset 4px 0 0 #55d4ff,
-        inset 0 0 0 1px rgba(85,212,255,.18),
-        0 10px 28px rgba(27,145,190,.14);
-      transform: scale(1.012);
+        inset 0 1px 0 rgba(85,212,255,.18),
+        inset 0 -1px 0 rgba(85,212,255,.18);
     }
 
     .standings-table tbody tr.caspiy-row:hover {
@@ -552,14 +550,19 @@
 
     .caspiy-row .team-name {
       color: #8ce7ff;
-      font-size: 13px;
-      text-shadow: 0 0 18px rgba(92,220,255,.16);
+      font-size: 12px;
+      text-shadow: 0 0 16px rgba(92,220,255,.14);
     }
 
     .caspiy-row .team-logo {
-      width: 54px;
-      height: 54px;
-      filter: drop-shadow(0 0 12px rgba(79,213,255,.22));
+      width: 46px;
+      height: 46px;
+      filter: drop-shadow(0 0 10px rgba(79,213,255,.20));
+    }
+
+    .caspiy-row .position-cell,
+    .caspiy-row .points-cell {
+      color: #8ce7ff !important;
     }
 
     .points-cell {
@@ -592,18 +595,16 @@
     .standing-card.caspiy-card {
       position: relative;
       background:
-        radial-gradient(circle at top left, rgba(83,215,255,.12), transparent 42%),
+        radial-gradient(circle at top left, rgba(83,215,255,.10), transparent 42%),
         linear-gradient(
           145deg,
-          rgba(14,59,82,.98),
+          rgba(14,55,77,.98),
           rgba(4,20,31,.98)
         );
-      border-color: rgba(88,213,255,.48);
+      border-color: rgba(88,213,255,.42);
       box-shadow:
         inset 4px 0 0 #55d4ff,
-        0 12px 30px rgba(24,121,158,.22),
-        0 0 0 1px rgba(85,212,255,.12);
-      transform: scale(1.02);
+        0 8px 22px rgba(24,121,158,.16);
     }
 
     .standing-card.caspiy-card::before {
@@ -671,14 +672,14 @@
 
     .caspiy-card .standing-team-name {
       color: #97eeff;
-      font-size: 12px;
-      text-shadow: 0 0 16px rgba(92,220,255,.18);
+      font-size: 11px;
+      text-shadow: 0 0 14px rgba(92,220,255,.16);
     }
 
     .caspiy-card .standing-team-logo {
-      width: 48px;
-      height: 48px;
-      filter: drop-shadow(0 0 12px rgba(79,213,255,.22));
+      width: 42px;
+      height: 42px;
+      filter: drop-shadow(0 0 10px rgba(79,213,255,.20));
     }
 
     .caspiy-card .standing-points strong {
