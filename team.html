@@ -841,16 +841,6 @@
 
     </nav>
 
-    <a
-      href="#"
-      id="mobileTicketButton"
-      class="mobile-ticket disabled"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      БИЛЕТТЕР →
-    </a>
-
     <div
       class="mobile-address"
       id="mobileAddress"
@@ -921,16 +911,6 @@
     </nav>
 
     <div class="header-actions">
-
-      <a
-        href="#"
-        id="ticketButton"
-        class="ticket-button disabled"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        БИЛЕТТЕР →
-      </a>
 
       <button
         class="mobile-menu-button"
@@ -1181,7 +1161,7 @@
       await supabase
         .from('site_settings')
         .select(
-          'ticket_url,address'
+          'address'
         )
         .eq('id',1)
         .maybeSingle();
@@ -1189,37 +1169,6 @@
 
     if (!data) {
       return;
-    }
-
-
-    const ticketButton =
-      document.getElementById(
-        'ticketButton'
-      );
-
-
-    const mobileTicketButton =
-      document.getElementById(
-        'mobileTicketButton'
-      );
-
-
-    if (data.ticket_url) {
-
-      ticketButton.href =
-        data.ticket_url;
-
-      mobileTicketButton.href =
-        data.ticket_url;
-
-      ticketButton.classList.remove(
-        'disabled'
-      );
-
-      mobileTicketButton.classList.remove(
-        'disabled'
-      );
-
     }
 
 
