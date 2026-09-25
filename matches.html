@@ -1410,16 +1410,6 @@
 
     </div>
 
-    <a
-      href="#"
-      id="ctaTicketButton"
-      class="cta-ticket disabled"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      БИЛЕТТЕР →
-    </a>
-
   </div>
 
 </section>
@@ -2071,7 +2061,7 @@ function formatDate(value) {
       await supabase
         .from('site_settings')
         .select(
-          'ticket_url,address'
+          'address'
         )
         .eq('id',1)
         .maybeSingle();
@@ -2079,35 +2069,6 @@ function formatDate(value) {
 
     if (!data) {
       return;
-    }
-
-
-    const ticketButtons = [
-
-      document.getElementById(
-        'ctaTicketButton'
-      )
-
-    ];
-
-
-    if (
-      data.ticket_url
-    ) {
-
-      ticketButtons.forEach(
-        button => {
-
-          button.href =
-            data.ticket_url;
-
-          button.classList.remove(
-            'disabled'
-          );
-
-        }
-      );
-
     }
 
 
