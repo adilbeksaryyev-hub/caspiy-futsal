@@ -3143,8 +3143,7 @@
 
             </article>
 
-          `;
-          }
+          `
         )
         .join('');
 
@@ -3222,73 +3221,76 @@
               item.description ||
               '';
 
+
             return `
 
-            <a
-              class="news-card"
-              href="news-detail.html?id=${item.id}"
-            >
+              <a
+                class="news-card"
+                href="news-detail.html?id=${item.id}"
+              >
 
-              <div class="news-image">
+                <div class="news-image">
 
-                ${
-                  item.image_url
-                    ? `
-                      <img
-                        src="${escapeHtml(item.image_url)}"
-                        alt="${escapeHtml(title)}"
-                        loading="lazy"
-                      >
-                    `
-                    : `
-                      <img
-                        class="news-placeholder"
-                        src="../logo.png"
-                        alt=""
-                      >
-                    `
-                }
+                  ${
+                    item.image_url
+                      ? `
+                        <img
+                          src="${escapeHtml(item.image_url)}"
+                          alt="${escapeHtml(title)}"
+                          loading="lazy"
+                        >
+                      `
+                      : `
+                        <img
+                          class="news-placeholder"
+                          src="../logo.png"
+                          alt=""
+                        >
+                      `
+                  }
 
-                <div class="news-date">
-                  ${formatDate(item.published_at)}
-                </div>
-
-              </div>
-
-
-              <div class="news-content">
-
-                <div class="news-title">
-                  ${escapeHtml(title)}
-                </div>
-
-                ${
-                  description
-                    ? `
-                      <div class="news-description">
-                        ${escapeHtml(description)}
-                      </div>
-                    `
-                    : ''
-                }
-
-                <div class="news-bottom">
-
-                  <span class="read-more">
-                    ПОДРОБНЕЕ
-                  </span>
-
-                  <span class="news-arrow">
-                    →
-                  </span>
+                  <div class="news-date">
+                    ${formatDate(item.published_at)}
+                  </div>
 
                 </div>
 
-              </div>
 
-            </a>
+                <div class="news-content">
 
-          `
+                  <div class="news-title">
+                    ${escapeHtml(title)}
+                  </div>
+
+                  ${
+                    description
+                      ? `
+                        <div class="news-description">
+                          ${escapeHtml(description)}
+                        </div>
+                      `
+                      : ''
+                  }
+
+                  <div class="news-bottom">
+
+                    <span class="read-more">
+                      ПОДРОБНЕЕ
+                    </span>
+
+                    <span class="news-arrow">
+                      →
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </a>
+
+            `;
+
+          }
         )
         .join('');
 
