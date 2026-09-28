@@ -2277,7 +2277,7 @@
           href="matches.html"
           class="all-matches-link"
         >
-          ВСЕ МАТЧИ →
+          БАРЛЫҚ МАТЧИ →
         </a>
 
       </div>
@@ -2513,7 +2513,7 @@
         href="news.html"
         class="section-link"
       >
-        ВСЕ НОВОСТИ →
+        БАРЛЫҚ НОВОСТИ →
       </a>
 
     </div>
@@ -3143,7 +3143,8 @@
 
             </article>
 
-          `
+          `;
+          }
         )
         .join('');
 
@@ -3170,7 +3171,7 @@
           'news'
         )
         .select(
-          'id,title,description,image_url,published_at,sort_order'
+          'id,title,description,title_ru,description_ru,image_url,published_at,sort_order'
         )
         .eq(
           'is_active',
@@ -3198,7 +3199,7 @@
 
       list.innerHTML = `
         <div class="empty">
-          НОВОСТИ ӘЗІРГЕ ҚОСЫЛМАҒАН
+          НОВОСТЕЙ ПОКА НЕТ
         </div>
       `;
 
@@ -3209,11 +3210,23 @@
     list.innerHTML =
       data
         .map(
-          item => `
+          item => {
+
+            const title =
+              item.title_ru ||
+              item.title ||
+              '';
+
+            const description =
+              item.description_ru ||
+              item.description ||
+              '';
+
+            return `
 
             <a
               class="news-card"
-              href="../news-detail.html?id=${item.id}"
+              href="news-detail.html?id=${item.id}"
             >
 
               <div class="news-image">
@@ -3223,7 +3236,7 @@
                     ? `
                       <img
                         src="${escapeHtml(item.image_url)}"
-                        alt="${escapeHtml(item.title)}"
+                        alt="${escapeHtml(title)}"
                         loading="lazy"
                       >
                     `
@@ -3246,14 +3259,14 @@
               <div class="news-content">
 
                 <div class="news-title">
-                  ${escapeHtml(item.title)}
+                  ${escapeHtml(title)}
                 </div>
 
                 ${
-                  item.description
+                  description
                     ? `
                       <div class="news-description">
-                        ${escapeHtml(item.description)}
+                        ${escapeHtml(description)}
                       </div>
                     `
                     : ''
@@ -3557,7 +3570,7 @@
         'АКТАУ',
 
       logo:
-        'logo.png'
+        '../logo.png'
 
     };
 
@@ -3582,7 +3595,7 @@
       logo:
         opponentTeam?.logo_url ||
         match.opponent_logo_url ||
-        'logo.png'
+        '../logo.png'
 
     };
 
@@ -3867,7 +3880,7 @@
                 ? resultTeamHtml(
                     'КАСПИЙ',
                     'АКТАУ',
-                    'logo.png',
+                    '../logo.png',
                     false
                   )
                 : resultTeamHtml(
@@ -3889,7 +3902,7 @@
                 : resultTeamHtml(
                     'КАСПИЙ',
                     'АКТАУ',
-                    'logo.png',
+                    '../logo.png',
                     true
                   );
 
