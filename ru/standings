@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Таблица — CASPIY Futsal Club | Актау</title>
+
+  <meta
+    name="description"
+    content="Турнирная таблица CASPIY Futsal Club: места команд, матчи, победы, ничьи, поражения, голы и очки."
+  >
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#020a10">
+
+  <link
+    rel="canonical"
+    href="https://adilbeksaryyev-hub.github.io/caspiy-futsal/ru/standings.html"
+  >
+
+  <link rel="alternate" hreflang="kk"
+        href="https://adilbeksaryyev-hub.github.io/caspiy-futsal/standings.html">
+  <link rel="alternate" hreflang="ru"
+        href="https://adilbeksaryyev-hub.github.io/caspiy-futsal/ru/standings.html">
+  <link rel="alternate" hreflang="x-default"
+        href="https://adilbeksaryyev-hub.github.io/caspiy-futsal/standings.html">
+
+  <link rel="icon" type="image/png" href="../logo.png">
+  <link rel="apple-touch-icon" href="../logo.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CASPIY Futsal Club">
+  <meta property="og:title" content="Таблица — CASPIY Futsal Club">
+  <meta
+    property="og:description"
+    content="Турнирная таблица CASPIY Futsal Club."
+  >
+  <meta
+    property="og:url"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/ru/standings.html"
+  >
+  <meta
+    property="og:image"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
+  >
+  <meta property="og:locale" content="ru_RU">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Таблица — CASPIY Futsal Club">
+  <meta
+    name="twitter:description"
+    content="Турнирная таблица CASPIY Futsal Club."
+  >
+  <meta
+    name="twitter:image"
+    content="https://adilbeksaryyev-hub.github.io/caspiy-futsal/social-preview.png"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #f1f8fc;
+      background: #020a10;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(2,10,16,.96);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(80,202,245,.14);
+    }
+
+    .header-inner {
+      width: min(1440px,92%);
+      height: 95px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+      z-index: 60;
+      flex: 0 0 auto;
+    }
+
+    .logo img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+    }
+
+    .logo strong {
+      font-family: 'Oswald',sans-serif;
+      font-size: 20px;
+      letter-spacing: .08em;
+      white-space: nowrap;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+    }
+
+    .desktop-nav a {
+      position: relative;
+      padding: 12px 0;
+      color: #a9bfca;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .desktop-nav a:hover,
+    .desktop-nav a.active {
+      color: #62d6ff;
+    }
+
+    .desktop-nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: #52d3ff;
+    }
+
+    .header-actions {
+      position: relative;
+      z-index: 60;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .language-switcher {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .language-link {
+      color: #91a9b5;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: color .2s ease;
+    }
+
+    a.language-link:hover,
+    .language-link.active {
+      color: #63d9ff;
+    }
+
+    .language-separator {
+      color: rgba(166,196,209,.35);
+      font-size: 11px;
+    }
+
+    .mobile-language-switcher {
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* MOBILE BUTTON */
+
+    .mobile-menu-button {
+      display: none;
+      width: 46px;
+      height: 46px;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      background: rgba(4,22,34,.90);
+      border: 1px solid rgba(77,205,255,.32);
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .mobile-lines {
+      position: relative;
+      width: 21px;
+      height: 15px;
+    }
+
+    .mobile-lines span {
+      position: absolute;
+      left: 0;
+      width: 21px;
+      height: 2px;
+      background: #cbeffc;
+      transition: .25s;
+    }
+
+    .mobile-lines span:nth-child(1) { top: 0; }
+    .mobile-lines span:nth-child(2) { top: 6px; }
+    .mobile-lines span:nth-child(3) { top: 12px; }
+
+    .mobile-menu-button.active .mobile-lines span:nth-child(1) {
+      top: 6px;
+      transform: rotate(45deg);
+    }
+
+    .mobile-menu-button.active .mobile-lines span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-button.active .mobile-lines span:nth-child(3) {
+      top: 6px;
+      transform: rotate(-45deg);
+    }
+
+    /* MOBILE MENU */
+
+    .mobile-menu {
+      position: fixed;
+      z-index: 45;
+      inset: 0;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(100%);
+      transition:
+        transform .30s ease,
+        opacity .30s ease,
+        visibility .30s ease;
+      background:
+        radial-gradient(
+          circle at 80% 15%,
+          rgba(32,175,226,.18),
+          transparent 30%
+        ),
+        rgba(1,9,15,.99);
+    }
+
+    .mobile-menu.open {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(0);
+    }
+
+    .mobile-menu-inner {
+      width: min(540px,88%);
+      height: 100%;
+      margin: auto;
+      padding: 125px 0 40px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-menu-small {
+      margin-bottom: 25px;
+      color: #51cffb;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+
+    .mobile-nav {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 58px;
+      color: #d6e8f0;
+      border-bottom: 1px solid rgba(91,204,244,.11);
+      font-family: 'Oswald',sans-serif;
+      font-size: 28px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .mobile-nav a::after {
+      content: "→";
+      color: #54d5ff;
+      font-size: 18px;
+    }
+
+    .mobile-nav a.active {
+      color: #58d5ff;
+    }
+
+    .mobile-address {
+      margin-top: auto;
+      padding-top: 30px;
+      color: #4f7080;
+      font-size: 9px;
+      font-weight: 600;
+      line-height: 1.8;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(1,8,14,.96),
+          rgba(2,16,27,.60),
+          rgba(1,8,14,.38)
+        ),
+        url("../hero-bg.png");
+      background-size: cover;
+      background-position: center 55%;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to bottom,
+          transparent 25%,
+          #020a10 100%
+        );
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(1440px,92%);
+      min-height: 430px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 65px;
+    }
+
+    .hero-small {
+      margin-bottom: 13px;
+      color: #55d3ff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-family: 'Oswald',sans-serif;
+      font-size: clamp(75px,9vw,135px);
+      font-weight: 700;
+      line-height: .90;
+      letter-spacing: -.035em;
+      text-transform: uppercase;
+    }
+
+    .hero-text {
+      margin-top: 23px;
+      color: #88a6b4;
+      font-size: 11px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    /* STANDINGS */
+
+    .standings-section {
+      padding: 75px 0 110px;
+      background:
+        radial-gradient(
+          circle at 85% 5%,
+          rgba(0,160,220,.09),
+          transparent 30%
+        ),
+        #020a10;
+    }
+
+    .container {
+      width: min(1300px,92%);
+      margin: auto;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: flex-end;
+      gap: 28px;
+      margin-bottom: 28px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(79,200,243,.14);
+    }
+
+    .section-small {
+      color: #55d4ff;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .27em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin-top: 7px;
+      font-family: 'Oswald',sans-serif;
+      font-size: clamp(38px,5vw,67px);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1px;
+      margin-bottom: 8px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(80,207,255,.22),
+          transparent
+        );
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid rgba(74,198,241,.16);
+      background: rgba(4,19,30,.82);
+    }
+
+    .standings-table {
+      width: 100%;
+      min-width: 920px;
+      border-collapse: collapse;
+    }
+
+    .standings-table th {
+      padding: 17px 14px;
+      color: #6f94a5;
+      background: rgba(2,13,22,.88);
+      border-bottom: 1px solid rgba(75,196,240,.14);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .standings-table th.team-head {
+      text-align: left;
+    }
+
+    .standings-table td {
+      padding: 16px 14px;
+      border-bottom: 1px solid rgba(255,255,255,.045);
+      color: #cfe4ed;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .standings-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .standings-table tbody tr {
+      transition:
+        background .2s,
+        box-shadow .2s;
+    }
+
+    .standings-table tbody tr:hover {
+      background: rgba(69,193,237,.045);
+    }
+
+    .standings-table tbody tr.caspiy-row {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(62,203,255,.19),
+          rgba(42,179,230,.07) 48%,
+          rgba(42,179,230,.025)
+        );
+      box-shadow:
+        inset 4px 0 0 #55d4ff,
+        inset 0 1px 0 rgba(85,212,255,.18),
+        inset 0 -1px 0 rgba(85,212,255,.18);
+    }
+
+    .standings-table tbody tr.caspiy-row:hover {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(62,203,255,.30),
+          rgba(42,179,230,.10) 45%,
+          rgba(42,179,230,.04)
+        );
+    }
+
+    .standings-table tbody tr.caspiy-row td {
+      border-top: 1px solid rgba(85,212,255,.16);
+      border-bottom: 1px solid rgba(85,212,255,.16);
+    }
+
+    .position-cell {
+      width: 78px;
+      color: #f2fbff !important;
+      font-family: 'Oswald',sans-serif;
+      font-size: 23px !important;
+    }
+
+    .team-cell {
+      min-width: 260px;
+      text-align: left !important;
+    }
+
+    .team-inner {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .team-logo {
+      flex: 0 0 auto;
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .team-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .team-name {
+      color: #eefaff;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .caspiy-row .team-name {
+      color: #8ce7ff;
+      font-size: 13px;
+      text-shadow: 0 0 16px rgba(92,220,255,.14);
+    }
+
+    .caspiy-row .team-logo {
+      width: 46px;
+      height: 46px;
+      filter: drop-shadow(0 0 10px rgba(79,213,255,.20));
+    }
+
+    .caspiy-row .position-cell,
+    .caspiy-row .points-cell {
+      color: #8ce7ff !important;
+    }
+
+    .points-cell {
+      color: #fff !important;
+      font-family: 'Oswald',sans-serif;
+      font-size: 21px !important;
+      font-weight: 700 !important;
+    }
+
+    .goals-cell {
+      white-space: nowrap;
+      font-size: 16px !important;
+      font-weight: 700 !important;
+    }
+
+    /* MOBILE STANDINGS */
+
+    .standings-mobile {
+      display: none;
+    }
+
+    .standing-card {
+      overflow: hidden;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(7,31,46,.98),
+          rgba(3,16,25,.98)
+        );
+      border: 1px solid rgba(75,200,244,.16);
+    }
+
+    .standing-card.caspiy-card {
+      position: relative;
+      background:
+        radial-gradient(circle at top left, rgba(83,215,255,.10), transparent 42%),
+        linear-gradient(
+          145deg,
+          rgba(14,55,77,.98),
+          rgba(4,20,31,.98)
+        );
+      border-color: rgba(88,213,255,.42);
+      box-shadow:
+        inset 4px 0 0 #55d4ff,
+        0 8px 22px rgba(24,121,158,.16);
+    }
+
+    .standing-card.caspiy-card::before {
+      content: 'CASPIY';
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      padding: 4px 8px;
+      border: 1px solid rgba(92,220,255,.32);
+      border-radius: 999px;
+      color: #9befff;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      background: rgba(73,201,244,.08);
+    }
+
+    .standing-card-top {
+      display: grid;
+      grid-template-columns: 44px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 15px 15px 13px;
+    }
+
+    .standing-place {
+      color: #f2fbff;
+      font-family: 'Oswald',sans-serif;
+      font-size: 25px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .standing-team {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .standing-team-logo {
+      flex: 0 0 auto;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .standing-team-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .standing-team-name {
+      min-width: 0;
+      color: #eefaff;
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.25;
+      text-transform: uppercase;
+      overflow-wrap: anywhere;
+    }
+
+    .caspiy-card .standing-team-name {
+      color: #97eeff;
+      font-size: 11px;
+      text-shadow: 0 0 14px rgba(92,220,255,.16);
+    }
+
+    .caspiy-card .standing-team-logo {
+      width: 42px;
+      height: 42px;
+      filter: drop-shadow(0 0 10px rgba(79,213,255,.20));
+    }
+
+    .caspiy-card .standing-points strong {
+      color: #9befff;
+      text-shadow: 0 0 14px rgba(92,220,255,.18);
+    }
+
+    .standing-points {
+      min-width: 48px;
+      text-align: center;
+    }
+
+    .standing-points strong {
+      display: block;
+      color: #fff;
+      font-family: 'Oswald',sans-serif;
+      font-size: 27px;
+      line-height: 1;
+    }
+
+    .standing-points span {
+      display: block;
+      margin-top: 4px;
+      color: #5f8495;
+      font-size: 7px;
+      font-weight: 800;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+
+    .standing-stats {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      border-top: 1px solid rgba(255,255,255,.055);
+    }
+
+    .standing-stat {
+      min-height: 57px;
+      padding: 11px 6px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,.045);
+      border-bottom: 1px solid rgba(255,255,255,.045);
+    }
+
+    .standing-stat:nth-child(3n) {
+      border-right: 0;
+    }
+
+    .standing-stat:nth-last-child(-n+2) {
+      border-bottom: 0;
+    }
+
+    .standing-stat:last-child {
+      border-right: 0;
+    }
+
+    .standing-stat span {
+      display: block;
+      color: #587b8d;
+      font-size: 7px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .standing-stat strong {
+      display: block;
+      margin-top: 5px;
+      color: #dceef5;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .empty {
+      padding: 70px 25px;
+      text-align: center;
+      color: #708e9d;
+      background: #04131e;
+      border: 1px solid rgba(72,194,238,.12);
+      font-size: 10px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #01070b;
+      border-top: 1px solid rgba(71,197,242,.10);
+    }
+
+    .footer-inner {
+      width: min(1440px,92%);
+      min-height: 120px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+    }
+
+    .footer-brand strong {
+      font-size: 12px;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .footer-copy {
+      color: #506a78;
+      font-size: 8px;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width:1050px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .mobile-menu-button {
+        display: flex;
+      }
+    }
+
+    @media (max-width:760px) {
+
+      .table-wrap {
+        display: none;
+      }
+
+      .standings-mobile {
+        display: grid;
+        gap: 10px;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+      }
+
+      .section-line {
+        display: none;
+      }
+
+    }
+
+    @media (max-width:650px) {
+      .header-inner {
+        height: 78px;
+      }
+
+      .logo img {
+        width: 55px;
+        height: 55px;
+      }
+
+      .logo strong {
+        display: none;
+      }
+
+      .hero,
+      .hero-inner {
+        min-height: 350px;
+      }
+
+      .hero-title {
+        font-size: 66px;
+      }
+
+      .standings-section {
+        padding: 55px 0 80px;
+      }
+
+      .section-heading {
+        gap: 15px;
+      }
+
+      .mobile-menu-inner {
+        padding-top: 105px;
+      }
+
+      .mobile-nav a {
+        min-height: 55px;
+        font-size: 25px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 25px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+  <div class="mobile-menu-inner">
+
+    <div class="mobile-menu-small">
+      CASPIY FUTSAL CLUB
+    </div>
+
+    <nav class="mobile-nav">
+
+      <a href="index.html">
+        ГЛАВНАЯ
+      </a>
+
+      <a href="team.html">
+        КОМАНДА
+      </a>
+
+      <a href="matches.html">
+        МАТЧИ
+      </a>
+
+      <a href="standings.html" class="active">
+        ТАБЛИЦА
+      </a>
+
+      <a href="../news.html">
+        НОВОСТИ
+      </a>
+
+      <a href="../club.html">
+        КЛУБ
+      </a>
+
+      <a href="../fans.html">
+        БОЛЕЛЬЩИКИ
+      </a>
+
+      <a href="../contact.html">
+        КОНТАКТЫ
+      </a>
+
+    </nav>
+
+    <div class="mobile-language-switcher" aria-label="Выбор языка">
+      <a class="language-link" href="../standings.html">KZ</a>
+      <span class="language-separator">|</span>
+      <span class="language-link active">RU</span>
+    </div>
+
+    <div
+      class="mobile-address"
+      id="mobileAddress"
+    >
+      АКТАУ · КАЗАХСТАН
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+  <div class="header-inner">
+
+    <a
+      href="index.html"
+      class="logo"
+    >
+
+      <img
+        src="../logo.png"
+        alt="CASPIY Futsal Club"
+      >
+
+      <strong>
+        CASPIY FUTSAL CLUB
+      </strong>
+
+    </a>
+
+
+    <nav class="desktop-nav">
+
+      <a href="index.html">
+        ГЛАВНАЯ
+      </a>
+
+      <a href="team.html">
+        КОМАНДА
+      </a>
+
+      <a href="matches.html">
+        МАТЧИ
+      </a>
+
+      <a
+        href="standings.html"
+        class="active"
+      >
+        ТАБЛИЦА
+      </a>
+
+      <a href="../news.html">
+        НОВОСТИ
+      </a>
+
+      <a href="../club.html">
+        КЛУБ
+      </a>
+
+      <a href="../fans.html">
+        БОЛЕЛЬЩИКИ
+      </a>
+
+      <a href="../contact.html">
+        КОНТАКТЫ
+      </a>
+
+    </nav>
+
+
+    <div class="header-actions">
+
+      <div class="language-switcher" aria-label="Выбор языка">
+        <a class="language-link" href="../standings.html">KZ</a>
+        <span class="language-separator">|</span>
+        <span class="language-link active">RU</span>
+      </div>
+
+      <button
+        class="mobile-menu-button"
+        id="mobileMenuButton"
+        type="button"
+        aria-label="Меню"
+        aria-expanded="false"
+      >
+
+        <span class="mobile-lines">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div class="hero-small">
+      ЧЕМПИОНАТ КАЗАХСТАНА
+    </div>
+
+    <h1 class="hero-title">
+      ТАБЛИЦА
+    </h1>
+
+    <div class="hero-text">
+      CASPIY · АКТАУ · КАЗАХСТАН
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- STANDINGS -->
+
+<section class="standings-section">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div>
+
+        <div class="section-small">
+          CASPIY FUTSAL CLUB
+        </div>
+
+        <h2 class="section-title">
+          ТУРНИР ТАБЛИЦАСІ
+        </h2>
+
+      </div>
+
+      <div class="section-line"></div>
+
+    </div>
+
+
+    <div id="standingsContent">
+
+      <div class="empty">
+        ТАБЛИЦА ЖҮКТЕЛУДЕ...
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+
+      <img
+        src="../logo.png"
+        alt="CASPIY"
+      >
+
+      <strong>
+        CASPIY FUTSAL CLUB
+      </strong>
+
+    </div>
+
+    <div
+      class="footer-copy"
+      id="footerAddress"
+    >
+      АКТАУ · КАЗАХСТАН
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script type="module">
+
+  import { createClient }
+  from
+  'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+
+  const supabase =
+    createClient(
+      'https://socqbqyhkyvxnsukgcqm.supabase.co',
+      'sb_publishable_l_g8YROT8Z2I3JqYHvyGQA_HIAKiqbK'
+    );
+
+
+  /* MOBILE MENU */
+
+  const mobileMenu =
+    document.getElementById(
+      'mobileMenu'
+    );
+
+
+  const mobileMenuButton =
+    document.getElementById(
+      'mobileMenuButton'
+    );
+
+
+  function openMenu() {
+
+    mobileMenu.classList.add(
+      'open'
+    );
+
+    mobileMenuButton.classList.add(
+      'active'
+    );
+
+    mobileMenuButton.setAttribute(
+      'aria-expanded',
+      'true'
+    );
+
+    document.body.classList.add(
+      'menu-open'
+    );
+
+  }
+
+
+  function closeMenu() {
+
+    mobileMenu.classList.remove(
+      'open'
+    );
+
+    mobileMenuButton.classList.remove(
+      'active'
+    );
+
+    mobileMenuButton.setAttribute(
+      'aria-expanded',
+      'false'
+    );
+
+    document.body.classList.remove(
+      'menu-open'
+    );
+
+  }
+
+
+  mobileMenuButton.addEventListener(
+    'click',
+    () => {
+
+      if (
+        mobileMenu.classList.contains(
+          'open'
+        )
+      ) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+
+    }
+  );
+
+
+  mobileMenu
+    .querySelectorAll('a')
+    .forEach(
+      link => {
+
+        link.addEventListener(
+          'click',
+          closeMenu
+        );
+
+      }
+    );
+
+
+  document.addEventListener(
+    'keydown',
+    event => {
+
+      if (
+        event.key === 'Escape'
+      ) {
+        closeMenu();
+      }
+
+    }
+  );
+
+
+  window.addEventListener(
+    'resize',
+    () => {
+
+      if (
+        window.innerWidth > 1050
+      ) {
+        closeMenu();
+      }
+
+    }
+  );
+
+
+  function escapeHtml(value) {
+
+    return String(value ?? '')
+      .replaceAll('&','&amp;')
+      .replaceAll('<','&lt;')
+      .replaceAll('>','&gt;')
+      .replaceAll('"','&quot;')
+      .replaceAll("'","&#039;");
+
+  }
+
+
+  /* SETTINGS */
+
+  async function loadSettings() {
+
+    const {
+      data
+    } =
+      await supabase
+        .from('site_settings')
+        .select(
+          'address'
+        )
+        .eq('id',1)
+        .maybeSingle();
+
+
+    if (
+      data?.address
+    ) {
+
+      const address =
+        data.address
+          .replace(/Ақтау/gi,'Актау')
+          .replace(/Қазақстан/gi,'Казахстан')
+          .toUpperCase();
+
+
+      document
+        .getElementById(
+          'footerAddress'
+        )
+        .textContent =
+          address;
+
+
+      document
+        .getElementById(
+          'mobileAddress'
+        )
+        .textContent =
+          address;
+
+    }
+
+  }
+
+
+  /* STANDINGS */
+
+  async function loadStandings() {
+
+    const content =
+      document.getElementById(
+        'standingsContent'
+      );
+
+
+    const {
+      data,
+      error
+    } =
+      await supabase
+        .from('standings')
+        .select(
+          'id,position,team_name,logo_url,played,wins,draws,losses,goals_for,goals_against,points,sort_order'
+        )
+        .eq(
+          'is_active',
+          true
+        )
+        .order(
+          'position',
+          {
+            ascending:true
+          }
+        )
+        .order(
+          'sort_order',
+          {
+            ascending:true
+          }
+        );
+
+
+    if (error) {
+
+      content.innerHTML = `
+        <div class="empty">
+          ТАБЛИЦАНІ ЖҮКТЕУ КЕЗІНДЕ ҚАТЕ МЕСТО АЛДЫ
+        </div>
+      `;
+
+      return;
+
+    }
+
+
+    if (
+      !data?.length
+    ) {
+
+      content.innerHTML = `
+        <div class="empty">
+          ТУРНИР ТАБЛИЦАСІ ӘЗІРГЕ ТОЛТЫРЫЛМАҒАН
+        </div>
+      `;
+
+      return;
+
+    }
+
+
+    content.innerHTML = `
+
+      <div class="table-wrap">
+
+        <table class="standings-table">
+
+          <thead>
+
+            <tr>
+
+              <th>
+                МЕСТО
+              </th>
+
+              <th class="team-head">
+                КОМАНДА
+              </th>
+
+              <th>
+                ИГРЫ
+              </th>
+
+              <th>
+                ПОБЕДЫ
+              </th>
+
+              <th>
+                НИЧЬИ
+              </th>
+
+              <th>
+                ПОРАЖЕНИЯ
+              </th>
+
+              <th>
+                ГОЛЫ
+              </th>
+
+              <th>
+                ОЧКИ
+              </th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+            ${
+              data
+                .map(
+                  item => {
+
+                    const isCaspiy =
+                      String(
+                        item.team_name || ''
+                      )
+                      .toLowerCase()
+                      .includes(
+                        'касп'
+                      ) ||
+                      String(
+                        item.team_name || ''
+                      )
+                      .toLowerCase()
+                      .includes(
+                        'casp'
+                      );
+
+
+                    return `
+
+                      <tr
+                        class="${isCaspiy ? 'caspiy-row' : ''}"
+                      >
+
+                        <td class="position-cell">
+                          ${item.position ?? ''}
+                        </td>
+
+
+                        <td class="team-cell">
+
+                          <div class="team-inner">
+
+                            <div class="team-logo">
+
+                              ${
+                                item.logo_url
+                                  ? `
+                                    <img
+                                      src="${escapeHtml(item.logo_url)}"
+                                      alt="${escapeHtml(item.team_name || '')}"
+                                      loading="lazy"
+                                    >
+                                  `
+                                  : ''
+                              }
+
+                            </div>
+
+                            <div class="team-name">
+                              ${escapeHtml(item.team_name || '')}
+                            </div>
+
+                          </div>
+
+                        </td>
+
+
+                        <td>
+                          ${item.played ?? 0}
+                        </td>
+
+                        <td>
+                          ${item.wins ?? 0}
+                        </td>
+
+                        <td>
+                          ${item.draws ?? 0}
+                        </td>
+
+                        <td>
+                          ${item.losses ?? 0}
+                        </td>
+
+                        <td class="goals-cell">
+                          ${item.goals_for ?? 0}:${item.goals_against ?? 0}
+                        </td>
+
+                        <td class="points-cell">
+                          ${item.points ?? 0}
+                        </td>
+
+                      </tr>
+
+                    `;
+
+                  }
+                )
+                .join('')
+            }
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+
+      <div class="standings-mobile">
+
+        ${
+          data
+            .map(
+              item => {
+
+                const isCaspiy =
+                  String(
+                    item.team_name || ''
+                  )
+                  .toLowerCase()
+                  .includes(
+                    'касп'
+                  ) ||
+                  String(
+                    item.team_name || ''
+                  )
+                  .toLowerCase()
+                  .includes(
+                    'casp'
+                  );
+
+
+                return `
+
+                  <article
+                    class="standing-card ${isCaspiy ? 'caspiy-card' : ''}"
+                  >
+
+                    <div class="standing-card-top">
+
+                      <div class="standing-place">
+                        ${item.position ?? ''}
+                      </div>
+
+                      <div class="standing-team">
+
+                        <div class="standing-team-logo">
+
+                          ${
+                            item.logo_url
+                              ? `
+                                <img
+                                  src="${escapeHtml(item.logo_url)}"
+                                  alt="${escapeHtml(item.team_name || '')}"
+                                  loading="lazy"
+                                >
+                              `
+                              : ''
+                          }
+
+                        </div>
+
+                        <div class="standing-team-name">
+                          ${escapeHtml(item.team_name || '')}
+                        </div>
+
+                      </div>
+
+                      <div class="standing-points">
+                        <strong>
+                          ${item.points ?? 0}
+                        </strong>
+                        <span>
+                          ОЧКИ
+                        </span>
+                      </div>
+
+                    </div>
+
+
+                    <div class="standing-stats">
+
+                      <div class="standing-stat">
+                        <span>ИГРЫ</span>
+                        <strong>${item.played ?? 0}</strong>
+                      </div>
+
+                      <div class="standing-stat">
+                        <span>ПОБЕДЫ</span>
+                        <strong>${item.wins ?? 0}</strong>
+                      </div>
+
+                      <div class="standing-stat">
+                        <span>НИЧЬИ</span>
+                        <strong>${item.draws ?? 0}</strong>
+                      </div>
+
+                      <div class="standing-stat">
+                        <span>ПОРАЖЕНИЯ</span>
+                        <strong>${item.losses ?? 0}</strong>
+                      </div>
+
+                      <div class="standing-stat">
+                        <span>ГОЛЫ</span>
+                        <strong>
+                          ${item.goals_for ?? 0}:${item.goals_against ?? 0}
+                        </strong>
+                      </div>
+
+                    </div>
+
+                  </article>
+
+                `;
+
+              }
+            )
+            .join('')
+        }
+
+      </div>
+
+    `;
+
+  }
+
+
+  await Promise.all([
+    loadSettings(),
+    loadStandings()
+  ]);
+
+</script>
+
+</body>
+</html>
