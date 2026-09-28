@@ -1,36 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
     <loc>https://adilbeksaryyev-hub.github.io/caspiy-futsal/</loc>
   </url>
-
   <url>
     <loc>https://adilbeksaryyev-hub.github.io/caspiy-futsal/team.html</loc>
   </url>
-
   <url>
     <loc>https://adilbeksaryyev-hub.github.io/caspiy-futsal/matches.html</loc>
   </url>
-
   <url>
     <loc>https://adilbeksaryyev-hub.github.io/caspiy-futsal/standings.html</loc>
   </url>
-
   <url>
     <loc>https://adilbeksaryyev-hub.github.io/caspiy-futsal/news.html</loc>
   </url>
-
   <url>
     <loc>https://adilbeksaryyev-hub.github.io/caspiy-futsal/club.html</loc>
   </url>
-
   <url>
     <loc>https://adilbeksaryyev-hub.github.io/caspiy-futsal/fans.html</loc>
   </url>
-
   <url>
     <loc>https://adilbeksaryyev-hub.github.io/caspiy-futsal/contact.html</loc>
   </url>
-
+  <url>
+    <loc>https://adilbeksaryyev-hub.github.io/caspiy-futsal/ru/</loc>
+  </url>
+  <url>
+    <loc>https://adilbeksaryyev-hub.github.io/caspiy-futsal/ru/team.html</loc>
+  </url>
+  <url>
+    <loc>https://adilbeksaryyev-hub.github.io/caspiy-futsal/ru/matches.html</loc>
+  </url>
+  <url>
+    <loc>https://adilbeksaryyev-hub.github.io/caspiy-futsal/ru/standings.html</loc>
+  </url>
+  <url>
+    <loc>https://adilbeksaryyev-hub.github.io/caspiy-futsal/ru/news.html</loc>
+  </url>
+  <url>
+    <loc>https://adilbeksaryyev-hub.github.io/caspiy-futsal/ru/club.html</loc>
+  </url>
+  <url>
+    <loc>https://adilbeksaryyev-hub.github.io/caspiy-futsal/ru/fans.html</loc>
+  </url>
+  <url>
+    <loc>https://adilbeksaryyev-hub.github.io/caspiy-futsal/ru/contact.html</loc>
+  </url>
 </urlset>
