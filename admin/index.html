@@ -1522,13 +1522,38 @@
           <div class="form-grid">
 
             <div class="field full-width">
-              <label>Заголовок</label>
-              <input type="text" id="newsTitle" required>
+              <label>Заголовок KZ</label>
+              <input
+                type="text"
+                id="newsTitle"
+                placeholder="Қазақша тақырып"
+                required
+              >
             </div>
 
             <div class="field full-width">
-              <label>Текст</label>
-              <textarea id="newsDescription"></textarea>
+              <label>Текст KZ</label>
+              <textarea
+                id="newsDescription"
+                placeholder="Қазақша жаңалық мәтіні"
+              ></textarea>
+            </div>
+
+            <div class="field full-width">
+              <label>Заголовок RU</label>
+              <input
+                type="text"
+                id="newsTitleRu"
+                placeholder="Заголовок на русском"
+              >
+            </div>
+
+            <div class="field full-width">
+              <label>Текст RU</label>
+              <textarea
+                id="newsDescriptionRu"
+                placeholder="Текст новости на русском"
+              ></textarea>
             </div>
 
             <div class="field">
@@ -4855,6 +4880,7 @@
                 <div class="content-meta">
                   ${formatDate(item.published_at)}
                   · ${item.is_active === false ? 'СКРЫТА' : 'ОПУБЛИКОВАНА'}
+                  · ${item.title_ru ? 'RU ✓' : 'RU —'}
                 </div>
 
               </div>
@@ -4931,6 +4957,18 @@
                 .getElementById('newsDescription')
                 .value
                 .trim(),
+
+            title_ru:
+              document
+                .getElementById('newsTitleRu')
+                .value
+                .trim() || null,
+
+            description_ru:
+              document
+                .getElementById('newsDescriptionRu')
+                .value
+                .trim() || null,
 
             image_url:
               imageUrl,
@@ -5035,6 +5073,12 @@
 
       document.getElementById('newsDescription').value =
         item.description || '';
+
+      document.getElementById('newsTitleRu').value =
+        item.title_ru || '';
+
+      document.getElementById('newsDescriptionRu').value =
+        item.description_ru || '';
 
       document.getElementById('newsDate').value =
         utcToAqtauInput(item.published_at);
