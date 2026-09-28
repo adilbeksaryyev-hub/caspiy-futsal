@@ -15,6 +15,11 @@
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#020a10">
 
+  <link rel="alternate" hreflang="kk"
+        href="https://adilbeksaryyev-hub.github.io/caspiy-futsal/news-detail.html">
+  <link rel="alternate" hreflang="ru"
+        href="https://adilbeksaryyev-hub.github.io/caspiy-futsal/ru/news-detail.html">
+
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="apple-touch-icon" href="logo.png">
 
@@ -188,6 +193,41 @@
       display: flex;
       align-items: center;
       gap: 12px;
+    }
+
+    .language-switcher {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .language-link {
+      color: #91a9b5;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: color .2s ease;
+    }
+
+    a.language-link:hover,
+    .language-link.active {
+      color: #63d9ff;
+    }
+
+    .language-separator {
+      color: rgba(166,196,209,.35);
+      font-size: 11px;
+    }
+
+    .mobile-language-switcher {
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
 
@@ -527,6 +567,12 @@
       <a href="contact.html">БАЙЛАНЫС</a>
     </nav>
 
+    <div class="mobile-language-switcher" aria-label="Тілді таңдау">
+      <span class="language-link active">KZ</span>
+      <span class="language-separator">|</span>
+      <a class="language-link lang-ru-detail" href="ru/news-detail.html">RU</a>
+    </div>
+
     <div class="mobile-address" id="mobileAddress">
       АҚТАУ · ҚАЗАҚСТАН
     </div>
@@ -556,6 +602,12 @@
     </nav>
 
     <div class="header-actions">
+
+      <div class="language-switcher" aria-label="Тілді таңдау">
+        <span class="language-link active">KZ</span>
+        <span class="language-separator">|</span>
+        <a class="language-link lang-ru-detail" href="ru/news-detail.html">RU</a>
+      </div>
 
       <button
         class="mobile-menu-button"
@@ -680,6 +732,15 @@
           'click',
           closeMenu
         )
+    );
+
+
+  document
+    .querySelectorAll('.lang-ru-detail')
+    .forEach(
+      link =>
+        link.href =
+          `ru/news-detail.html${window.location.search}`
     );
 
 
